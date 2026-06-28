@@ -163,8 +163,12 @@ PLATED_MARKERS = [
     # Vintage "gold-fronted silver" -- a thin gold layer over a silver body.
     # The bulk metal is silver, so weight-based melt is meaningless. Skip.
     "gold on silver", "gold on sterling", "gold & silver", "gold and silver",
-    "silver & gold", "silver and gold", "gold on silver", "gold backed silver",
-    "gold fronted", "silver gilt",
+    "silver & gold", "silver and gold", "gold backed silver",
+    "gold fronted", "silver gilt", "silver lined", "silver-lined",
+    "sterling silver", "silver shank", "silver sleeve",
+    # Gold-fronted/plated base metals -- weight is mostly the base metal.
+    "gold on brass", "gold and brass", "gold & brass", "on brass", "brass",
+    "gold on copper", "base metal", "pinchbeck",
 ]
 
 # =============================================================================
@@ -183,8 +187,10 @@ def get_ebay_token():
         except (json.JSONDecodeError, KeyError, OSError):
             pass  # cache unreadable; fetch fresh
 
-    client_id = os.getenv("EBAY_CLIENT_ID")
-    client_secret = os.getenv("EBAY_CLIENT_SECRET")
+    # .strip() guards against trailing spaces/newlines accidentally pasted into
+    # a .env file or a GitHub Actions secret -- a common cause of 401s.
+    client_id = (os.getenv("EBAY_CLIENT_ID") or "").strip()
+    client_secret = (os.getenv("EBAY_CLIENT_SECRET") or "").strip()
     if not client_id or not client_secret:
         sys.exit("[fatal] EBAY_CLIENT_ID / EBAY_CLIENT_SECRET not set. "
                  "Add them to a .env file (see .env.example).")
@@ -347,47 +353,71 @@ def get_spot_price_gbp_per_oz():
 # eBay Browse API: search + item detail
 # =============================================================================
 
-def search_auctions(token, query, max_price, max_items):
-    """Page through item_summary/search and return a list of item summaries."""
+_BUYING_FILTER = {
+    "auction": "AUCTION",
+    "fixed": "FIXED_PRICE",
+    "both": "AUCTION|FIXED_PRICE",
+}
+
+
+def search_listings(token, queries, max_price, max_items, buying="both"):
+    """Search one or more queries, page through them, and merge results.
+
+    De-duplicates by itemId so the same ring found under several search terms is
+    only kept once. `buying` selects auctions, fixed-price (Buy It Now), or both.
+    """
     headers = {
         "Authorization": f"Bearer {token}",
         "X-EBAY-C-MARKETPLACE-ID": MARKETPLACE,
         "Content-Type": "application/json",
     }
+    buy = _BUYING_FILTER.get(buying, _BUYING_FILTER["both"])
     # Browse API filter syntax. priceCurrency is required alongside a price range.
     item_filter = (
-        "buyingOptions:{AUCTION},"
+        f"buyingOptions:{{{buy}}},"
         "conditions:{USED},"
         f"price:[..{max_price}],"
         f"priceCurrency:{PRICE_CURRENCY}"
     )
 
+    seen = set()
     items = []
-    offset = 0
-    while len(items) < max_items:
-        page = min(PAGE_SIZE, max_items - offset, max_items - len(items))
-        params = {
-            "q": query,
-            "filter": item_filter,
-            "limit": page,
-            "offset": offset,
-            "fieldgroups": "EXTENDED",   # include shortDescription
-            "sort": "endingSoonest",
-        }
-        r = requests.get(SEARCH_URL, headers=headers, params=params, timeout=30)
-        if r.status_code != 200:
-            print(f"[warn] search request failed ({r.status_code}): {r.text}",
-                  file=sys.stderr)
+    for query in queries:
+        offset = 0
+        while len(items) < max_items:
+            page = min(PAGE_SIZE, max_items - len(items))
+            params = {
+                "q": query,
+                "filter": item_filter,
+                "limit": page,
+                "offset": offset,
+                "fieldgroups": "EXTENDED",   # include shortDescription
+            }
+            # endingSoonest only applies to auctions; let other modes use
+            # eBay's default best-match relevance ordering.
+            if buying == "auction":
+                params["sort"] = "endingSoonest"
+            r = requests.get(SEARCH_URL, headers=headers, params=params, timeout=30)
+            if r.status_code != 200:
+                print(f"[warn] search '{query}' failed ({r.status_code}): {r.text}",
+                      file=sys.stderr)
+                break
+            data = r.json()
+            batch = data.get("itemSummaries", []) or []
+            for it in batch:
+                iid = it.get("itemId")
+                if iid and iid in seen:
+                    continue
+                if iid:
+                    seen.add(iid)
+                items.append(it)
+            total = data.get("total", 0)
+            offset += page
+            if not batch or offset >= total or len(items) >= max_items:
+                break
+            time.sleep(0.2)  # be polite between pages
+        if len(items) >= max_items:
             break
-        data = r.json()
-        batch = data.get("itemSummaries", []) or []
-        items.extend(batch)
-
-        total = data.get("total", 0)
-        offset += page
-        if not batch or offset >= total:
-            break
-        time.sleep(0.2)  # be polite between pages
 
     return items[:max_items]
 
@@ -420,7 +450,10 @@ def fetch_item_description(token, item_id):
 # =============================================================================
 
 def get_current_bid(item):
-    """Return the current bid (GBP float) for an auction, or None."""
+    """Return the current price/bid (GBP float), or None.
+
+    Auctions expose currentBidPrice; fixed-price (Buy It Now) uses price.
+    """
     bid = item.get("currentBidPrice") or item.get("price")
     if not bid:
         return None
@@ -428,6 +461,16 @@ def get_current_bid(item):
         return float(bid.get("value"))
     except (TypeError, ValueError):
         return None
+
+
+def buying_type(item):
+    """Return 'Auction', 'Buy now', or 'Auction+Offer' style label."""
+    opts = item.get("buyingOptions") or []
+    if "AUCTION" in opts:
+        return "Auction"
+    if "FIXED_PRICE" in opts or "BEST_OFFER" in opts:
+        return "Buy now"
+    return "?"
 
 
 def time_left(end_iso):
@@ -508,6 +551,7 @@ def analyse(items, token, spot_per_oz):
             "melt_value": melt,
             "ratio": ratio,
             "is_value": is_value,
+            "buying": buying_type(item),
             "time_left": time_left(item.get("itemEndDate")),
             "bids": item.get("bidCount", ""),
             "url": item.get("itemWebUrl", ""),
@@ -597,7 +641,11 @@ def write_csv(records, path):
 def parse_args():
     p = argparse.ArgumentParser(
         description="Scan eBay UK auctions for undervalued gold signet rings.")
-    p.add_argument("--query", default=SEARCH_TERM, help="eBay search term")
+    p.add_argument("--query", default=SEARCH_TERM,
+                   help="eBay search term(s); separate multiple with '||' and "
+                        "they are merged & de-duplicated")
+    p.add_argument("--buying", default="both", choices=["auction", "fixed", "both"],
+                   help="auction only, fixed-price (Buy It Now) only, or both")
     p.add_argument("--max-price", type=float, default=MAX_CURRENT_PRICE,
                    help="max current price (GBP) to consider")
     p.add_argument("--threshold", type=float, default=MELT_THRESHOLD,
@@ -620,16 +668,19 @@ def main():
     MELT_THRESHOLD = args.threshold
     DEFAULT_CARAT = args.default_carat
 
-    print("\neBay Gold Signet Ring Scanner")
-    print(f"  query='{args.query}'  max_price=£{args.max_price:.0f}  "
-          f"threshold={args.threshold}  limit={args.limit}  market={MARKETPLACE}")
+    queries = [q.strip() for q in args.query.split("||") if q.strip()]
+
+    print("\neBay Gold Ring Scanner")
+    print(f"  queries={queries}  buying={args.buying}  "
+          f"max_price=£{args.max_price:.0f}  threshold={args.threshold}  "
+          f"limit={args.limit}  market={MARKETPLACE}")
 
     spot, source = get_spot_price_gbp_per_oz()
     print(f"  gold spot: £{spot:,.2f}/oz  (source: {source})")
 
     token = get_ebay_token()
-    items = search_auctions(token, args.query, args.max_price, args.limit)
-    print(f"  fetched {len(items)} auction listing(s) from eBay.")
+    items = search_listings(token, queries, args.max_price, args.limit, args.buying)
+    print(f"  fetched {len(items)} unique listing(s) from eBay.")
 
     records = analyse(items, token, spot)
     print_table(records)
@@ -637,7 +688,9 @@ def main():
 
     meta = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "query": args.query,
+        "query": queries[0] if queries else args.query,
+        "queries": queries,
+        "buying": args.buying,
         "default_carat": args.default_carat,
         "marketplace": MARKETPLACE,
         "max_price": args.max_price,
