@@ -53,6 +53,7 @@
   .tag.val { background: #d4af37; color: #1a1400; }
   .row2 { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: 12.5px; }
   .kv { color: #8a93a6; } .kv b { color: #e6e6e6; font-weight: 600; }
+  .muted { color: #6b7488; }
   .ratio { font-weight: 700; }
   .r-good { color: #26a65b; } .r-mid { color: #e0a93b; } .r-low { color: #8a93a6; }
   .foot { display: flex; justify-content: space-between; margin-top: 9px;
@@ -120,6 +121,8 @@
     ⚠ Verify the live bid on eBay before bidding (the API can lag). Bid shown is
     <b>not</b> your true cost — postage &amp; fees are extra. Weights are
     seller-claimed — confirm against the hallmark/photos.
+    <b>Non-UK 🇺🇸🇪🇺 listings</b> are converted to £ at the live rate; expect
+    import VAT/duty + international postage on top, not included in melt.
   </div>
 
   <!-- Filters bottom sheet -->
@@ -129,6 +132,7 @@
     <div class="sheet-head"><b>Filters</b><span class="done" id="sheetDone">Done</span></div>
 
     <div class="section"><h3>Show</h3><div class="chiprow" id="f-kind"></div></div>
+    <div class="section"><h3>Country</h3><div class="chiprow" id="f-country"></div></div>
     <div class="section"><h3>Listing type</h3><div class="chiprow" id="f-type"></div></div>
     <div class="section"><h3>Max price</h3><div class="chiprow" id="f-price"></div>
       <input class="capInput" id="capInput" type="number" inputmode="numeric" min="0"
@@ -147,13 +151,18 @@ let filter = "value";       // value | all | unknown
 let buyingFilter = "all";   // all | Auction | Buy now
 let priceCap = Infinity;    // Infinity | max £
 let weightMin = 0;          // 0 | min grams
+let countryFilter = "all";  // all | UK | US | DE | ...
 let sortBy = "best";        // best | heavy | cheap | ending
 
-// ---- Filter predicates (4 independent dimensions) ----
+// ---- Filter predicates (independent dimensions) ----
 const passKind  = r => filter === "all" ? true : filter === "value" ? r.is_value : r.weight_g == null;
 const passType  = r => buyingFilter === "all" || r.buying === buyingFilter;
 const passPrice = r => priceCap === Infinity || (r.current_bid != null && r.current_bid <= priceCap);
 const passWeight = r => weightMin === 0 || (r.weight_g != null && r.weight_g >= weightMin);
+const passCountry = r => countryFilter === "all" || (r.country || "UK") === countryFilter;
+const DIMS = { kind: passKind, type: passType, price: passPrice, weight: passWeight, country: passCountry };
+// Items passing every dimension EXCEPT the named one (for consistent chip counts).
+const others = (except) => (r) => Object.keys(DIMS).every(k => k === except || DIMS[k](r));
 
 function tlMinutes(s) {
   if (!s || s === "n/a" || s === "ended") return Infinity;
@@ -172,7 +181,7 @@ const SORTS = {
 
 function applyFilter(results) {
   return results
-    .filter(r => passKind(r) && passType(r) && passPrice(r) && passWeight(r))
+    .filter(r => passKind(r) && passType(r) && passPrice(r) && passWeight(r) && passCountry(r))
     .sort(SORTS[sortBy]);
 }
 
@@ -191,11 +200,11 @@ function card(rec) {
   const bids = (rec.bids === "" || rec.bids == null) ? 0 : rec.bids;
   return `
     <a class="${cls}" href="${rec.url}" target="_blank" rel="noopener">
-      <div class="top"><div class="title">${escapeHtml(rec.title)}</div>${tag}</div>
+      <div class="top"><div class="title">${rec.flag || ""} ${escapeHtml(rec.title)}</div>${tag}</div>
       <div class="row2">
         <span class="kv">Carat <b>${caratLabel(rec)}</b></span>
         <span class="kv">Weight <b>${wt}</b></span>
-        <span class="kv">Bid <b>${fmtGBP(rec.current_bid)}</b></span>
+        <span class="kv">Bid <b>${fmtGBP(rec.current_bid)}</b>${rec.price_orig ? ` <span class="muted">(${rec.price_orig})</span>` : ""}</span>
         <span class="kv">Melt <b>${fmtGBP(rec.melt_value)}</b></span>
         <span class="kv">Melt/Bid ${ratio}</span>
       </div>
@@ -224,6 +233,7 @@ function activeList() {
   const a = [];
   if (filter === "value") a.push(["kind", "Value"]);
   else if (filter === "unknown") a.push(["kind", "Weight unknown"]);
+  if (countryFilter !== "all") a.push(["country", (FLAGS[countryFilter] || "") + " " + countryFilter]);
   if (buyingFilter !== "all") a.push(["type", buyingFilter]);
   if (priceCap !== Infinity) a.push(["price", "≤" + fmtGBP(priceCap)]);
   if (weightMin !== 0) a.push(["weight", "≥" + weightMin + "g"]);
@@ -232,18 +242,21 @@ function activeList() {
 function clearDim(dim) {
   if (dim === "kind") filter = "all";
   else if (dim === "type") buyingFilter = "all";
+  else if (dim === "country") countryFilter = "all";
   else if (dim === "price") { priceCap = Infinity; document.getElementById("capInput").value = ""; }
   else if (dim === "weight") { weightMin = 0; document.getElementById("wMinInput").value = ""; }
 }
 
 // ---- Filters sheet ----
+const FLAGS = { UK: "🇬🇧", US: "🇺🇸", DE: "🇩🇪", FR: "🇫🇷", IT: "🇮🇹", ES: "🇪🇸", IE: "🇮🇪" };
 function renderSheet() {
   if (!DATA) return;
   const n = (arr, pred) => arr.filter(pred).length;
-  const forKind   = DATA.results.filter(r => passType(r) && passPrice(r) && passWeight(r));
-  const forType   = DATA.results.filter(r => passKind(r) && passPrice(r) && passWeight(r));
-  const forPrice  = DATA.results.filter(r => passKind(r) && passType(r) && passWeight(r));
-  const forWeight = DATA.results.filter(r => passKind(r) && passType(r) && passPrice(r));
+  const forKind    = DATA.results.filter(others("kind"));
+  const forType    = DATA.results.filter(others("type"));
+  const forPrice   = DATA.results.filter(others("price"));
+  const forWeight  = DATA.results.filter(others("weight"));
+  const forCountry = DATA.results.filter(others("country"));
   const chips = (arr) => arr.map(([on, key, label]) =>
     `<div class="chip ${on ? "active" : ""}" data-v="${key}">${label}</div>`).join("");
 
@@ -252,6 +265,15 @@ function renderSheet() {
     [filter === "all", "all", "All " + forKind.length],
     [filter === "unknown", "unknown", "Weight unknown " + n(forKind, r => r.weight_g == null)],
   ]);
+
+  const countries = Object.keys(DATA.meta.country_counts || {});
+  countries.sort((a, b) => (a === "UK" ? -1 : b === "UK" ? 1 : a.localeCompare(b)));
+  document.getElementById("f-country").innerHTML = chips([
+    [countryFilter === "all", "all", "All " + forCountry.length],
+    ...countries.map(c => [countryFilter === c, c,
+      (FLAGS[c] || "") + " " + c + " " + n(forCountry, r => (r.country || "UK") === c)]),
+  ]);
+
   document.getElementById("f-type").innerHTML = chips([
     [buyingFilter === "all", "all", "All " + forType.length],
     [buyingFilter === "Auction", "Auction", "⏳ Auction " + n(forType, r => r.buying === "Auction")],
@@ -319,6 +341,8 @@ document.getElementById("active").onclick = (e) => {
 };
 document.getElementById("f-kind").onclick = (e) => {
   const c = e.target.closest(".chip"); if (c) { filter = c.dataset.v; render(); } };
+document.getElementById("f-country").onclick = (e) => {
+  const c = e.target.closest(".chip"); if (c) { countryFilter = c.dataset.v; render(); } };
 document.getElementById("f-type").onclick = (e) => {
   const c = e.target.closest(".chip"); if (c) { buyingFilter = c.dataset.v; render(); } };
 document.getElementById("f-price").onclick = (e) => {
@@ -339,7 +363,7 @@ document.getElementById("wMinInput").addEventListener("input", (e) => {
   if (DATA) render();
 });
 document.getElementById("resetBtn").onclick = () => {
-  filter = "all"; buyingFilter = "all"; priceCap = Infinity; weightMin = 0;
+  filter = "all"; buyingFilter = "all"; priceCap = Infinity; weightMin = 0; countryFilter = "all";
   document.getElementById("capInput").value = "";
   document.getElementById("wMinInput").value = "";
   render();

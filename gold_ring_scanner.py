@@ -93,10 +93,25 @@ except ImportError:
 
 # --- Search ---------------------------------------------------------------
 SEARCH_TERM       = "9ct gold signet ring"   # default eBay search query
-MARKETPLACE       = "EBAY_GB"                 # UK marketplace
-PRICE_CURRENCY    = "GBP"                     # currency for the price filter
 MAX_CURRENT_PRICE = 250.0                     # only consider auctions at/under this (GBP)
-MAX_ITEMS         = 200                       # hard cap on items fetched (be polite)
+MAX_ITEMS         = 200                       # hard cap on items fetched per market
+
+# eBay marketplaces we can scan. Prices are converted to GBP via live FX so the
+# melt comparison is apples-to-apples. NOTE: non-UK buys carry import VAT/duty +
+# international postage that the melt value does NOT include.
+MARKETPLACES = {
+    "EBAY_GB": {"currency": "GBP", "country": "UK", "flag": "🇬🇧"},
+    "EBAY_US": {"currency": "USD", "country": "US", "flag": "🇺🇸"},
+    "EBAY_DE": {"currency": "EUR", "country": "DE", "flag": "🇩🇪"},
+    "EBAY_FR": {"currency": "EUR", "country": "FR", "flag": "🇫🇷"},
+    "EBAY_IT": {"currency": "EUR", "country": "IT", "flag": "🇮🇹"},
+    "EBAY_ES": {"currency": "EUR", "country": "ES", "flag": "🇪🇸"},
+    "EBAY_IE": {"currency": "EUR", "country": "IE", "flag": "🇮🇪"},
+}
+DEFAULT_MARKETS = "EBAY_GB"                   # comma-separated; overridden by --markets
+
+# FX fallback (units of foreign currency per £1) if the live lookup fails.
+FX_FALLBACK_PER_GBP = {"GBP": 1.0, "USD": 1.27, "EUR": 1.17}
 PAGE_SIZE         = 200                       # Browse API max page size is 200
 
 # --- Valuation ------------------------------------------------------------
@@ -349,6 +364,25 @@ def get_spot_price_gbp_per_oz():
 
     return SPOT_PRICE_GBP_PER_OZ, "hardcoded fallback constant"
 
+
+def get_fx_to_gbp():
+    """Return {currency: multiplier to convert that currency into GBP}.
+
+    e.g. {"USD": 0.79, "EUR": 0.85, "GBP": 1.0}. Falls back to constants if the
+    live FX lookup fails.
+    """
+    fx = {"GBP": 1.0}
+    try:
+        r = requests.get("https://api.frankfurter.dev/v1/latest",
+                         params={"base": "GBP", "symbols": "USD,EUR"}, timeout=30)
+        r.raise_for_status()
+        for cur, gbp_to_cur in r.json()["rates"].items():
+            fx[cur] = 1.0 / float(gbp_to_cur)   # invert GBP->cur to get cur->GBP
+        return fx
+    except (requests.RequestException, KeyError, ValueError, TypeError, ZeroDivisionError) as e:
+        print(f"[warn] FX lookup failed ({e}); using fallback rates.", file=sys.stderr)
+        return {cur: 1.0 / per for cur, per in FX_FALLBACK_PER_GBP.items()}
+
 # =============================================================================
 # eBay Browse API: search + item detail
 # =============================================================================
@@ -360,15 +394,24 @@ _BUYING_FILTER = {
 }
 
 
-def search_listings(token, queries, max_price, max_items, buying="both"):
-    """Search one or more queries, page through them, and merge results.
+def search_listings(token, queries, max_price_gbp, max_items, buying="both",
+                    market="EBAY_GB", fx=None):
+    """Search one or more queries on a single marketplace; merge & de-duplicate.
 
-    De-duplicates by itemId so the same ring found under several search terms is
-    only kept once. `buying` selects auctions, fixed-price (Buy It Now), or both.
+    `max_price_gbp` is converted to the marketplace's own currency for the API
+    price filter. Each returned item is tagged with its marketplace metadata
+    (_market_id / _currency / _country / _flag) for later GBP conversion.
     """
+    cfg = MARKETPLACES[market]
+    currency = cfg["currency"]
+    fx = fx or {currency: 1.0}
+    # Convert the £ ceiling into this marketplace's currency for the filter.
+    per_gbp = (1.0 / fx[currency]) if fx.get(currency) else 1.0   # GBP -> currency
+    max_price = round(max_price_gbp * per_gbp)
+
     headers = {
         "Authorization": f"Bearer {token}",
-        "X-EBAY-C-MARKETPLACE-ID": MARKETPLACE,
+        "X-EBAY-C-MARKETPLACE-ID": market,
         "Content-Type": "application/json",
     }
     buy = _BUYING_FILTER.get(buying, _BUYING_FILTER["both"])
@@ -377,7 +420,7 @@ def search_listings(token, queries, max_price, max_items, buying="both"):
         f"buyingOptions:{{{buy}}},"
         "conditions:{USED},"
         f"price:[..{max_price}],"
-        f"priceCurrency:{PRICE_CURRENCY}"
+        f"priceCurrency:{currency}"
     )
 
     seen = set()
@@ -410,6 +453,10 @@ def search_listings(token, queries, max_price, max_items, buying="both"):
                     continue
                 if iid:
                     seen.add(iid)
+                it["_market_id"] = market
+                it["_currency"] = currency
+                it["_country"] = cfg["country"]
+                it["_flag"] = cfg["flag"]
                 items.append(it)
             total = data.get("total", 0)
             offset += page
@@ -422,11 +469,11 @@ def search_listings(token, queries, max_price, max_items, buying="both"):
     return items[:max_items]
 
 
-def fetch_item_description(token, item_id):
+def fetch_item_description(token, item_id, market="EBAY_GB"):
     """Return the full description text for an item, or '' on failure."""
     headers = {
         "Authorization": f"Bearer {token}",
-        "X-EBAY-C-MARKETPLACE-ID": MARKETPLACE,
+        "X-EBAY-C-MARKETPLACE-ID": market,
     }
     try:
         r = requests.get(ITEM_URL.format(item_id=item_id),
@@ -503,15 +550,21 @@ def truncate(text, width):
 # Core analysis
 # =============================================================================
 
-def analyse(items, token, spot_per_oz):
-    """Turn raw eBay summaries into analysed ring records."""
+_CURRENCY_SYMBOL = {"GBP": "£", "USD": "$", "EUR": "€"}
+
+
+def analyse(items, token, spot_per_oz, fx=None):
+    """Turn raw eBay summaries into analysed ring records (prices in GBP)."""
     spot_per_gram_fine = spot_per_oz / TROY_OZ_IN_GRAMS
+    fx = fx or {}
     records = []
 
     for item in items:
         title = item.get("title", "")
         short_desc = item.get("shortDescription", "") or ""
         text = f"{title} {short_desc}"
+        market = item.get("_market_id", "EBAY_GB")
+        currency = item.get("_currency", "GBP")
 
         # 1. Reject obvious non-solid-gold listings outright.
         if is_plated(text):
@@ -523,7 +576,7 @@ def analyse(items, token, spot_per_oz):
 
         # 3. If weight still unknown, optionally dig into the full description.
         if weight is None and FETCH_FULL_DETAILS:
-            full = fetch_item_description(token, item.get("itemId", ""))
+            full = fetch_item_description(token, item.get("itemId", ""), market)
             if full:
                 if is_plated(full):
                     continue
@@ -532,7 +585,13 @@ def analyse(items, token, spot_per_oz):
                     carat, carat_assumed = detect_carat(full)
             time.sleep(0.1)  # polite pacing for the extra call
 
-        bid = get_current_bid(item)
+        raw_bid = get_current_bid(item)              # in listing currency
+        rate = fx.get(currency, 1.0)                 # currency -> GBP
+        bid = round(raw_bid * rate, 2) if raw_bid is not None else None
+        price_orig = None
+        if raw_bid is not None and currency != "GBP":
+            price_orig = f"{_CURRENCY_SYMBOL.get(currency, '')}{raw_bid:,.0f}"
+
         fraction = CARAT_FRACTION.get(carat, CARAT_FRACTION[DEFAULT_CARAT])
         content_per_gram = spot_per_gram_fine * fraction
 
@@ -547,7 +606,10 @@ def analyse(items, token, spot_per_oz):
             "carat": carat,
             "carat_assumed": carat_assumed,
             "weight_g": weight,
-            "current_bid": bid,
+            "current_bid": bid,              # GBP
+            "price_orig": price_orig,        # original currency (non-UK only)
+            "country": item.get("_country", "UK"),
+            "flag": item.get("_flag", "🇬🇧"),
             "melt_value": melt,
             "ratio": ratio,
             "is_value": is_value,
@@ -623,7 +685,8 @@ def write_json(records, path, meta):
 
 def write_csv(records, path):
     fields = ["title", "carat", "carat_assumed", "weight_g", "current_bid",
-              "melt_value", "ratio", "is_value", "bids", "time_left", "url"]
+              "price_orig", "country", "melt_value", "ratio", "is_value",
+              "buying", "bids", "time_left", "url"]
     with open(path, "w", newline="", encoding="utf-8") as fh:
         writer = csv.DictWriter(fh, fieldnames=fields)
         writer.writeheader()
@@ -659,6 +722,9 @@ def parse_args():
                    choices=sorted(CARAT_FRACTION), metavar="CT",
                    help="carat to assume when none is detected (e.g. 18 for an "
                         "18ct search)")
+    p.add_argument("--markets", default=DEFAULT_MARKETS,
+                   help="comma-separated eBay marketplaces to scan, e.g. "
+                        "EBAY_GB,EBAY_US,EBAY_DE (prices converted to GBP)")
     return p.parse_args()
 
 
@@ -669,20 +735,33 @@ def main():
     DEFAULT_CARAT = args.default_carat
 
     queries = [q.strip() for q in args.query.split("||") if q.strip()]
+    markets = [m.strip() for m in args.markets.split(",")
+               if m.strip() in MARKETPLACES]
+    if not markets:
+        markets = ["EBAY_GB"]
 
     print("\neBay Gold Ring Scanner")
     print(f"  queries={queries}  buying={args.buying}  "
           f"max_price=£{args.max_price:.0f}  threshold={args.threshold}  "
-          f"limit={args.limit}  market={MARKETPLACE}")
+          f"limit={args.limit}/market  markets={markets}")
 
     spot, source = get_spot_price_gbp_per_oz()
     print(f"  gold spot: £{spot:,.2f}/oz  (source: {source})")
+    fx = get_fx_to_gbp()
+    print(f"  fx to GBP: " + ", ".join(f"{c}={fx.get(c):.3f}" for c in ("USD", "EUR") if fx.get(c)))
 
     token = get_ebay_token()
-    items = search_listings(token, queries, args.max_price, args.limit, args.buying)
-    print(f"  fetched {len(items)} unique listing(s) from eBay.")
+    items, seen = [], set()
+    for mkt in markets:
+        got = search_listings(token, queries, args.max_price, args.limit,
+                              args.buying, market=mkt, fx=fx)
+        fresh = [it for it in got if it.get("itemId") not in seen]
+        seen.update(it.get("itemId") for it in got)
+        items.extend(fresh)
+        print(f"  {mkt}: {len(fresh)} new listing(s)")
+    print(f"  fetched {len(items)} unique listing(s) across {len(markets)} market(s).")
 
-    records = analyse(items, token, spot)
+    records = analyse(items, token, spot, fx)
     print_table(records)
     write_csv(records, args.csv)
 
@@ -692,17 +771,20 @@ def main():
         "queries": queries,
         "buying": args.buying,
         "default_carat": args.default_carat,
-        "marketplace": MARKETPLACE,
+        "markets": markets,
         "max_price": args.max_price,
         "threshold": args.threshold,
         "spot_gbp_per_oz": spot,
         "spot_source": source,
         "carat_per_gram": {str(k): round(spot / TROY_OZ_IN_GRAMS * v, 2)
                            for k, v in CARAT_FRACTION.items()},
+        "fx_to_gbp": {c: round(fx[c], 4) for c in fx},
         "total_fetched": len(items),
         "total_analysed": len(records),
         "value_count": sum(1 for r in records if r["is_value"]),
         "weight_unknown_count": sum(1 for r in records if r["weight_g"] is None),
+        "country_counts": {c: sum(1 for r in records if r["country"] == c)
+                           for c in sorted({r["country"] for r in records})},
     }
     write_json(records, args.json, meta)
 
