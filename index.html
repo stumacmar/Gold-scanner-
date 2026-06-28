@@ -69,6 +69,7 @@
   <div class="stats" id="stats"></div>
   <div class="picker" id="picker"></div>
   <div class="picker" id="types"></div>
+  <div class="picker" id="prices"></div>
   <div class="warn">
     ⚠ Verify the live bid on eBay before bidding (the API can lag). Bid shown is
     <b>not</b> your true cost — postage &amp; any fees are extra. Weights are
@@ -85,6 +86,7 @@ let INDEX = null;
 let currentKey = null;
 let filter = "value";       // value | all | unknown
 let buyingFilter = "all";   // all | Auction | Buy now
+let priceCap = Infinity;    // Infinity | max £ to show
 
 function ratioClass(r) {
   if (r == null) return "r-low";
@@ -131,11 +133,15 @@ function escapeHtml(s) {
     ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 }
 
+// Three independent filter dimensions, each a predicate on a listing.
+const passKind  = r => filter === "all" ? true
+                     : filter === "value" ? r.is_value : r.weight_g == null;
+const passType  = r => buyingFilter === "all" || r.buying === buyingFilter;
+const passPrice = r => priceCap === Infinity
+                     || (r.current_bid != null && r.current_bid <= priceCap);
+
 function applyFilter(results) {
-  let rows = results.slice();
-  if (filter === "value") rows = rows.filter(r => r.is_value);
-  else if (filter === "unknown") rows = rows.filter(r => r.weight_g == null);
-  if (buyingFilter !== "all") rows = rows.filter(r => r.buying === buyingFilter);
+  const rows = results.filter(r => passKind(r) && passType(r) && passPrice(r));
   // Sort: value/known first by melt-to-bid ratio (best first); nulls last.
   rows.sort((a, b) => (b.ratio ?? -1) - (a.ratio ?? -1));
   return rows;
@@ -167,24 +173,19 @@ function render() {
     <div class="stat"><div class="n">£${(m.carat_per_gram["9"]).toFixed(0)}</div><div class="l">9ct £/g melt</div></div>
     <div class="stat"><div class="n">£${(m.carat_per_gram["18"]).toFixed(0)}</div><div class="l">18ct £/g melt</div></div>`;
 
-  // The two filter rows are independent dimensions. To keep every chip's count
-  // matching what the list actually shows, count each dimension WITHIN the
-  // other dimension's current selection (their intersection).
-  const passType = r => buyingFilter === "all" || r.buying === buyingFilter;
-  const passKind = r => filter === "all" ? true
-                      : filter === "value" ? r.is_value : r.weight_g == null;
-  const byType = DATA.results.filter(passType);   // for value/all/unknown counts
-  const byKind = DATA.results.filter(passKind);   // for auction/buy-now counts
+  // Three independent filter dimensions. To keep every chip's count matching
+  // what the list shows, count each dimension WITHIN the intersection of the
+  // other two dimensions' current selections.
+  const n = (arr, pred) => arr.filter(pred).length;
+  const forKind  = DATA.results.filter(r => passType(r) && passPrice(r));
+  const forType  = DATA.results.filter(r => passKind(r) && passPrice(r));
+  const forPrice = DATA.results.filter(r => passKind(r) && passType(r));
 
-  const counts = {
-    value: byType.filter(r => r.is_value).length,
-    all: byType.length,
-    unknown: byType.filter(r => r.weight_g == null).length,
-  };
   const picker = document.getElementById("picker");
   picker.innerHTML =
-    [["value", "Value " + counts.value], ["all", "All " + counts.all],
-     ["unknown", "Weight unknown " + counts.unknown]]
+    [["value", "Value " + n(forKind, r => r.is_value)],
+     ["all", "All " + forKind.length],
+     ["unknown", "Weight unknown " + n(forKind, r => r.weight_g == null)]]
     .map(([k, label]) => `<div class="chip ${k === filter ? "active" : ""}" data-f="${k}">${label}</div>`)
     .join("");
   picker.onclick = (e) => {
@@ -192,21 +193,35 @@ function render() {
     if (c) { filter = c.dataset.f; render(); }
   };
 
-  // Auction vs Buy It Now toggle (counts respect the active value/all filter).
-  const tCounts = {
-    Auction: byKind.filter(r => r.buying === "Auction").length,
-    "Buy now": byKind.filter(r => r.buying === "Buy now").length,
-    all: byKind.length,
-  };
+  // Auction vs Buy It Now toggle.
   const types = document.getElementById("types");
   types.innerHTML =
-    [["all", "All types " + tCounts.all], ["Auction", "⏳ Auction " + tCounts.Auction],
-     ["Buy now", "🏷 Buy now " + tCounts["Buy now"]]]
+    [["all", "All types " + forType.length],
+     ["Auction", "⏳ Auction " + n(forType, r => r.buying === "Auction")],
+     ["Buy now", "🏷 Buy now " + n(forType, r => r.buying === "Buy now")]]
     .map(([k, label]) => `<div class="chip ${k === buyingFilter ? "active" : ""}" data-t="${k}">${label}</div>`)
     .join("");
   types.onclick = (e) => {
     const c = e.target.closest(".chip");
     if (c) { buyingFilter = c.dataset.t; render(); }
+  };
+
+  // Price-cap (budget) toggle.
+  const bands = [["all", Infinity, "Any £"], ["250", 250, "≤£250"],
+                 ["500", 500, "≤£500"], ["1000", 1000, "≤£1k"],
+                 ["2000", 2000, "≤£2k"]];
+  const prices = document.getElementById("prices");
+  prices.innerHTML = bands.map(([key, cap, lbl]) => {
+    const c = n(forPrice, r => cap === Infinity
+      || (r.current_bid != null && r.current_bid <= cap));
+    const active = (priceCap === cap) ? "active" : "";
+    return `<div class="chip ${active}" data-p="${key}">${lbl} ${c}</div>`;
+  }).join("");
+  prices.onclick = (e) => {
+    const c = e.target.closest(".chip");
+    if (!c) return;
+    priceCap = c.dataset.p === "all" ? Infinity : Number(c.dataset.p);
+    render();
   };
 
   const rows = applyFilter(DATA.results);
