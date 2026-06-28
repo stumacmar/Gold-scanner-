@@ -31,9 +31,10 @@
     background: #131826; color: #cfd6e4; font-size: 13px; font-weight: 600; cursor: pointer; }
   .chip.active { background: #d4af37; border-color: #d4af37; color: #1a1400; }
   .capwrap { padding: 0 16px 4px; }
-  #capInput { width: 160px; max-width: 60%; padding: 8px 12px; border-radius: 999px;
-    border: 1px solid #232a3a; background: #131826; color: #e6e6e6; font-size: 13px; }
-  #capInput::placeholder { color: #6b7488; }
+  #capInput, #wMinInput { width: 170px; max-width: 60%; padding: 8px 12px;
+    border-radius: 999px; border: 1px solid #232a3a; background: #131826;
+    color: #e6e6e6; font-size: 13px; }
+  #capInput::placeholder, #wMinInput::placeholder { color: #6b7488; }
   #carats { padding-top: 12px; }
   #carats .chip { font-size: 14px; padding: 9px 18px; }
   #carats .chip small { display: block; font-size: 9px; font-weight: 600; opacity: .8;
@@ -78,6 +79,11 @@
     <input id="capInput" type="number" inputmode="numeric" min="0"
            placeholder="Custom max £…" autocomplete="off" />
   </div>
+  <div class="picker" id="weights"></div>
+  <div class="capwrap">
+    <input id="wMinInput" type="number" inputmode="decimal" min="0" step="0.1"
+           placeholder="Custom min grams…" autocomplete="off" />
+  </div>
   <div class="warn">
     ⚠ Verify the live bid on eBay before bidding (the API can lag). Bid shown is
     <b>not</b> your true cost — postage &amp; any fees are extra. Weights are
@@ -95,6 +101,7 @@ let currentKey = null;
 let filter = "value";       // value | all | unknown
 let buyingFilter = "all";   // all | Auction | Buy now
 let priceCap = Infinity;    // Infinity | max £ to show
+let weightMin = 0;          // 0 | minimum grams to show
 
 function ratioClass(r) {
   if (r == null) return "r-low";
@@ -147,9 +154,12 @@ const passKind  = r => filter === "all" ? true
 const passType  = r => buyingFilter === "all" || r.buying === buyingFilter;
 const passPrice = r => priceCap === Infinity
                      || (r.current_bid != null && r.current_bid <= priceCap);
+const passWeight = r => weightMin === 0
+                     || (r.weight_g != null && r.weight_g >= weightMin);
 
 function applyFilter(results) {
-  const rows = results.filter(r => passKind(r) && passType(r) && passPrice(r));
+  const rows = results.filter(r =>
+    passKind(r) && passType(r) && passPrice(r) && passWeight(r));
   // Sort: value/known first by melt-to-bid ratio (best first); nulls last.
   rows.sort((a, b) => (b.ratio ?? -1) - (a.ratio ?? -1));
   return rows;
@@ -185,9 +195,10 @@ function render() {
   // what the list shows, count each dimension WITHIN the intersection of the
   // other two dimensions' current selections.
   const n = (arr, pred) => arr.filter(pred).length;
-  const forKind  = DATA.results.filter(r => passType(r) && passPrice(r));
-  const forType  = DATA.results.filter(r => passKind(r) && passPrice(r));
-  const forPrice = DATA.results.filter(r => passKind(r) && passType(r));
+  const forKind   = DATA.results.filter(r => passType(r) && passPrice(r) && passWeight(r));
+  const forType   = DATA.results.filter(r => passKind(r) && passPrice(r) && passWeight(r));
+  const forPrice  = DATA.results.filter(r => passKind(r) && passType(r) && passWeight(r));
+  const forWeight = DATA.results.filter(r => passKind(r) && passType(r) && passPrice(r));
 
   const picker = document.getElementById("picker");
   picker.innerHTML =
@@ -233,6 +244,24 @@ function render() {
     render();
   };
 
+  // Minimum gram-weight toggle (for heavy rings).
+  const wBands = [["all", 0, "Any g"], ["5", 5, "≥5g"], ["10", 10, "≥10g"],
+                  ["15", 15, "≥15g"], ["20", 20, "≥20g"]];
+  const weights = document.getElementById("weights");
+  weights.innerHTML = wBands.map(([key, min, lbl]) => {
+    const c = n(forWeight, r => min === 0
+      || (r.weight_g != null && r.weight_g >= min));
+    const active = (weightMin === min) ? "active" : "";
+    return `<div class="chip ${active}" data-w="${key}">${lbl} ${c}</div>`;
+  }).join("");
+  weights.onclick = (e) => {
+    const c = e.target.closest(".chip");
+    if (!c) return;
+    weightMin = c.dataset.w === "all" ? 0 : Number(c.dataset.w);
+    document.getElementById("wMinInput").value = "";   // clear custom box
+    render();
+  };
+
   const rows = applyFilter(DATA.results);
   const list = document.getElementById("list");
   list.innerHTML = rows.length
@@ -248,6 +277,11 @@ function render() {
 document.getElementById("capInput").addEventListener("input", (e) => {
   const v = parseFloat(e.target.value);
   priceCap = (e.target.value === "" || isNaN(v) || v <= 0) ? Infinity : v;
+  if (DATA) render();
+});
+document.getElementById("wMinInput").addEventListener("input", (e) => {
+  const v = parseFloat(e.target.value);
+  weightMin = (e.target.value === "" || isNaN(v) || v <= 0) ? 0 : v;
   if (DATA) render();
 });
 
