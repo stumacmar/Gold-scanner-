@@ -163,8 +163,12 @@ PLATED_MARKERS = [
     # Vintage "gold-fronted silver" -- a thin gold layer over a silver body.
     # The bulk metal is silver, so weight-based melt is meaningless. Skip.
     "gold on silver", "gold on sterling", "gold & silver", "gold and silver",
-    "silver & gold", "silver and gold", "gold on silver", "gold backed silver",
-    "gold fronted", "silver gilt",
+    "silver & gold", "silver and gold", "gold backed silver",
+    "gold fronted", "silver gilt", "silver lined", "silver-lined",
+    "sterling silver", "silver shank", "silver sleeve",
+    # Gold-fronted/plated base metals -- weight is mostly the base metal.
+    "gold on brass", "gold and brass", "gold & brass", "on brass", "brass",
+    "gold on copper", "base metal", "pinchbeck",
 ]
 
 # =============================================================================

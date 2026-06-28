@@ -68,6 +68,7 @@
   <div class="picker" id="carats"></div>
   <div class="stats" id="stats"></div>
   <div class="picker" id="picker"></div>
+  <div class="picker" id="types"></div>
   <div class="warn">
     ⚠ Verify the live bid on eBay before bidding (the API can lag). Bid shown is
     <b>not</b> your true cost — postage &amp; any fees are extra. Weights are
@@ -82,7 +83,8 @@ const fmtGBP = n => (n == null ? "?" : "£" + Number(n).toLocaleString("en-GB",
 let DATA = null;
 let INDEX = null;
 let currentKey = null;
-let filter = "value";   // value | all | unknown
+let filter = "value";       // value | all | unknown
+let buyingFilter = "all";   // all | Auction | Buy now
 
 function ratioClass(r) {
   if (r == null) return "r-low";
@@ -133,6 +135,7 @@ function applyFilter(results) {
   let rows = results.slice();
   if (filter === "value") rows = rows.filter(r => r.is_value);
   else if (filter === "unknown") rows = rows.filter(r => r.weight_g == null);
+  if (buyingFilter !== "all") rows = rows.filter(r => r.buying === buyingFilter);
   // Sort: value/known first by melt-to-bid ratio (best first); nulls last.
   rows.sort((a, b) => (b.ratio ?? -1) - (a.ratio ?? -1));
   return rows;
@@ -169,13 +172,32 @@ function render() {
     all: DATA.results.length,
     unknown: DATA.results.filter(r => r.weight_g == null).length,
   };
-  document.getElementById("picker").innerHTML =
+  const picker = document.getElementById("picker");
+  picker.innerHTML =
     [["value", "Value " + counts.value], ["all", "All " + counts.all],
      ["unknown", "Weight unknown " + counts.unknown]]
     .map(([k, label]) => `<div class="chip ${k === filter ? "active" : ""}" data-f="${k}">${label}</div>`)
     .join("");
-  document.querySelectorAll(".chip").forEach(c =>
-    c.onclick = () => { filter = c.dataset.f; render(); });
+  picker.onclick = (e) => {
+    const c = e.target.closest(".chip");
+    if (c) { filter = c.dataset.f; render(); }
+  };
+
+  // Auction vs Buy It Now toggle.
+  const tCounts = {
+    Auction: DATA.results.filter(r => r.buying === "Auction").length,
+    "Buy now": DATA.results.filter(r => r.buying === "Buy now").length,
+  };
+  const types = document.getElementById("types");
+  types.innerHTML =
+    [["all", "All types"], ["Auction", "⏳ Auction " + tCounts.Auction],
+     ["Buy now", "🏷 Buy now " + tCounts["Buy now"]]]
+    .map(([k, label]) => `<div class="chip ${k === buyingFilter ? "active" : ""}" data-t="${k}">${label}</div>`)
+    .join("");
+  types.onclick = (e) => {
+    const c = e.target.closest(".chip");
+    if (c) { buyingFilter = c.dataset.t; render(); }
+  };
 
   const rows = applyFilter(DATA.results);
   const list = document.getElementById("list");
