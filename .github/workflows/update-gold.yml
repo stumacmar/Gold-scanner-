@@ -37,7 +37,7 @@ jobs:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: |
-          MARKETS="EBAY_GB,EBAY_US,EBAY_DE,EBAY_FR,EBAY_IT,EBAY_ES,EBAY_IE"
+          MARKETS="EBAY_GB,EBAY_US,EBAY_DE,EBAY_IT,EBAY_IE"
           python gold_ring_scanner.py --default-carat 9  --max-price 5000 --limit 150 --markets "$MARKETS" --json data/9ct.json  --csv data/9ct.csv  \
             --query "9ct gold signet ring || 9ct gold ring || vintage 9ct gold ring"
           sleep 20
