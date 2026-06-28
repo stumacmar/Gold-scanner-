@@ -167,10 +167,19 @@ function render() {
     <div class="stat"><div class="n">£${(m.carat_per_gram["9"]).toFixed(0)}</div><div class="l">9ct £/g melt</div></div>
     <div class="stat"><div class="n">£${(m.carat_per_gram["18"]).toFixed(0)}</div><div class="l">18ct £/g melt</div></div>`;
 
+  // The two filter rows are independent dimensions. To keep every chip's count
+  // matching what the list actually shows, count each dimension WITHIN the
+  // other dimension's current selection (their intersection).
+  const passType = r => buyingFilter === "all" || r.buying === buyingFilter;
+  const passKind = r => filter === "all" ? true
+                      : filter === "value" ? r.is_value : r.weight_g == null;
+  const byType = DATA.results.filter(passType);   // for value/all/unknown counts
+  const byKind = DATA.results.filter(passKind);   // for auction/buy-now counts
+
   const counts = {
-    value: DATA.results.filter(r => r.is_value).length,
-    all: DATA.results.length,
-    unknown: DATA.results.filter(r => r.weight_g == null).length,
+    value: byType.filter(r => r.is_value).length,
+    all: byType.length,
+    unknown: byType.filter(r => r.weight_g == null).length,
   };
   const picker = document.getElementById("picker");
   picker.innerHTML =
@@ -183,14 +192,15 @@ function render() {
     if (c) { filter = c.dataset.f; render(); }
   };
 
-  // Auction vs Buy It Now toggle.
+  // Auction vs Buy It Now toggle (counts respect the active value/all filter).
   const tCounts = {
-    Auction: DATA.results.filter(r => r.buying === "Auction").length,
-    "Buy now": DATA.results.filter(r => r.buying === "Buy now").length,
+    Auction: byKind.filter(r => r.buying === "Auction").length,
+    "Buy now": byKind.filter(r => r.buying === "Buy now").length,
+    all: byKind.length,
   };
   const types = document.getElementById("types");
   types.innerHTML =
-    [["all", "All types"], ["Auction", "⏳ Auction " + tCounts.Auction],
+    [["all", "All types " + tCounts.all], ["Auction", "⏳ Auction " + tCounts.Auction],
      ["Buy now", "🏷 Buy now " + tCounts["Buy now"]]]
     .map(([k, label]) => `<div class="chip ${k === buyingFilter ? "active" : ""}" data-t="${k}">${label}</div>`)
     .join("");
