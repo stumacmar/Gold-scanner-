@@ -183,8 +183,10 @@ def get_ebay_token():
         except (json.JSONDecodeError, KeyError, OSError):
             pass  # cache unreadable; fetch fresh
 
-    client_id = os.getenv("EBAY_CLIENT_ID")
-    client_secret = os.getenv("EBAY_CLIENT_SECRET")
+    # .strip() guards against trailing spaces/newlines accidentally pasted into
+    # a .env file or a GitHub Actions secret -- a common cause of 401s.
+    client_id = (os.getenv("EBAY_CLIENT_ID") or "").strip()
+    client_secret = (os.getenv("EBAY_CLIENT_SECRET") or "").strip()
     if not client_id or not client_secret:
         sys.exit("[fatal] EBAY_CLIENT_ID / EBAY_CLIENT_SECRET not set. "
                  "Add them to a .env file (see .env.example).")
