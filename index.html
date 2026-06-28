@@ -30,6 +30,10 @@
   .chip { flex: 0 0 auto; padding: 8px 14px; border-radius: 999px; border: 1px solid #232a3a;
     background: #131826; color: #cfd6e4; font-size: 13px; font-weight: 600; cursor: pointer; }
   .chip.active { background: #d4af37; border-color: #d4af37; color: #1a1400; }
+  .capwrap { padding: 0 16px 4px; }
+  #capInput { width: 160px; max-width: 60%; padding: 8px 12px; border-radius: 999px;
+    border: 1px solid #232a3a; background: #131826; color: #e6e6e6; font-size: 13px; }
+  #capInput::placeholder { color: #6b7488; }
   #carats { padding-top: 12px; }
   #carats .chip { font-size: 14px; padding: 9px 18px; }
   #carats .chip small { display: block; font-size: 9px; font-weight: 600; opacity: .8;
@@ -70,6 +74,10 @@
   <div class="picker" id="picker"></div>
   <div class="picker" id="types"></div>
   <div class="picker" id="prices"></div>
+  <div class="capwrap">
+    <input id="capInput" type="number" inputmode="numeric" min="0"
+           placeholder="Custom max £…" autocomplete="off" />
+  </div>
   <div class="warn">
     ⚠ Verify the live bid on eBay before bidding (the API can lag). Bid shown is
     <b>not</b> your true cost — postage &amp; any fees are extra. Weights are
@@ -209,7 +217,7 @@ function render() {
   // Price-cap (budget) toggle.
   const bands = [["all", Infinity, "Any £"], ["250", 250, "≤£250"],
                  ["500", 500, "≤£500"], ["1000", 1000, "≤£1k"],
-                 ["2000", 2000, "≤£2k"]];
+                 ["2000", 2000, "≤£2k"], ["3000", 3000, "≤£3k"]];
   const prices = document.getElementById("prices");
   prices.innerHTML = bands.map(([key, cap, lbl]) => {
     const c = n(forPrice, r => cap === Infinity
@@ -221,6 +229,7 @@ function render() {
     const c = e.target.closest(".chip");
     if (!c) return;
     priceCap = c.dataset.p === "all" ? Infinity : Number(c.dataset.p);
+    document.getElementById("capInput").value = "";   // clear custom box
     render();
   };
 
@@ -234,6 +243,13 @@ function render() {
     `Melt = weight × carat fineness × gold spot. “Value” = current bid below melt × ${m.meta?.threshold ?? DATA.meta.threshold}. ` +
     `Data refreshes automatically via GitHub Actions. Not financial advice — always verify on eBay before bidding.`;
 }
+
+// Custom budget box: bound once so typing keeps focus (it isn't re-rendered).
+document.getElementById("capInput").addEventListener("input", (e) => {
+  const v = parseFloat(e.target.value);
+  priceCap = (e.target.value === "" || isNaN(v) || v <= 0) ? Infinity : v;
+  if (DATA) render();
+});
 
 function loadSearch(key) {
   const search = INDEX.searches.find(s => s.key === key) || INDEX.searches[0];
