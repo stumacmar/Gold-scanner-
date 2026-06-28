@@ -156,6 +156,11 @@ PLATED_MARKERS = [
     "gold colour", "gold color", "gold coloured", "gold colored",
     "gilt", "gilded", "vermeil", "epns", "gp ", " gp", "rgp", "1/20",
     "plate ", "electroplated", "gold effect", "gold plate", "costume",
+    # Vintage "gold-fronted silver" -- a thin gold layer over a silver body.
+    # The bulk metal is silver, so weight-based melt is meaningless. Skip.
+    "gold on silver", "gold on sterling", "gold & silver", "gold and silver",
+    "silver & gold", "silver and gold", "gold on silver", "gold backed silver",
+    "gold fronted", "silver gilt",
 ]
 
 # =============================================================================
