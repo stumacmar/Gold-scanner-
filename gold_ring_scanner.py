@@ -786,6 +786,14 @@ def main():
 
     records = analyse(items, token, spot, fx)
     print_table(records)
+
+    # Safety: never overwrite a good data file with an empty result set (which
+    # usually means we were rate-limited). Keep the last good scan instead.
+    if not records and os.path.exists(args.json):
+        print(f"[warn] 0 results (likely rate-limited) -- keeping existing "
+              f"{args.json}; not overwriting.", file=sys.stderr)
+        return
+
     write_csv(records, args.csv)
 
     meta = {
