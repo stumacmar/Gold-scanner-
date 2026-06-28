@@ -37,13 +37,14 @@ jobs:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: |
-          python gold_ring_scanner.py --default-carat 9  --max-price 5000 --limit 300 --json data/9ct.json  --csv data/9ct.csv  \
+          MARKETS="EBAY_GB,EBAY_US,EBAY_DE,EBAY_FR,EBAY_IT,EBAY_ES,EBAY_IE"
+          python gold_ring_scanner.py --default-carat 9  --max-price 5000 --limit 150 --markets "$MARKETS" --json data/9ct.json  --csv data/9ct.csv  \
             --query "9ct gold signet ring || 9ct gold ring || 9ct gold mens ring || 9ct gold intaglio ring || vintage 9ct gold ring || antique 9ct gold ring"
-          python gold_ring_scanner.py --default-carat 14 --max-price 5000 --limit 300 --json data/14ct.json --csv data/14ct.csv \
+          python gold_ring_scanner.py --default-carat 14 --max-price 5000 --limit 150 --markets "$MARKETS" --json data/14ct.json --csv data/14ct.csv \
             --query "14ct gold signet ring || 14ct gold ring || 14ct gold mens ring || 14ct gold intaglio ring || vintage 14ct gold ring || antique 14ct gold ring"
-          python gold_ring_scanner.py --default-carat 18 --max-price 5000 --limit 300 --json data/18ct.json --csv data/18ct.csv \
+          python gold_ring_scanner.py --default-carat 18 --max-price 5000 --limit 150 --markets "$MARKETS" --json data/18ct.json --csv data/18ct.csv \
             --query "18ct gold signet ring || 18ct gold ring || 18ct gold mens ring || 18ct gold intaglio ring || vintage 18ct gold ring || antique 18ct gold ring"
-          python gold_ring_scanner.py --default-carat 22 --max-price 5000 --limit 300 --json data/22ct.json --csv data/22ct.csv \
+          python gold_ring_scanner.py --default-carat 22 --max-price 5000 --limit 150 --markets "$MARKETS" --json data/22ct.json --csv data/22ct.csv \
             --query "22ct gold signet ring || 22ct gold ring || 22ct gold mens ring || 22ct gold intaglio ring || vintage 22ct gold ring || antique 22ct gold ring"
           python scripts/build_index.py
 
