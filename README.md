@@ -60,6 +60,32 @@ python gold_ring_scanner.py --threshold 1.0 --limit 100
 All other tunables live in the clearly-commented **CONFIG** block at the top of
 `gold_ring_scanner.py`.
 
+## Web dashboard (GitHub Pages)
+
+A visual dashboard (`index.html`) shows the latest scan as a dark, mobile-first
+list of cards — value candidates highlighted, with carat/weight/bid/melt/ratio,
+time left, and a tap-through to each eBay listing. It reads `data/results.json`,
+which is refreshed automatically by a scheduled GitHub Action.
+
+**One-time setup:**
+
+1. **Add your eBay keys as repository secrets** — *Settings → Secrets and
+   variables → Actions → New repository secret*:
+   - `EBAY_CLIENT_ID` — your App ID (Client ID)
+   - `EBAY_CLIENT_SECRET` — your Cert ID (Client Secret)
+
+   (The gold price uses a keyless live source, so no price-API secret is needed.)
+2. **Enable GitHub Pages** — *Settings → Pages → Build and deployment →
+   Source: Deploy from a branch*, pick the branch and `/ (root)` folder.
+3. The dashboard is then live at `https://<you>.github.io/<repo>/`.
+
+**Refreshing the data:**
+
+- The `Update gold ring scan` workflow runs daily (07:00 UTC) and commits fresh
+  `data/results.json`. Scheduled runs only fire from the **default branch
+  (main)** — merge this branch into main to activate the schedule.
+- You can also run it any time from the **Actions** tab ("Run workflow").
+
 ## Important caveats
 
 - **Weights are seller-claimed free text.** The regex is the part most likely to

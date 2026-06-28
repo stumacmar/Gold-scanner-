@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="theme-color" content="#0b0e14" />
+<title>Gold Ring Scanner</title>
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; min-height: 100%; background: #0b0e14; color: #e6e6e6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  a { color: inherit; text-decoration: none; }
+  header { padding: 16px 16px 6px; }
+  h1 { margin: 0; font-size: 20px; font-weight: 700; }
+  h1 .coin { color: #d4af37; }
+  .sub { margin: 3px 0 0; font-size: 12px; color: #8a93a6; }
+
+  .stats { display: flex; gap: 8px; overflow-x: auto; padding: 12px 16px 4px;
+    scrollbar-width: none; }
+  .stats::-webkit-scrollbar { display: none; }
+  .stat { flex: 0 0 auto; background: #131826; border: 1px solid #232a3a;
+    border-radius: 12px; padding: 10px 14px; min-width: 96px; }
+  .stat .n { font-size: 20px; font-weight: 700; }
+  .stat .l { font-size: 11px; color: #8a93a6; margin-top: 2px; }
+  .stat.gold .n { color: #d4af37; }
+
+  .picker { display: flex; gap: 8px; overflow-x: auto; padding: 10px 16px;
+    scrollbar-width: none; }
+  .picker::-webkit-scrollbar { display: none; }
+  .chip { flex: 0 0 auto; padding: 8px 14px; border-radius: 999px; border: 1px solid #232a3a;
+    background: #131826; color: #cfd6e4; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .chip.active { background: #d4af37; border-color: #d4af37; color: #1a1400; }
+
+  .list { padding: 4px 12px 24px; display: flex; flex-direction: column; gap: 10px; }
+  .card { display: block; background: #131826; border: 1px solid #232a3a;
+    border-radius: 14px; padding: 13px 14px; }
+  .card.value { border-color: #d4af37; box-shadow: 0 0 0 1px rgba(212,175,55,0.25); }
+  .card .top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+  .card .title { font-size: 14px; font-weight: 600; line-height: 1.35; color: #eef1f7; }
+  .tag { flex: 0 0 auto; font-size: 10px; font-weight: 700; padding: 3px 7px; border-radius: 6px;
+    letter-spacing: .3px; text-transform: uppercase; }
+  .tag.val { background: #d4af37; color: #1a1400; }
+  .row2 { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: 12.5px; }
+  .kv { color: #8a93a6; } .kv b { color: #e6e6e6; font-weight: 600; }
+  .ratio { font-weight: 700; }
+  .r-good { color: #26a65b; } .r-mid { color: #e0a93b; } .r-low { color: #8a93a6; }
+  .foot { display: flex; justify-content: space-between; margin-top: 9px;
+    font-size: 11.5px; color: #6b7488; }
+  .foot .left { color: #cfd6e4; font-weight: 600; }
+
+  .warn { margin: 4px 16px 0; padding: 11px 13px; background: #1a1407;
+    border: 1px solid #3a2e10; border-radius: 12px; font-size: 11.5px; color: #cbb98a; line-height: 1.5; }
+  footer { padding: 14px 16px 26px; font-size: 11px; color: #6b7488; line-height: 1.5; }
+  .err { padding: 24px 16px; color: #ef5350; font-size: 14px; }
+  .empty { padding: 24px 16px; color: #8a93a6; font-size: 14px; }
+</style>
+</head>
+<body>
+  <header>
+    <h1><span class="coin">●</span> Gold Ring Scanner</h1>
+    <p class="sub" id="sub">Loading latest scan…</p>
+  </header>
+
+  <div class="stats" id="stats"></div>
+  <div class="picker" id="picker"></div>
+  <div class="warn">
+    ⚠ Verify the live bid on eBay before bidding (the API can lag). Bid shown is
+    <b>not</b> your true cost — postage &amp; any fees are extra. Weights are
+    seller-claimed text — confirm against the hallmark/photos.
+  </div>
+  <div class="list" id="list"></div>
+  <footer id="footer"></footer>
+
+<script>
+const fmtGBP = n => (n == null ? "?" : "£" + Number(n).toLocaleString("en-GB",
+  {maximumFractionDigits: 0}));
+let DATA = null;
+let filter = "value";   // value | all | unknown
+
+function ratioClass(r) {
+  if (r == null) return "r-low";
+  if (r >= 1) return "r-good";
+  if (r >= 0.85) return "r-mid";
+  return "r-low";
+}
+
+function caratLabel(rec) {
+  return rec.carat + "ct" + (rec.carat_assumed ? "?" : "");
+}
+
+function card(rec) {
+  const cls = "card" + (rec.is_value ? " value" : "");
+  const tag = rec.is_value ? '<span class="tag val">Value</span>' : "";
+  const wt = rec.weight_g == null ? "?" : rec.weight_g.toFixed(1) + "g";
+  const ratio = rec.ratio == null ? "—"
+    : '<span class="ratio ' + ratioClass(rec.ratio) + '">' + rec.ratio.toFixed(2) + '×</span>';
+  const bids = (rec.bids === "" || rec.bids == null) ? "0" : rec.bids;
+  return `
+    <a class="${cls}" href="${rec.url}" target="_blank" rel="noopener">
+      <div class="top">
+        <div class="title">${escapeHtml(rec.title)}</div>
+        ${tag}
+      </div>
+      <div class="row2">
+        <span class="kv">Carat <b>${caratLabel(rec)}</b></span>
+        <span class="kv">Weight <b>${wt}</b></span>
+        <span class="kv">Bid <b>${fmtGBP(rec.current_bid)}</b></span>
+        <span class="kv">Melt <b>${fmtGBP(rec.melt_value)}</b></span>
+        <span class="kv">Melt/Bid ${ratio}</span>
+      </div>
+      <div class="foot">
+        <span class="left">⏳ ${rec.time_left}</span>
+        <span>${bids} bid${bids == 1 ? "" : "s"} · tap to open ↗</span>
+      </div>
+    </a>`;
+}
+
+function escapeHtml(s) {
+  return (s || "").replace(/[&<>"]/g, c =>
+    ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+}
+
+function applyFilter(results) {
+  let rows = results.slice();
+  if (filter === "value") rows = rows.filter(r => r.is_value);
+  else if (filter === "unknown") rows = rows.filter(r => r.weight_g == null);
+  // Sort: value/known first by melt-to-bid ratio (best first); nulls last.
+  rows.sort((a, b) => (b.ratio ?? -1) - (a.ratio ?? -1));
+  return rows;
+}
+
+function render() {
+  const m = DATA.meta;
+  const when = new Date(m.generated_at);
+  document.getElementById("sub").innerHTML =
+    `“${escapeHtml(m.query)}” · ${m.marketplace.replace("EBAY_", "")} · auctions ≤ ${fmtGBP(m.max_price)}` +
+    `<br>Updated ${when.toLocaleString("en-GB")} · gold ${fmtGBP(m.spot_gbp_per_oz)}/oz (${escapeHtml(m.spot_source)})`;
+
+  document.getElementById("stats").innerHTML = `
+    <div class="stat gold"><div class="n">${m.value_count}</div><div class="l">value candidates</div></div>
+    <div class="stat"><div class="n">${m.total_analysed}</div><div class="l">solid-gold scanned</div></div>
+    <div class="stat"><div class="n">${m.weight_unknown_count}</div><div class="l">weight unknown</div></div>
+    <div class="stat"><div class="n">£${(m.carat_per_gram["9"]).toFixed(0)}</div><div class="l">9ct £/g melt</div></div>
+    <div class="stat"><div class="n">£${(m.carat_per_gram["18"]).toFixed(0)}</div><div class="l">18ct £/g melt</div></div>`;
+
+  const counts = {
+    value: DATA.results.filter(r => r.is_value).length,
+    all: DATA.results.length,
+    unknown: DATA.results.filter(r => r.weight_g == null).length,
+  };
+  document.getElementById("picker").innerHTML =
+    [["value", "Value " + counts.value], ["all", "All " + counts.all],
+     ["unknown", "Weight unknown " + counts.unknown]]
+    .map(([k, label]) => `<div class="chip ${k === filter ? "active" : ""}" data-f="${k}">${label}</div>`)
+    .join("");
+  document.querySelectorAll(".chip").forEach(c =>
+    c.onclick = () => { filter = c.dataset.f; render(); });
+
+  const rows = applyFilter(DATA.results);
+  const list = document.getElementById("list");
+  list.innerHTML = rows.length
+    ? rows.map(card).join("")
+    : '<div class="empty">Nothing here right now. Try the “All” tab, or the next scheduled scan may surface new auctions.</div>';
+
+  document.getElementById("footer").innerHTML =
+    `Melt = weight × carat fineness × gold spot. “Value” = current bid below melt × ${m.meta?.threshold ?? DATA.meta.threshold}. ` +
+    `Data refreshes automatically via GitHub Actions. Not financial advice — always verify on eBay before bidding.`;
+}
+
+fetch("./data/results.json?ts=" + Date.now())
+  .then(r => { if (!r.ok) throw new Error("no data yet"); return r.json(); })
+  .then(d => { DATA = d; render(); })
+  .catch(e => {
+    document.getElementById("list").innerHTML =
+      '<div class="err">No scan data found yet. Once the GitHub Action runs (or you run the scanner), results will appear here.</div>';
+    document.getElementById("sub").textContent = "Awaiting first scan";
+  });
+</script>
+</body>
+</html>

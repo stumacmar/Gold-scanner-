@@ -111,8 +111,12 @@ MELT_THRESHOLD    = 1.3    # flag auctions where current_bid < melt * threshold.
 # pure (24ct / .999) gold.  ~ as of mid-2026; UPDATE BEFORE RELYING ON IT.
 SPOT_PRICE_GBP_PER_OZ = 1850.0
 
-# Which live price provider to try first: "metals.dev", "goldapi.io", or "none".
-SPOT_PROVIDER = "metals.dev"
+# Which live price provider to use:
+#   "free"       -> gold-api.com x Frankfurter FX (no API key needed; default)
+#   "metals.dev" -> needs METALS_API_KEY
+#   "goldapi.io" -> needs GOLDAPI_KEY
+#   "none"       -> always use the SPOT_PRICE_GBP_PER_OZ fallback below
+SPOT_PROVIDER = "free"
 
 TROY_OZ_IN_GRAMS = 31.1034768   # 1 troy ounce = 31.1034768 g
 
@@ -276,9 +280,32 @@ def is_plated(text):
 # Gold spot price
 # =============================================================================
 
+def _free_spot_gbp_per_oz():
+    """Keyless live price: gold-api.com (USD/oz) x Frankfurter ECB (USD->GBP).
+
+    Both are free and need no API key, so this works in CI with zero secrets.
+    Returns (price_gbp_per_oz, label) or raises on failure.
+    """
+    g = requests.get("https://api.gold-api.com/price/XAU", timeout=30)
+    g.raise_for_status()
+    usd_per_oz = float(g.json()["price"])
+    fx = requests.get("https://api.frankfurter.dev/v1/latest",
+                      params={"base": "USD", "symbols": "GBP"}, timeout=30)
+    fx.raise_for_status()
+    usd_to_gbp = float(fx.json()["rates"]["GBP"])
+    return usd_per_oz * usd_to_gbp, f"gold-api.com x frankfurter (live, ${usd_per_oz:,.0f}/oz)"
+
+
 def get_spot_price_gbp_per_oz():
     """Return (price_per_troy_oz_GBP, source_label)."""
     provider = SPOT_PROVIDER.lower()
+
+    if provider == "free":
+        try:
+            return _free_spot_gbp_per_oz()
+        except (requests.RequestException, KeyError, ValueError, TypeError) as e:
+            print(f"[warn] free price lookup failed ({e}); using fallback.",
+                  file=sys.stderr)
 
     if provider == "metals.dev":
         key = os.getenv("METALS_API_KEY")
@@ -539,6 +566,17 @@ def print_table(records):
     print()
 
 
+def write_json(records, path, meta):
+    """Write records + run metadata to JSON for the web dashboard."""
+    directory = os.path.dirname(path)
+    if directory:
+        os.makedirs(directory, exist_ok=True)
+    payload = {"meta": meta, "results": records}
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(payload, fh, indent=2, ensure_ascii=False)
+    print(f"  Dashboard data written to: {path}")
+
+
 def write_csv(records, path):
     fields = ["title", "carat", "carat_assumed", "weight_g", "current_bid",
               "melt_value", "ratio", "is_value", "bids", "time_left", "url"]
@@ -567,6 +605,8 @@ def parse_args():
     p.add_argument("--limit", type=int, default=MAX_ITEMS,
                    help="max listings to fetch (cap, be polite)")
     p.add_argument("--csv", default=CSV_PATH, help="output CSV path")
+    p.add_argument("--json", default="data/results.json",
+                   help="output JSON path for the web dashboard")
     return p.parse_args()
 
 
@@ -589,6 +629,23 @@ def main():
     records = analyse(items, token, spot)
     print_table(records)
     write_csv(records, args.csv)
+
+    meta = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "query": args.query,
+        "marketplace": MARKETPLACE,
+        "max_price": args.max_price,
+        "threshold": args.threshold,
+        "spot_gbp_per_oz": spot,
+        "spot_source": source,
+        "carat_per_gram": {str(k): round(spot / TROY_OZ_IN_GRAMS * v, 2)
+                           for k, v in CARAT_FRACTION.items()},
+        "total_fetched": len(items),
+        "total_analysed": len(records),
+        "value_count": sum(1 for r in records if r["is_value"]),
+        "weight_unknown_count": sum(1 for r in records if r["weight_g"] is None),
+    }
+    write_json(records, args.json, meta)
 
 
 if __name__ == "__main__":
