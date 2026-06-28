@@ -30,6 +30,10 @@
   .chip { flex: 0 0 auto; padding: 8px 14px; border-radius: 999px; border: 1px solid #232a3a;
     background: #131826; color: #cfd6e4; font-size: 13px; font-weight: 600; cursor: pointer; }
   .chip.active { background: #d4af37; border-color: #d4af37; color: #1a1400; }
+  #carats { padding-top: 12px; }
+  #carats .chip { font-size: 14px; padding: 9px 18px; }
+  #carats .chip small { display: block; font-size: 9px; font-weight: 600; opacity: .8;
+    margin-top: 1px; }
 
   .list { padding: 4px 12px 24px; display: flex; flex-direction: column; gap: 10px; }
   .card { display: block; background: #131826; border: 1px solid #232a3a;
@@ -61,6 +65,7 @@
     <p class="sub" id="sub">Loading latest scan…</p>
   </header>
 
+  <div class="picker" id="carats"></div>
   <div class="stats" id="stats"></div>
   <div class="picker" id="picker"></div>
   <div class="warn">
@@ -75,6 +80,8 @@
 const fmtGBP = n => (n == null ? "?" : "£" + Number(n).toLocaleString("en-GB",
   {maximumFractionDigits: 0}));
 let DATA = null;
+let INDEX = null;
+let currentKey = null;
 let filter = "value";   // value | all | unknown
 
 function ratioClass(r) {
@@ -129,6 +136,18 @@ function applyFilter(results) {
   return rows;
 }
 
+function renderCarats() {
+  const el = document.getElementById("carats");
+  el.innerHTML = INDEX.searches.map(s =>
+    `<div class="chip ${s.key === currentKey ? "active" : ""}" data-k="${s.key}">` +
+    `${s.label}<small>${s.value_count} value</small></div>`).join("");
+  // Event delegation: one stable handler, robust to chip nodes being re-rendered.
+  el.onclick = (e) => {
+    const chip = e.target.closest(".chip");
+    if (chip && chip.dataset.k !== currentKey) loadSearch(chip.dataset.k);
+  };
+}
+
 function render() {
   const m = DATA.meta;
   const when = new Date(m.generated_at);
@@ -167,10 +186,28 @@ function render() {
     `Data refreshes automatically via GitHub Actions. Not financial advice — always verify on eBay before bidding.`;
 }
 
-fetch("./data/results.json?ts=" + Date.now())
-  .then(r => { if (!r.ok) throw new Error("no data yet"); return r.json(); })
-  .then(d => { DATA = d; render(); })
-  .catch(e => {
+function loadSearch(key) {
+  const search = INDEX.searches.find(s => s.key === key) || INDEX.searches[0];
+  currentKey = search.key;
+  renderCarats();
+  document.getElementById("list").innerHTML = '<div class="empty">Loading…</div>';
+  fetch("./data/" + search.file + "?ts=" + Date.now())
+    .then(r => { if (!r.ok) throw new Error("missing"); return r.json(); })
+    .then(d => { DATA = d; render(); })
+    .catch(() => {
+      document.getElementById("list").innerHTML =
+        '<div class="err">Could not load ' + search.file + '.</div>';
+    });
+}
+
+fetch("./data/index.json?ts=" + Date.now())
+  .then(r => { if (!r.ok) throw new Error("no index"); return r.json(); })
+  .then(idx => {
+    INDEX = idx;
+    if (!idx.searches || !idx.searches.length) throw new Error("empty index");
+    loadSearch(idx.searches[0].key);
+  })
+  .catch(() => {
     document.getElementById("list").innerHTML =
       '<div class="err">No scan data found yet. Once the GitHub Action runs (or you run the scanner), results will appear here.</div>';
     document.getElementById("sub").textContent = "Awaiting first scan";

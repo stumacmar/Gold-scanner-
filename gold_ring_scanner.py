@@ -607,13 +607,18 @@ def parse_args():
     p.add_argument("--csv", default=CSV_PATH, help="output CSV path")
     p.add_argument("--json", default="data/results.json",
                    help="output JSON path for the web dashboard")
+    p.add_argument("--default-carat", type=int, default=DEFAULT_CARAT,
+                   choices=sorted(CARAT_FRACTION), metavar="CT",
+                   help="carat to assume when none is detected (e.g. 18 for an "
+                        "18ct search)")
     return p.parse_args()
 
 
 def main():
-    global MELT_THRESHOLD
+    global MELT_THRESHOLD, DEFAULT_CARAT
     args = parse_args()
     MELT_THRESHOLD = args.threshold
+    DEFAULT_CARAT = args.default_carat
 
     print("\neBay Gold Signet Ring Scanner")
     print(f"  query='{args.query}'  max_price=£{args.max_price:.0f}  "
@@ -633,6 +638,7 @@ def main():
     meta = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "query": args.query,
+        "default_carat": args.default_carat,
         "marketplace": MARKETPLACE,
         "max_price": args.max_price,
         "threshold": args.threshold,
