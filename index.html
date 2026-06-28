@@ -116,8 +116,10 @@ function card(rec) {
         <span class="kv">Melt/Bid ${ratio}</span>
       </div>
       <div class="foot">
-        <span class="left">⏳ ${rec.time_left}</span>
-        <span>${bids} bid${bids == 1 ? "" : "s"} · tap to open ↗</span>
+        <span class="left">${rec.buying === "Buy now"
+          ? "🏷 Buy now"
+          : "⏳ " + rec.time_left + " · " + bids + " bid" + (bids == 1 ? "" : "s")}</span>
+        <span>tap to open ↗</span>
       </div>
     </a>`;
 }

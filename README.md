@@ -51,7 +51,8 @@ python gold_ring_scanner.py --threshold 1.0 --limit 100
 
 | Flag | Default | Meaning |
 |------|---------|---------|
-| `--query` | `9ct gold signet ring` | eBay search term |
+| `--query` | `9ct gold signet ring` | eBay search term(s); combine several with `\|\|` and they're merged & de-duplicated |
+| `--buying` | `both` | `auction`, `fixed` (Buy It Now), or `both` |
 | `--max-price` | `250` | Max current price (GBP) to consider |
 | `--threshold` | `1.3` | Flag if `bid < melt × threshold` |
 | `--limit` | `200` | Max listings to fetch (politeness cap) |
