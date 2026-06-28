@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-28T15:23:41.467115+00:00",
+    "generated_at": "2026-06-28T16:37:31.689929+00:00",
     "query": "18ct gold signet ring",
     "queries": [
       "18ct gold signet ring",
@@ -13,7 +13,7 @@
     "buying": "both",
     "default_carat": 18,
     "marketplace": "EBAY_GB",
-    "max_price": 3000.0,
+    "max_price": 5000.0,
     "threshold": 1.3,
     "spot_gbp_per_oz": 3094.7025981409197,
     "spot_source": "gold-api.com x frankfurter (live, $4,091/oz)",
@@ -27,39 +27,11 @@
       "24": 99.4
     },
     "total_fetched": 300,
-    "total_analysed": 158,
+    "total_analysed": 154,
     "value_count": 8,
-    "weight_unknown_count": 14
+    "weight_unknown_count": 13
   },
   "results": [
-    {
-      "title": "18 K Signet Ring",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 5.6,
-      "current_bid": 424.9,
-      "melt_value": 417.89,
-      "ratio": 0.98,
-      "is_value": true,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/267710342676?_skw=18ct+gold+signet+ring&hash=item3e54c7a614:g:beAAAeSwFU1qPqyi"
-    },
-    {
-      "title": "Mens 18ct Yellow Gold Diamond Signet Ring",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 8.2,
-      "current_bid": 1044.33,
-      "melt_value": 611.91,
-      "ratio": 0.59,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/327130861317?_skw=18ct+gold+signet+ring&hash=item4c2a84cf05:g:3koAAeSwBhJqQBbw&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGb2Jbxoqze3fF7bk0yzRQ5HpQQUx%2BWaTFagn91wmP1rbdAEonmTNMdQuNkm%2BNQ19S4gt5GowtMWMduwc7RV8aGgdg0rfBraIR4uU7BlTPd%2BoLurSxcxe%2Flgnu27qXjXB3XolLWnr1qArryWvyGBBI0I9aWB9EfnrL9l4w188PEX%2BmvJSMrxWSP44vIppQQ70hw8w67n35%2BNS0bcQvv76vk3NZyq9oxnBxa9FXO6Hk0lJsDud8KVcESRymUjFgNjmE8a%2B%2B51w6V9KysQwtlqyssWc9sUt2tGPYq891YqTKC6j0CukN%2By0KLbXO7m4WN%2B5Qg%3D"
-    },
     {
       "title": "18ct Yellow Gold Signet Ring Unengraved - Men's/Women's Solid 8.18g",
       "carat": 18,
@@ -73,6 +45,48 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/188555748513?_skw=18ct+gold+signet+ring&hash=item2be6cc64a1:g:xNQAAeSwrk1qKS-u"
+    },
+    {
+      "title": "Mens 18ct Yellow Gold Diamond Signet Ring",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 8.2,
+      "current_bid": 1044.33,
+      "melt_value": 611.91,
+      "ratio": 0.59,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/327130861317?_skw=18ct+gold+signet+ring&hash=item4c2a84cf05:g:3koAAeSwBhJqQBbw&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGb2Jbxoqze3fF7bk0yzRQ5HpQQUx%2BWaTFagn91wmP1rbdAEonmTNMdQuNkm%2BNQ19S4gt5GowtMWMduwc7RV8aGgdg0rfBraIR4uU7BlTPd%2BoLurSxcxe%2Flgnu27qXjXB3XnoQhOj7JlFcgZ1OER9w4QJGn%2B8DikacYHmdTwHwgN%2Fvr9%2BWLSsFnAAZ%2BGQx01m0FpaB72N6HuYsTocN%2BmVEmJqA3CY7IFsxtP71GwZHvbsZbeljQ%2F5sTICVgPkXoasIbpRO6f97ecqoFEUv88QorWh8S7meaEC2JQ%2BGiLxhQPUtSP4MW%2F8XieXxyKsPul%2BJ4%3D"
+    },
+    {
+      "title": "Ladies 18Ct Gold Ring With Emeralds & Diamonds (Size N) In Excellent Condition",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 4.0,
+      "current_bid": 389.2,
+      "melt_value": 298.49,
+      "ratio": 0.77,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/327005699354?_skw=18ct+gold+signet+ring&hash=item4c230efd1a:g:ZywAAeSw1KlplEnA&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGa195uwdeaZWPU9WvU1R%2FFSDOl5o0UrXJtR5wyNM%2FmZWKqQaMGDemu6CTE9%2FTcZpoAKv5kDjjrL5i71A%2FpJD9DlEhqNqWHxkbMbnTYviUjWtBGGBbtqkYXdHiDfur5kn5ou3aLP9Ce4VlZf7OYOjbl50Fd0PYCcscsnqIadxZOqoNocgoao2BRUOCEcxeo3iA2Mb%2Fi5w5hKjk2G4PE8S08DJBmZhHo8C0QdlAA8g4mTGr2OCdUfrkkDXb8S1dbLnivKJHE%2Bn8kUpR5PftLWn4eTarJbUhk7ZtbZtbng3ntXdA%3D%3D"
+    },
+    {
+      "title": "18 K Signet Ring",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 5.6,
+      "current_bid": 424.9,
+      "melt_value": 417.89,
+      "ratio": 0.98,
+      "is_value": true,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/267710342676?_skw=18ct+gold+signet+ring&hash=item3e54c7a614:g:beAAAeSwFU1qPqyi"
     },
     {
       "title": "Stunning Antique 18ct Gold Diamond Solitaire Signet Ring 10 Grams",
@@ -117,6 +131,20 @@
       "url": "https://www.ebay.co.uk/itm/198426138414?_skw=18ct+gold+signet+ring&hash=item2e331e972e:g:~7AAAeSw7IhqLTkg"
     },
     {
+      "title": "Cartier 18k White Gold Ring 52 size,6,2 gr",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 6.2,
+      "current_bid": 618.7,
+      "melt_value": 462.66,
+      "ratio": 0.75,
+      "is_value": false,
+      "buying": "Auction",
+      "time_left": "3d 3h",
+      "bids": 0,
+      "url": "https://www.ebay.co.uk/itm/137449750599?_skw=18ct+gold+signet+ring&hash=item2000a4c047:g:toUAAeSw8HVqMZnY"
+    },
+    {
       "title": "18ct yellow gold signet ring set with an old mine cut diamond 0.57pts 8.9g",
       "carat": 18,
       "carat_assumed": false,
@@ -129,20 +157,6 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/800236011090?_skw=18ct+gold+signet+ring&hash=itemba51c87e52:g:tpYAAeSwKWdqO8oQ"
-    },
-    {
-      "title": "Cartier 18k White Gold Ring 52 size,6,2 gr",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 6.2,
-      "current_bid": 618.7,
-      "melt_value": 462.66,
-      "ratio": 0.75,
-      "is_value": false,
-      "buying": "Auction",
-      "time_left": "3d 4h",
-      "bids": 0,
-      "url": "https://www.ebay.co.uk/itm/137449750599?_skw=18ct+gold+signet+ring&hash=item2000a4c047:g:toUAAeSw8HVqMZnY"
     },
     {
       "title": "LARGE ANTIQUE 18CT SOLID GOLD SIGNET RING - HENRY GRIFFITH & SON 1852. 5.7 GRAMS",
@@ -159,18 +173,18 @@
       "url": "https://www.ebay.co.uk/itm/267531758062?_skw=18ct+gold+signet+ring&hash=item3e4a22a9ee:g:TqQAAeSwjQJpV~R0"
     },
     {
-      "title": "Nice Men's 18ct Yellow Gold 0.15ct Diamond Signet Ring Size T Weight 8.2 Grams",
+      "title": "18ct yellow gold engraved \"CK\" signet ring size: Q",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 8.2,
-      "current_bid": 985.0,
-      "melt_value": 611.91,
-      "ratio": 0.62,
+      "weight_g": 7.5,
+      "current_bid": 1125.0,
+      "melt_value": 559.67,
+      "ratio": 0.5,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/377066736152?_skw=18ct+gold+signet+ring&hash=item57caedca18:g:CUgAAeSwgyhpxliS"
+      "url": "https://www.ebay.co.uk/itm/277639400306?_skw=18ct+gold+signet+ring&hash=item40a4990b72:g:LEYAAeSwhF9pXRB8"
     },
     {
       "title": "Bvlgari Bronze and 18ct rose gold dimaond signet 312355",
@@ -187,32 +201,18 @@
       "url": "https://www.ebay.co.uk/itm/137190274396?_skw=18ct+gold+signet+ring&hash=item1ff12d755c:g:qK4AAeSw9ChpznMH"
     },
     {
-      "title": "18 ct Gold Signet Ring Square With Sparkly Cluster Yellow Gold - Size Q",
+      "title": "VICTORIAN 18CT GOLD SIGNET RING UK T BEAUTIFUL SOLID GOLD RING",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 7.1,
-      "current_bid": 1100.0,
-      "melt_value": 529.82,
-      "ratio": 0.48,
+      "weight_g": 4.52,
+      "current_bid": 659.0,
+      "melt_value": 337.29,
+      "ratio": 0.51,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/267653126218?_skw=18ct+gold+signet+ring&hash=item3e515e984a:g:F28AAeSw8s9pfLcc&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbJTHQoLXE6Yg466NsQhX3qhzEd10xKYXwqqTP%2BvypPLDPY%2Bkn9xMfrj0xFXHM8h%2F4TdIjATmC1ETBWCuQmlE3%2BA8FDhaAkZZ0wQ2raInQlCrHYenGuJ8L2HPkfVUUIUCAfstFIwSJ%2FEx4x%2FqFJNop0y8LIgdTr%2BhXWtHJbaIUKiQRCaDacWvSvQZDELL8qBjjsmW7HiEXA7Sp5ys%2FJ4HkIO2RwqjfSCq7sgf0s1Za%2BGBORyPwaHI4Ecn2ni0P1dvgkuL%2FW7l6iJ45d0dd%2BrHKo3yzDDOplYdiFTOW32kHx7A%3D%3D"
-    },
-    {
-      "title": "18ct yellow gold engraved \"CK\" signet ring size: Q",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 7.5,
-      "current_bid": 1125.0,
-      "melt_value": 559.67,
-      "ratio": 0.5,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/277639400306?_skw=18ct+gold+signet+ring&hash=item40a4990b72:g:LEYAAeSwhF9pXRB8"
+      "url": "https://www.ebay.co.uk/itm/168476483101?_skw=18ct+gold+signet+ring&hash=item2739fb1e1d:g:FOQAAeSw7uZo906c&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGaM2JH1u2dLdqXsKRASj3rkuNbxVunCjhbVJhlrhzkVK1MG%2B6jaLCLCqyLRKzKsuSNZLPHx2aD%2BfhUU5uDcpPK9tSJmZBklt65s8n2%2FktJWsUSymHsWrhAwCvmMqBCHpqzxZVq3AbQebYFbQBgQJv76%2FkDSsrD4eR9atkrwPMKF2oNncGnNJxKaTFd5xKP2%2B3cPJhDO5B02asIiI%2Bnt6PvjNz4sxoRBj4bvjdtE22PlYjJKKYO7tyjWWE%2FpBS19%2BXMN9QLdBpCQAwz%2F8mxVW21HT7pjRAodDqdpAxVxMetxVQ%3D%3D"
     },
     {
       "title": "18ct Gold 12 Stone Diamond Cluster Signet Ring Chunky Vintage Men’s 13.39g UK S",
@@ -229,32 +229,18 @@
       "url": "https://www.ebay.co.uk/itm/377209963610?_skw=18ct+gold+signet+ring&hash=item57d377445a:g:wU4AAeSwd2xqFEGP"
     },
     {
-      "title": "HEAVY 18 ct Solid Gold Vintage  Ring (16 gms) Hallmarked (Size U 10)",
+      "title": "Nice Men's 18ct Yellow Gold 0.15ct Diamond Signet Ring Size T Weight 8.2 Grams",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 16.0,
-      "current_bid": 2555.68,
-      "melt_value": 1193.96,
-      "ratio": 0.47,
+      "weight_g": 8.2,
+      "current_bid": 985.0,
+      "melt_value": 611.91,
+      "ratio": 0.62,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/236896318748?_skw=18ct+gold+signet+ring&hash=item37281ef51c:g:dIAAAeSw9SNqO~r7"
-    },
-    {
-      "title": "VICTORIAN 18CT GOLD SIGNET RING UK T BEAUTIFUL SOLID GOLD RING",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 4.52,
-      "current_bid": 659.0,
-      "melt_value": 337.29,
-      "ratio": 0.51,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/168476483101?_skw=18ct+gold+signet+ring&hash=item2739fb1e1d:g:FOQAAeSw7uZo906c"
+      "url": "https://www.ebay.co.uk/itm/377066736152?_skw=18ct+gold+signet+ring&hash=item57caedca18:g:CUgAAeSwgyhpxliS"
     },
     {
       "title": "18ct Yellow Gold Carnelian Signet Ring",
@@ -271,6 +257,20 @@
       "url": "https://www.ebay.co.uk/itm/800232414524?_skw=18ct+gold+signet+ring&hash=itemba51919d3c:g:9aoAAeSw2bRqO3IU"
     },
     {
+      "title": "HEAVY 18 ct Solid Gold Vintage  Ring (16 gms) Hallmarked (Size U 10)",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 16.0,
+      "current_bid": 2555.68,
+      "melt_value": 1193.96,
+      "ratio": 0.47,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/236896318748?_skw=18ct+gold+signet+ring&hash=item37281ef51c:g:dIAAAeSw9SNqO~r7"
+    },
+    {
       "title": "18ct Gold Modernist Ring With Diamond, 1970’s Vintage Geometric Signet",
       "carat": 18,
       "carat_assumed": false,
@@ -285,46 +285,18 @@
       "url": "https://www.ebay.co.uk/itm/227270104863?_skw=18ct+gold+signet+ring&hash=item34ea5a971f:g:Io0AAeSwQbRpwXpj"
     },
     {
-      "title": "HEAVY Antique 18ct Solid Yellow Gold Signet Ring 1926 - Wear / Scrap - 6.22g",
+      "title": "Vintage 18ct Yellow Gold Signet Ring 2.2g - Circular Cartouche Monogram Size N",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 6.22,
-      "current_bid": 495.0,
-      "melt_value": 464.15,
-      "ratio": 0.94,
-      "is_value": true,
-      "buying": "Auction",
-      "time_left": "7d 5h",
-      "bids": 0,
-      "url": "https://www.ebay.co.uk/itm/800237759491?_skw=18ct+gold+signet+ring&hash=itemba51e32c03:g:X0sAAeSw6tJqPAk6"
-    },
-    {
-      "title": "18ct Yellow Gold Diamond Set Signet Ring",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 7.0,
-      "current_bid": 1250.0,
-      "melt_value": 522.36,
-      "ratio": 0.42,
+      "weight_g": 2.2,
+      "current_bid": 276.3,
+      "melt_value": 164.17,
+      "ratio": 0.59,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/127137018394?_skw=18ct+gold+signet+ring&hash=item1d99f4f21a:g:eesAAOSw39VoNL3I"
-    },
-    {
-      "title": "Man's Yellow Gold & Solitaire Diamond Signet Ring, Hallmark Worn, 6gms",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 6.0,
-      "current_bid": 1511.2,
-      "melt_value": 447.74,
-      "ratio": 0.3,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/326798818741?_skw=18ct+gold+signet+ring&hash=item4c16ba3db5:g:1DcAAeSw3ABoy-0S"
+      "url": "https://www.ebay.co.uk/itm/168485224841?_skw=18ct+gold+signet+ring&hash=item273a808189:g:nP8AAeSwielqOpa6"
     },
     {
       "title": "RO Copenhagen 18ct Gold & Diamond Signet Ring Size K SKU R113Y101",
@@ -341,18 +313,46 @@
       "url": "https://www.ebay.co.uk/itm/236666590821?_skw=18ct+gold+signet+ring&hash=item371a6d9665:g:Bn8AAeSwZqVppxBL"
     },
     {
-      "title": "Ladies 18Ct Gold Ring With Emeralds & Diamonds (Size N) In Excellent Condition",
+      "title": "HEAVY Antique 18ct Solid Yellow Gold Signet Ring 1926 - Wear / Scrap - 6.22g",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 4.0,
-      "current_bid": 389.2,
-      "melt_value": 298.49,
-      "ratio": 0.77,
+      "weight_g": 6.22,
+      "current_bid": 495.0,
+      "melt_value": 464.15,
+      "ratio": 0.94,
+      "is_value": true,
+      "buying": "Auction",
+      "time_left": "7d 4h",
+      "bids": 0,
+      "url": "https://www.ebay.co.uk/itm/800237759491?_skw=18ct+gold+signet+ring&hash=itemba51e32c03:g:X0sAAeSw6tJqPAk6"
+    },
+    {
+      "title": "Heavy 18ct Yellow Gold Heraldic Gauntlet Signet Ring 11.7g UK R US 8.75",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 11.76,
+      "current_bid": 2128.3,
+      "melt_value": 877.56,
+      "ratio": 0.41,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/327005699354?_skw=18ct+gold+signet+ring&hash=item4c230efd1a:g:ZywAAeSw1KlplEnA&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGa195uwdeaZWPU9WvU1R%2FFSDOl5o0UrXJtR5wyNM%2FmZWKqQaMGDemu6CTE9%2FTcZpoAKv5kDjjrL5i71A%2FpJD9DlEhqNqWHxkbMbnTYviUjWtBGGBbtqkYXdHiDfur5kn5p4ulX6%2BudVx435y4U8%2BpXB58sA0cgHfKZVbIm03pPT8S4t1%2BlmaMcUAegx9B0dPIDDwK4oEA3SaB3jZah1GDa8a1pjNCGlCdn4JFaHkZx5Ey5vfJ9nAYVyq84dbGvI4QhgOmEWGzLp6CGmspk2LwImzbOd3LWOzWOBzyVfRv%2F4Pw%3D%3D"
+      "url": "https://www.ebay.co.uk/itm/398102699949?_skw=18ct+gold+signet+ring&hash=item5cb0c51fad:g:dt0AAeSwQl1qO~x2"
+    },
+    {
+      "title": "Vintage 18ct Gold Hallmarked Signet Ring Sardonyx Stone 11.2 Grams",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 11.2,
+      "current_bid": 1225.6,
+      "melt_value": 835.77,
+      "ratio": 0.68,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/198328019147?_skw=18ct+gold+signet+ring&hash=item2e2d4568cb:g:uIQAAeSwCbZp92cw"
     },
     {
       "title": "Vintage Modernist Diamond Signet Ring 18ct White Gold Size U 4.7g Hallmarked",
@@ -366,21 +366,21 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/168455398095?_skw=18ct+gold+signet+ring&hash=item2738b962cf:g:e28AAeSwIwJqLTIl&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYXq7P9vROucwhnW3rCKbJfJUdIoMuPbdSzEi5s4IjLKSwnLKOKlcm1OxpjLlnNv47EVpbaLOzCTb45NXcJ22grT%2FRuLFxD9cRKkPTOUjZUEDSGd5hO87UJRotcLec%2FhqVWWE93Wm%2BKZPP6tpXy7ggE8x%2Fj6e7gvYhNxllP9BMcj0qM2Uhn2DZu%2Fo3RTjkEZtk40r%2F5zqnNIt0o96v5M45ZTOepjA0%2FcEWpZfttB45i1ZG0damM0OSKB16TMRdrdLQJwEE5JT%2Bhg3MBEqA9hhoeF%2BRbRxzAAnqwO%2FDQtmIXtQ%3D%3D"
+      "url": "https://www.ebay.co.uk/itm/168455398095?_skw=18ct+gold+signet+ring&hash=item2738b962cf:g:e28AAeSwIwJqLTIl&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYXq7P9vROucwhnW3rCKbJfJUdIoMuPbdSzEi5s4IjLKSwnLKOKlcm1OxpjLlnNv47EVpbaLOzCTb45NXcJ22grT%2FRuLFxD9cRKkPTOUjZUEDSGd5hO87UJRotcLec%2FhqX37kocv4ViKWfkrx4Of0%2FDyyQ94b9jXlMISVcH7b6OOYtyFEGsR7UziujoJJ56jp%2B6LCfnKnmQ3gA61jHRA5FYKB3SwdZ4aKG%2FmILLv4T89dl3a9VPYgQbWxAF5iDoe0idkuHPwbyGkVqMDM%2F47RKPNjYPX0s2oTPighg%2B7DEB2Q%3D%3D"
     },
     {
-      "title": "18ct Yellow Gold Rhodolite Garnet Signet Ring - Size U - 14mm",
+      "title": "18 ct Gold Signet Ring Square With Sparkly Cluster Yellow Gold - Size Q",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 11.2,
-      "current_bid": 1650.0,
-      "melt_value": 835.77,
-      "ratio": 0.51,
+      "weight_g": 7.1,
+      "current_bid": 1100.0,
+      "melt_value": 529.82,
+      "ratio": 0.48,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/267689371916?_skw=18ct+gold+signet+ring&hash=item3e5387a90c:g:TGsAAeSweGlqIT7u&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGainVgecQ%2FL%2BSOrqk0ZYIeSy839iv0XX%2FoPxfReEVYTyTMdH6lEx099GX3uHVmoENB1%2B226j5sQzAZcO%2FmH6zy%2F2DAxeGlKP8kOKJIOFcISyhtYQTxRIqoVzOqaEWCSCVmEZ%2BgU7oGEy6CmsJTNR7hNB8qkLx2gkmbIFdUZXVZS7ZUZSFgxCWbKzPsmvp6pvrEcxaICYtMFU7XVO8e12rGAoAZON2CLm%2Bl%2BZJLifsSve3n0g%2F3C7as48mnqSGHzpQJTprVR1D07W1vKQkH%2By2Ba9smzThFdSfyR%2B652%2FxUuKQ%3D%3D"
+      "url": "https://www.ebay.co.uk/itm/267653126218?_skw=18ct+gold+signet+ring&hash=item3e515e984a:g:F28AAeSw8s9pfLcc&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbJTHQoLXE6Yg466NsQhX3qhzEd10xKYXwqqTP%2BvypPLDPY%2Bkn9xMfrj0xFXHM8h%2F4TdIjATmC1ETBWCuQmlE3%2BA8FDhaAkZZ0wQ2raInQlCrHYenGuJ8L2HPkfVUUIUCCZC%2Ba3o4xJW06tCO%2Fd4riHwK9wWMiBwCySViJAPOmSjHf6U%2BF0QW9B3%2BVGo9CHXbTjPUXhTS8vPTIdRgD3P%2BhOszse4Jum1i%2BpurQq0JBW32Qz2jM3ewjYnocgvEUc2yAFTuBi%2FNnEbI2hVZ5juScqVZ2ppIvvLI37nRvSS9GJCg%3D%3D"
     },
     {
       "title": "18ct yellow gold engraved \"RS\" signet ring size \"U 1/2\"",
@@ -395,20 +395,6 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/277639389769?_skw=18ct+gold+signet+ring&hash=item40a498e249:g:Go4AAeSwH8tpXRPg"
-    },
-    {
-      "title": "Vintage 18ct Yellow Gold Signet Ring 2.2g - Circular Cartouche Monogram Size N",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 2.2,
-      "current_bid": 276.3,
-      "melt_value": 164.17,
-      "ratio": 0.59,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/168485224841?_skw=18ct+gold+signet+ring&hash=item273a808189:g:nP8AAeSwielqOpa6"
     },
     {
       "title": " 18ct Yellow / White Gold 9 Stone Brilliant Cut 0.36ct  Diamond Signet Ring 7.7g",
@@ -439,34 +425,6 @@
       "url": "https://www.ebay.co.uk/itm/389750784163?_skw=18ct+gold+signet+ring&hash=item5abef500a3:g:XIsAAeSwKcVpSYsM"
     },
     {
-      "title": "Vintage 18ct Gold Hallmarked Signet Ring Sardonyx Stone 11.2 Grams",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 11.2,
-      "current_bid": 1225.6,
-      "melt_value": 835.77,
-      "ratio": 0.68,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/198328019147?_skw=18ct+gold+signet+ring&hash=item2e2d4568cb:g:uIQAAeSwCbZp92cw"
-    },
-    {
-      "title": "18ct Gold Square Signet Ring Plain & Patterned Size Q Hallmarked 14mm High 9.8g",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 9.8,
-      "current_bid": 1845.0,
-      "melt_value": 731.3,
-      "ratio": 0.4,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/267425842595?_skw=18ct+gold+signet+ring&hash=item3e43d285a3:g:EJYAAeSwpxdo1~nj"
-    },
-    {
       "title": "Victorian Rose Cut Diamond Masonic 18ct & 9ct Yellow Gold Signet Ring size P 1/2",
       "carat": 18,
       "carat_assumed": false,
@@ -478,7 +436,7 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/116468837892?_skw=18ct+gold+signet+ring&hash=item1b1e156e04:g:CsIAAOSwglpnpDBe&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbUYLqV8nkPbvZftmRR%2FAOl45PiC%2FG6bEUozNTUGhgZw4bDzX%2Fvd8qO1UAPqyZ1BuBvYSE%2Btc6RncX9Xnsb4KpE1aGVQb6ThAJ2stADM6VjSFJ%2BSUWMl%2FOFwxOFSXel59a%2BS5nCaqIl%2F%2B4ZYY63dq8Ku2AHsSxGdHka12Syjr4wBKM30jg6Y7EqGRVark7SuUBhbZ%2F1pKAN8Z2vfafMlDweWGgHmyqS3NL%2Fz7irFQQl651NwQrOxMu7Tg0crj38tRGdEbEMgWieNyVpNYlWaHPF3pNK55p3JGBtWOLPOvvsEA%3D%3D"
+      "url": "https://www.ebay.co.uk/itm/116468837892?_skw=18ct+gold+signet+ring&hash=item1b1e156e04:g:CsIAAOSwglpnpDBe&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbUYLqV8nkPbvZftmRR%2FAOl45PiC%2FG6bEUozNTUGhgZw4bDzX%2Fvd8qO1UAPqyZ1BuBvYSE%2Btc6RncX9Xnsb4KpE1aGVQb6ThAJ2stADM6VjSFJ%2BSUWMl%2FOFwxOFSXel59ZZ%2By3yJzPMaVQZb9vi3bGAP%2Fbw3rZuva9Yx19XW3hwq4fumh55aJdp2ZA7s5hHXOGnu5L8cKxomr7PrYWf%2BvdVPn96MwLTRu86FUc6FGe3vxtXLK%2FVfADfowZi4vkrUeFlDY8OnqOyGR6O8vbdG8zP87CKQlogflF7%2FLnXSD%2BcbA%3D%3D"
     },
     {
       "title": "Antique Victorian 18ct Gold Signet Ring Eagle Intaglio Crest 6.2g size i",
@@ -493,6 +451,20 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/168023367376?_skw=18ct+gold+signet+ring&hash=item271ef91ed0:g:l9UAAeSwv3JpSX5s"
+    },
+    {
+      "title": "18ct Gold Square Signet Ring Plain & Patterned Size Q Hallmarked 14mm High 9.8g",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 9.8,
+      "current_bid": 1845.0,
+      "melt_value": 731.3,
+      "ratio": 0.4,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/267425842595?_skw=18ct+gold+signet+ring&hash=item3e43d285a3:g:EJYAAeSwpxdo1~nj"
     },
     {
       "title": "18ct Yellow Gold Plain Signet Ring Size U 12 14.1g - GY3",
@@ -523,18 +495,18 @@
       "url": "https://www.ebay.co.uk/itm/157845567843?_skw=18ct+gold+signet+ring&hash=item24c0543963:g:VQsAAeSwATdp49Pc"
     },
     {
-      "title": "Antique 18ct Yellow Gold Signet Ring “PM” Size X 1/2 1928 4.4g",
+      "title": "Vintage Men’s 18ct Gold 4.7g Shield Signet Pinky Ring Size S Hallmarked 1914",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 4.4,
-      "current_bid": 495.0,
-      "melt_value": 328.34,
-      "ratio": 0.66,
+      "weight_g": 4.7,
+      "current_bid": 745.0,
+      "melt_value": 350.73,
+      "ratio": 0.47,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/186313795813?_skw=18ct+gold+signet+ring&hash=item2b612ae8e5:g:XSwAAOSw4TFl2dvE"
+      "url": "https://www.ebay.co.uk/itm/336607210134?_skw=18ct+gold+signet+ring&hash=item4e5f5a6a96:g:W4gAAeSwv49qGGiu"
     },
     {
       "title": "18CT Gold Signet Ring Size T 10g Mens Cubic Zirconia 750 Heavy SALE - FREE POST!",
@@ -565,20 +537,6 @@
       "url": "https://www.ebay.co.uk/itm/177860262662?_skw=18ct+gold+signet+ring&hash=item29694c3b06:g:5osAAeSw~vRpjxAS"
     },
     {
-      "title": "Victorian 18ct Yellow Gold & Bloodstone Signet Ring Uk Size N 4.93g c1873 AELZX",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 4.93,
-      "current_bid": 500.0,
-      "melt_value": 367.89,
-      "ratio": 0.74,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/326036986018?_skw=18ct+gold+signet+ring&hash=item4be95198a2:g:-v8AAOSwuklly8ZZ"
-    },
-    {
       "title": "18ct Gold Diamond Ring 0.5ct 4.24g UK Hallmark Size J 1/2 Boxed",
       "carat": 18,
       "carat_assumed": false,
@@ -591,6 +549,34 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/158004516415?_skw=18ct+gold+signet+ring&hash=item24c9cd963f:g:xKYAAeSwlU9qMU3j"
+    },
+    {
+      "title": "Antique 18ct Yellow Gold Signet Ring “PM” Size X 1/2 1928 4.4g",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 4.4,
+      "current_bid": 495.0,
+      "melt_value": 328.34,
+      "ratio": 0.66,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/186313795813?_skw=18ct+gold+signet+ring&hash=item2b612ae8e5:g:XSwAAOSw4TFl2dvE"
+    },
+    {
+      "title": "Victorian 18ct Yellow Gold & Bloodstone Signet Ring Uk Size N 4.93g c1873 AELZX",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 4.93,
+      "current_bid": 500.0,
+      "melt_value": 367.89,
+      "ratio": 0.74,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/326036986018?_skw=18ct+gold+signet+ring&hash=item4be95198a2:g:-v8AAOSwuklly8ZZ"
     },
     {
       "title": "18ct White Gold Diamond Signet Style Ring",
@@ -607,18 +593,18 @@
       "url": "https://www.ebay.co.uk/itm/277950012314?_skw=18ct+gold+signet+ring&hash=item40b71c9b9a:g:oJAAAeSwZKtqLXS2"
     },
     {
-      "title": "Heavy 18ct Gold Gypsy Style Ring Set .61 Brilliant Cut Diamond 5.45g Size S COA",
+      "title": "LAUD 18ct Gold Double Sided Signet Ring",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 5.45,
-      "current_bid": 1281.7,
-      "melt_value": 406.69,
-      "ratio": 0.32,
+      "weight_g": 16.8,
+      "current_bid": 4500.0,
+      "melt_value": 1253.66,
+      "ratio": 0.28,
       "is_value": false,
-      "buying": "Auction",
-      "time_left": "20m",
-      "bids": 0,
-      "url": "https://www.ebay.co.uk/itm/206356540218?_skw=18ct+gold+signet+ring&hash=item300bceeb3a:g:PdQAAeSwMXhoF8w1"
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/204275827325?_skw=18ct+gold+signet+ring&hash=item2f8fc9c27d:g:K40AAOSwsKJkExPG"
     },
     {
       "title": "VINTAGE 18CT GOLD BLUE SAPPHIRE & DIAMOND EDWARDIAN TABLET SIGNET RING SIZE O½ P",
@@ -633,76 +619,6 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/186551342092?_skw=18ct+gold+signet+ring&hash=item2b6f53940c:g:2m0AAOSwdWxmjTFH"
-    },
-    {
-      "title": "Gents/mens 18ct yellow gold signet ring set with a diamond, UK size R",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 8.5,
-      "current_bid": 1459.92,
-      "melt_value": 634.29,
-      "ratio": 0.43,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/168134671640?_skw=18ct+gold+signet+ring&hash=item27259b7d18:g:sBsAAOSws7JkSRPe"
-    },
-    {
-      "title": "Heavy 18ct Yellow Gold Heraldic Gauntlet Signet Ring 11.7g UK R US 8.75",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 11.76,
-      "current_bid": 2128.3,
-      "melt_value": 877.56,
-      "ratio": 0.41,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/398102699949?_skw=18ct+gold+signet+ring&hash=item5cb0c51fad:g:dt0AAeSwQl1qO~x2"
-    },
-    {
-      "title": "18ct Yellow Gold Diamond Signet Ring (Size T) 10.2 grams",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 10.2,
-      "current_bid": 1850.0,
-      "melt_value": 761.15,
-      "ratio": 0.41,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/389765343141?_skw=18ct+gold+signet+ring&hash=item5abfd327a5:g:UDQAAeSwJYhpuoDu"
-    },
-    {
-      "title": "Vintage 18ct Diamond Old CutSingle Stone Band Ring Yellow Gold Hallmarked Size J",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 3.6,
-      "current_bid": 575.0,
-      "melt_value": 268.64,
-      "ratio": 0.47,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/334896173383?_skw=18ct+gold+signet+ring&hash=item4df95e1147:g:oVsAAOSwK1NhjrEK"
-    },
-    {
-      "title": "Vintage Men’s 18ct Gold 4.7g Shield Signet Pinky Ring Size S Hallmarked 1914",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 4.7,
-      "current_bid": 745.0,
-      "melt_value": 350.73,
-      "ratio": 0.47,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/336607210134?_skw=18ct+gold+signet+ring&hash=item4e5f5a6a96:g:W4gAAeSwv49qGGiu"
     },
     {
       "title": "18ct White Gold Black Diamond Smiley Face Signet Ring. Goldmine Jewellers.",
@@ -733,6 +649,34 @@
       "url": "https://www.ebay.co.uk/itm/306356054197?_skw=18ct+gold+signet+ring&hash=item47543e68b5:g:oJ4AAOSweyllW68g"
     },
     {
+      "title": "Gents/mens 18ct yellow gold signet ring set with a diamond, UK size R",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 8.5,
+      "current_bid": 1459.92,
+      "melt_value": 634.29,
+      "ratio": 0.43,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/168134671640?_skw=18ct+gold+signet+ring&hash=item27259b7d18:g:sBsAAOSws7JkSRPe"
+    },
+    {
+      "title": "Vintage 18ct Diamond Old CutSingle Stone Band Ring Yellow Gold Hallmarked Size J",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 3.6,
+      "current_bid": 575.0,
+      "melt_value": 268.64,
+      "ratio": 0.47,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/334896173383?_skw=18ct+gold+signet+ring&hash=item4df95e1147:g:oVsAAOSwK1NhjrEK"
+    },
+    {
       "title": "18ct Gold Diamond Ring 4.96g Alternative Size T - Fully Hallmarked",
       "carat": 18,
       "carat_assumed": false,
@@ -756,7 +700,7 @@
       "ratio": 0.77,
       "is_value": false,
       "buying": "Auction",
-      "time_left": "1d 1h",
+      "time_left": "1d 0h",
       "bids": 0,
       "url": "https://www.ebay.co.uk/itm/327227192820?_skw=18ct+gold+signet+ring&hash=item4c3042b5f4:g:mzIAAeSww81qMDHb"
     },
@@ -775,18 +719,46 @@
       "url": "https://www.ebay.co.uk/itm/297663178887?_skw=18ct+gold+signet+ring&hash=item454e1ba887:g:mAgAAeSwzoJo47OZ"
     },
     {
-      "title": "Chunky Vintage 18ct Gold Carnelian Pinky Signet Ring",
+      "title": "18ct Gold Snake Ring Almandine Garnet 6.5 grams Victorian Antique 1899 size V",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 3.6,
-      "current_bid": 550.0,
-      "melt_value": 268.64,
+      "weight_g": 6.5,
+      "current_bid": 998.0,
+      "melt_value": 485.05,
       "ratio": 0.49,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/318332136593?_skw=18ct+gold+signet+ring&hash=item4a1e12ec91:g:twsAAeSweINqDZyY"
+      "url": "https://www.ebay.co.uk/itm/298383998670?_skw=18ct+gold+signet+ring&hash=item4579127ece:g:J-cAAeSw7MFpE09i"
+    },
+    {
+      "title": "18ct Yellow Gold Diamond Set Signet Ring",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 7.0,
+      "current_bid": 1250.0,
+      "melt_value": 522.36,
+      "ratio": 0.42,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/127137018394?_skw=18ct+gold+signet+ring&hash=item1d99f4f21a:g:eesAAOSw39VoNL3I"
+    },
+    {
+      "title": "Gents Antique Sardonyx 18ct Gold Signet Ring",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 4.97,
+      "current_bid": 1230.7,
+      "melt_value": 370.88,
+      "ratio": 0.3,
+      "is_value": false,
+      "buying": "Auction",
+      "time_left": "1h 27m",
+      "bids": 0,
+      "url": "https://www.ebay.co.uk/itm/327225342492?_skw=18ct+gold+signet+ring&hash=item4c30267a1c:g:rqgAAeSw0t5p7lCx"
     },
     {
       "title": "18ct Gold Diamond Ring 11.6g Signet Size T 1/2 - Fully Hallmarked",
@@ -803,18 +775,32 @@
       "url": "https://www.ebay.co.uk/itm/127853286349?_skw=18ct+gold+signet+ring&hash=item1dc4a653cd:g:yVUAAeSwcg9p~aTv"
     },
     {
-      "title": "18ct Gold Gents Multicolour Gold Signet Ring. Goldmine Jewellers",
+      "title": "Chunky Vintage 18ct Gold Carnelian Pinky Signet Ring",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 9.5,
-      "current_bid": 1350.0,
-      "melt_value": 708.92,
-      "ratio": 0.53,
+      "weight_g": 3.6,
+      "current_bid": 550.0,
+      "melt_value": 268.64,
+      "ratio": 0.49,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/157986934406?_skw=18ct+gold+signet+ring&hash=item24c8c14e86:g:eXAAAeSwKTxqKUL4"
+      "url": "https://www.ebay.co.uk/itm/318332136593?_skw=18ct+gold+signet+ring&hash=item4a1e12ec91:g:twsAAeSweINqDZyY"
+    },
+    {
+      "title": "18ct Moissanite Signet ring in Yellow Gold. Pinky Signet ring. Size J",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 2.18,
+      "current_bid": 460.0,
+      "melt_value": 162.68,
+      "ratio": 0.35,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/278002907072?_skw=18ct+gold+signet+ring&hash=item40ba43b7c0:g:JdAAAeSw5bBqDMlf"
     },
     {
       "title": "\"18ct Solid Gold Boxing Hare Intaglio Seal Ring\" Size M Heavy 12.0g",
@@ -845,18 +831,32 @@
       "url": "https://www.ebay.co.uk/itm/257455725245?_skw=18ct+gold+signet+ring&hash=item3bf18e9abd:g:bdEAAeSwAaFp3QOA"
     },
     {
-      "title": "18ct Moissanite Signet ring in Yellow Gold. Pinky Signet ring. Size J",
+      "title": "18ct Yellow Gold Diamond Signet Ring (Size T) 10.2 grams",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 2.18,
-      "current_bid": 460.0,
-      "melt_value": 162.68,
-      "ratio": 0.35,
+      "weight_g": 10.2,
+      "current_bid": 1850.0,
+      "melt_value": 761.15,
+      "ratio": 0.41,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/278002907072?_skw=18ct+gold+signet+ring&hash=item40ba43b7c0:g:JdAAAeSw5bBqDMlf"
+      "url": "https://www.ebay.co.uk/itm/389765343141?_skw=18ct+gold+signet+ring&hash=item5abfd327a5:g:UDQAAeSwJYhpuoDu"
+    },
+    {
+      "title": "Man's Yellow Gold & Solitaire Diamond Signet Ring, Hallmark Worn, 6gms",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 6.0,
+      "current_bid": 1511.2,
+      "melt_value": 447.74,
+      "ratio": 0.3,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/326798818741?_skw=18ct+gold+signet+ring&hash=item4c16ba3db5:g:1DcAAeSw3ABoy-0S"
     },
     {
       "title": "18ct WHITE GOLD DIAMOND CLUSTER SIGNET RING 750 GENTS LADIES 0.50 TCW EXCELLENT",
@@ -871,34 +871,6 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/317104043219?_skw=18ct+gold+signet+ring&hash=item49d4dfb4d3:g:vwwAAeSwhNloflpi"
-    },
-    {
-      "title": "18ct Gold Snake Ring Almandine Garnet 6.5 grams Victorian Antique 1899 size V",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 6.5,
-      "current_bid": 998.0,
-      "melt_value": 485.05,
-      "ratio": 0.49,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/298383998670?_skw=18ct+gold+signet+ring&hash=item4579127ece:g:J-cAAeSw7MFpE09i"
-    },
-    {
-      "title": "Gents Antique Sardonyx 18ct Gold Signet Ring",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 4.97,
-      "current_bid": 1230.7,
-      "melt_value": 370.88,
-      "ratio": 0.3,
-      "is_value": false,
-      "buying": "Auction",
-      "time_left": "2h 41m",
-      "bids": 0,
-      "url": "https://www.ebay.co.uk/itm/327225342492?_skw=18ct+gold+signet+ring&hash=item4c30267a1c:g:rqgAAeSw0t5p7lCx"
     },
     {
       "title": "Vintage Art Deco 18ct Yellow Gold Signet Ring UK S1/2 US 9.5",
@@ -929,6 +901,20 @@
       "url": "https://www.ebay.co.uk/itm/398048377139?_skw=18ct+gold+signet+ring&hash=item5cad883933:g:9ocAAeSwCCNqKUXV"
     },
     {
+      "title": "18k Gold & diamond Gents Signet Ring. Size N",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 10.3,
+      "current_bid": 1791.7,
+      "melt_value": 768.61,
+      "ratio": 0.43,
+      "is_value": false,
+      "buying": "Auction",
+      "time_left": "23h 20m",
+      "bids": 0,
+      "url": "https://www.ebay.co.uk/itm/358710185436?_skw=18ct+gold+signet+ring&hash=item5384cb0ddc:g:Qf4AAeSw0QpqOTRs"
+    },
+    {
       "title": "Gents/mens 18ct yellow gold signet ring set with a diamond, UK size R",
       "carat": 18,
       "carat_assumed": false,
@@ -957,18 +943,32 @@
       "url": "https://www.ebay.co.uk/itm/267673204928?_skw=18ct+gold+signet+ring&hash=item3e5290f8c0:g:61sAAeSwdJBqCtQc"
     },
     {
-      "title": "Vintage Men’s 18ct Gold Oval Black Onyx Signet Ring Size T. 6.1g grams.",
+      "title": "18CT YELLOW GOLD 0.40 CT DIAMOND PINKY/SIGNET RING, SIZE L.1/2, 10.26 GRAMS. LOT",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 6.1,
-      "current_bid": 975.0,
-      "melt_value": 455.2,
-      "ratio": 0.47,
+      "weight_g": 10.28,
+      "current_bid": 1224.99,
+      "melt_value": 767.12,
+      "ratio": 0.63,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/336568823495?_skw=18ct+gold+signet+ring&hash=item4e5d10aec7:g:~ckAAeSwExpphPLe"
+      "url": "https://www.ebay.co.uk/itm/117243495382?_skw=18ct+gold+signet+ring&hash=item1b4c41c3d6:g:WHoAAeSwCCNqKp1w"
+    },
+    {
+      "title": "18ct Gold Gents Multicolour Gold Signet Ring. Goldmine Jewellers",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 9.5,
+      "current_bid": 1350.0,
+      "melt_value": 708.92,
+      "ratio": 0.53,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/157986934406?_skw=18ct+gold+signet+ring&hash=item24c8c14e86:g:eXAAAeSwKTxqKUL4"
     },
     {
       "title": "Genuine Hallmarked Clogau 18ct Gold 1854 Oval Shaped Signet Ring Size R 9.39g",
@@ -985,34 +985,6 @@
       "url": "https://www.ebay.co.uk/itm/137253231504?_skw=18ct+gold+signet+ring&hash=item1ff4ee1b90:g:5g8AAeSwXSNp6KJZ"
     },
     {
-      "title": "Striking Vintage Natural 6.5ct AAAA Tanzanite & Diamond Signet Ring 18ct Gold",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": null,
-      "current_bid": 2400.0,
-      "melt_value": null,
-      "ratio": null,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/197591626643?_skw=18ct+gold+signet+ring&hash=item2e0160f393:g:ZfAAAOSwff9oJiAU"
-    },
-    {
-      "title": "18CT YELLOW GOLD 0.40 CT DIAMOND PINKY/SIGNET RING, SIZE L.1/2, 10.26 GRAMS. LOT",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 10.28,
-      "current_bid": 1224.99,
-      "melt_value": 767.12,
-      "ratio": 0.63,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/117243495382?_skw=18ct+gold+signet+ring&hash=item1b4c41c3d6:g:WHoAAeSwCCNqKp1w"
-    },
-    {
       "title": "Vintage 18K Yellow Gold & Carnelian Signet Ring Size T  -  10",
       "carat": 18,
       "carat_assumed": false,
@@ -1027,32 +999,18 @@
       "url": "https://www.ebay.co.uk/itm/277850008247?_skw=18ct+gold+signet+ring&hash=item40b126aab7:g:kmAAAeSwsl9pyxtf"
     },
     {
-      "title": "18k Gold & diamond Gents Signet Ring. Size N",
+      "title": "Vintage Men’s 18ct Gold Oval Black Onyx Signet Ring Size T. 6.1g grams.",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 10.3,
-      "current_bid": 1791.7,
-      "melt_value": 768.61,
-      "ratio": 0.43,
-      "is_value": false,
-      "buying": "Auction",
-      "time_left": "1d 0h",
-      "bids": 0,
-      "url": "https://www.ebay.co.uk/itm/358710185436?_skw=18ct+gold+signet+ring&hash=item5384cb0ddc:g:Qf4AAeSw0QpqOTRs"
-    },
-    {
-      "title": "Heavy Vintage 18ct Gold Shield Signet Ring",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 8.91,
-      "current_bid": 1250.0,
-      "melt_value": 664.89,
-      "ratio": 0.53,
+      "weight_g": 6.1,
+      "current_bid": 975.0,
+      "melt_value": 455.2,
+      "ratio": 0.47,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/257390750442?_skw=18ct+gold+signet+ring&hash=item3bedaf2aea:g:5R0AAeSwqAhpqDsK"
+      "url": "https://www.ebay.co.uk/itm/336568823495?_skw=18ct+gold+signet+ring&hash=item4e5d10aec7:g:~ckAAeSwExpphPLe"
     },
     {
       "title": "Designer ABL 18K Yellow Gold Natural Asscher Cut Garnet Men's Signet Ring 11.6g",
@@ -1069,18 +1027,46 @@
       "url": "https://www.ebay.co.uk/itm/126091164895?_skw=18ct+gold+signet+ring&hash=item1d5b9e7cdf:g:WI8AAOSwNoFlAMe1"
     },
     {
-      "title": "18ct Mens Gold 3 Stone Diamond Signet Ring",
+      "title": "Heavy Vintage 18ct Gold Shield Signet Ring",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 9.36,
-      "current_bid": 2200.0,
-      "melt_value": 698.47,
-      "ratio": 0.32,
+      "weight_g": 8.91,
+      "current_bid": 1250.0,
+      "melt_value": 664.89,
+      "ratio": 0.53,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/206210155314?_skw=18ct+gold+signet+ring&hash=item3003154332:g:NOIAAeSw3y9p3jdF"
+      "url": "https://www.ebay.co.uk/itm/257390750442?_skw=18ct+gold+signet+ring&hash=item3bedaf2aea:g:5R0AAeSwqAhpqDsK"
+    },
+    {
+      "title": "Striking Vintage Natural 6.5ct AAAA Tanzanite & Diamond Signet Ring 18ct Gold",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": null,
+      "current_bid": 2400.0,
+      "melt_value": null,
+      "ratio": null,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/197591626643?_skw=18ct+gold+signet+ring&hash=item2e0160f393:g:ZfAAAOSwff9oJiAU"
+    },
+    {
+      "title": "18ct Yellow Gold Rhodolite Garnet Signet Ring - Size U - 14mm",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 11.2,
+      "current_bid": 1650.0,
+      "melt_value": 835.77,
+      "ratio": 0.51,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/267689371916?_skw=18ct+gold+signet+ring&hash=item3e5387a90c:g:TGsAAeSweGlqIT7u"
     },
     {
       "title": "Vintage 18ct Yellow Gold Signet Ring, Size O, 2.9 g, Octagonal Front",
@@ -1097,48 +1083,6 @@
       "url": "https://www.ebay.co.uk/itm/178053821372?_skw=18ct+gold+signet+ring&hash=item2974d5b3bc:g:z5UAAeSwzLlp4O1T"
     },
     {
-      "title": "Vintage 18ct Gold Hallmarked Sapphire & Diamond Ladies Signet Ring. ",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 3.2,
-      "current_bid": 495.0,
-      "melt_value": 238.79,
-      "ratio": 0.48,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/398019258887?_skw=18ct+gold+signet+ring&hash=item5cabcbea07:g:jDgAAeSwhe1qHxLD"
-    },
-    {
-      "title": "18k White Gold Diamond Signet Ring  Size R+. Can Be Resize",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": null,
-      "current_bid": 2220.1,
-      "melt_value": null,
-      "ratio": null,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/395292265227?_skw=18ct+gold+signet+ring&hash=item5c09414b0b:g:6IEAAOSwGPplAEzc"
-    },
-    {
-      "title": "18ct GOLD SIGNET RING 750 HM GENTS CLEAR STONE HAND CRAFTED EXCELLENT SIZE W",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 5.5,
-      "current_bid": 999.0,
-      "melt_value": 410.43,
-      "ratio": 0.41,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/316035206197?_skw=18ct+gold+signet+ring&hash=item49952a8c35:g:StgAAOSw~i9kgFAl"
-    },
-    {
       "title": "18ct Yellow Gold Round Sardonyx Signet Ring",
       "carat": 18,
       "carat_assumed": false,
@@ -1151,34 +1095,6 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/397603389586?_skw=18ct+gold+signet+ring&hash=item5c93024092:g:oigAAeSwX2VpW9V~"
-    },
-    {
-      "title": "Vintage Cartier Vivid Green Peridot 18k White Gold Large Tank Band Solo Ring 50",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 11.7,
-      "current_bid": 2250.0,
-      "melt_value": 873.09,
-      "ratio": 0.39,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/204985836506?_skw=18ct+gold+signet+ring&hash=item2fba1ba3da:g:urgAAOSwEvdm4By8"
-    },
-    {
-      "title": "Antique 18ct Gold Ring Diamond UK Hallmark 1916 Size O Boxed",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 2.97,
-      "current_bid": 529.99,
-      "melt_value": 221.63,
-      "ratio": 0.42,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/168460863763?_skw=18ct+gold+signet+ring&hash=item27390cc913:g:Tn8AAeSwpD9ooaJd"
     },
     {
       "title": "18ct Yellow Gold Diamond Band Half Eternity 0.20ct Ring Size P Hallmarked ",
@@ -1195,18 +1111,46 @@
       "url": "https://www.ebay.co.uk/itm/336277614433?_skw=18ct+gold+signet+ring&hash=item4e4bb52f61:g:2CQAAOSw3JhhjrKm"
     },
     {
-      "title": "(AGJ) 18ct Yellow Gold Black Stone Gents Signet Ring Size Q 7.4g",
+      "title": "Vintage Cartier Vivid Green Peridot 18k White Gold Large Tank Band Solo Ring 50",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 7.4,
-      "current_bid": 1035.0,
-      "melt_value": 552.21,
-      "ratio": 0.53,
+      "weight_g": 11.7,
+      "current_bid": 2250.0,
+      "melt_value": 873.09,
+      "ratio": 0.39,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/226923428159?_skw=18ct+gold+signet+ring&var=526560767919&hash=item34d5b0b93f:g:uDYAAeSw0UlqFbxm"
+      "url": "https://www.ebay.co.uk/itm/204985836506?_skw=18ct+gold+signet+ring&hash=item2fba1ba3da:g:urgAAOSwEvdm4By8"
+    },
+    {
+      "title": "18k White Gold Diamond Signet Ring  Size R+. Can Be Resize",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": null,
+      "current_bid": 2220.1,
+      "melt_value": null,
+      "ratio": null,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/395292265227?_skw=18ct+gold+signet+ring&hash=item5c09414b0b:g:6IEAAOSwGPplAEzc"
+    },
+    {
+      "title": "Vintage 18ct Gold Hallmarked Sapphire & Diamond Ladies Signet Ring. ",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 3.2,
+      "current_bid": 495.0,
+      "melt_value": 238.79,
+      "ratio": 0.48,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/398019258887?_skw=18ct+gold+signet+ring&hash=item5cabcbea07:g:jDgAAeSwhe1qHxLD"
     },
     {
       "title": "18ct yellow gold signet ring with small diamonds j048800223496 *",
@@ -1221,6 +1165,62 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/177507278759?_skw=18ct+gold+signet+ring&hash=item2954421fa7:g:tbUAAeSwhk9o9i7j"
+    },
+    {
+      "title": "Heavy 18ct Gold Gypsy Style Ring Set .61 Brilliant Cut Diamond 5.45g Size S COA",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 5.45,
+      "current_bid": 1281.7,
+      "melt_value": 406.69,
+      "ratio": 0.32,
+      "is_value": false,
+      "buying": "Auction",
+      "time_left": "9d 23h",
+      "bids": 0,
+      "url": "https://www.ebay.co.uk/itm/206379243287?_skw=18ct+gold+signet+ring&hash=item300d295717:g:PdQAAeSwMXhoF8w1"
+    },
+    {
+      "title": "18ct GOLD SIGNET RING 750 HM GENTS CLEAR STONE HAND CRAFTED EXCELLENT SIZE W",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 5.5,
+      "current_bid": 999.0,
+      "melt_value": 410.43,
+      "ratio": 0.41,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/316035206197?_skw=18ct+gold+signet+ring&hash=item49952a8c35:g:StgAAOSw~i9kgFAl"
+    },
+    {
+      "title": "(AGJ) 18ct Yellow Gold Black Stone Gents Signet Ring Size Q 7.4g",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 7.4,
+      "current_bid": 1035.0,
+      "melt_value": 552.21,
+      "ratio": 0.53,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/226923428159?_skw=18ct+gold+signet+ring&hash=item34d5b0b93f:g:uDYAAeSw0UlqFbxm"
+    },
+    {
+      "title": "18ct Mens Gold 3 Stone Diamond Signet Ring",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 9.36,
+      "current_bid": 2200.0,
+      "melt_value": 698.47,
+      "ratio": 0.32,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/206210155314?_skw=18ct+gold+signet+ring&hash=item3003154332:g:NOIAAeSw3y9p3jdF"
     },
     {
       "title": "Vintage 18Ct Gold And Solitaire Diamond Signet Ring by Bravingtons 12.5g",
@@ -1251,18 +1251,18 @@
       "url": "https://www.ebay.co.uk/itm/358551499673?_skw=18ct+gold+signet+ring&hash=item537b55b399:g:O6UAAeSwwSZqBHCY"
     },
     {
-      "title": "Vintage 11.22g 18K Solid Gold Signet Ring With A Carnelian Intaglio Carved Stone",
+      "title": "Gorgeous 18ct Yellow Gold Diamond Set Heart Ring  Size N - Hallmarked",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 11.22,
-      "current_bid": 2556.7,
-      "melt_value": 837.27,
-      "ratio": 0.33,
+      "weight_g": 7.73,
+      "current_bid": 1200.0,
+      "melt_value": 576.83,
+      "ratio": 0.48,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/318459636867?_skw=18ct+gold+signet+ring&hash=item4a25ac6c83:g:UUUAAeSwNk5qMDBv"
+      "url": "https://www.ebay.co.uk/itm/235689618313?_skw=18ct+gold+signet+ring&hash=item36e0322b89:g:hAMAAOSwN99mtheg"
     },
     {
       "title": "18 CT Hallmarked Gold  Solitaire Ring ",
@@ -1279,18 +1279,18 @@
       "url": "https://www.ebay.co.uk/itm/205175645301?_skw=18ct+gold+signet+ring&hash=item2fc56be475:g:Fe8AAOSwGgZnYgLj"
     },
     {
-      "title": "Solid 18ct Yellow Gold Unixsex Signet Ring Pinky Finger size M Diamond 0.25ct",
+      "title": "18ct Gold Ring Ruby Diamond .21ct UK Hallmark 1915 Size S 2.3 gram Boxed",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 7.78,
-      "current_bid": 1850.0,
-      "melt_value": 580.56,
-      "ratio": 0.31,
+      "weight_g": 2.3,
+      "current_bid": 329.99,
+      "melt_value": 171.63,
+      "ratio": 0.52,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/176547417808?_skw=18ct+gold+signet+ring&hash=item291b0bced0:g:YEMAAOSwhV9mxmPW"
+      "url": "https://www.ebay.co.uk/itm/157989946599?_skw=18ct+gold+signet+ring&hash=item24c8ef44e7:g:8y4AAeSweIJo6QXF"
     },
     {
       "title": "Antique 18ct Gold Heart Sardonyx Signet Ring Size P c1892",
@@ -1307,18 +1307,18 @@
       "url": "https://www.ebay.co.uk/itm/316765533742?_skw=18ct+gold+signet+ring&hash=item49c0b2762e:g:A1gAAOSwXDpoGGJA"
     },
     {
-      "title": "Antique 18ct Yellow Gold Diamond Cluster Pinky Ring Size M 1/2",
+      "title": "Solid 18ct Yellow Gold Unixsex Signet Ring Pinky Finger size M Diamond 0.25ct",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 2.8,
-      "current_bid": 395.0,
-      "melt_value": 208.94,
-      "ratio": 0.53,
+      "weight_g": 7.78,
+      "current_bid": 1850.0,
+      "melt_value": 580.56,
+      "ratio": 0.31,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/187512072278?_skw=18ct+gold+signet+ring&hash=item2ba8972856:g:hRcAAeSwCR1oqZ1L"
+      "url": "https://www.ebay.co.uk/itm/176547417808?_skw=18ct+gold+signet+ring&hash=item291b0bced0:g:YEMAAOSwhV9mxmPW"
     },
     {
       "title": "Solid 18ct Yellow Gold Signet Ring size: L Oval Shape Cross Pinky Finger Ring",
@@ -1335,46 +1335,32 @@
       "url": "https://www.ebay.co.uk/itm/177527591526?_skw=18ct+gold+signet+ring&hash=item2955781266:g:IPoAAeSwrbtozVxw"
     },
     {
-      "title": "18ct Gold Ring Ruby Diamond .21ct UK Hallmark 1915 Size S 2.3 gram Boxed",
+      "title": "Antique 18ct Gold Ring Diamond UK Hallmark 1916 Size O Boxed",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 2.3,
-      "current_bid": 329.99,
-      "melt_value": 171.63,
-      "ratio": 0.52,
+      "weight_g": 2.97,
+      "current_bid": 529.99,
+      "melt_value": 221.63,
+      "ratio": 0.42,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/157989946599?_skw=18ct+gold+signet+ring&hash=item24c8ef44e7:g:8y4AAeSweIJo6QXF"
+      "url": "https://www.ebay.co.uk/itm/168460863763?_skw=18ct+gold+signet+ring&hash=item27390cc913:g:Tn8AAeSwpD9ooaJd"
     },
     {
-      "title": "Antique Vintage 18ct Gold Oval Signet Ring High Relief Intaglio",
+      "title": "18 Carat Signet Ring Black Onyx",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 6.28,
-      "current_bid": 1021.6,
-      "melt_value": 468.63,
-      "ratio": 0.46,
+      "weight_g": null,
+      "current_bid": 720.7,
+      "melt_value": null,
+      "ratio": null,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/317054646162?_skw=18ct+gold+signet+ring&hash=item49d1edf792:g:ulMAAeSwY3VobjAd"
-    },
-    {
-      "title": "Edwardian 18Ct Gold Carved Carnelian Intaglio Signet Ring. Hallmarked 1929 ",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 10.0,
-      "current_bid": 1740.7,
-      "melt_value": 746.23,
-      "ratio": 0.43,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/306649805173?_skw=18ct+gold+signet+ring&hash=item4765c0b175:g:yF8AAeSwvgNpOAwR"
+      "url": "https://www.ebay.co.uk/itm/389872519656?_skw=18ct+gold+signet+ring&hash=item5ac63689e8:g:zrMAAeSwNw1p2Tvx"
     },
     {
       "title": "Vintage 18CT GOLD EGYPTIAN REVIVAL SEAL RING",
@@ -1405,18 +1391,32 @@
       "url": "https://www.ebay.co.uk/itm/257333478854?_skw=18ct+gold+signet+ring&hash=item3bea4545c6:g:fdQAAeSw0PVpeghy"
     },
     {
-      "title": "Gorgeous 18ct Yellow Gold Diamond Set Heart Ring  Size N - Hallmarked",
+      "title": "Stamped as 18ct NGCo Diamond Set Signet Style Ring",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 7.73,
-      "current_bid": 1200.0,
-      "melt_value": 576.83,
-      "ratio": 0.48,
+      "weight_g": 5.6,
+      "current_bid": 1400.0,
+      "melt_value": 417.89,
+      "ratio": 0.3,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/235689618313?_skw=18ct+gold+signet+ring&hash=item36e0322b89:g:hAMAAOSwN99mtheg"
+      "url": "https://www.ebay.co.uk/itm/127536671776?_skw=18ct+gold+signet+ring&hash=item1db1c72c20:g:TqQAAeSwEF9pLdyQ"
+    },
+    {
+      "title": "Edwardian 18Ct Gold Carved Carnelian Intaglio Signet Ring. Hallmarked 1929 ",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 10.0,
+      "current_bid": 1740.7,
+      "melt_value": 746.23,
+      "ratio": 0.43,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/306649805173?_skw=18ct+gold+signet+ring&hash=item4765c0b175:g:yF8AAeSwvgNpOAwR"
     },
     {
       "title": "750 YELLOW GOLD FANCY \" S \" SIGNET RING ! - HEAVY 14.81 GRAM !",
@@ -1433,32 +1433,18 @@
       "url": "https://www.ebay.co.uk/itm/227398821243?_skw=18ct+gold+signet+ring&hash=item34f206a57b:g:ugcAAeSwd2NqOIgz"
     },
     {
-      "title": "Stamped as 18ct NGCo Diamond Set Signet Style Ring",
+      "title": "18ct Yellow Gold .55pts G/H VS Old Cut Diamond Claw Set Oval Ring Size Q 13.47G",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 5.6,
-      "current_bid": 1400.0,
-      "melt_value": 417.89,
-      "ratio": 0.3,
+      "weight_g": 13.47,
+      "current_bid": 3500.0,
+      "melt_value": 1005.17,
+      "ratio": 0.29,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/127536671776?_skw=18ct+gold+signet+ring&hash=item1db1c72c20:g:TqQAAeSwEF9pLdyQ"
-    },
-    {
-      "title": "18 Carat Signet Ring Black Onyx",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": null,
-      "current_bid": 720.7,
-      "melt_value": null,
-      "ratio": null,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/389872519656?_skw=18ct+gold+signet+ring&hash=item5ac63689e8:g:zrMAAeSwNw1p2Tvx"
+      "url": "https://www.ebay.co.uk/itm/188301509688?_skw=18ct+gold+signet+ring&hash=item2bd7a50438:g:1KEAAeSwJnVp55FD"
     },
     {
       "title": "18CT YELLOW GOLD OVAL SIGNET RING SIZE U 9.64G",
@@ -1475,6 +1461,20 @@
       "url": "https://www.ebay.co.uk/itm/187691335710?_skw=18ct+gold+signet+ring&hash=item2bb346801e:g:2fUAAeSwdQlpAOVC"
     },
     {
+      "title": "Vintage 11.22g 18K Solid Gold Signet Ring With A Carnelian Intaglio Carved Stone",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 11.22,
+      "current_bid": 2556.7,
+      "melt_value": 837.27,
+      "ratio": 0.33,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/318459636867?_skw=18ct+gold+signet+ring&hash=item4a25ac6c83:g:UUUAAeSwNk5qMDBv"
+    },
+    {
       "title": "18ct Gold Diamond Cluster Ring 4.00g size N 0.8ct Diamonds",
       "carat": 18,
       "carat_assumed": false,
@@ -1487,34 +1487,6 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/198168936297?_skw=18ct+gold+signet+ring&hash=item2e23c9ff69:g:tqoAAeSw5nxprtAU"
-    },
-    {
-      "title": "Art Deco 18ct Gold And Rubies Textured Ring Sz N-1/2, US 7, R377",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 4.12,
-      "current_bid": 495.0,
-      "melt_value": 307.45,
-      "ratio": 0.62,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/177409206200?_skw=18ct+gold+signet+ring&hash=item294e69a7b8:g:kyYAAOSwt0xm5tGk"
-    },
-    {
-      "title": "Antique Scottish 18ct Gold Green Agate set Glasgow Signet Ring c1920; UK Size M",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 4.9,
-      "current_bid": 895.0,
-      "melt_value": 365.65,
-      "ratio": 0.41,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/144268044950?_skw=18ct+gold+signet+ring&hash=item21970baa96:g:c-kAAOSwuHJhfEQJ"
     },
     {
       "title": "VINTAGE SOLID 9CT GOLD DIAMOND SIGNET PINKY RING SIZE X 11.5 HEAVY 5.2G NOT 18CT",
@@ -1531,18 +1503,18 @@
       "url": "https://www.ebay.co.uk/itm/116495345066?_skw=18ct+gold+signet+ring&hash=item1b1fa9e5aa:g:bzoAAOSw1Fhnvig-"
     },
     {
-      "title": "Antique Edwardian 18ct Gold Carnelian Wolf Intaglio Seal Signet Ring c1905",
+      "title": "Antique Scottish 18ct Gold Green Agate set Glasgow Signet Ring c1920; UK Size M",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 7.3,
-      "current_bid": 2250.0,
-      "melt_value": 544.75,
-      "ratio": 0.24,
+      "weight_g": 4.9,
+      "current_bid": 895.0,
+      "melt_value": 365.65,
+      "ratio": 0.41,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/133918517335?_skw=18ct+gold+signet+ring&hash=item1f2e2a6857:g:QIIAAOSwikxhfCXM"
+      "url": "https://www.ebay.co.uk/itm/144268044950?_skw=18ct+gold+signet+ring&hash=item21970baa96:g:c-kAAOSwuHJhfEQJ"
     },
     {
       "title": "Superb Victorian 18ct Gold & Bloodstone Ring Signed Ring Birmingham 1878 ",
@@ -1557,6 +1529,76 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/387706490029?_skw=18ct+gold+signet+ring&hash=item5a451b8cad:g:xkcAAOSwIcRnVYiN"
+    },
+    {
+      "title": "Antique 19th century Gold signet Ring Agate Intaglio Greek Gods 18ct Gold ring",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": null,
+      "current_bid": 2650.0,
+      "melt_value": null,
+      "ratio": null,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/197892384370?_skw=18ct+gold+signet+ring&hash=item2e134e2672:g:guIAAeSwskhpIzK-"
+    },
+    {
+      "title": "Vintage 18K Yellow Gold \"AT\" Initial Signet Ring Size O 1/2  -  7 1/2",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 4.22,
+      "current_bid": 572.05,
+      "melt_value": 314.91,
+      "ratio": 0.55,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/277486521692?_skw=18ct+gold+signet+ring&hash=item409b7c4d5c:g:Wh8AAeSwNxZpCuJq"
+    },
+    {
+      "title": "Vintage Cartier Vivid Green Peridot 18 Karat White Gold Tank Band Solo Ring 48",
+      "carat": 18,
+      "carat_assumed": true,
+      "weight_g": 8.68,
+      "current_bid": 1600.0,
+      "melt_value": 647.73,
+      "ratio": 0.4,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/388410258539?_skw=18ct+gold+signet+ring&hash=item5a6f0e346b:g:usMAAOSw8KNoI06s"
+    },
+    {
+      "title": "18ct yellow gold 0.22ct diamond gypsy ring solitaire signet vintage hallmarked n",
+      "carat": 22,
+      "carat_assumed": false,
+      "weight_g": 4.1,
+      "current_bid": 675.0,
+      "melt_value": 373.92,
+      "ratio": 0.55,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/206269185860?_skw=18ct+gold+signet+ring&hash=item300699ff44:g:85AAAOSwOsxms0M3"
+    },
+    {
+      "title": "Antique Edwardian 18ct Gold Carnelian Wolf Intaglio Seal Signet Ring c1905",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 7.3,
+      "current_bid": 2250.0,
+      "melt_value": 544.75,
+      "ratio": 0.24,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/133918517335?_skw=18ct+gold+signet+ring&hash=item1f2e2a6857:g:QIIAAOSwikxhfCXM"
     },
     {
       "title": "CZ Solitaire Signet Ring - 18ct Yellow Gold - UK Size P",
@@ -1587,60 +1629,18 @@
       "url": "https://www.ebay.co.uk/itm/397515736173?_skw=18ct+gold+signet+ring&hash=item5c8dc8c46d:g:-QcAAeSwJfVpb3U-"
     },
     {
-      "title": "18ct yellow gold 0.22ct diamond gypsy ring solitaire signet vintage hallmarked n",
-      "carat": 22,
-      "carat_assumed": false,
-      "weight_g": 4.1,
-      "current_bid": 675.0,
-      "melt_value": 373.92,
-      "ratio": 0.55,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/206269185860?_skw=18ct+gold+signet+ring&hash=item300699ff44:g:85AAAOSwOsxms0M3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYMGyWg2H%2BDC0LNgDHvrwohtqaJeIdntpQxRBzuCPL59EAZRqvCWP1CDg9QN5NFulWNobqoV61GwLDVsaucqKgnIupX1L3mMsLcmobokbOT0ocyw0Z02bIG%2F1bce83xIsky70rftRxKA5ECpQijM%2F5rko3hb6iezWGeS8B42vY8dgTCOslorl24OpO1uU7aY9D9kbal6z6HYQ3a8xNkPjCn7IxVOkxDsrZymCpKDWkx1YfpXBq3AchtapTNWg%2F2Aax%2BfS0inFlV%2BsPnbB6ChQTZ7sjmOV79ARU7t3gOULakRw%3D%3D"
-    },
-    {
-      "title": "18K White Gold & Diamond Signet Gent's Ring Size M 1/2  -  6 1/4",
+      "title": "18K White Gold Signet Ring 0.8ct 1.0tcw Diamond Octagon Band US Size 11.25 11g",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 5.18,
-      "current_bid": 564.22,
-      "melt_value": 386.55,
-      "ratio": 0.69,
+      "weight_g": 11.0,
+      "current_bid": 3352.97,
+      "melt_value": 820.85,
+      "ratio": 0.24,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/275605640127?_skw=18ct+gold+signet+ring&hash=item402b6053bf:g:1IAAAOSwIHdgren9&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYdvaPK%2FvB8reh2meIPOamTdJg43vVApurB7Ruvv4r1xvE%2BJXP3BAMJsGsI0%2FFO0aOwlzqPKclgymy%2FkfoACvHd0KwTxmUzXJUVz%2BJku12UqEnDYiTYy6BHQEOEKm5dSbhMI7xdYos0KSIWH5LCe6F1XwZahzXwp4Xh6acwjZhcNQ5wYUAuGvVNlUDZETiK2FVFI4wmkqbcibtAa8wgyw5F3sxQmIbIccfhSeOSlCmJlD1BjZuwDYkheKW5o5EWyqkydTT111PdM3SHINpDZ5YsxoK9gxZU8oK8%2FZrIVrJ8kA%3D%3D"
-    },
-    {
-      "title": "Antique Old Mine Cut Diamond 0.78cts Solitaire 1938 18ct Gold Gents Ring 'V1/2'",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 6.2,
-      "current_bid": 2600.0,
-      "melt_value": 462.66,
-      "ratio": 0.18,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/117189902753?_skw=18ct+gold+signet+ring&hash=item1b491001a1:g:iuQAAeSwDgxp44qX"
-    },
-    {
-      "title": "18K Yellow Gold Signet Ring Natural Diamond Pave Men's 10.8g 0.519ct TW",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 10.8,
-      "current_bid": 2926.75,
-      "melt_value": 805.93,
-      "ratio": 0.28,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/278063903019?_skw=18ct+gold+signet+ring&hash=item40bde6712b:g:42sAAeSwQcRqJTwW"
+      "url": "https://www.ebay.co.uk/itm/278082182245?_skw=18ct+gold+signet+ring&hash=item40befd5c65:g:iFgAAeSw1WNqLAjM"
     },
     {
       "title": "Harris Reed Serpent Pearl 18ct Gold Signet Ring (17mm) 7.4g",
@@ -1657,18 +1657,46 @@
       "url": "https://www.ebay.co.uk/itm/147073975863?_skw=18ct+gold+signet+ring&hash=item223e4ac637:g:Hb8AAeSwfFpogE8J"
     },
     {
-      "title": "18ct Vintage Family Crest /Seal Ring",
+      "title": "18K Yellow Gold Signet Ring Natural Diamond Pave Men's 10.8g 0.519ct TW",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 15.0,
-      "current_bid": 1600.0,
-      "melt_value": 1119.34,
-      "ratio": 0.7,
+      "weight_g": 10.8,
+      "current_bid": 2926.75,
+      "melt_value": 805.93,
+      "ratio": 0.28,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/176855840118?_skw=18ct+gold+signet+ring&hash=item292d6df576:g:oVYAAeSwUFNntGos"
+      "url": "https://www.ebay.co.uk/itm/278063903019?_skw=18ct+gold+signet+ring&hash=item40bde6712b:g:42sAAeSwQcRqJTwW"
+    },
+    {
+      "title": "Antique Old Mine Cut Diamond 0.78cts Solitaire 1938 18ct Gold Gents Ring 'V1/2'",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 6.2,
+      "current_bid": 2600.0,
+      "melt_value": 462.66,
+      "ratio": 0.18,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/117189902753?_skw=18ct+gold+signet+ring&hash=item1b491001a1:g:iuQAAeSwDgxp44qX"
+    },
+    {
+      "title": "18K White Gold & Diamond Signet Gent's Ring Size M 1/2  -  6 1/4",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 5.18,
+      "current_bid": 564.22,
+      "melt_value": 386.55,
+      "ratio": 0.69,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/275605640127?_skw=18ct+gold+signet+ring&hash=item402b6053bf:g:1IAAAOSwIHdgren9&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYdvaPK%2FvB8reh2meIPOamTdJg43vVApurB7Ruvv4r1xvE%2BJXP3BAMJsGsI0%2FFO0aOwlzqPKclgymy%2FkfoACvHd0KwTxmUzXJUVz%2BJku12UqEnDYiTYy6BHQEOEKm5dSbiJgr2js3Mi%2BJFtdUz4I9ZUI3POETiSBjNLzzXuqbC5qzdz956K2%2BhPxz8ohHlcdA5Ny1r1xFvk1zNcQ7WRwsPRbaHhKFAqQVBZgquCOlQHvppue8Lr3VfkIqieHHco5hm2iCI2z4kSZsnP4yC2jWJ0xlQBzzjWM9YKggdHjtvaDA%3D%3D"
     },
     {
       "title": "18K Yellow Gold Signet Ring Natural Diamond F VS2 Star Setting 5g Unisex",
@@ -1682,7 +1710,21 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/278063902903?_skw=18ct+gold+signet+ring&hash=item40bde670b7:g:KcQAAeSwYfVqJUDB"
+      "url": "https://www.ebay.co.uk/itm/278063902903?_skw=18ct+gold+signet+ring&hash=item40bde670b7:g:KcQAAeSwYfVqJUDB&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbW3crY2f36eLdWE%2FFn0%2BvTKMfL3psPvAHWl5NkRd1YFW0p%2FEkxJ565lL%2FuIFDtxc%2FZUrl7dRc94sXOzpEZhIyBpPlGffCDFb%2BwXHZJjOej5Qe6QrKRrAWIy0YDqzaaFgn7M698uFGALhwoIJY7YfZ7D68%2Baob9c305adTpbg31n2bgRqbdZ2CGXc8MX0ckDlo%2FwYhacbQYPXNsS9QEl6AQlDKvpuFnEPkcH8iLvP%2B4oSk9VAWZNVCwmchCi%2B6iCpM%2FMqpHQwdutZWriT2CUwoaNHv1MsPZ4s%2FFKkgjv3%2FtrQ%3D%3D"
+    },
+    {
+      "title": "Gold Garnet Ring- Victorian Garnet and Diamond Cluster Ring 18ct Yellow Gold",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 4.3,
+      "current_bid": 3250.0,
+      "melt_value": 320.88,
+      "ratio": 0.1,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/394171409569?_skw=18ct+gold+signet+ring&hash=item5bc67264a1:g:9H4AAOSwL-li19jR&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYUMairCzE4YftO6Sk9ctvfQ%2Bh88vb5pQ2TVnEVMTnYF3WfM%2Fe8wIk%2FcnuUfwkBEfEFn97d9iUSVwsOyADJoGvOguQHnkQvLpfkrnOfMgXrkd%2F4IvfbihPs--740iPeIVZvRYy2CaMn4RDI3hDRvcROWBcw%2BZ9rtMSOGA%2FyaFuLeWBqatnIZnTeQS84T16%2FcvhxkHKHm9KC1xzs1lbRDSdaMsMCoP4iwHeYlgIzPwjpoqEDcSFEYSjs4cFCCXk61lUYbFfeIOSJlYtM9dWGvovjMMF978FMHNrLNpabj%2B8iBg%3D%3D"
     },
     {
       "title": "18CT 18 CARAT YELLOW GOLD SAPPHIRE CLUSTER DIAMOND SET RING 5.8G M 1/2 STARLIGHT",
@@ -1713,46 +1755,32 @@
       "url": "https://www.ebay.co.uk/itm/389578826390?_skw=18ct+gold+signet+ring&hash=item5ab4b52296:g:OGYAAeSwCDFpg6z0"
     },
     {
-      "title": "1.61ct Emerald Cut Blue Sapphire Signet Ring 18K Rose Gold K18 Size 9.25 9.8g",
+      "title": "18ct White Gold Channel Set Diamond Full ET Ring Big Price Reduction Bargain £££",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 9.8,
-      "current_bid": 2520.26,
-      "melt_value": 731.3,
-      "ratio": 0.29,
+      "weight_g": null,
+      "current_bid": 4586.7,
+      "melt_value": null,
+      "ratio": null,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/278029012793?_skw=18ct+gold+signet+ring&hash=item40bbd20f39:g:1XUAAeSwhIJqFl8P&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbhpHNEHsyfIkBktAa8EZi53BALES%2BSXNtnJxWW7IFugPK%2Frvto1KafiivhJibgC7ZjF8varuoFPZHo5GLQN84zfnFf%2FCozoEcLgYDPFsfECbhb0Q01JxBSHozfXpTVgqcoXNlkSBeuWh5FsIhMD84kqR61%2BkpiwoHfDPfuKjhUvjvxe6BB5Rpwi5o96PKRhMn5%2BCM1FY%2FiiakgW0oVAs8PeipPcEp%2FyZ2MSpcW%2F5wUDWb5rm5Qu2b8hgXeSxuKJk4wALQSP1uBu0Zi6%2FfF2c8eV3yt%2FJrRhJCEiI0FF7wFPQ%3D%3D"
+      "url": "https://www.ebay.co.uk/itm/156538924771?_skw=18ct+gold+signet+ring&hash=item2472726ee3:g:pZ0AAOSwcIdnQcH1"
     },
     {
-      "title": "18CT 18 CARAT YELLOW GOLD RUBY & DIAMOND SET RING 2G VINTAGE SIZE L ANTIQUE",
+      "title": "18ct Yellow Gold Signet Ring with Diamonds - Unisex Size~ U/10.25  ~12.65 Grams",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 2.0,
-      "current_bid": 349.99,
-      "melt_value": 149.25,
-      "ratio": 0.43,
+      "weight_g": 12.65,
+      "current_bid": 1325.89,
+      "melt_value": 943.98,
+      "ratio": 0.71,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/388483277253?_skw=18ct+gold+signet+ring&hash=item5a736861c5:g:zNoAAOSwBfloN3Nc"
-    },
-    {
-      "title": "Antique Georgian 18ct Gold Woven Hair Mourning Signet Ring French Jet 1823 'CJH'",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 4.1,
-      "current_bid": 1270.0,
-      "melt_value": 305.95,
-      "ratio": 0.24,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/178015799776?_skw=18ct+gold+signet+ring&hash=item29729189e0:g:tT8AAeSwOvZpwWXc"
+      "url": "https://www.ebay.co.uk/itm/156227700626?_skw=18ct+gold+signet+ring&hash=item245fe58792:g:hPgAAOSwlTVmU-Cm"
     },
     {
       "title": "Fine Vintage Art Deco 18ct Gold Monogram Signet Ring c1934; UK Ring Size 'M 1/2'",
@@ -1769,18 +1797,18 @@
       "url": "https://www.ebay.co.uk/itm/135273457130?_skw=18ct+gold+signet+ring&hash=item1f7eed25ea:g:fogAAOSwt05ZrCdU"
     },
     {
-      "title": "18K Yellow Gold Pt900 Platinum 0.1ct Diamond Signet Ring Two-Tone 7.4g",
+      "title": "Antique Georgian 18ct Gold Woven Hair Mourning Signet Ring French Jet 1823 'CJH'",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 7.4,
-      "current_bid": 1434.48,
-      "melt_value": 552.21,
-      "ratio": 0.38,
+      "weight_g": 4.1,
+      "current_bid": 1270.0,
+      "melt_value": 305.95,
+      "ratio": 0.24,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/278038052436?_skw=18ct+gold+signet+ring&hash=item40bc5bfe54:g:PskAAeSwzGNqGuFr&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGZRmeiPI0JcW537eN8j1wk0UZV4cNbU%2BnVKL0fBOYeIkWfuQnWeamB5f%2Fw2NWEFDWRDJR%2F2OafTZMgUqXMB4TzwMh0S2J--v2jb8DmTWywAlJU3s0IFYZqlDMg%2FTcxvleW5L4Mwrt7w3HhVIrSJDQ0yoskZZBgHb%2Fj7exjqV3z44fJjXWuWSuu7CEIWe0l%2Fb%2BIDVVXowoXDeG%2BukjgWanp9ac4igr0C2PdC6zLUqy8GEGHMK3%2Fmwf2c5pVKEF53LI%2FxpsISXgcmI8N1ppuJnqqgIyKnF9YbYRIFaZflYZi45A%3D%3D"
+      "url": "https://www.ebay.co.uk/itm/178015799776?_skw=18ct+gold+signet+ring&hash=item29729189e0:g:tT8AAeSwOvZpwWXc"
     },
     {
       "title": "Chunky and Heavy Males 18CT Gold Signet Ring 12.42g - Oval Face, Foliate Pattern",
@@ -1825,20 +1853,6 @@
       "url": "https://www.ebay.co.uk/itm/176697046812?_skw=18ct+gold+signet+ring&hash=item2923f6f71c:g:38sAAOSwZJJnPkWR"
     },
     {
-      "title": "Victorian Antelope Hardstone Intaglio Gold Signet Ring 18 ct 9.13 gms",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 9.14,
-      "current_bid": 1850.0,
-      "melt_value": 682.05,
-      "ratio": 0.37,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/256643160617?_skw=18ct+gold+signet+ring&hash=item3bc11fda29:g:u7gAAOSwYihm6KaM"
-    },
-    {
       "title": "Heavy 16.0g Natural Lapis Lazuli Signet Ring 18K Yellow Gold Wide Band",
       "carat": 18,
       "carat_assumed": false,
@@ -1853,18 +1867,32 @@
       "url": "https://www.ebay.co.uk/itm/278111897669?_skw=18ct+gold+signet+ring&hash=item40c0c2c845:g:NSIAAeSwnKhqN99Q"
     },
     {
-      "title": "18ct Yellow Gold Signet Ring with Diamonds - Unisex Size~ U/10.25  ~12.65 Grams",
+      "title": "Victorian Antelope Hardstone Intaglio Gold Signet Ring 18 ct 9.13 gms",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 12.65,
-      "current_bid": 1325.89,
-      "melt_value": 943.98,
-      "ratio": 0.71,
+      "weight_g": 9.14,
+      "current_bid": 1850.0,
+      "melt_value": 682.05,
+      "ratio": 0.37,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/156227700626?_skw=18ct+gold+signet+ring&hash=item245fe58792:g:hPgAAOSwlTVmU-Cm"
+      "url": "https://www.ebay.co.uk/itm/256643160617?_skw=18ct+gold+signet+ring&hash=item3bc11fda29:g:u7gAAOSwYihm6KaM"
+    },
+    {
+      "title": "18ct Vintage Family Crest /Seal Ring",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 15.0,
+      "current_bid": 1600.0,
+      "melt_value": 1119.34,
+      "ratio": 0.7,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/176855840118?_skw=18ct+gold+signet+ring&hash=item292d6df576:g:oVYAAeSwUFNntGos"
     },
     {
       "title": "Rare Padparadsha Sapphire Diamond 18ct Gold gold ring 8.20 GMS COA valued £3800 ",
@@ -1876,23 +1904,37 @@
       "ratio": 0.48,
       "is_value": false,
       "buying": "Auction",
-      "time_left": "4h 8m",
+      "time_left": "2h 54m",
       "bids": 0,
       "url": "https://www.ebay.co.uk/itm/206363585625?_skw=18ct+gold+signet+ring&hash=item300c3a6c59:g:TDcAAeSwzRxp5R-B"
     },
     {
-      "title": "Antique Georgian Era 18ct Gold Emerald And Diamond 5 Stone Ring",
+      "title": "18CT 18 CARAT YELLOW GOLD RUBY & DIAMOND SET RING 2G VINTAGE SIZE L ANTIQUE",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 2.15,
-      "current_bid": 550.0,
-      "melt_value": 160.44,
-      "ratio": 0.29,
+      "weight_g": 2.0,
+      "current_bid": 349.99,
+      "melt_value": 149.25,
+      "ratio": 0.43,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/318024215572?_skw=18ct+gold+signet+ring&hash=item4a0bb86c14:g:W8UAAeSwykppusEw"
+      "url": "https://www.ebay.co.uk/itm/388483277253?_skw=18ct+gold+signet+ring&hash=item5a736861c5:g:zNoAAOSwBfloN3Nc"
+    },
+    {
+      "title": "K18 Yellow Gold Panther Onyx Ruby 0.3ct Diamond Signet Ring 14.5g Sz 8 US",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 14.5,
+      "current_bid": 3042.59,
+      "melt_value": 1082.03,
+      "ratio": 0.36,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/278080767344?_skw=18ct+gold+signet+ring&hash=item40bee7c570:g:zSQAAeSwQZpqK5gR"
     },
     {
       "title": "18CT 18 CARAT  WHITE GOLD CLUSTER 0.5 HALF CARAT DIAMOND ILLUSION SET RING 3G L",
@@ -1909,18 +1951,18 @@
       "url": "https://www.ebay.co.uk/itm/389598691455?_skw=18ct+gold+signet+ring&hash=item5ab5e4407f:g:fukAAeSwcGNpihur"
     },
     {
-      "title": "ANTIQUE 18CT GOLD 0.20 CT DIAMOND SOLITAIRE GYPSY RING, SIZE S.1/2. 6.00 GRAMS",
+      "title": "Antique 18ct Yellow Gold Diamond 5 Stone Boat Ring C.1912",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 6.0,
-      "current_bid": 774.99,
-      "melt_value": 447.74,
-      "ratio": 0.58,
+      "weight_g": null,
+      "current_bid": 280.0,
+      "melt_value": null,
+      "ratio": null,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/117243500086?_skw=18ct+gold+signet+ring&hash=item1b4c41d636:g:fgsAAOSwc49oBO5I"
+      "url": "https://www.ebay.co.uk/itm/317535635228?_skw=18ct+gold+signet+ring&hash=item49ee99471c:g:7sUAAeSwiC1pFdRR"
     },
     {
       "title": "Rare Antique Victorian 15ct Gold Emerald & Enamel Swivel Memorial Signet Ring 6g",
@@ -1937,172 +1979,32 @@
       "url": "https://www.ebay.co.uk/itm/205782621833?_skw=18ct+gold+signet+ring&hash=item2fe9999e89:g:nGYAAeSwhERo7Pqu"
     },
     {
-      "title": "Fine Antique Edwardian 18ct Gold Intaglio Wax Seal Signet Ring c1910; Size 'S' ",
+      "title": "Antique Georgian Era 18ct Gold Emerald And Diamond 5 Stone Ring",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 5.5,
-      "current_bid": 795.0,
-      "melt_value": 410.43,
-      "ratio": 0.52,
+      "weight_g": 2.15,
+      "current_bid": 550.0,
+      "melt_value": 160.44,
+      "ratio": 0.29,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/153652550400?_skw=18ct+gold+signet+ring&hash=item23c667db00:g:VaMAAOSwfcNb1UQ8"
+      "url": "https://www.ebay.co.uk/itm/318024215572?_skw=18ct+gold+signet+ring&hash=item4a0bb86c14:g:W8UAAeSwykppusEw"
     },
     {
-      "title": "Antique 18ct Yellow Gold Old Mine Cut Diamond Solitaire Gypsy Set Ring 1910 'K'",
+      "title": "ANTIQUE 18CT GOLD 0.20 CT DIAMOND SOLITAIRE GYPSY RING, SIZE S.1/2. 6.00 GRAMS",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 2.2,
-      "current_bid": 595.0,
-      "melt_value": 164.17,
-      "ratio": 0.28,
+      "weight_g": 6.0,
+      "current_bid": 774.99,
+      "melt_value": 447.74,
+      "ratio": 0.58,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/389335181953?_skw=18ct+gold+signet+ring&hash=item5aa62f6a81:g:gE4AAeSwHXVoVW1l"
-    },
-    {
-      "title": "Antique Sapphire & Diamond Ring Late 1800s Size O Approx Old Cut Diamonds",
-      "carat": 18,
-      "carat_assumed": true,
-      "weight_g": 2.7,
-      "current_bid": 234.7,
-      "melt_value": 201.48,
-      "ratio": 0.86,
-      "is_value": true,
-      "buying": "Auction",
-      "time_left": "6d 16h",
-      "bids": 0,
-      "url": "https://www.ebay.co.uk/itm/327236326973?_skw=18ct+gold+signet+ring&hash=item4c30ce163d:g:iKUAAeSwrXtqQNU2"
-    },
-    {
-      "title": "Vintage 18ct Yellow Gold Turquoise And Diamond 3 Stone Ring",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": null,
-      "current_bid": 390.0,
-      "melt_value": null,
-      "ratio": null,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/317559609380?_skw=18ct+gold+signet+ring&hash=item49f0071824:g:~iMAAeSwjytpHdTu"
-    },
-    {
-      "title": "Antique C.1903 18ct Yellow Gold Diamond Diamond Buttercup/ Belcher Ring",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 4.94,
-      "current_bid": 700.0,
-      "melt_value": 368.64,
-      "ratio": 0.53,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/257230321289?_skw=18ct+gold+signet+ring&hash=item3be41f3689:g:m1gAAeSwkD9pJvdD"
-    },
-    {
-      "title": "Antique Art Deco Era 18ct Yellow Gold And Platinum Diamond 3 Stone Square Twist",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 2.0,
-      "current_bid": 320.0,
-      "melt_value": 149.25,
-      "ratio": 0.47,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/317619480757?_skw=18ct+gold+signet+ring&hash=item49f398a8b5:g:ogAAAeSw7X1pMEcw"
-    },
-    {
-      "title": "18ct Gold Men's Diamond Signet Ring",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 5.5,
-      "current_bid": 731.39,
-      "melt_value": 410.43,
-      "ratio": 0.56,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/275451660549?_skw=18ct+gold+signet+ring&hash=item402232c905:g:QIwAAOSwSehjGaLb"
-    },
-    {
-      "title": "18CT YELLOW GOLD SIGNET RING SET WITH 130 SMALL DIAMONDS",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 9.7,
-      "current_bid": 1493.61,
-      "melt_value": 723.84,
-      "ratio": 0.48,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/306459670978?_skw=18ct+gold+signet+ring&hash=item475a6b79c2:g:Z-UAAeSwCG5opn~u"
-    },
-    {
-      "title": "Old Cut 0.25ct Diamond Solitaire 18ct Gold - Antique 1912 Signet Ring Edwardian",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": null,
-      "current_bid": 985.0,
-      "melt_value": null,
-      "ratio": null,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/226970845521?_skw=18ct+gold+signet+ring&hash=item34d8844151:g:I5QAAeSw44VoxBc0"
-    },
-    {
-      "title": "Antique 18ct Yellow Gold50pt Diamond Buttercup/ Belcher Ring",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 5.63,
-      "current_bid": 790.0,
-      "melt_value": 420.13,
-      "ratio": 0.53,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/257206133389?_skw=18ct+gold+signet+ring&hash=item3be2ae228d:g:nh4AAeSwHHtpFdvh"
-    },
-    {
-      "title": "Vintage 18ct Gold Baguette Cut Channel Set Diamond Cross Over Knot Ring 'N1/2'",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 8.2,
-      "current_bid": 2200.0,
-      "melt_value": 611.91,
-      "ratio": 0.28,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/116751432061?_skw=18ct+gold+signet+ring&hash=item1b2eed797d:g:~I8AAOSwdyRkLpCv"
-    },
-    {
-      "title": "Antique 18ct Ylg Diamond Unusual 3 Stone Ring",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 1.85,
-      "current_bid": 320.0,
-      "melt_value": 138.05,
-      "ratio": 0.43,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/317535699571?_skw=18ct+gold+signet+ring&hash=item49ee9a4273:g:0wIAAeSwar5pFdjY"
+      "url": "https://www.ebay.co.uk/itm/117243500086?_skw=18ct+gold+signet+ring&hash=item1b4c41d636:g:fgsAAOSwc49oBO5I"
     },
     {
       "title": "Antique 18ct Yellow Gold50pt Diamond Buttercup/ Belcher Ring",
@@ -2119,6 +2021,62 @@
       "url": "https://www.ebay.co.uk/itm/317589518610?_skw=18ct+gold+signet+ring&hash=item49f1cf7912:g:fBkAAeSwFJVpJvEJ"
     },
     {
+      "title": "Antique 18ct Yellow Gold And Platinum Diamond 5 Stone Panel Ring",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 1.52,
+      "current_bid": 280.0,
+      "melt_value": 113.43,
+      "ratio": 0.41,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/257242204550?_skw=18ct+gold+signet+ring&hash=item3be4d48986:g:eQAAAeSwX0dpMEw9"
+    },
+    {
+      "title": "18ct Gold Men's Signet Diamond Ring/ Pinky Ring  0.15ct Diamond - 9 3/4 (T) 8.5g",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 8.5,
+      "current_bid": 881.49,
+      "melt_value": 634.29,
+      "ratio": 0.72,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/205345232123?_skw=18ct+gold+signet+ring&hash=item2fcf8794fb:g:xSgAAOSw88xaM897"
+    },
+    {
+      "title": "Fine Antique Edwardian 18ct Gold Intaglio Wax Seal Signet Ring c1910; Size 'S' ",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 5.5,
+      "current_bid": 795.0,
+      "melt_value": 410.43,
+      "ratio": 0.52,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/153652550400?_skw=18ct+gold+signet+ring&hash=item23c667db00:g:VaMAAOSwfcNb1UQ8"
+    },
+    {
+      "title": "Antique Sapphire & Diamond Ring Late 1800s Size O Approx Old Cut Diamonds",
+      "carat": 18,
+      "carat_assumed": true,
+      "weight_g": 2.7,
+      "current_bid": 234.7,
+      "melt_value": 201.48,
+      "ratio": 0.86,
+      "is_value": true,
+      "buying": "Auction",
+      "time_left": "6d 15h",
+      "bids": 0,
+      "url": "https://www.ebay.co.uk/itm/327236326973?_skw=18ct+gold+signet+ring&hash=item4c30ce163d:g:iKUAAeSwrXtqQNU2"
+    },
+    {
       "title": "Cartier Rare Vintage Orange Citrine 18k Yellow Gold Tank Band Solo Ring 49",
       "carat": 18,
       "carat_assumed": false,
@@ -2133,102 +2091,74 @@
       "url": "https://www.ebay.co.uk/itm/206085075743?_skw=18ct+gold+signet+ring&hash=item2ffba0b31f:g:kiYAAOSw5yFnh~IO"
     },
     {
-      "title": "Antique 18ct Yellow Gold Diamond 5 Stone Boat Ring C.1912",
+      "title": "18ct Gold Men's Diamond Signet Ring",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": null,
-      "current_bid": 280.0,
-      "melt_value": null,
-      "ratio": null,
+      "weight_g": 5.5,
+      "current_bid": 731.39,
+      "melt_value": 410.43,
+      "ratio": 0.56,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/317535635228?_skw=18ct+gold+signet+ring&hash=item49ee99471c:g:7sUAAeSwiC1pFdRR"
+      "url": "https://www.ebay.co.uk/itm/275451660549?_skw=18ct+gold+signet+ring&hash=item402232c905:g:QIwAAOSwSehjGaLb"
     },
     {
-      "title": "Antique 18ct Gold Ruby And Diamond Twist Ring",
+      "title": "Antique C.1903 18ct Yellow Gold Diamond Diamond Buttercup/ Belcher Ring",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": null,
-      "current_bid": 460.0,
-      "melt_value": null,
-      "ratio": null,
+      "weight_g": 4.94,
+      "current_bid": 700.0,
+      "melt_value": 368.64,
+      "ratio": 0.53,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/257230401406?_skw=18ct+gold+signet+ring&hash=item3be4206f7e:g:694AAeSw1blpJwjL"
+      "url": "https://www.ebay.co.uk/itm/257230321289?_skw=18ct+gold+signet+ring&hash=item3be41f3689:g:m1gAAeSwkD9pJvdD"
     },
     {
-      "title": "18CT YELLOW GOLD TURQUOISE & DIAMOND ANTIQUE VICTORIAN SQUARE CLUSTER RING M½",
+      "title": "Heavy 13.7g Horse Motif Signet Ring 18K Yellow Gold K18 Cushion Solid Size 9 Box",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 1.6,
-      "current_bid": 599.99,
-      "melt_value": 119.4,
-      "ratio": 0.2,
+      "weight_g": 13.7,
+      "current_bid": 3587.66,
+      "melt_value": 1022.33,
+      "ratio": 0.28,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/187457611215?_skw=18ct+gold+signet+ring&hash=item2ba55825cf:g:QUEAAeSwe8hoGjLx"
+      "url": "https://www.ebay.co.uk/itm/278092619598?_skw=18ct+gold+signet+ring&hash=item40bf9c9f4e:g:sKUAAeSwI4tqL4wz"
     },
     {
-      "title": "Hexagon 18K Yellow Gold 0.06ct Diamond Signet Ring K18 Men Woman Size 7.5 4.1g",
+      "title": "Antique 18ct Yellow Gold Old Mine Cut Diamond Solitaire Gypsy Set Ring 1910 'K'",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 4.1,
-      "current_bid": 1277.32,
-      "melt_value": 305.95,
-      "ratio": 0.24,
+      "weight_g": 2.2,
+      "current_bid": 595.0,
+      "melt_value": 164.17,
+      "ratio": 0.28,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/278089952886?_skw=18ct+gold+signet+ring&hash=item40bf73ee76:g:qHUAAeSweeRqL2WZ&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGa4HR0WfUMXbim6csneEcwIwE8E9uVG8zsCf1ZAc5CpAU3uZEZrVKZ%2BXqQsplDTO9rNtTmufjErtYoO1Tkl5%2BKkSg3uUcKXNLbeoeD%2BDRgSeghF%2BWD0PCUWfp8IBMxdVOmwWD%2FJOHI7H%2Fv0Es70JXNZy3l0PKA3TJjTNcQbMVEpS7UDuSoLzkN%2BmciHdrBWNQAZPfI9ukcqxtVPOkdCbdjSarulogQ9FSd2Ym%2B1OC%2BUnfJdW4gJ%2B5j1gd%2BoZ4OFF2pgHUEWB21QUhyp%2FqF3JJbtkbv4Ey1yFUWP96NZ%2FZYI2A%3D%3D"
+      "url": "https://www.ebay.co.uk/itm/389335181953?_skw=18ct+gold+signet+ring&hash=item5aa62f6a81:g:gE4AAeSwHXVoVW1l"
     },
     {
-      "title": "18ct Yellow Gold Ring 80 point Square Blue Sapphire & 6 Diamond Prong Set Size L",
+      "title": "1.61ct Emerald Cut Blue Sapphire Signet Ring 18K Rose Gold K18 Size 9.25 9.8g",
       "carat": 18,
       "carat_assumed": false,
-      "weight_g": 3.0,
-      "current_bid": 501.4,
-      "melt_value": 223.87,
-      "ratio": 0.45,
+      "weight_g": 9.8,
+      "current_bid": 2520.26,
+      "melt_value": 731.3,
+      "ratio": 0.29,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/147402794507?_skw=18ct+gold+ring&hash=item2251e4260b:g:qhMAAeSwFNhqQRO4"
-    },
-    {
-      "title": "Gold Diamond Ring - 18ct Yellow Gold 3 Stone (0.40ct) Diamond Ring Size G",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": null,
-      "current_bid": 465.7,
-      "melt_value": null,
-      "ratio": null,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/287371463947?_skw=18ct+gold+ring&hash=item42e8ac8d0b:g:ElYAAeSwL7NqH-DX&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGaIDAGF4awZfCV8IsLzxeRHgWhiW%2FilUG1v2O5uSAdM--JVZlzMmBJUX3zlagxijUdtmsza%2BqHdMi3iZ6rMzeDqO6c%2FsNUY827UGghy9DcDD0PkSSAfxp%2FdOd8gtCEn98dx9ap%2FTbWbfLGUwbRSTB7av0EbQFJQzJMCo2OrwQqFNjkvb4LSN31mMa4Hvi5dFxkJoMLkX%2FI%2F9Cy7SqQ5ormG1jdM3hpmYaeseiqZwlzFFA7%2FkLcYwr2ItupgCe9Ac0qsx5hnabWSuN0zArtg97DypLRrD%2FuLODxwace9WGNrlw%3D%3D"
-    },
-    {
-      "title": "18ct Gold 1.00ct Diamond Engagement Trilogy Ring 1 ct 18 Carat 3 Stone 1ct 18K",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 4.0,
-      "current_bid": 797.2,
-      "melt_value": 298.49,
-      "ratio": 0.37,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/800235669103?_skw=18ct+gold+ring&hash=itemba51c3466f:g:jWgAAeSw7IhqPAW8&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGZrhaxkONk1zCjB5CKzT0WuspQc3CS9UEC%2FR3sM%2FUlkvdsJb9xJRx8G5ry1aI1eePW3LorTLJmDdyH1erSljHey%2FS5gsQezKDPP5sSF3cIjFWBC%2BUXpRl3ZK8Jd62IknVDdC3jticZOXKooLLX6%2FCEZfTZx6DV8Rohq6b3cAuddDJywaLS48%2BXvCMzCqet9SqD3eDyePLQjkLOzrtLEuJAcPAwdRihzlQLixZ373WYixng2L3GmS0ax8yj%2BahxUETpBKU8BoQQMRd3kBs78rqkICG6kVraaH3QcOo9oGwiw1g%3D%3D"
+      "url": "https://www.ebay.co.uk/itm/278029012793?_skw=18ct+gold+signet+ring&hash=item40bbd20f39:g:1XUAAeSwhIJqFl8P&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbhpHNEHsyfIkBktAa8EZi53BALES%2BSXNtnJxWW7IFugPK%2Frvto1KafiivhJibgC7ZjF8varuoFPZHo5GLQN84zfnFf%2FCozoEcLgYDPFsfECbhb0Q01JxBSHozfXpTVgqd%2FMY%2F7Dq1AKtQtaiaKqXaFNICUdoI7idreIO8Y%2BFr4g9fFn2sI3pi9wl5w%2BINidbXs0ZEuk53k2f4I7E7Ga9UxPuIri2Cet70%2FIpM82EQs8vArt6KHpQzyO%2FFx2oYLyWQFYakZe%2F0sja3uDzA%2FM7U28lZrE4aUOejOnJCfTFvHCg%3D%3D"
     },
     {
       "title": "Vintage 18ct Gold Ruby & Diamond Ring Size M 2.4g",
@@ -2242,7 +2172,21 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/397965893707?_skw=18ct+gold+ring&hash=item5ca89da04b:g:2B4AAeSwzRxqFbTy&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYgVdkBJ7VVCS5eQxuHbdjFDcqXNAp6XxJLHjV5EmZ1ukPLtiQn7P9mrnNRtzasfQhKTFv7bNDMDP5kANQDYeRYYt62NKTPsPba4OsAvuCz3DIJ6Kw1ZlYRybvtPtohTwctSm%2B0AD8J5FXAZN41Lsbrpz61GyGtHKKXNhDhFRaxP8lQyyycE0GO1rEDg0zWmcRhEz%2BxsdbFhtVq%2FXZjiJVw%2FOkE%2BUfyayLh3Exwjva4rGySUH%2FFpdUp65xTFR5NjkbSppB6IaQbRytuCb77o5t0waOMMOLHV8InD3OfnXZwSg%3D%3D"
+      "url": "https://www.ebay.co.uk/itm/397965893707?_skw=18ct+gold+ring&hash=item5ca89da04b:g:2B4AAeSwzRxqFbTy&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYgVdkBJ7VVCS5eQxuHbdjFDcqXNAp6XxJLHjV5EmZ1ukPLtiQn7P9mrnNRtzasfQhKTFv7bNDMDP5kANQDYeRYYt62NKTPsPba4OsAvuCz3DIJ6Kw1ZlYRybvtPtohTweOO484%2FweVZsP57%2BdEHeqi%2B7eRXy05cv0tfBFbQ%2FOtSdeL5Z5suFOsbkH2kSe3DFkPsHlpslUr0GcCYB1c7vU7E%2FKxKJd7ysosp2y8HXPcbcnGs%2BQG3ZFX5oz%2FsfiIJEjFqzUC6KtD3uyLigbLeIICv6GKgo256Xoiyvl15JG8lQ%3D%3D"
+    },
+    {
+      "title": "Gold Diamond Ring - 18ct Yellow Gold 3 Stone (0.40ct) Diamond Ring Size G",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": null,
+      "current_bid": 465.7,
+      "melt_value": null,
+      "ratio": null,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/287371463947?_skw=18ct+gold+ring&hash=item42e8ac8d0b:g:ElYAAeSwL7NqH-DX&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGaIDAGF4awZfCV8IsLzxeRHgWhiW%2FilUG1v2O5uSAdM--JVZlzMmBJUX3zlagxijUdtmsza%2BqHdMi3iZ6rMzeDqO6c%2FsNUY827UGghy9DcDD0PkSSAfxp%2FdOd8gtCEn98dR9kkvOswFkhCApskq80OTVqgq3SzCobYOoyXb5uJXN3jOJhYPd8PHBz1AcCd18AXYlPTImPxwvrFkGNXcPj0KvhiB2lFXtBgAe5N5IEkz1skj%2Fh4uZ1jY60OfVOXjMhfuiIbkVFIeHKNEss0kwKynnV85xzVFdS4n31hK5q2n5Q%3D%3D"
     }
   ]
 }
