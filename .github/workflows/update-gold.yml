@@ -54,7 +54,19 @@ jobs:
           git add data/*.json
           if git diff --cached --quiet; then
             echo "No data changes."
-          else
-            git commit -m "Auto-update gold ring scan data"
-            git push
+            exit 0
           fi
+          git commit -m "Auto-update gold ring scan data"
+          # The branch may have advanced since checkout (other pushes), so
+          # rebase onto the latest before pushing, and retry on races.
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin "${GITHUB_REF_NAME}" \
+               && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "Pushed."
+              exit 0
+            fi
+            echo "Push race; retrying ($i)..."
+            sleep 5
+          done
+          echo "Failed to push after retries" >&2
+          exit 1
