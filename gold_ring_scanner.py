@@ -154,6 +154,10 @@ DEFAULT_CARAT = 9   # assume 9ct when an item is clearly gold but no carat found
 # This costs one extra API call per weight-unknown item (still bounded by
 # MAX_ITEMS), so it's worth it but can be disabled for speed.
 FETCH_FULL_DETAILS = True
+# Cap detail look-ups PER carat scan as a safety bound on runtime / eBay rate
+# limits. Items beyond the cap keep "weight unknown". 0 = no cap. (Multi-market
+# runs complete in ~2-3 min well under this, so it rarely bites.)
+MAX_DETAIL_FETCHES = 100
 
 # --- Output ---------------------------------------------------------------
 CSV_PATH       = "gold_ring_results.csv"
@@ -394,6 +398,20 @@ _BUYING_FILTER = {
 }
 
 
+def _get_with_retry(url, headers, params, label, retries=4):
+    """GET with exponential backoff on eBay 429 (rate limit). Returns Response."""
+    r = None
+    for attempt in range(retries):
+        r = requests.get(url, headers=headers, params=params, timeout=30)
+        if r.status_code != 429:
+            return r
+        wait = 2 ** attempt          # 1, 2, 4, 8s
+        print(f"[warn] 429 rate-limited on {label}; backing off {wait}s",
+              file=sys.stderr)
+        time.sleep(wait)
+    return r
+
+
 def search_listings(token, queries, max_price_gbp, max_items, buying="both",
                     market="EBAY_GB", fx=None):
     """Search one or more queries on a single marketplace; merge & de-duplicate.
@@ -440,9 +458,9 @@ def search_listings(token, queries, max_price_gbp, max_items, buying="both",
             # eBay's default best-match relevance ordering.
             if buying == "auction":
                 params["sort"] = "endingSoonest"
-            r = requests.get(SEARCH_URL, headers=headers, params=params, timeout=30)
+            r = _get_with_retry(SEARCH_URL, headers, params, f"{market}/{query}")
             if r.status_code != 200:
-                print(f"[warn] search '{query}' failed ({r.status_code}): {r.text}",
+                print(f"[warn] search '{query}' ({market}) failed ({r.status_code})",
                       file=sys.stderr)
                 break
             data = r.json()
@@ -476,8 +494,8 @@ def fetch_item_description(token, item_id, market="EBAY_GB"):
         "X-EBAY-C-MARKETPLACE-ID": market,
     }
     try:
-        r = requests.get(ITEM_URL.format(item_id=item_id),
-                         headers=headers, timeout=30)
+        r = _get_with_retry(ITEM_URL.format(item_id=item_id), headers, None,
+                            f"{market}/item")
         if r.status_code != 200:
             return ""
         data = r.json()
@@ -558,6 +576,7 @@ def analyse(items, token, spot_per_oz, fx=None):
     spot_per_gram_fine = spot_per_oz / TROY_OZ_IN_GRAMS
     fx = fx or {}
     records = []
+    detail_fetches = 0   # bound getItem calls per scan (see MAX_DETAIL_FETCHES)
 
     for item in items:
         title = item.get("title", "")
@@ -574,8 +593,11 @@ def analyse(items, token, spot_per_oz, fx=None):
         carat, carat_assumed = detect_carat(text)
         weight = parse_weight_grams(text)
 
-        # 3. If weight still unknown, optionally dig into the full description.
-        if weight is None and FETCH_FULL_DETAILS:
+        # 3. If weight still unknown, optionally dig into the full description
+        #    (capped per scan to keep multi-market runs fast).
+        if (weight is None and FETCH_FULL_DETAILS
+                and (MAX_DETAIL_FETCHES == 0 or detail_fetches < MAX_DETAIL_FETCHES)):
+            detail_fetches += 1
             full = fetch_item_description(token, item.get("itemId", ""), market)
             if full:
                 if is_plated(full):
@@ -759,10 +781,19 @@ def main():
         seen.update(it.get("itemId") for it in got)
         items.extend(fresh)
         print(f"  {mkt}: {len(fresh)} new listing(s)")
+        time.sleep(1)   # pace between marketplaces to ease rate limits
     print(f"  fetched {len(items)} unique listing(s) across {len(markets)} market(s).")
 
     records = analyse(items, token, spot, fx)
     print_table(records)
+
+    # Safety: never overwrite a good data file with an empty result set (which
+    # usually means we were rate-limited). Keep the last good scan instead.
+    if not records and os.path.exists(args.json):
+        print(f"[warn] 0 results (likely rate-limited) -- keeping existing "
+              f"{args.json}; not overwriting.", file=sys.stderr)
+        return
+
     write_csv(records, args.csv)
 
     meta = {
