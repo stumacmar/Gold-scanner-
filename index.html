@@ -10,37 +10,39 @@
   html, body { margin: 0; min-height: 100%; background: #0b0e14; color: #e6e6e6;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
   a { color: inherit; text-decoration: none; }
-  header { padding: 16px 16px 6px; }
+  header { padding: 16px 16px 4px; }
   h1 { margin: 0; font-size: 20px; font-weight: 700; }
   h1 .coin { color: #d4af37; }
-  .sub { margin: 3px 0 0; font-size: 12px; color: #8a93a6; }
+  .sub { margin: 3px 0 0; font-size: 12px; color: #8a93a6; line-height: 1.5; }
 
-  .stats { display: flex; gap: 8px; overflow-x: auto; padding: 12px 16px 4px;
+  /* Carat tabs (primary navigation) */
+  #carats { display: flex; gap: 8px; overflow-x: auto; padding: 12px 16px 6px;
     scrollbar-width: none; }
-  .stats::-webkit-scrollbar { display: none; }
-  .stat { flex: 0 0 auto; background: #131826; border: 1px solid #232a3a;
-    border-radius: 12px; padding: 10px 14px; min-width: 96px; }
-  .stat .n { font-size: 20px; font-weight: 700; }
-  .stat .l { font-size: 11px; color: #8a93a6; margin-top: 2px; }
-  .stat.gold .n { color: #d4af37; }
+  #carats::-webkit-scrollbar { display: none; }
+  #carats .chip { flex: 0 0 auto; padding: 9px 18px; border-radius: 999px;
+    border: 1px solid #232a3a; background: #131826; color: #cfd6e4; font-size: 14px;
+    font-weight: 600; cursor: pointer; text-align: center; }
+  #carats .chip small { display: block; font-size: 9px; font-weight: 600; opacity: .8; margin-top: 1px; }
+  #carats .chip.active { background: #d4af37; border-color: #d4af37; color: #1a1400; }
 
-  .picker { display: flex; gap: 8px; overflow-x: auto; padding: 10px 16px;
-    scrollbar-width: none; }
-  .picker::-webkit-scrollbar { display: none; }
-  .chip { flex: 0 0 auto; padding: 8px 14px; border-radius: 999px; border: 1px solid #232a3a;
-    background: #131826; color: #cfd6e4; font-size: 13px; font-weight: 600; cursor: pointer; }
-  .chip.active { background: #d4af37; border-color: #d4af37; color: #1a1400; }
-  .capwrap { padding: 0 16px 4px; }
-  #capInput, #wMinInput { width: 170px; max-width: 60%; padding: 8px 12px;
-    border-radius: 999px; border: 1px solid #232a3a; background: #131826;
-    color: #e6e6e6; font-size: 13px; }
-  #capInput::placeholder, #wMinInput::placeholder { color: #6b7488; }
-  #carats { padding-top: 12px; }
-  #carats .chip { font-size: 14px; padding: 9px 18px; }
-  #carats .chip small { display: block; font-size: 9px; font-weight: 600; opacity: .8;
-    margin-top: 1px; }
+  /* Toolbar: Filters + Sort */
+  .toolbar { display: flex; gap: 8px; padding: 8px 16px 2px; align-items: center; }
+  .btn { padding: 9px 14px; border-radius: 999px; border: 1px solid #2a3550;
+    background: #161c2c; color: #e6e6e6; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .btn .badge { background: #d4af37; color: #1a1400; border-radius: 999px;
+    padding: 0 7px; margin-left: 6px; font-size: 12px; font-weight: 700; }
+  .toolbar .spacer { flex: 1; }
+  select.sort { padding: 9px 12px; border-radius: 999px; border: 1px solid #232a3a;
+    background: #131826; color: #e6e6e6; font-size: 13px; font-weight: 600; }
 
-  .list { padding: 4px 12px 24px; display: flex; flex-direction: column; gap: 10px; }
+  /* Active filter chips */
+  .active { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 16px 2px; }
+  .atag { font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px;
+    background: #1c2330; border: 1px solid #2a3550; color: #cfd6e4; cursor: pointer; }
+  .atag .x { color: #8a93a6; margin-left: 5px; font-weight: 700; }
+
+  /* Listing cards */
+  .list { padding: 8px 12px 28px; display: flex; flex-direction: column; gap: 10px; }
   .card { display: block; background: #131826; border: 1px solid #232a3a;
     border-radius: 14px; padding: 13px 14px; }
   .card.value { border-color: #d4af37; box-shadow: 0 0 0 1px rgba(212,175,55,0.25); }
@@ -57,11 +59,39 @@
     font-size: 11.5px; color: #6b7488; }
   .foot .left { color: #cfd6e4; font-weight: 600; }
 
-  .warn { margin: 4px 16px 0; padding: 11px 13px; background: #1a1407;
-    border: 1px solid #3a2e10; border-radius: 12px; font-size: 11.5px; color: #cbb98a; line-height: 1.5; }
-  footer { padding: 14px 16px 26px; font-size: 11px; color: #6b7488; line-height: 1.5; }
-  .err { padding: 24px 16px; color: #ef5350; font-size: 14px; }
-  .empty { padding: 24px 16px; color: #8a93a6; font-size: 14px; }
+  .warn { margin: 6px 16px 0; padding: 10px 13px; background: #1a1407;
+    border: 1px solid #3a2e10; border-radius: 12px; font-size: 11px; color: #cbb98a; line-height: 1.5; }
+  .err, .empty { padding: 24px 16px; font-size: 14px; }
+  .err { color: #ef5350; } .empty { color: #8a93a6; }
+
+  /* Bottom sheet */
+  .backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.55); opacity: 0;
+    pointer-events: none; transition: opacity .25s; z-index: 15; }
+  .backdrop.open { opacity: 1; pointer-events: auto; }
+  .sheet { position: fixed; left: 0; right: 0; bottom: 0; max-height: 86vh; overflow-y: auto;
+    background: #0f1320; border-top: 1px solid #232a3a;
+    border-radius: 18px 18px 0 0; transform: translateY(100%);
+    transition: transform .25s ease; z-index: 20; padding: 6px 16px 28px; }
+  .sheet.open { transform: translateY(0); }
+  .sheet-head { position: sticky; top: 0; background: #0f1320; display: flex;
+    align-items: center; justify-content: space-between; padding: 12px 2px 10px; }
+  .sheet-head b { font-size: 16px; }
+  .sheet-head .done { color: #d4af37; font-weight: 700; cursor: pointer; font-size: 15px; }
+  .grip { width: 36px; height: 4px; border-radius: 2px; background: #2a3550;
+    margin: 6px auto 0; }
+  .section { margin-top: 16px; }
+  .section h3 { margin: 0 0 8px; font-size: 12px; letter-spacing: .4px; text-transform: uppercase;
+    color: #8a93a6; font-weight: 700; }
+  .chiprow { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { padding: 8px 14px; border-radius: 999px; border: 1px solid #232a3a;
+    background: #131826; color: #cfd6e4; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .chip.active { background: #d4af37; border-color: #d4af37; color: #1a1400; }
+  .capInput { margin-top: 8px; width: 100%; padding: 10px 14px; border-radius: 12px;
+    border: 1px solid #232a3a; background: #131826; color: #e6e6e6; font-size: 14px; }
+  .capInput::placeholder { color: #6b7488; }
+  .reset { margin-top: 20px; width: 100%; padding: 12px; border-radius: 12px;
+    border: 1px solid #2a3550; background: #161c2c; color: #cfd6e4; font-size: 14px;
+    font-weight: 600; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -70,49 +100,87 @@
     <p class="sub" id="sub">Loading latest scan…</p>
   </header>
 
-  <div class="picker" id="carats"></div>
-  <div class="stats" id="stats"></div>
-  <div class="picker" id="picker"></div>
-  <div class="picker" id="types"></div>
-  <div class="picker" id="prices"></div>
-  <div class="capwrap">
-    <input id="capInput" type="number" inputmode="numeric" min="0"
-           placeholder="Custom max £…" autocomplete="off" />
+  <div id="carats"></div>
+
+  <div class="toolbar">
+    <button class="btn" id="filterBtn">Filters</button>
+    <span class="spacer"></span>
+    <select class="sort" id="sort">
+      <option value="best">Best value</option>
+      <option value="heavy">Heaviest</option>
+      <option value="cheap">Cheapest</option>
+      <option value="ending">Ending soonest</option>
+    </select>
   </div>
-  <div class="picker" id="weights"></div>
-  <div class="capwrap">
-    <input id="wMinInput" type="number" inputmode="decimal" min="0" step="0.1"
-           placeholder="Custom min grams…" autocomplete="off" />
-  </div>
+
+  <div class="active" id="active"></div>
+  <div class="list" id="list"></div>
+
   <div class="warn">
     ⚠ Verify the live bid on eBay before bidding (the API can lag). Bid shown is
-    <b>not</b> your true cost — postage &amp; any fees are extra. Weights are
-    seller-claimed text — confirm against the hallmark/photos.
+    <b>not</b> your true cost — postage &amp; fees are extra. Weights are
+    seller-claimed — confirm against the hallmark/photos.
   </div>
-  <div class="list" id="list"></div>
-  <footer id="footer"></footer>
+
+  <!-- Filters bottom sheet -->
+  <div class="backdrop" id="backdrop"></div>
+  <div class="sheet" id="sheet">
+    <div class="grip"></div>
+    <div class="sheet-head"><b>Filters</b><span class="done" id="sheetDone">Done</span></div>
+
+    <div class="section"><h3>Show</h3><div class="chiprow" id="f-kind"></div></div>
+    <div class="section"><h3>Listing type</h3><div class="chiprow" id="f-type"></div></div>
+    <div class="section"><h3>Max price</h3><div class="chiprow" id="f-price"></div>
+      <input class="capInput" id="capInput" type="number" inputmode="numeric" min="0"
+             placeholder="Custom max £…" autocomplete="off" /></div>
+    <div class="section"><h3>Min weight</h3><div class="chiprow" id="f-weight"></div>
+      <input class="capInput" id="wMinInput" type="number" inputmode="decimal" min="0" step="0.1"
+             placeholder="Custom min grams…" autocomplete="off" /></div>
+
+    <button class="reset" id="resetBtn">Reset all filters</button>
+  </div>
 
 <script>
-const fmtGBP = n => (n == null ? "?" : "£" + Number(n).toLocaleString("en-GB",
-  {maximumFractionDigits: 0}));
-let DATA = null;
-let INDEX = null;
-let currentKey = null;
+const fmtGBP = n => (n == null ? "?" : "£" + Number(n).toLocaleString("en-GB", {maximumFractionDigits: 0}));
+let DATA = null, INDEX = null, currentKey = null;
 let filter = "value";       // value | all | unknown
 let buyingFilter = "all";   // all | Auction | Buy now
-let priceCap = Infinity;    // Infinity | max £ to show
-let weightMin = 0;          // 0 | minimum grams to show
+let priceCap = Infinity;    // Infinity | max £
+let weightMin = 0;          // 0 | min grams
+let sortBy = "best";        // best | heavy | cheap | ending
 
-function ratioClass(r) {
-  if (r == null) return "r-low";
-  if (r >= 1) return "r-good";
-  if (r >= 0.85) return "r-mid";
-  return "r-low";
+// ---- Filter predicates (4 independent dimensions) ----
+const passKind  = r => filter === "all" ? true : filter === "value" ? r.is_value : r.weight_g == null;
+const passType  = r => buyingFilter === "all" || r.buying === buyingFilter;
+const passPrice = r => priceCap === Infinity || (r.current_bid != null && r.current_bid <= priceCap);
+const passWeight = r => weightMin === 0 || (r.weight_g != null && r.weight_g >= weightMin);
+
+function tlMinutes(s) {
+  if (!s || s === "n/a" || s === "ended") return Infinity;
+  let m = 0, d = s.match(/(\d+)d/), h = s.match(/(\d+)h/), mi = s.match(/(\d+)m/);
+  if (d) m += +d[1] * 1440;
+  if (h) m += +h[1] * 60;
+  if (mi) m += +mi[1];
+  return m || Infinity;
+}
+const SORTS = {
+  best:   (a, b) => (b.ratio ?? -1) - (a.ratio ?? -1),
+  heavy:  (a, b) => (b.weight_g ?? -1) - (a.weight_g ?? -1),
+  cheap:  (a, b) => (a.current_bid ?? 1e12) - (b.current_bid ?? 1e12),
+  ending: (a, b) => tlMinutes(a.time_left) - tlMinutes(b.time_left),
+};
+
+function applyFilter(results) {
+  return results
+    .filter(r => passKind(r) && passType(r) && passPrice(r) && passWeight(r))
+    .sort(SORTS[sortBy]);
 }
 
-function caratLabel(rec) {
-  return rec.carat + "ct" + (rec.carat_assumed ? "?" : "");
+function escapeHtml(s) {
+  return (s || "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 }
+function ratioClass(r) { return r == null ? "r-low" : r >= 1 ? "r-good" : r >= 0.85 ? "r-mid" : "r-low"; }
+function caratLabel(rec) { return rec.carat + "ct" + (rec.carat_assumed ? "?" : ""); }
 
 function card(rec) {
   const cls = "card" + (rec.is_value ? " value" : "");
@@ -120,13 +188,10 @@ function card(rec) {
   const wt = rec.weight_g == null ? "?" : rec.weight_g.toFixed(1) + "g";
   const ratio = rec.ratio == null ? "—"
     : '<span class="ratio ' + ratioClass(rec.ratio) + '">' + rec.ratio.toFixed(2) + '×</span>';
-  const bids = (rec.bids === "" || rec.bids == null) ? "0" : rec.bids;
+  const bids = (rec.bids === "" || rec.bids == null) ? 0 : rec.bids;
   return `
     <a class="${cls}" href="${rec.url}" target="_blank" rel="noopener">
-      <div class="top">
-        <div class="title">${escapeHtml(rec.title)}</div>
-        ${tag}
-      </div>
+      <div class="top"><div class="title">${escapeHtml(rec.title)}</div>${tag}</div>
       <div class="row2">
         <span class="kv">Carat <b>${caratLabel(rec)}</b></span>
         <span class="kv">Weight <b>${wt}</b></span>
@@ -135,145 +200,134 @@ function card(rec) {
         <span class="kv">Melt/Bid ${ratio}</span>
       </div>
       <div class="foot">
-        <span class="left">${rec.buying === "Buy now"
-          ? "🏷 Buy now"
+        <span class="left">${rec.buying === "Buy now" ? "🏷 Buy now"
           : "⏳ " + rec.time_left + " · " + bids + " bid" + (bids == 1 ? "" : "s")}</span>
         <span>tap to open ↗</span>
       </div>
     </a>`;
 }
 
-function escapeHtml(s) {
-  return (s || "").replace(/[&<>"]/g, c =>
-    ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-}
-
-// Three independent filter dimensions, each a predicate on a listing.
-const passKind  = r => filter === "all" ? true
-                     : filter === "value" ? r.is_value : r.weight_g == null;
-const passType  = r => buyingFilter === "all" || r.buying === buyingFilter;
-const passPrice = r => priceCap === Infinity
-                     || (r.current_bid != null && r.current_bid <= priceCap);
-const passWeight = r => weightMin === 0
-                     || (r.weight_g != null && r.weight_g >= weightMin);
-
-function applyFilter(results) {
-  const rows = results.filter(r =>
-    passKind(r) && passType(r) && passPrice(r) && passWeight(r));
-  // Sort: value/known first by melt-to-bid ratio (best first); nulls last.
-  rows.sort((a, b) => (b.ratio ?? -1) - (a.ratio ?? -1));
-  return rows;
-}
-
+// ---- Carat tabs ----
 function renderCarats() {
   const el = document.getElementById("carats");
   el.innerHTML = INDEX.searches.map(s =>
     `<div class="chip ${s.key === currentKey ? "active" : ""}" data-k="${s.key}">` +
     `${s.label}<small>${s.value_count} value</small></div>`).join("");
-  // Event delegation: one stable handler, robust to chip nodes being re-rendered.
   el.onclick = (e) => {
     const chip = e.target.closest(".chip");
     if (chip && chip.dataset.k !== currentKey) loadSearch(chip.dataset.k);
   };
 }
 
-function render() {
-  const m = DATA.meta;
-  const when = new Date(m.generated_at);
-  document.getElementById("sub").innerHTML =
-    `“${escapeHtml(m.query)}” · ${m.marketplace.replace("EBAY_", "")} · auctions ≤ ${fmtGBP(m.max_price)}` +
-    `<br>Updated ${when.toLocaleString("en-GB")} · gold ${fmtGBP(m.spot_gbp_per_oz)}/oz (${escapeHtml(m.spot_source)})`;
+// ---- Active filter chips (on main screen) ----
+function activeList() {
+  const a = [];
+  if (filter === "value") a.push(["kind", "Value"]);
+  else if (filter === "unknown") a.push(["kind", "Weight unknown"]);
+  if (buyingFilter !== "all") a.push(["type", buyingFilter]);
+  if (priceCap !== Infinity) a.push(["price", "≤" + fmtGBP(priceCap)]);
+  if (weightMin !== 0) a.push(["weight", "≥" + weightMin + "g"]);
+  return a;
+}
+function clearDim(dim) {
+  if (dim === "kind") filter = "all";
+  else if (dim === "type") buyingFilter = "all";
+  else if (dim === "price") { priceCap = Infinity; document.getElementById("capInput").value = ""; }
+  else if (dim === "weight") { weightMin = 0; document.getElementById("wMinInput").value = ""; }
+}
 
-  document.getElementById("stats").innerHTML = `
-    <div class="stat gold"><div class="n">${m.value_count}</div><div class="l">value candidates</div></div>
-    <div class="stat"><div class="n">${m.total_analysed}</div><div class="l">solid-gold scanned</div></div>
-    <div class="stat"><div class="n">${m.weight_unknown_count}</div><div class="l">weight unknown</div></div>
-    <div class="stat"><div class="n">£${(m.carat_per_gram["9"]).toFixed(0)}</div><div class="l">9ct £/g melt</div></div>
-    <div class="stat"><div class="n">£${(m.carat_per_gram["18"]).toFixed(0)}</div><div class="l">18ct £/g melt</div></div>`;
-
-  // Three independent filter dimensions. To keep every chip's count matching
-  // what the list shows, count each dimension WITHIN the intersection of the
-  // other two dimensions' current selections.
+// ---- Filters sheet ----
+function renderSheet() {
+  if (!DATA) return;
   const n = (arr, pred) => arr.filter(pred).length;
   const forKind   = DATA.results.filter(r => passType(r) && passPrice(r) && passWeight(r));
   const forType   = DATA.results.filter(r => passKind(r) && passPrice(r) && passWeight(r));
   const forPrice  = DATA.results.filter(r => passKind(r) && passType(r) && passWeight(r));
   const forWeight = DATA.results.filter(r => passKind(r) && passType(r) && passPrice(r));
+  const chips = (arr) => arr.map(([on, key, label]) =>
+    `<div class="chip ${on ? "active" : ""}" data-v="${key}">${label}</div>`).join("");
 
-  const picker = document.getElementById("picker");
-  picker.innerHTML =
-    [["value", "Value " + n(forKind, r => r.is_value)],
-     ["all", "All " + forKind.length],
-     ["unknown", "Weight unknown " + n(forKind, r => r.weight_g == null)]]
-    .map(([k, label]) => `<div class="chip ${k === filter ? "active" : ""}" data-f="${k}">${label}</div>`)
-    .join("");
-  picker.onclick = (e) => {
-    const c = e.target.closest(".chip");
-    if (c) { filter = c.dataset.f; render(); }
-  };
-
-  // Auction vs Buy It Now toggle.
-  const types = document.getElementById("types");
-  types.innerHTML =
-    [["all", "All types " + forType.length],
-     ["Auction", "⏳ Auction " + n(forType, r => r.buying === "Auction")],
-     ["Buy now", "🏷 Buy now " + n(forType, r => r.buying === "Buy now")]]
-    .map(([k, label]) => `<div class="chip ${k === buyingFilter ? "active" : ""}" data-t="${k}">${label}</div>`)
-    .join("");
-  types.onclick = (e) => {
-    const c = e.target.closest(".chip");
-    if (c) { buyingFilter = c.dataset.t; render(); }
-  };
-
-  // Price-cap (budget) toggle.
-  const bands = [["all", Infinity, "Any £"], ["250", 250, "≤£250"],
-                 ["500", 500, "≤£500"], ["1000", 1000, "≤£1k"],
-                 ["2000", 2000, "≤£2k"], ["3000", 3000, "≤£3k"]];
-  const prices = document.getElementById("prices");
-  prices.innerHTML = bands.map(([key, cap, lbl]) => {
-    const c = n(forPrice, r => cap === Infinity
-      || (r.current_bid != null && r.current_bid <= cap));
-    const active = (priceCap === cap) ? "active" : "";
-    return `<div class="chip ${active}" data-p="${key}">${lbl} ${c}</div>`;
-  }).join("");
-  prices.onclick = (e) => {
-    const c = e.target.closest(".chip");
-    if (!c) return;
-    priceCap = c.dataset.p === "all" ? Infinity : Number(c.dataset.p);
-    document.getElementById("capInput").value = "";   // clear custom box
-    render();
-  };
-
-  // Minimum gram-weight toggle (for heavy rings).
-  const wBands = [["all", 0, "Any g"], ["5", 5, "≥5g"], ["10", 10, "≥10g"],
-                  ["15", 15, "≥15g"], ["20", 20, "≥20g"]];
-  const weights = document.getElementById("weights");
-  weights.innerHTML = wBands.map(([key, min, lbl]) => {
-    const c = n(forWeight, r => min === 0
-      || (r.weight_g != null && r.weight_g >= min));
-    const active = (weightMin === min) ? "active" : "";
-    return `<div class="chip ${active}" data-w="${key}">${lbl} ${c}</div>`;
-  }).join("");
-  weights.onclick = (e) => {
-    const c = e.target.closest(".chip");
-    if (!c) return;
-    weightMin = c.dataset.w === "all" ? 0 : Number(c.dataset.w);
-    document.getElementById("wMinInput").value = "";   // clear custom box
-    render();
-  };
-
-  const rows = applyFilter(DATA.results);
-  const list = document.getElementById("list");
-  list.innerHTML = rows.length
-    ? rows.map(card).join("")
-    : '<div class="empty">Nothing here right now. Try the “All” tab, or the next scheduled scan may surface new auctions.</div>';
-
-  document.getElementById("footer").innerHTML =
-    `Melt = weight × carat fineness × gold spot. “Value” = current bid below melt × ${m.meta?.threshold ?? DATA.meta.threshold}. ` +
-    `Data refreshes automatically via GitHub Actions. Not financial advice — always verify on eBay before bidding.`;
+  document.getElementById("f-kind").innerHTML = chips([
+    [filter === "value", "value", "Value " + n(forKind, r => r.is_value)],
+    [filter === "all", "all", "All " + forKind.length],
+    [filter === "unknown", "unknown", "Weight unknown " + n(forKind, r => r.weight_g == null)],
+  ]);
+  document.getElementById("f-type").innerHTML = chips([
+    [buyingFilter === "all", "all", "All " + forType.length],
+    [buyingFilter === "Auction", "Auction", "⏳ Auction " + n(forType, r => r.buying === "Auction")],
+    [buyingFilter === "Buy now", "Buy now", "🏷 Buy now " + n(forType, r => r.buying === "Buy now")],
+  ]);
+  const pBands = [[Infinity, "Any £"], [250, "≤£250"], [500, "≤£500"],
+                 [1000, "≤£1k"], [2000, "≤£2k"], [3000, "≤£3k"]];
+  document.getElementById("f-price").innerHTML = chips(pBands.map(([cap, lbl]) =>
+    [priceCap === cap, cap, lbl + " " + n(forPrice, r => cap === Infinity
+      || (r.current_bid != null && r.current_bid <= cap))]));
+  const wBands = [[0, "Any g"], [5, "≥5g"], [10, "≥10g"], [15, "≥15g"], [20, "≥20g"]];
+  document.getElementById("f-weight").innerHTML = chips(wBands.map(([min, lbl]) =>
+    [weightMin === min, min, lbl + " " + n(forWeight, r => min === 0
+      || (r.weight_g != null && r.weight_g >= min))]));
 }
 
-// Custom budget box: bound once so typing keeps focus (it isn't re-rendered).
+function render() {
+  const m = DATA.meta;
+  const when = new Date(m.generated_at);
+  const shown = applyFilter(DATA.results);
+  document.getElementById("sub").innerHTML =
+    `“${escapeHtml(m.query)}” · UK · gold ${fmtGBP(m.spot_gbp_per_oz)}/oz` +
+    `<br>${shown.length} shown of ${m.total_analysed} · updated ${when.toLocaleDateString("en-GB")} ${when.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"})}`;
+
+  renderCarats();
+
+  const active = activeList();
+  document.getElementById("filterBtn").innerHTML =
+    "Filters" + (active.length ? ` <span class="badge">${active.length}</span>` : "");
+  document.getElementById("active").innerHTML = active.map(([dim, label]) =>
+    `<span class="atag" data-dim="${dim}">${label}<span class="x">✕</span></span>`).join("");
+
+  const list = document.getElementById("list");
+  list.innerHTML = shown.length ? shown.map(card).join("")
+    : '<div class="empty">No rings match these filters. Tap a filter chip above to clear it, or open Filters to widen.</div>';
+
+  renderSheet();
+}
+
+// ---- Loading ----
+function loadSearch(key) {
+  const search = INDEX.searches.find(s => s.key === key) || INDEX.searches[0];
+  currentKey = search.key;
+  document.getElementById("list").innerHTML = '<div class="empty">Loading…</div>';
+  fetch("./data/" + search.file + "?ts=" + Date.now())
+    .then(r => { if (!r.ok) throw new Error("missing"); return r.json(); })
+    .then(d => { DATA = d; render(); })
+    .catch(() => { document.getElementById("list").innerHTML =
+      '<div class="err">Could not load ' + search.file + '.</div>'; });
+}
+
+// ---- Wiring (bound once) ----
+function openSheet(o) {
+  document.getElementById("sheet").classList.toggle("open", o);
+  document.getElementById("backdrop").classList.toggle("open", o);
+}
+document.getElementById("filterBtn").onclick = () => openSheet(true);
+document.getElementById("sheetDone").onclick = () => openSheet(false);
+document.getElementById("backdrop").onclick = () => openSheet(false);
+document.getElementById("sort").onchange = (e) => { sortBy = e.target.value; if (DATA) render(); };
+
+document.getElementById("active").onclick = (e) => {
+  const t = e.target.closest(".atag");
+  if (t) { clearDim(t.dataset.dim); render(); }
+};
+document.getElementById("f-kind").onclick = (e) => {
+  const c = e.target.closest(".chip"); if (c) { filter = c.dataset.v; render(); } };
+document.getElementById("f-type").onclick = (e) => {
+  const c = e.target.closest(".chip"); if (c) { buyingFilter = c.dataset.v; render(); } };
+document.getElementById("f-price").onclick = (e) => {
+  const c = e.target.closest(".chip");
+  if (c) { priceCap = c.dataset.v === "Infinity" ? Infinity : Number(c.dataset.v);
+    document.getElementById("capInput").value = ""; render(); } };
+document.getElementById("f-weight").onclick = (e) => {
+  const c = e.target.closest(".chip");
+  if (c) { weightMin = Number(c.dataset.v); document.getElementById("wMinInput").value = ""; render(); } };
 document.getElementById("capInput").addEventListener("input", (e) => {
   const v = parseFloat(e.target.value);
   priceCap = (e.target.value === "" || isNaN(v) || v <= 0) ? Infinity : v;
@@ -284,31 +338,23 @@ document.getElementById("wMinInput").addEventListener("input", (e) => {
   weightMin = (e.target.value === "" || isNaN(v) || v <= 0) ? 0 : v;
   if (DATA) render();
 });
-
-function loadSearch(key) {
-  const search = INDEX.searches.find(s => s.key === key) || INDEX.searches[0];
-  currentKey = search.key;
-  renderCarats();
-  document.getElementById("list").innerHTML = '<div class="empty">Loading…</div>';
-  fetch("./data/" + search.file + "?ts=" + Date.now())
-    .then(r => { if (!r.ok) throw new Error("missing"); return r.json(); })
-    .then(d => { DATA = d; render(); })
-    .catch(() => {
-      document.getElementById("list").innerHTML =
-        '<div class="err">Could not load ' + search.file + '.</div>';
-    });
-}
+document.getElementById("resetBtn").onclick = () => {
+  filter = "all"; buyingFilter = "all"; priceCap = Infinity; weightMin = 0;
+  document.getElementById("capInput").value = "";
+  document.getElementById("wMinInput").value = "";
+  render();
+};
 
 fetch("./data/index.json?ts=" + Date.now())
   .then(r => { if (!r.ok) throw new Error("no index"); return r.json(); })
   .then(idx => {
     INDEX = idx;
-    if (!idx.searches || !idx.searches.length) throw new Error("empty index");
+    if (!idx.searches || !idx.searches.length) throw new Error("empty");
     loadSearch(idx.searches[0].key);
   })
   .catch(() => {
     document.getElementById("list").innerHTML =
-      '<div class="err">No scan data found yet. Once the GitHub Action runs (or you run the scanner), results will appear here.</div>';
+      '<div class="err">No scan data yet. Once the GitHub Action runs, results appear here.</div>';
     document.getElementById("sub").textContent = "Awaiting first scan";
   });
 </script>
