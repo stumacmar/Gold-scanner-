@@ -413,7 +413,7 @@ def _get_with_retry(url, headers, params, label, retries=4):
 
 
 def search_listings(token, queries, max_price_gbp, max_items, buying="both",
-                    market="EBAY_GB", fx=None):
+                    market="EBAY_GB", fx=None, min_price_gbp=0, conditions="USED"):
     """Search one or more queries on a single marketplace; merge & de-duplicate.
 
     `max_price_gbp` is converted to the marketplace's own currency for the API
@@ -423,9 +423,10 @@ def search_listings(token, queries, max_price_gbp, max_items, buying="both",
     cfg = MARKETPLACES[market]
     currency = cfg["currency"]
     fx = fx or {currency: 1.0}
-    # Convert the £ ceiling into this marketplace's currency for the filter.
+    # Convert the £ price bounds into this marketplace's currency for the filter.
     per_gbp = (1.0 / fx[currency]) if fx.get(currency) else 1.0   # GBP -> currency
     max_price = round(max_price_gbp * per_gbp)
+    min_price = round(min_price_gbp * per_gbp)
 
     headers = {
         "Authorization": f"Bearer {token}",
@@ -434,12 +435,12 @@ def search_listings(token, queries, max_price_gbp, max_items, buying="both",
     }
     buy = _BUYING_FILTER.get(buying, _BUYING_FILTER["both"])
     # Browse API filter syntax. priceCurrency is required alongside a price range.
-    item_filter = (
-        f"buyingOptions:{{{buy}}},"
-        "conditions:{USED},"
-        f"price:[..{max_price}],"
-        f"priceCurrency:{currency}"
-    )
+    parts = [f"buyingOptions:{{{buy}}}"]
+    if conditions and conditions.upper() != "ANY":
+        parts.append("conditions:{USED}")
+    parts.append(f"price:[{min_price}..{max_price}]")
+    parts.append(f"priceCurrency:{currency}")
+    item_filter = ",".join(parts)
 
     seen = set()
     items = []
@@ -747,6 +748,14 @@ def parse_args():
     p.add_argument("--markets", default=DEFAULT_MARKETS,
                    help="comma-separated eBay marketplaces to scan, e.g. "
                         "EBAY_GB,EBAY_US,EBAY_DE (prices converted to GBP)")
+    p.add_argument("--min-price", type=float, default=0.0,
+                   help="min current price (GBP) for the API filter; a coarse "
+                        "weight proxy that skips tiny rings")
+    p.add_argument("--min-weight", type=float, default=0.0,
+                   help="drop rings under this many grams (and weight-unknown) "
+                        "from the output")
+    p.add_argument("--conditions", default="USED", choices=["USED", "ANY"],
+                   help="USED only, or ANY condition (captures dealer 'New')")
     return p.parse_args()
 
 
@@ -776,7 +785,8 @@ def main():
     items, seen = [], set()
     for mkt in markets:
         got = search_listings(token, queries, args.max_price, args.limit,
-                              args.buying, market=mkt, fx=fx)
+                              args.buying, market=mkt, fx=fx,
+                              min_price_gbp=args.min_price, conditions=args.conditions)
         fresh = [it for it in got if it.get("itemId") not in seen]
         seen.update(it.get("itemId") for it in got)
         items.extend(fresh)
@@ -785,13 +795,22 @@ def main():
     print(f"  fetched {len(items)} unique listing(s) across {len(markets)} market(s).")
 
     records = analyse(items, token, spot, fx)
+
+    # Heavy-only: drop rings under the weight threshold (and unknown weight).
+    if args.min_weight > 0:
+        before = len(records)
+        records = [r for r in records
+                   if r["weight_g"] is not None and r["weight_g"] >= args.min_weight]
+        print(f"  kept {len(records)} of {before} at >= {args.min_weight}g")
+
     print_table(records)
 
-    # Safety: never overwrite a good data file with an empty result set (which
-    # usually means we were rate-limited). Keep the last good scan instead.
-    if not records and os.path.exists(args.json):
-        print(f"[warn] 0 results (likely rate-limited) -- keeping existing "
-              f"{args.json}; not overwriting.", file=sys.stderr)
+    # Safety: if we fetched nothing at all (rate-limited / API error), keep the
+    # last good scan rather than overwriting it with an empty file. (An empty
+    # `records` after weight-filtering is legitimate and IS written.)
+    if not items and os.path.exists(args.json):
+        print(f"[warn] fetched 0 listings (likely rate-limited) -- keeping "
+              f"existing {args.json}; not overwriting.", file=sys.stderr)
         return
 
     write_csv(records, args.csv)
@@ -803,6 +822,9 @@ def main():
         "buying": args.buying,
         "default_carat": args.default_carat,
         "markets": markets,
+        "min_weight": args.min_weight,
+        "min_price": args.min_price,
+        "conditions": args.conditions,
         "max_price": args.max_price,
         "threshold": args.threshold,
         "spot_gbp_per_oz": spot,

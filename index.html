@@ -285,7 +285,7 @@ function renderSheet() {
   document.getElementById("f-price").innerHTML = chips(pBands.map(([cap, lbl]) =>
     [priceCap === cap, cap, lbl + " " + n(forPrice, r => cap === Infinity
       || (r.current_bid != null && r.current_bid <= cap))]));
-  const wBands = [[0, "Any g"], [5, "≥5g"], [10, "≥10g"], [15, "≥15g"], [20, "≥20g"]];
+  const wBands = [[0, "Any g"], [15, "≥15g"], [20, "≥20g"], [25, "≥25g"], [30, "≥30g"]];
   document.getElementById("f-weight").innerHTML = chips(wBands.map(([min, lbl]) =>
     [weightMin === min, min, lbl + " " + n(forWeight, r => min === 0
       || (r.weight_g != null && r.weight_g >= min))]));
