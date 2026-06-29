@@ -39,17 +39,22 @@ jobs:
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: |
           MARKETS="EBAY_GB,EBAY_US,EBAY_DE,EBAY_IT,EBAY_IE"
-          python gold_ring_scanner.py --default-carat 9  --max-price 5000 --limit 150 --markets "$MARKETS" --json data/9ct.json  --csv data/9ct.csv  \
-            --query "9ct gold signet ring || 9ct gold ring || vintage 9ct gold ring"
+          # Heavy rings only (>=15g). A per-carat min-price floor (a weight proxy)
+          # skips tiny rings at the source, so the wider fetch (limit 250, all
+          # conditions) focuses on heavy candidates. Floors sit ~12g of melt so
+          # genuine 15g+ bargains aren't excluded.
+          COMMON="--max-price 6000 --limit 250 --min-weight 15 --conditions ANY --markets $MARKETS"
+          python gold_ring_scanner.py --default-carat 9  $COMMON --min-price 350  --json data/9ct.json  --csv data/9ct.csv  \
+            --query "9ct gold signet ring || 9ct gold ring || 9ct heavy gold ring"
           sleep 20
-          python gold_ring_scanner.py --default-carat 14 --max-price 5000 --limit 150 --markets "$MARKETS" --json data/14ct.json --csv data/14ct.csv \
-            --query "14ct gold signet ring || 14ct gold ring || vintage 14ct gold ring"
+          python gold_ring_scanner.py --default-carat 14 $COMMON --min-price 550  --json data/14ct.json --csv data/14ct.csv \
+            --query "14ct gold signet ring || 14ct gold ring || 14ct heavy gold ring"
           sleep 20
-          python gold_ring_scanner.py --default-carat 18 --max-price 5000 --limit 150 --markets "$MARKETS" --json data/18ct.json --csv data/18ct.csv \
-            --query "18ct gold signet ring || 18ct gold ring || vintage 18ct gold ring"
+          python gold_ring_scanner.py --default-carat 18 $COMMON --min-price 700  --json data/18ct.json --csv data/18ct.csv \
+            --query "18ct gold signet ring || 18ct gold ring || 18ct heavy gold ring"
           sleep 20
-          python gold_ring_scanner.py --default-carat 22 --max-price 5000 --limit 150 --markets "$MARKETS" --json data/22ct.json --csv data/22ct.csv \
-            --query "22ct gold signet ring || 22ct gold ring || vintage 22ct gold ring"
+          python gold_ring_scanner.py --default-carat 22 $COMMON --min-price 850  --json data/22ct.json --csv data/22ct.csv \
+            --query "22ct gold signet ring || 22ct gold ring || 22ct heavy gold ring"
           python scripts/build_index.py
 
       - name: Commit updated scan data
