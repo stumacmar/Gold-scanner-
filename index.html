@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <meta name="theme-color" content="#0b0e14" />
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
 <title>Gold Ring Scanner</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -147,7 +148,7 @@
 <script>
 const fmtGBP = n => (n == null ? "?" : "£" + Number(n).toLocaleString("en-GB", {maximumFractionDigits: 0}));
 let DATA = null, INDEX = null, currentKey = null;
-let filter = "value";       // value | all | unknown
+let filter = "all";         // value | all | unknown  (open on All; sort keeps best value on top)
 let buyingFilter = "all";   // all | Auction | Buy now
 let priceCap = Infinity;    // Infinity | max £
 let weightMin = 0;          // 0 | min grams
