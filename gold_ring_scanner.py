@@ -196,6 +196,22 @@ PLATED_MARKERS = [
     "gold on copper", "base metal", "pinchbeck",
 ]
 
+# Listings that ARE gold but aren't the rings we want (coin-mounted pieces:
+# the weight includes a coin/mount and they carry a numismatic premium, so the
+# melt figure is misleading). Edit this list to taste.
+EXCLUDE_MARKERS = [
+    "sovereign", "half sov", "full sov", " sov ", "krugerrand",
+    "coin", "guinea", "ducat",
+]
+
+
+def is_excluded(text):
+    """True if the listing is an unwanted type (e.g. coin/sovereign rings)."""
+    if not text:
+        return False
+    low = f" {text.lower()} "
+    return any(marker in low for marker in EXCLUDE_MARKERS)
+
 # =============================================================================
 # OAuth2 (client-credentials application token) with on-disk caching
 # =============================================================================
@@ -595,8 +611,8 @@ def analyse(items, token, spot_per_oz, fx=None):
         market = item.get("_market_id", "EBAY_GB")
         currency = item.get("_currency", "GBP")
 
-        # 1. Reject obvious non-solid-gold listings outright.
-        if is_plated(text):
+        # 1. Reject non-solid-gold and unwanted types (coin/sovereign rings).
+        if is_plated(text) or is_excluded(text):
             continue
 
         # 2. Carat + weight from summary text.

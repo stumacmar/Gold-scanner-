@@ -48,12 +48,11 @@
       "USD": 0.7559
     },
     "total_fetched": 1012,
-    "total_analysed": 33,
+    "total_analysed": 32,
     "value_count": 6,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 7,
-      "CA": 1,
       "CH": 1,
       "DE": 4,
       "ES": 2,
@@ -386,23 +385,6 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/287314393514?_skw=18ct+gold+signet+ring&hash=item42e545b9aa:g:uy4AAeSwaENp9Rpm"
-    },
-    {
-      "title": "Mens 18ct Yellow Gold Ring 2000 Olympic Achievment $100 Coin Ring",
-      "carat": 24,
-      "carat_assumed": false,
-      "weight_g": 41.7,
-      "current_bid": 5729.75,
-      "price_orig": "10,767",
-      "country": "CA",
-      "flag": "🇨🇦",
-      "melt_value": 4067.61,
-      "ratio": 0.71,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.ca/itm/336611674196?_skw=18ct+gold+ring&hash=item4e5f9e8854:g:GO4AAeSwTLhqQY7S"
     },
     {
       "title": "18ct Massiv Gelbgold Signet Ringe Oval 750 UK Gekennzeichnet Familie Crest Ringe",
