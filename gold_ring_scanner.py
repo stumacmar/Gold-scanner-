@@ -102,16 +102,22 @@ MAX_ITEMS         = 200                       # hard cap on items fetched per ma
 MARKETPLACES = {
     "EBAY_GB": {"currency": "GBP", "country": "UK", "flag": "🇬🇧"},
     "EBAY_US": {"currency": "USD", "country": "US", "flag": "🇺🇸"},
+    "EBAY_IE": {"currency": "EUR", "country": "IE", "flag": "🇮🇪"},
+    "EBAY_AU": {"currency": "AUD", "country": "AU", "flag": "🇦🇺"},
+    "EBAY_CA": {"currency": "CAD", "country": "CA", "flag": "🇨🇦"},
     "EBAY_DE": {"currency": "EUR", "country": "DE", "flag": "🇩🇪"},
     "EBAY_FR": {"currency": "EUR", "country": "FR", "flag": "🇫🇷"},
     "EBAY_IT": {"currency": "EUR", "country": "IT", "flag": "🇮🇹"},
     "EBAY_ES": {"currency": "EUR", "country": "ES", "flag": "🇪🇸"},
-    "EBAY_IE": {"currency": "EUR", "country": "IE", "flag": "🇮🇪"},
+    "EBAY_NL": {"currency": "EUR", "country": "NL", "flag": "🇳🇱"},
+    "EBAY_AT": {"currency": "EUR", "country": "AT", "flag": "🇦🇹"},
+    "EBAY_CH": {"currency": "CHF", "country": "CH", "flag": "🇨🇭"},
 }
 DEFAULT_MARKETS = "EBAY_GB"                   # comma-separated; overridden by --markets
 
 # FX fallback (units of foreign currency per £1) if the live lookup fails.
-FX_FALLBACK_PER_GBP = {"GBP": 1.0, "USD": 1.27, "EUR": 1.17}
+FX_FALLBACK_PER_GBP = {"GBP": 1.0, "USD": 1.27, "EUR": 1.17,
+                       "AUD": 1.93, "CAD": 1.74, "CHF": 1.13}
 PAGE_SIZE         = 200                       # Browse API max page size is 200
 
 # --- Valuation ------------------------------------------------------------
@@ -376,9 +382,12 @@ def get_fx_to_gbp():
     live FX lookup fails.
     """
     fx = {"GBP": 1.0}
+    # Every non-GBP currency used by a configured marketplace.
+    symbols = ",".join(sorted({c["currency"] for c in MARKETPLACES.values()
+                               if c["currency"] != "GBP"}))
     try:
         r = requests.get("https://api.frankfurter.dev/v1/latest",
-                         params={"base": "GBP", "symbols": "USD,EUR"}, timeout=30)
+                         params={"base": "GBP", "symbols": symbols}, timeout=30)
         r.raise_for_status()
         for cur, gbp_to_cur in r.json()["rates"].items():
             fx[cur] = 1.0 / float(gbp_to_cur)   # invert GBP->cur to get cur->GBP
@@ -779,7 +788,7 @@ def main():
     spot, source = get_spot_price_gbp_per_oz()
     print(f"  gold spot: £{spot:,.2f}/oz  (source: {source})")
     fx = get_fx_to_gbp()
-    print(f"  fx to GBP: " + ", ".join(f"{c}={fx.get(c):.3f}" for c in ("USD", "EUR") if fx.get(c)))
+    print(f"  fx to GBP: " + ", ".join(f"{c}={v:.3f}" for c, v in sorted(fx.items()) if c != "GBP"))
 
     token = get_ebay_token()
     items, seen = [], set()
