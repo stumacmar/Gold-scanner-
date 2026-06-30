@@ -67,13 +67,14 @@
       "country": "UK",
       "flag": "🇬🇧",
       "melt_value": 732.4,
-      "ratio": 0.72,
+      "ratio": 0.71,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/236784391863?_skw=9ct+gold+signet+ring&hash=item37217316b7:g:RQcAAeSw69Jp8JO-",
-      "stones": false
+      "stones": false,
+      "landed_cost": 1025.6
     },
     {
       "title": "Men's Gents 9Ct Gold 15.2g Signet Ring Size U",
@@ -91,7 +92,8 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW",
-      "stones": false
+      "stones": false,
+      "landed_cost": 1249.0
     },
     {
       "title": "9ct Yellow Solid Gold Bulldog Signet Ring",
@@ -109,7 +111,8 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/147117810866?_skw=9ct+gold+signet+ring&hash=item2240e7a4b2:g:51QAAeSwiG9oc6xm",
-      "stones": false
+      "stones": false,
+      "landed_cost": 1464.0
     },
     {
       "title": "9CT YELLOW GOLD HEAVY SIGNET RING, SIZE S. 19.67 GRAMS, LOT",
@@ -121,13 +124,14 @@
       "country": "UK",
       "flag": "🇬🇧",
       "melt_value": 720.32,
-      "ratio": 0.63,
+      "ratio": 0.62,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/117243491497?_skw=9ct+gold+signet+ring&hash=item1b4c41b4a9:g:gP0AAeSwbdxqKqLg",
-      "stones": false
+      "stones": false,
+      "landed_cost": 1153.99
     },
     {
       "title": "Vintage Large 9ct Gold Signet Ring , Size V1/2,-15.05g",
@@ -145,7 +149,8 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/123865927591?_skw=9ct+gold+signet+ring&hash=item1cd6fc0fa7:g:~D0AAOSwUMBb9ug~",
-      "stones": false
+      "stones": false,
+      "landed_cost": 1303.0
     },
     {
       "title": "Gentleman's Handmade Diamond Signet Ring 9ct 375 Solid Gold 29.7 Grams",
@@ -157,13 +162,14 @@
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 1087.61,
-      "ratio": 0.42,
+      "ratio": 0.34,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/167370662173?_skw=9ct+gold+signet+ring&hash=item26f811a11d:g:7SMAAOSwsaZn0M6c",
-      "stones": true
+      "stones": true,
+      "landed_cost": 3171.23
     }
   ]
 }
