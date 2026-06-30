@@ -16,7 +16,7 @@
       "file": "14ct.json",
       "query": "14ct gold signet ring",
       "generated_at": "2026-06-30T09:21:18.671052+00:00",
-      "value_count": 3,
+      "value_count": 1,
       "total_analysed": 14
     },
     {
@@ -25,7 +25,7 @@
       "file": "18ct.json",
       "query": "18ct gold signet ring",
       "generated_at": "2026-06-30T09:23:11.011497+00:00",
-      "value_count": 6,
+      "value_count": 5,
       "total_analysed": 31
     },
     {
@@ -34,7 +34,7 @@
       "file": "22ct.json",
       "query": "22ct gold signet ring",
       "generated_at": "2026-06-30T09:24:46.666112+00:00",
-      "value_count": 4,
+      "value_count": 1,
       "total_analysed": 15
     }
   ]
