@@ -49,9 +49,20 @@
   .card.value { border-color: #d4af37; box-shadow: 0 0 0 1px rgba(212,175,55,0.25); }
   .card .top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
   .card .title { font-size: 14px; font-weight: 600; line-height: 1.35; color: #eef1f7; }
+  .badges { flex: 0 0 auto; display: flex; flex-direction: column; gap: 5px; align-items: flex-end; }
   .tag { flex: 0 0 auto; font-size: 10px; font-weight: 700; padding: 3px 7px; border-radius: 6px;
-    letter-spacing: .3px; text-transform: uppercase; }
+    letter-spacing: .3px; text-transform: uppercase; white-space: nowrap; }
   .tag.val { background: #d4af37; color: #1a1400; }
+  /* Weight-confidence badge */
+  .cbadge { flex: 0 0 auto; font-size: 9px; font-weight: 700; padding: 3px 6px; border-radius: 6px;
+    letter-spacing: .3px; text-transform: uppercase; white-space: nowrap; }
+  .cbadge.confirmed { background: #143d24; color: #58d58a; border: 1px solid #1f5e38; }
+  .cbadge.estimated { background: #3a2e10; color: #e0b94b; border: 1px solid #5a4718; }
+  .cbadge.unknown   { background: #1c2330; color: #8a93a6; border: 1px solid #2a3550; }
+  /* Style / era tags */
+  .stags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
+  .stag { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 999px;
+    background: #161c2c; border: 1px solid #2a3550; color: #9fb0cc; text-transform: capitalize; }
   .row2 { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: 12.5px; }
   .kv { color: #8a93a6; } .kv b { color: #e6e6e6; font-weight: 600; }
   .muted { color: #6b7488; }
@@ -133,6 +144,8 @@
     <div class="sheet-head"><b>Filters</b><span class="done" id="sheetDone">Done</span></div>
 
     <div class="section"><h3>Show</h3><div class="chiprow" id="f-kind"></div></div>
+    <div class="section"><h3>Weight confidence</h3><div class="chiprow" id="f-conf"></div></div>
+    <div class="section"><h3>Style / era</h3><div class="chiprow" id="f-style"></div></div>
     <div class="section"><h3>Country</h3><div class="chiprow" id="f-country"></div></div>
     <div class="section"><h3>Listing type</h3><div class="chiprow" id="f-type"></div></div>
     <div class="section"><h3>Max price</h3><div class="chiprow" id="f-price"></div>
@@ -148,20 +161,30 @@
 <script>
 const fmtGBP = n => (n == null ? "?" : "£" + Number(n).toLocaleString("en-GB", {maximumFractionDigits: 0}));
 let DATA = null, INDEX = null, currentKey = null;
-let filter = "all";         // value | all | unknown  (open on All; sort keeps best value on top)
+let filter = "all";         // value | all  (open on All; sort keeps best value on top)
+let confFilter = "all";     // all | confirmed | estimated | unknown  (review lane)
+let styleFilter = "all";    // all | signet | intaglio | vintage | antique | band | gents
 let buyingFilter = "all";   // all | Auction | Buy now
 let priceCap = Infinity;    // Infinity | max £
 let weightMin = 0;          // 0 | min grams
 let countryFilter = "all";  // all | UK | US | DE | ...
 let sortBy = "best";        // best | heavy | cheap | ending
 
+// Back-compat helpers for older data files lacking the new fields.
+const confOf = r => r.weight_confidence || (r.weight_g == null ? "unknown" : "confirmed");
+const tagsOf = r => Array.isArray(r.tags) ? r.tags : [];
+const STYLES = ["signet", "intaglio", "vintage", "antique", "band", "gents"];
+
 // ---- Filter predicates (independent dimensions) ----
-const passKind  = r => filter === "all" ? true : filter === "value" ? r.is_value : r.weight_g == null;
+const passKind  = r => filter === "all" ? true : r.is_value;
+const passConf  = r => confFilter === "all" || confOf(r) === confFilter;
+const passStyle = r => styleFilter === "all" || tagsOf(r).includes(styleFilter);
 const passType  = r => buyingFilter === "all" || r.buying === buyingFilter;
 const passPrice = r => priceCap === Infinity || (r.current_bid != null && r.current_bid <= priceCap);
 const passWeight = r => weightMin === 0 || (r.weight_g != null && r.weight_g >= weightMin);
 const passCountry = r => countryFilter === "all" || (r.country || "UK") === countryFilter;
-const DIMS = { kind: passKind, type: passType, price: passPrice, weight: passWeight, country: passCountry };
+const DIMS = { kind: passKind, conf: passConf, style: passStyle, type: passType,
+               price: passPrice, weight: passWeight, country: passCountry };
 // Items passing every dimension EXCEPT the named one (for consistent chip counts).
 const others = (except) => (r) => Object.keys(DIMS).every(k => k === except || DIMS[k](r));
 
@@ -182,7 +205,7 @@ const SORTS = {
 
 function applyFilter(results) {
   return results
-    .filter(r => passKind(r) && passType(r) && passPrice(r) && passWeight(r) && passCountry(r))
+    .filter(r => Object.values(DIMS).every(fn => fn(r)))
     .sort(SORTS[sortBy]);
 }
 
@@ -192,25 +215,45 @@ function escapeHtml(s) {
 function ratioClass(r) { return r == null ? "r-low" : r >= 1 ? "r-good" : r >= 0.85 ? "r-mid" : "r-low"; }
 function caratLabel(rec) { return rec.carat + "ct" + (rec.carat_assumed ? "?" : ""); }
 
+const CONF_LABEL = { confirmed: "Confirmed", estimated: "Est", unknown: "Review" };
+function weightCell(rec) {
+  const c = confOf(rec);
+  if (c === "unknown") return "?";
+  if (c === "estimated") return rec.weight_g == null ? "?" : "~" + rec.weight_g.toFixed(0) + "g est";
+  return rec.weight_g == null ? "?" : rec.weight_g.toFixed(1) + "g";
+}
 function card(rec) {
   const cls = "card" + (rec.is_value ? " value" : "");
-  const tag = rec.is_value ? '<span class="tag val">Value</span>' : "";
-  const wt = rec.weight_g == null ? "?" : rec.weight_g.toFixed(1) + "g";
+  const valTag = rec.is_value ? '<span class="tag val">Value</span>' : "";
+  const c = confOf(rec);
+  const confBadge = `<span class="cbadge ${c}">${CONF_LABEL[c] || c}</span>`;
+  const wt = weightCell(rec);
   const ratio = rec.ratio == null ? "—"
     : '<span class="ratio ' + ratioClass(rec.ratio) + '">' + rec.ratio.toFixed(2) + '×</span>';
   const bids = (rec.bids === "" || rec.bids == null) ? 0 : rec.bids;
+  const tags = tagsOf(rec);
+  const stagRow = tags.length
+    ? `<div class="stags">${tags.map(t => `<span class="stag">${escapeHtml(t)}</span>`).join("")}</div>` : "";
+  // Net-gold note when stone mass was subtracted from the displayed weight.
+  const netNote = (rec.net_gold_g != null && rec.weight_g != null
+    && rec.net_gold_g < rec.weight_g - 0.05)
+    ? ` <span class="muted">(${rec.net_gold_g.toFixed(1)}g gold)</span>` : "";
   return `
     <a class="${cls}" href="${rec.url}" target="_blank" rel="noopener">
-      <div class="top"><div class="title">${rec.flag || ""} ${escapeHtml(rec.title)}</div>${tag}</div>
+      <div class="top">
+        <div class="title">${rec.flag || ""} ${escapeHtml(rec.title)}</div>
+        <div class="badges">${valTag}${confBadge}</div>
+      </div>
       <div class="row2">
         <span class="kv">Carat <b>${caratLabel(rec)}</b></span>
-        <span class="kv">Weight <b>${wt}</b></span>
+        <span class="kv">Weight <b>${wt}</b>${netNote}</span>
         <span class="kv">${rec.country === "UK" ? "Price" : "Bid"} <b>${fmtGBP(rec.current_bid)}</b>${rec.price_orig ? ` <span class="muted">(${rec.price_orig})</span>` : ""}</span>
         ${rec.country !== "UK" && rec.landed_cost ? `<span class="kv">Landed <b>~${fmtGBP(rec.landed_cost)}</b> <span class="muted">inc. VAT+post</span></span>` : ""}
         <span class="kv">Melt <b>${fmtGBP(rec.melt_value)}</b></span>
         <span class="kv">Melt/Cost ${ratio}</span>
         ${rec.stones ? '<span class="muted">💎 stone-set</span>' : ""}
       </div>
+      ${stagRow}
       <div class="foot">
         <span class="left">${rec.buying === "Buy now" ? "🏷 Buy now"
           : "⏳ " + rec.time_left + " · " + bids + " bid" + (bids == 1 ? "" : "s")}</span>
@@ -232,10 +275,12 @@ function renderCarats() {
 }
 
 // ---- Active filter chips (on main screen) ----
+const cap1 = s => s.charAt(0).toUpperCase() + s.slice(1);
 function activeList() {
   const a = [];
   if (filter === "value") a.push(["kind", "Value"]);
-  else if (filter === "unknown") a.push(["kind", "Weight unknown"]);
+  if (confFilter !== "all") a.push(["conf", confFilter === "unknown" ? "Review lane" : cap1(confFilter)]);
+  if (styleFilter !== "all") a.push(["style", cap1(styleFilter)]);
   if (countryFilter !== "all") a.push(["country", (FLAGS[countryFilter] || "") + " " + countryFilter]);
   if (buyingFilter !== "all") a.push(["type", buyingFilter]);
   if (priceCap !== Infinity) a.push(["price", "≤" + fmtGBP(priceCap)]);
@@ -244,6 +289,8 @@ function activeList() {
 }
 function clearDim(dim) {
   if (dim === "kind") filter = "all";
+  else if (dim === "conf") confFilter = "all";
+  else if (dim === "style") styleFilter = "all";
   else if (dim === "type") buyingFilter = "all";
   else if (dim === "country") countryFilter = "all";
   else if (dim === "price") { priceCap = Infinity; document.getElementById("capInput").value = ""; }
@@ -256,6 +303,8 @@ function renderSheet() {
   if (!DATA) return;
   const n = (arr, pred) => arr.filter(pred).length;
   const forKind    = DATA.results.filter(others("kind"));
+  const forConf    = DATA.results.filter(others("conf"));
+  const forStyle   = DATA.results.filter(others("style"));
   const forType    = DATA.results.filter(others("type"));
   const forPrice   = DATA.results.filter(others("price"));
   const forWeight  = DATA.results.filter(others("weight"));
@@ -264,9 +313,21 @@ function renderSheet() {
     `<div class="chip ${on ? "active" : ""}" data-v="${key}">${label}</div>`).join("");
 
   document.getElementById("f-kind").innerHTML = chips([
-    [filter === "value", "value", "Value " + n(forKind, r => r.is_value)],
     [filter === "all", "all", "All " + forKind.length],
-    [filter === "unknown", "unknown", "Weight unknown " + n(forKind, r => r.weight_g == null)],
+    [filter === "value", "value", "Value " + n(forKind, r => r.is_value)],
+  ]);
+
+  document.getElementById("f-conf").innerHTML = chips([
+    [confFilter === "all", "all", "All " + forConf.length],
+    [confFilter === "confirmed", "confirmed", "Confirmed " + n(forConf, r => confOf(r) === "confirmed")],
+    [confFilter === "estimated", "estimated", "Estimated " + n(forConf, r => confOf(r) === "estimated")],
+    [confFilter === "unknown", "unknown", "Review lane " + n(forConf, r => confOf(r) === "unknown")],
+  ]);
+
+  document.getElementById("f-style").innerHTML = chips([
+    [styleFilter === "all", "all", "All " + forStyle.length],
+    ...STYLES.map(s => [styleFilter === s, s,
+      cap1(s) + " " + n(forStyle, r => tagsOf(r).includes(s))]),
   ]);
 
   const countries = Object.keys(DATA.meta.country_counts || {});
@@ -344,6 +405,10 @@ document.getElementById("active").onclick = (e) => {
 };
 document.getElementById("f-kind").onclick = (e) => {
   const c = e.target.closest(".chip"); if (c) { filter = c.dataset.v; render(); } };
+document.getElementById("f-conf").onclick = (e) => {
+  const c = e.target.closest(".chip"); if (c) { confFilter = c.dataset.v; render(); } };
+document.getElementById("f-style").onclick = (e) => {
+  const c = e.target.closest(".chip"); if (c) { styleFilter = c.dataset.v; render(); } };
 document.getElementById("f-country").onclick = (e) => {
   const c = e.target.closest(".chip"); if (c) { countryFilter = c.dataset.v; render(); } };
 document.getElementById("f-type").onclick = (e) => {
@@ -366,7 +431,8 @@ document.getElementById("wMinInput").addEventListener("input", (e) => {
   if (DATA) render();
 });
 document.getElementById("resetBtn").onclick = () => {
-  filter = "all"; buyingFilter = "all"; priceCap = Infinity; weightMin = 0; countryFilter = "all";
+  filter = "all"; confFilter = "all"; styleFilter = "all";
+  buyingFilter = "all"; priceCap = Infinity; weightMin = 0; countryFilter = "all";
   document.getElementById("capInput").value = "";
   document.getElementById("wMinInput").value = "";
   render();

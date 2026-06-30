@@ -119,6 +119,53 @@ MARKETPLACES = {
 }
 DEFAULT_MARKETS = "EBAY_GB"                   # comma-separated; overridden by --markets
 
+# --- Localised search terms ----------------------------------------------
+# Sellers abroad list by fineness mark (585/750...), not "ct", and in their own
+# language. We run localised terms on each market PLUS English (cross-border
+# sellers exist). Templates use {c}=carat number, {f}=fineness mark.
+LOCAL_FINENESS = {8: "333", 9: "375", 14: "585", 15: "625",
+                  18: "750", 20: "833", 22: "916"}
+MARKET_LANG = {
+    "EBAY_DE": "de", "EBAY_AT": "de", "EBAY_CH": "de",
+    "EBAY_FR": "fr", "EBAY_BE": "fr",
+    "EBAY_IT": "it", "EBAY_ES": "es", "EBAY_NL": "nl", "EBAY_PL": "pl",
+}  # everything else defaults to English
+QUERY_TEMPLATES = {
+    "en": ["{c}ct gold signet ring", "{c}ct gold ring", "{c}ct heavy gold ring",
+           "{c}ct gold band", "{c}ct intaglio gold ring", "vintage {c}ct gold ring",
+           "mens {c}ct gold ring"],
+    "de": ["Goldring {f}", "Siegelring {f}", "Herrenring massiv {f}",
+           "Gold {f} Ring schwer"],
+    "fr": ["bague or {f}", "chevalière or {f}", "or massif {f} bague",
+           "bague homme or {f}"],
+    "it": ["anello oro {f}", "anello chevalier oro {f}", "oro massiccio {f} anello",
+           "anello uomo oro {f}"],
+    "es": ["anillo oro {f}", "sello oro {f}", "oro macizo {f} anillo",
+           "anillo hombre oro {f}"],
+    "nl": ["gouden ring {f}", "zegelring goud {f}", "massief goud {f} ring",
+           "heren gouden ring {f}"],
+    "pl": ["złoty pierścień {f}", "sygnet złoto {f}", "złoto {f} pierścień",
+           "męski złoty pierścień {f}"],
+}
+MAX_QUERIES_PER_MARKET = 7    # cap the matrix so the API quota lasts a full run
+
+
+def queries_for(market, carat, extra=()):
+    """Build the de-duplicated localised+English query list for a market/carat."""
+    lang = MARKET_LANG.get(market, "en")
+    f = LOCAL_FINENESS.get(carat, str(carat))
+    terms = [t.format(c=carat, f=f) for t in QUERY_TEMPLATES.get(lang, [])]
+    if lang != "en":                       # cross-border English sellers too
+        terms += [t.format(c=carat, f=f) for t in QUERY_TEMPLATES["en"][:3]]
+    terms += list(extra)
+    seen, out = set(), []
+    for q in terms:
+        q = q.strip()
+        if q and q.lower() not in seen:
+            seen.add(q.lower())
+            out.append(q)
+    return out[:MAX_QUERIES_PER_MARKET]
+
 # FX fallback (units of foreign currency per £1) if the live lookup fails.
 FX_FALLBACK_PER_GBP = {"GBP": 1.0, "USD": 1.27, "EUR": 1.17, "AUD": 1.93,
                        "CAD": 1.74, "CHF": 1.13, "PLN": 5.0, "HKD": 10.3,
@@ -173,15 +220,68 @@ TROY_OZ_IN_GRAMS = 31.1034768   # 1 troy ounce = 31.1034768 g
 # --- Carat (millesimal fineness) -----------------------------------------
 # Maps detected carat -> fraction of pure gold.
 CARAT_FRACTION = {
+    8:  333 / 1000,   # continental 8ct (333) -- out of primary scope, for melt accuracy
     9:  375 / 1000,
     10: 417 / 1000,
     14: 585 / 1000,
     15: 625 / 1000,
     18: 750 / 1000,
+    20: 833 / 1000,   # continental 20ct (833)
     22: 916.6 / 1000,
     24: 999 / 1000,
 }
 DEFAULT_CARAT = 9   # assume 9ct when an item is clearly gold but no carat found
+
+# --- Weight-confidence model (see assess_ring) ---------------------------
+WEIGHT_FLOOR_CONFIRMED = 15.0          # strict floor for a parsed (stated) weight
+WEIGHT_FLOOR_ESTIMATED_LOWBOUND = 12.0 # estimated rings kept if low-bound >= this
+# Approx density of gold alloy by carat (g/cm3); a fixed ring volume weighs more
+# at higher carat, so weight estimates scale with this relative to the 18ct base.
+RING_DENSITY = {8: 10.9, 9: 11.3, 10: 11.6, 14: 13.4, 15: 14.0,
+                18: 15.5, 20: 16.5, 22: 17.8, 24: 19.3}
+_DENSITY_BASE = 15.5
+# Conservative LOWER-BOUND gram estimates per ring archetype (at 18ct), used only
+# when no weight is stated. Only genuinely chunky archetypes clear the 12g floor.
+ARCHETYPE_LOW_G = {
+    # Tuned so a "heavy/chunky" signet clears the 12g estimated floor even at
+    # 9ct (the least dense, most common carat: 17 * 11.3/15.5 ~ 12.4g). Plain
+    # archetypes stay below the floor on purpose -> they fall to the review lane.
+    "signet_heavy": 17.0, "signet": 9.0,
+    "band_heavy": 13.0, "band": 6.0,
+    "ring_heavy": 12.0,
+}
+HEAVY_WORDS = ("heavy", "chunky", "chunk", "solid", "substantial", "massive",
+               "massiv", "massiccio", "macizo", "massief", "thick", "heavyweight",
+               "heavy gauge", "large", "big")
+SLIM_WORDS = ("dainty", "slim", "thin", "narrow", "fine ", "petite", "slender",
+              "delicate")
+
+# --- Stone handling (see assess_ring) ------------------------------------
+# Stone "showcases" where the gold is a minor fraction -> reject outright.
+STONE_SHOWCASE_WORDS = ("cluster", "halo", "trilogy", "three stone", "3 stone",
+                        "five stone", "5 stone", "eternity", "dress ring",
+                        "cocktail", "multi gem", "multi-gem", "gem set",
+                        "gemset", "gemstone cluster", "diamond cluster")
+# Carved-stone / hardstone signets where gold still dominates -> keep, but
+# subtract a stone-mass allowance before testing the gold floor.
+INTAGLIO_WORDS = ("intaglio", "carved", "seal", "hardstone", "bloodstone",
+                  "carnelian", "cornelian", "agate", "onyx", "lapis", "jasper")
+STONE_ALLOWANCE_G = 1.5        # generic single small stone in a signet/band
+INTAGLIO_ALLOWANCE_G = 3.5     # carved hardstone seal face (bigger displacement)
+
+# --- Style / era tags (search + card tags) -------------------------------
+STYLE_TAG_WORDS = {
+    "signet":   ("signet", "siegelring", "chevalière", "chevalier", "sello",
+                 "sigillo", "zegelring", "sygnet"),
+    "intaglio": ("intaglio", "carved", "seal", "hardstone", "bloodstone",
+                 "carnelian", "agate"),
+    "vintage":  ("vintage", "retro", "mid century", "mid-century"),
+    "antique":  ("antique", "georgian", "victorian", "edwardian", "deco",
+                 "antik", "antico", "antiguo"),
+    "band":     ("band", "wedding ring", "wedding band", "ehering", "fede"),
+    "gents":    ("gents", "gent's", "men's", "mens", "herren", "homme", "uomo",
+                 "hombre", "heren"),
+}
 
 # --- Detail fetching ------------------------------------------------------
 # The search endpoint only returns a short description. If the weight isn't
@@ -291,11 +391,11 @@ def get_ebay_token():
 # Text parsing: weight, carat, plated detection
 # =============================================================================
 
-# Number (allowing comma or dot decimal) immediately followed by a gram unit.
-# Handles: 9.4g  9.4 g  9.4grams  9.4 gram  9.4gm  9.4 gms  9,4 g  9.4gr
+# Number (comma or dot decimal) immediately followed by a gram unit, in several
+# languages. Handles: 9.4g  9.4 g  9.4grams  9,4 g  21 grammi  18,4 Gramm  9.4gr
 _WEIGHT_RE = re.compile(
     r"(\d{1,3}(?:[.,]\d{1,2})?)\s*"
-    r"(?:grammes?|grams?|gms?|gm|grm?s?|gr|g)\b",
+    r"(?:grammes?|grammi|gramm|grams?|gms?|gm|grm?s?|gr|g)\b\.?",
     re.IGNORECASE,
 )
 
@@ -346,8 +446,10 @@ STONE_WORDS = [
 ]
 
 # Gold fineness hallmark numbers -> carat (unambiguous; preferred over "Nct").
-_HALLMARK = [("999", 24), ("990", 24), ("917", 22), ("916", 22), ("750", 18),
-             ("625", 15), ("585", 14), ("417", 10), ("375", 9)]
+# Includes continental marks: 833 = 20ct, 333 = 8ct (common in DE/NL).
+_HALLMARK = [("999", 24), ("990", 24), ("917", 22), ("916", 22), ("833", 20),
+             ("750", 18), ("625", 15), ("585", 14), ("417", 10), ("375", 9),
+             ("333", 8)]
 
 
 def has_stones(text):
@@ -378,6 +480,94 @@ def detect_carat(text):
                 continue   # "<n>ct <stone>" -> stone weight, not gold carat
             return carat, False
     return DEFAULT_CARAT, True
+
+
+def style_tags(text):
+    """Return the list of style/era tags present in the text (signet, vintage...)."""
+    low = (text or "").lower()
+    return [tag for tag, words in STYLE_TAG_WORDS.items()
+            if any(w in low for w in words)]
+
+
+def estimate_weight_low(text, carat):
+    """Conservative LOWER-BOUND gram estimate when no weight is stated.
+
+    Uses ring archetype (signet/band/heavy) + "heavy/chunky" adjectives + large
+    US ring size, scaled by carat density. Returns grams, or None if there's no
+    usable signal (-> UNKNOWN, routed to the review lane, never discarded).
+    """
+    low = (text or "").lower()
+    heavy = any(w in low for w in HEAVY_WORDS)
+    slim = any(w in low for w in SLIM_WORDS)
+    is_signet = any(w in low for w in STYLE_TAG_WORDS["signet"])
+    is_band = any(w in low for w in STYLE_TAG_WORDS["band"])
+
+    if is_signet:
+        arch = "signet_heavy" if heavy else "signet"
+    elif is_band:
+        arch = "band_heavy" if heavy else "band"
+    elif heavy:
+        arch = "ring_heavy"
+    else:
+        return None   # no usable signal
+
+    base = ARCHETYPE_LOW_G[arch]
+    if slim:
+        base *= 0.7
+    # Large US ring size (>= ~11 / letter T+) means more metal: nudge up.
+    msize = re.search(r"\bsize\s*([0-9]{1,2}(?:\.5)?)\b", low)
+    if msize and float(msize.group(1)) >= 11:
+        base *= 1.15
+    est = base * RING_DENSITY.get(carat, _DENSITY_BASE) / _DENSITY_BASE
+    return round(est, 1)
+
+
+def assess_ring(text, carat, stated_weight):
+    """Decide gold weight, confidence, and keep/reject for one listing.
+
+    Returns a dict:
+      keep            -- bool (False = reject, e.g. gold-light stone showcase)
+      confidence      -- 'confirmed' | 'estimated' | 'unknown'
+      gross_g         -- parsed/estimated total weight (or None)
+      net_gold_g      -- gold weight after subtracting a stone allowance (or None)
+      stones          -- bool
+      tags            -- style/era tags
+    """
+    low = (text or "").lower()
+    tags = style_tags(text)
+
+    # Gold-light showcases: the gold is a minor fraction -> reject.
+    if any(w in low for w in STONE_SHOWCASE_WORDS):
+        return {"keep": False, "confidence": "reject", "gross_g": None,
+                "net_gold_g": None, "stones": True, "tags": tags}
+
+    stones = has_stones(text)
+    intaglio = any(w in low for w in INTAGLIO_WORDS)
+    allowance = (INTAGLIO_ALLOWANCE_G if intaglio
+                 else STONE_ALLOWANCE_G if stones else 0.0)
+
+    if stated_weight is not None:
+        confidence = "confirmed"
+        gross = stated_weight
+    else:
+        est = estimate_weight_low(text, carat)
+        if est is not None:
+            confidence, gross = "estimated", est
+        else:
+            confidence, gross = "unknown", None
+
+    net = round(gross - allowance, 1) if gross is not None else None
+
+    # Floor test against NET gold weight.
+    if confidence == "confirmed":
+        keep = net is not None and net >= WEIGHT_FLOOR_CONFIRMED
+    elif confidence == "estimated":
+        keep = net is not None and net >= WEIGHT_FLOOR_ESTIMATED_LOWBOUND
+    else:  # unknown -> always retained for the review lane
+        keep = True
+
+    return {"keep": keep, "confidence": confidence, "gross_g": gross,
+            "net_gold_g": net, "stones": stones, "tags": tags}
 
 
 def is_plated(text):
@@ -487,10 +677,15 @@ _BUYING_FILTER = {
 }
 
 
+API_CALLS = {"search": 0, "item": 0}      # quota-spend instrumentation
+
+
 def _get_with_retry(url, headers, params, label, retries=4):
     """GET with exponential backoff on eBay 429 (rate limit). Returns Response."""
     r = None
+    kind = "item" if "/item/" in url else "search"
     for attempt in range(retries):
+        API_CALLS[kind] += 1
         r = requests.get(url, headers=headers, params=params, timeout=30)
         if r.status_code != 429:
             return r
@@ -683,19 +878,28 @@ def analyse(items, token, spot_per_oz, fx=None):
         carat, carat_assumed = detect_carat(text)
         weight = parse_weight_grams(text)
 
-        # 3. If weight still unknown, optionally dig into the full description
-        #    (capped per scan to keep multi-market runs fast).
+        # 3. If weight still unknown, dig into the full description (capped per
+        #    scan). The full text also feeds stone/style detection below.
         if (weight is None and FETCH_FULL_DETAILS
                 and (MAX_DETAIL_FETCHES == 0 or detail_fetches < MAX_DETAIL_FETCHES)):
             detail_fetches += 1
             full = fetch_item_description(token, item.get("itemId", ""), market)
             if full:
-                if is_plated(full):
+                if is_plated(full) or is_excluded(full):
                     continue
+                text = f"{text} {full}"
                 weight = parse_weight_grams(full)
                 if carat_assumed:
                     carat, carat_assumed = detect_carat(full)
             time.sleep(0.1)  # polite pacing for the extra call
+
+        # 4. Weight-confidence + net-gold assessment (handles stones, archetype
+        #    estimation, and the 15g/12g floor branching).
+        a = assess_ring(text, carat, weight)
+        if not a["keep"]:
+            continue
+        confidence = a["confidence"]      # confirmed | estimated | unknown
+        net_gold = a["net_gold_g"]        # gold weight used for melt (or None)
 
         raw_bid = get_current_bid(item)              # in listing currency
         rate = fx.get(currency, 1.0)                 # currency -> GBP
@@ -707,25 +911,26 @@ def analyse(items, token, spot_per_oz, fx=None):
         fraction = CARAT_FRACTION.get(carat, CARAT_FRACTION[DEFAULT_CARAT])
         content_per_gram = spot_per_gram_fine * fraction
 
-        melt = round(weight * content_per_gram, 2) if weight else None
+        melt = round(net_gold * content_per_gram, 2) if net_gold else None
         country = item.get("_country", "UK")
         # True £ cost to a UK buyer (adds import VAT + postage for non-UK).
         landed = landed_cost(bid, country)
-        # melt-to-cost ratio: compare melt against what you'd actually pay.
         ratio = round(melt / landed, 2) if (melt and landed) else None
 
-        # Stone-set rings: weight includes the stone, so melt is overstated and
-        # not trustworthy -- list them, but don't flag them as value bargains.
-        stones = has_stones(text)
-
-        # VALUE flag: landed cost below melt * threshold, plain (stoneless) rings.
-        is_value = bool(melt and landed and landed < melt * MELT_THRESHOLD and not stones)
+        # VALUE flag: landed cost below melt * threshold. Net-gold already
+        # excludes stone mass, so stone-set signets can legitimately qualify.
+        # Estimated rings can qualify (melt is conservative); unknown cannot.
+        is_value = bool(melt and landed and landed < melt * MELT_THRESHOLD)
 
         records.append({
             "title": title,
             "carat": carat,
             "carat_assumed": carat_assumed,
-            "weight_g": weight,
+            "weight_g": a["gross_g"],        # displayed weight (gross)
+            "net_gold_g": net_gold,          # gold-only weight used for melt
+            "weight_confidence": confidence, # confirmed | estimated | unknown
+            "tags": a["tags"],               # style/era tags
+            "stones": a["stones"],
             "current_bid": bid,              # GBP (item price/bid)
             "landed_cost": landed,           # GBP incl. import VAT + postage
             "price_orig": price_orig,        # original currency (non-UK only)
@@ -734,7 +939,6 @@ def analyse(items, token, spot_per_oz, fx=None):
             "melt_value": melt,
             "ratio": ratio,                  # melt / landed cost
             "is_value": is_value,
-            "stones": stones,
             "buying": buying_type(item),
             "time_left": time_left(item.get("itemEndDate")),
             "bids": item.get("bidCount", ""),
@@ -806,9 +1010,10 @@ def write_json(records, path, meta):
 
 
 def write_csv(records, path):
-    fields = ["title", "carat", "carat_assumed", "weight_g", "current_bid",
-              "price_orig", "country", "melt_value", "ratio", "is_value",
-              "buying", "bids", "time_left", "url"]
+    fields = ["title", "carat", "weight_g", "net_gold_g", "weight_confidence",
+              "tags", "stones", "current_bid", "landed_cost", "price_orig",
+              "country", "melt_value", "ratio", "is_value", "buying", "bids",
+              "time_left", "url"]
     with open(path, "w", newline="", encoding="utf-8") as fh:
         writer = csv.DictWriter(fh, fieldnames=fields)
         writer.writeheader()
@@ -859,21 +1064,25 @@ def parse_args():
 
 
 def main():
-    global MELT_THRESHOLD, DEFAULT_CARAT
+    global MELT_THRESHOLD, DEFAULT_CARAT, WEIGHT_FLOOR_CONFIRMED
     args = parse_args()
     MELT_THRESHOLD = args.threshold
     DEFAULT_CARAT = args.default_carat
+    if args.min_weight > 0:                      # --min-weight tunes the hard floor
+        WEIGHT_FLOOR_CONFIRMED = args.min_weight
 
-    queries = [q.strip() for q in args.query.split("||") if q.strip()]
+    extra = [q.strip() for q in args.query.split("||") if q.strip()] \
+        if args.query.strip() != SEARCH_TERM else []
     markets = [m.strip() for m in args.markets.split(",")
                if m.strip() in MARKETPLACES]
     if not markets:
         markets = ["EBAY_GB"]
 
     print("\neBay Gold Ring Scanner")
-    print(f"  queries={queries}  buying={args.buying}  "
-          f"max_price=£{args.max_price:.0f}  threshold={args.threshold}  "
-          f"limit={args.limit}/market  markets={markets}")
+    print(f"  carat={args.default_carat}  buying={args.buying}  conditions={args.conditions}  "
+          f"price=£{args.min_price:.0f}-£{args.max_price:.0f}  "
+          f"floors: confirmed>={WEIGHT_FLOOR_CONFIRMED}g estimated>={WEIGHT_FLOOR_ESTIMATED_LOWBOUND}g  "
+          f"limit={args.limit}/mkt  markets={len(markets)}")
 
     spot, source = get_spot_price_gbp_per_oz()
     print(f"  gold spot: £{spot:,.2f}/oz  (source: {source})")
@@ -882,31 +1091,46 @@ def main():
 
     token = get_ebay_token()
     items, seen = [], set()
+    raw_by_country = {}
+    all_queries = []                 # union of every per-market query (for meta)
     for mkt in markets:
-        got = search_listings(token, queries, args.max_price, args.limit,
+        cfg = MARKETPLACES[mkt]
+        mkt_queries = queries_for(mkt, args.default_carat, extra=extra)
+        for q in mkt_queries:
+            if q not in all_queries:
+                all_queries.append(q)
+        got = search_listings(token, mkt_queries, args.max_price, args.limit,
                               args.buying, market=mkt, fx=fx,
                               min_price_gbp=args.min_price, conditions=args.conditions)
         fresh = [it for it in got if it.get("itemId") not in seen]
         seen.update(it.get("itemId") for it in got)
         items.extend(fresh)
-        print(f"  {mkt}: {len(fresh)} new listing(s)")
+        raw_by_country[cfg["country"]] = len(fresh)
+        print(f"  {mkt}: {len(mkt_queries)}q -> {len(fresh)} new listing(s)")
         time.sleep(1)   # pace between marketplaces to ease rate limits
     print(f"  fetched {len(items)} unique listing(s) across {len(markets)} market(s).")
 
     records = analyse(items, token, spot, fx)
-
-    # Heavy-only: drop rings under the weight threshold (and unknown weight).
-    if args.min_weight > 0:
-        before = len(records)
-        records = [r for r in records
-                   if r["weight_g"] is not None and r["weight_g"] >= args.min_weight]
-        print(f"  kept {len(records)} of {before} at >= {args.min_weight}g")
-
     print_table(records)
 
+    # Per-market yield (raw fetched -> kept after filters -> flagged value) so
+    # coverage leaks are visible in the run log.
+    kept_by, value_by = {}, {}
+    conf = {"confirmed": 0, "estimated": 0, "unknown": 0}
+    for r in records:
+        kept_by[r["country"]] = kept_by.get(r["country"], 0) + 1
+        if r["is_value"]:
+            value_by[r["country"]] = value_by.get(r["country"], 0) + 1
+        conf[r["weight_confidence"]] = conf.get(r["weight_confidence"], 0) + 1
+    print("  per-market yield  raw -> kept -> value:")
+    for c in sorted(raw_by_country):
+        print(f"    {c:3} {raw_by_country[c]:4} -> {kept_by.get(c, 0):3} -> {value_by.get(c, 0):2}")
+    print(f"  weight confidence: confirmed={conf['confirmed']} "
+          f"estimated={conf['estimated']} unknown={conf['unknown']}")
+    print(f"  eBay API calls: search={API_CALLS['search']} item={API_CALLS['item']}")
+
     # Safety: if we fetched nothing at all (rate-limited / API error), keep the
-    # last good scan rather than overwriting it with an empty file. (An empty
-    # `records` after weight-filtering is legitimate and IS written.)
+    # last good scan rather than overwriting it with an empty file.
     if not items and os.path.exists(args.json):
         print(f"[warn] fetched 0 listings (likely rate-limited) -- keeping "
               f"existing {args.json}; not overwriting.", file=sys.stderr)
@@ -916,8 +1140,8 @@ def main():
 
     meta = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "query": queries[0] if queries else args.query,
-        "queries": queries,
+        "query": all_queries[0] if all_queries else args.query,
+        "queries": all_queries,
         "buying": args.buying,
         "default_carat": args.default_carat,
         "markets": markets,
