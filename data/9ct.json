@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-29T20:52:14.561237+00:00",
+    "generated_at": "2026-06-30T09:19:29.840887+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -28,16 +28,16 @@
     "conditions": "ANY",
     "max_price": 6000.0,
     "threshold": 1.3,
-    "spot_gbp_per_oz": 3035.49825892474,
-    "spot_source": "gold-api.com x frankfurter (live, $4,016/oz)",
+    "spot_gbp_per_oz": 3037.76586892474,
+    "spot_source": "gold-api.com x frankfurter (live, $4,019/oz)",
     "carat_per_gram": {
-      "9": 36.6,
-      "10": 40.7,
-      "14": 57.09,
-      "15": 61.0,
-      "18": 73.2,
-      "22": 89.45,
-      "24": 97.5
+      "9": 36.62,
+      "10": 40.73,
+      "14": 57.13,
+      "15": 61.04,
+      "18": 73.25,
+      "22": 89.52,
+      "24": 97.57
     },
     "fx_to_gbp": {
       "GBP": 1.0,
@@ -47,34 +47,16 @@
       "EUR": 0.8621,
       "USD": 0.7559
     },
-    "total_fetched": 1141,
-    "total_analysed": 7,
-    "value_count": 1,
+    "total_fetched": 1193,
+    "total_analysed": 6,
+    "value_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 1,
-      "ES": 1,
       "UK": 5
     }
   },
   "results": [
-    {
-      "title": "Men's Gents 9Ct Gold 15.2g Signet Ring Size U",
-      "carat": 9,
-      "carat_assumed": false,
-      "weight_g": 15.2,
-      "current_bid": 1245.0,
-      "price_orig": null,
-      "country": "UK",
-      "flag": "🇬🇧",
-      "melt_value": 556.28,
-      "ratio": 0.45,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW"
-    },
     {
       "title": "Beautiful 9ct/ 375 Gold Rolex Inspired Signet Ring, Size X, 20 g",
       "carat": 9,
@@ -84,13 +66,30 @@
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 731.95,
+      "melt_value": 732.5,
       "ratio": 0.72,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/236784391863?_skw=9ct+gold+signet+ring&hash=item37217316b7:g:RQcAAeSw69Jp8JO-"
+    },
+    {
+      "title": "Men's Gents 9Ct Gold 15.2g Signet Ring Size U",
+      "carat": 9,
+      "carat_assumed": false,
+      "weight_g": 15.2,
+      "current_bid": 1245.0,
+      "price_orig": null,
+      "country": "UK",
+      "flag": "🇬🇧",
+      "melt_value": 556.7,
+      "ratio": 0.45,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW"
     },
     {
       "title": "9ct Yellow Solid Gold Bulldog Signet Ring",
@@ -101,30 +100,13 @@
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 717.31,
+      "melt_value": 717.85,
       "ratio": 0.49,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/147117810866?_skw=9ct+gold+signet+ring&hash=item2240e7a4b2:g:51QAAeSwiG9oc6xm"
-    },
-    {
-      "title": "Vintage Large 9ct Gold Signet Ring , Size V1/2,-15.05g",
-      "carat": 9,
-      "carat_assumed": false,
-      "weight_g": 15.05,
-      "current_bid": 1299.0,
-      "price_orig": null,
-      "country": "UK",
-      "flag": "🇬🇧",
-      "melt_value": 550.79,
-      "ratio": 0.42,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.co.uk/itm/123865927591?_skw=9ct+gold+signet+ring&hash=item1cd6fc0fa7:g:~D0AAOSwUMBb9ug~"
     },
     {
       "title": "9CT YELLOW GOLD HEAVY SIGNET RING, SIZE S. 19.67 GRAMS, LOT",
@@ -135,13 +117,30 @@
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 719.87,
+      "melt_value": 720.41,
       "ratio": 0.63,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/117243491497?_skw=9ct+gold+signet+ring&hash=item1b4c41b4a9:g:gP0AAeSwbdxqKqLg"
+    },
+    {
+      "title": "Vintage Large 9ct Gold Signet Ring , Size V1/2,-15.05g",
+      "carat": 9,
+      "carat_assumed": false,
+      "weight_g": 15.05,
+      "current_bid": 1299.0,
+      "price_orig": null,
+      "country": "UK",
+      "flag": "🇬🇧",
+      "melt_value": 551.2,
+      "ratio": 0.42,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/123865927591?_skw=9ct+gold+signet+ring&hash=item1cd6fc0fa7:g:~D0AAOSwUMBb9ug~"
     },
     {
       "title": "Gentleman's Handmade Diamond Signet Ring 9ct 375 Solid Gold 29.7 Grams",
@@ -152,30 +151,13 @@
       "price_orig": "5,000",
       "country": "AU",
       "flag": "🇦🇺",
-      "melt_value": 1086.95,
+      "melt_value": 1087.76,
       "ratio": 0.42,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/167370662173?_skw=9ct+gold+signet+ring&hash=item26f811a11d:g:7SMAAOSwsaZn0M6c"
-    },
-    {
-      "title": "oro 9ct ",
-      "carat": 9,
-      "carat_assumed": false,
-      "weight_g": 16.74,
-      "current_bid": 579.81,
-      "price_orig": "€673",
-      "country": "ES",
-      "flag": "🇪🇸",
-      "melt_value": 612.64,
-      "ratio": 1.06,
-      "is_value": true,
-      "buying": "Auction",
-      "time_left": "2d 14h",
-      "bids": 0,
-      "url": "https://www.ebay.es/itm/287426403765?_skw=9ct+gold+ring&hash=item42ebf2ddb5:g:BWcAAeSwfd5qQk6O"
     }
   ]
 }
