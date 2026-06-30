@@ -38,7 +38,7 @@ jobs:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: |
-          MARKETS="EBAY_GB,EBAY_US,EBAY_IE,EBAY_AU,EBAY_CA,EBAY_DE,EBAY_FR,EBAY_IT,EBAY_ES,EBAY_NL,EBAY_AT,EBAY_CH"
+          MARKETS="EBAY_GB,EBAY_US,EBAY_IE,EBAY_AU,EBAY_CA,EBAY_DE,EBAY_FR,EBAY_IT,EBAY_ES,EBAY_NL,EBAY_AT,EBAY_CH,EBAY_BE,EBAY_PL,EBAY_HK,EBAY_SG"
           # Heavy rings only (>=15g). A per-carat min-price floor (a weight proxy)
           # skips tiny rings at the source, so the wider fetch (limit 250, all
           # conditions) focuses on heavy candidates. Floors sit ~12g of melt so

@@ -112,12 +112,17 @@ MARKETPLACES = {
     "EBAY_NL": {"currency": "EUR", "country": "NL", "flag": "🇳🇱"},
     "EBAY_AT": {"currency": "EUR", "country": "AT", "flag": "🇦🇹"},
     "EBAY_CH": {"currency": "CHF", "country": "CH", "flag": "🇨🇭"},
+    "EBAY_BE": {"currency": "EUR", "country": "BE", "flag": "🇧🇪"},
+    "EBAY_PL": {"currency": "PLN", "country": "PL", "flag": "🇵🇱"},
+    "EBAY_HK": {"currency": "HKD", "country": "HK", "flag": "🇭🇰"},
+    "EBAY_SG": {"currency": "SGD", "country": "SG", "flag": "🇸🇬"},
 }
 DEFAULT_MARKETS = "EBAY_GB"                   # comma-separated; overridden by --markets
 
 # FX fallback (units of foreign currency per £1) if the live lookup fails.
-FX_FALLBACK_PER_GBP = {"GBP": 1.0, "USD": 1.27, "EUR": 1.17,
-                       "AUD": 1.93, "CAD": 1.74, "CHF": 1.13}
+FX_FALLBACK_PER_GBP = {"GBP": 1.0, "USD": 1.27, "EUR": 1.17, "AUD": 1.93,
+                       "CAD": 1.74, "CHF": 1.13, "PLN": 5.0, "HKD": 10.3,
+                       "SGD": 1.71}
 
 # --- Landed cost (true cost to a UK buyer) --------------------------------
 # Non-UK buys add international postage + UK import VAT (20% on goods+postage;
@@ -128,7 +133,8 @@ IMPORT_HANDLING_FEE_GBP = 12          # typical courier "advancement" fee
 UK_POSTAGE_GBP = 4                    # domestic tracked postage (approx)
 POSTAGE_EST_GBP = {                   # est. international postage to the UK
     "US": 18, "CA": 18, "AU": 25, "CH": 16, "IE": 10,
-    "DE": 12, "FR": 12, "IT": 12, "ES": 12, "NL": 12, "AT": 12,
+    "DE": 12, "FR": 12, "IT": 12, "ES": 12, "NL": 12, "AT": 12, "BE": 12,
+    "PL": 14, "HK": 20, "SG": 20, "MY": 25, "PH": 28, "IN": 25,
 }
 
 
