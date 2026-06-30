@@ -298,20 +298,55 @@ def parse_weight_grams(text):
             grams = float(raw)
         except ValueError:
             continue
-        # Sanity bounds: a signet ring is realistically ~1g to ~60g.
-        if 0.3 <= grams <= 100:
+        # Sanity bounds: even a heavy signet is realistically under ~80g;
+        # bigger figures are almost always a misparse (packaging, dimensions).
+        if 0.3 <= grams <= 80:
             candidates.append(grams)
     if not candidates:
         return None
     return max(candidates)
 
 
+# Gemstone words. A carat figure directly followed by one of these is a STONE
+# weight (e.g. "22ct smoky quartz"), not the gold's carat -- don't read it as gold.
+STONE_WORDS = [
+    "diamond", "sapphire", "emerald", "ruby", "quartz", "topaz", "amethyst",
+    "garnet", "opal", "zirconia", "cz", "citrine", "peridot", "spinel",
+    "tanzanite", "aquamarine", "cubic", "moissanite", "onyx", "turquoise",
+    "pearl", "stone", "gemstone", "crystal", "paste",
+]
+
+# Gold fineness hallmark numbers -> carat (unambiguous; preferred over "Nct").
+_HALLMARK = [("999", 24), ("990", 24), ("917", 22), ("916", 22), ("750", 18),
+             ("625", 15), ("585", 14), ("417", 10), ("375", 9)]
+
+
+def has_stones(text):
+    """True if the listing mentions a gemstone (so weight isn't all gold)."""
+    if not text:
+        return False
+    low = text.lower()
+    return any(re.search(r"\b" + s + r"\b", low) for s in STONE_WORDS)
+
+
 def detect_carat(text):
-    """Return (carat, assumed_flag). assumed_flag=True when we fell back to default."""
+    """Return (carat, assumed_flag). assumed_flag=True when we fell back to default.
+
+    Prefers hallmark fineness numbers, then "<n>ct/k/carat" -- but ignores a
+    carat figure immediately followed by a gemstone word (that's a stone weight,
+    e.g. "22ct smoky quartz", not 22ct gold).
+    """
     if not text:
         return DEFAULT_CARAT, True
+    low = text.lower()
+    for num, carat in _HALLMARK:
+        if re.search(r"\b" + num + r"\b", low):
+            return carat, False
     for carat, pattern in _CARAT_PATTERNS:
-        if pattern.search(text):
+        for m in pattern.finditer(low):
+            tail = low[m.end():m.end() + 16]
+            if any(s in tail for s in STONE_WORDS):
+                continue   # "<n>ct <stone>" -> stone weight, not gold carat
             return carat, False
     return DEFAULT_CARAT, True
 
@@ -646,8 +681,13 @@ def analyse(items, token, spot_per_oz, fx=None):
         melt = round(weight * content_per_gram, 2) if weight else None
         ratio = round(melt / bid, 2) if (melt and bid) else None  # melt-to-bid
 
-        # VALUE flag: bid below melt * threshold (see MELT_THRESHOLD comment).
-        is_value = bool(melt and bid and bid < melt * MELT_THRESHOLD)
+        # Stone-set rings: weight includes the stone, so melt is overstated and
+        # not trustworthy -- list them, but don't flag them as value bargains.
+        stones = has_stones(text)
+
+        # VALUE flag: bid below melt * threshold (see MELT_THRESHOLD comment),
+        # only for plain (stoneless) rings where melt is reliable.
+        is_value = bool(melt and bid and bid < melt * MELT_THRESHOLD and not stones)
 
         records.append({
             "title": title,
@@ -661,6 +701,7 @@ def analyse(items, token, spot_per_oz, fx=None):
             "melt_value": melt,
             "ratio": ratio,
             "is_value": is_value,
+            "stones": stones,
             "buying": buying_type(item),
             "time_left": time_left(item.get("itemEndDate")),
             "bids": item.get("bidCount", ""),
