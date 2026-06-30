@@ -49,7 +49,7 @@
     },
     "total_fetched": 1014,
     "total_analysed": 31,
-    "value_count": 5,
+    "value_count": 2,
     "weight_unknown_count": 1,
     "country_counts": {
       "AU": 7,
@@ -79,7 +79,8 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/236896318748?_skw=18ct+gold+signet+ring&hash=item37281ef51c:g:dIAAAeSw9SNqO~r7",
-      "stones": false
+      "stones": false,
+      "landed_cost": 2559.68
     },
     {
       "title": "GENTLEMANS 18CT YELLOW GOLD SIGNET RING LONDON HALLMARKED .750 BRAND NEW IN BOX",
@@ -97,7 +98,8 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/256682771817?_skw=18ct+gold+signet+ring&hash=item3bc37c4569:g:iOcAAOSwAEhlR-0Q",
-      "stones": false
+      "stones": false,
+      "landed_cost": 2428.1
     },
     {
       "title": "LAUD 18ct Gold Double Sided Signet Ring",
@@ -115,7 +117,8 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/204275827325?_skw=18ct+gold+signet+ring&hash=item2f8fc9c27d:g:K40AAOSwsKJkExPG",
-      "stones": false
+      "stones": false,
+      "landed_cost": 4504.0
     },
     {
       "title": "18ct Vintage Family Crest /Seal Ring",
@@ -133,7 +136,8 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/176855840118?_skw=18ct+gold+signet+ring&hash=item292d6df576:g:oVYAAeSwUFNntGos",
-      "stones": false
+      "stones": false,
+      "landed_cost": 1604.0
     },
     {
       "title": "18ct heavy weight signet 15x17 Oxford Oval 18 to 21 grams with your family crest",
@@ -145,13 +149,14 @@
       "country": "US",
       "flag": "🇺🇸",
       "melt_value": 1539.3,
-      "ratio": 0.4,
+      "ratio": 0.33,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com/itm/227035892815?_skw=18ct+gold+signet+ring&hash=item34dc64cc4f:g:5R4AAOSwoslahNLL",
-      "stones": false
+      "stones": false,
+      "landed_cost": 4699.45
     },
     {
       "title": "Marquise shaped ring 18ct Gold & Old-Cut natural Diamond Engagement Ring Estate",
@@ -169,7 +174,8 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com/itm/157687844450?_skw=18ct+gold+ring&hash=item24b6ed8e62:g:3ewAAeSwsA1plAr~",
-      "stones": true
+      "stones": true,
+      "landed_cost": 1158.01
     },
     {
       "title": "18ct. White Gold And Platinum Elvish Love Ring \"Lord Of The Rings\" 21.4 Grams ",
@@ -181,13 +187,14 @@
       "country": "US",
       "flag": "🇺🇸",
       "melt_value": 1568.62,
-      "ratio": 0.5,
+      "ratio": 0.41,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com/itm/135069685988?_skw=18ct+gold+ring&hash=item1f72c7d8e4:g:Fs0AAOSwIBFmTPN4",
-      "stones": false
+      "stones": false,
+      "landed_cost": 3811.38
     },
     {
       "title": "18ct Solid Gold Men's hallmarked signet ring 17.7 grams, size Q.",
@@ -199,13 +206,14 @@
       "country": "IE",
       "flag": "🇮🇪",
       "melt_value": 1297.41,
-      "ratio": 0.66,
+      "ratio": 0.54,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.ie/itm/306586325291?_skw=18ct+gold+signet+ring&hash=item4761f8112b:g:Ys8AAeSwakppC7Nf",
-      "stones": false
+      "stones": false,
+      "landed_cost": 2392.14
     },
     {
       "title": "Heavy 16.0g Natural Lapis Lazuli Signet Ring 18K Yellow Gold Wide Band",
@@ -217,13 +225,14 @@
       "country": "IE",
       "flag": "🇮🇪",
       "melt_value": 1172.8,
-      "ratio": 0.4,
+      "ratio": 0.34,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.ie/itm/278113109097?_skw=18ct+gold+signet+ring&hash=item40c0d54469:g:NSIAAeSwnKhqN99Q",
-      "stones": false
+      "stones": false,
+      "landed_cost": 3499.46
     },
     {
       "title": "K18YG 0.13ct Diamond Syami Signet Ring Sunburst Etching 18K Gold 15.2g Size 10.5",
@@ -235,13 +244,14 @@
       "country": "IE",
       "flag": "🇮🇪",
       "melt_value": 1114.16,
-      "ratio": 0.31,
+      "ratio": 0.25,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.ie/itm/278116067771?_skw=18ct+gold+signet+ring&hash=item40c10269bb:g:KUIAAeSwvSpp5u~0",
-      "stones": true
+      "stones": true,
+      "landed_cost": 4372.32
     },
     {
       "title": "0.404ct Diamond Hexagon Signet Ring K18 YG Pt900 Two Tone Heavy 25.4g",
@@ -253,13 +263,14 @@
       "country": "IE",
       "flag": "🇮🇪",
       "melt_value": 930.91,
-      "ratio": 0.18,
+      "ratio": 0.15,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.ie/itm/278116067816?_skw=18ct+gold+signet+ring&hash=item40c10269e8:g:o0oAAeSwCVRqD7LY",
-      "stones": true
+      "stones": true,
+      "landed_cost": 6111.65
     },
     {
       "title": "Handmade Australian Opal heavy 18ct 18K WHITE GOLD DRESS RING, Size Y, 15.29g",
@@ -271,13 +282,14 @@
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 1120.76,
-      "ratio": 0.38,
+      "ratio": 0.31,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/127932157337?_skw=18ct+gold+signet+ring&hash=item1dc959cd99:g:A1MAAOSwhCJnpdRr",
-      "stones": true
+      "stones": true,
+      "landed_cost": 3608.7
     },
     {
       "title": "18K Gold & Pt1000 Platinum Signet Ring 0.15ct Diamond Heavy 19.9g",
@@ -289,13 +301,14 @@
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 1458.67,
-      "ratio": 0.38,
+      "ratio": 0.32,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/278111986439?_skw=18ct+gold+signet+ring&hash=item40c0c42307:g:X2sAAeSwZDpqN-Td",
-      "stones": true
+      "stones": true,
+      "landed_cost": 4624.7
     },
     {
       "title": "18ct Yellow Gold Diamond Set Statement mens Ring Size T Weight 15.0 Grams",
@@ -307,13 +320,14 @@
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 1099.5,
-      "ratio": 0.58,
+      "ratio": 0.47,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/397325252361?_skw=18ct+gold+signet+ring&hash=item5c826e3709:g:i50AAeSwNDppJ6Z5",
-      "stones": true
+      "stones": true,
+      "landed_cost": 2326.34
     },
     {
       "title": "K18YG 0.13ct Diamond Syami Signet Ring Sunburst Etching 18K Gold 15.2g Size 10.5",
@@ -325,13 +339,14 @@
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 1114.16,
-      "ratio": 0.31,
+      "ratio": 0.26,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/278109640792?_skw=18ct+gold+signet+ring&hash=item40c0a05858:g:KUIAAeSwvSpp5u~0",
-      "stones": true
+      "stones": true,
+      "landed_cost": 4338.29
     },
     {
       "title": "18ct Gold Opal & Ruby Statement Ring Size V (64) Weight 20g -- VAL $28,000",
@@ -343,13 +358,14 @@
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 733.0,
-      "ratio": 0.17,
+      "ratio": 0.14,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/396839758351?_skw=18ct+gold+signet+ring&hash=item5c657e2a0f:g:XRYAAeSwh7xobg5D",
-      "stones": true
+      "stones": true,
+      "landed_cost": 5205.24
     },
     {
       "title": "0.404ct Diamond Hexagon Signet Ring K18 YG Pt900 Two Tone Heavy 25.4g",
@@ -361,13 +377,14 @@
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 930.91,
-      "ratio": 0.19,
+      "ratio": 0.15,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/278116279884?_skw=18ct+gold+signet+ring&hash=item40c105a64c:g:o0oAAeSwCVRqD7LY",
-      "stones": true
+      "stones": true,
+      "landed_cost": 6061.86
     },
     {
       "title": "Tiffany & Co. 18k Yellow Gold Signet Ring Size 9 Gorgeous Piece!",
@@ -379,13 +396,14 @@
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 1663.91,
-      "ratio": 0.55,
+      "ratio": 0.45,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/287314393514?_skw=18ct+gold+signet+ring&hash=item42e545b9aa:g:uy4AAeSwaENp9Rpm",
-      "stones": false
+      "stones": false,
+      "landed_cost": 3676.94
     },
     {
       "title": "18ct Massiv Gelbgold Signet Ringe Oval 750 UK Gekennzeichnet Familie Crest Ringe",
@@ -397,13 +415,14 @@
       "country": "DE",
       "flag": "🇩🇪",
       "melt_value": 2235.65,
-      "ratio": 2.02,
+      "ratio": 1.65,
       "is_value": true,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.de/itm/281763077312?_skw=18ct+gold+signet+ring&var=586385444420&hash=item419a635cc0:g:2jUAAOSwDTBnE5Px",
-      "stones": false
+      "stones": false,
+      "landed_cost": 1354.75
     },
     {
       "title": "Neu 18ct Gelbgold Oval Siegelring 16 x 13 x 3mm Schwer Solider UK Hergestellt",
@@ -415,13 +434,14 @@
       "country": "DE",
       "flag": "🇩🇪",
       "melt_value": 2235.65,
-      "ratio": 0.84,
-      "is_value": true,
+      "ratio": 0.7,
+      "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.de/itm/281508326502?_skw=18ct+gold+signet+ring&var=585384566285&hash=item418b342c66:g:3JoAAOSwTA9X4WLP",
-      "stones": false
+      "stones": false,
+      "landed_cost": 3204.17
     },
     {
       "title": "18ct Massiv Gelbgold Damen Oval Rosa Signet Ringe 11x9mm 750 UK Hm nach Maß",
@@ -433,13 +453,14 @@
       "country": "DE",
       "flag": "🇩🇪",
       "melt_value": 2235.65,
-      "ratio": 2.16,
+      "ratio": 1.76,
       "is_value": true,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.de/itm/222566402890?_skw=18ct+gold+signet+ring&var=522858148205&hash=item33d1fdcb4a:g:RMYAAOSwal5YEIv8",
-      "stones": false
+      "stones": false,
+      "landed_cost": 1269.23
     },
     {
       "title": "NEU 18ct Familienwappen Gelbgold Oval Siegelringe Ihr Design 750 UK HM Massiv",
@@ -451,13 +472,14 @@
       "country": "DE",
       "flag": "🇩🇪",
       "melt_value": 2235.65,
-      "ratio": 0.88,
-      "is_value": true,
+      "ratio": 0.73,
+      "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.de/itm/301408285480?_skw=18ct+gold+signet+ring&var=602858481413&hash=item462d557328:g:Dd4AAOSwR9Nd8nRl",
-      "stones": false
+      "stones": false,
+      "landed_cost": 3074.53
     },
     {
       "title": "Antiguo anillo de sello grueso sólido de 18 quilates escudo de armas armas reales de Escocia 27,8 gr",
@@ -469,13 +491,14 @@
       "country": "ES",
       "flag": "🇪🇸",
       "melt_value": 1018.87,
-      "ratio": 0.19,
+      "ratio": 0.15,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.es/itm/800150335735?_skw=18ct+gold+signet+ring&hash=itemba4cad30f7:g:uVAAAeSwBq5qJvNL",
-      "stones": false
+      "stones": false,
+      "landed_cost": 6631.19
     },
     {
       "title": "Antiguo anillo de sello de oro amarillo macizo de 18 quilates de 18 quilates escudo familiar 16,7 gr",
@@ -487,13 +510,14 @@
       "country": "ES",
       "flag": "🇪🇸",
       "melt_value": 612.05,
-      "ratio": 0.16,
+      "ratio": 0.13,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.es/itm/389905135208?_skw=18ct+gold+signet+ring&hash=item5ac8283668:g:9AoAAeSwGGJpLXV8",
-      "stones": false
+      "stones": false,
+      "landed_cost": 4559.69
     },
     {
       "title": "K18YG 0.13ct Diamond Syami Signet Ring Sunburst Etching 18K Gold 15.2g Size 10.5",
@@ -505,13 +529,14 @@
       "country": "NL",
       "flag": "🇳🇱",
       "melt_value": 1114.16,
-      "ratio": 0.31,
+      "ratio": 0.25,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.nl/itm/278106752097?_skw=18ct+gold+signet+ring&hash=item40c0744461:g:KUIAAeSwvSpp5u~0",
-      "stones": true
+      "stones": true,
+      "landed_cost": 4396.01
     },
     {
       "title": "0.596ct Natural Diamond Signet Ring K18YG Pt900 Combi Two-Tone",
@@ -523,13 +548,14 @@
       "country": "NL",
       "flag": "🇳🇱",
       "melt_value": 758.65,
-      "ratio": 0.16,
+      "ratio": 0.13,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.nl/itm/278111897737?_skw=18ct+gold+signet+ring&hash=item40c0c2c889:g:BEQAAeSwFcFqN9hU&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbzpBtpC6Lf%2BxhTjTg2RW4f5gZ2ifyLM4%2FG3h%2BvHHWNkcc6IUhAUhPC8xxSWuPnvKFjkf9pdYC53pdoCXzZJagXOY5FHliCP17xWtBIioilsSY3WJYhAOyT1mVmzPW44IDQ8TskjqOAHssH1l2xJKNvcC17mBc95fuVPAA7nV%2F74BMJPUlZFZTxgl0OGBt1X3XlxW2JN%2FKVAXDuTYiXlY62WPdxl0CVe6mAIwXI6bGneA%2Fw%2BmxO5syp%2BoAnurTWxMGc5sEeaja9GHyGlnFqluOn69ra65WY2LxXoYMzSs1nwg%3D%3D",
-      "stones": true
+      "stones": true,
+      "landed_cost": 5755.44
     },
     {
       "title": "0.404ct Diamond Hexagon Signet Ring K18 YG Pt900 Two Tone Heavy 25.4g",
@@ -541,13 +567,14 @@
       "country": "NL",
       "flag": "🇳🇱",
       "melt_value": 930.91,
-      "ratio": 0.18,
+      "ratio": 0.15,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.nl/itm/278114592479?_skw=18ct+gold+signet+ring&hash=item40c0ebe6df:g:o0oAAeSwCVRqD7LY&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGaAI43x2teo6kDSyMwo3TgQxzSsby8MJ652AcxOhiz9HJOkWZx5qPIg03vtH31n%2Blb%2BlVoflLnMJrm0XoryH%2Bwl1oDRQMC1npe5598zDBJk8pWAVZktBGn%2B%2FuNuOsDxK7W5FIShyb781IcWNp3lAp4kJINluZ4U8P7iWhqJRH5qHUFAXZefM0DUy2m%2Bz8PVxqf2Pqb9NVTXT7VCizGXQeA%2FUNC40TKa0FSck6PGkPpgx1%2B24LV5aNN9sa%2FCEI35QHA88%2BUB0vOpd7vHjENVZpEmlFzBpJ1VHvWtZvZAeWbH8w%3D%3D",
-      "stones": true
+      "stones": true,
+      "landed_cost": 6143.84
     },
     {
       "title": "Heavy 16.0g Natural Lapis Lazuli Signet Ring 18K Yellow Gold Wide Band",
@@ -559,13 +586,14 @@
       "country": "NL",
       "flag": "🇳🇱",
       "melt_value": 1172.8,
-      "ratio": 0.4,
+      "ratio": 0.33,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.nl/itm/278111897669?_skw=18ct+gold+signet+ring&hash=item40c0c2c845:g:NSIAAeSwnKhqN99Q&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGZ1X9tfUzzwVjWhazCQ72v0F4z4twb1x2JG%2BjYkdVShsqPL632QA9gVB2IGGa8xMnHj4RlG1ZvjDzKtUkAAiFDmmV0osNC3J3ep7tMmIx8bCa97nw%2BsYwnBj0dkc%2BKHW8T9X0bnaQLfD%2By9iuskedvW2r2jSVm4USCrju6DCmNfxtuD0D%2FKDCVDrfnzoEIsKg3t08AwVpOquXDl%2B9MMETwz7V0F2Y0EX6kaomqquHOmScErb5y5KSNK%2Fz9b7tyKCERc4T4mPFfzpd6HxW8%2F3HPPOuXB6ku01tPCvw9Rd9Mx5Q%3D%3D",
-      "stones": false
+      "stones": false,
+      "landed_cost": 3522.08
     },
     {
       "title": "Heavy 16.0g Natural Lapis Lazuli Signet Ring 18K Yellow Gold Wide Band",
@@ -577,13 +605,14 @@
       "country": "NL",
       "flag": "🇳🇱",
       "melt_value": 1172.8,
-      "ratio": 0.41,
+      "ratio": 0.34,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.nl/itm/278111986453?_skw=18ct+gold+signet+ring&hash=item40c0c42315:g:NSIAAeSwnKhqN99Q&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYLw6lG6hTQzFlHt9M0NXXwzem4mtNulHI3Pwi1PDECtTYVUrLrleEXPxY5r9SFDCq5cXfiRWJWXGAZfuTkxIV%2F2G0Plb%2BS6%2BT90%2B2fPr0w50kJ1ttedyPWbd2iLHL4lJ9LFFDEW53kAcgZGH9Bm9ktbRQ4Nhf9zlsmJCt%2FI6Nvc06b28jC8KP%2FH48KMlXavOhccgY%2BOBHxa1%2FHIBJkRtIUxVKAzj2Ja6O%2BZZY6PWfPoGv7he4sED1Whv7Z%2BXuKy1ahFxmYYHHHtmQ8mZSCCdCkNlK%2FPRKJit6ey6gYizsPAA%3D%3D",
-      "stones": false
+      "stones": false,
+      "landed_cost": 3452.21
     },
     {
       "title": "0.596ct Natural Diamond Signet Ring K18YG Pt900 Combi Two-Tone",
@@ -595,13 +624,14 @@
       "country": "NL",
       "flag": "🇳🇱",
       "melt_value": 758.65,
-      "ratio": 0.16,
+      "ratio": 0.13,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.nl/itm/278111986472?_skw=18ct+gold+signet+ring&hash=item40c0c42328:g:BEQAAeSwFcFqN9hU&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGahkqA5YGdmeTGOgThqP2lMfL0YkujTHSozr%2FeN6Z0LTN8iUD9OK1RH468nEE2HcO7Si8GzSTe4QYc5I09zky%2F9%2BpKhvS0TlTEad9qtsfnoAJMUlAmC7aLR32jfIZH59nCG%2BkRzXpFBWtQa2sHDd1jWpzGxkZrbRAEyLib1tT8tlVq01D9nQQybvyVW%2FOE3t%2BDHt%2BuFenDgtgmLitUTJ%2F6DVwlXWkWnztYsEe%2BqERlPGkSPJhTFoBZdG1mXptY3k8ochULofhiRreAQ0IPGwp38RYwbyb8E7GT7X4%2Bee9quFQ%3D%3D",
-      "stones": true
+      "stones": true,
+      "landed_cost": 5640.92
     },
     {
       "title": "Neu 18ct Gelbgold Oval Siegelring 16 x 13 x 3mm Schwer Solider UK Hergestellt",
@@ -613,13 +643,14 @@
       "country": "CH",
       "flag": "🇨🇭",
       "melt_value": 2235.65,
-      "ratio": 0.78,
-      "is_value": true,
+      "ratio": 0.64,
+      "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.ch/itm/281508326502?_skw=18ct+gold+signet+ring&var=585384566283&hash=item418b342c66:g:3JoAAOSwTA9X4WLP",
-      "stones": false
+      "stones": false,
+      "landed_cost": 3467.56
     }
   ]
 }

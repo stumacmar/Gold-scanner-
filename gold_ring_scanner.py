@@ -118,6 +118,29 @@ DEFAULT_MARKETS = "EBAY_GB"                   # comma-separated; overridden by -
 # FX fallback (units of foreign currency per £1) if the live lookup fails.
 FX_FALLBACK_PER_GBP = {"GBP": 1.0, "USD": 1.27, "EUR": 1.17,
                        "AUD": 1.93, "CAD": 1.74, "CHF": 1.13}
+
+# --- Landed cost (true cost to a UK buyer) --------------------------------
+# Non-UK buys add international postage + UK import VAT (20% on goods+postage;
+# precious-metal jewellery is 0% customs duty) + a courier handling fee.
+# These are rough estimates -- edit to taste.
+IMPORT_VAT_RATE = 0.20
+IMPORT_HANDLING_FEE_GBP = 12          # typical courier "advancement" fee
+UK_POSTAGE_GBP = 4                    # domestic tracked postage (approx)
+POSTAGE_EST_GBP = {                   # est. international postage to the UK
+    "US": 18, "CA": 18, "AU": 25, "CH": 16, "IE": 10,
+    "DE": 12, "FR": 12, "IT": 12, "ES": 12, "NL": 12, "AT": 12,
+}
+
+
+def landed_cost(price_gbp, country):
+    """Estimate the true £ cost to a UK buyer (price + postage + import VAT)."""
+    if price_gbp is None:
+        return None
+    if country == "UK":
+        return round(price_gbp + UK_POSTAGE_GBP, 2)
+    postage = POSTAGE_EST_GBP.get(country, 18)
+    vat = IMPORT_VAT_RATE * (price_gbp + postage)
+    return round(price_gbp + postage + vat + IMPORT_HANDLING_FEE_GBP, 2)
 PAGE_SIZE         = 200                       # Browse API max page size is 200
 
 # --- Valuation ------------------------------------------------------------
@@ -679,27 +702,31 @@ def analyse(items, token, spot_per_oz, fx=None):
         content_per_gram = spot_per_gram_fine * fraction
 
         melt = round(weight * content_per_gram, 2) if weight else None
-        ratio = round(melt / bid, 2) if (melt and bid) else None  # melt-to-bid
+        country = item.get("_country", "UK")
+        # True £ cost to a UK buyer (adds import VAT + postage for non-UK).
+        landed = landed_cost(bid, country)
+        # melt-to-cost ratio: compare melt against what you'd actually pay.
+        ratio = round(melt / landed, 2) if (melt and landed) else None
 
         # Stone-set rings: weight includes the stone, so melt is overstated and
         # not trustworthy -- list them, but don't flag them as value bargains.
         stones = has_stones(text)
 
-        # VALUE flag: bid below melt * threshold (see MELT_THRESHOLD comment),
-        # only for plain (stoneless) rings where melt is reliable.
-        is_value = bool(melt and bid and bid < melt * MELT_THRESHOLD and not stones)
+        # VALUE flag: landed cost below melt * threshold, plain (stoneless) rings.
+        is_value = bool(melt and landed and landed < melt * MELT_THRESHOLD and not stones)
 
         records.append({
             "title": title,
             "carat": carat,
             "carat_assumed": carat_assumed,
             "weight_g": weight,
-            "current_bid": bid,              # GBP
+            "current_bid": bid,              # GBP (item price/bid)
+            "landed_cost": landed,           # GBP incl. import VAT + postage
             "price_orig": price_orig,        # original currency (non-UK only)
-            "country": item.get("_country", "UK"),
+            "country": country,
             "flag": item.get("_flag", "🇬🇧"),
             "melt_value": melt,
-            "ratio": ratio,
+            "ratio": ratio,                  # melt / landed cost
             "is_value": is_value,
             "stones": stones,
             "buying": buying_type(item),

@@ -176,7 +176,7 @@ function tlMinutes(s) {
 const SORTS = {
   best:   (a, b) => (b.ratio ?? -1) - (a.ratio ?? -1),
   heavy:  (a, b) => (b.weight_g ?? -1) - (a.weight_g ?? -1),
-  cheap:  (a, b) => (a.current_bid ?? 1e12) - (b.current_bid ?? 1e12),
+  cheap:  (a, b) => (a.landed_cost ?? a.current_bid ?? 1e12) - (b.landed_cost ?? b.current_bid ?? 1e12),
   ending: (a, b) => tlMinutes(a.time_left) - tlMinutes(b.time_left),
 };
 
@@ -205,9 +205,11 @@ function card(rec) {
       <div class="row2">
         <span class="kv">Carat <b>${caratLabel(rec)}</b></span>
         <span class="kv">Weight <b>${wt}</b></span>
-        <span class="kv">Bid <b>${fmtGBP(rec.current_bid)}</b>${rec.price_orig ? ` <span class="muted">(${rec.price_orig})</span>` : ""}</span>
+        <span class="kv">${rec.country === "UK" ? "Price" : "Bid"} <b>${fmtGBP(rec.current_bid)}</b>${rec.price_orig ? ` <span class="muted">(${rec.price_orig})</span>` : ""}</span>
+        ${rec.country !== "UK" && rec.landed_cost ? `<span class="kv">Landed <b>~${fmtGBP(rec.landed_cost)}</b> <span class="muted">inc. VAT+post</span></span>` : ""}
         <span class="kv">Melt <b>${fmtGBP(rec.melt_value)}</b></span>
-        <span class="kv">Melt/Bid ${ratio}</span>
+        <span class="kv">Melt/Cost ${ratio}</span>
+        ${rec.stones ? '<span class="muted">💎 stone-set</span>' : ""}
       </div>
       <div class="foot">
         <span class="left">${rec.buying === "Buy now" ? "🏷 Buy now"

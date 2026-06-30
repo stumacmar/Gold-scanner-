@@ -69,13 +69,14 @@
       "country": "UK",
       "flag": "🇬🇧",
       "melt_value": 1005.66,
-      "ratio": 0.67,
+      "ratio": 0.66,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/406638396433?_skw=14ct+gold+signet+ring&hash=item5ead898411:g:4lMAAeSwt5Fpdi6S",
-      "stones": true
+      "stones": true,
+      "landed_cost": 1515.2
     },
     {
       "title": "~~Mens 14ct Yellow Gold 1999 ST PETERSBURG CATHOLIC College Ring! 18.1gr~~",
@@ -93,7 +94,8 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/116321325571?_skw=14ct+gold+signet+ring&hash=item1b154a9203:g:u40AAOSw3wJi4~YF",
-      "stones": false
+      "stones": false,
+      "landed_cost": 1484.6
     },
     {
       "title": "18 Kt, 22 Kt Solid Gold Cross Amethyst Zircon CZ Signet Men'S Ring 12 - 24 Gms",
@@ -105,13 +107,14 @@
       "country": "US",
       "flag": "🇺🇸",
       "melt_value": 2148.72,
-      "ratio": 0.56,
+      "ratio": 0.46,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com/itm/226824984753?_skw=14ct+gold+signet+ring&hash=item34cfd298b1:g:WOkAAOSwds9lnlBf",
-      "stones": true
+      "stones": true,
+      "landed_cost": 4673.1
     },
     {
       "title": "18 Kt, 22 Kt Solid Gold Cross Amethyst Zircon CZ Signet Men'S Ring 10 - 20 Gm",
@@ -123,13 +126,14 @@
       "country": "US",
       "flag": "🇺🇸",
       "melt_value": 1790.6,
-      "ratio": 0.52,
+      "ratio": 0.43,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com/itm/226824984740?_skw=14ct+gold+signet+ring&hash=item34cfd298a4:g:aCcAAOSw8xBlnkki",
-      "stones": true
+      "stones": true,
+      "landed_cost": 4131.86
     },
     {
       "title": "1960s Retro Modernist Bespoke 14ct Gold Topaz & Diamond Statement Ring P/8 18.7g",
@@ -141,13 +145,14 @@
       "country": "US",
       "flag": "🇺🇸",
       "melt_value": 684.98,
-      "ratio": 0.53,
+      "ratio": 0.43,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com/itm/287312683754?_skw=14ct+gold+ring&hash=item42e52ba2ea:g:L1IAAOSwklBmg46n",
-      "stones": true
+      "stones": true,
+      "landed_cost": 1595.27
     },
     {
       "title": "14ct Gold Ring with Large Citrine 21.5mm x 17mm",
@@ -159,13 +164,14 @@
       "country": "US",
       "flag": "🇺🇸",
       "melt_value": 948.52,
-      "ratio": 0.63,
+      "ratio": 0.51,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com/itm/276564544046?_skw=14ct+gold+ring&hash=item4064880a2e:g:-o8AAOSw6lRmoJLQ",
-      "stones": true
+      "stones": true,
+      "landed_cost": 1845.14
     },
     {
       "title": "HEAVY GOLD Diamond ring 14k gold 38 Total Diamonds 15 Grams! JUST REDUCED $400",
@@ -177,13 +183,14 @@
       "country": "US",
       "flag": "🇺🇸",
       "melt_value": 857.1,
-      "ratio": 0.51,
+      "ratio": 0.42,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com/itm/295473065953?_skw=14ct+heavy+gold+ring&hash=item44cb912fe1:g:yoIAAOSwFftjw2kI&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbnuQnHPc8R5OFxHVvpwuVAeRVOOn7nHSOxUr3hc%2B6KNFjo%2BEU7akCLfulwtBtEGzMU01%2FM6YCZTl8ESuRvZSl0eeM6cVdTChAVb%2BV4zWsOfVuZELTLN6y9kKRrEJREtuqk5r61Szv%2BZZ09sI4RbrPOGFuZRVqUIaPUruiNcP9DrVsrXYDpDJrM3Cbxg7NyP8DlJikz0qNgL0iKuVZpsgkgG7vjx5IsvMmUSVEL%2FKgsUWoCBq4GXfVh4aIWnPQ%2Ff3JhYPnzA47v0%2BAC6%2FUI874f%2FCoD3eZ6YfQdjhYbPfUXGQ%3D%3D",
-      "stones": true
+      "stones": true,
+      "landed_cost": 2055.64
     },
     {
       "title": "Vintage 14K Gold Signet Ring Weighing 18 Grams",
@@ -195,13 +202,14 @@
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 1028.52,
-      "ratio": 0.49,
+      "ratio": 0.41,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/267699286672?_skw=14ct+gold+signet+ring&hash=item3e541ef290:g:jmgAAeSwQixqLxwk",
-      "stones": false
+      "stones": false,
+      "landed_cost": 2536.03
     },
     {
       "title": "Collectible Japanese Shakudo ORIENTAL MOTIF 14K GOLD Meiji Period RING SIGNET 7",
@@ -213,13 +221,14 @@
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 1257.08,
-      "ratio": 0.76,
+      "ratio": 0.62,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/303105360302?_skw=14ct+gold+signet+ring&hash=item46927cc1ae:g:YEUAAOSwwo1XeqZU",
-      "stones": false
+      "stones": false,
+      "landed_cost": 2036.21
     },
     {
       "title": "Caesar Roman Noble Deco Vintage Signet Ring 14Kt gold 22G *v",
@@ -231,13 +240,14 @@
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 1257.08,
-      "ratio": 0.47,
+      "ratio": 0.39,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/115785920112?_skw=14ct+gold+signet+ring&hash=item1af560ee70:g:uqwAAOSwDBlkS-8S",
-      "stones": false
+      "stones": false,
+      "landed_cost": 3222.59
     },
     {
       "title": "TIFFANY & CO. Vintage 1960s 14k Yellow Gold Signet Ring w/Pouch Rare",
@@ -249,13 +259,14 @@
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 1531.35,
-      "ratio": 0.32,
+      "ratio": 0.27,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/326539243500?_skw=14ct+gold+signet+ring&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b",
-      "stones": false
+      "stones": false,
+      "landed_cost": 5721.61
     },
     {
       "title": "Men’s 14K Gold Signet Ring 15.75g | Diamonds & Black Moissanite | Trident",
@@ -267,13 +278,14 @@
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 899.96,
-      "ratio": 0.85,
+      "ratio": 0.69,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/389562326682?_skw=14ct+gold+signet+ring&hash=item5ab3b95e9a:g:WLAAAeSwFPZpfmNz",
-      "stones": true
+      "stones": true,
+      "landed_cost": 1308.13
     },
     {
       "title": "Vintage European 8K Gold Signet Ring 19.79g Size 11 Hand Engraved",
@@ -285,13 +297,14 @@
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 724.91,
-      "ratio": 1.2,
+      "ratio": 0.95,
       "is_value": true,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/147401755880?_skw=14ct+gold+signet+ring&hash=item2251d44ce8:g:IsUAAeSwdP5piPNl",
-      "stones": false
+      "stones": false,
+      "landed_cost": 766.72
     },
     {
       "title": "18 Kt, 22 Kt Solid Gold Cross Amethyst Zircon CZ Signet Men'S Ring 10 - 20 Gm",
@@ -303,13 +316,14 @@
       "country": "CA",
       "flag": "🇨🇦",
       "melt_value": 1790.6,
-      "ratio": 0.49,
+      "ratio": 0.4,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.ca/itm/226824984740?_skw=14ct+gold+signet+ring&hash=item34cfd298a4:g:aCcAAOSw8xBlnkki",
-      "stones": true
+      "stones": true,
+      "landed_cost": 4434.92
     }
   ]
 }
