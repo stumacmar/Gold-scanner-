@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-06-30T17:52:21.973809+00:00",
+  "generated_at": "2026-07-01T09:27:55.877996+00:00",
   "searches": [
     {
       "key": "9ct",
       "label": "9ct",
       "file": "9ct.json",
       "query": "9ct gold signet ring",
-      "generated_at": "2026-06-30T17:43:25.946833+00:00",
-      "value_count": 67,
-      "total_analysed": 983
+      "generated_at": "2026-07-01T09:20:57.896570+00:00",
+      "value_count": 63,
+      "total_analysed": 975
     },
     {
       "key": "14ct",
       "label": "14ct",
       "file": "14ct.json",
       "query": "14ct gold signet ring",
-      "generated_at": "2026-06-30T17:46:30.834974+00:00",
-      "value_count": 42,
-      "total_analysed": 1227
+      "generated_at": "2026-07-01T09:23:18.728606+00:00",
+      "value_count": 38,
+      "total_analysed": 1232
     },
     {
       "key": "18ct",
       "label": "18ct",
       "file": "18ct.json",
       "query": "18ct gold signet ring",
-      "generated_at": "2026-06-30T17:49:33.748423+00:00",
-      "value_count": 102,
-      "total_analysed": 1346
+      "generated_at": "2026-07-01T09:25:38.169695+00:00",
+      "value_count": 89,
+      "total_analysed": 1347
     },
     {
       "key": "22ct",
       "label": "22ct",
       "file": "22ct.json",
       "query": "22ct gold signet ring",
-      "generated_at": "2026-06-30T17:52:21.973809+00:00",
-      "value_count": 60,
-      "total_analysed": 628
+      "generated_at": "2026-07-01T09:27:55.877996+00:00",
+      "value_count": 66,
+      "total_analysed": 688
     }
   ]
 }
