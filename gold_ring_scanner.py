@@ -250,10 +250,14 @@ ARCHETYPE_LOW_G = {
     "band_heavy": 13.0, "band": 6.0,
     "ring_heavy": 12.0,
 }
-HEAVY_WORDS = ("heavy", "chunky", "chunk", "solid", "substantial", "massive",
-               "massiv", "massiccio", "macizo", "massief", "thick", "heavyweight",
-               "heavy gauge", "large", "big")
-SLIM_WORDS = ("dainty", "slim", "thin", "narrow", "fine ", "petite", "slender",
+# Words that genuinely signal WEIGHT. Deliberately excludes "solid"/"massiv"/
+# "massiccio"/"macizo"/"massief" (those mean "not plated/hollow", not heavy --
+# a live-run audit showed "9ct Solid Gold" ladies' signets being estimated at
+# 12g+) and "large"/"big" (finger size, handled by the size bump instead).
+HEAVY_WORDS = ("heavy", "chunky", "substantial", "massive", "thick",
+               "heavyweight", "heavy gauge", "schwer", "wuchtig")
+# NB: no "fine" here -- "fine gold" means pure gold, not a slim ring.
+SLIM_WORDS = ("dainty", "slim", "thin", "narrow", "petite", "slender",
               "delicate")
 
 # --- Stone handling (see assess_ring) ------------------------------------
@@ -262,6 +266,9 @@ STONE_SHOWCASE_WORDS = ("cluster", "halo", "trilogy", "three stone", "3 stone",
                         "five stone", "5 stone", "eternity", "dress ring",
                         "cocktail", "multi gem", "multi-gem", "gem set",
                         "gemset", "gemstone cluster", "diamond cluster")
+# Two or more DIFFERENT gem families named (e.g. "Diamanten grüne Turmaline")
+# also means a stone showcase -- the gold is the mount, not the mass.
+SHOWCASE_MIN_DISTINCT_STONES = 2
 # Carved-stone / hardstone signets where gold still dominates -> keep, but
 # subtract a stone-mass allowance before testing the gold floor.
 INTAGLIO_WORDS = ("intaglio", "carved", "seal", "hardstone", "bloodstone",
@@ -290,9 +297,12 @@ STYLE_TAG_WORDS = {
 # MAX_ITEMS), so it's worth it but can be disabled for speed.
 FETCH_FULL_DETAILS = True
 # Cap detail look-ups PER carat scan as a safety bound on runtime / eBay rate
-# limits. Items beyond the cap keep "weight unknown". 0 = no cap. (Multi-market
-# runs complete in ~2-3 min well under this, so it rarely bites.)
-MAX_DETAIL_FETCHES = 100
+# limits. Items beyond the cap keep "weight unknown". 0 = no cap.
+# Quota math: 4 carats x (~130 search + 250 item) ~ 1,520 calls/day, well
+# inside eBay's default 5,000/day Browse quota. Each successful look-up turns
+# an unknown into a confirmed weight (usable value flag) or a sub-15g drop --
+# both better than review-lane noise.
+MAX_DETAIL_FETCHES = 250
 
 # --- Output ---------------------------------------------------------------
 CSV_PATH       = "gold_ring_results.csv"
@@ -403,25 +413,44 @@ _WEIGHT_RE = re.compile(
 _CARAT_PATTERNS = [
     (24, re.compile(r"\b24\s*c?t\b|\b24\s*k(?:t)?\b|\b24\s*carat\b|\b999\b", re.I)),
     (22, re.compile(r"\b22\s*c?t\b|\b22\s*k(?:t)?\b|\b22\s*carat\b|\b916\b|\b917\b", re.I)),
+    (20, re.compile(r"\b20\s*c?t\b|\b20\s*k(?:t)?\b|\b20\s*carat\b|\b833\b", re.I)),
     (18, re.compile(r"\b18\s*c?t\b|\b18\s*k(?:t)?\b|\b18\s*carat\b|\b750\b", re.I)),
     (15, re.compile(r"\b15\s*c?t\b|\b15\s*k(?:t)?\b|\b15\s*carat\b|\b625\b", re.I)),
     (14, re.compile(r"\b14\s*c?t\b|\b14\s*k(?:t)?\b|\b14\s*carat\b|\b585\b", re.I)),
     (10, re.compile(r"\b10\s*c?t\b|\b10\s*k(?:t)?\b|\b10\s*carat\b|\b417\b", re.I)),
     (9,  re.compile(r"\b9\s*c?t\b|\b9\s*k(?:t)?\b|\b9\s*carat\b|\b375\b", re.I)),
+    (8,  re.compile(r"\b8\s*c?t\b|\b8\s*k(?:t)?\b|\b8\s*carat\b|\b333\b", re.I)),
 ]
+
+
+# A number immediately after one of these is a RING SIZE, not a weight --
+# "misura 15 g. 6,20" is Italian for "size 15, 6.20 grams".
+_SIZE_WORDS = ("size", "sz", "misura", "taglia", "größe", "grösse", "gr.",
+               "talla", "maat", "pointure", "rozmiar")
+
+# European unit-first style: "g. 6,20" / "grammi 12,5" (unit BEFORE number).
+# Deliberately excludes "gr" -- German "Gr. 60" means SIZE 60, not 60 grams.
+# The bare "g." form additionally requires a decimal for the same reason.
+_WEIGHT_UNIT_FIRST_RE = re.compile(
+    r"\b(?:(?:grammes?|grammi|gramm|grams?)\.?\s*(\d{1,2}(?:[.,]\d{1,2})?)"
+    r"|g\.\s*(\d{1,2}[.,]\d{1,2}))\b", re.I)
 
 
 def parse_weight_grams(text):
     """Return the most plausible gold weight in grams, or None if not found.
 
     Picks the LARGEST matched gram figure on the assumption that it's the total
-    item weight (sellers sometimes also quote tiny stone weights). Real-world
-    listings vary wildly, so expect to tune this after a first run.
+    item weight (sellers sometimes also quote tiny stone weights). Numbers that
+    follow a ring-size word are skipped ("misura 15 g. 6,20" -> 6.2, not 15).
     """
     if not text:
         return None
     candidates = []
     for m in _WEIGHT_RE.finditer(text):
+        # Skip if the number is actually a ring size ("size 15 g..." trap).
+        lead = text[max(0, m.start() - 12):m.start()].lower()
+        if any(w in lead for w in _SIZE_WORDS):
+            continue
         raw = m.group(1).replace(",", ".")
         try:
             grams = float(raw)
@@ -429,6 +458,14 @@ def parse_weight_grams(text):
             continue
         # Sanity bounds: even a heavy signet is realistically under ~80g;
         # bigger figures are almost always a misparse (packaging, dimensions).
+        if 0.3 <= grams <= 80:
+            candidates.append(grams)
+    for m in _WEIGHT_UNIT_FIRST_RE.finditer(text):
+        raw = (m.group(1) or m.group(2)).replace(",", ".")
+        try:
+            grams = float(raw)
+        except ValueError:
+            continue
         if 0.3 <= grams <= 80:
             candidates.append(grams)
     if not candidates:
@@ -442,7 +479,23 @@ STONE_WORDS = [
     "diamond", "sapphire", "emerald", "ruby", "quartz", "topaz", "amethyst",
     "garnet", "opal", "zirconia", "cz", "citrine", "peridot", "spinel",
     "tanzanite", "aquamarine", "cubic", "moissanite", "onyx", "turquoise",
-    "pearl", "stone", "gemstone", "crystal", "paste",
+    "pearl", "stone", "gemstone", "crystal", "paste", "tourmaline", "jade",
+    "morganite", "kunzite",
+    # German (a 56g "Turmaline" statement ring was melt-valued as all-gold)
+    "diamant", "diamanten", "brillant", "saphir", "smaragd", "rubin",
+    "turmalin", "granat", "zirkonia", "perle", "edelstein",
+    # French
+    "diamants", "émeraude", "emeraude", "rubis", "améthyste", "amethyste",
+    "grenat", "topaze", "perle", "pierre",
+    # Italian ("Ametista" slipped through as all-gold weight)
+    "diamante", "diamanti", "zaffiro", "smeraldo", "rubino", "ametista",
+    "granato", "topazio", "citrino", "perla", "pietra", "acquamarina",
+    # Spanish
+    "diamante", "zafiro", "esmeralda", "rubí", "rubi", "amatista",
+    "granate", "topacio", "perla", "piedra",
+    # Dutch
+    "diamant", "saffier", "smaragd", "robijn", "amethist", "granaat",
+    "parel", "edelsteen",
 ]
 
 # Gold fineness hallmark numbers -> carat (unambiguous; preferred over "Nct").
@@ -458,6 +511,33 @@ def has_stones(text):
         return False
     low = text.lower()
     return any(re.search(r"\b" + s + r"\b", low) for s in STONE_WORDS)
+
+
+# Gem FAMILIES across languages, for counting how many different gems a
+# listing names. Prefix-matched so plurals/inflections count ("Diamanten").
+_STONE_FAMILIES = {
+    "diamond":    ("diamond", "diamant", "brillant"),
+    "sapphire":   ("sapphire", "saphir", "zaffir", "zafiro", "saffier"),
+    "emerald":    ("emerald", "émeraude", "emeraude", "smaragd", "smeraldo",
+                   "esmeralda"),
+    "ruby":       ("ruby", "rubis", "rubin", "robijn"),
+    "amethyst":   ("amethyst", "améthyste", "ametista", "amatista", "amethist"),
+    "tourmaline": ("tourmaline", "turmalin"),
+    "garnet":     ("garnet", "grenat", "granat", "granato", "granaat"),
+    "topaz":      ("topaz", "topaze", "topazio", "topacio"),
+    "citrine":    ("citrine", "citrino"),
+    "opal":       ("opal",),
+    "aquamarine": ("aquamarine", "acquamarina", "aigue-marine"),
+    "pearl":      ("pearl", "perle", "perla", "parel"),
+    "quartz":     ("quartz",),
+}
+
+
+def distinct_stone_families(text):
+    """How many DIFFERENT gem families the listing names (any language)."""
+    low = (text or "").lower()
+    return sum(1 for words in _STONE_FAMILIES.values()
+               if any(re.search(r"\b" + w, low) for w in words))
 
 
 def detect_carat(text):
@@ -492,24 +572,26 @@ def style_tags(text):
 def estimate_weight_low(text, carat):
     """Conservative LOWER-BOUND gram estimate when no weight is stated.
 
-    Uses ring archetype (signet/band/heavy) + "heavy/chunky" adjectives + large
-    US ring size, scaled by carat density. Returns grams, or None if there's no
-    usable signal (-> UNKNOWN, routed to the review lane, never discarded).
+    Estimates ONLY when the seller gives an explicit weight adjective (heavy/
+    chunky/... or slim/dainty/...) alongside a ring archetype. A plain
+    "9ct gold signet ring" carries no weight information at all, so it returns
+    None (-> UNKNOWN, routed to the review lane) rather than inventing a figure.
+    A live-run audit showed archetype-only guesses polluting the value list.
     """
     low = (text or "").lower()
     heavy = any(w in low for w in HEAVY_WORDS)
     slim = any(w in low for w in SLIM_WORDS)
+    if not heavy and not slim:
+        return None   # no explicit weight signal -> unknown / review lane
+
     is_signet = any(w in low for w in STYLE_TAG_WORDS["signet"])
     is_band = any(w in low for w in STYLE_TAG_WORDS["band"])
-
     if is_signet:
         arch = "signet_heavy" if heavy else "signet"
     elif is_band:
         arch = "band_heavy" if heavy else "band"
-    elif heavy:
-        arch = "ring_heavy"
     else:
-        return None   # no usable signal
+        arch = "ring_heavy" if heavy else "band"   # slim generic ring ~ band
 
     base = ARCHETYPE_LOW_G[arch]
     if slim:
@@ -536,8 +618,11 @@ def assess_ring(text, carat, stated_weight):
     low = (text or "").lower()
     tags = style_tags(text)
 
-    # Gold-light showcases: the gold is a minor fraction -> reject.
-    if any(w in low for w in STONE_SHOWCASE_WORDS):
+    # Gold-light showcases: the gold is a minor fraction -> reject. Either an
+    # explicit showcase word, or >= 2 different gem families named (the gold
+    # is a mount for the stones, so weight-based melt is meaningless).
+    if (any(w in low for w in STONE_SHOWCASE_WORDS)
+            or distinct_stone_families(text) >= SHOWCASE_MIN_DISTINCT_STONES):
         return {"keep": False, "confidence": "reject", "gross_g": None,
                 "net_gold_g": None, "stones": True, "tags": tags}
 
@@ -568,6 +653,25 @@ def assess_ring(text, carat, stated_weight):
 
     return {"keep": keep, "confidence": confidence, "gross_g": gross,
             "net_gold_g": net, "stones": stones, "tags": tags}
+
+
+# Melt/landed above this is almost always a data artefact (weight misparse,
+# multi-item lot, stolen-photo scam) -- nobody knowingly sells at <40% of
+# scrap. Suspects stay listed but are never flagged as a buy signal.
+SUSPECT_RATIO = 2.5
+
+
+def value_flag(melt, landed, confidence):
+    """The core economic test: is this ring a VALUE candidate?
+
+    Requires a CONFIRMED (seller-stated, parsed) weight. Estimated weights are
+    kept and shown with an indicative ratio, but a buy signal must never rest
+    on a guessed weight -- that's how fake bargains get flagged. Ratios beyond
+    SUSPECT_RATIO are demoted as too-good-to-be-true.
+    """
+    return bool(melt and landed and confidence == "confirmed"
+                and landed < melt * MELT_THRESHOLD
+                and melt < landed * SUSPECT_RATIO)
 
 
 def is_plated(text):
@@ -681,17 +785,27 @@ API_CALLS = {"search": 0, "item": 0}      # quota-spend instrumentation
 
 
 def _get_with_retry(url, headers, params, label, retries=4):
-    """GET with exponential backoff on eBay 429 (rate limit). Returns Response."""
+    """GET with exponential backoff on eBay 429 / transient 400 / 5xx.
+
+    eBay's Browse API intermittently returns HTTP 400 for a perfectly valid
+    request under load (verified: the identical request succeeds on re-send).
+    A real bad request just wastes the 2 extra attempts, so retrying is cheap
+    insurance against losing a whole market/query slice from one blip.
+    """
     r = None
     kind = "item" if "/item/" in url else "search"
     for attempt in range(retries):
         API_CALLS[kind] += 1
         r = requests.get(url, headers=headers, params=params, timeout=30)
-        if r.status_code != 429:
+        if r.status_code == 200:
+            return r
+        retryable = r.status_code == 429 or r.status_code >= 500 \
+            or (r.status_code == 400 and attempt < 2)
+        if not retryable:
             return r
         wait = 2 ** attempt          # 1, 2, 4, 8s
-        print(f"[warn] 429 rate-limited on {label}; backing off {wait}s",
-              file=sys.stderr)
+        print(f"[warn] {r.status_code} on {label}; backing off {wait}s "
+              f"({r.text[:120]})", file=sys.stderr)
         time.sleep(wait)
     return r
 
@@ -874,13 +988,24 @@ def analyse(items, token, spot_per_oz, fx=None):
         if is_plated(text) or is_excluded(text):
             continue
 
-        # 2. Carat + weight from summary text.
+        # 2. Carat + weight from summary text. The TITLE weight wins over any
+        #    description figure -- a live audit caught a desc number (20.1)
+        #    overriding the seller's stated title weight (10,20g) via max().
         carat, carat_assumed = detect_carat(text)
-        weight = parse_weight_grams(text)
+        weight = parse_weight_grams(title)
+        if weight is None:
+            weight = parse_weight_grams(short_desc)
+
+        # Multi-variant listings: the API price is the CHEAPEST variant and any
+        # stated weight is some variant's -- the melt comparison is meaningless.
+        # Route to the review lane and don't spend a detail fetch on it.
+        is_variant = item.get("itemGroupType") == "SELLER_DEFINED_VARIATIONS"
+        if is_variant:
+            weight = None
 
         # 3. If weight still unknown, dig into the full description (capped per
         #    scan). The full text also feeds stone/style detection below.
-        if (weight is None and FETCH_FULL_DETAILS
+        if (weight is None and not is_variant and FETCH_FULL_DETAILS
                 and (MAX_DETAIL_FETCHES == 0 or detail_fetches < MAX_DETAIL_FETCHES)):
             detail_fetches += 1
             full = fetch_item_description(token, item.get("itemId", ""), market)
@@ -898,6 +1023,9 @@ def analyse(items, token, spot_per_oz, fx=None):
         a = assess_ring(text, carat, weight)
         if not a["keep"]:
             continue
+        if is_variant and a["confidence"] == "estimated":
+            # No weight claim can be trusted on a variant listing.
+            a.update(confidence="unknown", gross_g=None, net_gold_g=None)
         confidence = a["confidence"]      # confirmed | estimated | unknown
         net_gold = a["net_gold_g"]        # gold weight used for melt (or None)
 
@@ -917,10 +1045,10 @@ def analyse(items, token, spot_per_oz, fx=None):
         landed = landed_cost(bid, country)
         ratio = round(melt / landed, 2) if (melt and landed) else None
 
-        # VALUE flag: landed cost below melt * threshold. Net-gold already
-        # excludes stone mass, so stone-set signets can legitimately qualify.
-        # Estimated rings can qualify (melt is conservative); unknown cannot.
-        is_value = bool(melt and landed and landed < melt * MELT_THRESHOLD)
+        # VALUE flag: landed cost below melt * threshold, CONFIRMED weight only.
+        # Net-gold already excludes stone mass, so stone-set signets can
+        # legitimately qualify. Estimated/unknown weights never flag value.
+        is_value = value_flag(melt, landed, confidence)
 
         records.append({
             "title": title,

@@ -40,6 +40,21 @@ class TestWeightParsing(unittest.TestCase):
         self.assertIsNone(g.parse_weight_grams("dimensions 250 g packaging"))
         self.assertIsNone(g.parse_weight_grams("no weight here"))
 
+    def test_size_number_not_weight(self):
+        # Regression: "misura 15 g. 6,20" is Italian for "size 15, 6.20g" --
+        # a 6.2g ring was recorded as 15g and flagged value.
+        self.assertEqual(
+            g.parse_weight_grams("oro 750 Citrino misura 15 g. 6,20"), 6.2)
+        self.assertIsNone(g.parse_weight_grams("size 12 gold ring"))
+
+    def test_unit_first_formats(self):
+        self.assertEqual(g.parse_weight_grams("anello oro grammi 12,5"), 12.5)
+        self.assertEqual(g.parse_weight_grams("bague or g. 6,20"), 6.2)
+
+    def test_german_size_not_weight(self):
+        # "Gr. 60" is German for SIZE 60 -- must not parse as 60 grams.
+        self.assertIsNone(g.parse_weight_grams("Goldring 585 Gr. 60"))
+
 
 class TestFinenessMarks(unittest.TestCase):
     """A fineness hallmark must map to carat regardless of listing language."""
@@ -63,6 +78,20 @@ class TestFinenessMarks(unittest.TestCase):
     def test_ct_fallback(self):
         self.assertEqual(g.detect_carat("9ct gold signet ring")[0], 9)
 
+    def test_8k_and_20ct(self):
+        # Regression: "8K Gold Signet" fell through to the scan's default
+        # carat, overstating melt by ~75%.
+        self.assertEqual(g.detect_carat("Vintage European 8K Gold Signet Ring")[0], 8)
+        self.assertEqual(g.detect_carat("20ct gold band")[0], 20)
+
+    def test_multilingual_stones(self):
+        # Regression: Italian/German stone words slipped through has_stones,
+        # so a 56g tourmaline statement ring was melt-valued as all-gold.
+        self.assertTrue(g.has_stones("Anello Designer In Ametista Rosa 585"))
+        self.assertTrue(g.has_stones("18kt Gelbgold Diamanten grüne Turmaline"))
+        self.assertTrue(g.has_stones("bague or émeraude 750"))
+        self.assertFalse(g.has_stones("9ct gold signet ring plain"))
+
     def test_stone_carat_ignored(self):
         # "22ct smoky quartz" is a stone weight, not 22ct gold.
         c, assumed = g.detect_carat("9ct gold ring with 22ct smoky quartz")
@@ -73,30 +102,43 @@ class TestEstimateWeightLow(unittest.TestCase):
     def test_no_signal_returns_none(self):
         self.assertIsNone(g.estimate_weight_low("plain gold ring", 9))
 
-    def test_signet_estimate(self):
-        est = g.estimate_weight_low("9ct gold signet ring", 9)
+    def test_plain_signet_returns_none(self):
+        # Regression: a plain "signet ring" carries NO weight information.
+        # Archetype-only guesses polluted the value list in a live run.
+        self.assertIsNone(g.estimate_weight_low("9ct gold signet ring", 9))
+
+    def test_solid_is_not_heavy(self):
+        # Regression: "solid gold" means not-plated, not heavy. A ladies'
+        # small solid signet must not be estimated at 12g+.
+        self.assertIsNone(
+            g.estimate_weight_low("9ct Solid Yellow Gold Signet Ring Small Oval", 9))
+        # Same for the continental equivalents.
+        self.assertIsNone(g.estimate_weight_low("Goldring massiv 585 Siegelring", 14))
+        self.assertIsNone(g.estimate_weight_low("anello oro massiccio sigillo", 18))
+
+    def test_heavy_signet_estimates(self):
+        est = g.estimate_weight_low("9ct heavy chunky gold signet ring", 9)
         self.assertIsNotNone(est)
         self.assertGreater(est, 0)
 
-    def test_heavy_signet_beats_plain_signet(self):
-        plain = g.estimate_weight_low("9ct gold signet ring", 9)
-        heavy = g.estimate_weight_low("9ct heavy chunky gold signet ring", 9)
-        self.assertGreater(heavy, plain)
-
     def test_slim_reduces_estimate(self):
-        full = g.estimate_weight_low("9ct gold band", 9)
+        full = g.estimate_weight_low("9ct heavy gold band", 9)
         slim = g.estimate_weight_low("9ct slim dainty gold band", 9)
         self.assertLess(slim, full)
 
+    def test_fine_gold_is_not_slim(self):
+        # "fine gold" = pure gold, not a slim ring -> no weight signal at all.
+        self.assertIsNone(g.estimate_weight_low("22ct fine gold signet ring", 22))
+
     def test_density_scales_with_carat(self):
         # Same archetype, higher carat -> denser -> heavier estimate.
-        nine = g.estimate_weight_low("signet ring", 9)
-        twentytwo = g.estimate_weight_low("signet ring", 22)
+        nine = g.estimate_weight_low("heavy signet ring", 9)
+        twentytwo = g.estimate_weight_low("heavy signet ring", 22)
         self.assertGreater(twentytwo, nine)
 
     def test_large_size_bumps_estimate(self):
-        base = g.estimate_weight_low("9ct gold signet ring", 9)
-        big = g.estimate_weight_low("9ct gold signet ring size 12", 9)
+        base = g.estimate_weight_low("9ct heavy gold signet ring", 9)
+        big = g.estimate_weight_low("9ct heavy gold signet ring size 12", 9)
         self.assertGreater(big, base)
 
 
@@ -135,6 +177,20 @@ class TestAssessRing(unittest.TestCase):
         self.assertFalse(a["keep"])
         self.assertEqual(a["confidence"], "reject")
 
+    def test_multi_gem_showcase_rejected(self):
+        # Regression: "Diamanten grüne Turmaline" statement ring, 56g counted
+        # as all gold. Two distinct gem families = the gold is just the mount.
+        a = g.assess_ring(
+            "18kt Gelbgold Ring Diamanten grüne Turmaline 750 Statement 56g",
+            18, 56.0)
+        self.assertFalse(a["keep"])
+        self.assertEqual(a["confidence"], "reject")
+
+    def test_single_gem_signet_still_kept(self):
+        # One stone family is normal for a signet -- must NOT be rejected.
+        a = g.assess_ring("9ct gold bloodstone signet ring 19g", 9, 19.0)
+        self.assertTrue(a["keep"])
+
     def test_estimated_uses_12g_lowbound(self):
         # No stated weight; estimate must clear the 12g estimated floor.
         a = g.assess_ring("9ct heavy chunky gold signet ring", 9, None)
@@ -161,6 +217,13 @@ class TestAssessRing(unittest.TestCase):
         self.assertEqual(a["confidence"], "unknown")
         self.assertTrue(a["keep"])          # routed to the review lane
         self.assertIsNone(a["net_gold_g"])
+
+    def test_plain_signet_goes_to_review_lane(self):
+        # A signet with no weight and no heavy/slim adjective is UNKNOWN
+        # (review lane), not dropped and not guessed at.
+        a = g.assess_ring("vintage 9ct gold signet ring size P", 9, None)
+        self.assertEqual(a["confidence"], "unknown")
+        self.assertTrue(a["keep"])
 
     def test_tags_returned(self):
         a = g.assess_ring("vintage 9ct gold mens signet ring 20g", 9, 20.0)
@@ -205,6 +268,35 @@ class TestStyleTags(unittest.TestCase):
     def test_localised_signet(self):
         self.assertIn("signet", g.style_tags("Siegelring massiv"))
         self.assertIn("signet", g.style_tags("chevalière or"))
+
+
+class TestValueFlag(unittest.TestCase):
+    """The buy signal itself: only a CONFIRMED weight may flag value."""
+
+    def test_confirmed_below_threshold_flags(self):
+        self.assertTrue(g.value_flag(1000.0, 1200.0, "confirmed"))
+
+    def test_confirmed_above_threshold_does_not(self):
+        self.assertFalse(g.value_flag(1000.0, 1400.0, "confirmed"))
+
+    def test_estimated_never_flags(self):
+        # Regression: 224 of 232 value flags in a live run rested on guessed
+        # weights. A buy signal must never come from an estimate.
+        self.assertFalse(g.value_flag(1000.0, 500.0, "estimated"))
+
+    def test_unknown_never_flags(self):
+        self.assertFalse(g.value_flag(1000.0, 500.0, "unknown"))
+
+    def test_missing_inputs_never_flag(self):
+        self.assertFalse(g.value_flag(None, 500.0, "confirmed"))
+        self.assertFalse(g.value_flag(1000.0, None, "confirmed"))
+
+    def test_too_good_to_be_true_demoted(self):
+        # Regression: a 56g "gold" ring at 4.7x melt was a gem showcase whose
+        # stones were counted as gold. Nobody sells at <40% of scrap.
+        self.assertFalse(g.value_flag(4000.0, 865.0, "confirmed"))
+        # Just under the suspect line still flags.
+        self.assertTrue(g.value_flag(2000.0, 900.0, "confirmed"))
 
 
 class TestLandedCost(unittest.TestCase):

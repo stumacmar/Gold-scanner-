@@ -78,11 +78,22 @@ Weight is seller-claimed free text, so a single hard weight filter either drops
 good rings or lets light ones through. Instead every ring gets a **confidence
 tier**, and the gram floor is applied per-tier (see `assess_ring`):
 
-| Tier | Meaning | Kept when |
-|------|---------|-----------|
-| **CONFIRMED** | a weight was parsed from the title/description | net gold ≥ `WEIGHT_FLOOR_CONFIRMED` (default **15 g**, strict) |
-| **ESTIMATED** | no stated weight; a conservative lower-bound is estimated from ring archetype (signet/band/heavy) × carat density × size | net gold ≥ `WEIGHT_FLOOR_ESTIMATED_LOWBOUND` (default **12 g**) |
-| **UNKNOWN** | no weight and no usable signal | **always kept**, routed to the dashboard **review lane** (never melt-valued, never flagged "value") |
+| Tier | Meaning | Kept when | Can flag "value"? |
+|------|---------|-----------|--------------------|
+| **CONFIRMED** | a weight was parsed from the title (title wins over description figures) | net gold ≥ `WEIGHT_FLOOR_CONFIRMED` (default **15 g**, strict) | **Yes — the only tier that can** |
+| **ESTIMATED** | no stated weight, but an explicit weight adjective (heavy/chunky/…) plus archetype × carat density × size gives a lower-bound | net gold ≥ `WEIGHT_FLOOR_ESTIMATED_LOWBOUND` (default **12 g**) | No — ratio shown as indicative (`~`) only |
+| **UNKNOWN** | no weight and no weight adjective (a plain "signet ring" carries no weight information) | **always kept**, routed to the dashboard **review lane** | No — never melt-valued |
+
+A buy signal never rests on a guessed weight: a live-run audit showed
+archetype-only guesses (and "solid"/"massiv", which mean *not plated*, not
+*heavy*) flagging small ladies' rings as bargains. Estimation now requires an
+explicit weight adjective, and `is_value` requires a CONFIRMED weight. Ratios
+above `SUSPECT_RATIO` (2.5× melt) are demoted as too-good-to-be-true — nobody
+knowingly sells at <40% of scrap; those are misparses, lots, or scams.
+Multi-variant listings (one page, many rings) go to the review lane: the API
+price is the cheapest variant, so the melt comparison is meaningless.
+Listings naming **two or more different gem families** (any language) are
+rejected as stone showcases — the gold is the mount, not the mass.
 
 Net gold = parsed/estimated gross weight **minus a conservative stone
 allowance** (`STONE_ALLOWANCE_G`, larger `INTAGLIO_ALLOWANCE_G` for carved
@@ -113,7 +124,9 @@ auction **and** Buy-It-Now (`--conditions ANY`).
 | `STONE_ALLOWANCE_G` / `INTAGLIO_ALLOWANCE_G` | `1.5` / `3.5` | grams subtracted for stones before the floor test |
 | `STONE_SHOWCASE_WORDS` | — | gold-light pieces rejected outright |
 | `MAX_QUERIES_PER_MARKET` | `7` | caps the query matrix so the eBay quota lasts a full run |
-| `MELT_THRESHOLD` | `1.3` | value flag: `landed_cost < melt × threshold` |
+| `MAX_DETAIL_FETCHES` | `250` | full-description look-ups per carat scan (each can turn an unknown into a confirmed weight) |
+| `MELT_THRESHOLD` | `1.3` | value flag: `landed_cost < melt × threshold` (confirmed weight only) |
+| `SUSPECT_RATIO` | `2.5` | melt/landed above this is demoted as too-good-to-be-true |
 
 Every scan prints a **per-market yield log** (`raw → kept → value`), a
 weight-confidence tally, and the eBay API call count, so coverage leaks and

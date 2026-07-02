@@ -228,8 +228,10 @@ function card(rec) {
   const c = confOf(rec);
   const confBadge = `<span class="cbadge ${c}">${CONF_LABEL[c] || c}</span>`;
   const wt = weightCell(rec);
+  // Estimated-weight ratios are indicative only (never value-flagged): show "~".
+  const approx = c === "estimated" ? "~" : "";
   const ratio = rec.ratio == null ? "—"
-    : '<span class="ratio ' + ratioClass(rec.ratio) + '">' + rec.ratio.toFixed(2) + '×</span>';
+    : '<span class="ratio ' + ratioClass(rec.ratio) + '">' + approx + rec.ratio.toFixed(2) + '×</span>';
   const bids = (rec.bids === "" || rec.bids == null) ? 0 : rec.bids;
   const tags = tagsOf(rec);
   const stagRow = tags.length
