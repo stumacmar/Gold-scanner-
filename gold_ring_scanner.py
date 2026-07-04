@@ -475,6 +475,12 @@ def parse_weight_grams(text):
         if 0.3 <= grams <= 80:
             candidates.append(grams)
     for m in _WEIGHT_UNIT_FIRST_RE.finditer(text):
+        # Unit-first only counts when the unit does NOT already belong to a
+        # preceding number: in "4,5 Gramm 61" the 61 is a RING SIZE, and the
+        # unit belongs to 4,5 (already captured by the number-first pass).
+        lead = text[max(0, m.start() - 4):m.start()]
+        if re.search(r"\d", lead):
+            continue
         raw = (m.group(1) or m.group(2)).replace(",", ".")
         try:
             grams = float(raw)
