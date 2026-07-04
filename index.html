@@ -5,64 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <meta name="theme-color" content="#0b0e14" />
 <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
-<title>Gold Ring Scanner</title>
+<title>Signet Scanner</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html, body { margin: 0; min-height: 100%; background: #0b0e14; color: #e6e6e6;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
   a { color: inherit; text-decoration: none; }
-  header { padding: 16px 16px 4px; }
+  header { padding: 16px 16px 6px; }
   h1 { margin: 0; font-size: 20px; font-weight: 700; }
   h1 .coin { color: #d4af37; }
-  .sub { margin: 3px 0 0; font-size: 12px; color: #8a93a6; line-height: 1.5; }
+  .sub { margin: 4px 0 0; font-size: 12px; color: #8a93a6; line-height: 1.5; }
 
-  /* Carat tabs (primary navigation) */
-  #carats { display: flex; gap: 8px; overflow-x: auto; padding: 12px 16px 6px;
-    scrollbar-width: none; }
-  #carats::-webkit-scrollbar { display: none; }
-  #carats .chip { flex: 0 0 auto; padding: 9px 18px; border-radius: 999px;
-    border: 1px solid #232a3a; background: #131826; color: #cfd6e4; font-size: 14px;
-    font-weight: 600; cursor: pointer; text-align: center; }
-  #carats .chip small { display: block; font-size: 9px; font-weight: 600; opacity: .8; margin-top: 1px; }
-  #carats .chip.active { background: #d4af37; border-color: #d4af37; color: #1a1400; }
+  /* One row of controls: carat chips + value toggle + sort */
+  .controls { display: flex; gap: 8px; overflow-x: auto; padding: 12px 16px 4px;
+    align-items: center; scrollbar-width: none; }
+  .controls::-webkit-scrollbar { display: none; }
+  .chip { flex: 0 0 auto; padding: 8px 14px; border-radius: 999px;
+    border: 1px solid #232a3a; background: #131826; color: #cfd6e4; font-size: 13px;
+    font-weight: 600; cursor: pointer; white-space: nowrap; }
+  .chip.active { background: #d4af37; border-color: #d4af37; color: #1a1400; }
+  .chip.val.active { background: #26a65b; border-color: #26a65b; color: #04160b; }
+  select.sort { flex: 0 0 auto; padding: 8px 12px; border-radius: 999px;
+    border: 1px solid #232a3a; background: #131826; color: #e6e6e6; font-size: 13px;
+    font-weight: 600; }
 
-  /* Toolbar: Filters + Sort */
-  .toolbar { display: flex; gap: 8px; padding: 8px 16px 2px; align-items: center; }
-  .btn { padding: 9px 14px; border-radius: 999px; border: 1px solid #2a3550;
-    background: #161c2c; color: #e6e6e6; font-size: 14px; font-weight: 600; cursor: pointer; }
-  .btn .badge { background: #d4af37; color: #1a1400; border-radius: 999px;
-    padding: 0 7px; margin-left: 6px; font-size: 12px; font-weight: 700; }
-  .toolbar .spacer { flex: 1; }
-  select.sort { padding: 9px 12px; border-radius: 999px; border: 1px solid #232a3a;
-    background: #131826; color: #e6e6e6; font-size: 13px; font-weight: 600; }
-
-  /* Active filter chips */
-  .active { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 16px 2px; }
-  .atag { font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px;
-    background: #1c2330; border: 1px solid #2a3550; color: #cfd6e4; cursor: pointer; }
-  .atag .x { color: #8a93a6; margin-left: 5px; font-weight: 700; }
-
-  /* Listing cards */
-  .list { padding: 8px 12px 28px; display: flex; flex-direction: column; gap: 10px; }
+  .list { padding: 10px 12px 28px; display: flex; flex-direction: column; gap: 10px; }
   .card { display: block; background: #131826; border: 1px solid #232a3a;
     border-radius: 14px; padding: 13px 14px; }
   .card.value { border-color: #d4af37; box-shadow: 0 0 0 1px rgba(212,175,55,0.25); }
-  .card .top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
-  .card .title { font-size: 14px; font-weight: 600; line-height: 1.35; color: #eef1f7; }
-  .badges { flex: 0 0 auto; display: flex; flex-direction: column; gap: 5px; align-items: flex-end; }
-  .tag { flex: 0 0 auto; font-size: 10px; font-weight: 700; padding: 3px 7px; border-radius: 6px;
-    letter-spacing: .3px; text-transform: uppercase; white-space: nowrap; }
-  .tag.val { background: #d4af37; color: #1a1400; }
-  /* Weight-confidence badge */
-  .cbadge { flex: 0 0 auto; font-size: 9px; font-weight: 700; padding: 3px 6px; border-radius: 6px;
-    letter-spacing: .3px; text-transform: uppercase; white-space: nowrap; }
-  .cbadge.confirmed { background: #143d24; color: #58d58a; border: 1px solid #1f5e38; }
-  .cbadge.estimated { background: #3a2e10; color: #e0b94b; border: 1px solid #5a4718; }
-  .cbadge.unknown   { background: #1c2330; color: #8a93a6; border: 1px solid #2a3550; }
-  /* Style / era tags */
-  .stags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
-  .stag { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 999px;
-    background: #161c2c; border: 1px solid #2a3550; color: #9fb0cc; text-transform: capitalize; }
+  .top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+  .title { font-size: 14px; font-weight: 600; line-height: 1.35; color: #eef1f7; }
+  .tag { flex: 0 0 auto; font-size: 10px; font-weight: 700; padding: 3px 7px;
+    border-radius: 6px; letter-spacing: .3px; text-transform: uppercase;
+    background: #d4af37; color: #1a1400; }
   .row2 { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: 12.5px; }
   .kv { color: #8a93a6; } .kv b { color: #e6e6e6; font-weight: 600; }
   .muted { color: #6b7488; }
@@ -71,122 +46,35 @@
   .foot { display: flex; justify-content: space-between; margin-top: 9px;
     font-size: 11.5px; color: #6b7488; }
   .foot .left { color: #cfd6e4; font-weight: 600; }
-
-  .warn { margin: 6px 16px 0; padding: 10px 13px; background: #1a1407;
-    border: 1px solid #3a2e10; border-radius: 12px; font-size: 11px; color: #cbb98a; line-height: 1.5; }
+  .warn { margin: 8px 16px 0; padding: 10px 13px; background: #1a1407;
+    border: 1px solid #3a2e10; border-radius: 12px; font-size: 11px; color: #cbb98a;
+    line-height: 1.5; }
   .err, .empty { padding: 24px 16px; font-size: 14px; }
   .err { color: #ef5350; } .empty { color: #8a93a6; }
-
-  /* Bottom sheet */
-  .backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.55); opacity: 0;
-    pointer-events: none; transition: opacity .25s; z-index: 15; }
-  .backdrop.open { opacity: 1; pointer-events: auto; }
-  .sheet { position: fixed; left: 0; right: 0; bottom: 0; max-height: 86vh; overflow-y: auto;
-    background: #0f1320; border-top: 1px solid #232a3a;
-    border-radius: 18px 18px 0 0; transform: translateY(100%);
-    transition: transform .25s ease; z-index: 20; padding: 6px 16px 28px; }
-  .sheet.open { transform: translateY(0); }
-  .sheet-head { position: sticky; top: 0; background: #0f1320; display: flex;
-    align-items: center; justify-content: space-between; padding: 12px 2px 10px; }
-  .sheet-head b { font-size: 16px; }
-  .sheet-head .done { color: #d4af37; font-weight: 700; cursor: pointer; font-size: 15px; }
-  .grip { width: 36px; height: 4px; border-radius: 2px; background: #2a3550;
-    margin: 6px auto 0; }
-  .section { margin-top: 16px; }
-  .section h3 { margin: 0 0 8px; font-size: 12px; letter-spacing: .4px; text-transform: uppercase;
-    color: #8a93a6; font-weight: 700; }
-  .chiprow { display: flex; flex-wrap: wrap; gap: 8px; }
-  .chip { padding: 8px 14px; border-radius: 999px; border: 1px solid #232a3a;
-    background: #131826; color: #cfd6e4; font-size: 13px; font-weight: 600; cursor: pointer; }
-  .chip.active { background: #d4af37; border-color: #d4af37; color: #1a1400; }
-  .capInput { margin-top: 8px; width: 100%; padding: 10px 14px; border-radius: 12px;
-    border: 1px solid #232a3a; background: #131826; color: #e6e6e6; font-size: 14px; }
-  .capInput::placeholder { color: #6b7488; }
-  .reset { margin-top: 20px; width: 100%; padding: 12px; border-radius: 12px;
-    border: 1px solid #2a3550; background: #161c2c; color: #cfd6e4; font-size: 14px;
-    font-weight: 600; cursor: pointer; }
 </style>
 </head>
 <body>
   <header>
-    <h1><span class="coin">●</span> Gold Ring Scanner</h1>
-    <p class="sub" id="sub">Loading latest scan…</p>
+    <h1><span class="coin">●</span> Signet Scanner</h1>
+    <p class="sub" id="sub">Heavy solid-gold signets &amp; intaglios · 15–20g · loading…</p>
   </header>
 
-  <div id="carats"></div>
-
-  <div class="toolbar">
-    <button class="btn" id="filterBtn">Filters</button>
-    <span class="spacer"></span>
-    <select class="sort" id="sort">
-      <option value="best">Best value</option>
-      <option value="heavy">Heaviest</option>
-      <option value="cheap">Cheapest</option>
-      <option value="ending">Ending soonest</option>
-    </select>
-  </div>
-
-  <div class="active" id="active"></div>
+  <div class="controls" id="controls"></div>
   <div class="list" id="list"></div>
 
   <div class="warn">
-    ⚠ Verify the live bid on eBay before bidding (the API can lag). Bid shown is
-    <b>not</b> your true cost — postage &amp; fees are extra. Weights are
-    seller-claimed — confirm against the hallmark/photos.
-    <b>Non-UK 🇺🇸🇪🇺 listings</b> are converted to £ at the live rate; expect
-    import VAT/duty + international postage on top, not included in melt.
-  </div>
-
-  <!-- Filters bottom sheet -->
-  <div class="backdrop" id="backdrop"></div>
-  <div class="sheet" id="sheet">
-    <div class="grip"></div>
-    <div class="sheet-head"><b>Filters</b><span class="done" id="sheetDone">Done</span></div>
-
-    <div class="section"><h3>Show</h3><div class="chiprow" id="f-kind"></div></div>
-    <div class="section"><h3>Weight confidence</h3><div class="chiprow" id="f-conf"></div></div>
-    <div class="section"><h3>Style / era</h3><div class="chiprow" id="f-style"></div></div>
-    <div class="section"><h3>Country</h3><div class="chiprow" id="f-country"></div></div>
-    <div class="section"><h3>Listing type</h3><div class="chiprow" id="f-type"></div></div>
-    <div class="section"><h3>Max price</h3><div class="chiprow" id="f-price"></div>
-      <input class="capInput" id="capInput" type="number" inputmode="numeric" min="0"
-             placeholder="Custom max £…" autocomplete="off" /></div>
-    <div class="section"><h3>Min weight</h3><div class="chiprow" id="f-weight"></div>
-      <input class="capInput" id="wMinInput" type="number" inputmode="decimal" min="0" step="0.1"
-             placeholder="Custom min grams…" autocomplete="off" /></div>
-
-    <button class="reset" id="resetBtn">Reset all filters</button>
+    ⚠ Verify the live price on eBay before bidding (the API can lag). Weights are
+    seller-claimed — confirm against the hallmark/photos. <b>Non-UK listings</b>
+    show a landed cost with import VAT + postage estimated in.
   </div>
 
 <script>
 const fmtGBP = n => (n == null ? "?" : "£" + Number(n).toLocaleString("en-GB", {maximumFractionDigits: 0}));
-let DATA = null, INDEX = null, currentKey = null;
-let filter = "all";         // value | all  (open on All; sort keeps best value on top)
-let confFilter = "all";     // all | confirmed | estimated | unknown  (review lane)
-let styleFilter = "all";    // all | signet | intaglio | vintage | antique | band | gents
-let buyingFilter = "all";   // all | Auction | Buy now
-let priceCap = Infinity;    // Infinity | max £
-let weightMin = 0;          // 0 | min grams
-let countryFilter = "all";  // all | UK | US | DE | ...
-let sortBy = "best";        // best | heavy | cheap | ending
-
-// Back-compat helpers for older data files lacking the new fields.
-const confOf = r => r.weight_confidence || (r.weight_g == null ? "unknown" : "confirmed");
-const tagsOf = r => Array.isArray(r.tags) ? r.tags : [];
-const STYLES = ["signet", "intaglio", "vintage", "antique", "band", "gents"];
-
-// ---- Filter predicates (independent dimensions) ----
-const passKind  = r => filter === "all" ? true : r.is_value;
-const passConf  = r => confFilter === "all" || confOf(r) === confFilter;
-const passStyle = r => styleFilter === "all" || tagsOf(r).includes(styleFilter);
-const passType  = r => buyingFilter === "all" || r.buying === buyingFilter;
-const passPrice = r => priceCap === Infinity || (r.current_bid != null && r.current_bid <= priceCap);
-const passWeight = r => weightMin === 0 || (r.weight_g != null && r.weight_g >= weightMin);
-const passCountry = r => countryFilter === "all" || (r.country || "UK") === countryFilter;
-const DIMS = { kind: passKind, conf: passConf, style: passStyle, type: passType,
-               price: passPrice, weight: passWeight, country: passCountry };
-// Items passing every dimension EXCEPT the named one (for consistent chip counts).
-const others = (except) => (r) => Object.keys(DIMS).every(k => k === except || DIMS[k](r));
+let ALL = [];            // merged records across every carat file
+let META = null;         // meta of the newest file (spot price, timestamp)
+let caratFilter = 0;     // 0 = all | 9 | 14 | 18 | 22
+let valueOnly = false;
+let sortBy = "best";
 
 function tlMinutes(s) {
   if (!s || s === "n/a" || s === "ended") return Infinity;
@@ -199,63 +87,37 @@ function tlMinutes(s) {
 const SORTS = {
   best:   (a, b) => (b.ratio ?? -1) - (a.ratio ?? -1),
   heavy:  (a, b) => (b.weight_g ?? -1) - (a.weight_g ?? -1),
-  cheap:  (a, b) => (a.landed_cost ?? a.current_bid ?? 1e12) - (b.landed_cost ?? b.current_bid ?? 1e12),
+  cheap:  (a, b) => (a.landed_cost ?? 1e12) - (b.landed_cost ?? 1e12),
   ending: (a, b) => tlMinutes(a.time_left) - tlMinutes(b.time_left),
 };
-
-function applyFilter(results) {
-  return results
-    .filter(r => Object.values(DIMS).every(fn => fn(r)))
-    .sort(SORTS[sortBy]);
-}
+const shown = () => ALL
+  .filter(r => (!caratFilter || r.carat === caratFilter) && (!valueOnly || r.is_value))
+  .sort(SORTS[sortBy]);
 
 function escapeHtml(s) {
   return (s || "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 }
-function ratioClass(r) { return r == null ? "r-low" : r >= 1 ? "r-good" : r >= 0.85 ? "r-mid" : "r-low"; }
-function caratLabel(rec) { return rec.carat + "ct" + (rec.carat_assumed ? "?" : ""); }
+const ratioClass = r => r == null ? "r-low" : r >= 1 ? "r-good" : r >= 0.85 ? "r-mid" : "r-low";
 
-const CONF_LABEL = { confirmed: "Confirmed", estimated: "Est", unknown: "Review" };
-function weightCell(rec) {
-  const c = confOf(rec);
-  if (c === "unknown") return "?";
-  if (c === "estimated") return rec.weight_g == null ? "?" : "~" + rec.weight_g.toFixed(0) + "g est";
-  return rec.weight_g == null ? "?" : rec.weight_g.toFixed(1) + "g";
-}
 function card(rec) {
   const cls = "card" + (rec.is_value ? " value" : "");
-  const valTag = rec.is_value ? '<span class="tag val">Value</span>' : "";
-  const c = confOf(rec);
-  const confBadge = `<span class="cbadge ${c}">${CONF_LABEL[c] || c}</span>`;
-  const wt = weightCell(rec);
-  // Estimated-weight ratios are indicative only (never value-flagged): show "~".
-  const approx = c === "estimated" ? "~" : "";
+  const tag = rec.is_value ? '<span class="tag">Value</span>' : "";
   const ratio = rec.ratio == null ? "—"
-    : '<span class="ratio ' + ratioClass(rec.ratio) + '">' + approx + rec.ratio.toFixed(2) + '×</span>';
+    : '<span class="ratio ' + ratioClass(rec.ratio) + '">' + rec.ratio.toFixed(2) + '×</span>';
   const bids = (rec.bids === "" || rec.bids == null) ? 0 : rec.bids;
-  const tags = tagsOf(rec);
-  const stagRow = tags.length
-    ? `<div class="stags">${tags.map(t => `<span class="stag">${escapeHtml(t)}</span>`).join("")}</div>` : "";
-  // Net-gold note when stone mass was subtracted from the displayed weight.
-  const netNote = (rec.net_gold_g != null && rec.weight_g != null
-    && rec.net_gold_g < rec.weight_g - 0.05)
-    ? ` <span class="muted">(${rec.net_gold_g.toFixed(1)}g gold)</span>` : "";
+  const intag = (rec.tags || []).includes("intaglio") ? ' <span class="muted">· intaglio</span>' : "";
   return `
     <a class="${cls}" href="${rec.url}" target="_blank" rel="noopener">
-      <div class="top">
-        <div class="title">${rec.flag || ""} ${escapeHtml(rec.title)}</div>
-        <div class="badges">${valTag}${confBadge}</div>
-      </div>
+      <div class="top"><div class="title">${rec.flag || ""} ${escapeHtml(rec.title)}</div>${tag}</div>
       <div class="row2">
-        <span class="kv">Carat <b>${caratLabel(rec)}</b></span>
-        <span class="kv">Weight <b>${wt}</b>${netNote}</span>
-        <span class="kv">${rec.country === "UK" ? "Price" : "Bid"} <b>${fmtGBP(rec.current_bid)}</b>${rec.price_orig ? ` <span class="muted">(${rec.price_orig})</span>` : ""}</span>
-        ${rec.country !== "UK" && rec.landed_cost ? `<span class="kv">Landed <b>~${fmtGBP(rec.landed_cost)}</b> <span class="muted">inc. VAT+post</span></span>` : ""}
+        <span class="kv">Carat <b>${rec.carat}ct</b>${intag}</span>
+        <span class="kv">Weight <b>${rec.weight_g?.toFixed(1) ?? "?"}g</b></span>
+        <span class="kv">Price <b>${fmtGBP(rec.current_bid)}</b>${rec.price_orig ? ` <span class="muted">(${rec.price_orig})</span>` : ""}</span>
+        ${rec.country !== "UK" && rec.landed_cost ? `<span class="kv">Landed <b>~${fmtGBP(rec.landed_cost)}</b></span>` : ""}
         <span class="kv">Melt <b>${fmtGBP(rec.melt_value)}</b></span>
         <span class="kv">Melt/Cost ${ratio}</span>
-        ${rec.stones ? '<span class="muted">💎 stone-set</span>' : ""}
+        ${rec.stones ? '<span class="muted">💎</span>' : ""}
       </div>
-      ${stagRow}
       <div class="foot">
         <span class="left">${rec.buying === "Buy now" ? "🏷 Buy now"
           : "⏳ " + rec.time_left + " · " + bids + " bid" + (bids == 1 ? "" : "s")}</span>
@@ -264,193 +126,71 @@ function card(rec) {
     </a>`;
 }
 
-// ---- Carat tabs ----
-function renderCarats() {
-  const el = document.getElementById("carats");
-  el.innerHTML = INDEX.searches.map(s =>
-    `<div class="chip ${s.key === currentKey ? "active" : ""}" data-k="${s.key}">` +
-    `${s.label}<small>${s.value_count} value</small></div>`).join("");
-  el.onclick = (e) => {
-    const chip = e.target.closest(".chip");
-    if (chip && chip.dataset.k !== currentKey) loadSearch(chip.dataset.k);
-  };
-}
-
-// ---- Active filter chips (on main screen) ----
-const cap1 = s => s.charAt(0).toUpperCase() + s.slice(1);
-function activeList() {
-  const a = [];
-  if (filter === "value") a.push(["kind", "Value"]);
-  if (confFilter !== "all") a.push(["conf", confFilter === "unknown" ? "Review lane" : cap1(confFilter)]);
-  if (styleFilter !== "all") a.push(["style", cap1(styleFilter)]);
-  if (countryFilter !== "all") a.push(["country", (FLAGS[countryFilter] || "") + " " + countryFilter]);
-  if (buyingFilter !== "all") a.push(["type", buyingFilter]);
-  if (priceCap !== Infinity) a.push(["price", "≤" + fmtGBP(priceCap)]);
-  if (weightMin !== 0) a.push(["weight", "≥" + weightMin + "g"]);
-  return a;
-}
-function clearDim(dim) {
-  if (dim === "kind") filter = "all";
-  else if (dim === "conf") confFilter = "all";
-  else if (dim === "style") styleFilter = "all";
-  else if (dim === "type") buyingFilter = "all";
-  else if (dim === "country") countryFilter = "all";
-  else if (dim === "price") { priceCap = Infinity; document.getElementById("capInput").value = ""; }
-  else if (dim === "weight") { weightMin = 0; document.getElementById("wMinInput").value = ""; }
-}
-
-// ---- Filters sheet ----
-const FLAGS = { UK: "🇬🇧", US: "🇺🇸", DE: "🇩🇪", FR: "🇫🇷", IT: "🇮🇹", ES: "🇪🇸", IE: "🇮🇪" };
-function renderSheet() {
-  if (!DATA) return;
-  const n = (arr, pred) => arr.filter(pred).length;
-  const forKind    = DATA.results.filter(others("kind"));
-  const forConf    = DATA.results.filter(others("conf"));
-  const forStyle   = DATA.results.filter(others("style"));
-  const forType    = DATA.results.filter(others("type"));
-  const forPrice   = DATA.results.filter(others("price"));
-  const forWeight  = DATA.results.filter(others("weight"));
-  const forCountry = DATA.results.filter(others("country"));
-  const chips = (arr) => arr.map(([on, key, label]) =>
-    `<div class="chip ${on ? "active" : ""}" data-v="${key}">${label}</div>`).join("");
-
-  document.getElementById("f-kind").innerHTML = chips([
-    [filter === "all", "all", "All " + forKind.length],
-    [filter === "value", "value", "Value " + n(forKind, r => r.is_value)],
-  ]);
-
-  document.getElementById("f-conf").innerHTML = chips([
-    [confFilter === "all", "all", "All " + forConf.length],
-    [confFilter === "confirmed", "confirmed", "Confirmed " + n(forConf, r => confOf(r) === "confirmed")],
-    [confFilter === "estimated", "estimated", "Estimated " + n(forConf, r => confOf(r) === "estimated")],
-    [confFilter === "unknown", "unknown", "Review lane " + n(forConf, r => confOf(r) === "unknown")],
-  ]);
-
-  document.getElementById("f-style").innerHTML = chips([
-    [styleFilter === "all", "all", "All " + forStyle.length],
-    ...STYLES.map(s => [styleFilter === s, s,
-      cap1(s) + " " + n(forStyle, r => tagsOf(r).includes(s))]),
-  ]);
-
-  const countries = Object.keys(DATA.meta.country_counts || {});
-  countries.sort((a, b) => (a === "UK" ? -1 : b === "UK" ? 1 : a.localeCompare(b)));
-  document.getElementById("f-country").innerHTML = chips([
-    [countryFilter === "all", "all", "All " + forCountry.length],
-    ...countries.map(c => [countryFilter === c, c,
-      (FLAGS[c] || "") + " " + c + " " + n(forCountry, r => (r.country || "UK") === c)]),
-  ]);
-
-  document.getElementById("f-type").innerHTML = chips([
-    [buyingFilter === "all", "all", "All " + forType.length],
-    [buyingFilter === "Auction", "Auction", "⏳ Auction " + n(forType, r => r.buying === "Auction")],
-    [buyingFilter === "Buy now", "Buy now", "🏷 Buy now " + n(forType, r => r.buying === "Buy now")],
-  ]);
-  const pBands = [[Infinity, "Any £"], [250, "≤£250"], [500, "≤£500"],
-                 [1000, "≤£1k"], [2000, "≤£2k"], [3000, "≤£3k"]];
-  document.getElementById("f-price").innerHTML = chips(pBands.map(([cap, lbl]) =>
-    [priceCap === cap, cap, lbl + " " + n(forPrice, r => cap === Infinity
-      || (r.current_bid != null && r.current_bid <= cap))]));
-  const wBands = [[0, "Any g"], [15, "≥15g"], [20, "≥20g"], [25, "≥25g"], [30, "≥30g"]];
-  document.getElementById("f-weight").innerHTML = chips(wBands.map(([min, lbl]) =>
-    [weightMin === min, min, lbl + " " + n(forWeight, r => min === 0
-      || (r.weight_g != null && r.weight_g >= min))]));
-}
-
 function render() {
-  const m = DATA.meta;
-  const when = new Date(m.generated_at);
-  const shown = applyFilter(DATA.results);
-  document.getElementById("sub").innerHTML =
-    `“${escapeHtml(m.query)}” · UK · gold ${fmtGBP(m.spot_gbp_per_oz)}/oz` +
-    `<br>${shown.length} shown of ${m.total_analysed} · updated ${when.toLocaleDateString("en-GB")} ${when.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"})}`;
+  const rows = shown();
+  const carats = [...new Set(ALL.map(r => r.carat))].sort((a, b) => a - b);
+  const chip = (on, v, label, extra) =>
+    `<div class="chip ${extra || ""} ${on ? "active" : ""}" data-v="${v}">${label}</div>`;
+  document.getElementById("controls").innerHTML =
+    chip(!caratFilter, 0, `All ${ALL.length}`) +
+    carats.map(c => chip(caratFilter === c, c,
+      `${c}ct ${ALL.filter(r => r.carat === c).length}`)).join("") +
+    chip(valueOnly, "value", `★ Value ${ALL.filter(r => r.is_value).length}`, "val") +
+    `<select class="sort" id="sort">
+       <option value="best" ${sortBy === "best" ? "selected" : ""}>Best value</option>
+       <option value="heavy" ${sortBy === "heavy" ? "selected" : ""}>Heaviest</option>
+       <option value="cheap" ${sortBy === "cheap" ? "selected" : ""}>Cheapest</option>
+       <option value="ending" ${sortBy === "ending" ? "selected" : ""}>Ending soonest</option>
+     </select>`;
 
-  renderCarats();
+  if (META) {
+    const when = new Date(META.generated_at);
+    document.getElementById("sub").innerHTML =
+      `Heavy solid-gold signets &amp; intaglios · <b>15–20g</b> · gold ${fmtGBP(META.spot_gbp_per_oz)}/oz` +
+      `<br>${rows.length} shown of ${ALL.length} · updated ${when.toLocaleDateString("en-GB")} ` +
+      when.toLocaleTimeString("en-GB", {hour: "2-digit", minute: "2-digit"});
+  }
+  document.getElementById("list").innerHTML = rows.length ? rows.map(card).join("")
+    : '<div class="empty">Nothing matches — tap All to clear filters, or check back after the morning scan.</div>';
 
-  const active = activeList();
-  document.getElementById("filterBtn").innerHTML =
-    "Filters" + (active.length ? ` <span class="badge">${active.length}</span>` : "");
-  document.getElementById("active").innerHTML = active.map(([dim, label]) =>
-    `<span class="atag" data-dim="${dim}">${label}<span class="x">✕</span></span>`).join("");
-
-  const list = document.getElementById("list");
-  list.innerHTML = shown.length ? shown.map(card).join("")
-    : '<div class="empty">No rings match these filters. Tap a filter chip above to clear it, or open Filters to widen.</div>';
-
-  renderSheet();
+  document.getElementById("controls").onclick = (e) => {
+    const c = e.target.closest(".chip");
+    if (!c) return;
+    if (c.dataset.v === "value") valueOnly = !valueOnly;
+    else caratFilter = Number(c.dataset.v);
+    render();
+  };
+  document.getElementById("sort").onchange = (e) => { sortBy = e.target.value; render(); };
 }
 
-// ---- Loading ----
-function loadSearch(key) {
-  const search = INDEX.searches.find(s => s.key === key) || INDEX.searches[0];
-  currentKey = search.key;
-  document.getElementById("list").innerHTML = '<div class="empty">Loading…</div>';
-  fetch("./data/" + search.file + "?ts=" + Date.now())
-    .then(r => { if (!r.ok) throw new Error("missing"); return r.json(); })
-    .then(d => { DATA = d; render(); })
-    .catch(() => { document.getElementById("list").innerHTML =
-      '<div class="err">Could not load ' + search.file + '.</div>'; });
-}
-
-// ---- Wiring (bound once) ----
-function openSheet(o) {
-  document.getElementById("sheet").classList.toggle("open", o);
-  document.getElementById("backdrop").classList.toggle("open", o);
-}
-document.getElementById("filterBtn").onclick = () => openSheet(true);
-document.getElementById("sheetDone").onclick = () => openSheet(false);
-document.getElementById("backdrop").onclick = () => openSheet(false);
-document.getElementById("sort").onchange = (e) => { sortBy = e.target.value; if (DATA) render(); };
-
-document.getElementById("active").onclick = (e) => {
-  const t = e.target.closest(".atag");
-  if (t) { clearDim(t.dataset.dim); render(); }
-};
-document.getElementById("f-kind").onclick = (e) => {
-  const c = e.target.closest(".chip"); if (c) { filter = c.dataset.v; render(); } };
-document.getElementById("f-conf").onclick = (e) => {
-  const c = e.target.closest(".chip"); if (c) { confFilter = c.dataset.v; render(); } };
-document.getElementById("f-style").onclick = (e) => {
-  const c = e.target.closest(".chip"); if (c) { styleFilter = c.dataset.v; render(); } };
-document.getElementById("f-country").onclick = (e) => {
-  const c = e.target.closest(".chip"); if (c) { countryFilter = c.dataset.v; render(); } };
-document.getElementById("f-type").onclick = (e) => {
-  const c = e.target.closest(".chip"); if (c) { buyingFilter = c.dataset.v; render(); } };
-document.getElementById("f-price").onclick = (e) => {
-  const c = e.target.closest(".chip");
-  if (c) { priceCap = c.dataset.v === "Infinity" ? Infinity : Number(c.dataset.v);
-    document.getElementById("capInput").value = ""; render(); } };
-document.getElementById("f-weight").onclick = (e) => {
-  const c = e.target.closest(".chip");
-  if (c) { weightMin = Number(c.dataset.v); document.getElementById("wMinInput").value = ""; render(); } };
-document.getElementById("capInput").addEventListener("input", (e) => {
-  const v = parseFloat(e.target.value);
-  priceCap = (e.target.value === "" || isNaN(v) || v <= 0) ? Infinity : v;
-  if (DATA) render();
-});
-document.getElementById("wMinInput").addEventListener("input", (e) => {
-  const v = parseFloat(e.target.value);
-  weightMin = (e.target.value === "" || isNaN(v) || v <= 0) ? 0 : v;
-  if (DATA) render();
-});
-document.getElementById("resetBtn").onclick = () => {
-  filter = "all"; confFilter = "all"; styleFilter = "all";
-  buyingFilter = "all"; priceCap = Infinity; weightMin = 0; countryFilter = "all";
-  document.getElementById("capInput").value = "";
-  document.getElementById("wMinInput").value = "";
-  render();
-};
-
+// Load every carat file listed in the index, merge, and de-duplicate by URL
+// (the same ring can surface in two carat scans).
 fetch("./data/index.json?ts=" + Date.now())
   .then(r => { if (!r.ok) throw new Error("no index"); return r.json(); })
-  .then(idx => {
-    INDEX = idx;
-    if (!idx.searches || !idx.searches.length) throw new Error("empty");
-    loadSearch(idx.searches[0].key);
+  .then(idx => Promise.all(idx.searches.map(s =>
+    fetch("./data/" + s.file + "?ts=" + Date.now()).then(r => r.ok ? r.json() : null))))
+  .then(files => {
+    const seen = new Set();
+    let newest = null;
+    for (const f of files.filter(Boolean)) {
+      if (!newest || f.meta.generated_at > newest.generated_at) newest = f.meta;
+      for (const r of f.results) {
+        if (r.url && seen.has(r.url)) continue;
+        if (r.url) seen.add(r.url);
+        ALL.push(r);
+      }
+    }
+    META = newest;
+    if (!ALL.length) {
+      document.getElementById("list").innerHTML =
+        '<div class="empty">No rings in the current scan — check back after the morning run.</div>';
+      return;
+    }
+    render();
   })
   .catch(() => {
     document.getElementById("list").innerHTML =
       '<div class="err">No scan data yet. Once the GitHub Action runs, results appear here.</div>';
-    document.getElementById("sub").textContent = "Awaiting first scan";
   });
 </script>
 </body>

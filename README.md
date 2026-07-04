@@ -1,12 +1,14 @@
 # eBay Gold Ring Scanner
 
 A single-file command-line tool that scans **16 eBay marketplaces** (UK, US,
-Europe, AU/CA, HK/SG) for undervalued **heavy solid-gold rings** by comparing the
-price (converted to £) against the ring's gold **melt value** (carat content ×
-weight × live spot price), then against the true **landed cost** to a UK buyer
-(import VAT + postage). It targets signet/intaglio/vintage/antique/heavy-band
-rings ≥15g across 9/14/18/22ct. See **Coverage model** below for the
-weight-confidence and search-matrix details.
+Europe, AU/CA, HK/SG) for one thing only: **heavy solid-gold signet and
+intaglio rings with a seller-stated weight of 15–20g** (any carat 8–24ct).
+Each ring's price (converted to £) is compared against its gold **melt value**
+(carat × weight × live spot) and the true **landed cost** to a UK buyer
+(import VAT + postage). No estimates, no review lane, no other styles — if the
+seller didn't state a weight inside the window, it isn't shown. The window and
+style targets are single constants (`WEIGHT_FLOOR_CONFIRMED`,
+`WEIGHT_CEILING_CONFIRMED`, `REQUIRED_TAGS`, `STRICT_CONFIRMED_ONLY`).
 
 ## How it works
 
@@ -65,12 +67,15 @@ python gold_ring_scanner.py --threshold 1.0 --limit 100
 All other tunables live in the clearly-commented **CONFIG** block at the top of
 `gold_ring_scanner.py`.
 
-## Coverage model (heavy solid-gold rings only)
+## Coverage model (signets & intaglios, 15–20g, confirmed weight)
 
-The scanner is tuned to **widen results without lowering precision** on the core
-economic test (`flag "value" when landed_cost < melt_value × 1.3`). It targets
-**solid gold only** (9/14/18/22ct) and **heavy rings**, and treats
-signet/intaglio/vintage/antique/heavy-band as both *search* and *tag* dimensions.
+**Strict mode is the default** (`STRICT_CONFIRMED_ONLY = True`,
+`REQUIRED_TAGS = ("signet", "intaglio")`): a listing is kept only when it is a
+signet/intaglio AND its parsed, seller-stated net gold weight sits inside
+[`WEIGHT_FLOOR_CONFIRMED`, `WEIGHT_CEILING_CONFIRMED`] = **15–20g**. The value
+flag is the core economic test: `landed_cost < melt_value × 1.3`. The tiers
+below describe the machinery; in strict mode the ESTIMATED and UNKNOWN tiers
+are dropped rather than kept.
 
 ### Weight-confidence model
 

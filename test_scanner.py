@@ -143,26 +143,35 @@ class TestEstimateWeightLow(unittest.TestCase):
 
 
 class TestAssessRing(unittest.TestCase):
-    """Confidence tiering, stone subtraction, and floor branching."""
+    """Strict mode: signet/intaglio only, confirmed weight inside 15-20g."""
 
-    def test_confirmed_above_floor_kept(self):
+    def test_signet_in_window_kept(self):
         a = g.assess_ring("9ct gold signet ring 19g", 9, 19.0)
         self.assertTrue(a["keep"])
         self.assertEqual(a["confidence"], "confirmed")
         self.assertEqual(a["net_gold_g"], 19.0)
 
-    def test_confirmed_below_floor_rejected(self):
-        a = g.assess_ring("9ct gold ring 12g", 9, 12.0)
+    def test_window_boundaries(self):
+        # 15g and 20g inclusive; just outside either edge is dropped.
+        self.assertFalse(g.assess_ring("9ct signet ring 14.9g", 9, 14.9)["keep"])
+        self.assertTrue(g.assess_ring("9ct signet ring 15g", 9, 15.0)["keep"])
+        self.assertTrue(g.assess_ring("9ct signet ring 20g", 9, 20.0)["keep"])
+        self.assertFalse(g.assess_ring("9ct signet ring 20.5g", 9, 20.5)["keep"])
+
+    def test_non_signet_rejected(self):
+        # A heavy plain band in the window is still off-target: signets and
+        # intaglios only.
+        a = g.assess_ring("9ct heavy gold band 18g hallmarked", 9, 18.0)
         self.assertFalse(a["keep"])
-        self.assertEqual(a["confidence"], "confirmed")
+        self.assertEqual(a["confidence"], "off-target")
 
-    def test_confirmed_floor_is_15(self):
-        self.assertFalse(g.assess_ring("9ct ring 14.9g", 9, 14.9)["keep"])
-        self.assertTrue(g.assess_ring("9ct ring 15g", 9, 15.0)["keep"])
+    def test_intaglio_counts_as_target(self):
+        a = g.assess_ring("18ct gold intaille ring 19g", 18, 19.0)
+        self.assertTrue(a["keep"])
 
-    def test_stone_subtraction_keeps_borderline(self):
-        # 16g gross with a small stone -> 14.5g net is below the confirmed floor.
-        a = g.assess_ring("9ct gold ring 16g with diamond", 9, 16.0)
+    def test_stone_subtraction_applies_to_window(self):
+        # 16g gross with a small stone -> 14.5g net gold falls below the floor.
+        a = g.assess_ring("9ct gold signet ring 16g with diamond", 9, 16.0)
         self.assertAlmostEqual(a["net_gold_g"], 16.0 - g.STONE_ALLOWANCE_G, places=1)
         self.assertTrue(a["stones"])
         self.assertFalse(a["keep"])   # 14.5 < 15
@@ -191,39 +200,13 @@ class TestAssessRing(unittest.TestCase):
         a = g.assess_ring("9ct gold bloodstone signet ring 19g", 9, 19.0)
         self.assertTrue(a["keep"])
 
-    def test_estimated_uses_12g_lowbound(self):
-        # No stated weight; estimate must clear the 12g estimated floor.
-        a = g.assess_ring("9ct heavy chunky gold signet ring", 9, None)
-        self.assertEqual(a["confidence"], "estimated")
-        if a["net_gold_g"] is not None and a["net_gold_g"] >= \
-                g.WEIGHT_FLOOR_ESTIMATED_LOWBOUND:
-            self.assertTrue(a["keep"])
-
-    def test_estimated_floor_branching(self):
-        # Estimated rings use the 12g lowbound, NOT the 15g confirmed floor.
-        # A slim band estimates light and is dropped; a heavy signet clears it.
-        slim = g.assess_ring("9ct slim dainty gold band", 9, None)
+    def test_no_stated_weight_dropped_in_strict_mode(self):
+        # Strict mode: no seller-stated weight -> not shown, even for a
+        # heavy-sounding signet (estimates are never a substitute).
         heavy = g.assess_ring("9ct heavy chunky gold signet ring", 9, None)
-        self.assertEqual(heavy["confidence"], "estimated")
-        self.assertTrue(heavy["keep"])
-        if slim["confidence"] == "estimated":
-            # Whatever the slim estimate, the decision uses the 12g lowbound.
-            self.assertEqual(
-                slim["keep"],
-                slim["net_gold_g"] >= g.WEIGHT_FLOOR_ESTIMATED_LOWBOUND)
-
-    def test_unknown_always_retained(self):
-        a = g.assess_ring("9ct gold ring", 9, None)
-        self.assertEqual(a["confidence"], "unknown")
-        self.assertTrue(a["keep"])          # routed to the review lane
-        self.assertIsNone(a["net_gold_g"])
-
-    def test_plain_signet_goes_to_review_lane(self):
-        # A signet with no weight and no heavy/slim adjective is UNKNOWN
-        # (review lane), not dropped and not guessed at.
-        a = g.assess_ring("vintage 9ct gold signet ring size P", 9, None)
-        self.assertEqual(a["confidence"], "unknown")
-        self.assertTrue(a["keep"])
+        plain = g.assess_ring("vintage 9ct gold signet ring size P", 9, None)
+        self.assertFalse(heavy["keep"])
+        self.assertFalse(plain["keep"])
 
     def test_tags_returned(self):
         a = g.assess_ring("vintage 9ct gold mens signet ring 20g", 9, 20.0)
