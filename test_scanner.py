@@ -42,9 +42,11 @@ class TestWeightParsing(unittest.TestCase):
 
     def test_size_number_not_weight(self):
         # Regression: "misura 15 g. 6,20" is Italian for "size 15, 6.20g" --
-        # a 6.2g ring was recorded as 15g and flagged value.
-        self.assertEqual(
-            g.parse_weight_grams("oro 750 Citrino misura 15 g. 6,20"), 6.2)
+        # a 6.2g ring was recorded as 15g and flagged value. With the
+        # size-guard + digit-guard it now parses as UNKNOWN (dropped in
+        # strict mode) -- no weight beats a wrong weight.
+        self.assertIsNone(
+            g.parse_weight_grams("oro 750 Citrino misura 15 g. 6,20"))
         self.assertIsNone(g.parse_weight_grams("size 12 gold ring"))
 
     def test_unit_first_formats(self):
@@ -54,6 +56,23 @@ class TestWeightParsing(unittest.TestCase):
     def test_german_size_not_weight(self):
         # "Gr. 60" is German for SIZE 60 -- must not parse as 60 grams.
         self.assertIsNone(g.parse_weight_grams("Goldring 585 Gr. 60"))
+
+
+class TestPlatedAndMixed(unittest.TestCase):
+    def test_multilingual_silver_mix_excluded(self):
+        # Regression: "Anello Uomo Argento 18k 750" (silver+gold Yurman) was
+        # melt-valued on its full weight -- most of that weight is silver.
+        self.assertTrue(g.is_plated("David Yurman Anello Uomo Argento 18k 750 Sigillo"))
+        self.assertTrue(g.is_plated("Siegelring Silber vergoldet 925"))
+        self.assertFalse(g.is_plated("9ct yellow gold signet ring 19g"))
+
+    def test_weight_then_unit_then_size(self):
+        # Regression: "4,5 Gramm 61" is 4.5g, RING SIZE 61 -- the unit-first
+        # pass read "Gramm 61" as 61g and flagged 4.5g lapis rings as 57g
+        # value candidates across DE/AT/CH/IT.
+        self.assertEqual(g.parse_weight_grams("Siegelring 585 Lapislazuli 4,5 Gramm 61"), 4.5)
+        self.assertEqual(g.parse_weight_grams("Anello Sigillo 585 Lapis 5,6 Grammi 60 Misura"), 5.6)
+        self.assertEqual(g.parse_weight_grams("Siegelring Carneol 585er Gold 10,3 Gramm 19,5 mm"), 10.3)
 
 
 class TestFinenessMarks(unittest.TestCase):

@@ -341,6 +341,9 @@ PLATED_MARKERS = [
     "silver & gold", "silver and gold", "gold backed silver",
     "gold fronted", "silver gilt", "silver lined", "silver-lined",
     "sterling silver", "silver shank", "silver sleeve",
+    # Mixed silver/gold pieces in other languages -- the weight is mostly
+    # silver, so melt on the stated weight is fiction ("Anello Argento 18k").
+    "argento", "argent ", "silber", "zilver", "plata ", "925",
     # Gold-fronted/plated base metals -- weight is mostly the base metal.
     "gold on brass", "gold and brass", "gold & brass", "on brass", "brass",
     "gold on copper", "base metal", "pinchbeck",
@@ -475,6 +478,12 @@ def parse_weight_grams(text):
         if 0.3 <= grams <= 80:
             candidates.append(grams)
     for m in _WEIGHT_UNIT_FIRST_RE.finditer(text):
+        # Unit-first only counts when the unit does NOT already belong to a
+        # preceding number: in "4,5 Gramm 61" the 61 is a RING SIZE, and the
+        # unit belongs to 4,5 (already captured by the number-first pass).
+        lead = text[max(0, m.start() - 4):m.start()]
+        if re.search(r"\d", lead):
+            continue
         raw = (m.group(1) or m.group(2)).replace(",", ".")
         try:
             grams = float(raw)
