@@ -130,22 +130,23 @@ MARKET_LANG = {
     "EBAY_FR": "fr", "EBAY_BE": "fr",
     "EBAY_IT": "it", "EBAY_ES": "es", "EBAY_NL": "nl", "EBAY_PL": "pl",
 }  # everything else defaults to English
+# Signet/intaglio-focused: every kept listing must be one anyway, so the
+# fetch budget goes entirely on the target style.
 QUERY_TEMPLATES = {
-    "en": ["{c}ct gold signet ring", "{c}ct gold ring", "{c}ct heavy gold ring",
-           "{c}ct gold band", "{c}ct intaglio gold ring", "vintage {c}ct gold ring",
-           "mens {c}ct gold ring"],
-    "de": ["Goldring {f}", "Siegelring {f}", "Herrenring massiv {f}",
-           "Gold {f} Ring schwer"],
-    "fr": ["bague or {f}", "chevalière or {f}", "or massif {f} bague",
-           "bague homme or {f}"],
-    "it": ["anello oro {f}", "anello chevalier oro {f}", "oro massiccio {f} anello",
-           "anello uomo oro {f}"],
-    "es": ["anillo oro {f}", "sello oro {f}", "oro macizo {f} anillo",
-           "anillo hombre oro {f}"],
-    "nl": ["gouden ring {f}", "zegelring goud {f}", "massief goud {f} ring",
-           "heren gouden ring {f}"],
-    "pl": ["złoty pierścień {f}", "sygnet złoto {f}", "złoto {f} pierścień",
-           "męski złoty pierścień {f}"],
+    "en": ["{c}ct gold signet ring", "{c}ct heavy gold signet ring",
+           "{c}ct gold intaglio ring", "{c}ct gold seal ring",
+           "vintage {c}ct gold signet ring", "mens {c}ct gold signet ring"],
+    "de": ["Siegelring Gold {f}", "Siegelring {f} Herren",
+           "Intaglio Ring Gold {f}", "Siegelring Gold {f} schwer"],
+    "fr": ["chevalière or {f}", "chevalière or {f} homme",
+           "bague intaille or {f}"],
+    "it": ["anello sigillo oro {f}", "anello chevalier oro {f}",
+           "anello intaglio oro {f}", "anello sigillo oro {f} uomo"],
+    "es": ["anillo sello oro {f}", "sello oro {f} hombre",
+           "anillo intaglio oro {f}"],
+    "nl": ["zegelring goud {f}", "heren zegelring goud {f}",
+           "gouden zegelring {f}"],
+    "pl": ["sygnet złoto {f}", "sygnet męski złoto {f}", "złoty sygnet {f}"],
 }
 MAX_QUERIES_PER_MARKET = 7    # cap the matrix so the API quota lasts a full run
 
@@ -234,7 +235,16 @@ DEFAULT_CARAT = 9   # assume 9ct when an item is clearly gold but no carat found
 
 # --- Weight-confidence model (see assess_ring) ---------------------------
 WEIGHT_FLOOR_CONFIRMED = 15.0          # strict floor for a parsed (stated) weight
+WEIGHT_CEILING_CONFIRMED = 20.0        # strict ceiling -- the 15-20g sweet spot;
+                                       # raise this one number to widen the window
 WEIGHT_FLOOR_ESTIMATED_LOWBOUND = 12.0 # estimated rings kept if low-bound >= this
+                                       # (only used when STRICT_CONFIRMED_ONLY off)
+
+# THE PRODUCT: heavy solid-gold signet/intaglio rings with a SELLER-STATED
+# weight inside the window. Everything else is dropped -- no review lane, no
+# estimates. Set REQUIRED_TAGS = () or STRICT_CONFIRMED_ONLY = False to widen.
+STRICT_CONFIRMED_ONLY = True
+REQUIRED_TAGS = ("signet", "intaglio")
 # Approx density of gold alloy by carat (g/cm3); a fixed ring volume weighs more
 # at higher carat, so weight estimates scale with this relative to the 18ct base.
 RING_DENSITY = {8: 10.9, 9: 11.3, 10: 11.6, 14: 13.4, 15: 14.0,
@@ -280,8 +290,8 @@ INTAGLIO_ALLOWANCE_G = 3.5     # carved hardstone seal face (bigger displacement
 STYLE_TAG_WORDS = {
     "signet":   ("signet", "siegelring", "chevalière", "chevalier", "sello",
                  "sigillo", "zegelring", "sygnet"),
-    "intaglio": ("intaglio", "carved", "seal", "hardstone", "bloodstone",
-                 "carnelian", "agate"),
+    "intaglio": ("intaglio", "intaille", "carved", "seal", "hardstone",
+                 "bloodstone", "carnelian", "agate"),
     "vintage":  ("vintage", "retro", "mid century", "mid-century"),
     "antique":  ("antique", "georgian", "victorian", "edwardian", "deco",
                  "antik", "antico", "antiguo"),
@@ -626,6 +636,11 @@ def assess_ring(text, carat, stated_weight):
         return {"keep": False, "confidence": "reject", "gross_g": None,
                 "net_gold_g": None, "stones": True, "tags": tags}
 
+    # Off-target style: we only want signets/intaglios (see REQUIRED_TAGS).
+    if REQUIRED_TAGS and not (set(tags) & set(REQUIRED_TAGS)):
+        return {"keep": False, "confidence": "off-target", "gross_g": None,
+                "net_gold_g": None, "stones": False, "tags": tags}
+
     stones = has_stones(text)
     intaglio = any(w in low for w in INTAGLIO_WORDS)
     allowance = (INTAGLIO_ALLOWANCE_G if intaglio
@@ -643,13 +658,16 @@ def assess_ring(text, carat, stated_weight):
 
     net = round(gross - allowance, 1) if gross is not None else None
 
-    # Floor test against NET gold weight.
+    # Weight-window test against NET gold weight. In strict mode only a
+    # seller-stated weight inside [floor, ceiling] survives.
     if confidence == "confirmed":
-        keep = net is not None and net >= WEIGHT_FLOOR_CONFIRMED
+        keep = (net is not None
+                and WEIGHT_FLOOR_CONFIRMED <= net <= WEIGHT_CEILING_CONFIRMED)
     elif confidence == "estimated":
-        keep = net is not None and net >= WEIGHT_FLOOR_ESTIMATED_LOWBOUND
-    else:  # unknown -> always retained for the review lane
-        keep = True
+        keep = (not STRICT_CONFIRMED_ONLY and net is not None
+                and net >= WEIGHT_FLOOR_ESTIMATED_LOWBOUND)
+    else:  # unknown: review lane only when strict mode is off
+        keep = not STRICT_CONFIRMED_ONLY
 
     return {"keep": keep, "confidence": confidence, "gross_g": gross,
             "net_gold_g": net, "stones": stones, "tags": tags}
@@ -1004,8 +1022,10 @@ def analyse(items, token, spot_per_oz, fx=None):
             weight = None
 
         # 3. If weight still unknown, dig into the full description (capped per
-        #    scan). The full text also feeds stone/style detection below.
-        if (weight is None and not is_variant and FETCH_FULL_DETAILS
+        #    scan). Only worth a call for on-target styles -- anything without
+        #    a signet/intaglio word is dropped later regardless.
+        on_target = not REQUIRED_TAGS or bool(set(style_tags(text)) & set(REQUIRED_TAGS))
+        if (weight is None and not is_variant and on_target and FETCH_FULL_DETAILS
                 and (MAX_DETAIL_FETCHES == 0 or detail_fetches < MAX_DETAIL_FETCHES)):
             detail_fetches += 1
             full = fetch_item_description(token, item.get("itemId", ""), market)
