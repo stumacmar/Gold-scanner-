@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-04T09:05:28.108752+00:00",
+    "generated_at": "2026-07-04T13:11:47.385914+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -79,12 +79,11 @@
       "SGD": 0.5802,
       "USD": 0.7488
     },
-    "total_fetched": 1470,
-    "total_analysed": 3,
+    "total_fetched": 1571,
+    "total_analysed": 2,
     "value_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
-      "CA": 1,
       "UK": 2
     }
   },
@@ -139,31 +138,6 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW"
-    },
-    {
-      "title": "Men's Signet Ring with Onyx 9 Ct, 5.6 Grams 65 Gr, Yellow Gold",
-      "carat": 9,
-      "carat_assumed": false,
-      "weight_g": 65.0,
-      "net_gold_g": 61.5,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "gents"
-      ],
-      "stones": true,
-      "current_bid": 635.86,
-      "landed_cost": 796.63,
-      "price_orig": "1,206",
-      "country": "CA",
-      "flag": "🇨🇦",
-      "melt_value": 2318.58,
-      "ratio": 2.91,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.ca/itm/188442912697?_skw=9ct+gold+seal+ring&hash=item2be012a7b9:g:IQ0AAOSwGV1lql~f&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYmob8rLbgEgCgkHrm%2F8e0q3RuOA61ZwWEfEJe6EQdoYbkqiZpy%2FBoWJRWZoVuQ62TwGXRSrT55gWSyIQwaf%2FttZQjJAN%2Fbv0Tk%2BJAALyWOQ9OKyOl%2F4DqQXM7yTfJSutS%2FyWJcUGawwiVDej3UGL%2F7KyEE0EUoPq33j%2FB7yk3bQS%2BGa9dS25AaG39Eh36tkMv8F3n4lm2hE9gmOP9bYCJUdZcaBq96u0kpCF5AGi0un27%2F0rXvneidBvA8O7JeAx%2Fu9mMzuJ1QZjFQYlODo2pkAREzQpwzhy9cwYQHSTOwDg%3D%3D"
     }
   ]
 }

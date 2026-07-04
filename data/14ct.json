@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-04T09:09:32.943141+00:00",
+    "generated_at": "2026-07-04T13:17:06.067007+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -79,15 +79,15 @@
       "SGD": 0.5802,
       "USD": 0.7488
     },
-    "total_fetched": 1682,
+    "total_fetched": 1761,
     "total_analysed": 23,
     "value_count": 7,
     "weight_unknown_count": 0,
     "country_counts": {
       "AT": 4,
-      "AU": 3,
+      "AU": 4,
       "CH": 2,
-      "DE": 5,
+      "DE": 4,
       "IT": 2,
       "SG": 1,
       "US": 6
@@ -118,7 +118,7 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com/itm/167170036026?_skw=14ct+heavy+gold+signet+ring&hash=item26ec1c513a:g:wv8AAOSwSf9nWmqL&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGYtvJKlILR5BN9nyB6IHlm4ZE9i7oaidT%2FfgHOCKlFzZbJk3JpuwvRA7l22lMdZ1iinjRb%2BRhT7gMFmaaPcMIzowgRFbHcyxBPKBWO%2FrCeGbgT7eKsMqXXPc8oeBzKGDiVtH0DoeYQGhWxTyTbYwn8YtvMrk2ZUlv5MhJFb1%2B0q5Wk%2B6N1NrM6yCXxHmQVWx%2FWdMQJ8COIer%2FJO1JDMWS2eQWd6Dw291efqsWSkkJeQFiGsJlf7gHb8w3oZXbPDL9qWGyRZK0bPMuU0YQM0bRouGlgtPLHG2h74%2FgxYsfqKap5hdJAkcYb3YStXXtNcmdQ%3D"
+      "url": "https://www.ebay.com/itm/167170036026?_skw=14ct+heavy+gold+signet+ring&hash=item26ec1c513a:g:wv8AAOSwSf9nWmqL&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGYtvJKlILR5BN9nyB6IHlm4ZE9i7oaidT%2FfgHOCKlFzZbJk3JpuwvRA7l22lMdZ1iinjRb%2BRhT7gMFmaaPcMIzowgRFbHcyxBPKBWO%2FrCeGbgT7eKsMqXXPc8oeBzKGDiWaiBHxVJV6xE0wFfpqAlgdfwMeyIyYd1leNQhMEpopspDboG7URvVWvmMt%2BPhm8alrG%2BtCFhzheVXxghko1DNjbJFmdzwZxI6Djj7SbSrPWo0x9HtXSmqsZgt%2Fe1evjktGrrmfQ6BfMSU%2FB6B6pNsGszRtoGn1mnL57se8USIX0fAwFB2WTD2%2FQ6LpVufYP64%3D"
     },
     {
       "title": "14k Solid Gold Vintage Mens Engravable Signet Ring Size 10 Over 19 Grams",
@@ -250,30 +250,6 @@
       "url": "https://www.ebay.com/itm/115234073633?_skw=14ct+gold+intaglio+ring&hash=item1ad47c6c21:g:pEkAAOSwjN1h-tjI"
     },
     {
-      "title": "Collectible Japanese Shakudo ORIENTAL MOTIF 14K GOLD Meiji Period RING SIGNET 7",
-      "carat": 14,
-      "carat_assumed": false,
-      "weight_g": 22.0,
-      "net_gold_g": 22.0,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet"
-      ],
-      "stones": false,
-      "current_bid": 1642.73,
-      "landed_cost": 2013.28,
-      "price_orig": "3,162",
-      "country": "AU",
-      "flag": "🇦🇺",
-      "melt_value": 1293.88,
-      "ratio": 0.64,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.com.au/itm/303105360302?_skw=14ct+gold+signet+ring&hash=item46927cc1ae:g:YEUAAOSwwo1XeqZU"
-    },
-    {
       "title": "Vintage European 8K Gold Signet Ring 19.79g Size 11 Hand Engraved",
       "carat": 9,
       "carat_assumed": false,
@@ -299,6 +275,56 @@
       "url": "https://www.ebay.com.au/itm/147401755880?_skw=14ct+gold+signet+ring&hash=item2251d44ce8:g:IsUAAeSwdP5piPNl"
     },
     {
+      "title": "Collectible Japanese Shakudo ORIENTAL MOTIF 14K GOLD Meiji Period RING SIGNET 7",
+      "carat": 14,
+      "carat_assumed": false,
+      "weight_g": 22.0,
+      "net_gold_g": 22.0,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": false,
+      "current_bid": 1642.73,
+      "landed_cost": 2013.28,
+      "price_orig": "3,162",
+      "country": "AU",
+      "flag": "🇦🇺",
+      "melt_value": 1293.88,
+      "ratio": 0.64,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.com.au/itm/303105360302?_skw=14ct+gold+signet+ring&hash=item46927cc1ae:g:YEUAAOSwwo1XeqZU"
+    },
+    {
+      "title": "TIFFANY & CO. Vintage 1960s 14k Yellow Gold Signet Ring w/Pouch Rare",
+      "carat": 14,
+      "carat_assumed": false,
+      "weight_g": 26.8,
+      "net_gold_g": 26.8,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "vintage",
+        "band"
+      ],
+      "stones": false,
+      "current_bid": 4678.56,
+      "landed_cost": 5656.27,
+      "price_orig": "9,006",
+      "country": "AU",
+      "flag": "🇦🇺",
+      "melt_value": 1576.18,
+      "ratio": 0.28,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.com.au/itm/326539243500?_skw=14ct+gold+signet+ring&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwUjhcuGZHr0CGM%2BVZeapBfNr3XP3%2FnTNqUDTxQ0C527TtdpRaN9rFwWv26kuv%2BOSoCFeMrrF6Y%2Bw92aYbd%2FyURTtFOXHk5WAujvv6AWjJZr64YGsW9STubZDU%2FzTG4NAIaL0fC92nIe6mOXuKgb2YyCss%2FUO9mvqTsQv8sY9Ty3Kw%3D%3D"
+    },
+    {
       "title": "VTG HUGE 14K YELLOW GOLD DIAMOND BLACK ONYX CABOCHON SIGNET PINKY RING 7 HEAVY ",
       "carat": 14,
       "carat_assumed": false,
@@ -321,30 +347,6 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/264251221508?_skw=14ct+heavy+gold+signet+ring&hash=item3d8699a604:g:gasAAOSwT~9WjU1Z"
-    },
-    {
-      "title": "Gelbgold Siegelring 585 14 kt Satiniert Unikat 25 g",
-      "carat": 14,
-      "carat_assumed": false,
-      "weight_g": 25.0,
-      "net_gold_g": 25.0,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet"
-      ],
-      "stones": false,
-      "current_bid": 1671.52,
-      "landed_cost": 2032.22,
-      "price_orig": "€1,950",
-      "country": "DE",
-      "flag": "🇩🇪",
-      "melt_value": 1470.32,
-      "ratio": 0.72,
-      "is_value": false,
-      "buying": "Auction",
-      "time_left": "1h 51m",
-      "bids": 0,
-      "url": "https://www.ebay.de/itm/127947695480?_skw=Siegelring+Gold+585&hash=item1dca46e578:g:GzoAAeSwav5qNRmo"
     },
     {
       "title": "✅Gold 585 14 Karat Siegelring Wappenring Massiv Achat Lagenstein✅",
@@ -642,7 +644,7 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.ch/itm/364626386162?_skw=Siegelring+Gold+585&hash=item54e56d1cf2:g:T84AAOSwcPVleE-A&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYhQD9PFRuf00eRBRO30rXqPs1lUYKQJh0fAulrjg7xeJHQT7zakHSK2jWhj1UK1rQ50zR4g%2FAMp7euuklmtnWDs5rejTKKME%2FcGm8Mbf3v%2BZIGVNusO0oqTEfdlBf%2FTlikulFtAscD5lgO4Smm1ibU9tD9Na2M%2Bm6VU0z4BE%2FdXBQabkaSkhs6sPAYCTIHOzDiN%2FTSkIiDp7d0sYFUC6Kse4eTdhRjZy6ZSXOU8%2B1d9xtPJDWAbcWF6EQv3PFuN4aeahgKbFWebecEbyBCMn1eSx7Zz7%2FuW%2Bon7LL35UAsww%3D%3D"
+      "url": "https://www.ebay.ch/itm/364626386162?_skw=Siegelring+Gold+585&hash=item54e56d1cf2:g:T84AAOSwcPVleE-A&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYhQD9PFRuf00eRBRO30rXqPs1lUYKQJh0fAulrjg7xeJHQT7zakHSK2jWhj1UK1rQ50zR4g%2FAMp7euuklmtnWDs5rejTKKME%2FcGm8Mbf3v%2BZIGVNusO0oqTEfdlBf%2FTlgms%2BKFfPo8AICZG7sfNd8TKTagcV6jBAzFYw0g32f9D3AG2Ekc1aPl9ZE5pGhPlRkeEomYqeq4I0rz3J4g%2BFktMejbHpll4syCxd6SugH0NZVBYZWaMnA0U6JWFloBitTITDGPsuLceS715T3faK%2FqcozMJqlyCz1kqffRLGh6Yw%3D%3D"
     },
     {
       "title": "Caesar Roman Noble Deco Vintage Signet Ring 14Kt gold 22G *v",

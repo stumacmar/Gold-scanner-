@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-04T09:16:13.472176+00:00",
+    "generated_at": "2026-07-04T13:24:24.366720+00:00",
     "query": "22ct gold signet ring",
     "queries": [
       "22ct gold signet ring",
@@ -79,12 +79,13 @@
       "SGD": 0.5802,
       "USD": 0.7488
     },
-    "total_fetched": 617,
-    "total_analysed": 2,
+    "total_fetched": 649,
+    "total_analysed": 3,
     "value_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 1,
+      "DE": 1,
       "UK": 1
     }
   },
@@ -142,6 +143,32 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/298240951024?_skw=22ct+gold+signet+ring&hash=item45708bc2f0:g:KPYAAeSwm6Zp53Zk"
+    },
+    {
+      "title": "18kt gepunzt Weiß-, Gelb-, Roségold Siegelring 13mm x16mm oval oder Kissen",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 18.5,
+      "net_gold_g": 17.0,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "band",
+        "gents"
+      ],
+      "stones": true,
+      "current_bid": 2881.64,
+      "landed_cost": 3484.37,
+      "price_orig": "€3,362",
+      "country": "DE",
+      "flag": "🇩🇪",
+      "melt_value": 1281.82,
+      "ratio": 0.37,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.de/itm/254195547625?_skw=Siegelring+Gold+916&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3"
     }
   ]
 }

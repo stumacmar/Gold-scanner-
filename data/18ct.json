@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-04T09:14:19.510080+00:00",
+    "generated_at": "2026-07-04T13:22:25.547377+00:00",
     "query": "18ct gold signet ring",
     "queries": [
       "18ct gold signet ring",
@@ -79,7 +79,7 @@
       "SGD": 0.5802,
       "USD": 0.7488
     },
-    "total_fetched": 1369,
+    "total_fetched": 1443,
     "total_analysed": 29,
     "value_count": 1,
     "weight_unknown_count": 0,
@@ -87,10 +87,9 @@
       "AT": 1,
       "AU": 3,
       "DE": 1,
-      "ES": 2,
       "IE": 2,
       "IT": 5,
-      "NL": 3,
+      "NL": 5,
       "SG": 3,
       "UK": 3,
       "US": 6
@@ -170,7 +169,7 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fG8fQfAZWdmqLR1HFsi5Dn67Gee8LN%2B49v9ui8TPIUprH0JZ54aUeN56tOVlSrB0QrO7Dcm7bF%2FxwNxFpDeeXIsM8mYSmm5kHHAzawr4l236yFzJ3xcrA6HwesBpom5toUxViMtJyNj5QJ%2F4cx4hGE2%2Btrk3xjzDtZQ7YbnbRQqaA%3D%3D"
+      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fFqdwKRuhXlCy7ua%2Fqv3dbmCftdfQy8mVvgOHYkcgaThwj9T644Zlpb6Qg9o7y1pXb28XM6bUTZ9%2FFH0vPGqJ09Ro8TdRzAr2A9UmkYu6bVDc3bH3m%2B%2FfwRYN2ngws72muugeEWdbW6oKHw5Mujv3AI5z1hkFZmbG2OHbGjI68v7Q%3D%3D"
     },
     {
       "title": "18ct 18K Yellow Gold Men’s Signet Ring With Diamonds TDW 1.53ct Size Z+2. New",
@@ -592,32 +591,7 @@
       "url": "https://www.ebay.it/itm/327114423800?_skw=anello+sigillo+oro+750&hash=item4c2989fdf8:g:AiIAAeSwN8dp5ots"
     },
     {
-      "title": "Antiguo anillo de sello de oro amarillo macizo de 18 quilates de 18 quilates escudo familiar 16,7 gr",
-      "carat": 18,
-      "carat_assumed": false,
-      "weight_g": 16.7,
-      "net_gold_g": 16.7,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "antique"
-      ],
-      "stones": false,
-      "current_bid": 3777.15,
-      "landed_cost": 4558.98,
-      "price_orig": "€4,406",
-      "country": "ES",
-      "flag": "🇪🇸",
-      "melt_value": 1259.2,
-      "ratio": 0.28,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.es/itm/389905135208?_skw=18ct+gold+signet+ring&hash=item5ac8283668:g:9AoAAeSwGGJpLXV8"
-    },
-    {
-      "title": "Antiguo anillo de sello grueso sólido de 18 quilates escudo de armas armas reales de Escocia 27,8 gr",
+      "title": "Antique 18ct Solid Thick Signet Ring Coat Of Arms Royal Arms Of Scotland 27.8 Gr",
       "carat": 18,
       "carat_assumed": false,
       "weight_g": 27.8,
@@ -631,15 +605,40 @@
       "current_bid": 5503.13,
       "landed_cost": 6630.16,
       "price_orig": "€6,420",
-      "country": "ES",
-      "flag": "🇪🇸",
+      "country": "NL",
+      "flag": "🇳🇱",
       "melt_value": 2096.15,
       "ratio": 0.32,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.es/itm/800150335735?_skw=18ct+gold+signet+ring&hash=itemba4cad30f7:g:uVAAAeSwBq5qJvNL"
+      "url": "https://www.ebay.nl/itm/800150335735?_skw=18ct+gold+signet+ring&hash=itemba4cad30f7:g:uVAAAeSwBq5qJvNL"
+    },
+    {
+      "title": "Antique 18ct 18k Solid Yellow Gold Signet Ring Coat Of Arms Family Crest 16.7 Gr",
+      "carat": 18,
+      "carat_assumed": false,
+      "weight_g": 16.7,
+      "net_gold_g": 16.7,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "antique"
+      ],
+      "stones": false,
+      "current_bid": 3777.15,
+      "landed_cost": 4558.98,
+      "price_orig": "€4,406",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "melt_value": 1259.2,
+      "ratio": 0.28,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.nl/itm/389905135208?_skw=18ct+gold+signet+ring&hash=item5ac8283668:g:9AoAAeSwGGJpLXV8"
     },
     {
       "title": "0.596ct Natural Diamond Signet Ring K18YG Pt900 Combi Two-Tone",
@@ -663,7 +662,7 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.nl/itm/278111897737?_skw=18ct+gold+signet+ring&hash=item40c0c2c889:g:BEQAAeSwFcFqN9hU&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbzpBtpC6Lf%2BxhTjTg2RW4f5gZ2ifyLM4%2FG3h%2BvHHWNkcc6IUhAUhPC8xxSWuPnvKFjkf9pdYC53pdoCXzZJagXOY5FHliCP17xWtBIioilsSY3WJYhAOyT1mVmzPW44IADscb3Of2m6fsnlqhMXZlWHJWkW3LiWc8dQaMVZaW2pDly2ds3upnSBsWyH7QjV%2B%2B0fYBs%2BUVtoN%2FaJnBj9dM1pi2y9iIDEBQ%2FXEpJqvd2u6GqKqjVsi0UYc9Pfjso%2FBj0glL8q71M9gpQCrqzehkkC4fBg9DS0zTEwLUydj%2Bfjw%3D%3D"
+      "url": "https://www.ebay.nl/itm/278111897737?_skw=18ct+gold+signet+ring&hash=item40c0c2c889:g:BEQAAeSwFcFqN9hU&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbzpBtpC6Lf%2BxhTjTg2RW4f5gZ2ifyLM4%2FG3h%2BvHHWNkcc6IUhAUhPC8xxSWuPnvKFjkf9pdYC53pdoCXzZJagXOY5FHliCP17xWtBIioilsSY3WJYhAOyT1mVmzPW44ICcFhxqU0i90gasSY%2BGcDTAiIn4TokhDoRUlR2ziCTf8RV00Z2pqaaa8fZcALN5Ne6%2ByEqgTImcsBWK5FyVCUOwunL5ZhrAsNaMnydJFDd3Lf9tV872c8kRfSCku0e%2By9YleIWN64PLsn%2FqmMjkCkdh2eDlMGcj2i%2BCe3qdFtllpw%3D%3D"
     },
     {
       "title": "0.404ct Diamond Hexagon Signet Ring K18 YG Pt900 Two Tone Heavy 25.4g",
@@ -688,7 +687,7 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.nl/itm/278114592479?_skw=18ct+gold+signet+ring&hash=item40c0ebe6df:g:o0oAAeSwCVRqD7LY&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGaAI43x2teo6kDSyMwo3TgQxzSsby8MJ652AcxOhiz9HJOkWZx5qPIg03vtH31n%2Blb%2BlVoflLnMJrm0XoryH%2Bwl1oDRQMC1npe5598zDBJk8pWAVZktBGn%2B%2FuNuOsDxK7VYEs11NkppcopWOSQX%2BadR9hcmMnisOKIIoDfhc%2BSvm580aM6ILJUPbv9ggCn--fmL9Zap47hRAra0VrwG%2F3Qkf2sqO2uHXAMzifPPgcu224Qu8XmqhHj9kFKG8csAV4yy9cyfPLyOEGOSSf5AJbTPXb6arTfEwHT%2FigOAPUxmIg%3D%3D"
+      "url": "https://www.ebay.nl/itm/278114592479?_skw=18ct+gold+signet+ring&hash=item40c0ebe6df:g:o0oAAeSwCVRqD7LY"
     },
     {
       "title": "0.596ct Natural Diamond Signet Ring K18YG Pt900 Combi Two-Tone",
@@ -712,7 +711,7 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.nl/itm/278111986472?_skw=18ct+gold+signet+ring&hash=item40c0c42328:g:BEQAAeSwFcFqN9hU&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGahkqA5YGdmeTGOgThqP2lMfL0YkujTHSozr%2FeN6Z0LTN8iUD9OK1RH468nEE2HcO7Si8GzSTe4QYc5I09zky%2F9%2BpKhvS0TlTEad9qtsfnoAJMUlAmC7aLR32jfIZH59nAixP1SdY%2Br3nvq5mXvBkNwFySeMSvcg%2Bo7fiHXAsExr8nPHh9EdGl0RGbNVnqAOYhSS07NS%2B3%2Bpbtr9O%2Fan%2FS0TF35mHuAZizQHz86rvO8oaLgJUvgQCSMmFMdqUxSO6am54ivQk6k9ZJToyoPDZzT3QBMVrgOvU%2BsksDn2YIBqQ%3D%3D"
+      "url": "https://www.ebay.nl/itm/278111986472?_skw=18ct+gold+signet+ring&hash=item40c0c42328:g:BEQAAeSwFcFqN9hU&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGahkqA5YGdmeTGOgThqP2lMfL0YkujTHSozr%2FeN6Z0LTN8iUD9OK1RH468nEE2HcO7Si8GzSTe4QYc5I09zky%2F9%2BpKhvS0TlTEad9qtsfnoAJMUlAmC7aLR32jfIZH59nCflumtFSYkV9cEvkZ%2BoW4XuiqO2XGFeRPZqLgVBalIyEVt6rGyvaydMCuiL2Jks3IMtBYVAN2iVLb3yyvXXGXqY%2FF9bHYLLhmX9yv80jctvzMY9ILhtHUEtYhoCsa4uzZhtCUD98xLCG3HPpNjFSNxMdqHENwjW5AqnIQIfkZ69A%3D%3D"
     },
     {
       "title": "Karneol Intaglio Ring 18K Gelbgold gehämmert",
