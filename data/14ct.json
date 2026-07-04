@@ -85,11 +85,13 @@
    "USD": 0.7515
   },
   "total_fetched": 2810,
-  "total_analysed": 1,
+  "total_analysed": 5,
   "value_count": 0,
   "weight_unknown_count": 0,
   "country_counts": {
-   "AU": 1
+   "AT": 1,
+   "AU": 2,
+   "DE": 2
   }
  },
  "results": [
@@ -117,6 +119,102 @@
    "time_left": "n/a",
    "bids": "",
    "url": "https://www.ebay.com.au/itm/267699286672?_skw=14ct+gold+signet+ring&hash=item3e541ef290:g:jmgAAeSwQixqLxwk"
+  },
+  {
+   "title": "Collectible Japanese Shakudo ORIENTAL MOTIF 14K GOLD Meiji Period RING SIGNET 7",
+   "carat": 14,
+   "carat_assumed": false,
+   "weight_g": 22.0,
+   "net_gold_g": 22.0,
+   "weight_confidence": "confirmed",
+   "tags": [
+    "signet"
+   ],
+   "stones": false,
+   "current_bid": 1641.37,
+   "landed_cost": 2011.64,
+   "price_orig": "3,170",
+   "country": "AU",
+   "flag": "🇦🇺",
+   "melt_value": 1300.25,
+   "ratio": 0.65,
+   "is_value": false,
+   "buying": "Buy now",
+   "time_left": "n/a",
+   "bids": "",
+   "url": "https://www.ebay.com.au/itm/303105360302?_skw=14ct+gold+signet+ring&hash=item46927cc1ae:g:YEUAAOSwwo1XeqZU"
+  },
+  {
+   "title": "Gelbgold Siegelring 585 14 kt Satiniert Unikat 25 g",
+   "carat": 14,
+   "carat_assumed": false,
+   "weight_g": 25.0,
+   "net_gold_g": 25.0,
+   "weight_confidence": "confirmed",
+   "tags": [
+    "signet"
+   ],
+   "stones": false,
+   "current_bid": 1670.52,
+   "landed_cost": 2031.02,
+   "price_orig": "€1,950",
+   "country": "DE",
+   "flag": "🇩🇪",
+   "melt_value": 1477.55,
+   "ratio": 0.73,
+   "is_value": false,
+   "buying": "Auction",
+   "time_left": "1d 1h",
+   "bids": 0,
+   "url": "https://www.ebay.de/itm/127947695480?_skw=Siegelring+585&hash=item1dca46e578:g:GzoAAeSwav5qNRmo"
+  },
+  {
+   "title": "✅Gold 585 14 Karat Siegelring Wappenring Massiv Achat Lagenstein✅",
+   "carat": 14,
+   "carat_assumed": false,
+   "weight_g": 59.0,
+   "net_gold_g": 59.0,
+   "weight_confidence": "confirmed",
+   "tags": [
+    "signet"
+   ],
+   "stones": false,
+   "current_bid": 787.29,
+   "landed_cost": 971.15,
+   "price_orig": "€919",
+   "country": "DE",
+   "flag": "🇩🇪",
+   "melt_value": 3487.03,
+   "ratio": 3.59,
+   "is_value": false,
+   "buying": "Buy now",
+   "time_left": "n/a",
+   "bids": "",
+   "url": "https://www.ebay.de/itm/188511413604?_skw=Siegelring+585&hash=item2be427e564:g:PDQAAeSwSeRqCIOh"
+  },
+  {
+   "title": "Siegelring 585 Gelbgold, glänzend poliert mit Lapislazuli 5,6 Gramm 61",
+   "carat": 14,
+   "carat_assumed": false,
+   "weight_g": 61.0,
+   "net_gold_g": 57.5,
+   "weight_confidence": "confirmed",
+   "tags": [
+    "signet"
+   ],
+   "stones": false,
+   "current_bid": 1105.11,
+   "landed_cost": 1352.53,
+   "price_orig": "€1,290",
+   "country": "AT",
+   "flag": "🇦🇹",
+   "melt_value": 3398.37,
+   "ratio": 2.51,
+   "is_value": false,
+   "buying": "Buy now",
+   "time_left": "n/a",
+   "bids": "",
+   "url": "https://www.ebay.at/itm/366315574477?_skw=Siegelring+585&hash=item554a1c14cd:g:5bMAAOSwwA5leEDY"
   }
  ]
 }
