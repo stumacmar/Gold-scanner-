@@ -235,8 +235,9 @@ DEFAULT_CARAT = 9   # assume 9ct when an item is clearly gold but no carat found
 
 # --- Weight-confidence model (see assess_ring) ---------------------------
 WEIGHT_FLOOR_CONFIRMED = 15.0          # strict floor for a parsed (stated) weight
-WEIGHT_CEILING_CONFIRMED = 20.0        # strict ceiling -- the 15-20g sweet spot;
-                                       # raise this one number to widen the window
+WEIGHT_CEILING_CONFIRMED = 80.0        # effectively "15g and up" -- matches the
+                                       # weight parser's sanity cap; lower this
+                                       # one number to narrow the window
 WEIGHT_FLOOR_ESTIMATED_LOWBOUND = 12.0 # estimated rings kept if low-bound >= this
                                        # (only used when STRICT_CONFIRMED_ONLY off)
 
@@ -351,6 +352,9 @@ PLATED_MARKERS = [
 EXCLUDE_MARKERS = [
     "sovereign", "half sov", "full sov", " sov ", "krugerrand",
     "coin", "guinea", "ducat",
+    # Multi-ring bundles: the stated weight is the whole lot, not one signet.
+    # (Bare "lot" is too common in genuine titles to exclude.)
+    "bundle", "job lot", "joblot", "lot of ", "x rings", "rings x",
 ]
 
 

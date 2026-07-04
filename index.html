@@ -56,7 +56,7 @@
 <body>
   <header>
     <h1><span class="coin">●</span> Signet Scanner</h1>
-    <p class="sub" id="sub">Heavy solid-gold signets &amp; intaglios · 15–20g · loading…</p>
+    <p class="sub" id="sub">Heavy solid-gold signets &amp; intaglios · 15g+ · loading…</p>
   </header>
 
   <div class="controls" id="controls"></div>
@@ -146,7 +146,7 @@ function render() {
   if (META) {
     const when = new Date(META.generated_at);
     document.getElementById("sub").innerHTML =
-      `Heavy solid-gold signets &amp; intaglios · <b>15–20g</b> · gold ${fmtGBP(META.spot_gbp_per_oz)}/oz` +
+      `Heavy solid-gold signets &amp; intaglios · <b>15g+</b> · gold ${fmtGBP(META.spot_gbp_per_oz)}/oz` +
       `<br>${rows.length} shown of ${ALL.length} · updated ${when.toLocaleDateString("en-GB")} ` +
       when.toLocaleTimeString("en-GB", {hour: "2-digit", minute: "2-digit"});
   }

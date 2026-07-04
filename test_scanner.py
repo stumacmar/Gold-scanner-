@@ -152,11 +152,11 @@ class TestAssessRing(unittest.TestCase):
         self.assertEqual(a["net_gold_g"], 19.0)
 
     def test_window_boundaries(self):
-        # 15g and 20g inclusive; just outside either edge is dropped.
+        # 15g and up: below the floor is dropped, heavy rings are kept.
         self.assertFalse(g.assess_ring("9ct signet ring 14.9g", 9, 14.9)["keep"])
         self.assertTrue(g.assess_ring("9ct signet ring 15g", 9, 15.0)["keep"])
-        self.assertTrue(g.assess_ring("9ct signet ring 20g", 9, 20.0)["keep"])
-        self.assertFalse(g.assess_ring("9ct signet ring 20.5g", 9, 20.5)["keep"])
+        self.assertTrue(g.assess_ring("9ct signet ring 22g", 9, 22.0)["keep"])
+        self.assertTrue(g.assess_ring("9ct signet ring 41g", 9, 41.0)["keep"])
 
     def test_non_signet_rejected(self):
         # A heavy plain band in the window is still off-target: signets and
