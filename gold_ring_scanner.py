@@ -301,6 +301,33 @@ STYLE_TAG_WORDS = {
                  "hombre", "heren"),
 }
 
+# --- Seller type ----------------------------------------------------------
+# eBay marks registered traders as BUSINESS sellers (EU/UK consumer law), so
+# sellerAccountType=INDIVIDUAL is a private seller -- where mispriced rings
+# live; dealers price at retail. "Individual" accounts with big feedback are
+# shops in practice, so the strict "private" flag also requires modest
+# feedback and no Top Rated badge.
+PRIVATE_FEEDBACK_MAX = 1000
+
+
+def classify_seller(seller, top_rated=False):
+    """Return (seller_type, feedback_score, is_private) from an API seller obj.
+
+    seller_type: 'private' | 'business' | None (field absent).
+    is_private:  strict flag -- INDIVIDUAL account, feedback below
+                 PRIVATE_FEEDBACK_MAX, and not Top Rated.
+    """
+    seller = seller or {}
+    acct = (seller.get("sellerAccountType") or "").upper()
+    try:
+        fb = int(seller.get("feedbackScore") or 0)
+    except (TypeError, ValueError):
+        fb = 0
+    stype = {"INDIVIDUAL": "private", "BUSINESS": "business"}.get(acct)
+    is_private = stype == "private" and fb < PRIVATE_FEEDBACK_MAX and not top_rated
+    return stype, fb, is_private
+
+
 # --- Detail fetching ------------------------------------------------------
 # The search endpoint only returns a short description. If the weight isn't
 # found there, optionally call the getItem endpoint for the FULL description.
@@ -1083,10 +1110,16 @@ def analyse(items, token, spot_per_oz, fx=None):
         # legitimately qualify. Estimated/unknown weights never flag value.
         is_value = value_flag(melt, landed, confidence)
 
+        stype, fb, is_priv = classify_seller(
+            item.get("seller"), item.get("topRatedBuyingExperience", False))
+
         records.append({
             "title": title,
             "carat": carat,
             "carat_assumed": carat_assumed,
+            "seller_type": stype,           # private | business | None
+            "seller_feedback": fb,
+            "seller_private": is_priv,      # strict: individual + modest fb
             "weight_g": a["gross_g"],        # displayed weight (gross)
             "net_gold_g": net_gold,          # gold-only weight used for melt
             "weight_confidence": confidence, # confirmed | estimated | unknown
@@ -1172,7 +1205,8 @@ def write_json(records, path, meta):
 
 def write_csv(records, path):
     fields = ["title", "carat", "weight_g", "net_gold_g", "weight_confidence",
-              "tags", "stones", "current_bid", "landed_cost", "price_orig",
+              "tags", "stones", "seller_type", "seller_feedback", "seller_private",
+              "current_bid", "landed_cost", "price_orig",
               "country", "melt_value", "ratio", "is_value", "buying", "bids",
               "time_left", "url"]
     with open(path, "w", newline="", encoding="utf-8") as fh:

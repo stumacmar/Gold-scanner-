@@ -58,6 +58,34 @@ class TestWeightParsing(unittest.TestCase):
         self.assertIsNone(g.parse_weight_grams("Goldring 585 Gr. 60"))
 
 
+class TestClassifySeller(unittest.TestCase):
+    def test_private_individual(self):
+        t, fb, priv = g.classify_seller(
+            {"sellerAccountType": "INDIVIDUAL", "feedbackScore": 883})
+        self.assertEqual((t, fb, priv), ("private", 883, True))
+
+    def test_business_never_private(self):
+        t, fb, priv = g.classify_seller(
+            {"sellerAccountType": "BUSINESS", "feedbackScore": 45181})
+        self.assertEqual((t, priv), ("business", False))
+
+    def test_big_feedback_individual_is_a_shop(self):
+        # "Individual" accounts with huge feedback are shops in practice.
+        _, _, priv = g.classify_seller(
+            {"sellerAccountType": "INDIVIDUAL", "feedbackScore": 25000})
+        self.assertFalse(priv)
+
+    def test_top_rated_never_private(self):
+        _, _, priv = g.classify_seller(
+            {"sellerAccountType": "INDIVIDUAL", "feedbackScore": 200},
+            top_rated=True)
+        self.assertFalse(priv)
+
+    def test_missing_seller(self):
+        t, fb, priv = g.classify_seller(None)
+        self.assertEqual((t, fb, priv), (None, 0, False))
+
+
 class TestPlatedAndMixed(unittest.TestCase):
     def test_multilingual_silver_mix_excluded(self):
         # Regression: "Anello Uomo Argento 18k 750" (silver+gold Yurman) was

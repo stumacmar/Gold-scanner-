@@ -74,6 +74,7 @@ let ALL = [];            // merged records across every carat file
 let META = null;         // meta of the newest file (spot price, timestamp)
 let caratFilter = 0;     // 0 = all | 9 | 14 | 18 | 22
 let valueOnly = false;
+let privateOnly = false; // 👤 only strict private sellers (individual, modest fb)
 let sortBy = "best";
 
 function tlMinutes(s) {
@@ -91,8 +92,18 @@ const SORTS = {
   ending: (a, b) => tlMinutes(a.time_left) - tlMinutes(b.time_left),
 };
 const shown = () => ALL
-  .filter(r => (!caratFilter || r.carat === caratFilter) && (!valueOnly || r.is_value))
+  .filter(r => (!caratFilter || r.carat === caratFilter)
+            && (!valueOnly || r.is_value)
+            && (!privateOnly || r.seller_private))
   .sort(SORTS[sortBy]);
+
+const fbFmt = n => n == null ? "" : n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1) + "k" : String(n);
+function sellerCell(rec) {
+  if (!rec.seller_type) return "";
+  const label = rec.seller_private ? "👤 Private"
+    : rec.seller_type === "business" ? "🏪 Business" : "👤 Individual";
+  return `<span class="kv">${label} <span class="muted">· ${fbFmt(rec.seller_feedback)} fb</span></span>`;
+}
 
 function escapeHtml(s) {
   return (s || "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -116,6 +127,7 @@ function card(rec) {
         ${rec.country !== "UK" && rec.landed_cost ? `<span class="kv">Landed <b>~${fmtGBP(rec.landed_cost)}</b></span>` : ""}
         <span class="kv">Melt <b>${fmtGBP(rec.melt_value)}</b></span>
         <span class="kv">Melt/Cost ${ratio}</span>
+        ${sellerCell(rec)}
         ${rec.stones ? '<span class="muted">💎</span>' : ""}
       </div>
       <div class="foot">
@@ -136,6 +148,7 @@ function render() {
     carats.map(c => chip(caratFilter === c, c,
       `${c}ct ${ALL.filter(r => r.carat === c).length}`)).join("") +
     chip(valueOnly, "value", `★ Value ${ALL.filter(r => r.is_value).length}`, "val") +
+    chip(privateOnly, "private", `👤 Private ${ALL.filter(r => r.seller_private).length}`, "val") +
     `<select class="sort" id="sort">
        <option value="best" ${sortBy === "best" ? "selected" : ""}>Best value</option>
        <option value="heavy" ${sortBy === "heavy" ? "selected" : ""}>Heaviest</option>
@@ -157,6 +170,7 @@ function render() {
     const c = e.target.closest(".chip");
     if (!c) return;
     if (c.dataset.v === "value") valueOnly = !valueOnly;
+    else if (c.dataset.v === "private") privateOnly = !privateOnly;
     else caratFilter = Number(c.dataset.v);
     render();
   };

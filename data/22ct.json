@@ -115,7 +115,10 @@
    "buying": "Buy now",
    "time_left": "n/a",
    "bids": "",
-   "url": "https://www.ebay.co.uk/itm/406868725856?_skw=22ct+gold+signet+ring&hash=item5ebb441060:g:KPYAAeSwm6Zp53Zk"
+   "url": "https://www.ebay.co.uk/itm/406868725856?_skw=22ct+gold+signet+ring&hash=item5ebb441060:g:KPYAAeSwm6Zp53Zk",
+   "seller_type": "business",
+   "seller_feedback": 14072,
+   "seller_private": false
   },
   {
    "title": "Authentic K18PG Signet Diamond Ring 0.22CT #260-008-143-8013",
@@ -142,7 +145,10 @@
    "buying": "Buy now",
    "time_left": "n/a",
    "bids": "",
-   "url": "https://www.ebay.com.au/itm/298240951024?_skw=22ct+gold+signet+ring&hash=item45708bc2f0:g:KPYAAeSwm6Zp53Zk"
+   "url": "https://www.ebay.com.au/itm/298240951024?_skw=22ct+gold+signet+ring&hash=item45708bc2f0:g:KPYAAeSwm6Zp53Zk",
+   "seller_type": null,
+   "seller_feedback": 14072,
+   "seller_private": false
   },
   {
    "title": "18kt gepunzt Weiß-, Gelb-, Roségold Siegelring 13mm x16mm oval oder Kissen",
@@ -168,7 +174,10 @@
    "buying": "Buy now",
    "time_left": "n/a",
    "bids": "",
-   "url": "https://www.ebay.de/itm/254195547625?_skw=Siegelring+Gold+916&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3"
+   "url": "https://www.ebay.de/itm/254195547625?_skw=Siegelring+Gold+916&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3",
+   "seller_type": "private",
+   "seller_feedback": 864,
+   "seller_private": true
   }
  ]
 }
