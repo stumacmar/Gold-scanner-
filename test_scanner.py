@@ -57,6 +57,15 @@ class TestWeightParsing(unittest.TestCase):
         # "Gr. 60" is German for SIZE 60 -- must not parse as 60 grams.
         self.assertIsNone(g.parse_weight_grams("Goldring 585 Gr. 60"))
 
+
+class TestPlatedAndMixed(unittest.TestCase):
+    def test_multilingual_silver_mix_excluded(self):
+        # Regression: "Anello Uomo Argento 18k 750" (silver+gold Yurman) was
+        # melt-valued on its full weight -- most of that weight is silver.
+        self.assertTrue(g.is_plated("David Yurman Anello Uomo Argento 18k 750 Sigillo"))
+        self.assertTrue(g.is_plated("Siegelring Silber vergoldet 925"))
+        self.assertFalse(g.is_plated("9ct yellow gold signet ring 19g"))
+
     def test_weight_then_unit_then_size(self):
         # Regression: "4,5 Gramm 61" is 4.5g, RING SIZE 61 -- the unit-first
         # pass read "Gramm 61" as 61g and flagged 4.5g lapis rings as 57g
