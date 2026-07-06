@@ -179,33 +179,51 @@ function render() {
 
 // Load every carat file listed in the index, merge, and de-duplicate by URL
 // (the same ring can surface in two carat scans).
-fetch("./data/index.json?ts=" + Date.now())
-  .then(r => { if (!r.ok) throw new Error("no index"); return r.json(); })
-  .then(idx => Promise.all(idx.searches.map(s =>
-    fetch("./data/" + s.file + "?ts=" + Date.now()).then(r => r.ok ? r.json() : null))))
-  .then(files => {
-    const seen = new Set();
-    let newest = null;
-    for (const f of files.filter(Boolean)) {
-      if (!newest || f.meta.generated_at > newest.generated_at) newest = f.meta;
-      for (const r of f.results) {
-        if (r.url && seen.has(r.url)) continue;
-        if (r.url) seen.add(r.url);
-        ALL.push(r);
+let lastLoad = 0;
+function loadAll() {
+  lastLoad = Date.now();
+  fetch("./data/index.json?ts=" + Date.now())
+    .then(r => { if (!r.ok) throw new Error("no index"); return r.json(); })
+    .then(idx => Promise.all(idx.searches.map(s =>
+      fetch("./data/" + s.file + "?ts=" + Date.now()).then(r => r.ok ? r.json() : null))))
+    .then(files => {
+      const seen = new Set();
+      let newest = null;
+      const merged = [];
+      for (const f of files.filter(Boolean)) {
+        if (!newest || f.meta.generated_at > newest.generated_at) newest = f.meta;
+        for (const r of f.results) {
+          if (r.url && seen.has(r.url)) continue;
+          if (r.url) seen.add(r.url);
+          merged.push(r);
+        }
       }
-    }
-    META = newest;
-    if (!ALL.length) {
-      document.getElementById("list").innerHTML =
-        '<div class="empty">No rings in the current scan — check back after the morning run.</div>';
-      return;
-    }
-    render();
-  })
-  .catch(() => {
-    document.getElementById("list").innerHTML =
-      '<div class="err">No scan data yet. Once the GitHub Action runs, results appear here.</div>';
-  });
+      ALL = merged;
+      META = newest;
+      if (!ALL.length) {
+        document.getElementById("list").innerHTML =
+          '<div class="empty">No rings in the current scan — check back after the morning run.</div>';
+        return;
+      }
+      render();
+    })
+    .catch(() => {
+      if (!ALL.length) document.getElementById("list").innerHTML =
+        '<div class="err">No scan data yet. Once the GitHub Action runs, results appear here.</div>';
+    });
+}
+loadAll();
+
+// iOS Safari restores a suspended tab without reloading, so an open tab could
+// show days-old data forever. Whenever the page becomes visible again and the
+// data is over 5 minutes old, silently re-fetch.
+const STALE_MS = 5 * 60 * 1000;
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden && Date.now() - lastLoad > STALE_MS) loadAll();
+});
+window.addEventListener("pageshow", (e) => {
+  if (e.persisted && Date.now() - lastLoad > STALE_MS) loadAll();
+});
 </script>
 </body>
 </html>
