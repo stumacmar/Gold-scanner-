@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-05T09:14:21.343922+00:00",
+    "generated_at": "2026-07-06T09:35:58.738679+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -55,18 +55,18 @@
     "conditions": "ANY",
     "max_price": 6000.0,
     "threshold": 1.3,
-    "spot_gbp_per_oz": 3126.98023138044,
-    "spot_source": "gold-api.com x frankfurter (live, $4,176/oz)",
+    "spot_gbp_per_oz": 3100.5480779879,
+    "spot_source": "gold-api.com x frankfurter (live, $4,141/oz)",
     "carat_per_gram": {
-      "8": 33.48,
-      "9": 37.7,
-      "10": 41.92,
-      "14": 58.81,
-      "15": 62.83,
-      "18": 75.4,
-      "20": 83.75,
-      "22": 92.15,
-      "24": 100.43
+      "8": 33.2,
+      "9": 37.38,
+      "10": 41.57,
+      "14": 58.32,
+      "15": 62.3,
+      "18": 74.76,
+      "20": 83.04,
+      "22": 91.37,
+      "24": 99.59
     },
     "fx_to_gbp": {
       "GBP": 1.0,
@@ -79,14 +79,14 @@
       "SGD": 0.5802,
       "USD": 0.7488
     },
-    "total_fetched": 1584,
-    "total_analysed": 4,
+    "total_fetched": 1610,
+    "total_analysed": 6,
     "value_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "CA": 1,
       "NL": 1,
-      "UK": 2
+      "UK": 4
     }
   },
   "results": [
@@ -110,7 +110,7 @@
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 742.7,
+      "melt_value": 736.42,
       "ratio": 0.64,
       "is_value": false,
       "buying": "Buy now",
@@ -139,13 +139,68 @@
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 573.05,
-      "ratio": 0.46,
+      "melt_value": 568.2,
+      "ratio": 0.45,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW"
+    },
+    {
+      "title": "Vintage Large 9ct Gold Signet Ring , Size V1/2,-15.05g",
+      "carat": 9,
+      "carat_assumed": false,
+      "seller_type": "business",
+      "seller_feedback": 4458,
+      "seller_private": false,
+      "weight_g": 15.05,
+      "net_gold_g": 15.1,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "vintage"
+      ],
+      "stones": false,
+      "current_bid": 1299.0,
+      "landed_cost": 1303.0,
+      "price_orig": null,
+      "country": "UK",
+      "flag": "🇬🇧",
+      "melt_value": 564.47,
+      "ratio": 0.43,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/123865927591?_skw=9ct+gold+signet+ring&hash=item1cd6fc0fa7:g:~D0AAOSwUMBb9ug~"
+    },
+    {
+      "title": "9ct Yellow Solid Gold Bulldog Signet Ring",
+      "carat": 9,
+      "carat_assumed": false,
+      "seller_type": "business",
+      "seller_feedback": 3347,
+      "seller_private": false,
+      "weight_g": 19.6,
+      "net_gold_g": 18.1,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": true,
+      "current_bid": 1460.0,
+      "landed_cost": 1464.0,
+      "price_orig": null,
+      "country": "UK",
+      "flag": "🇬🇧",
+      "melt_value": 676.61,
+      "ratio": 0.46,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/147117810866?_skw=9ct+gold+signet+ring&hash=item2240e7a4b2:g:51QAAeSwiG9oc6xm"
     },
     {
       "title": "Men's Signet Ring with Onyx 9 Ct, 5.6 Grams 65 Gr, Yellow Gold",
@@ -167,13 +222,13 @@
       "price_orig": "1,206",
       "country": "CA",
       "flag": "🇨🇦",
-      "melt_value": 2318.58,
-      "ratio": 2.91,
+      "melt_value": 2298.98,
+      "ratio": 2.89,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.ca/itm/188442912697?_skw=9ct+gold+seal+ring&hash=item2be012a7b9:g:IQ0AAOSwGV1lql~f&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYmob8rLbgEgCgkHrm%2F8e0q3RuOA61ZwWEfEJe6EQdoYbkqiZpy%2FBoWJRWZoVuQ62TwGXRSrT55gWSyIQwaf%2FttZQjJAN%2Fbv0Tk%2BJAALyWOQ9OKyOl%2F4DqQXM7yTfJSutRPy%2FenHleIAulBMWo6RTa6c83FhJKJGBgtZsLyN%2Fy5q4nf9lAqMGqK7UdZ0Ll06lhBov9dlAfwNyAcjazraUa5ZPTUho%2BiCogm1hAwsknulDFSWwUIXKyD8q2pQ1Wn1tagEBxg%2Fy2fyjoByYaXwlc2mj0H2yI%2BAxzeDqUw14c0Xw%3D%3D"
+      "url": "https://www.ebay.ca/itm/188442912697?_skw=9ct+gold+seal+ring&hash=item2be012a7b9:g:IQ0AAOSwGV1lql~f&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYmob8rLbgEgCgkHrm%2F8e0q3RuOA61ZwWEfEJe6EQdoYbkqiZpy%2FBoWJRWZoVuQ62TwGXRSrT55gWSyIQwaf%2FttZQjJAN%2Fbv0Tk%2BJAALyWOQ9OKyOl%2F4DqQXM7yTfJSutTQrUo0c1V%2F9tVDSOtpta%2FRbf92Hd7mxdc5ydR27lpRYrqtLhYVWMu%2BE2xFTSpmXXW0nHc%2FUPMzz6dg2mfMM0UoLjTTMbIPDn7NeHVBFw%2FJR4Iba%2FgAu%2Ba4fRJUuhZqaC8Q1XQMg7sW4CETE5WtC75K7q5HiIdfTUfzp9V01p7S5g%3D%3D"
     },
     {
       "title": "Vintage Gentleman's 9ct Gold Signet Ring | Large Oval Gold Signet Ring | English",
@@ -195,7 +250,7 @@
       "price_orig": "€2,696",
       "country": "NL",
       "flag": "🇳🇱",
-      "melt_value": 610.75,
+      "melt_value": 605.59,
       "ratio": 0.22,
       "is_value": false,
       "buying": "Buy now",
