@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-11T08:56:34.310752+00:00",
+    "generated_at": "2026-07-12T09:05:40.345407+00:00",
     "query": "18ct gold signet ring",
     "queries": [
       "18ct gold signet ring",
@@ -79,7 +79,7 @@
       "SGD": 0.577,
       "USD": 0.745
     },
-    "total_fetched": 1452,
+    "total_fetched": 1571,
     "total_analysed": 24,
     "value_count": 0,
     "weight_unknown_count": 0,
@@ -87,8 +87,9 @@
       "AT": 1,
       "AU": 3,
       "DE": 1,
+      "ES": 1,
       "IE": 2,
-      "IT": 2,
+      "IT": 1,
       "NL": 4,
       "PL": 1,
       "SG": 3,
@@ -179,7 +180,7 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fGJQIxYQcnjtE9TsWopfFCXmE2Ndxy81WRTRicdFGghwX%2F4FTcybulTq%2Fa%2FkuQ0ZTqNRE%2F9Y4XmtpoUAUcC1PiAfITiE5J0VUzpf%2BWtIT49uuAQG1wBhTJ7r2YlQUpjh74yoJ5jG4HmYU%2Bc31%2Bp4y8u0JykSakElkUDCfTVB3VOCQ%3D%3D"
+      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fEFsR0uxY%2F%2BuSLDhNTayUknkrGvC0hC%2BG6jlb0SKIwYB8PkDpPufxBZPW2KwORghSh7k8yzZeSAWk6RiT2sf0PNZjfUGKTSEO0S4SSGrQIkYFIpF8YDAzeV3PCmcHb5XAPt%2FQdlqt4JLGfwhwxiUrjFrRsJUrvOZQvaYTgvWfbMNA%3D%3D"
     },
     {
       "title": "18ct 18K Yellow Gold Men’s Signet Ring With Diamonds TDW 1.53ct Size Z+2. New",
@@ -241,7 +242,7 @@
       "carat": 18,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 10242,
+      "seller_feedback": 10245,
       "seller_private": false,
       "weight_g": 20.3,
       "net_gold_g": 18.8,
@@ -347,33 +348,6 @@
       "url": "https://www.ebay.ie/itm/278116067816?_skw=18ct+gold+signet+ring&hash=item40c10269e8:g:o0oAAeSwCVRqD7LY"
     },
     {
-      "title": "Tiffany & Co. 18k Yellow Gold Signet Ring Size 9 Gorgeous Piece!",
-      "carat": 18,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 9650,
-      "seller_private": false,
-      "weight_g": 22.7,
-      "net_gold_g": 22.7,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet"
-      ],
-      "stones": false,
-      "current_bid": 2978.19,
-      "landed_cost": 3615.83,
-      "price_orig": "5,752",
-      "country": "AU",
-      "flag": "🇦🇺",
-      "melt_value": 1680.68,
-      "ratio": 0.46,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.com.au/itm/287314393514?_skw=18ct+gold+signet+ring&hash=item42e545b9aa:g:uy4AAeSwaENp9Rpm"
-    },
-    {
       "title": "18K Gold & Pt1000 Platinum Signet Ring 0.15ct Diamond Heavy 19.9g",
       "carat": 18,
       "carat_assumed": false,
@@ -429,6 +403,33 @@
       "url": "https://www.ebay.com.au/itm/278116279884?_skw=18ct+gold+signet+ring&hash=item40c105a64c:g:o0oAAeSwCVRqD7LY"
     },
     {
+      "title": "Tiffany & Co. 18k Yellow Gold Signet Ring Size 9 Gorgeous Piece!",
+      "carat": 18,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 9650,
+      "seller_private": false,
+      "weight_g": 22.7,
+      "net_gold_g": 22.7,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": false,
+      "current_bid": 2978.19,
+      "landed_cost": 3615.83,
+      "price_orig": "5,752",
+      "country": "AU",
+      "flag": "🇦🇺",
+      "melt_value": 1680.68,
+      "ratio": 0.46,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.com.au/itm/287314393514?_skw=18ct+gold+signet+ring&hash=item42e545b9aa:g:uy4AAeSwaENp9Rpm"
+    },
+    {
       "title": "Schwerer massiver klassischer Herrenring - Siegelring - Ring Gold 750 - 26,26 Gr",
       "carat": 18,
       "carat_assumed": false,
@@ -457,38 +458,11 @@
       "url": "https://www.ebay.de/itm/267135862307?_skw=Siegelring+Gold+750&hash=item3e3289c623:g:T7wAAOSwvCVm10Rf"
     },
     {
-      "title": "Anello Gianni Versace Medusa Greca in oro bianco 18 kt con sigillo US7,75 EU56 16,2 g con scatola",
-      "carat": 18,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 3042,
-      "seller_private": false,
-      "weight_g": 16.2,
-      "net_gold_g": 16.2,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet"
-      ],
-      "stones": false,
-      "current_bid": 4358.19,
-      "landed_cost": 5256.23,
-      "price_orig": "€5,118",
-      "country": "IT",
-      "flag": "🇮🇹",
-      "melt_value": 1199.43,
-      "ratio": 0.23,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.it/itm/396934272870?_skw=anello+sigillo+oro+750&hash=item5c6b205766:g:-rUAAeSwJRZokrRz"
-    },
-    {
       "title": "Anello uomo NYJEWEL oro giallo 18 kt intaglio lapislazzuli sigillo inciso 22,9 g",
       "carat": 18,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 10242,
+      "seller_feedback": 10245,
       "seller_private": false,
       "weight_g": 22.9,
       "net_gold_g": 19.4,
@@ -510,7 +484,34 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.it/itm/184498496494?_skw=anello+sigillo+oro+750&hash=item2af4f7a3ee:g:ZDsAAOSwCj9fhvda"
+      "url": "https://www.ebay.it/itm/184498496494?_skw=anello+sigillo+oro+750+uomo&hash=item2af4f7a3ee:g:ZDsAAOSwCj9fhvda"
+    },
+    {
+      "title": "Anillo de sello de oro blanco de 18k Gianni Versace Medusa Greca US7,75 EU56 16,2 g con caja",
+      "carat": 18,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 3042,
+      "seller_private": false,
+      "weight_g": 16.2,
+      "net_gold_g": 16.2,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": false,
+      "current_bid": 4358.19,
+      "landed_cost": 5256.23,
+      "price_orig": "€5,118",
+      "country": "ES",
+      "flag": "🇪🇸",
+      "melt_value": 1199.43,
+      "ratio": 0.23,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.es/itm/396934272870?_skw=anillo+sello+oro+750&hash=item5c6b205766:g:-rUAAeSwJRZokrRz"
     },
     {
       "title": "Antique 18ct 18k Solid Yellow Gold Signet Ring Coat Of Arms Family Crest 16.7 Gr",
@@ -620,14 +621,14 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.nl/itm/278111986472?_skw=18ct+gold+signet+ring&hash=item40c0c42328:g:BEQAAeSwFcFqN9hU&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGahkqA5YGdmeTGOgThqP2lMfL0YkujTHSozr%2FeN6Z0LTN8iUD9OK1RH468nEE2HcO7Si8GzSTe4QYc5I09zky%2F9%2BpKhvS0TlTEad9qtsfnoAJMUlAmC7aLR32jfIZH59nD01ZkRfcSOk3sLJtLWqxOt9uXy%2Bm3B%2FdMakBh2%2BlkM%2FpErvR235cLS309gzYTu%2Fajpt7TH8khfGmv3PL0isTseiZixu51qFxPPp8f1ZYi%2BhwEObx%2FVYMJycHD0rgu9fkvkKBlMS2m7wg4d6uRELEWj%2BrBz8af9Ck%2FFQU3I7w3UtA%3D%3D"
+      "url": "https://www.ebay.nl/itm/278111986472?_skw=18ct+gold+signet+ring&hash=item40c0c42328:g:BEQAAeSwFcFqN9hU&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGahkqA5YGdmeTGOgThqP2lMfL0YkujTHSozr%2FeN6Z0LTN8iUD9OK1RH468nEE2HcO7Si8GzSTe4QYc5I09zky%2F9%2BpKhvS0TlTEad9qtsfnoAJMUlAmC7aLR32jfIZH59nAHX9OOiS2mbaCCZKaGWV0tSMAED9hAAFiB%2Frtp9OEs%2BBY1jZk%2BnmXOqAacUslH9xkcc2Z2JQu8zavu5avEASe1soG03TFM7Jz9RFApr1RFPDiwFUN9%2FPC6MvdJcCR1rUYkQlv2fB0WNKTYg%2FyPNTPA7lPy6UvWUdWGn77%2F0uXW9g%3D%3D"
     },
     {
       "title": "Karneol Intaglio Ring 18K Gelbgold gehämmert",
       "carat": 18,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 15781,
+      "seller_feedback": 15783,
       "seller_private": false,
       "weight_g": 21.4,
       "net_gold_g": 17.9,

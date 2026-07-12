@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-11T08:45:24.990913+00:00",
+    "generated_at": "2026-07-12T08:55:33.220695+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -79,13 +79,13 @@
       "SGD": 0.577,
       "USD": 0.745
     },
-    "total_fetched": 1611,
-    "total_analysed": 4,
+    "total_fetched": 1610,
+    "total_analysed": 5,
     "value_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "CA": 1,
-      "UK": 2,
+      "UK": 3,
       "US": 1
     }
   },
@@ -148,6 +148,33 @@
       "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW"
     },
     {
+      "title": "9ct Yellow Solid Gold Bulldog Signet Ring",
+      "carat": 9,
+      "carat_assumed": false,
+      "seller_type": "business",
+      "seller_feedback": 3349,
+      "seller_private": false,
+      "weight_g": 19.6,
+      "net_gold_g": 18.1,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": true,
+      "current_bid": 1460.0,
+      "landed_cost": 1464.0,
+      "price_orig": null,
+      "country": "UK",
+      "flag": "🇬🇧",
+      "melt_value": 670.05,
+      "ratio": 0.46,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.co.uk/itm/147117810866?_skw=9ct+gold+signet+ring&hash=item2240e7a4b2:g:51QAAeSwiG9oc6xm"
+    },
+    {
       "title": "Vintage Large 9ct Gold Signet Ring , Size V1/2,-15.05g",
       "carat": 9,
       "carat_assumed": false,
@@ -180,7 +207,7 @@
       "carat": 9,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 6725,
+      "seller_feedback": 6726,
       "seller_private": false,
       "weight_g": 65.0,
       "net_gold_g": 61.5,
@@ -201,7 +228,7 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.ca/itm/188442912697?_skw=9ct+gold+seal+ring&hash=item2be012a7b9:g:IQ0AAOSwGV1lql~f&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYmob8rLbgEgCgkHrm%2F8e0q3RuOA61ZwWEfEJe6EQdoYbkqiZpy%2FBoWJRWZoVuQ62TwGXRSrT55gWSyIQwaf%2FttZQjJAN%2Fbv0Tk%2BJAALyWOQ9OKyOl%2F4DqQXM7yTfJSutQaZ47%2BhagfiVnntEh6NqsoJSiHbbyT7MIB%2FF5%2Bdz6MwZG7uRFfzOIg%2F3E41rj5jzmDlYQkbblvP3PB8P8%2BVkQUHWTfBS7z3rDT%2BkvdMz30fVlLmZkvK10f3LKc8%2FY9sVR9wy6tRtv1HV--ika70bFpCFlYG87pWglAVxbfoFgPGw%3D%3D"
+      "url": "https://www.ebay.ca/itm/188442912697?_skw=9ct+gold+seal+ring&hash=item2be012a7b9:g:IQ0AAOSwGV1lql~f&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYmob8rLbgEgCgkHrm%2F8e0q3RuOA61ZwWEfEJe6EQdoYbkqiZpy%2FBoWJRWZoVuQ62TwGXRSrT55gWSyIQwaf%2FttZQjJAN%2Fbv0Tk%2BJAALyWOQ9OKyOl%2F4DqQXM7yTfJSutRvLq9SbSL%2BaMgrEQIVF%2Flt5eXBdC%2FXP83m502Nmc9P6Tpv5DVquTRChs5QTAhFD2rrJUfS35G841Rigw8iJPtn3Xuht8fmAGustRINf8M0MQwfdK4sjJxJAn2jJDEkvjgpHyMfj7SyP3JZt%2BhZFdMPLLAOxmURCUdgvcdXVoiawA%3D%3D"
     }
   ]
 }
