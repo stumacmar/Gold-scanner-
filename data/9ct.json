@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-12T08:55:33.220695+00:00",
+    "generated_at": "2026-07-13T09:19:29.240479+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -55,18 +55,18 @@
     "conditions": "ANY",
     "max_price": 6000.0,
     "threshold": 1.3,
-    "spot_gbp_per_oz": 3070.48414098902,
-    "spot_source": "gold-api.com x frankfurter (live, $4,121/oz)",
+    "spot_gbp_per_oz": 3035.39427950549,
+    "spot_source": "gold-api.com x frankfurter (live, $4,074/oz)",
     "carat_per_gram": {
-      "8": 32.87,
-      "9": 37.02,
-      "10": 41.17,
-      "14": 57.75,
-      "15": 61.7,
-      "18": 74.04,
-      "20": 82.23,
-      "22": 90.49,
-      "24": 98.62
+      "8": 32.5,
+      "9": 36.6,
+      "10": 40.7,
+      "14": 57.09,
+      "15": 60.99,
+      "18": 73.19,
+      "20": 81.29,
+      "22": 89.45,
+      "24": 97.49
     },
     "fx_to_gbp": {
       "GBP": 1.0,
@@ -79,11 +79,12 @@
       "SGD": 0.577,
       "USD": 0.745
     },
-    "total_fetched": 1610,
-    "total_analysed": 5,
+    "total_fetched": 1607,
+    "total_analysed": 6,
     "value_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
+      "AU": 1,
       "CA": 1,
       "UK": 3,
       "US": 1
@@ -110,8 +111,8 @@
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 729.28,
-      "ratio": 0.63,
+      "melt_value": 720.95,
+      "ratio": 0.62,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
@@ -139,7 +140,7 @@
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 562.69,
+      "melt_value": 556.26,
       "ratio": 0.45,
       "is_value": false,
       "buying": "Buy now",
@@ -166,8 +167,8 @@
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 670.05,
-      "ratio": 0.46,
+      "melt_value": 662.39,
+      "ratio": 0.45,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
@@ -194,13 +195,41 @@
       "price_orig": "$1,741",
       "country": "US",
       "flag": "🇺🇸",
-      "melt_value": 558.99,
+      "melt_value": 552.6,
       "ratio": 0.35,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com/itm/123865927591?_skw=9ct+gold+signet+ring&hash=item1cd6fc0fa7:g:~D0AAOSwUMBb9ug~"
+    },
+    {
+      "title": "Men’s Masonic Engraved Signet Ring 14ct Gold Size W",
+      "carat": 14,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 61,
+      "seller_private": false,
+      "weight_g": 18.81,
+      "net_gold_g": 18.8,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "band"
+      ],
+      "stones": false,
+      "current_bid": 1486.33,
+      "landed_cost": 1825.6,
+      "price_orig": "2,871",
+      "country": "AU",
+      "flag": "🇦🇺",
+      "melt_value": 1073.3,
+      "ratio": 0.59,
+      "is_value": false,
+      "buying": "Buy now",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.com.au/itm/398166475148?_skw=9ct+gold+signet+ring&hash=item5cb492418c:g:H1UAAeSwuzZqU3az"
     },
     {
       "title": "Men's Signet Ring with Onyx 9 Ct, 5.6 Grams 65 Gr, Yellow Gold",
@@ -222,13 +251,13 @@
       "price_orig": "1,206",
       "country": "CA",
       "flag": "🇨🇦",
-      "melt_value": 2276.69,
-      "ratio": 2.86,
+      "melt_value": 2250.67,
+      "ratio": 2.83,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.ca/itm/188442912697?_skw=9ct+gold+seal+ring&hash=item2be012a7b9:g:IQ0AAOSwGV1lql~f&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYmob8rLbgEgCgkHrm%2F8e0q3RuOA61ZwWEfEJe6EQdoYbkqiZpy%2FBoWJRWZoVuQ62TwGXRSrT55gWSyIQwaf%2FttZQjJAN%2Fbv0Tk%2BJAALyWOQ9OKyOl%2F4DqQXM7yTfJSutRvLq9SbSL%2BaMgrEQIVF%2Flt5eXBdC%2FXP83m502Nmc9P6Tpv5DVquTRChs5QTAhFD2rrJUfS35G841Rigw8iJPtn3Xuht8fmAGustRINf8M0MQwfdK4sjJxJAn2jJDEkvjgpHyMfj7SyP3JZt%2BhZFdMPLLAOxmURCUdgvcdXVoiawA%3D%3D"
+      "url": "https://www.ebay.ca/itm/188442912697?_skw=9ct+gold+seal+ring&hash=item2be012a7b9:g:IQ0AAOSwGV1lql~f&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYmob8rLbgEgCgkHrm%2F8e0q3RuOA61ZwWEfEJe6EQdoYbkqiZpy%2FBoWJRWZoVuQ62TwGXRSrT55gWSyIQwaf%2FttZQjJAN%2Fbv0Tk%2BJAALyWOQ9OKyOl%2F4DqQXM7yTfJSutR0A9d3Znna1YPMteY2NlAy88tfyDufdahl7DGPFgEOMqgtHnCw04HTMvtJOJlGX3KiKtnHWQ%2Fq53iWmqjntK%2B%2Fp31dUA6cRKO5OwYJ52Wq0QyIMJuRjN%2BvL2o3nJvxtNNg%2Be7mu2CFbnviuAcXeZ9kGCnOJgMBaZbAQjHgJPfpxQ%3D%3D"
     }
   ]
 }
