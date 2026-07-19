@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-18T08:44:56.351175+00:00",
+    "generated_at": "2026-07-19T08:58:21.903928+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -79,13 +79,12 @@
       "SGD": 0.5763,
       "USD": 0.7442
     },
-    "total_fetched": 1607,
-    "total_analysed": 6,
+    "total_fetched": 1577,
+    "total_analysed": 5,
     "value_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 1,
-      "CA": 1,
       "UK": 3,
       "US": 1
     }
@@ -180,7 +179,7 @@
       "carat": 9,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 6729,
+      "seller_feedback": 6730,
       "seller_private": false,
       "weight_g": 65.0,
       "net_gold_g": 61.5,
@@ -202,7 +201,7 @@
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com/itm/366443545709?_skw=9ct+gold+signet+ring&hash=item5551bcc46d:g:IQ0AAOSwGV1lql~f&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGb3VtdFb9AFnszxU298shVh%2Bb69iIMGtS30Hs4hiyOaC7oOPvZmG7ubyddyvWNKpD4u5Wn8fmHawnd5tYjgCmGpoMmbpAKSbSiPtSvNEbT%2BLklaov1ZM5NdlpXx6umu4jM0Ib0A3FNM%2FB3fBeD2ZHyE%2BvKSC63pWK%2BHipGDXMFvu5kJk%2FHUUabRjb6eZN830CuKhbM6Yrlc9wSVIeGniwGLgDmr8mnU3tfDVro7N%2BVMewAdc7zBXf0yL%2BBdRVtjEEXRS6bVOt34naPHcOXoQcAc7sBuF0oUoa8gYVj6je%2B%2FmQ%3D%3D"
+      "url": "https://www.ebay.com/itm/366443545709?_skw=9ct+gold+signet+ring&hash=item5551bcc46d:g:IQ0AAOSwGV1lql~f&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGb3VtdFb9AFnszxU298shVh%2Bb69iIMGtS30Hs4hiyOaC7oOPvZmG7ubyddyvWNKpD4u5Wn8fmHawnd5tYjgCmGpoMmbpAKSbSiPtSvNEbT%2BLklaov1ZM5NdlpXx6umu4jPiIGinNJqS1FFv5S7LQYDOMuKbpZNjCD%2F0Tw%2BrDaeHPwuBOGXBKzfAs%2Fp6OL3K1NFar%2BhO%2Fq74W6Scr8NeiSRrqXFEVVc4Tlu02nJk38HZ7fOT9uA2CLo42GRg99RZpw9v99kDkC3Agg%2Bwi9rDzzrVDWTNOKkShtuBwxHvg9Qesg%3D%3D"
     },
     {
       "title": "Men’s Masonic Engraved Signet Ring 14ct Gold Size W",
@@ -231,34 +230,6 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/398166475148?_skw=9ct+gold+signet+ring&hash=item5cb492418c:g:H1UAAeSwuzZqU3az"
-    },
-    {
-      "title": "Men's Signet Ring with Onyx 9 Ct, 5.6 Grams 65 Gr, Yellow Gold",
-      "carat": 9,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 6729,
-      "seller_private": false,
-      "weight_g": 65.0,
-      "net_gold_g": 61.5,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "gents"
-      ],
-      "stones": true,
-      "current_bid": 640.01,
-      "landed_cost": 801.61,
-      "price_orig": "1,206",
-      "country": "CA",
-      "flag": "🇨🇦",
-      "melt_value": 2217.85,
-      "ratio": 2.77,
-      "is_value": false,
-      "buying": "Buy now",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.ca/itm/188442912697?_skw=9ct+gold+seal+ring&hash=item2be012a7b9:g:IQ0AAOSwGV1lql~f&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYmob8rLbgEgCgkHrm%2F8e0q3RuOA61ZwWEfEJe6EQdoYbkqiZpy%2FBoWJRWZoVuQ62TwGXRSrT55gWSyIQwaf%2FttZQjJAN%2Fbv0Tk%2BJAALyWOQ9OKyOl%2F4DqQXM7yTfJSutQ6TcC1thJWmUnilfVI5oKdvg2dB73TpA%2BgIDWuyaR8YuWbQv9mte1CAsgI7jXDujlZ9SkqIu9vZzAQWofmW7UxRLEB5WFxu91zcsVEC5niZS3ivMDDzdMk85DX0Ma%2FFEJ1aTvBE7ppCjr4fkxA%2BPOzn%2BpPfffFZHiVcmkKkgEJng%3D%3D"
     }
   ]
 }
