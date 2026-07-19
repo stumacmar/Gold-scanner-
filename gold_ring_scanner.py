@@ -150,14 +150,48 @@ QUERY_TEMPLATES = {
 }
 MAX_QUERIES_PER_MARKET = 7    # cap the matrix so the API quota lasts a full run
 
+# --- Silver mode (--metal silver) -----------------------------------------
+# Second screen: heavy STERLING SILVER signets/intaglios. Same strict rules
+# (signet/intaglio only, seller-stated weight >= floor), but melt uses the
+# live silver spot and the fineness mark (925 sterling, continental 800/835).
+# Silver trades much further above melt than gold, so the value threshold is
+# looser: flag when landed < melt x SILVER_MELT_THRESHOLD.
+SILVER_WEIGHT_FLOOR = 15.0      # "heavy" floor for silver signets (grams)
+SILVER_MELT_THRESHOLD = 2.0
+SPOT_SILVER_GBP_PER_OZ = 36.0   # fallback if the live lookup fails; ~mid-2026
+SILVER_FINENESS = {"958": 0.958, "925": 0.925, "900": 0.900,
+                   "835": 0.835, "830": 0.830, "800": 0.800}
+SILVER_QUERY_TEMPLATES = {
+    "en": ["sterling silver signet ring heavy", "925 silver signet ring",
+           "solid silver signet ring", "silver signet ring mens",
+           "silver intaglio ring", "sterling silver seal ring"],
+    "de": ["Siegelring Silber 925", "Siegelring Silber massiv",
+           "925 Siegelring Herren", "Siegelring Sterlingsilber"],
+    "fr": ["chevalière argent massif", "chevalière argent 925",
+           "bague intaille argent"],
+    "it": ["anello sigillo argento 925", "anello argento uomo sigillo",
+           "anello intaglio argento"],
+    "es": ["anillo sello plata 925", "sello plata de ley hombre"],
+    "nl": ["zilveren zegelring 925", "zegelring zilver heren"],
+    "pl": ["sygnet srebro 925", "sygnet męski srebro"],
+}
+# Silver-mode exclusions: plating/costume + anything that's actually GOLD
+# (a gold signet mentioning "silver" must not leak into the silver screen).
+SILVER_PLATED_MARKERS = [
+    "plated", "plate ", "silver tone", "silver-tone", "epns", "costume",
+    "vermeil", "gilt", "gilded", "vergoldet", "gold plated", "gold-plated",
+    "base metal", "stainless", "tungsten", "titanium", "brass",
+]
 
-def queries_for(market, carat, extra=()):
+
+def queries_for(market, carat, extra=(), metal="gold"):
     """Build the de-duplicated localised+English query list for a market/carat."""
     lang = MARKET_LANG.get(market, "en")
+    templates = SILVER_QUERY_TEMPLATES if metal == "silver" else QUERY_TEMPLATES
     f = LOCAL_FINENESS.get(carat, str(carat))
-    terms = [t.format(c=carat, f=f) for t in QUERY_TEMPLATES.get(lang, [])]
+    terms = [t.format(c=carat, f=f) for t in templates.get(lang, [])]
     if lang != "en":                       # cross-border English sellers too
-        terms += [t.format(c=carat, f=f) for t in QUERY_TEMPLATES["en"][:3]]
+        terms += [t.format(c=carat, f=f) for t in templates["en"][:3]]
     terms += list(extra)
     seen, out = set(), []
     for q in terms:
@@ -232,6 +266,8 @@ CARAT_FRACTION = {
     24: 999 / 1000,
 }
 DEFAULT_CARAT = 9   # assume 9ct when an item is clearly gold but no carat found
+METAL = "gold"      # gold | silver -- set by --metal; silver switches spot,
+                    # fineness parsing, exclusions, and query templates
 
 # --- Weight-confidence model (see assess_ring) ---------------------------
 WEIGHT_FLOOR_CONFIRMED = 15.0          # strict floor for a parsed (stated) weight
@@ -732,6 +768,30 @@ def value_flag(melt, landed, confidence):
                 and melt < landed * SUSPECT_RATIO)
 
 
+def detect_silver_fineness(text):
+    """Return (fraction, mark, assumed) for a silver listing.
+
+    Prefers an explicit fineness mark (925/958/900/835/830/800); "sterling"
+    means 925. Anything else assumes sterling with the assumed flag set.
+    """
+    low = (text or "").lower()
+    for mark, frac in SILVER_FINENESS.items():
+        if re.search(r"\b" + mark + r"\b", low):
+            return frac, mark, False
+    if "sterling" in low or "925" in low:
+        return 0.925, "925", False
+    return 0.925, "925", True
+
+
+def is_silver_excluded(text):
+    """Silver-mode reject: plated/costume/base-metal, or actually a GOLD ring."""
+    low = (text or "").lower()
+    if any(m in low for m in SILVER_PLATED_MARKERS):
+        return True
+    carat, assumed = detect_carat(low)
+    return not assumed          # an explicit gold carat/fineness mark -> gold ring
+
+
 def is_plated(text):
     """True if the text strongly suggests plated / rolled / non-solid gold."""
     if not text:
@@ -743,20 +803,31 @@ def is_plated(text):
 # Gold spot price
 # =============================================================================
 
-def _free_spot_gbp_per_oz():
+def _free_spot_gbp_per_oz(symbol="XAU"):
     """Keyless live price: gold-api.com (USD/oz) x Frankfurter ECB (USD->GBP).
 
     Both are free and need no API key, so this works in CI with zero secrets.
+    symbol: XAU for gold, XAG for silver.
     Returns (price_gbp_per_oz, label) or raises on failure.
     """
-    g = requests.get("https://api.gold-api.com/price/XAU", timeout=30)
+    g = requests.get(f"https://api.gold-api.com/price/{symbol}", timeout=30)
     g.raise_for_status()
     usd_per_oz = float(g.json()["price"])
     fx = requests.get("https://api.frankfurter.dev/v1/latest",
                       params={"base": "USD", "symbols": "GBP"}, timeout=30)
     fx.raise_for_status()
     usd_to_gbp = float(fx.json()["rates"]["GBP"])
-    return usd_per_oz * usd_to_gbp, f"gold-api.com x frankfurter (live, ${usd_per_oz:,.0f}/oz)"
+    return usd_per_oz * usd_to_gbp, f"gold-api.com x frankfurter (live, ${usd_per_oz:,.2f}/oz)"
+
+
+def get_silver_spot_gbp_per_oz():
+    """Return (silver_price_per_troy_oz_GBP, source_label)."""
+    try:
+        return _free_spot_gbp_per_oz("XAG")
+    except (requests.RequestException, KeyError, ValueError, TypeError) as e:
+        print(f"[warn] silver price lookup failed ({e}); using fallback.",
+              file=sys.stderr)
+        return SPOT_SILVER_GBP_PER_OZ, "hardcoded fallback"
 
 
 def get_spot_price_gbp_per_oz():
@@ -1042,14 +1113,22 @@ def analyse(items, token, spot_per_oz, fx=None):
         market = item.get("_market_id", "EBAY_GB")
         currency = item.get("_currency", "GBP")
 
-        # 1. Reject non-solid-gold and unwanted types (coin/sovereign rings).
-        if is_plated(text) or is_excluded(text):
+        # 1. Reject wrong-metal / plated and unwanted types (coins, bundles).
+        if METAL == "silver":
+            if is_silver_excluded(text) or is_excluded(text):
+                continue
+        elif is_plated(text) or is_excluded(text):
             continue
 
-        # 2. Carat + weight from summary text. The TITLE weight wins over any
-        #    description figure -- a live audit caught a desc number (20.1)
-        #    overriding the seller's stated title weight (10,20g) via max().
-        carat, carat_assumed = detect_carat(text)
+        # 2. Carat/fineness + weight from summary text. The TITLE weight wins
+        #    over any description figure -- a live audit caught a desc number
+        #    (20.1) overriding the seller's stated title weight (10,20g).
+        if METAL == "silver":
+            fineness_frac, fineness_mark, carat_assumed = detect_silver_fineness(text)
+            carat = None
+        else:
+            fineness_frac, fineness_mark = None, None
+            carat, carat_assumed = detect_carat(text)
         weight = parse_weight_grams(title)
         if weight is None:
             weight = parse_weight_grams(short_desc)
@@ -1070,11 +1149,16 @@ def analyse(items, token, spot_per_oz, fx=None):
             detail_fetches += 1
             full = fetch_item_description(token, item.get("itemId", ""), market)
             if full:
-                if is_plated(full) or is_excluded(full):
+                bad = (is_silver_excluded(full) if METAL == "silver"
+                       else is_plated(full)) or is_excluded(full)
+                if bad:
                     continue
                 text = f"{text} {full}"
                 weight = parse_weight_grams(full)
-                if carat_assumed:
+                if carat_assumed and METAL == "silver":
+                    fineness_frac, fineness_mark, carat_assumed = \
+                        detect_silver_fineness(full)
+                elif carat_assumed:
                     carat, carat_assumed = detect_carat(full)
             time.sleep(0.1)  # polite pacing for the extra call
 
@@ -1096,7 +1180,10 @@ def analyse(items, token, spot_per_oz, fx=None):
         if raw_bid is not None and currency != "GBP":
             price_orig = f"{_CURRENCY_SYMBOL.get(currency, '')}{raw_bid:,.0f}"
 
-        fraction = CARAT_FRACTION.get(carat, CARAT_FRACTION[DEFAULT_CARAT])
+        if METAL == "silver":
+            fraction = fineness_frac
+        else:
+            fraction = CARAT_FRACTION.get(carat, CARAT_FRACTION[DEFAULT_CARAT])
         content_per_gram = spot_per_gram_fine * fraction
 
         melt = round(net_gold * content_per_gram, 2) if net_gold else None
@@ -1115,7 +1202,9 @@ def analyse(items, token, spot_per_oz, fx=None):
 
         records.append({
             "title": title,
-            "carat": carat,
+            "metal": METAL,                 # gold | silver
+            "carat": carat,                 # gold only (None for silver)
+            "fineness": fineness_mark,      # silver only ("925", "800", ...)
             "carat_assumed": carat_assumed,
             "seller_type": stype,           # private | business | None
             "seller_feedback": fb,
@@ -1255,16 +1344,26 @@ def parse_args():
                         "from the output")
     p.add_argument("--conditions", default="USED", choices=["USED", "ANY"],
                    help="USED only, or ANY condition (captures dealer 'New')")
+    p.add_argument("--metal", default="gold", choices=["gold", "silver"],
+                   help="gold (default) or silver: sterling-silver signet mode "
+                        "with live silver spot and 925/800 fineness parsing")
     return p.parse_args()
 
 
 def main():
-    global MELT_THRESHOLD, DEFAULT_CARAT, WEIGHT_FLOOR_CONFIRMED
+    global MELT_THRESHOLD, DEFAULT_CARAT, WEIGHT_FLOOR_CONFIRMED, METAL
     args = parse_args()
+    METAL = args.metal
     MELT_THRESHOLD = args.threshold
+    if METAL == "silver" and args.threshold == 1.3:
+        # Silver trades further above melt; use the silver default unless the
+        # user explicitly set a threshold.
+        MELT_THRESHOLD = SILVER_MELT_THRESHOLD
     DEFAULT_CARAT = args.default_carat
     if args.min_weight > 0:                      # --min-weight tunes the hard floor
         WEIGHT_FLOOR_CONFIRMED = args.min_weight
+    elif METAL == "silver":
+        WEIGHT_FLOOR_CONFIRMED = SILVER_WEIGHT_FLOOR
 
     extra = [q.strip() for q in args.query.split("||") if q.strip()] \
         if args.query.strip() != SEARCH_TERM else []
@@ -1273,14 +1372,19 @@ def main():
     if not markets:
         markets = ["EBAY_GB"]
 
-    print("\neBay Gold Ring Scanner")
-    print(f"  carat={args.default_carat}  buying={args.buying}  conditions={args.conditions}  "
+    print(f"\neBay {METAL.title()} Ring Scanner")
+    print(f"  {'metal=silver' if METAL == 'silver' else f'carat={args.default_carat}'}  "
+          f"buying={args.buying}  conditions={args.conditions}  "
           f"price=£{args.min_price:.0f}-£{args.max_price:.0f}  "
           f"floors: confirmed>={WEIGHT_FLOOR_CONFIRMED}g estimated>={WEIGHT_FLOOR_ESTIMATED_LOWBOUND}g  "
-          f"limit={args.limit}/mkt  markets={len(markets)}")
+          f"limit={args.limit}/mkt  markets={len(markets)}  threshold={MELT_THRESHOLD}")
 
-    spot, source = get_spot_price_gbp_per_oz()
-    print(f"  gold spot: £{spot:,.2f}/oz  (source: {source})")
+    if METAL == "silver":
+        spot, source = get_silver_spot_gbp_per_oz()
+        print(f"  silver spot: £{spot:,.2f}/oz  (source: {source})")
+    else:
+        spot, source = get_spot_price_gbp_per_oz()
+        print(f"  gold spot: £{spot:,.2f}/oz  (source: {source})")
     fx = get_fx_to_gbp()
     print(f"  fx to GBP: " + ", ".join(f"{c}={v:.3f}" for c, v in sorted(fx.items()) if c != "GBP"))
 
@@ -1290,7 +1394,7 @@ def main():
     all_queries = []                 # union of every per-market query (for meta)
     for mkt in markets:
         cfg = MARKETPLACES[mkt]
-        mkt_queries = queries_for(mkt, args.default_carat, extra=extra)
+        mkt_queries = queries_for(mkt, args.default_carat, extra=extra, metal=METAL)
         for q in mkt_queries:
             if q not in all_queries:
                 all_queries.append(q)
@@ -1338,13 +1442,14 @@ def main():
         "query": all_queries[0] if all_queries else args.query,
         "queries": all_queries,
         "buying": args.buying,
+        "metal": METAL,
         "default_carat": args.default_carat,
         "markets": markets,
         "min_weight": args.min_weight,
         "min_price": args.min_price,
         "conditions": args.conditions,
         "max_price": args.max_price,
-        "threshold": args.threshold,
+        "threshold": MELT_THRESHOLD,
         "spot_gbp_per_oz": spot,
         "spot_source": source,
         "carat_per_gram": {str(k): round(spot / TROY_OZ_IN_GRAMS * v, 2)

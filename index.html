@@ -16,6 +16,14 @@
   h1 .coin { color: #d4af37; }
   .sub { margin: 4px 0 0; font-size: 12px; color: #8a93a6; line-height: 1.5; }
 
+  /* Gold / Silver screen switcher */
+  .metals { display: flex; gap: 8px; padding: 10px 16px 0; }
+  .mchip { flex: 1; text-align: center; padding: 10px 0; border-radius: 12px;
+    border: 1px solid #232a3a; background: #131826; color: #cfd6e4;
+    font-size: 14px; font-weight: 700; cursor: pointer; }
+  .mchip.gold.active { background: #d4af37; border-color: #d4af37; color: #1a1400; }
+  .mchip.silver.active { background: #c7cdd8; border-color: #c7cdd8; color: #14181f; }
+
   /* One row of controls: carat chips + value toggle + sort */
   .controls { display: flex; gap: 8px; overflow-x: auto; padding: 12px 16px 4px;
     align-items: center; scrollbar-width: none; }
@@ -56,8 +64,13 @@
 <body>
   <header>
     <h1><span class="coin">●</span> Signet Scanner</h1>
-    <p class="sub" id="sub">Heavy solid-gold signets &amp; intaglios · 15g+ · loading…</p>
+    <p class="sub" id="sub">Heavy signets &amp; intaglios · 15g+ · loading…</p>
   </header>
+
+  <div class="metals" id="metals">
+    <div class="mchip gold active" data-m="gold">● Gold</div>
+    <div class="mchip silver" data-m="silver">○ Silver</div>
+  </div>
 
   <div class="controls" id="controls"></div>
   <div class="list" id="list"></div>
@@ -70,12 +83,15 @@
 
 <script>
 const fmtGBP = n => (n == null ? "?" : "£" + Number(n).toLocaleString("en-GB", {maximumFractionDigits: 0}));
-let ALL = [];            // merged records across every carat file
-let META = null;         // meta of the newest file (spot price, timestamp)
-let caratFilter = 0;     // 0 = all | 9 | 14 | 18 | 22
+let ALL = [];            // merged records across every data file (gold + silver)
+let METAS = { gold: null, silver: null };  // newest meta per metal
+let metal = "gold";      // which screen: gold | silver
+let caratFilter = 0;     // 0 = all | 9 | 14 | 18 | 22 (gold screen only)
 let valueOnly = false;
 let privateOnly = false; // 👤 only strict private sellers (individual, modest fb)
 let sortBy = "best";
+const metalOf = r => r.metal === "silver" ? "silver" : "gold";
+const POOL = () => ALL.filter(r => metalOf(r) === metal);
 
 function tlMinutes(s) {
   if (!s || s === "n/a" || s === "ended") return Infinity;
@@ -91,8 +107,8 @@ const SORTS = {
   cheap:  (a, b) => (a.landed_cost ?? 1e12) - (b.landed_cost ?? 1e12),
   ending: (a, b) => tlMinutes(a.time_left) - tlMinutes(b.time_left),
 };
-const shown = () => ALL
-  .filter(r => (!caratFilter || r.carat === caratFilter)
+const shown = () => POOL()
+  .filter(r => (metal === "silver" || !caratFilter || r.carat === caratFilter)
             && (!valueOnly || r.is_value)
             && (!privateOnly || r.seller_private))
   .sort(SORTS[sortBy]);
@@ -117,12 +133,18 @@ function card(rec) {
     : '<span class="ratio ' + ratioClass(rec.ratio) + '">' + rec.ratio.toFixed(2) + '×</span>';
   const bids = (rec.bids === "" || rec.bids == null) ? 0 : rec.bids;
   const intag = (rec.tags || []).includes("intaglio") ? ' <span class="muted">· intaglio</span>' : "";
+  const firstCell = metalOf(rec) === "silver"
+    ? `<span class="kv">Silver <b>${rec.fineness || "925"}</b>${intag}</span>`
+    : `<span class="kv">Carat <b>${rec.carat}ct</b>${intag}</span>`;
+  const perGram = (metalOf(rec) === "silver" && rec.landed_cost && rec.weight_g)
+    ? `<span class="kv">£/g <b>${(rec.landed_cost / rec.weight_g).toFixed(2)}</b></span>` : "";
   return `
     <a class="${cls}" href="${rec.url}" target="_blank" rel="noopener">
       <div class="top"><div class="title">${rec.flag || ""} ${escapeHtml(rec.title)}</div>${tag}</div>
       <div class="row2">
-        <span class="kv">Carat <b>${rec.carat}ct</b>${intag}</span>
+        ${firstCell}
         <span class="kv">Weight <b>${rec.weight_g?.toFixed(1) ?? "?"}g</b></span>
+        ${perGram}
         <span class="kv">Price <b>${fmtGBP(rec.current_bid)}</b>${rec.price_orig ? ` <span class="muted">(${rec.price_orig})</span>` : ""}</span>
         ${rec.country !== "UK" && rec.landed_cost ? `<span class="kv">Landed <b>~${fmtGBP(rec.landed_cost)}</b></span>` : ""}
         <span class="kv">Melt <b>${fmtGBP(rec.melt_value)}</b></span>
@@ -139,16 +161,20 @@ function card(rec) {
 }
 
 function render() {
+  const pool = POOL();
   const rows = shown();
-  const carats = [...new Set(ALL.map(r => r.carat))].sort((a, b) => a - b);
   const chip = (on, v, label, extra) =>
     `<div class="chip ${extra || ""} ${on ? "active" : ""}" data-v="${v}">${label}</div>`;
+  const caratChips = metal === "gold"
+    ? [...new Set(pool.map(r => r.carat))].sort((a, b) => a - b)
+        .map(c => chip(caratFilter === c, c,
+          `${c}ct ${pool.filter(r => r.carat === c).length}`)).join("")
+    : "";
   document.getElementById("controls").innerHTML =
-    chip(!caratFilter, 0, `All ${ALL.length}`) +
-    carats.map(c => chip(caratFilter === c, c,
-      `${c}ct ${ALL.filter(r => r.carat === c).length}`)).join("") +
-    chip(valueOnly, "value", `★ Value ${ALL.filter(r => r.is_value).length}`, "val") +
-    chip(privateOnly, "private", `👤 Private ${ALL.filter(r => r.seller_private).length}`, "val") +
+    chip(metal === "silver" || !caratFilter, 0, `All ${pool.length}`) +
+    caratChips +
+    chip(valueOnly, "value", `★ Value ${pool.filter(r => r.is_value).length}`, "val") +
+    chip(privateOnly, "private", `👤 Private ${pool.filter(r => r.seller_private).length}`, "val") +
     `<select class="sort" id="sort">
        <option value="best" ${sortBy === "best" ? "selected" : ""}>Best value</option>
        <option value="heavy" ${sortBy === "heavy" ? "selected" : ""}>Heaviest</option>
@@ -156,15 +182,26 @@ function render() {
        <option value="ending" ${sortBy === "ending" ? "selected" : ""}>Ending soonest</option>
      </select>`;
 
+  document.querySelectorAll("#metals .mchip").forEach(el =>
+    el.classList.toggle("active", el.dataset.m === metal));
+
+  const META = METAS[metal];
   if (META) {
     const when = new Date(META.generated_at);
+    const what = metal === "silver" ? "sterling-silver" : "solid-gold";
     document.getElementById("sub").innerHTML =
-      `Heavy solid-gold signets &amp; intaglios · <b>15g+</b> · gold ${fmtGBP(META.spot_gbp_per_oz)}/oz` +
-      `<br>${rows.length} shown of ${ALL.length} · updated ${when.toLocaleDateString("en-GB")} ` +
+      `Heavy ${what} signets &amp; intaglios · <b>15g+</b> · ` +
+      `${metal} ${fmtGBP(META.spot_gbp_per_oz)}/oz` +
+      `<br>${rows.length} shown of ${pool.length} · updated ${when.toLocaleDateString("en-GB")} ` +
       when.toLocaleTimeString("en-GB", {hour: "2-digit", minute: "2-digit"});
+  } else if (metal === "silver") {
+    document.getElementById("sub").innerHTML =
+      "Heavy sterling-silver signets &amp; intaglios · <b>15g+</b> · first scan pending";
   }
   document.getElementById("list").innerHTML = rows.length ? rows.map(card).join("")
-    : '<div class="empty">Nothing matches — tap All to clear filters, or check back after the morning scan.</div>';
+    : metal === "silver" && !pool.length
+      ? '<div class="empty">No silver scan yet — the next scheduled run populates this screen.</div>'
+      : '<div class="empty">Nothing matches — tap All to clear filters, or check back after the morning scan.</div>';
 
   document.getElementById("controls").onclick = (e) => {
     const c = e.target.closest(".chip");
@@ -177,6 +214,11 @@ function render() {
   document.getElementById("sort").onchange = (e) => { sortBy = e.target.value; render(); };
 }
 
+document.getElementById("metals").onclick = (e) => {
+  const c = e.target.closest(".mchip");
+  if (c && c.dataset.m !== metal) { metal = c.dataset.m; caratFilter = 0; render(); }
+};
+
 // Load every carat file listed in the index, merge, and de-duplicate by URL
 // (the same ring can surface in two carat scans).
 let lastLoad = 0;
@@ -188,10 +230,11 @@ function loadAll() {
       fetch("./data/" + s.file + "?ts=" + Date.now()).then(r => r.ok ? r.json() : null))))
     .then(files => {
       const seen = new Set();
-      let newest = null;
       const merged = [];
+      const newest = { gold: null, silver: null };
       for (const f of files.filter(Boolean)) {
-        if (!newest || f.meta.generated_at > newest.generated_at) newest = f.meta;
+        const m = f.meta.metal === "silver" ? "silver" : "gold";
+        if (!newest[m] || f.meta.generated_at > newest[m].generated_at) newest[m] = f.meta;
         for (const r of f.results) {
           if (r.url && seen.has(r.url)) continue;
           if (r.url) seen.add(r.url);
@@ -199,7 +242,7 @@ function loadAll() {
         }
       }
       ALL = merged;
-      META = newest;
+      METAS = newest;
       if (!ALL.length) {
         document.getElementById("list").innerHTML =
           '<div class="empty">No rings in the current scan — check back after the morning run.</div>';

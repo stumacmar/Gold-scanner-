@@ -25,9 +25,11 @@ def main():
         except (json.JSONDecodeError, OSError):
             continue
         key = os.path.splitext(os.path.basename(path))[0]
+        label = ("Silver" if meta.get("metal") == "silver"
+                 else f"{meta.get('default_carat', key)}ct")
         searches.append({
             "key": key,
-            "label": f"{meta.get('default_carat', key)}ct",
+            "label": label,
             "file": os.path.basename(path),
             "query": meta.get("query", ""),
             "generated_at": meta.get("generated_at"),
@@ -35,12 +37,12 @@ def main():
             "total_analysed": meta.get("total_analysed", 0),
         })
 
-    # Order by carat ascending where possible.
+    # Order by carat ascending where possible; Silver goes last.
     def sort_key(s):
         try:
             return int(str(s["label"]).replace("ct", ""))
         except ValueError:
-            return 999
+            return 999   # "Silver" and anything non-numeric
     searches.sort(key=sort_key)
 
     latest = max((s["generated_at"] for s in searches if s["generated_at"]),

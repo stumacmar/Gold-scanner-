@@ -56,6 +56,12 @@ jobs:
           python gold_ring_scanner.py --default-carat 18 $COMMON --min-price 700  --json data/18ct.json --csv data/18ct.csv
           sleep 20
           python gold_ring_scanner.py --default-carat 22 $COMMON --min-price 850  --json data/22ct.json --csv data/22ct.csv
+          sleep 20
+          # Silver screen: heavy sterling signets/intaglios. Lower price band
+          # (silver melt is small; heavy sterling signets sell ~£30-300).
+          python gold_ring_scanner.py --metal silver --max-price 600 --min-price 15 \
+            --limit 250 --conditions ANY --markets $MARKETS \
+            --json data/silver.json --csv data/silver.csv
           python scripts/build_index.py
 
       - name: Commit updated scan data
