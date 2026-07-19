@@ -133,6 +133,21 @@ auction **and** Buy-It-Now (`--conditions ANY`).
 | `MELT_THRESHOLD` | `1.3` | value flag: `landed_cost < melt × threshold` (confirmed weight only) |
 | `SUSPECT_RATIO` | `2.5` | melt/landed above this is demoted as too-good-to-be-true |
 
+### Silver screen (`--metal silver`)
+
+A second dashboard screen lists **heavy sterling-silver signets/intaglios**
+under the same strict rules (signet/intaglio only, seller-stated weight ≥
+`SILVER_WEIGHT_FLOOR` = 15 g). Differences from gold mode: melt uses the live
+**silver** spot (gold-api.com XAG) and the **fineness mark** (925 sterling,
+continental 958/900/835/830/800; "sterling" ⇒ 925); listings carrying an
+explicit gold carat/fineness are excluded (a gold ring mentioning "silver"
+must not leak in), as are plated/vermeil/costume pieces. Silver trades much
+further above melt than gold, so the value flag uses
+`SILVER_MELT_THRESHOLD` (2.0×), and cards show **£/gram** — the honest way to
+compare heavy silver. The workflow writes `data/silver.json` daily alongside
+the four gold carat files; the dashboard's **Gold/Silver** switcher selects
+the screen.
+
 Every scan prints a **per-market yield log** (`raw → kept → value`), a
 weight-confidence tally, and the eBay API call count, so coverage leaks and
 quota spend are visible.

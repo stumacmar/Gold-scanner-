@@ -58,6 +58,33 @@ class TestWeightParsing(unittest.TestCase):
         self.assertIsNone(g.parse_weight_grams("Goldring 585 Gr. 60"))
 
 
+class TestSilverMode(unittest.TestCase):
+    def test_fineness_marks(self):
+        self.assertEqual(g.detect_silver_fineness("Siegelring Silber 925")[0], 0.925)
+        self.assertEqual(g.detect_silver_fineness("chevalière argent 800")[0], 0.800)
+        self.assertEqual(g.detect_silver_fineness("silver ring 835 continental")[0], 0.835)
+
+    def test_sterling_word_means_925(self):
+        frac, mark, assumed = g.detect_silver_fineness("sterling silver signet ring")
+        self.assertEqual((frac, mark, assumed), (0.925, "925", False))
+
+    def test_no_mark_assumes_925(self):
+        frac, mark, assumed = g.detect_silver_fineness("solid silver signet ring")
+        self.assertEqual((frac, assumed), (0.925, True))
+
+    def test_gold_ring_excluded_from_silver(self):
+        # A gold signet mentioning silver must not leak into the silver screen.
+        self.assertTrue(g.is_silver_excluded("9ct gold signet ring with silver box"))
+        self.assertTrue(g.is_silver_excluded("Goldring 585 Siegelring"))
+
+    def test_plated_and_vermeil_excluded(self):
+        self.assertTrue(g.is_silver_excluded("silver plated signet ring"))
+        self.assertTrue(g.is_silver_excluded("vermeil sterling signet ring"))
+
+    def test_solid_sterling_kept(self):
+        self.assertFalse(g.is_silver_excluded("sterling silver signet ring 925 22g"))
+
+
 class TestClassifySeller(unittest.TestCase):
     def test_private_individual(self):
         t, fb, priv = g.classify_seller(
