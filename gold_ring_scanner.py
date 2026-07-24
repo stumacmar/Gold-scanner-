@@ -192,7 +192,9 @@ SILVER_PLATED_MARKERS = [
 YURMAN_QUERY_TEMPLATES = {          # brand names aren't translated -- same
     "en": ["David Yurman signet ring", "David Yurman mens ring",
            "David Yurman pinky ring", "Yurman signet ring",
-           "David Yurman ring men"],
+           "David Yurman ring men",
+           # feeds the Meteorite page (a filtered view of this dataset)
+           "David Yurman meteorite ring", "David Yurman meteorite signet"],
 }
 YURMAN_FAKE_MARKERS = [             # "genuine brand claims only"
     "yurman style", "style of", "in the style", "inspired", "dupe",
@@ -1270,6 +1272,7 @@ def analyse(items, token, spot_per_oz, fx=None):
             "ratio": ratio,                  # melt / landed cost
             "is_value": is_value,
             "buying": buying_type(item),
+            "condition": item.get("condition"),   # "Pre-owned" / "New ..." etc
             "time_left": time_left(item.get("itemEndDate")),
             "bids": item.get("bidCount", ""),
             "url": item.get("itemWebUrl", ""),
