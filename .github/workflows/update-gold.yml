@@ -62,6 +62,12 @@ jobs:
           python gold_ring_scanner.py --metal silver --max-price 600 --min-price 15 \
             --limit 250 --conditions ANY --markets $MARKETS \
             --json data/silver.json --csv data/silver.csv
+          sleep 20
+          # Yurman screen: brand hunt, no weight floor, no melt. Cheap on
+          # quota (no detail fetches -- ~130 search calls).
+          python gold_ring_scanner.py --metal yurman --max-price 3000 --min-price 40 \
+            --limit 200 --conditions ANY --markets $MARKETS \
+            --json data/yurman.json --csv data/yurman.csv
           python scripts/build_index.py
 
       - name: Commit updated scan data

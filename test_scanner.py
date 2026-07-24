@@ -85,6 +85,31 @@ class TestSilverMode(unittest.TestCase):
         self.assertFalse(g.is_silver_excluded("sterling silver signet ring 925 22g"))
 
 
+class TestYurmanMode(unittest.TestCase):
+    def test_non_brand_search_noise_excluded(self):
+        self.assertTrue(g.is_yurman_excluded("sterling silver signet ring mens"))
+
+    def test_lookalikes_excluded(self):
+        # "Genuine brand claims only" -- style/inspired/replica are rejected.
+        self.assertTrue(g.is_yurman_excluded("David Yurman style cable signet ring"))
+        self.assertTrue(g.is_yurman_excluded("signet ring inspired by Yurman"))
+        self.assertTrue(g.is_yurman_excluded("Yurman replica mens ring 925"))
+
+    def test_genuine_claim_kept(self):
+        self.assertFalse(g.is_yurman_excluded(
+            "David Yurman Streamline Signet Ring Sterling Silver 925 Size 10"))
+
+    def test_no_weight_needed_in_brand_mode(self):
+        # Brand hunt: a weightless Yurman signet is still kept.
+        old = g.METAL
+        g.METAL = "yurman"
+        try:
+            a = g.assess_ring("David Yurman signet ring sterling", None, None)
+            self.assertTrue(a["keep"])
+        finally:
+            g.METAL = old
+
+
 class TestClassifySeller(unittest.TestCase):
     def test_private_individual(self):
         t, fb, priv = g.classify_seller(
