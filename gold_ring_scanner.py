@@ -183,11 +183,34 @@ SILVER_PLATED_MARKERS = [
     "base metal", "stainless", "tungsten", "titanium", "brass",
 ]
 
+# --- Yurman mode (--metal yurman) ------------------------------------------
+# Third screen: David Yurman signet rings worldwide. A BRAND hunt, not a melt
+# hunt: Yurman is mostly sterling or silver+18k two-tone (melt on the stated
+# weight is fiction) and sellers rarely state weights, so there is no weight
+# floor and no value flag -- price, seller type and country are the signals.
+# Only listings claiming the genuine brand are kept; lookalikes are rejected.
+YURMAN_QUERY_TEMPLATES = {          # brand names aren't translated -- same
+    "en": ["David Yurman signet ring", "David Yurman mens ring",
+           "David Yurman pinky ring", "Yurman signet ring",
+           "David Yurman ring men"],
+}
+YURMAN_FAKE_MARKERS = [             # "genuine brand claims only"
+    "yurman style", "style of", "in the style", "inspired", "dupe",
+    "replica", "repro", "reproduction", "faux", "copy", "like yurman",
+    "similar to", "compare to", "unbranded", "not yurman", "dy style",
+    "homage", "lookalike", "look-alike",
+]
+
 
 def queries_for(market, carat, extra=(), metal="gold"):
     """Build the de-duplicated localised+English query list for a market/carat."""
     lang = MARKET_LANG.get(market, "en")
-    templates = SILVER_QUERY_TEMPLATES if metal == "silver" else QUERY_TEMPLATES
+    if metal == "yurman":
+        templates, lang = YURMAN_QUERY_TEMPLATES, "en"
+    elif metal == "silver":
+        templates = SILVER_QUERY_TEMPLATES
+    else:
+        templates = QUERY_TEMPLATES
     f = LOCAL_FINENESS.get(carat, str(carat))
     terms = [t.format(c=carat, f=f) for t in templates.get(lang, [])]
     if lang != "en":                       # cross-border English sellers too
@@ -707,8 +730,11 @@ def assess_ring(text, carat, stated_weight):
     # Gold-light showcases: the gold is a minor fraction -> reject. Either an
     # explicit showcase word, or >= 2 different gem families named (the gold
     # is a mount for the stones, so weight-based melt is meaningless).
-    if (any(w in low for w in STONE_SHOWCASE_WORDS)
-            or distinct_stone_families(text) >= SHOWCASE_MIN_DISTINCT_STONES):
+    # Brand mode skips this: no melt is computed, and stone-set Yurman
+    # signets are legitimate brand pieces.
+    if (METAL != "yurman"
+            and (any(w in low for w in STONE_SHOWCASE_WORDS)
+                 or distinct_stone_families(text) >= SHOWCASE_MIN_DISTINCT_STONES)):
         return {"keep": False, "confidence": "reject", "gross_g": None,
                 "net_gold_g": None, "stones": True, "tags": tags}
 
@@ -735,8 +761,11 @@ def assess_ring(text, carat, stated_weight):
     net = round(gross - allowance, 1) if gross is not None else None
 
     # Weight-window test against NET gold weight. In strict mode only a
-    # seller-stated weight inside [floor, ceiling] survives.
-    if confidence == "confirmed":
+    # seller-stated weight inside [floor, ceiling] survives. Brand mode
+    # (yurman) has no weight requirement at all -- it's not a melt hunt.
+    if METAL == "yurman":
+        keep = True
+    elif confidence == "confirmed":
         keep = (net is not None
                 and WEIGHT_FLOOR_CONFIRMED <= net <= WEIGHT_CEILING_CONFIRMED)
     elif confidence == "estimated":
@@ -790,6 +819,14 @@ def is_silver_excluded(text):
         return True
     carat, assumed = detect_carat(low)
     return not assumed          # an explicit gold carat/fineness mark -> gold ring
+
+
+def is_yurman_excluded(text):
+    """Yurman-mode reject: not claiming the brand, or a lookalike/replica."""
+    low = (text or "").lower()
+    if "yurman" not in low:
+        return True                 # search noise -- brand not even claimed
+    return any(m in low for m in YURMAN_FAKE_MARKERS)
 
 
 def is_plated(text):
@@ -1113,8 +1150,11 @@ def analyse(items, token, spot_per_oz, fx=None):
         market = item.get("_market_id", "EBAY_GB")
         currency = item.get("_currency", "GBP")
 
-        # 1. Reject wrong-metal / plated and unwanted types (coins, bundles).
-        if METAL == "silver":
+        # 1. Reject wrong-metal / plated / lookalike and unwanted types.
+        if METAL == "yurman":
+            if is_yurman_excluded(text) or is_excluded(text):
+                continue
+        elif METAL == "silver":
             if is_silver_excluded(text) or is_excluded(text):
                 continue
         elif is_plated(text) or is_excluded(text):
@@ -1125,6 +1165,9 @@ def analyse(items, token, spot_per_oz, fx=None):
         #    (20.1) overriding the seller's stated title weight (10,20g).
         if METAL == "silver":
             fineness_frac, fineness_mark, carat_assumed = detect_silver_fineness(text)
+            carat = None
+        elif METAL == "yurman":
+            fineness_frac, fineness_mark, carat_assumed = None, None, False
             carat = None
         else:
             fineness_frac, fineness_mark = None, None
@@ -1145,6 +1188,7 @@ def analyse(items, token, spot_per_oz, fx=None):
         #    a signet/intaglio word is dropped later regardless.
         on_target = not REQUIRED_TAGS or bool(set(style_tags(text)) & set(REQUIRED_TAGS))
         if (weight is None and not is_variant and on_target and FETCH_FULL_DETAILS
+                and METAL != "yurman"   # brand mode needs no weight -> save quota
                 and (MAX_DETAIL_FETCHES == 0 or detail_fetches < MAX_DETAIL_FETCHES)):
             detail_fetches += 1
             full = fetch_item_description(token, item.get("itemId", ""), market)
@@ -1180,22 +1224,25 @@ def analyse(items, token, spot_per_oz, fx=None):
         if raw_bid is not None and currency != "GBP":
             price_orig = f"{_CURRENCY_SYMBOL.get(currency, '')}{raw_bid:,.0f}"
 
-        if METAL == "silver":
-            fraction = fineness_frac
-        else:
-            fraction = CARAT_FRACTION.get(carat, CARAT_FRACTION[DEFAULT_CARAT])
-        content_per_gram = spot_per_gram_fine * fraction
-
-        melt = round(net_gold * content_per_gram, 2) if net_gold else None
         country = item.get("_country", "UK")
         # True £ cost to a UK buyer (adds import VAT + postage for non-UK).
         landed = landed_cost(bid, country)
-        ratio = round(melt / landed, 2) if (melt and landed) else None
 
-        # VALUE flag: landed cost below melt * threshold, CONFIRMED weight only.
-        # Net-gold already excludes stone mass, so stone-set signets can
-        # legitimately qualify. Estimated/unknown weights never flag value.
-        is_value = value_flag(melt, landed, confidence)
+        if METAL == "yurman":
+            # Brand hunt: melt on mixed-metal branded pieces is fiction.
+            melt, ratio, is_value = None, None, False
+        else:
+            if METAL == "silver":
+                fraction = fineness_frac
+            else:
+                fraction = CARAT_FRACTION.get(carat, CARAT_FRACTION[DEFAULT_CARAT])
+            content_per_gram = spot_per_gram_fine * fraction
+            melt = round(net_gold * content_per_gram, 2) if net_gold else None
+            ratio = round(melt / landed, 2) if (melt and landed) else None
+            # VALUE flag: landed cost below melt * threshold, CONFIRMED weight
+            # only. Net-gold already excludes stone mass, so stone-set signets
+            # can legitimately qualify. Estimated/unknown never flag value.
+            is_value = value_flag(melt, landed, confidence)
 
         stype, fb, is_priv = classify_seller(
             item.get("seller"), item.get("topRatedBuyingExperience", False))
@@ -1344,9 +1391,10 @@ def parse_args():
                         "from the output")
     p.add_argument("--conditions", default="USED", choices=["USED", "ANY"],
                    help="USED only, or ANY condition (captures dealer 'New')")
-    p.add_argument("--metal", default="gold", choices=["gold", "silver"],
-                   help="gold (default) or silver: sterling-silver signet mode "
-                        "with live silver spot and 925/800 fineness parsing")
+    p.add_argument("--metal", default="gold", choices=["gold", "silver", "yurman"],
+                   help="gold (default), silver (sterling signet mode with live "
+                        "silver spot), or yurman (David Yurman brand hunt: no "
+                        "weight floor, no melt -- genuine-brand claims only)")
     return p.parse_args()
 
 
@@ -1373,13 +1421,16 @@ def main():
         markets = ["EBAY_GB"]
 
     print(f"\neBay {METAL.title()} Ring Scanner")
-    print(f"  {'metal=silver' if METAL == 'silver' else f'carat={args.default_carat}'}  "
+    print(f"  {f'metal={METAL}' if METAL != 'gold' else f'carat={args.default_carat}'}  "
           f"buying={args.buying}  conditions={args.conditions}  "
           f"price=£{args.min_price:.0f}-£{args.max_price:.0f}  "
           f"floors: confirmed>={WEIGHT_FLOOR_CONFIRMED}g estimated>={WEIGHT_FLOOR_ESTIMATED_LOWBOUND}g  "
           f"limit={args.limit}/mkt  markets={len(markets)}  threshold={MELT_THRESHOLD}")
 
-    if METAL == "silver":
+    if METAL == "yurman":
+        spot, source = 0.0, "n/a (brand mode -- no melt)"
+        print("  brand mode: David Yurman -- no melt valuation")
+    elif METAL == "silver":
         spot, source = get_silver_spot_gbp_per_oz()
         print(f"  silver spot: £{spot:,.2f}/oz  (source: {source})")
     else:

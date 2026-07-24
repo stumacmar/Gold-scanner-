@@ -25,7 +25,9 @@ def main():
         except (json.JSONDecodeError, OSError):
             continue
         key = os.path.splitext(os.path.basename(path))[0]
-        label = ("Silver" if meta.get("metal") == "silver"
+        metal = meta.get("metal")
+        label = ("Silver" if metal == "silver"
+                 else "Yurman" if metal == "yurman"
                  else f"{meta.get('default_carat', key)}ct")
         searches.append({
             "key": key,

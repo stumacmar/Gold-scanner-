@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-19T09:10:48.283140+00:00",
+    "generated_at": "2026-07-24T09:14:50.343646+00:00",
     "query": "22ct gold signet ring",
     "queries": [
       "22ct gold signet ring",
@@ -31,6 +31,7 @@
       "złoty sygnet 916"
     ],
     "buying": "both",
+    "metal": "gold",
     "default_carat": 22,
     "markets": [
       "EBAY_GB",
@@ -55,31 +56,31 @@
     "conditions": "ANY",
     "max_price": 6000.0,
     "threshold": 1.3,
-    "spot_gbp_per_oz": 2991.12290346531,
-    "spot_source": "gold-api.com x frankfurter (live, $4,019/oz)",
+    "spot_gbp_per_oz": 3037.66008,
+    "spot_source": "gold-api.com x frankfurter (live, $4,056.00/oz)",
     "carat_per_gram": {
-      "8": 32.02,
-      "9": 36.06,
-      "10": 40.1,
-      "14": 56.26,
-      "15": 60.1,
-      "18": 72.13,
-      "20": 80.11,
-      "22": 88.15,
-      "24": 96.07
+      "8": 32.52,
+      "9": 36.62,
+      "10": 40.73,
+      "14": 57.13,
+      "15": 61.04,
+      "18": 73.25,
+      "20": 81.35,
+      "22": 89.52,
+      "24": 97.57
     },
     "fx_to_gbp": {
       "GBP": 1.0,
-      "AUD": 0.5191,
-      "CAD": 0.5307,
-      "CHF": 0.9222,
-      "EUR": 0.851,
-      "HKD": 0.0949,
-      "PLN": 0.1957,
-      "SGD": 0.5763,
-      "USD": 0.7442
+      "AUD": 0.5237,
+      "CAD": 0.5321,
+      "CHF": 0.9179,
+      "EUR": 0.8532,
+      "HKD": 0.0955,
+      "PLN": 0.1972,
+      "SGD": 0.5799,
+      "USD": 0.749
     },
-    "total_fetched": 643,
+    "total_fetched": 650,
     "total_analysed": 3,
     "value_count": 0,
     "weight_unknown_count": 0,
@@ -92,10 +93,12 @@
   "results": [
     {
       "title": "Authentic K18PG Signet Diamond Ring 0.22CT #260-008-143-8013",
+      "metal": "gold",
       "carat": 22,
+      "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 14304,
+      "seller_feedback": 14355,
       "seller_private": false,
       "weight_g": 17.9,
       "net_gold_g": 16.4,
@@ -107,25 +110,27 @@
         "gents"
       ],
       "stones": true,
-      "current_bid": 3520.84,
-      "landed_cost": 3524.84,
+      "current_bid": 3050.61,
+      "landed_cost": 3054.61,
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 1445.6,
-      "ratio": 0.41,
+      "melt_value": 1468.09,
+      "ratio": 0.48,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/406868725856?_skw=22ct+gold+signet+ring&hash=item5ebb441060:g:KPYAAeSwm6Zp53Zk"
+      "url": "https://www.ebay.co.uk/itm/406868725856?_skw=22ct+gold+signet+ring&hash=item5ebb441060:g:6vsAAeSwwrlqXltb"
     },
     {
       "title": "Authentic K18PG Signet Diamond Ring 0.22CT #260-008-143-8013",
+      "metal": "gold",
       "carat": 22,
+      "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 14304,
+      "seller_feedback": 14355,
       "seller_private": false,
       "weight_g": 17.9,
       "net_gold_g": 16.4,
@@ -137,22 +142,24 @@
         "gents"
       ],
       "stones": true,
-      "current_bid": 3520.89,
-      "landed_cost": 4267.07,
-      "price_orig": "6,783",
+      "current_bid": 3077.32,
+      "landed_cost": 3734.78,
+      "price_orig": "5,876",
       "country": "AU",
       "flag": "🇦🇺",
-      "melt_value": 1445.6,
-      "ratio": 0.34,
+      "melt_value": 1468.09,
+      "ratio": 0.39,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com.au/itm/298240951024?_skw=22ct+gold+signet+ring&hash=item45708bc2f0:g:KPYAAeSwm6Zp53Zk"
+      "url": "https://www.ebay.com.au/itm/298240951024?_skw=22ct+gold+signet+ring&hash=item45708bc2f0:g:6vsAAeSwwrlqXltb"
     },
     {
       "title": "18kt gepunzt Weiß-, Gelb-, Roségold Siegelring 13mm x16mm oval oder Kissen",
+      "metal": "gold",
       "carat": 18,
+      "fineness": null,
       "carat_assumed": false,
       "seller_type": "private",
       "seller_feedback": 864,
@@ -166,18 +173,18 @@
         "gents"
       ],
       "stones": true,
-      "current_bid": 2882.15,
-      "landed_cost": 3484.98,
-      "price_orig": "€3,387",
+      "current_bid": 2875.68,
+      "landed_cost": 3477.22,
+      "price_orig": "€3,371",
       "country": "DE",
       "flag": "🇩🇪",
-      "melt_value": 1226.13,
-      "ratio": 0.35,
+      "melt_value": 1245.2,
+      "ratio": 0.36,
       "is_value": false,
       "buying": "Buy now",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.de/itm/254195547625?_skw=Siegelring+Gold+916&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fGZQuBDKBmK7YTeGO5fPO25SaSgkpVjb639TkVF05OppcrJoudQ6VCVpWizG9%2FqSjjuACQ%2BWYIveHvlWamHyjEF%2F99hYMJc400vDtZD0EgO6QyiBoqEUj2kKPDAyOyz%2BcupLb%2FtNenpOxNrxzEI5ONQ4briW1W3DPeD7cqq2rJ3uQ%3D%3D"
+      "url": "https://www.ebay.de/itm/254195547625?_skw=Siegelring+Gold+916&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fGfQBczfc85NdZBcHgw7TpDqIS1FhkjokoC9Z%2FETgSpxyLUq2c3uYvm%2BclYrGVcjOJM%2BSpKm8Bt%2BF17qGQvG%2B0JiCjEQTDR8AdsrWQmZRRByveuzQjc8sSizRBATWAc%2BWf%2BiX7lCzlkHjr9Ns0qzW3PbsxeZXvQtvtb1a9hXB6tow%3D%3D"
     }
   ]
 }
