@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-24T17:04:41.504811+00:00",
+    "generated_at": "2026-07-25T20:55:03.051695+00:00",
     "query": "22ct gold signet ring",
     "queries": [
       "22ct gold signet ring",
@@ -56,18 +56,18 @@
     "conditions": "ANY",
     "max_price": 6000.0,
     "threshold": 1.3,
-    "spot_gbp_per_oz": 3053.75650077597,
-    "spot_source": "gold-api.com x frankfurter (live, $4,068.80/oz)",
+    "spot_gbp_per_oz": 3042.42342422403,
+    "spot_source": "gold-api.com x frankfurter (live, $4,053.70/oz)",
     "carat_per_gram": {
-      "8": 32.69,
-      "9": 36.82,
-      "10": 40.94,
-      "14": 57.44,
-      "15": 61.36,
-      "18": 73.64,
-      "20": 81.78,
-      "22": 89.99,
-      "24": 98.08
+      "8": 32.57,
+      "9": 36.68,
+      "10": 40.79,
+      "14": 57.22,
+      "15": 61.14,
+      "18": 73.36,
+      "20": 81.48,
+      "22": 89.66,
+      "24": 97.72
     },
     "fx_to_gbp": {
       "GBP": 1.0,
@@ -80,7 +80,7 @@
       "SGD": 0.5814,
       "USD": 0.7505
     },
-    "total_fetched": 650,
+    "total_fetched": 668,
     "total_analysed": 3,
     "value_count": 0,
     "weight_unknown_count": 0,
@@ -98,7 +98,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 14356,
+      "seller_feedback": 14372,
       "seller_private": false,
       "weight_g": 17.9,
       "net_gold_g": 16.4,
@@ -115,10 +115,11 @@
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 1475.87,
+      "melt_value": 1470.4,
       "ratio": 0.48,
       "is_value": false,
       "buying": "Buy now",
+      "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/406868725856?_skw=22ct+gold+signet+ring&hash=item5ebb441060:g:6vsAAeSwwrlqXltb"
@@ -130,7 +131,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 14356,
+      "seller_feedback": 14372,
       "seller_private": false,
       "weight_g": 17.9,
       "net_gold_g": 16.4,
@@ -147,10 +148,11 @@
       "price_orig": "5,876",
       "country": "AU",
       "flag": "🇦🇺",
-      "melt_value": 1475.87,
+      "melt_value": 1470.4,
       "ratio": 0.39,
       "is_value": false,
       "buying": "Buy now",
+      "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/298240951024?_skw=22ct+gold+signet+ring&hash=item45708bc2f0:g:6vsAAeSwwrlqXltb"
@@ -173,18 +175,19 @@
         "gents"
       ],
       "stones": true,
-      "current_bid": 2878.14,
-      "landed_cost": 3480.17,
-      "price_orig": "€3,371",
+      "current_bid": 2882.08,
+      "landed_cost": 3484.9,
+      "price_orig": "€3,375",
       "country": "DE",
       "flag": "🇩🇪",
-      "melt_value": 1251.8,
+      "melt_value": 1247.16,
       "ratio": 0.36,
       "is_value": false,
       "buying": "Buy now",
+      "condition": "New without tags",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.de/itm/254195547625?_skw=Siegelring+Gold+916&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fH1r61rZA%2FOAjPnoN0DmmkzS3TyHch6uSY9NCIcWKGVjr0I27rgxoxGkdagnRE1Ozsl6MOiRXiMwuSEfBxOUmd1JikcJf01BRBmm4v0blswK4bezef4w9a39aUZWNqPW6QuxAl3FJH1CuUVtxVFbUvhmCsoTfz8q7FyXGwJj80rHQ%3D%3D"
+      "url": "https://www.ebay.de/itm/254195547625?_skw=Siegelring+Gold+916&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fEDSXgtE4QqG88AZtDfe48F8HKSq9Q8F9jp89MGGfpgKpAE2ilIaVxlxGyKHF4%2FRCW9hPtuejGdP3OWz7U%2FuSOOqcMo0zerjLmRlBCpgU8gsnmG48IDo96%2FSEJnBSmjk75kkQ%2FljbAVJM1Em5j%2FmJF4BC2arIS9HSalTJLyL14HHA%3D%3D"
     }
   ]
 }
