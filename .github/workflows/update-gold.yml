@@ -23,6 +23,9 @@ permissions:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    # Bound the run well under any external cancellation, so the commit step
+    # below still gets to save whatever scans DID finish.
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
 
@@ -33,7 +36,8 @@ jobs:
       - name: Install dependencies
         run: pip install requests python-dotenv
 
-      - name: Run scans (one per carat) and build index
+      - name: Run scans (one per screen)
+        continue-on-error: true
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
@@ -49,28 +53,32 @@ jobs:
           # review lane (kept, never dropped). Only CONFIRMED weights can flag
           # "value" -- a buy signal never rests on a guessed weight.
           COMMON="--max-price 6000 --limit 250 --min-weight 15 --conditions ANY --markets $MARKETS"
-          python gold_ring_scanner.py --default-carat 9  $COMMON --min-price 350  --json data/9ct.json  --csv data/9ct.csv
+          python gold_ring_scanner.py --default-carat 9  $COMMON --min-price 350  --json data/9ct.json  --csv data/9ct.csv || echo '[warn] scan failed; continuing'
           sleep 20
-          python gold_ring_scanner.py --default-carat 14 $COMMON --min-price 550  --json data/14ct.json --csv data/14ct.csv
+          python gold_ring_scanner.py --default-carat 14 $COMMON --min-price 550  --json data/14ct.json --csv data/14ct.csv || echo '[warn] scan failed; continuing'
           sleep 20
-          python gold_ring_scanner.py --default-carat 18 $COMMON --min-price 700  --json data/18ct.json --csv data/18ct.csv
+          python gold_ring_scanner.py --default-carat 18 $COMMON --min-price 700  --json data/18ct.json --csv data/18ct.csv || echo '[warn] scan failed; continuing'
           sleep 20
-          python gold_ring_scanner.py --default-carat 22 $COMMON --min-price 850  --json data/22ct.json --csv data/22ct.csv
+          python gold_ring_scanner.py --default-carat 22 $COMMON --min-price 850  --json data/22ct.json --csv data/22ct.csv || echo '[warn] scan failed; continuing'
           sleep 20
           # Silver screen: heavy sterling signets/intaglios. Lower price band
           # (silver melt is small; heavy sterling signets sell ~£30-300).
           python gold_ring_scanner.py --metal silver --max-price 600 --min-price 15 \
             --limit 250 --conditions ANY --markets $MARKETS \
-            --json data/silver.json --csv data/silver.csv
+            --json data/silver.json --csv data/silver.csv || echo '[warn] silver scan failed'
           sleep 20
           # Yurman screen: brand hunt, no weight floor, no melt. Cheap on
           # quota (no detail fetches -- ~130 search calls).
           python gold_ring_scanner.py --metal yurman --max-price 3000 --min-price 40 \
             --limit 200 --conditions ANY --markets $MARKETS \
-            --json data/yurman.json --csv data/yurman.csv
-          python scripts/build_index.py
+            --json data/yurman.json --csv data/yurman.csv || echo '[warn] yurman scan failed'
+
+      - name: Build dashboard index
+        if: always()
+        run: python scripts/build_index.py
 
       - name: Commit updated scan data
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

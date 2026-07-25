@@ -1010,10 +1010,14 @@ def search_listings(token, queries, max_price_gbp, max_items, buying="both",
 
     seen = set()
     items = []
+    # eBay requires `offset` to be a MULTIPLE of `limit` (error 12515), so the
+    # page size must stay CONSTANT for the whole of a query's pagination. A
+    # shrinking page (limit = remaining budget) 400s every request after the
+    # first and silently loses that market/query slice.
+    page = min(PAGE_SIZE, max_items)
     for query in queries:
         offset = 0
         while len(items) < max_items:
-            page = min(PAGE_SIZE, max_items - len(items))
             params = {
                 "q": query,
                 "filter": item_filter,
