@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-25T20:46:46.035012+00:00",
+    "generated_at": "2026-07-26T08:56:20.311319+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,12 +80,11 @@
       "SGD": 0.5814,
       "USD": 0.7505
     },
-    "total_fetched": 1557,
-    "total_analysed": 5,
+    "total_fetched": 1565,
+    "total_analysed": 4,
     "value_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
-      "CH": 1,
       "PL": 1,
       "UK": 2,
       "US": 1
@@ -185,38 +184,6 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com/itm/123865927591?_skw=9ct+gold+signet+ring&hash=item1cd6fc0fa7:g:~D0AAOSwUMBb9ug~"
-    },
-    {
-      "title": "Vintage Herren Siegelring 9 kt Gold | großer ovaler Gold Siegelring | Englisch",
-      "metal": "gold",
-      "carat": 9,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": "business",
-      "seller_feedback": 4040,
-      "seller_private": false,
-      "weight_g": 16.2,
-      "net_gold_g": 16.2,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "vintage",
-        "gents"
-      ],
-      "stones": false,
-      "current_bid": 2499.06,
-      "landed_cost": 3030.07,
-      "price_orig": "2,722",
-      "country": "CH",
-      "flag": "🇨🇭",
-      "melt_value": 594.23,
-      "ratio": 0.2,
-      "is_value": false,
-      "buying": "Buy now",
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.ch/itm/267701971282?_skw=9ct+gold+signet+ring&hash=item3e5447e952:g:VI0AAeSwI4tqMpL4"
     },
     {
       "title": "Klasyczny sygnet w kształcie poduszki x/ duży \"dostępny w kolorze platyny, złota i srebra\"",

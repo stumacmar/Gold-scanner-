@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-25T20:53:05.070556+00:00",
+    "generated_at": "2026-07-26T09:02:07.255132+00:00",
     "query": "18ct gold signet ring",
     "queries": [
       "18ct gold signet ring",
@@ -80,8 +80,8 @@
       "SGD": 0.5814,
       "USD": 0.7505
     },
-    "total_fetched": 1457,
-    "total_analysed": 22,
+    "total_fetched": 1446,
+    "total_analysed": 23,
     "value_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
@@ -89,7 +89,7 @@
       "AU": 1,
       "DE": 1,
       "IE": 2,
-      "IT": 2,
+      "IT": 3,
       "NL": 4,
       "PL": 1,
       "SG": 3,
@@ -189,7 +189,7 @@
       "condition": "New without tags",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fHCrx1xlFk7ya5%2FGP3pLiEOhV41m9tnEtZ1NB45Yq4p9J5PxFLt3Cc6DafFX%2FCeKTirKIJzgk9CZcFMviqLOSF7jJKiJGL14YDXfr4f7WiDMbi4ZA6W%2BL0Q8uS3RvnKUlooidyv%2FAVBLZIJbvfEfAyjzJ%2BH6wDkDn567JWj%2FxdqPg%3D%3D"
+      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fH4Hu0FeaITaV7nQ8UN4VWwOATwT0pvg8PixmBVAZVife%2B9WaMUcmXJa%2BzAd0Ry%2F3y7%2F7qa43TLwu6%2BwmVtwczhAZY%2FAuSD0rHPy%2Fva2vVnqri207Sz79rVyc%2BvMFsYe7o%2FOE9XNaYcBLRjUF1O9Ae%2FmZx4DKFCK5bBS5lZDB%2FLgQ%3D%3D"
     },
     {
       "title": "18ct 18K Yellow Gold Men’s Signet Ring With Diamonds TDW 1.53ct Size Z+2. New",
@@ -442,7 +442,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 3078,
+      "seller_feedback": 3080,
       "seller_private": false,
       "weight_g": 16.2,
       "net_gold_g": 16.2,
@@ -498,6 +498,36 @@
       "url": "https://www.ebay.it/itm/184498496494?_skw=anello+sigillo+oro+750&hash=item2af4f7a3ee:g:ZDsAAOSwCj9fhvda"
     },
     {
+      "title": "Anello NYJEWEL David Webb grande in oro 18 carati e platino con sigillo 5 diamanti",
+      "metal": "gold",
+      "carat": 18,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 10277,
+      "seller_private": false,
+      "weight_g": 18.9,
+      "net_gold_g": 17.4,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": true,
+      "current_bid": 5219.52,
+      "landed_cost": 6289.82,
+      "price_orig": "€6,113",
+      "country": "IT",
+      "flag": "🇮🇹",
+      "melt_value": 1276.5,
+      "ratio": 0.2,
+      "is_value": false,
+      "buying": "Buy now",
+      "condition": "Pre-owned - Good",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.it/itm/176706538119?_skw=anello+sigillo+oro+750&hash=item292487ca87:g:FKkAAOSwyMVnQ1-4"
+    },
+    {
       "title": "0.404ct Diamond Hexagon Signet Ring K18 YG Pt900 Two Tone Heavy 25.4g",
       "metal": "gold",
       "carat": 18,
@@ -529,36 +559,6 @@
       "url": "https://www.ebay.nl/itm/278114592479?_skw=18ct+gold+signet+ring&hash=item40c0ebe6df:g:o0oAAeSwCVRqD7LY"
     },
     {
-      "title": "0.596ct Natural Diamond Signet Ring K18YG Pt900 Combi Two-Tone",
-      "metal": "gold",
-      "carat": 18,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": "business",
-      "seller_feedback": 639,
-      "seller_private": false,
-      "weight_g": 20.7,
-      "net_gold_g": 19.2,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet"
-      ],
-      "stones": true,
-      "current_bid": 4675.61,
-      "landed_cost": 5637.13,
-      "price_orig": "€5,476",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "melt_value": 1408.55,
-      "ratio": 0.25,
-      "is_value": false,
-      "buying": "Buy now",
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.nl/itm/278111897737?_skw=18ct+gold+signet+ring&hash=item40c0c2c889:g:BEQAAeSwFcFqN9hU"
-    },
-    {
       "title": "0.404ct Diamond Hexagon Signet Ring K18 YG Pt900 Two Tone Heavy 25.4g",
       "metal": "gold",
       "carat": 18,
@@ -588,6 +588,36 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.nl/itm/278116279884?_skw=18ct+gold+signet+ring&hash=item40c105a64c:g:o0oAAeSwCVRqD7LY"
+    },
+    {
+      "title": "0.596ct Natural Diamond Signet Ring K18YG Pt900 Combi Two-Tone",
+      "metal": "gold",
+      "carat": 18,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": "business",
+      "seller_feedback": 639,
+      "seller_private": false,
+      "weight_g": 20.7,
+      "net_gold_g": 19.2,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": true,
+      "current_bid": 4675.61,
+      "landed_cost": 5637.13,
+      "price_orig": "€5,476",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "melt_value": 1408.55,
+      "ratio": 0.25,
+      "is_value": false,
+      "buying": "Buy now",
+      "condition": "Pre-owned - Good",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.nl/itm/278111897737?_skw=18ct+gold+signet+ring&hash=item40c0c2c889:g:BEQAAeSwFcFqN9hU"
     },
     {
       "title": "0.596ct Natural Diamond Signet Ring K18YG Pt900 Combi Two-Tone",

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-25T20:55:03.051695+00:00",
+    "generated_at": "2026-07-26T09:03:52.111900+00:00",
     "query": "22ct gold signet ring",
     "queries": [
       "22ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.5814,
       "USD": 0.7505
     },
-    "total_fetched": 668,
+    "total_fetched": 664,
     "total_analysed": 3,
     "value_count": 0,
     "weight_unknown_count": 0,
@@ -98,7 +98,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 14372,
+      "seller_feedback": 14374,
       "seller_private": false,
       "weight_g": 17.9,
       "net_gold_g": 16.4,
@@ -131,7 +131,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 14372,
+      "seller_feedback": 14374,
       "seller_private": false,
       "weight_g": 17.9,
       "net_gold_g": 16.4,
@@ -187,7 +187,7 @@
       "condition": "New without tags",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.de/itm/254195547625?_skw=Siegelring+Gold+916&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fEDSXgtE4QqG88AZtDfe48F8HKSq9Q8F9jp89MGGfpgKpAE2ilIaVxlxGyKHF4%2FRCW9hPtuejGdP3OWz7U%2FuSOOqcMo0zerjLmRlBCpgU8gsnmG48IDo96%2FSEJnBSmjk75kkQ%2FljbAVJM1Em5j%2FmJF4BC2arIS9HSalTJLyL14HHA%3D%3D"
+      "url": "https://www.ebay.de/itm/254195547625?_skw=Siegelring+Gold+916&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3"
     }
   ]
 }

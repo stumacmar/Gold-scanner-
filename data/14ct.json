@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-25T20:49:54.646920+00:00",
+    "generated_at": "2026-07-26T08:59:08.531997+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.5814,
       "USD": 0.7505
     },
-    "total_fetched": 1844,
+    "total_fetched": 1824,
     "total_analysed": 17,
     "value_count": 1,
     "weight_unknown_count": 0,
@@ -93,37 +93,6 @@
     }
   },
   "results": [
-    {
-      "title": "Vintage 14K Gold Signet Ring Weighing 18 Grams",
-      "metal": "gold",
-      "carat": 14,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 1690,
-      "seller_private": false,
-      "weight_g": 18.0,
-      "net_gold_g": 18.0,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "vintage"
-      ],
-      "stones": false,
-      "current_bid": 1722.46,
-      "landed_cost": 2100.55,
-      "price_orig": "$2,295",
-      "country": "US",
-      "flag": "🇺🇸",
-      "melt_value": 1030.0,
-      "ratio": 0.49,
-      "is_value": false,
-      "buying": "Buy now",
-      "condition": "Pre-owned - Excellent",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.com/itm/267699286672?_skw=14ct+heavy+gold+signet+ring&hash=item3e541ef290:g:jmgAAeSwQixqLxwk"
-    },
     {
       "title": "Large Heavy 14k Yellow Gold Polished w/ Brushed Finish Top Oval Signet Ring",
       "metal": "gold",
@@ -154,7 +123,38 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com/itm/167170036026?_skw=14ct+heavy+gold+signet+ring&hash=item26ec1c513a:g:wv8AAOSwSf9nWmqL&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGYtvJKlILR5BN9nyB6IHlm4ZE9i7oaidT%2FfgHOCKlFzZbJk3JpuwvRA7l22lMdZ1iinjRb%2BRhT7gMFmaaPcMIzowgRFbHcyxBPKBWO%2FrCeGbgT7eKsMqXXPc8oeBzKGDiX3RVewU71yQl%2Bnbv4h7DO3HeDeDbI5d66JkzViQS9x0xbRw4SlOYkCu8LaEto0zjshrQ1iJJS1Cq9gkm2RKcArj9QC7BIbGP1Y8qL2w0BfOrtpA73l3pfC9Tgr6Xj%2F7oqkUeOLeQNFpcWr0xJNWqL97TKceMa%2FrxV%2B3m2rNFGuiQeQ%2FyOJsa5tUIJe%2BTpw%2BhA%3D"
+      "url": "https://www.ebay.com/itm/167170036026?_skw=14ct+heavy+gold+signet+ring&hash=item26ec1c513a:g:wv8AAOSwSf9nWmqL&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGYtvJKlILR5BN9nyB6IHlm4ZE9i7oaidT%2FfgHOCKlFzZbJk3JpuwvRA7l22lMdZ1iinjRb%2BRhT7gMFmaaPcMIzowgRFbHcyxBPKBWO%2FrCeGbgT7eKsMqXXPc8oeBzKGDiVDky0mepTOwPfmVZvPI42vO5LoovAaBdMwfZsP18Hrh8Mn0eM2gBh0kz07NtD3XsUUtABkHwhF9KuN8%2FLa17Nyr%2BxEPrrgeqjO%2B6xQkhBM5vMShRM4SlSDM52ww82ROkxrU9O1HVYvQEXkyALm1b2WHbrd0bJYDhbOoLezl5qOCBZw5s5Bxw%2BkKnMcMx5X4PQ%3D"
+    },
+    {
+      "title": "Vintage 14K Gold Signet Ring Weighing 18 Grams",
+      "metal": "gold",
+      "carat": 14,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 1690,
+      "seller_private": false,
+      "weight_g": 18.0,
+      "net_gold_g": 18.0,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "vintage"
+      ],
+      "stones": false,
+      "current_bid": 1722.46,
+      "landed_cost": 2100.55,
+      "price_orig": "$2,295",
+      "country": "US",
+      "flag": "🇺🇸",
+      "melt_value": 1030.0,
+      "ratio": 0.49,
+      "is_value": false,
+      "buying": "Buy now",
+      "condition": "Pre-owned - Excellent",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.com/itm/267699286672?_skw=14ct+heavy+gold+signet+ring&hash=item3e541ef290:g:jmgAAeSwQixqLxwk"
     },
     {
       "title": "VINTAGE/ESTATE 14kt Yellow Gold 15.06 Grams Men's Signet Ring Size: 11.5",
@@ -313,7 +313,7 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com.au/itm/326539243500?_skw=14ct+gold+signet+ring&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwU16jc0cEM08CuUZuZRCxdnyMgY2nJlMVht5mfMXQRwDWkMeZTFj3rpF%2BKjAdkrDMEp0QGH3aEfpfECh%2BLL7XKFq2senLVxlGSJGjTQeCzZRgfH3AhmqPb1QqEw%2FZAgbF2KCQHTkQbV%2BV1P2IQuabFef6NZMyKKhZ%2Fqe4GirUwDKQ%3D%3D"
+      "url": "https://www.ebay.com.au/itm/326539243500?_skw=14ct+gold+signet+ring&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwWTtNlnBVH31Hsb64FDkKhI5HNoQJeVTzpAUKr7tcyNHi5nbJQdanp3EmM8HZKhsOdmlIA15DDZtY3%2BCiG934B3FJQoqKJgU0uEWQkRTqX0Gzqm%2Fet0qsOM%2BW2AA0nyvwa6YBKmBZEQwrXEI1yvg7M7fvEo10%2BpzxR%2BSwRxc11SsA%3D%3D"
     },
     {
       "title": "14ct Men’s Masonic Engraved Signet Ring Size W",
@@ -345,6 +345,37 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/398166475148?_skw=14ct+gold+signet+ring&hash=item5cb492418c:g:H1UAAeSwuzZqU3az"
+    },
+    {
+      "title": "Wgt 16.14g,Men's Solid 14k Yellow Gold, Engraved Initial Signet Ring, Sz 9,22mm",
+      "metal": "gold",
+      "carat": 14,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 361,
+      "seller_private": false,
+      "weight_g": 16.14,
+      "net_gold_g": 16.1,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "gents"
+      ],
+      "stones": false,
+      "current_bid": 1156.47,
+      "landed_cost": 1429.76,
+      "price_orig": "2,205",
+      "country": "AU",
+      "flag": "🇦🇺",
+      "melt_value": 921.28,
+      "ratio": 0.64,
+      "is_value": false,
+      "buying": "Buy now",
+      "condition": "Pre-owned - Good",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.com.au/itm/168256990276?_skw=14ct+gold+signet+ring&hash=item272ce5ec44:g:Gf8AAeSwCB9p~02-"
     },
     {
       "title": "Collectible Japanese Shakudo ORIENTAL MOTIF 14K GOLD Meiji Period RING SIGNET 7",
@@ -406,37 +437,6 @@
       "time_left": "n/a",
       "bids": "",
       "url": "https://www.ebay.com.au/itm/147401755880?_skw=14ct+gold+signet+ring&hash=item2251d44ce8:g:IsUAAeSwdP5piPNl"
-    },
-    {
-      "title": "Wgt 16.14g,Men's Solid 14k Yellow Gold, Engraved Initial Signet Ring, Sz 9,22mm",
-      "metal": "gold",
-      "carat": 14,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 360,
-      "seller_private": false,
-      "weight_g": 16.14,
-      "net_gold_g": 16.1,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "gents"
-      ],
-      "stones": false,
-      "current_bid": 1156.47,
-      "landed_cost": 1429.76,
-      "price_orig": "2,205",
-      "country": "AU",
-      "flag": "🇦🇺",
-      "melt_value": 921.28,
-      "ratio": 0.64,
-      "is_value": false,
-      "buying": "Buy now",
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.com.au/itm/168256990276?_skw=14ct+gold+signet+ring&hash=item272ce5ec44:g:Gf8AAeSwCB9p~02-"
     },
     {
       "title": "Cadillac Signet Ring 14K with Diamonds 28.5 Grams",
