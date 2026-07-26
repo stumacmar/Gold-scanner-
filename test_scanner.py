@@ -8,6 +8,8 @@ stone subtraction, and the 15g-vs-12g floor branching.
 Run with:  python3 -m unittest test_scanner -v
 """
 
+import json
+import os
 import unittest
 
 import gold_ring_scanner as g
@@ -108,6 +110,58 @@ class TestYurmanMode(unittest.TestCase):
             self.assertTrue(a["keep"])
         finally:
             g.METAL = old
+
+
+class TestNewArrivals(unittest.TestCase):
+    """first_seen / is_new: today's fresh listings pin to the top."""
+
+    def setUp(self):
+        import tempfile
+        self.dir = tempfile.mkdtemp()
+        self.path = os.path.join(self.dir, "scan.json")
+
+    def _write_prev(self, results):
+        with open(self.path, "w", encoding="utf-8") as fh:
+            json.dump({"meta": {}, "results": results}, fh)
+
+    def test_baseline_run_flags_nothing_new(self):
+        # No previous file -> establish a baseline, don't badge everything.
+        recs = [{"url": "u1"}, {"url": "u2"}]
+        g.mark_new_arrivals(recs, self.path, "T0")
+        self.assertTrue(all(not r["is_new"] for r in recs))
+        self.assertTrue(all(r["first_seen"] == "T0" for r in recs))
+
+    def test_unseen_url_is_new(self):
+        self._write_prev([{"url": "u1", "first_seen": "T0"}])
+        recs = [{"url": "u1"}, {"url": "u2"}]
+        g.mark_new_arrivals(recs, self.path, "T1")
+        by = {r["url"]: r for r in recs}
+        self.assertFalse(by["u1"]["is_new"])
+        self.assertTrue(by["u2"]["is_new"])
+
+    def test_first_seen_carries_forward(self):
+        # A ring that persists keeps its ORIGINAL first_seen, not today's.
+        self._write_prev([{"url": "u1", "first_seen": "T0"}])
+        recs = [{"url": "u1"}]
+        g.mark_new_arrivals(recs, self.path, "T5")
+        self.assertEqual(recs[0]["first_seen"], "T0")
+
+    def test_previous_file_without_first_seen(self):
+        # Upgrading from pre-feature data: present == not new, no false flood.
+        self._write_prev([{"url": "u1"}])
+        recs = [{"url": "u1"}, {"url": "u2"}]
+        g.mark_new_arrivals(recs, self.path, "T1")
+        by = {r["url"]: r for r in recs}
+        self.assertFalse(by["u1"]["is_new"])
+        self.assertEqual(by["u1"]["first_seen"], "T1")   # backfilled
+        self.assertTrue(by["u2"]["is_new"])
+
+    def test_corrupt_previous_file_is_baseline(self):
+        with open(self.path, "w", encoding="utf-8") as fh:
+            fh.write("{not json")
+        recs = [{"url": "u1"}]
+        g.mark_new_arrivals(recs, self.path, "T1")
+        self.assertFalse(recs[0]["is_new"])
 
 
 class TestClassifySeller(unittest.TestCase):

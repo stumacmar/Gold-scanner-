@@ -45,6 +45,8 @@
   .card.value { border-color: #d4af37; box-shadow: 0 0 0 1px rgba(212,175,55,0.25); }
   .top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
   .title { font-size: 14px; font-weight: 600; line-height: 1.35; color: #eef1f7; }
+  .tag.new { background: #2f7bd6; color: #eaf3ff; }
+  .card.fresh { border-color: #2f7bd6; box-shadow: 0 0 0 1px rgba(47,123,214,.25); }
   .tag { flex: 0 0 auto; font-size: 10px; font-weight: 700; padding: 3px 7px;
     border-radius: 6px; letter-spacing: .3px; text-transform: uppercase;
     background: #d4af37; color: #1a1400; }
@@ -92,6 +94,7 @@ let METAS = { gold: null, silver: null, yurman: null };  // newest meta per scre
 let metal = "gold";      // which screen: gold | silver
 let caratFilter = 0;     // 0 = all | 9 | 14 | 18 | 22 (gold screen only)
 let valueOnly = false;
+let newOnly = false;      // 🆕 only rings added since the previous scan
 let privateOnly = false; // 👤 only strict private sellers (individual, modest fb)
 let sortBy = "best";
 const metalOf = r => r.metal === "silver" ? "silver" : r.metal === "yurman" ? "yurman" : "gold";
@@ -117,8 +120,9 @@ const SORTS = {
 const shown = () => POOL()
   .filter(r => (metal === "silver" || !caratFilter || r.carat === caratFilter)
             && (!valueOnly || r.is_value)
-            && (!privateOnly || r.seller_private))
-  .sort(SORTS[sortBy]);
+            && (!privateOnly || r.seller_private)
+            && (!newOnly || r.is_new))
+  .sort((a, b) => (b.is_new ? 1 : 0) - (a.is_new ? 1 : 0) || SORTS[sortBy](a, b));
 
 const fbFmt = n => n == null ? "" : n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1) + "k" : String(n);
 function sellerCell(rec) {
@@ -134,8 +138,9 @@ function escapeHtml(s) {
 const ratioClass = r => r == null ? "r-low" : r >= 1 ? "r-good" : r >= 0.85 ? "r-mid" : "r-low";
 
 function card(rec) {
-  const cls = "card" + (rec.is_value ? " value" : "");
-  const tag = rec.is_value ? '<span class="tag">Value</span>' : "";
+  const cls = "card" + (rec.is_value ? " value" : "") + (rec.is_new ? " fresh" : "");
+  const tag = (rec.is_new ? '<span class="tag new">New</span>' : "")
+    + (rec.is_value ? '<span class="tag">Value</span>' : "");
   const ratio = rec.ratio == null ? "—"
     : '<span class="ratio ' + ratioClass(rec.ratio) + '">' + rec.ratio.toFixed(2) + '×</span>';
   const bids = (rec.bids === "" || rec.bids == null) ? 0 : rec.bids;
@@ -185,6 +190,7 @@ function render() {
     chip(metal === "silver" || !caratFilter, 0, `All ${pool.length}`) +
     caratChips +
     (metal === "yurman" || metal === "meteorite" ? "" : chip(valueOnly, "value", `★ Value ${pool.filter(r => r.is_value).length}`, "val")) +
+    chip(newOnly, "new", `🆕 New ${pool.filter(r => r.is_new).length}`, "val") +
     chip(privateOnly, "private", `👤 Private ${pool.filter(r => r.seller_private).length}`, "val") +
     `<select class="sort" id="sort">
        <option value="best" ${sortBy === "best" ? "selected" : ""}>Best value</option>
@@ -221,6 +227,7 @@ function render() {
     const c = e.target.closest(".chip");
     if (!c) return;
     if (c.dataset.v === "value") valueOnly = !valueOnly;
+    else if (c.dataset.v === "new") newOnly = !newOnly;
     else if (c.dataset.v === "private") privateOnly = !privateOnly;
     else caratFilter = Number(c.dataset.v);
     render();
@@ -231,7 +238,7 @@ function render() {
 document.getElementById("metals").onclick = (e) => {
   const c = e.target.closest(".mchip");
   if (c && c.dataset.m !== metal) {
-    metal = c.dataset.m; caratFilter = 0; valueOnly = false;
+    metal = c.dataset.m; caratFilter = 0; valueOnly = false; newOnly = false;
     if ((metal === "yurman" || metal === "meteorite") && sortBy === "best") sortBy = "cheap";
     render();
   }

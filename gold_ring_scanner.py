@@ -1335,6 +1335,46 @@ def print_table(records):
     print()
 
 
+def mark_new_arrivals(records, path, now_iso):
+    """Stamp each record with first_seen, and flag genuinely NEW arrivals.
+
+    Compares against the previous scan file at `path` (keyed by listing URL):
+      - already there  -> carry its first_seen forward, is_new = False
+      - not there      -> first_seen = this run, is_new = True
+    A listing missing from the previous file because that scan was empty or
+    the file didn't exist yet is NOT treated as a false "new" flood: with no
+    previous data at all we stamp first_seen but leave is_new False, so the
+    first run just establishes the baseline.
+    """
+    prev = {}
+    try:
+        with open(path, encoding="utf-8") as fh:
+            old = json.load(fh)
+        for r in old.get("results", []):
+            if r.get("url"):
+                prev[r["url"]] = r.get("first_seen")
+    except (OSError, json.JSONDecodeError, KeyError):
+        prev = {}
+
+    baseline = not prev          # nothing to compare against -> no NEW badges
+    fresh = 0
+    for r in records:
+        url = r.get("url")
+        if url in prev:
+            r["first_seen"] = prev[url] or now_iso
+            r["is_new"] = False
+        else:
+            r["first_seen"] = now_iso
+            r["is_new"] = not baseline
+            if r["is_new"]:
+                fresh += 1
+    if baseline:
+        print(f"  new arrivals: baseline scan (no previous data to compare)")
+    else:
+        print(f"  new arrivals: {fresh} of {len(records)} not in the previous scan")
+    return records
+
+
 def write_json(records, path, meta):
     """Write records + run metadata to JSON for the web dashboard."""
     directory = os.path.dirname(path)
@@ -1348,7 +1388,8 @@ def write_json(records, path, meta):
 
 def write_csv(records, path):
     fields = ["title", "carat", "weight_g", "net_gold_g", "weight_confidence",
-              "tags", "stones", "seller_type", "seller_feedback", "seller_private",
+              "tags", "stones", "is_new", "first_seen",
+              "seller_type", "seller_feedback", "seller_private",
               "current_bid", "landed_cost", "price_orig",
               "country", "melt_value", "ratio", "is_value", "buying", "bids",
               "time_left", "url"]
@@ -1493,10 +1534,15 @@ def main():
               f"existing {args.json}; not overwriting.", file=sys.stderr)
         return
 
+    # Flag rings that weren't in the previous scan, so the dashboard can pin
+    # today's new arrivals to the top.
+    now_iso = datetime.now(timezone.utc).isoformat()
+    records = mark_new_arrivals(records, args.json, now_iso)
+
     write_csv(records, args.csv)
 
     meta = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": now_iso,
         "query": all_queries[0] if all_queries else args.query,
         "queries": all_queries,
         "buying": args.buying,
@@ -1516,6 +1562,7 @@ def main():
         "total_fetched": len(items),
         "total_analysed": len(records),
         "value_count": sum(1 for r in records if r["is_value"]),
+        "new_count": sum(1 for r in records if r.get("is_new")),
         "weight_unknown_count": sum(1 for r in records if r["weight_g"] is None),
         "country_counts": {c: sum(1 for r in records if r["country"] == c)
                            for c in sorted({r["country"] for r in records})},
