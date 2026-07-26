@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-26T10:21:22.224906+00:00",
+    "generated_at": "2026-07-26T15:10:42.771623+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.5814,
       "USD": 0.7505
     },
-    "total_fetched": 1823,
+    "total_fetched": 1811,
     "total_analysed": 17,
     "value_count": 1,
     "new_count": 2,
@@ -94,6 +94,40 @@
     }
   },
   "results": [
+    {
+      "title": "Large Heavy 14k Yellow Gold Polished w/ Brushed Finish Top Oval Signet Ring",
+      "metal": "gold",
+      "carat": 14,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 16541,
+      "seller_private": false,
+      "weight_g": 18.89,
+      "net_gold_g": 17.4,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "vintage",
+        "antique"
+      ],
+      "stones": true,
+      "current_bid": 2213.3,
+      "landed_cost": 2689.56,
+      "price_orig": "$2,949",
+      "country": "US",
+      "flag": "🇺🇸",
+      "melt_value": 995.67,
+      "ratio": 0.37,
+      "is_value": false,
+      "buying": "Buy now",
+      "condition": "Pre-owned - Good",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.com/itm/167170036026?_skw=14ct+heavy+gold+signet+ring&hash=item26ec1c513a:g:wv8AAOSwSf9nWmqL&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGYtvJKlILR5BN9nyB6IHlm4ZE9i7oaidT%2FfgHOCKlFzZbJk3JpuwvRA7l22lMdZ1iinjRb%2BRhT7gMFmaaPcMIzowgRFbHcyxBPKBWO%2FrCeGbgT7eKsMqXXPc8oeBzKGDiWb5OEiUs%2BaFnC6742sc1HJDT37NzsH%2BbklFJXWuYIXnOGCCGxTGqi8MN8luglC10JG0BWTT78lBh4XbP6g7eWWuxrnsoGGVaX97Mb0Th5VRpwYF7B0fveeeCkT9Fn6Eu%2Bm85wQDywTLHul52vza7oZwLaq%2FE1sNglqcdYQ66vxxxMmkYpZ1NgzoTbQsX5Vaf0%3D",
+      "first_seen": "2026-07-26T15:10:42.771623+00:00",
+      "is_new": true
+    },
     {
       "title": "Vintage 14K Gold Signet Ring Weighing 18 Grams",
       "metal": "gold",
@@ -126,40 +160,6 @@
       "url": "https://www.ebay.com/itm/267699286672?_skw=14ct+heavy+gold+signet+ring&hash=item3e541ef290:g:jmgAAeSwQixqLxwk",
       "first_seen": "2026-07-26T10:21:22.224906+00:00",
       "is_new": false
-    },
-    {
-      "title": "Large Heavy 14k Yellow Gold Polished w/ Brushed Finish Top Oval Signet Ring",
-      "metal": "gold",
-      "carat": 14,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 16541,
-      "seller_private": false,
-      "weight_g": 18.89,
-      "net_gold_g": 17.4,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "vintage",
-        "antique"
-      ],
-      "stones": true,
-      "current_bid": 2213.3,
-      "landed_cost": 2689.56,
-      "price_orig": "$2,949",
-      "country": "US",
-      "flag": "🇺🇸",
-      "melt_value": 995.67,
-      "ratio": 0.37,
-      "is_value": false,
-      "buying": "Buy now",
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.com/itm/167170036026?_skw=14ct+heavy+gold+signet+ring&hash=item26ec1c513a:g:wv8AAOSwSf9nWmqL&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGYtvJKlILR5BN9nyB6IHlm4ZE9i7oaidT%2FfgHOCKlFzZbJk3JpuwvRA7l22lMdZ1iinjRb%2BRhT7gMFmaaPcMIzowgRFbHcyxBPKBWO%2FrCeGbgT7eKsMqXXPc8oeBzKGDiUpcGflDTw5jyUwyO9uPf5NTT3IrxpY873zHvny0m1gBVOKxQlEpvnikfEbwYm6%2FLJSfhCaBgSvmD7DceZxoFvqUS5oAj2Jr8mLJR%2FeR%2B3ySk%2BZODeRo1zFJcy%2F8YI%2BI5eM9p%2F6XcgCRDsNbudY4uxI%2FBpNaD06Pd6jv74rdzgduAFMmYcej9oCGxUA97os89s%3D",
-      "first_seen": "2026-07-26T10:21:22.224906+00:00",
-      "is_new": true
     },
     {
       "title": "VINTAGE/ESTATE 14kt Yellow Gold 15.06 Grams Men's Signet Ring Size: 11.5",
@@ -326,8 +326,8 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com.au/itm/326539243500?_skw=14ct+gold+signet+ring&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwXcewoJZDYXC4S272dtq2Spc5bb6cgp9sfYLwPYyc4wRUQca%2Bd8zApqxXp1NoV0jM1lX0ySwz6TWAVOmgq2AyG0w7uZVnzL8NsId9oNB29jN05sblZ48kUoLnh3cCCXd1T0fdYBh%2BKW%2FORLZEYRifQGC81KJ0Lf94%2FpBvFFWehuVA%3D%3D",
-      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "url": "https://www.ebay.com.au/itm/326539243500?_skw=14ct+gold+signet+ring&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwXOdzzfGbhPvFWINJfgZE6%2Bo%2F9pnAWF5Rn9tvPK8VLy5nNgui4HIAal506%2FZrmlv2Nqz0NMq6OVkSvqIORpItnnb5fFF1Mgv%2FtH5RlGfWTk8kGRBGPvvRqsjrl%2FDZN0drtcRJUucKYByF5znsXU%2Bw76KnxQOS2QesAUYU1kft2muw%3D%3D",
+      "first_seen": "2026-07-26T15:10:42.771623+00:00",
       "is_new": true
     },
     {
