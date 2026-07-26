@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-26T09:03:52.111900+00:00",
+    "generated_at": "2026-07-26T10:25:53.358198+00:00",
     "query": "22ct gold signet ring",
     "queries": [
       "22ct gold signet ring",
@@ -80,9 +80,10 @@
       "SGD": 0.5814,
       "USD": 0.7505
     },
-    "total_fetched": 664,
+    "total_fetched": 670,
     "total_analysed": 3,
     "value_count": 0,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 1,
@@ -122,7 +123,9 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/406868725856?_skw=22ct+gold+signet+ring&hash=item5ebb441060:g:6vsAAeSwwrlqXltb"
+      "url": "https://www.ebay.co.uk/itm/406868725856?_skw=22ct+gold+signet+ring&hash=item5ebb441060:g:6vsAAeSwwrlqXltb",
+      "first_seen": "2026-07-26T10:25:53.358198+00:00",
+      "is_new": false
     },
     {
       "title": "Authentic K18PG Signet Diamond Ring 0.22CT #260-008-143-8013",
@@ -155,7 +158,9 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com.au/itm/298240951024?_skw=22ct+gold+signet+ring&hash=item45708bc2f0:g:6vsAAeSwwrlqXltb"
+      "url": "https://www.ebay.com.au/itm/298240951024?_skw=22ct+gold+signet+ring&hash=item45708bc2f0:g:6vsAAeSwwrlqXltb",
+      "first_seen": "2026-07-26T10:25:53.358198+00:00",
+      "is_new": false
     },
     {
       "title": "18kt gepunzt Weiß-, Gelb-, Roségold Siegelring 13mm x16mm oval oder Kissen",
@@ -187,7 +192,9 @@
       "condition": "New without tags",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.de/itm/254195547625?_skw=Siegelring+Gold+916&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3"
+      "url": "https://www.ebay.de/itm/254195547625?_skw=Siegelring+Gold+916&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3",
+      "first_seen": "2026-07-26T10:25:53.358198+00:00",
+      "is_new": false
     }
   ]
 }

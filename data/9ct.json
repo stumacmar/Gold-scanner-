@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-26T08:56:20.311319+00:00",
+    "generated_at": "2026-07-26T10:18:37.267480+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,9 +80,10 @@
       "SGD": 0.5814,
       "USD": 0.7505
     },
-    "total_fetched": 1565,
+    "total_fetched": 1554,
     "total_analysed": 4,
     "value_count": 0,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "PL": 1,
@@ -120,7 +121,9 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/117243491497?_skw=9ct+gold+signet+ring&hash=item1b4c41b4a9:g:gP0AAeSwbdxqKqLg"
+      "url": "https://www.ebay.co.uk/itm/117243491497?_skw=9ct+gold+signet+ring&hash=item1b4c41b4a9:g:gP0AAeSwbdxqKqLg",
+      "first_seen": "2026-07-26T10:18:37.267480+00:00",
+      "is_new": false
     },
     {
       "title": "Men's Gents 9Ct Gold 15.2g Signet Ring Size U",
@@ -152,7 +155,9 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW"
+      "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW",
+      "first_seen": "2026-07-26T10:18:37.267480+00:00",
+      "is_new": false
     },
     {
       "title": "Vintage Large 9ct Gold Signet Ring , Size V1/2,-15.05g",
@@ -183,7 +188,9 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com/itm/123865927591?_skw=9ct+gold+signet+ring&hash=item1cd6fc0fa7:g:~D0AAOSwUMBb9ug~"
+      "url": "https://www.ebay.com/itm/123865927591?_skw=9ct+gold+signet+ring&hash=item1cd6fc0fa7:g:~D0AAOSwUMBb9ug~",
+      "first_seen": "2026-07-26T10:18:37.267480+00:00",
+      "is_new": false
     },
     {
       "title": "Klasyczny sygnet w kształcie poduszki x/ duży \"dostępny w kolorze platyny, złota i srebra\"",
@@ -213,7 +220,9 @@
       "condition": "New without packaging",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.pl/itm/227035892803?_skw=sygnet+m%C4%99ski+z%C5%82oto+375&hash=item34dc64cc43:g:xx8AAOSwKfVXEdCd"
+      "url": "https://www.ebay.pl/itm/227035892803?_skw=sygnet+m%C4%99ski+z%C5%82oto+375&hash=item34dc64cc43:g:xx8AAOSwKfVXEdCd",
+      "first_seen": "2026-07-26T10:18:37.267480+00:00",
+      "is_new": false
     }
   ]
 }

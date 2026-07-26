@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-26T08:59:08.531997+00:00",
+    "generated_at": "2026-07-26T10:21:22.224906+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -80,9 +80,10 @@
       "SGD": 0.5814,
       "USD": 0.7505
     },
-    "total_fetched": 1824,
+    "total_fetched": 1823,
     "total_analysed": 17,
     "value_count": 1,
+    "new_count": 2,
     "weight_unknown_count": 0,
     "country_counts": {
       "AT": 3,
@@ -93,6 +94,39 @@
     }
   },
   "results": [
+    {
+      "title": "Vintage 14K Gold Signet Ring Weighing 18 Grams",
+      "metal": "gold",
+      "carat": 14,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 1690,
+      "seller_private": false,
+      "weight_g": 18.0,
+      "net_gold_g": 18.0,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "vintage"
+      ],
+      "stones": false,
+      "current_bid": 1722.46,
+      "landed_cost": 2100.55,
+      "price_orig": "$2,295",
+      "country": "US",
+      "flag": "🇺🇸",
+      "melt_value": 1030.0,
+      "ratio": 0.49,
+      "is_value": false,
+      "buying": "Buy now",
+      "condition": "Pre-owned - Excellent",
+      "time_left": "n/a",
+      "bids": "",
+      "url": "https://www.ebay.com/itm/267699286672?_skw=14ct+heavy+gold+signet+ring&hash=item3e541ef290:g:jmgAAeSwQixqLxwk",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
+    },
     {
       "title": "Large Heavy 14k Yellow Gold Polished w/ Brushed Finish Top Oval Signet Ring",
       "metal": "gold",
@@ -123,38 +157,9 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com/itm/167170036026?_skw=14ct+heavy+gold+signet+ring&hash=item26ec1c513a:g:wv8AAOSwSf9nWmqL&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGYtvJKlILR5BN9nyB6IHlm4ZE9i7oaidT%2FfgHOCKlFzZbJk3JpuwvRA7l22lMdZ1iinjRb%2BRhT7gMFmaaPcMIzowgRFbHcyxBPKBWO%2FrCeGbgT7eKsMqXXPc8oeBzKGDiVDky0mepTOwPfmVZvPI42vO5LoovAaBdMwfZsP18Hrh8Mn0eM2gBh0kz07NtD3XsUUtABkHwhF9KuN8%2FLa17Nyr%2BxEPrrgeqjO%2B6xQkhBM5vMShRM4SlSDM52ww82ROkxrU9O1HVYvQEXkyALm1b2WHbrd0bJYDhbOoLezl5qOCBZw5s5Bxw%2BkKnMcMx5X4PQ%3D"
-    },
-    {
-      "title": "Vintage 14K Gold Signet Ring Weighing 18 Grams",
-      "metal": "gold",
-      "carat": 14,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 1690,
-      "seller_private": false,
-      "weight_g": 18.0,
-      "net_gold_g": 18.0,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "vintage"
-      ],
-      "stones": false,
-      "current_bid": 1722.46,
-      "landed_cost": 2100.55,
-      "price_orig": "$2,295",
-      "country": "US",
-      "flag": "🇺🇸",
-      "melt_value": 1030.0,
-      "ratio": 0.49,
-      "is_value": false,
-      "buying": "Buy now",
-      "condition": "Pre-owned - Excellent",
-      "time_left": "n/a",
-      "bids": "",
-      "url": "https://www.ebay.com/itm/267699286672?_skw=14ct+heavy+gold+signet+ring&hash=item3e541ef290:g:jmgAAeSwQixqLxwk"
+      "url": "https://www.ebay.com/itm/167170036026?_skw=14ct+heavy+gold+signet+ring&hash=item26ec1c513a:g:wv8AAOSwSf9nWmqL&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGYtvJKlILR5BN9nyB6IHlm4ZE9i7oaidT%2FfgHOCKlFzZbJk3JpuwvRA7l22lMdZ1iinjRb%2BRhT7gMFmaaPcMIzowgRFbHcyxBPKBWO%2FrCeGbgT7eKsMqXXPc8oeBzKGDiUpcGflDTw5jyUwyO9uPf5NTT3IrxpY873zHvny0m1gBVOKxQlEpvnikfEbwYm6%2FLJSfhCaBgSvmD7DceZxoFvqUS5oAj2Jr8mLJR%2FeR%2B3ySk%2BZODeRo1zFJcy%2F8YI%2BI5eM9p%2F6XcgCRDsNbudY4uxI%2FBpNaD06Pd6jv74rdzgduAFMmYcej9oCGxUA97os89s%3D",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": true
     },
     {
       "title": "VINTAGE/ESTATE 14kt Yellow Gold 15.06 Grams Men's Signet Ring Size: 11.5",
@@ -186,7 +191,9 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com/itm/147378298609?_skw=14ct+heavy+gold+signet+ring&hash=item22506e5ef1:g:gJsAAOSwEC1lRcUF"
+      "url": "https://www.ebay.com/itm/147378298609?_skw=14ct+heavy+gold+signet+ring&hash=item22506e5ef1:g:gJsAAOSwEC1lRcUF",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
     },
     {
       "title": "14K Yellow Gold Scroll Old English \"R\" Letter Size 10 Men's Signet Ring 15.1g",
@@ -217,7 +224,9 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com/itm/226373922475?_skw=14ct+heavy+gold+signet+ring&hash=item34b4efeeab:g:0NIAAOSw35tm91K0"
+      "url": "https://www.ebay.com/itm/226373922475?_skw=14ct+heavy+gold+signet+ring&hash=item34b4efeeab:g:0NIAAOSw35tm91K0",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
     },
     {
       "title": "Vintage Antique 14k Gold Intaglio Roman Ring With Genuine Carved Carnelian",
@@ -250,7 +259,9 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com/itm/115234073633?_skw=14ct+gold+intaglio+ring&hash=item1ad47c6c21:g:pEkAAOSwjN1h-tjI"
+      "url": "https://www.ebay.com/itm/115234073633?_skw=14ct+gold+intaglio+ring&hash=item1ad47c6c21:g:pEkAAOSwjN1h-tjI",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
     },
     {
       "title": "Antique Hand-Engraved Gold Heraldic Crest Signet Ring 28.3g 14K Top / 17K Base",
@@ -281,7 +292,9 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com/itm/800316065925?_skw=vintage+14ct+gold+signet+ring&hash=itemba568e0885:g:hVIAAeSwMm1qUoNE"
+      "url": "https://www.ebay.com/itm/800316065925?_skw=vintage+14ct+gold+signet+ring&hash=itemba568e0885:g:hVIAAeSwMm1qUoNE",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
     },
     {
       "title": "TIFFANY & CO. Vintage 1960s 14k Yellow Gold Signet Ring w/Pouch Rare",
@@ -313,7 +326,9 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com.au/itm/326539243500?_skw=14ct+gold+signet+ring&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwWTtNlnBVH31Hsb64FDkKhI5HNoQJeVTzpAUKr7tcyNHi5nbJQdanp3EmM8HZKhsOdmlIA15DDZtY3%2BCiG934B3FJQoqKJgU0uEWQkRTqX0Gzqm%2Fet0qsOM%2BW2AA0nyvwa6YBKmBZEQwrXEI1yvg7M7fvEo10%2BpzxR%2BSwRxc11SsA%3D%3D"
+      "url": "https://www.ebay.com.au/itm/326539243500?_skw=14ct+gold+signet+ring&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwXcewoJZDYXC4S272dtq2Spc5bb6cgp9sfYLwPYyc4wRUQca%2Bd8zApqxXp1NoV0jM1lX0ySwz6TWAVOmgq2AyG0w7uZVnzL8NsId9oNB29jN05sblZ48kUoLnh3cCCXd1T0fdYBh%2BKW%2FORLZEYRifQGC81KJ0Lf94%2FpBvFFWehuVA%3D%3D",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": true
     },
     {
       "title": "14ct Men’s Masonic Engraved Signet Ring Size W",
@@ -344,7 +359,9 @@
       "condition": "Pre-owned - Excellent",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com.au/itm/398166475148?_skw=14ct+gold+signet+ring&hash=item5cb492418c:g:H1UAAeSwuzZqU3az"
+      "url": "https://www.ebay.com.au/itm/398166475148?_skw=14ct+gold+signet+ring&hash=item5cb492418c:g:H1UAAeSwuzZqU3az",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
     },
     {
       "title": "Wgt 16.14g,Men's Solid 14k Yellow Gold, Engraved Initial Signet Ring, Sz 9,22mm",
@@ -375,7 +392,9 @@
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com.au/itm/168256990276?_skw=14ct+gold+signet+ring&hash=item272ce5ec44:g:Gf8AAeSwCB9p~02-"
+      "url": "https://www.ebay.com.au/itm/168256990276?_skw=14ct+gold+signet+ring&hash=item272ce5ec44:g:Gf8AAeSwCB9p~02-",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
     },
     {
       "title": "Collectible Japanese Shakudo ORIENTAL MOTIF 14K GOLD Meiji Period RING SIGNET 7",
@@ -405,7 +424,9 @@
       "condition": "Unspecified",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com.au/itm/303105360302?_skw=14ct+gold+signet+ring&hash=item46927cc1ae:g:YEUAAOSwwo1XeqZU"
+      "url": "https://www.ebay.com.au/itm/303105360302?_skw=14ct+gold+signet+ring&hash=item46927cc1ae:g:YEUAAOSwwo1XeqZU",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
     },
     {
       "title": "Vintage European 8K Gold Signet Ring 19.79g Size 11 Hand Engraved",
@@ -436,7 +457,9 @@
       "condition": "Pre-owned - Excellent",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com.au/itm/147401755880?_skw=14ct+gold+signet+ring&hash=item2251d44ce8:g:IsUAAeSwdP5piPNl"
+      "url": "https://www.ebay.com.au/itm/147401755880?_skw=14ct+gold+signet+ring&hash=item2251d44ce8:g:IsUAAeSwdP5piPNl",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
     },
     {
       "title": "Cadillac Signet Ring 14K with Diamonds 28.5 Grams",
@@ -466,7 +489,9 @@
       "condition": "Pre-owned - Excellent",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com.au/itm/206431410800?_skw=14ct+gold+signet+ring&hash=item3010455a70:g:pbEAAeSwYelqX-VG"
+      "url": "https://www.ebay.com.au/itm/206431410800?_skw=14ct+gold+signet+ring&hash=item3010455a70:g:pbEAAeSwYelqX-VG",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
     },
     {
       "title": "Anillo Sello 585 Oro Amarillo con Calcedonia Azul Oval Gr. 71",
@@ -497,7 +522,9 @@
       "condition": "Usado",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.es/itm/178328632458?_skw=anillo+sello+oro+585&hash=item298536fc8a:g:1m4AAeSwrptqXjd0"
+      "url": "https://www.ebay.es/itm/178328632458?_skw=anillo+sello+oro+585&hash=item298536fc8a:g:1m4AAeSwrptqXjd0",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
     },
     {
       "title": "Massiver Siegelring, Wappenring, 585er Gold, Lagenstein, 15,39 g",
@@ -527,7 +554,9 @@
       "condition": "Gebraucht - Hervorragend",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.at/itm/227380138309?_skw=Siegelring+Gold+585&hash=item34f0e99145:g:dwAAAeSw8WtqJ-2E"
+      "url": "https://www.ebay.at/itm/227380138309?_skw=Siegelring+Gold+585&hash=item34f0e99145:g:dwAAAeSw8WtqJ-2E",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
     },
     {
       "title": "Siegelring 585/14K Gelbgold Chalcedon Gr. 71",
@@ -557,7 +586,9 @@
       "condition": "Gebraucht - Gut",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.at/itm/800377603186?_skw=Siegelring+Gold+585&hash=itemba5a390472:g:1m4AAeSwrptqXjd0"
+      "url": "https://www.ebay.at/itm/800377603186?_skw=Siegelring+Gold+585&hash=itemba5a390472:g:1m4AAeSwrptqXjd0",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
     },
     {
       "title": "Massiver Siegelring, Wappenring, 585er Gelbgold, 14 Karat",
@@ -587,7 +618,9 @@
       "condition": "Gebraucht - Hervorragend",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.at/itm/168322714342?_skw=Siegelring+Gold+585&hash=item2730d0cae6:g:Z8cAAeSwCB9p55ww"
+      "url": "https://www.ebay.at/itm/168322714342?_skw=Siegelring+Gold+585&hash=item2730d0cae6:g:Z8cAAeSwCB9p55ww",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
     },
     {
       "title": "Caesar Roman Noble Deco Vintage Signet Ring 14Kt gold 22G *v",
@@ -619,7 +652,9 @@
       "condition": "New with packaging",
       "time_left": "n/a",
       "bids": "",
-      "url": "https://www.ebay.com.sg/itm/115785920112?_skw=14ct+gold+signet+ring&hash=item1af560ee70:g:uqwAAOSwDBlkS-8S"
+      "url": "https://www.ebay.com.sg/itm/115785920112?_skw=14ct+gold+signet+ring&hash=item1af560ee70:g:uqwAAOSwDBlkS-8S",
+      "first_seen": "2026-07-26T10:21:22.224906+00:00",
+      "is_new": false
     }
   ]
 }
