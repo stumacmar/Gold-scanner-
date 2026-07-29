@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-07-29T09:18:08.599558+00:00",
+  "generated_at": "2026-07-29T18:37:28.913681+00:00",
   "searches": [
     {
       "key": "9ct",
       "label": "9ct",
       "file": "9ct.json",
       "query": "9ct gold signet ring",
-      "generated_at": "2026-07-29T09:06:10.918923+00:00",
+      "generated_at": "2026-07-29T18:23:58.746532+00:00",
       "value_count": 0,
-      "total_analysed": 5
+      "total_analysed": 6
     },
     {
       "key": "14ct",
       "label": "14ct",
       "file": "14ct.json",
       "query": "14ct gold signet ring",
-      "generated_at": "2026-07-29T09:09:50.907954+00:00",
-      "value_count": 0,
+      "generated_at": "2026-07-29T18:27:07.640087+00:00",
+      "value_count": 1,
       "total_analysed": 16
     },
     {
@@ -24,16 +24,16 @@
       "label": "18ct",
       "file": "18ct.json",
       "query": "18ct gold signet ring",
-      "generated_at": "2026-07-29T09:12:35.584280+00:00",
-      "value_count": 0,
-      "total_analysed": 22
+      "generated_at": "2026-07-29T18:30:19.366242+00:00",
+      "value_count": 1,
+      "total_analysed": 24
     },
     {
       "key": "22ct",
       "label": "22ct",
       "file": "22ct.json",
       "query": "22ct gold signet ring",
-      "generated_at": "2026-07-29T09:14:18.991582+00:00",
+      "generated_at": "2026-07-29T18:33:12.636935+00:00",
       "value_count": 0,
       "total_analysed": 3
     },
@@ -42,18 +42,18 @@
       "label": "Silver",
       "file": "silver.json",
       "query": "sterling silver signet ring heavy",
-      "generated_at": "2026-07-29T09:17:03.414451+00:00",
+      "generated_at": "2026-07-29T18:36:19.190964+00:00",
       "value_count": 0,
-      "total_analysed": 51
+      "total_analysed": 50
     },
     {
       "key": "yurman",
       "label": "Yurman",
       "file": "yurman.json",
       "query": "David Yurman signet ring",
-      "generated_at": "2026-07-29T09:18:08.599558+00:00",
+      "generated_at": "2026-07-29T18:37:28.913681+00:00",
       "value_count": 0,
-      "total_analysed": 176
+      "total_analysed": 171
     }
   ]
 }
