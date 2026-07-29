@@ -1279,6 +1279,7 @@ def analyse(items, token, spot_per_oz, fx=None):
             "condition": item.get("condition"),   # "Pre-owned" / "New ..." etc
             "time_left": time_left(item.get("itemEndDate")),
             "bids": item.get("bidCount", ""),
+            "item_id": ebay_item_id(item.get("itemWebUrl", "")) or item.get("itemId", ""),
             "url": item.get("itemWebUrl", ""),
         })
 
@@ -1335,10 +1336,34 @@ def print_table(records):
     print()
 
 
+_ITM_RE = re.compile(r"/itm/(\d+)")
+
+
+def ebay_item_id(url):
+    """Stable listing id from an eBay URL, or None.
+
+    eBay item URLs carry the SEARCH KEYWORD that found them (`?_skw=...`) plus
+    a rotating `amdata` blob, so the same listing has a DIFFERENT url between
+    scans depending on which query surfaced it. Identity must therefore key on
+    the numeric item id, never the raw url -- keying on url made every scan
+    report old listings as new arrivals.
+    """
+    m = _ITM_RE.search(url or "")
+    return m.group(1) if m else None
+
+
+def record_identity(rec):
+    """Stable identity for a scanned record (item id, else the bare url)."""
+    return (rec.get("item_id")
+            or ebay_item_id(rec.get("url", ""))
+            or (rec.get("url", "").split("?")[0] or None))
+
+
 def mark_new_arrivals(records, path, now_iso):
     """Stamp each record with first_seen, and flag genuinely NEW arrivals.
 
-    Compares against the previous scan file at `path` (keyed by listing URL):
+    Compares against the previous scan file at `path`, keyed by the stable
+    eBay ITEM ID (see record_identity -- urls are not stable between scans):
       - already there  -> carry its first_seen forward, is_new = False
       - not there      -> first_seen = this run, is_new = True
     A listing missing from the previous file because that scan was empty or
@@ -1351,17 +1376,18 @@ def mark_new_arrivals(records, path, now_iso):
         with open(path, encoding="utf-8") as fh:
             old = json.load(fh)
         for r in old.get("results", []):
-            if r.get("url"):
-                prev[r["url"]] = r.get("first_seen")
+            key = record_identity(r)
+            if key:
+                prev[key] = r.get("first_seen")
     except (OSError, json.JSONDecodeError, KeyError):
         prev = {}
 
     baseline = not prev          # nothing to compare against -> no NEW badges
     fresh = 0
     for r in records:
-        url = r.get("url")
-        if url in prev:
-            r["first_seen"] = prev[url] or now_iso
+        key = record_identity(r)
+        if key in prev:
+            r["first_seen"] = prev[key] or now_iso
             r["is_new"] = False
         else:
             r["first_seen"] = now_iso

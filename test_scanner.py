@@ -163,6 +163,46 @@ class TestNewArrivals(unittest.TestCase):
         g.mark_new_arrivals(recs, self.path, "T1")
         self.assertFalse(recs[0]["is_new"])
 
+    # --- identity: eBay urls are NOT stable between scans -------------------
+
+    def test_item_id_parsed_from_url(self):
+        self.assertEqual(
+            g.ebay_item_id("https://www.ebay.co.uk/itm/227385454335?_skw=x&hash=y"),
+            "227385454335")
+        self.assertIsNone(g.ebay_item_id("https://example.com/nope"))
+
+    def test_same_listing_different_url_is_not_new(self):
+        # REGRESSION: eBay embeds the search keyword that found the listing
+        # (`_skw=`) plus a rotating `amdata` blob, so the SAME ring has a
+        # different url each scan. Keying on url reported every old listing as
+        # a new arrival -- 13 of 13 false positives in one live run.
+        self._write_prev([{
+            "item_id": "227385454335", "first_seen": "T0",
+            "url": "https://www.ebay.co.uk/itm/227385454335?_skw=yurman+signet"}])
+        recs = [{
+            "item_id": "227385454335",
+            "url": "https://www.ebay.co.uk/itm/227385454335?_skw=david+yurman+mens+ring&amdata=ZZZ"}]
+        g.mark_new_arrivals(recs, self.path, "T1")
+        self.assertFalse(recs[0]["is_new"])
+        self.assertEqual(recs[0]["first_seen"], "T0")
+
+    def test_identity_falls_back_to_url_id_when_field_absent(self):
+        # Older data files have no item_id: parse it out of the url instead.
+        self._write_prev([{
+            "url": "https://www.ebay.com/itm/157892974261?_skw=a", "first_seen": "T0"}])
+        recs = [{"url": "https://www.ebay.com/itm/157892974261?_skw=b"}]
+        g.mark_new_arrivals(recs, self.path, "T1")
+        self.assertFalse(recs[0]["is_new"])
+
+    def test_genuinely_different_listing_is_new(self):
+        self._write_prev([{"item_id": "111", "url": "https://ebay.com/itm/111"}])
+        recs = [{"item_id": "111", "url": "https://ebay.com/itm/111?_skw=q"},
+                {"item_id": "222", "url": "https://ebay.com/itm/222"}]
+        g.mark_new_arrivals(recs, self.path, "T1")
+        by = {r["item_id"]: r for r in recs}
+        self.assertFalse(by["111"]["is_new"])
+        self.assertTrue(by["222"]["is_new"])
+
 
 class TestClassifySeller(unittest.TestCase):
     def test_private_individual(self):

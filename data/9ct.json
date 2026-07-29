@@ -124,7 +124,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/117243491497?_skw=9ct+gold+signet+ring&hash=item1b4c41b4a9:g:gP0AAeSwbdxqKqLg",
       "first_seen": "2026-07-26T10:18:37.267480+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "117243491497"
     },
     {
       "title": "Men's Gents 9Ct Gold 15.2g Signet Ring Size U",
@@ -158,7 +159,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW",
       "first_seen": "2026-07-26T10:18:37.267480+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "307004107164"
     },
     {
       "title": "Vintage Large 9ct Gold Signet Ring , Size V1/2,-15.05g",
@@ -191,7 +193,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/123865927591?_skw=9ct+gold+signet+ring&hash=item1cd6fc0fa7:g:~D0AAOSwUMBb9ug~",
       "first_seen": "2026-07-26T10:18:37.267480+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "123865927591"
     },
     {
       "title": "Gentleman's Handmade Diamond Signet Ring 9ct 375 Solid Gold 29.7 Grams",
@@ -223,7 +226,8 @@
       "bids": "",
       "url": "https://www.ebay.com.au/itm/167370662173?_skw=9ct+gold+signet+ring&hash=item26f811a11d:g:7SMAAOSwsaZn0M6c",
       "first_seen": "2026-07-29T09:06:10.918923+00:00",
-      "is_new": true
+      "is_new": true,
+      "item_id": "167370662173"
     },
     {
       "title": "Klasyczny sygnet w kształcie poduszki x/ duży \"dostępny w kolorze platyny, złota i srebra\"",
@@ -255,7 +259,8 @@
       "bids": "",
       "url": "https://www.ebay.pl/itm/227035892803?_skw=sygnet+m%C4%99ski+z%C5%82oto+375&hash=item34dc64cc43:g:xx8AAOSwKfVXEdCd",
       "first_seen": "2026-07-26T10:18:37.267480+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "227035892803"
     }
   ]
 }

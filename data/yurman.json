@@ -64,7 +64,7 @@
     "total_fetched": 467,
     "total_analysed": 176,
     "value_count": 0,
-    "new_count": 13,
+    "new_count": 0,
     "weight_unknown_count": 153,
     "country_counts": {
       "AU": 3,
@@ -107,7 +107,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/398217569131?_skw=David+Yurman+signet+ring&hash=item5cb79de36b:g:iPcAAeSwrBNqZltp",
       "first_seen": "2026-07-28T09:17:23.621092+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "398217569131"
     },
     {
       "title": "David Yurman Black Titanium Men's Streamline Ruby Signet Ring Size 8.5",
@@ -141,7 +142,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/227385454335?_skw=David+Yurman+signet+ring&hash=item34f13aaeff:g:HhcAAeSwmOFqLCzi&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGbFZW0nlq0tHqKFrZ6daLOQmIb7gtxYZFCwkUYLoVdAud1FlbN1zzFCAZF10DiaJa95WCWdOOP5ro2LRLWAKIz%2BdPVnI1EhuLGgpo6QCpxLsjinMfVoOGRwLoPt3%2FXwB1WIcLrL6Zb7XdAWjGTd9pMw%2BlvpQImTlgzMf3vpNpkgEzmKgLQZo1Nb%2Bmsf3zRZoKyR7Ep%2F99c0kJ34v14bFWElp0PL8XC3sNwxBE0keo5IpAhscgtDwSwqAaNR%2BmKVlexiUfRUNhtTUgAFawZZ18hDOVgk0jDztdDevQ%2BmiBcjuqPewPX2%2FvuDGSzllOE%2FiJY%3D",
       "first_seen": "2026-07-29T09:18:08.599558+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "227385454335"
     },
     {
       "title": "David Yurman .925 Sterling Silver Wolf Men's Signet Ring Size 12",
@@ -174,7 +176,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/157892974261?_skw=David+Yurman+signet+ring&hash=item24c32796b5:g:sBUAAeSwG5Vp~PSl&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbEUmzwwjreodOTqfF4rU%2Bia2refix21vobUFsg8WwWD48A%2FlzNLuCQ%2FoMJMO8P3mYbtJGbxii3l3%2FeMlm4tjpbldXge2vBXXHb2NFrtLeK3nUH%2F%2BCZJWWoV6%2BUo3ilpZ367nUEpgaztNk4Bi1tY151HZNl9wC3H98kpYHOQ7plOSdv3MmNWVqRSm6dyYfbBkHBeDBQKCFw%2BjMI1zFG4ghIpoDDXBaUEjx7FtaC9%2BgOWzsVX1PyxPdK%2B4KdaZIa0BuwMVJNguPm4blg9VYmzSozFAulhZBLAnpT5uowOLhOIw%3D%3D",
       "first_seen": "2026-07-29T09:18:08.599558+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "157892974261"
     },
     {
       "title": "David Yurman men’s Royal cord carved onyx signet ring size 9",
@@ -207,7 +210,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/227029694894?_skw=David+Yurman+signet+ring&hash=item34dc0639ae:g:jYkAAeSwCFdo8iC9",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "227029694894"
     },
     {
       "title": "David Yurman Sterling Silver Petrvs Bee Signet Ring Size 10",
@@ -239,7 +243,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/127954297939?_skw=David+Yurman+signet+ring&hash=item1dcaaba453:g:SMgAAeSwkUFqRu-A",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "127954297939"
     },
     {
       "title": "David Yurman Sterling Silver Exotic Stone Lapis Lazuli Signet Ring Size 11",
@@ -271,7 +276,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/318573383225?_skw=David+Yurman+signet+ring&hash=item4a2c740e39:g:cDIAAeSwUTZoXIvi",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "318573383225"
     },
     {
       "title": "David Yurman Black Titanium Men's Streamline Ruby Signet Ring Size 11",
@@ -304,7 +310,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/158125959433?_skw=David+Yurman+signet+ring&hash=item24d10aa909:g:x~cAAeSw8Ghp68wj",
       "first_seen": "2026-07-28T09:17:23.621092+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "158125959433"
     },
     {
       "title": "Vintage David Yurman Sterling Silver 18K Cable Signet Ring Size 7 10.7g",
@@ -337,7 +344,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/147422889143?_skw=David+Yurman+signet+ring&hash=item225316c4b7:g:AU4AAeSwxndqTVbg",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "147422889143"
     },
     {
       "title": "David Yurman Sterling Silver 925 Armory Signet Ring",
@@ -370,7 +378,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/318588243381?_skw=David+Yurman+signet+ring&hash=item4a2d56cdb5:g:tPQAAeSwwnlqWAWP",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "318588243381"
     },
     {
       "title": "DAVID YURMAN STERLING SILVER 925 MARITIME NORTH STAR SIGNET RING 11.5",
@@ -402,7 +411,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/800267541318?_skw=David+Yurman+signet+ring&hash=itemba53a99b46:g:J8oAAeSwTPJqQ-Pz",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "800267541318"
     },
     {
       "title": "Size: 8 David Yurman 925 Sterling Silver Petrvs Bee Signet Ring 15.1g",
@@ -435,7 +445,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/227374632410?_skw=David+Yurman+signet+ring&hash=item34f0958dda:g:SH4AAeSwGUhqIxrW",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "227374632410"
     },
     {
       "title": "David Yurman Black Titanium Men's Streamline Black Sapphire Signet Ring Size 8",
@@ -468,7 +479,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/168528352536?_skw=David+Yurman+signet+ring&hash=item273d129518:g:ulMAAeSwa5xp~lwt&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYXGS2SdtAiWH4fl5oa3Gx0XXZJRydk26F%2F4eZ1G6W653qNwIQbOiHLfWkDbpeotuaAIDpZ4urdrd1wXdg3BLCrqVAXLxH9I3IidaYGE72VZLyj4Pp%2BlyutaY6ni2uiByKt4%2BG48S9JZy7as7z%2FbH7wS%2FAqvC1fp33%2BIZapPmSAnaq8Utwhb0UEAuS6q93viHRYcurIKiyQvvCzOhanJkdanSIU971gHtgW%2BdRw7XPVg1MOz86muH1NLQXD9MQHkgEOczY%2BEKdBIByFtEJmpysWQdE6%2Fc7ceBl5G9%2B5H9YBkw%3D%3D",
       "first_seen": "2026-07-29T09:18:08.599558+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "168528352536"
     },
     {
       "title": "David Yurman Sterling Silver Onyx Streamline Signet Ring",
@@ -500,7 +512,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/257554225275?_skw=David+Yurman+signet+ring&hash=item3bf76d987b:g:mkkAAeSw6B9qPq5q&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGa23epbHeQu3VAS9tSEQ3fwqb%2BNp1mr4m1heUKm%2B2hnhnRw0pRbxxlVqJS4hoguIlLYPa8tfpyKEYZFpkaWUT%2Bn4qLpDzMIygDtrKTQ%2FfMdDI%2BR15XEgFmluAxglTsQqTjDFPn8RXmPAgN9cMbypM3Ditpmhmji3WGNHiNQx2ZcWTjQbr9%2FNTG0byoMTXu2csM1RQbfFSHdQWNvUtcpDQWFP5SJk3H--DVuo8jMP7LYjaq2HfTzwUK9s3Tku%2FEuZ9wCHp1VFZGwN%2B%2Fl7T0MLZjZv3LuTov169XhztwdzndjXQ%3D%3D",
       "first_seen": "2026-07-29T09:18:08.599558+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "257554225275"
     },
     {
       "title": "Black Titanium Men's Lapis Signet Ring David Yurman Size 11",
@@ -533,7 +546,8 @@
       "bids": 18,
       "url": "https://www.ebay.co.uk/itm/158116377873?_skw=David+Yurman+signet+ring&hash=item24d0787511:g:UqIAAeSwu-VqKc3T",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "158116377873"
     },
     {
       "title": "David Yurman Exotic Stone Signet Ring w/ Pietersite - 20mm - Size 9.5",
@@ -565,7 +579,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/278058809590?_skw=David+Yurman+signet+ring&hash=item40bd98b8f6:g:cjoAAeSwJ2RqI4ib",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "278058809590"
     },
     {
       "title": "David Yurman Black Titanium Men's Carnelian Signet Ring Size 14.5",
@@ -599,7 +614,8 @@
       "bids": 9,
       "url": "https://www.ebay.co.uk/itm/168560978349?_skw=David+Yurman+signet+ring&hash=item273f0469ad:g:OOIAAeSwUg1p~mQY",
       "first_seen": "2026-07-28T09:17:23.621092+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "168560978349"
     },
     {
       "title": "David Yurman Silver Deco Ring 925 Signet Streamline",
@@ -632,7 +648,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/236938156835?_skw=David+Yurman+signet+ring&hash=item372a9d5b23:g:UpAAAeSwfwRqVnj7",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "236938156835"
     },
     {
       "title": "David Yurman Sterling Silver Onyx Streamline Signet Ring",
@@ -664,7 +681,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/257604257039?_skw=David+Yurman+signet+ring&hash=item3bfa69050f:g:mkkAAeSw6B9qPq5q",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "257604257039"
     },
     {
       "title": "David Yurman 925 Sterling Silver Exotic Stone Signet Tigers Eye Ring Size 10",
@@ -696,7 +714,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/197852016942?_skw=David+Yurman+signet+ring&hash=item2e10e6312e:g:dYYAAeSwPttpFIiT",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "197852016942"
     },
     {
       "title": "David Yurman Sterling Silver Exotic Stone Tiger’s Eye Signet Ring Size 11",
@@ -728,7 +747,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/318211762427?_skw=David+Yurman+signet+ring&hash=item4a16e628fb:g:stsAAeSwfRloXIny",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "318211762427"
     },
     {
       "title": "David Yurman 925 Sterling Silver Exotic Stone Signet Turquoise Ring Size 11",
@@ -760,7 +780,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/198051678488?_skw=David+Yurman+signet+ring&hash=item2e1cccc918:g:AKsAAeSw7txozG1q",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "198051678488"
     },
     {
       "title": "David Yurman Men's Wolf Petrvs Signet Sterling Silver Ring Band Size 11US",
@@ -794,7 +815,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/336607571073?_skw=David+Yurman+signet+ring&hash=item4e5f5fec81:g:G5IAAeSwp31p65X7",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "336607571073"
     },
     {
       "title": "David Yurman Men's Pyramid Signet Ring in Black Titanium with 18K YG Size 11",
@@ -827,7 +849,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/257345431459?_skw=David+Yurman+signet+ring&hash=item3beafba7a3:g:0kgAAeSwlNdpi77-",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "257345431459"
     },
     {
       "title": "David Yurman Wolf Petrvs Signet Sterling Silver Men's Ring Band Size 12.5US",
@@ -861,7 +884,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/336634175586?_skw=David+Yurman+signet+ring&hash=item4e60f5e062:g:efwAAeSweFVp8kUs",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "336634175586"
     },
     {
       "title": "David Yurman Sterling Silver & 18K Yellow Gold Cable Signet Ring",
@@ -893,7 +917,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/257310714087?_skw=David+Yurman+signet+ring&hash=item3be8e9e8e7:g:afgAAeSwA5VpaTfF",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "257310714087"
     },
     {
       "title": "David Yurman Blue Topaz Signet Ring 585 14k Sterling Silver 925 Sz 6",
@@ -925,7 +950,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/267691755806?_skw=David+Yurman+signet+ring&hash=item3e53ac091e:g:FRoAAeSwHdtqJI-D",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267691755806"
     },
     {
       "title": "David Yurman Black Titanium Men's Pietersite Signet Ring Size 9",
@@ -958,7 +984,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/157988233589?_skw=David+Yurman+signet+ring&hash=item24c8d52175:g:XewAAeSw7QhqKczo&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGaOC%2FeS6yljdDzsf2%2Bq%2Fb33Vmzj1AoSR320aqpxQzZlwR%2FU5Sd%2BLCbS%2BKRoxPt3E0GdsZOlsycwBearESDaA42FtJRMsXvaLCuYLIHvoK55%2BzAmyFhv8r0lTp36z7senDj%2BxuXANTunmBW%2FO89bSj%2FkyjC823U9w2B77EJNP0%2F6NtoczaQrJ7YkmqbOrKmORYxMzg2Ww4DkZ%2BWO5eIvfT45K8cvA%2Fm3A2WmY%2FtD8J2T%2FKcuQ8yquwgECJqw9Btl0V%2BghkLjIjnIDfiyEcZQwilgeWwnpUeoiwLTwNp6gZHe0Q%3D%3D",
       "first_seen": "2026-07-29T09:18:08.599558+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "157988233589"
     },
     {
       "title": "David Yurman Black Enamel Sterling Silver Signet Ring. Size 4. 5.89grams.  Nice",
@@ -990,7 +1017,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/167803987017?_skw=David+Yurman+signet+ring&hash=item2711e5a449:g:RkoAAeSwJKxozjks&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGb8zCV9O%2FApNEp68FZhXmKhrrYZySbhdjAipRz68hy7F6Tj%2F7Zy0EUKK0JpvaBFF%2BJBh2UNaSN5DnExVsxC90nVSAF%2FZgQX6ZJ4yjZO%2Bd%2F5oq%2B%2BfMxhZ9wKQAvFP0USC0thF3Zme3nJYxdZSf7jMAo3qxTCcmtBDZSIflnsD0EFbAeJEW%2FHRT0fjGfcYyfXoKWmIqsxVQE9BnJpCVE40BLMX2nqVmNEslllsA5bAa7ElG%2B1BxldX9ltjHLKrAph5fajmdZV2B6PGMdr8D6mHj1awu%2BeNgMWyOpL59oRASRv1tWmIwyERhynzcsfcsVK%2Bi4%3D",
       "first_seen": "2026-07-29T09:18:08.599558+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "167803987017"
     },
     {
       "title": "DAVID YURMAN STERLING SILVER 925 ONYX STREAMLINE® SIGNET CUSHION RING",
@@ -1022,7 +1050,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/157607585321?_skw=David+Yurman+signet+ring&hash=item24b224e629:g:GwAAAeSw7H9oZcvJ",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "157607585321"
     },
     {
       "title": "David YURMAN Sterling Silver Exotic Stone LAPIS LAZULI Signet Ring sz 9 ~ 13.7 g",
@@ -1054,7 +1083,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/397683833734?_skw=David+Yurman+signet+ring&hash=item5c97cdbb86:g:F8wAAeSwPU9pq21o",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "397683833734"
     },
     {
       "title": "DAVID YURMAN STERLING SILVER 925 ARMORY SIGNET RING",
@@ -1086,7 +1116,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/156988627188?_skw=David+Yurman+signet+ring&hash=item248d4058f4:g:zs4AAOSwYVFoJTFo",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "156988627188"
     },
     {
       "title": "david yurman signet ring size 9",
@@ -1118,7 +1149,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/406928408186?_skw=David+Yurman+signet+ring&hash=item5ebed2be7a:g:jv8AAeSw1rlqBwGA",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "406928408186"
     },
     {
       "title": "David Yurman Lapis Titanium Signet Ring",
@@ -1150,7 +1182,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/168518683261?_skw=David+Yurman+signet+ring&hash=item273c7f0a7d:g:jKcAAeSwI5dqTA55",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "168518683261"
     },
     {
       "title": "David Yurman Black Titanium Men's Turquoise Signet Ring Size 14.5",
@@ -1183,7 +1216,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/358258775003?_skw=David+Yurman+signet+ring&hash=item5369e313db:g:J9oAAeSwTqFpnyOz",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "358258775003"
     },
     {
       "title": "David Yurman 925 Sterling Silver Exotic Stone Signet Lapis Lazuli Ring Size 11",
@@ -1215,7 +1249,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/287377116880?_skw=David+Yurman+signet+ring&hash=item42e902ced0:g:EbIAAeSws9VqIzoF&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGav0z4pJZue2r6ey9Z95HfQYH%2By8dUBXPxCcY1qMg7z9%2F3KbhwkdZOgI5sJ7oR75ltK9TMT8YeW6n1O9HxJEflfx9mS3unxfFDdflUW%2B2J6ySL9vB0jN4PjA2ZHZF%2Bldc%2BNaNwg%2F9RjVJ%2BF1Sz%2B89CL%2BrSoRU7B1JgYmMsKAaFlUwFWfCGcNHZ%2F6pcAQdX6UnUkuCkbw3ykDBKZlPmpPmMRh5wTumY2Wq9rbVtHLPwoloXIzv4FBTsCBaFZyDqN7EJ09%2FkR2mnEp6aOrRhbsAOiEAPFQ4I7NDaG%2B31x9p3Acw%3D%3D",
       "first_seen": "2026-07-29T09:18:08.599558+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "287377116880"
     },
     {
       "title": "David Yurman Black Titanium Men's Tiger's Eye Signet Ring Size 9",
@@ -1248,7 +1283,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/157618665863?_skw=David+Yurman+signet+ring&hash=item24b2cdf987:g:ZQ4AAOSwVZRoFSHO&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGacGWwArc6Al8fpJ%2FFaFI8KQzZxbNaPZ%2FQzcq%2FITJP6mZBvyweXlkEcxBef4OAhOf4vzw4Totw68zDQx7e4PTbL%2BTHITE03scwZEwTm%2FgxLE9wNJN5abR3NsJ1pb%2FSXzp7fi2y9Av0yAaw%2Fyu2v11kzI97x9YHrJ8ly8L8TkuH4AMFC484tMdc8S1YlfyY9oCOgpGV8v4AMKZ5wypE0jmqQCwUUVNFEAe6sD7y5FvWnwCeu4WYWEE%2BVV%2BkjkKOSnLTR%2BUtZwuSK4SGk5M1lj9E2MIasKlFRAldsTEIcHQ4vBQ%3D%3D",
       "first_seen": "2026-07-29T09:18:08.599558+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "157618665863"
     },
     {
       "title": "David Yurman 925 Sterling Silver Exotic Stone Signet Tigers Eye Ring Size 11",
@@ -1280,7 +1316,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/198203385317?_skw=David+Yurman+signet+ring&hash=item2e25d7a5e5:g:dYYAAeSwPttpFIiT",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "198203385317"
     },
     {
       "title": "925 Sterling Silver David Yurman Black Onyx Signet Ring Size 8.25",
@@ -1312,7 +1349,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/188043493612?_skw=David+Yurman+signet+ring&hash=item2bc84400ec:g:RFoAAeSwBy5pindi",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "188043493612"
     },
     {
       "title": "David Yurman Wide Ironwood Signet Ring In Sterling Silver ",
@@ -1344,7 +1382,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/267709887252?_skw=David+Yurman+signet+ring&hash=item3e54c0b314:g:NqMAAeSw5oRqPdCV",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267709887252"
     },
     {
       "title": "DAVID YURMAN Mens Forged Carbon Sterling Silver Signet Ring Size 9 Authentic",
@@ -1377,7 +1416,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/267576647481?_skw=David+Yurman+signet+ring&hash=item3e4ccf9f39:g:g9QAAeSw1KlpkVe1",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267576647481"
     },
     {
       "title": "David Yurman Sterling Silver Exotic Stone Lapis Lazuli Signet Ring Size 10",
@@ -1409,7 +1449,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/317940972147?_skw=David+Yurman+signet+ring&hash=item4a06c23a73:g:cDIAAeSwUTZoXIvi",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "317940972147"
     },
     {
       "title": "DAVID YURMAN New Men's Streamline 14mm Black Onyx & Sterling Silver Ring Size 6",
@@ -1442,7 +1483,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/177959680505?_skw=David+Yurman+signet+ring&hash=item296f3939f9:g:PfoAAeSw-RRptYaF",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "177959680505"
     },
     {
       "title": "DAVID YURMAN TWO-TONE STERLING SILVER- 18K YELLOW GOLD PETRVS® LION SIGNET RING",
@@ -1474,7 +1516,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/157804927911?_skw=David+Yurman+signet+ring&hash=item24bde81ba7:g:yC0AAeSwx~hpzr6q",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "157804927911"
     },
     {
       "title": "Black Titanium Men's Lapis Signet Ring David Yurman Size 10",
@@ -1507,7 +1550,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/168405465549?_skw=David+Yurman+signet+ring&hash=item2735bf79cd:g:ZY8AAeSw-PRp~l7F",
       "first_seen": "2026-07-27T09:30:02.203044+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "168405465549"
     },
     {
       "title": "David Yurman Men's Deco Signet Ring with Black Onyx size: 10",
@@ -1541,7 +1585,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/278206991737?_skw=David+Yurman+signet+ring&hash=item40c66dcd79:g:PawAAeSw4NdqW6Cn",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "278206991737"
     },
     {
       "title": "David Yurman Men’s Bee Signet Sterling Silver &18k Ring Sz 9",
@@ -1573,7 +1618,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/198273673722?_skw=David+Yurman+signet+ring&hash=item2e2a0829fa:g:ea4AAeSwwDZoAS1y",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "198273673722"
     },
     {
       "title": "Vintage David Yurman Sterling Silver 925 GARNET Albion SIGNET Ring sz 8 ~ 8.8g",
@@ -1606,7 +1652,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/398084789201?_skw=David+Yurman+signet+ring&hash=item5cafb3d3d1:g:l1UAAeSwtAZqNbZj",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "398084789201"
     },
     {
       "title": "David Yurman's Men's Sterling Silver Black Onyx Signet Ring Size 13 #24159",
@@ -1640,7 +1687,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/298356479780?_skw=David+Yurman+signet+ring&hash=item45776e9724:g:w6MAAeSwhYVqFgKO",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "298356479780"
     },
     {
       "title": "David Yurman Maritime Compass Signet Ring US 11 Sterling Silver",
@@ -1672,7 +1720,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/358282958610?_skw=David+Yurman+signet+ring&hash=item536b541712:g:3yMAAeSwMjFpJ4DR",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "358282958610"
     },
     {
       "title": "David Yurman 925 Sterling Silver Exotic Stone Signet Lapis Lazuli Ring Size 10",
@@ -1704,7 +1753,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/198475640827?_skw=David+Yurman+signet+ring&hash=item2e3611effb:g:EjwAAeSw~Cloxfs1",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "198475640827"
     },
     {
       "title": "David Yurman Black Titanium Men's Lapis Signet Ring Size 9",
@@ -1737,7 +1787,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/168327951417?_skw=David+Yurman+signet+ring&hash=item273120b439:g:vLUAAeSwFp5om4js",
       "first_seen": "2026-07-28T09:17:23.621092+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "168327951417"
     },
     {
       "title": "David Yurman Signet Ring Size 7.75 Sterling Silver  13.94 Grams",
@@ -1769,7 +1820,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/227422298547?_skw=David+Yurman+signet+ring&hash=item34f36ce1b3:g:kpsAAeSwwDZoGR7q",
       "first_seen": "2026-07-27T09:30:02.203044+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "227422298547"
     },
     {
       "title": "Sz. 8 David Yurman Silver 18k 750 Signet Cable Classic Ring 11.4gr",
@@ -1802,7 +1854,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/227320781666?_skw=David+Yurman+signet+ring&hash=item34ed5fdb62:g:6CwAAeSwQdhp8SfI",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "227320781666"
     },
     {
       "title": "DAVID YURMAN Sterling & Black Onyx Signet Ring - Size 11-AUTHENTIC",
@@ -1834,7 +1887,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/178046538075?_skw=David+Yurman+signet+ring&hash=item297466915b:g:GI4AAeSwpQZp3U06",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "178046538075"
     },
     {
       "title": "DAVID YURMAN STERLING SILVER 925 MARITIME NORTH STAR SIGNET RING",
@@ -1866,7 +1920,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/156501442838?_skw=David+Yurman+signet+ring&hash=item2470368116:g:cRwAAOSwVEpnLWsx",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "156501442838"
     },
     {
       "title": "David Yurman TITANIUM Exotic Stone Black Onyx SIGNET Ring w/ Pouch size 9",
@@ -1898,7 +1953,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/397047701365?_skw=David+Yurman+signet+ring&hash=item5c71e31f75:g:5kUAAeSwrfxow0cd",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "397047701365"
     },
     {
       "title": "David Yurman Exotic Sterling Silver Signet Ring with Turquoise Stone Size 9.5",
@@ -1930,7 +1986,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/168160591283?_skw=David+Yurman+signet+ring&hash=item272726fdb3:g:zxMAAOSw~QlmnR4V",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "168160591283"
     },
     {
       "title": "David Yurman Signet Ring In Sterling Silver With Black Diamonds",
@@ -1962,7 +2019,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/267685582283?_skw=David+Yurman+signet+ring&hash=item3e534dd5cb:g:G-gAAeSwWQhqHEnw",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267685582283"
     },
     {
       "title": "David Yurman Streamline Signet Ring w/ Blue Sapphires - 14mm - Sz 9 - FREE SHIP",
@@ -1994,7 +2052,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/287448681604?_skw=David+Yurman+signet+ring&hash=item42ed46cc84:g:1gMAAeSw4f5qTwVq",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "287448681604"
     },
     {
       "title": "DAVID YURMAN 925 STERLING DIAMONDS CABLE SIGNET RING  BR",
@@ -2027,7 +2086,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/196220275956?_skw=David+Yurman+signet+ring&hash=item2dafa3ccf4:g:ExYAAOSwKaJluqD8",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "196220275956"
     },
     {
       "title": "David Yurman Sterling Silver Exotic Stone Lapis Lazuli Signet Ring Size 9",
@@ -2059,7 +2119,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/318630514965?_skw=David+Yurman+signet+ring&hash=item4a2fdbd115:g:cDIAAeSwUTZoXIvi",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "318630514965"
     },
     {
       "title": "David Yurman Signet Sterling Silver 925 Size 8",
@@ -2091,7 +2152,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/388508878347?_skw=David+Yurman+signet+ring&hash=item5a74ef060b:g:IdYAAOSwu~5oPmDZ",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "388508878347"
     },
     {
       "title": "DAVID YURMAN 925 SILVER EMPIRE SIGNET RING Size 8 BLACK ONYX PAVE BLACK DIAMOND",
@@ -2124,7 +2186,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/326888162716?_skw=David+Yurman+signet+ring&hash=item4c1c0d859c:g:QaYAAeSwuydpKMb5",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "326888162716"
     },
     {
       "title": "David Yurman 925 Sterling Silver Exotic Stone Signet Lapis Lazuli Ring Size 11",
@@ -2156,7 +2219,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/198444016567?_skw=David+Yurman+signet+ring&hash=item2e342f63b7:g:EjwAAeSw~Cloxfs1",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "198444016567"
     },
     {
       "title": "DAVID YURMAN SS LARGE MENS COLOR CHANGE GARNET SIGNET RING",
@@ -2189,7 +2253,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/287463789365?_skw=David+Yurman+signet+ring&hash=item42ee2d5335:g:EzoAAOSwIK1mWPVp",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "287463789365"
     },
     {
       "title": "David Yurman Sterling Silver Signet Ring with Pavé Black Diamonds Size 12.25",
@@ -2221,7 +2286,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/365949796928?_skw=David+Yurman+signet+ring&hash=item55344ec240:g:e0kAAeSwwINpAS7U",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "365949796928"
     },
     {
       "title": "DAVID YURMAN TITANIUM COLOR-CHANGE GARNET STREAMLINE SIGNET RING",
@@ -2253,7 +2319,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/157902589302?_skw=David+Yurman+signet+ring&hash=item24c3ba4d76:g:gnEAAeSwTU5qAiUB",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "157902589302"
     },
     {
       "title": "David Yurman Signet Sterling Silver 925 Size 8 .75",
@@ -2285,7 +2352,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/366122313927?_skw=David+Yurman+signet+ring&hash=item553e9728c7:g:OtUAAeSwMsFpZqBo",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "366122313927"
     },
     {
       "title": "David Yurman Sterling Cairo Mummy Black Onyx Signet Ring Size  13 - Weight 21.1g",
@@ -2317,7 +2385,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/389582602015?_skw=David+Yurman+signet+ring&hash=item5ab4eebf1f:g:YjAAAeSwEZVphO-j",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "389582602015"
     },
     {
       "title": "David Yurman Chevron Signet Ring Retired 925 Sterling Size 10.25",
@@ -2349,7 +2418,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/318392682679?_skw=David+Yurman+signet+ring&hash=item4a21aec8b7:g:~x8AAeSwidpqJicE",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "318392682679"
     },
     {
       "title": "David Yurman Sterling Silver Black Diamond Signet Ring Beveled Size 9.25",
@@ -2381,7 +2451,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/318625876723?_skw=David+Yurman+signet+ring&hash=item4a2f950af3:g:rkEAAeSw~LpqYmVp",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "318625876723"
     },
     {
       "title": "David Yurman Exotic Stone Signet Ring Turquoise Sterling Silver Size 11",
@@ -2413,7 +2484,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/318178495595?_skw=David+Yurman+signet+ring&hash=item4a14ea8c6b:g:S0AAAeSwHs9oVjoP",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "318178495595"
     },
     {
       "title": "David Yurman Black Titanium Men's Tiger's Eye Signet Ring Size 14US",
@@ -2446,7 +2518,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/168327953101?_skw=David+Yurman+signet+ring&hash=item273120bacd:g:y0sAAOSwCNFn5wL6",
       "first_seen": "2026-07-27T09:30:02.203044+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "168327953101"
     },
     {
       "title": "David Yurman 18K Gold & Sterling Silver Wide Cable Signet Band Ring Size 6.5",
@@ -2479,7 +2552,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/188603117262?_skw=David+Yurman+signet+ring&hash=item2be99f2ece:g:Wq8AAeSwq0dqSlyl",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "188603117262"
     },
     {
       "title": "David Yurman Sterling Silver 14k Gold Thoroughbred Classic Signet Ring Size 9.25",
@@ -2511,7 +2585,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/198246943587?_skw=David+Yurman+signet+ring&hash=item2e28704b63:g:vkwAAeSwCoRpzaDs",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "198246943587"
     },
     {
       "title": "David Yurman Exotic Stone Signet Ring - Sterling Silver and Black Onyx",
@@ -2543,7 +2618,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/117191962975?_skw=David+Yurman+signet+ring&hash=item1b492f715f:g:P8MAAeSwvSpp~4EX",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "117191962975"
     },
     {
       "title": "David Yurman Chevron Signet Ring With Blue Sapphire In Sterling Silver ",
@@ -2575,7 +2651,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/267709994520?_skw=David+Yurman+signet+ring&hash=item3e54c25618:g:z5cAAeSwubhqPgyR",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267709994520"
     },
     {
       "title": "David Yurman Mens 18k Streamline Signet Ring Size 8 MINT",
@@ -2609,7 +2686,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/307018348445?_skw=David+Yurman+signet+ring&hash=item477bb8379d:g:mXQAAeSwmGpqOX4v",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "307018348445"
     },
     {
       "title": "David Yurman Sterling Silver Signet Ring with Black Onyx Size 7.5",
@@ -2642,7 +2720,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/198404629510?_skw=David+Yurman+signet+ring&hash=item2e31d66406:g:UuEAAeSwr3JqIyAf",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "198404629510"
     },
     {
       "title": "DAVID YURMAN TITANIUM 2.00CTW SAPPHIRE STREAMLINE® SIGNET RING",
@@ -2674,7 +2753,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/157634919553?_skw=David+Yurman+signet+ring&hash=item24b3c5fc81:g:sYEAAeSwcGNpdRkk",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "157634919553"
     },
     {
       "title": "David Yurman 925 Sterling Silver Exotic Stone Signet Turquoise Ring Size 9",
@@ -2706,7 +2786,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/197962065614?_skw=David+Yurman+signet+ring&hash=item2e177566ce:g:AKsAAeSw7txozG1q",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "197962065614"
     },
     {
       "title": "DAVID YURMAN SS LARGE STREAMLINE MENS SIGNET BLACK DIAMOND RING",
@@ -2739,7 +2820,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/287483788404?_skw=David+Yurman+signet+ring&hash=item42ef5e7c74:g:H7YAAeSwoSdpRGNy",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "287483788404"
     },
     {
       "title": "DAVID YURMAN SILVER MENS SIGNET BLUE SAPPHIRE RING",
@@ -2772,7 +2854,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/267728866793?_skw=David+Yurman+signet+ring&hash=item3e55e24de9:g:TBUAAeSwcVxpg6~s",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267728866793"
     },
     {
       "title": "David Yurman Sterling & Black Onyx Signet Ring - Size 10.25",
@@ -2804,7 +2887,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/335907316835?_skw=David+Yurman+signet+ring&hash=item4e35a2e463:g:lAQAAeSwpnZn-Y0O",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "335907316835"
     },
     {
       "title": "David Yurman 925 Sterling Silver Exotic Stone Signet Lapis Lazuli Ring Size 9",
@@ -2836,7 +2920,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/197889483683?_skw=David+Yurman+signet+ring&hash=item2e1321e3a3:g:EjwAAeSw~Cloxfs1",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "197889483683"
     },
     {
       "title": "David Yurman Waves Signet ring With Pave Black Diamonds In Sterling Silver ",
@@ -2868,7 +2953,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/267709952391?_skw=David+Yurman+signet+ring&hash=item3e54c1b187:g:JA8AAeSwS95qPfEY",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267709952391"
     },
     {
       "title": "David Yurman Sterling Silver Exotic Stone Tiger’s Eye Signet Ring Size 9",
@@ -2900,7 +2986,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/318192335387?_skw=David+Yurman+signet+ring&hash=item4a15bdba1b:g:stsAAeSwfRloXIny",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "318192335387"
     },
     {
       "title": "DAVID YURMAN ONYX STERLING SILVER 925 DECO SIGNET RING",
@@ -2933,7 +3020,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/156609534869?_skw=David+Yurman+signet+ring&hash=item2476a7db95:g:fncAAOSwyqNncezV",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "156609534869"
     },
     {
       "title": "David Yurman 925 Sterling Silver Exotic Stone Signet Turquoise Ring Size 10",
@@ -2965,7 +3053,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/198314930906?_skw=David+Yurman+signet+ring&hash=item2e2c7db2da:g:AKsAAeSw7txozG1q",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "198314930906"
     },
     {
       "title": "DAVID YURMAN SILVER LARGE MENS COLOR CHANGE GARNET SIGNET RING",
@@ -2998,7 +3087,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/287481795789?_skw=David+Yurman+signet+ring&hash=item42ef4014cd:g:BgEAAOSwWJpmWPVJ",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "287481795789"
     },
     {
       "title": "David Yurman 750 18kt Yellow Gold Initial Letter L Engraved Signet Ring Size 4.5",
@@ -3030,7 +3120,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/277247323506?_skw=David+Yurman+signet+ring&hash=item408d3a6d72:g:bT4AAeSwizNpi6Cc",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "277247323506"
     },
     {
       "title": "Men’s David Yurman Bee Signet Sterling Silver &18k Ring Sz 11.5",
@@ -3062,7 +3153,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/188305035729?_skw=David+Yurman+signet+ring&hash=item2bd7dad1d1:g:fRYAAeSwKshpoKGE",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "188305035729"
     },
     {
       "title": "$2650 DAVID YURMAN SILVER LARGE MENS KNIFE EDGE SIGNET GRAY SAPPHIRE RING",
@@ -3095,7 +3187,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/267738806692?_skw=David+Yurman+signet+ring&hash=item3e5679f9a4:g:flcAAeSwl-1qZREX",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267738806692"
     },
     {
       "title": "David Yurman Chevron Pave Signet Ring With Black Diamonds",
@@ -3127,7 +3220,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/267685765745?_skw=David+Yurman+signet+ring&hash=item3e5350a271:g:~VgAAeSwui5qHIry",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267685765745"
     },
     {
       "title": "David Yurman Men’s Bee Signet Sterling Silver &18k Ring Sz 11",
@@ -3159,7 +3253,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/198120338836?_skw=David+Yurman+signet+ring&hash=item2e20e47594:g:ea4AAeSwwDZoAS1y",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "198120338836"
     },
     {
       "title": "Sz. 10 David Yurman Men's Silver 18k 750 Signet Cable Ring Large Heavy 17.8 gr",
@@ -3193,7 +3288,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/327114423800?_skw=David+Yurman+signet+ring&hash=item4c2989fdf8:g:AiIAAeSwN8dp5ots",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "327114423800"
     },
     {
       "title": "David Yurman DY Black Titanium Lapis Signet Ring",
@@ -3225,7 +3321,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/306361659142?_skw=David+Yurman+signet+ring&hash=item475493ef06:g:TkoAAeSwu3toVe5U",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "306361659142"
     },
     {
       "title": "David Yurman 925 Sterling Silver Exotic Stone Signet Tigers Eye Ring Size 9",
@@ -3257,7 +3354,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/197870684645?_skw=David+Yurman+signet+ring&hash=item2e120309e5:g:dYYAAeSwPttpFIiT",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "197870684645"
     },
     {
       "title": "David Yurman Sterling Silver Black Diamond Signet Ring 15.2mm Beveled Size 7.5",
@@ -3289,7 +3387,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/198229903296?_skw=David+Yurman+signet+ring&hash=item2e276c47c0:g:O6oAAeSwXXlpxBjo",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "198229903296"
     },
     {
       "title": "$2150 DAVID YURMAN SILVER LARGE MENS SIGNET BLACK DIAMOND RING",
@@ -3322,7 +3421,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/287468338416?_skw=David+Yurman+signet+ring&hash=item42ee72bcf0:g:BY0AAOSwmwNnOLiv",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "287468338416"
     },
     {
       "title": "David Yurman Exotic Stone Signet Ring Turquoise Sterling Silver Size 9",
@@ -3354,7 +3454,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/317330498574?_skw=David+Yurman+signet+ring&hash=item49e25f240e:g:S0AAAeSwHs9oVjoP",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "317330498574"
     },
     {
       "title": "David Yurman Black Diamond And Ruby Signet Ring in Sterling Silver Size 7.5",
@@ -3386,7 +3487,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/204725157660?_skw=David+Yurman+signet+ring&hash=item2faa91ff1c:g:CK8AAOSwdzpmDdLA",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "204725157660"
     },
     {
       "title": "David Yurman 18K/925 Signet Cable Style Ring",
@@ -3418,7 +3520,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/326993757354?_skw=David+Yurman+signet+ring&hash=item4c2258c4aa:g:u84AAeSwmNdpih8V",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "326993757354"
     },
     {
       "title": "Men's David Yurman Streamline Sterling Silver Black Diamond Signet Ring Band 6",
@@ -3452,7 +3555,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/177869327900?_skw=David+Yurman+signet+ring&hash=item2969d68e1c:g:vs0AAOSwJk9n7aGf",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "177869327900"
     },
     {
       "title": "$2350 DAVID YURMAN SILVER LARGE MENS SIGNET BLUE SAPPHIRE RING",
@@ -3485,7 +3589,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/287472188115?_skw=David+Yurman+signet+ring&hash=item42eead7ad3:g:zqkAAeSwgvZqXQRP",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "287472188115"
     },
     {
       "title": "DAVID YURMAN DIAMOND 0.57 CTW STERLING SILVER 925 STREAMLINE SIGNET RING",
@@ -3517,7 +3622,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/156419016252?_skw=David+Yurman+signet+ring&hash=item246b4cc63c:g:FP4AAOSwbdBm7cxy",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "156419016252"
     },
     {
       "title": "DAVID YURMAN NEW Sculpted Cable 18K Gold  Sterling Silver & Citrine Ring 8.25",
@@ -3550,7 +3656,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/116747469447?_skw=David+Yurman+signet+ring&hash=item1b2eb10287:g:Jq4AAOSwZs1cFskh",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "116747469447"
     },
     {
       "title": "$2150 DAVID YURMAN SS LARGE MENS SIGNET BLACK DIAMOND RING",
@@ -3583,7 +3690,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/267734952214?_skw=David+Yurman+signet+ring&hash=item3e563f2916:g:TgIAAOSwmaNhctKR",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267734952214"
     },
     {
       "title": "David Yurman Black Diamond Streamline Signet Ring Sterling Silver Sz 11",
@@ -3615,7 +3723,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/358816548862?_skw=David+Yurman+signet+ring&hash=item538b2207fe:g:BPEAAeSw75ZqXQoY",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "358816548862"
     },
     {
       "title": "David Yurman Black Onyx Signet Cable Ring In Sterling Silver With Gold",
@@ -3647,7 +3756,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/267685989511?_skw=David+Yurman+signet+ring&hash=item3e53540c87:g:nCcAAeSwwapqHNDo",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267685989511"
     },
     {
       "title": "$2150 DAVID YURMAN SS LARGE MENS SIGNET BLACK DIAMOND RING",
@@ -3680,7 +3790,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/267733367028?_skw=David+Yurman+signet+ring&hash=item3e5626f8f4:g:TgIAAOSwmaNhctKR",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267733367028"
     },
     {
       "title": "David Yurman Exotic Stone Signet Ring Turquoise Sterling Silver Size 10",
@@ -3712,7 +3823,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/317794113492?_skw=David+Yurman+signet+ring&hash=item49fe0157d4:g:S0AAAeSwHs9oVjoP",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "317794113492"
     },
     {
       "title": "DAVID YURMAN STERLING SILVER 925 ONYX & DIAMOND PETRVS SCARAB SIGNET RING",
@@ -3744,7 +3856,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/157268433210?_skw=David+Yurman+signet+ring&hash=item249dedd93a:g:DTYAAeSwnGNoqz6o",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "157268433210"
     },
     {
       "title": "David Yurman Sterling Silver Exotic Stone Tiger’s Eye Signet Ring Size 10",
@@ -3776,7 +3889,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/317030740310?_skw=David+Yurman+signet+ring&hash=item49d0813156:g:stsAAeSwfRloXIny",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "317030740310"
     },
     {
       "title": "David Yurman Bee Signet Sterling Silver &18k Ring Sz 12",
@@ -3808,7 +3922,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/198258092974?_skw=David+Yurman+signet+ring&hash=item2e291a6bae:g:ea4AAeSwwDZoAS1y",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "198258092974"
     },
     {
       "title": "David YURMAN Black Titanium Signet Ring W/ Onyx Size 8.5 Signet Ring",
@@ -3841,7 +3956,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/387815619318?_skw=David+Yurman+signet+ring&hash=item5a4b9cbaf6:g:U3QAAeSweUBopONm",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "387815619318"
     },
     {
       "title": "DAVID YURMAN WRAP BLACK ONYX STERLING SILVER SIGNET RING SIZE 9 (TDW037152)",
@@ -3873,7 +3989,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/146363584198?_skw=David+Yurman+signet+ring&hash=item2213f30ec6:g:1BAAAOSw5SBnnnCg",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "146363584198"
     },
     {
       "title": "David Yurman Men's Faceted Signet Ring White Diamond Sterling .925 Ring Size 8",
@@ -3906,7 +4023,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/167527677631?_skw=David+Yurman+signet+ring&hash=item27016d7ebf:g:YywAAeSwpCxoLrEa",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "167527677631"
     },
     {
       "title": "David Yurman Men’s Bee Signet Sterling Silver &18k Ring Sz 10.5",
@@ -3938,7 +4056,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/198273667066?_skw=David+Yurman+signet+ring&hash=item2e2a080ffa:g:ea4AAeSwwDZoAS1y",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "198273667066"
     },
     {
       "title": "David Yurman Sterling Silver 18K Yellow Gold Signet Classic Cable Diamond Ring",
@@ -3970,7 +4089,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/254377172675?_skw=David+Yurman+signet+ring&hash=item3b3a0f9ec3:g:u3UAAOSwvndfaiGo",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "254377172675"
     },
     {
       "title": "David Yurman Wellesley Three Row with Diamonds Ring Retail $1200",
@@ -4002,7 +4122,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/304412717666?_skw=David+Yurman+signet+ring&hash=item46e0697262:g:3GUAAOSwtVViPck9",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "304412717666"
     },
     {
       "title": "David Yurman Wellesley Three Row Ring with Diamonds",
@@ -4034,7 +4155,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/304396374417?_skw=David+Yurman+signet+ring&hash=item46df701191:g:CmUAAOSwDvxiLmdB",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "304396374417"
     },
     {
       "title": "David Yurman 14k Yellow Gold Sterling Silver Blue Topaz Noblesse Signet Ring ",
@@ -4066,7 +4188,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/277395535629?_skw=David+Yurman+signet+ring&hash=item40960ff70d:g:HPoAAeSw7MFoZo~G",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "277395535629"
     },
     {
       "title": "David Yurman Bee Signet Sterling Silver &18k Ring Sz 13",
@@ -4098,7 +4221,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/197955197337?_skw=David+Yurman+signet+ring&hash=item2e170c9999:g:ea4AAeSwwDZoAS1y",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "197955197337"
     },
     {
       "title": "Men's David Yurman 18k Gold 925 Sterling Silver Carnelian Albion Ring 14mm 11.75",
@@ -4132,7 +4256,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/377326376837?_skw=David+Yurman+mens+ring&hash=item57da679785:g:rmAAAeSw44JqAp7R",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "377326376837"
     },
     {
       "title": "David Yurman 925 Sterling Silver Bezel-Set White Agate Signet Ring 4.5",
@@ -4165,7 +4290,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/198524026941?_skw=David+Yurman+signet+ring&hash=item2e38f4403d:g:DZMAAeSwws5qZSDh&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGZCf%2Fw8QyDgcMUISr7ujAlY1hkh0wyY6fnSK7O2qmczWDu1xs8PEZa9dgdvE583t%2Bnf90CeMJZB6fgmtiaEXerS%2B8Q8miFhnLxnsUrUCzSGqSDpQZeNuwUJujEDg%2FmXM0SfLNfFADjp6oysQzC2m3ARPyOE8XPJmLNR9uY67%2FUvU01mKExpDEbSR7PcCfUAtiWa6ymZANd2CVDDRyv3Z7Uyc1mwgV4QGTpDSQtnaDZ2zbYH6OtKVrG75Liig1VJNBuEZRLBK1YmjLQ2Ek2U%2FcMI6%2Fwrzkrj73zj2ETYRFxc4Bw5XpzM2QibS04LL1W--ug%3D",
       "first_seen": "2026-07-29T09:18:08.599558+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "198524026941"
     },
     {
       "title": "David Yurman Streamline Signet Ring Sterling Silver with Black Onyx, Size 11",
@@ -4197,7 +4323,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/206421838019?_skw=David+Yurman+signet+ring&hash=item300fb348c3:g:MxEAAeSw03hqWndf&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGaEIypEC8JKKGTjk6XEKLlqHvjKKI8cASt1PLF1uc8ipIFwSnBohaSse9QuRehtDHoqGKVgFJ1KlH%2Bb%2BzptqmYnWLu1uH8R%2BPWO26tpHZhal%2FMTaeokQassUWkKIQ7o861I1hhY%2Fc%2F9JCWnvVfPOULlfsKUsP%2FdCxHikjtBx9V%2FL78F1fJf1AJHgzUf7OEOlTZnoVIlxSjlyCBBIbm%2FGOcoQxFd6KACVAicMs%2B93x36WuRhKptyxO8AkqRVTqDrNExUv1QmWvx0e70lRak8Aovcal3Td6NW%2By%2FKy7Rg7Gxvdg%3D%3D",
       "first_seen": "2026-07-29T09:18:08.599558+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "206421838019"
     },
     {
       "title": "DAVID YURMAN Ladies 18K Yellow Gold 13mm Signet Pinky Ring Size 4 New Authentic",
@@ -4229,7 +4356,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/127969626107?_skw=David+Yurman+signet+ring&hash=item1dcb9587fb:g:09cAAeSwWc5qUnf6",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "127969626107"
     },
     {
       "title": "David Yurman Men's Black Titanium Black Onyx Signet Ring Size 8",
@@ -4262,7 +4390,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/198340483282?_skw=David+Yurman+signet+ring&hash=item2e2e0398d2:g:s4cAAeSwU0pp~gO4&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGZrzsLFVjSw35bT5vpU1X1MDK1BMMahbfD%2FJALEeIa83gCSA3n3AX8S%2FAVdk4MpVqfFpBNQ9mrHzT4cZ4jjLVqElUejNXlOu%2FJp3E4brXeMFUqDeEKN3XeDqMl2K5kemj%2BLVYKYZ3cm05TuTb%2FIeRlVpUqI6dXJfZd%2FtxD2ZHGA1MTA%2BIgH8%2Fv%2BDHCNEIO2wrRk7zrKolLoX73rIN4pZEeTHTNAfZ%2BTemClClD8rpoFTxEfwRGC5h7wiyhx9I52AlbMJs2ZSOUizJEOS3kTBfUeKs1ea41CRPvDbfFee9ksaSP1PSIY8%2BGUklwjghmd4kc%3D",
       "first_seen": "2026-07-29T09:18:08.599558+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "198340483282"
     },
     {
       "title": "David Yurman Sterling Silver 925 Maritime Northstar Signet Ring Size",
@@ -4294,7 +4423,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/227240915144?_skw=David+Yurman+signet+ring&hash=item34e89d30c8:g:2eQAAeSwFWNpp2Cg",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "227240915144"
     },
     {
       "title": "DAVID YURMAN Men's Streamline Signet Ring Sterling Silver Black Onyx 12.5 NEW",
@@ -4327,7 +4457,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/137229285936?_skw=David+Yurman+signet+ring&hash=item1ff380ba30:g:mYgAAeSwXJZpwUeS",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "137229285936"
     },
     {
       "title": "David Yurman Signed 925 Sterling Silver Black Onyx Octagon Signet Ring Sz 9",
@@ -4359,7 +4490,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/137556284533?_skw=David+Yurman+signet+ring&hash=item2006fe5475:g:-uwAAeSw7ehqZ13Y",
       "first_seen": "2026-07-28T09:17:23.621092+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "137556284533"
     },
     {
       "title": "David Yurman Petrvs 18K Yellow Gold Bee Pinky Signet Ring 15.5mm Size: 5.5",
@@ -4391,7 +4523,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/168453704710?_skw=David+Yurman+signet+ring&hash=item27389f8c06:g:~ZoAAeSwwlRqLGRS",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "168453704710"
     },
     {
       "title": "David Yurman Black Diamond Sterling Silver Men's Signet Ring, 14mm - Size 10",
@@ -4424,7 +4557,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/137392082283?_skw=David+Yurman+signet+ring&hash=item1ffd34cd6b:g:Bz0AAeSwavpqJrur",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "137392082283"
     },
     {
       "title": "David Yurman 925 Sterling Silver Mother of Pearl Signet Ring Sz 9.75 - 10",
@@ -4456,7 +4590,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/236721991435?_skw=David+Yurman+signet+ring&hash=item371dbaef0b:g:wTYAAeSwPHhpyUSh",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "236721991435"
     },
     {
       "title": "David Yurman Streamline Signet Sterling Silver 925 Black Diamond Ring Size 10.25",
@@ -4488,7 +4623,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/168051570814?_skw=David+Yurman+signet+ring&hash=item2720a7787e:g:8E8AAeSw0odo~viO",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "168051570814"
     },
     {
       "title": "Rare David Yurman Men’s Blue Sapphire Signet Ring",
@@ -4520,7 +4656,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/336492089375?_skw=David+Yurman+signet+ring&hash=item4e587dd01f:g:VokAAeSw65VpvZAO",
       "first_seen": "2026-07-28T09:17:23.621092+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "336492089375"
     },
     {
       "title": "David Yurman Sterling Silver 18K Gold Cable Signet Ring",
@@ -4552,7 +4689,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/336455566326?_skw=David+Yurman+signet+ring&hash=item4e565083f6:g:UAQAAeSwhadpoLrh",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "336455566326"
     },
     {
       "title": "David Yurman Petrvs Wolf Signet Ring Sterling Silver 925 21.5mm Size 11",
@@ -4584,7 +4722,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/397718496887?_skw=David+Yurman+signet+ring&hash=item5c99dea677:g:~N0AAeSwOypptyaI",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "397718496887"
     },
     {
       "title": "DAVID YURMAN Mens Forged Carbon Sterling Silver Signet Ring Size 9 NEW Authentic",
@@ -4617,7 +4756,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/136937954716?_skw=David+Yurman+signet+ring&hash=item1fe2235d9c:g:hoAAAeSwPLdpYr-T",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "136937954716"
     },
     {
       "title": "David Yurman 925 Sterling Silver Signet Ring Black Cushion Onyx Stone",
@@ -4650,7 +4790,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/397933272311?_skw=David+Yurman+signet+ring&hash=item5ca6abdcf7:g:Tw0AAeSwGTpqAOLt",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "397933272311"
     },
     {
       "title": "David Yurman 925 Sterling Silver Signet Ring Gold Horse Head, No Stone",
@@ -4682,7 +4823,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/227449123760?_skw=David+Yurman+signet+ring&hash=item34f50633b0:g:inYAAeSw529qZonr",
       "first_seen": "2026-07-27T09:30:02.203044+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "227449123760"
     },
     {
       "title": "David Yurman Streamline Signet Ring Sterling Silver with Pietersite, Size 10.5",
@@ -4714,7 +4856,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/206421835126?_skw=David+Yurman+signet+ring&hash=item300fb33d76:g:U2EAAeSwimlqWnU0",
       "first_seen": "2026-07-29T09:18:08.599558+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "206421835126"
     },
     {
       "title": "DAVID YURMAN New Men's 19mm Streamline Ring in Black Onyx & Black Titanium 9",
@@ -4747,7 +4890,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/136852362230?_skw=David+Yurman+signet+ring&hash=item1fdd0953f6:g:P2sAAeSwXbVpQImj",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "136852362230"
     },
     {
       "title": "David Yurman 18k Streamline Signet Ring",
@@ -4779,7 +4923,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/336406458475?_skw=David+Yurman+signet+ring&hash=item4e5363306b:g:eb0AAeSw6CRpdtUK",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "336406458475"
     },
     {
       "title": "DAVID YURMAN New Men's Waves Signet Ring in Black Diamond and Silver Size 10",
@@ -4812,7 +4957,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/117064045815?_skw=David+Yurman+signet+ring&hash=item1b418f94f7:g:EqMAAOSwIxNnB~SG",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "117064045815"
     },
     {
       "title": "DAVID YURMAN New Men's 19mm Streamline Ring in Black Onyx & Black Titanium 8",
@@ -4845,7 +4991,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/127557631833?_skw=David+Yurman+signet+ring&hash=item1db306ff59:g:DxEAAeSwNttpO2Rp",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "127557631833"
     },
     {
       "title": "DAVID YURMAN 18K GOLD , SILVER MENS WAVES SIGNET BLACK DIAMOND RING",
@@ -4878,7 +5025,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/267737097874?_skw=David+Yurman+signet+ring&hash=item3e565fe692:g:gmcAAOSwM01mV1xn",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267737097874"
     },
     {
       "title": "DAVID YURMAN New Men's 19mm Streamline Ring in Black Onyx & Black Titanium 9.5",
@@ -4911,7 +5059,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/127555130265?_skw=David+Yurman+signet+ring&hash=item1db2e0d399:g:J2gAAeSwUoNpObES",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "127555130265"
     },
     {
       "title": "David Yurman Women’s Ring Silver Signet Large Yellow Cushion Gemstone Metal Band",
@@ -4944,7 +5093,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/198292610282?_skw=David+Yurman+signet+ring&hash=item2e2b291cea:g:ELIAAeSw0lZp5Bqc",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "198292610282"
     },
     {
       "title": "David Yurman Black Titanium Men's Carnelian Signet Ring Size 13.5",
@@ -4978,7 +5128,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/306865713868?_skw=David+Yurman+signet+ring&hash=item47729f32cc:g:BIUAAeSwnkZp1C-~",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "306865713868"
     },
     {
       "title": "DAVID YURMAN 18K YELLOW GOLD SS MENS WAVES SIGNET BLACK DIAMOND RING",
@@ -5011,7 +5162,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/287457438197?_skw=David+Yurman+signet+ring&hash=item42edcc69f5:g:eQgAAOSwGw9mUNWH",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "287457438197"
     },
     {
       "title": "DAVID YURMAN WAVES SIGNET MENS RING SS 18K Yellow Gold Black Diamonds - Size 13",
@@ -5044,7 +5196,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/158039398422?_skw=David+Yurman+signet+ring&hash=item24cbe1d816:g:oyMAAeSwtqBqQwPU",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "158039398422"
     },
     {
       "title": "David Yurman Men's Deco Signet Ring with Black Onyx size:7",
@@ -5078,7 +5231,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/307031039578?_skw=David+Yurman+signet+ring&hash=item477c79de5a:g:KAIAAeSwav5qQXVE",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "307031039578"
     },
     {
       "title": "Men’s David Yurman Bee Signet Sterling Silver &18k Ring Sz 13",
@@ -5110,7 +5264,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/188277640666?_skw=David+Yurman+signet+ring&hash=item2bd638cdda:g:fRYAAeSwKshpoKGE",
       "first_seen": "2026-07-28T09:17:23.621092+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "188277640666"
     },
     {
       "title": "DAVID YURMAN 18K YELLOW GOLD SS MENS WAVES SIGNET BLACK DIAMOND RING",
@@ -5143,7 +5298,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/287459244041?_skw=David+Yurman+signet+ring&hash=item42ede7f809:g:TaQAAOSwKuJnUPJW",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "287459244041"
     },
     {
       "title": "David Yurman Solid 18k Yellow Gold Signet Top Cable Side 17g sz 8.75 Albion",
@@ -5175,7 +5331,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/336449050209?_skw=David+Yurman+signet+ring&hash=item4e55ed1661:g:dDQAAeSwWORpOfYL",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "336449050209"
     },
     {
       "title": "DAVID YURMAN 925 SILVER EMPIRE SIGNET RING SIZE 12 BLACK ONYX PAVE BLACK DIAMOND",
@@ -5207,7 +5364,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/306909299897?_skw=David+Yurman+signet+ring&hash=item47753844b9:g:YzcAAeSw7pFp8nsn",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "306909299897"
     },
     {
       "title": "DAVID YURMAN 18K GOLD SS MENS WAVES SIGNET BLACK DIAMOND RING",
@@ -5240,7 +5398,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/267735770658?_skw=David+Yurman+signet+ring&hash=item3e564ba622:g:mAkAAOSw4bFmUNVn",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267735770658"
     },
     {
       "title": "David Yurman Streamline Signet Ring Blue Sapphire Pavé Black Titanium 925 Sz 9",
@@ -5272,7 +5431,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/306896805996?_skw=David+Yurman+signet+ring&hash=item477479a06c:g:P3gAAeSwutNpuuVL",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "306896805996"
     },
     {
       "title": "DAVID YURMAN 18K 750 YELLOW GOLD & TITANIUM STREAMLINE SIGNET RING",
@@ -5304,7 +5464,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/157669680086?_skw=David+Yurman+signet+ring&hash=item24b5d863d6:g:oN8AAOSwioFoJ9-O",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "157669680086"
     },
     {
       "title": "DAVID YURMAN Pave WHITE DIAMONDS/Sterling Silver Signet Ring — Size 7.5",
@@ -5336,7 +5497,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/305939913140?_skw=David+Yurman+signet+ring&hash=item473b7099b4:g:b20AAOSwZ1hnSN05",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "305939913140"
     },
     {
       "title": "david yurman ring size 10.5 mens used",
@@ -5369,7 +5531,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/146402750828?_skw=David+Yurman+signet+ring&hash=item221648b16c:g:aqAAAOSw9NNntrLF",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "146402750828"
     },
     {
       "title": "David Yurman Classic Cable Diamond Signet Ring 925 Sterling Silver 750 18k Gold",
@@ -5401,7 +5564,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/192725990815?_skw=David+Yurman+signet+ring&hash=item2cdf5d3d9f:g:cfIAAOSwC5lkIOzH",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "192725990815"
     },
     {
       "title": "DAVID YURMAN RING: STREAMLINE SIGNET RING, BLACK DIAMONDS, SIZE 6",
@@ -5433,7 +5597,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/375459061964?_skw=David+Yurman+signet+ring&hash=item576b1aa0cc:g:fWAAAOSwdNdmWQm4",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "375459061964"
     },
     {
       "title": "David Yurman Streamline Signet Pave Diamonds Sterling Silver 925 Ring Size 11.75",
@@ -5465,7 +5630,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/117016146734?_skw=David+Yurman+signet+ring&hash=item1b3eb4b32e:g:kc8AAeSw8MBpfTKa",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "117016146734"
     },
     {
       "title": "DAVID YURMAN 18K STERLING Gold Signet CABLE RING SIZE 9 3/4, b-12",
@@ -5497,7 +5663,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/166940708198?_skw=David+Yurman+signet+ring&hash=item26de710d66:g:8zYAAOSw2XJmzknV",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "166940708198"
     },
     {
       "title": "Vintage David Yurman Sterling Silver 18K Cable Signet Ring 6.5. C-19",
@@ -5530,7 +5697,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/167061536539?_skw=David+Yurman+signet+ring&hash=item26e5a4bf1b:g:RdYAAOSwiiFnJpFt",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "167061536539"
     },
     {
       "title": "David Yurman Sterling Silver Onyx Streamline Signet Ring",
@@ -5562,7 +5730,8 @@
       "bids": "",
       "url": "https://www.ebay.ie/itm/267717234704?_skw=David+Yurman+signet+ring&hash=item3e5530d010:g:mkkAAeSw6B9qPq5q",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267717234704"
     },
     {
       "title": "David Yurman Men's Red Carnelian Titanium Exotic Stone Ring Band Size 14.5 US",
@@ -5596,7 +5765,8 @@
       "bids": "",
       "url": "https://www.ebay.ie/itm/236775170210?_skw=David+Yurman+mens+ring&hash=item3720e660a2:g:qt4AAOSw9cNoJPMk",
       "first_seen": "2026-07-29T09:18:08.599558+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "236775170210"
     },
     {
       "title": "David Yurman Sterling Silver Petrvs Scarab Signet Ring With 22K Gold Size 9.25",
@@ -5628,7 +5798,8 @@
       "bids": "",
       "url": "https://www.ebay.com.au/itm/158122614574?_skw=David+Yurman+signet+ring&hash=item24d0d79f2e:g:54EAAeSw2JtqZqDd",
       "first_seen": "2026-07-27T09:30:02.203044+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "158122614574"
     },
     {
       "title": " Daivd Yurman Cushion Signet Ring in Blackened Silver with Pavé Black Diamonds",
@@ -5660,7 +5831,8 @@
       "bids": "",
       "url": "https://www.ebay.com.au/itm/127173583339?_skw=David+Yurman+signet+ring&hash=item1d9c22e1eb:g:IcMAAOSwjyFoRpqs",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "127173583339"
     },
     {
       "title": "David Yurman Sterling Silver Onyx Streamline Signet Ring",
@@ -5692,7 +5864,8 @@
       "bids": "",
       "url": "https://www.ebay.com.au/itm/257603336295?_skw=David+Yurman+signet+ring&hash=item3bfa5af867:g:mkkAAeSw6B9qPq5q",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "257603336295"
     },
     {
       "title": "David Yurman Sterling Silver Onyx Streamline Signet Ring",
@@ -5724,7 +5897,8 @@
       "bids": "",
       "url": "https://www.ebay.ca/itm/257604243159?_skw=David+Yurman+signet+ring&hash=item3bfa68ced7:g:mkkAAeSw6B9qPq5q",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "257604243159"
     },
     {
       "title": "David Yurman Sterling Silver Onyx Streamline Signet Ring",
@@ -5756,7 +5930,8 @@
       "bids": "",
       "url": "https://www.ebay.com.hk/itm/267717037914?_skw=David+Yurman+signet+ring&hash=item3e552dcf5a:g:mkkAAeSw6B9qPq5q",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267717037914"
     },
     {
       "title": "David Yurman Sterling Silver Onyx Streamline Signet Ring",
@@ -5788,7 +5963,8 @@
       "bids": "",
       "url": "https://www.ebay.com.sg/itm/257603773758?_skw=David+Yurman+signet+ring&hash=item3bfa61a53e:g:mkkAAeSw6B9qPq5q",
       "first_seen": "2026-07-26T10:29:47.658969+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "257603773758"
     }
   ]
 }

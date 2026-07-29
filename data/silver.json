@@ -79,7 +79,7 @@
     "total_fetched": 2259,
     "total_analysed": 51,
     "value_count": 0,
-    "new_count": 7,
+    "new_count": 2,
     "weight_unknown_count": 0,
     "country_counts": {
       "AT": 1,
@@ -124,7 +124,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/335787402175?_skw=sterling+silver+signet+ring+heavy&hash=item4e2e7d23bf:g:5U4AAOSwFpVnmC6D&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGbWSCEaQAwt6hyBtcwX4xBm%2FgWhUH0Jj4bmcjJu18%2Fs7QCL6IFhhauQT8CW%2FJqBlQGcubwz%2BnqWP9Y8Tue7j9Pjd4UlwLxRUdrh7QNyV9RJWmJQlI9aO0cIAy082mgYs2PkKrwQckPJui132qzBxf%2F34XOU8G4rxzVM3wEiT%2Byd%2Bwtwl%2F3LTXToSqu86N00itmbgQ2sUUqjSMnE2PcIHblbL0oqD9CXMCX3avxTKbR0GikJFayhiE5EgUtAoR%2FXubCvVv3gRQHDS%2Bnnh9SKT4hJaLZRcU8UR9NoncE54P9No659LQeu3VtEHSECw7NtSog%3D",
       "first_seen": "2026-07-29T09:17:03.414451+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "335787402175"
     },
     {
       "title": "Vintage Square Signet Ring Crest Sterling silver London Assayed Heavy 18.5g",
@@ -157,7 +158,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/376346401678?_skw=sterling+silver+signet+ring+heavy&hash=item579ffe5b8e:g:~bMAAeSwYVFoUYlq",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "376346401678"
     },
     {
       "title": "Vintage Guthmann & Wittenauer Heavy 17.06g Sterling Silver Om Signet Ring Sz 5.5",
@@ -190,7 +192,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/307043028898?_skw=sterling+silver+signet+ring+heavy&hash=item477d30cfa2:g:LAQAAeSwbqhqSIHT",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "307043028898"
     },
     {
       "title": "Sterling Silver 925 Signet ring,heavy skul ring, new, size 10.5, skull ring ",
@@ -222,7 +225,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/353771917499?_skw=sterling+silver+signet+ring+heavy&hash=item525e7310bb:g:cK8AAOSw2QVfHN7I",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "353771917499"
     },
     {
       "title": "Mexican Sterling Silver Square Signet Ring Geometric Modernist Size 6.5 ",
@@ -256,7 +260,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/267539479350?_skw=sterling+silver+signet+ring+heavy&hash=item3e4a987b36:g:gt0AAeSwafppYYUp",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267539479350"
     },
     {
       "title": "Vintage Mens Brecciated Jasper Ring Sterling Silver Artisan SZ 9.5 Heavy 22 Gram",
@@ -290,7 +295,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/157839491392?_skw=sterling+silver+signet+ring+heavy&hash=item24bff78140:g:5OYAAeSwkuZp4WYP",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "157839491392"
     },
     {
       "title": "Heavy Skull Design Sterling Silver Signet Ring Size 9.5 (15.12g)",
@@ -322,7 +328,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/327262924340?_skw=sterling+silver+signet+ring+heavy&hash=item4c3263ee34:g:J3cAAeSw6wpqWBRH",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "327262924340"
     },
     {
       "title": "Vintage Heavy Gauge Sterling Silver EAGLE INLAY Signet RING size 11",
@@ -355,7 +362,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/335892857890?_skw=sterling+silver+signet+ring+heavy&hash=item4e34c64422:g:ak0AAOSwvIJep3A1",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "335892857890"
     },
     {
       "title": "HEAVY Vintage TEDDY GOODLUCK Navajo TURQUOISE SterlingSilver SIGNET RING size 12",
@@ -388,7 +396,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/236686126209?_skw=sterling+silver+signet+ring+heavy&hash=item371b97ac81:g:JK0AAeSwAZNps1Lj",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "236686126209"
     },
     {
       "title": "Heavy Vintage SIGNED Navajo TURQUOISE Sterling Silver SIGNET RING size 9",
@@ -421,7 +430,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/236866222839?_skw=sterling+silver+signet+ring+heavy&hash=item372653baf7:g:i~kAAeSwBq5qJwYj",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "236866222839"
     },
     {
       "title": "Mason ring 925 Sterling Silver Freemasons ring Size 10 26 Grams HEAVY Masonic",
@@ -453,7 +463,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/267734940966?_skw=sterling+silver+signet+ring+heavy&hash=item3e563efd26:g:ls4AAeSwEMdqWTw9",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "267734940966"
     },
     {
       "title": "Heavy Tiger Head Design Sterling Silver Signet Ring Size 8.25 (25.25g)",
@@ -485,7 +496,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/327257605273?_skw=sterling+silver+signet+ring+heavy&hash=item4c3212c499:g:CXUAAeSwWc5qUqL2",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "327257605273"
     },
     {
       "title": "John Hardy Sterling Silver 925  Dayak Signet Statement Ring Size 7.5 Heavy 18g",
@@ -518,7 +530,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/168214537050?_skw=sterling+silver+signet+ring+heavy&hash=item272a5e235a:g:zsoAAeSwkixprPmH",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "168214537050"
     },
     {
       "title": "Heavy Gauge VINTAGE Sterling Silver Morenci TURQUOISE Signet RING size 8.25",
@@ -551,7 +564,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/335892857903?_skw=sterling+silver+signet+ring+heavy&hash=item4e34c6442f:g:WuMAAOSwFdRe3ABj",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "335892857903"
     },
     {
       "title": "IMPRESSIVE Heavy OLD Sterling Silver TURQUOISE Signet RING size 11 Vintage Pawn",
@@ -584,7 +598,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/236036335706?_skw=sterling+silver+signet+ring+heavy&hash=item36f4dca85a:g:QjMAAOSw6KVZhRJN",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "236036335706"
     },
     {
       "title": "Vintage Sterling Silver Signet Ring 9 Rectangle Men's Heavy *Flaw*",
@@ -619,7 +634,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/157607985442?_skw=sterling+silver+signet+ring+heavy&hash=item24b22b0122:g:hm4AAeSwp81pZGAr",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "157607985442"
     },
     {
       "title": "Retired James Avery Heavy Size 7 Signet Ring 18.02 Grams Sterling Silver",
@@ -651,7 +667,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/117301579237?_skw=sterling+silver+signet+ring+heavy&hash=item1b4fb80de5:g:ygMAAOSwHldmTRe7",
       "first_seen": "2026-07-29T09:17:03.414451+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "117301579237"
     },
     {
       "title": "Vintage Soviet 875 Silver Knight Signet Ring Men’s Bold Heavy Jewelry Size 8.5",
@@ -684,7 +701,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/236391429105?_skw=sterling+silver+signet+ring+heavy&hash=item370a06f3f1:g:U7EAAeSwGyxo78Q-",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "236391429105"
     },
     {
       "title": "HEAVY 31g Vintage Sterling Silver TURQUOISE Needlepoint SIGNET RING size 11.75",
@@ -717,7 +735,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/334402895317?_skw=sterling+silver+signet+ring+heavy&hash=item4ddbf73dd5:g:81MAAOSwoCddp8JY",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "334402895317"
     },
     {
       "title": "Sterling Silver 925 Signet ring,heavy skul ring, red eyes,size 10.5, skull ring ",
@@ -749,7 +768,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/124543724809?_skw=sterling+silver+signet+ring+heavy&hash=item1cff626d09:g:OxMAAOSw7dZgDk5s",
       "first_seen": "2026-07-29T09:17:03.414451+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "124543724809"
     },
     {
       "title": "VTG HEAVY 15g Sterling Silver \"TREE OF LIFE\" Adam & Eve Signet Ring TL-66 Mexico",
@@ -781,7 +801,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/306304664367?_skw=sterling+silver+signet+ring+heavy&hash=item47512e432f:g:OdoAAOSwMKFoJkze",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "306304664367"
     },
     {
       "title": "Mens Heavy Turquoise Square Signet Solid Sterling Silver 925 Band Ring Size 13.5",
@@ -815,7 +836,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/235675936836?_skw=sterling+silver+signet+ring+heavy&hash=item36df616844:g:iNcAAeSwDAFpWK7d",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "235675936836"
     },
     {
       "title": "Vintage Unique Nice Sterling Silver Malachite Ring Signet Size 13.25 Heavy 20Gr",
@@ -848,7 +870,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/264701174279?_skw=sterling+silver+signet+ring+heavy&hash=item3da16b6207:g:m-AAAOSwilpel4Ez",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "264701174279"
     },
     {
       "title": "Retired James Avery Sterling Silver BOLD Heavy Size 5 Signet Ring GGM",
@@ -883,7 +906,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/205031713909?_skw=sterling+silver+signet+ring+heavy&hash=item2fbcd7ac75:g:v58AAOSwkBtnBBnT",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "205031713909"
     },
     {
       "title": "Mens Heavy Turquoise Square Signet Solid Sterling Silver 925 Band Ring Size 11.5",
@@ -917,7 +941,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/236553948193?_skw=sterling+silver+signet+ring+heavy&hash=item3713b6cc21:g:-SkAAeSwJV1pUrl7",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "236553948193"
     },
     {
       "title": "Mens Heavy Turquoise Square Signet Solid Sterling Silver 925 Band Ring Size 10.5",
@@ -951,7 +976,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/336366115113?_skw=sterling+silver+signet+ring+heavy&hash=item4e50fb9929:g:Xw8AAeSwEoFpUpoJ",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "336366115113"
     },
     {
       "title": "Vintage Balfour Sterling Silver FFA Ring Size 10.5 Heavy 17.7g Future Farmers",
@@ -985,7 +1011,8 @@
       "bids": "",
       "url": "https://www.ebay.com/itm/137488356083?_skw=sterling+silver+signet+ring+heavy&hash=item2002f1d2f3:g:yJAAAeSwJY1qS8A7",
       "first_seen": "2026-07-26T15:17:51.551184+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "137488356083"
     },
     {
       "title": "Mens Heavy Turquoise Square Signet Solid Sterling Silver 925 Band Ring Size 13.5",
@@ -1019,7 +1046,8 @@
       "bids": "",
       "url": "https://www.ebay.com.au/itm/236676398211?_skw=sterling+silver+signet+ring+heavy&hash=item371b033c83:g:iNcAAeSwDAFpWK7d",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "236676398211"
     },
     {
       "title": "Mens Heavy Turquoise Square Signet Solid Sterling Silver 925 Band Ring Size 11.5",
@@ -1053,7 +1081,8 @@
       "bids": "",
       "url": "https://www.ebay.com.au/itm/236676394681?_skw=sterling+silver+signet+ring+heavy&hash=item371b032eb9:g:-SkAAeSwJV1pUrl7",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "236676394681"
     },
     {
       "title": "Mens Heavy Turquoise Square Signet Solid Sterling Silver 925 Band Ring Size 10.5",
@@ -1087,7 +1116,8 @@
       "bids": "",
       "url": "https://www.ebay.com.au/itm/336470167798?_skw=sterling+silver+signet+ring+heavy&hash=item4e572f50f6:g:Xw8AAeSwEoFpUpoJ",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "336470167798"
     },
     {
       "title": "Mens Heavy Turquoise Square Signet Solid Sterling Silver 925 Band Ring Size 11.5",
@@ -1121,7 +1151,8 @@
       "bids": "",
       "url": "https://www.ebay.ca/itm/236676411016?_skw=sterling+silver+signet+ring+heavy&hash=item371b036e88:g:-SkAAeSwJV1pUrl7",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "236676411016"
     },
     {
       "title": "Mens Heavy Turquoise Square Signet Solid Sterling Silver 925 Band Ring Size 13.5",
@@ -1155,7 +1186,8 @@
       "bids": "",
       "url": "https://www.ebay.ca/itm/336470179716?_skw=sterling+silver+signet+ring+heavy&hash=item4e572f7f84:g:iNcAAeSwDAFpWK7d",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "336470179716"
     },
     {
       "title": "Siegelring 925 Sterling Silber Herrenring 59 Cai 18,38g Totenkopf Herrenschmuck",
@@ -1188,7 +1220,8 @@
       "bids": "",
       "url": "https://www.ebay.de/itm/178351277647?_skw=Siegelring+Silber+925&hash=item298690864f:g:KjEAAeSwDhxqaKwU",
       "first_seen": "2026-07-29T09:17:03.414451+00:00",
-      "is_new": true
+      "is_new": true,
+      "item_id": "178351277647"
     },
     {
       "title": "Ring Siegelring Silber 800 Herren alt antik Herrenring massiv kein 835 925",
@@ -1222,7 +1255,8 @@
       "bids": "",
       "url": "https://www.ebay.de/itm/377128189209?_skw=Siegelring+Silber+925&hash=item57ce977d19:g:12MAAeSwI8dp5f-b",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "377128189209"
     },
     {
       "title": "Siegelring,Wappenring 925 Silber Feines Wappen",
@@ -1255,7 +1289,8 @@
       "bids": "",
       "url": "https://www.ebay.de/itm/206235373239?_skw=Siegelring+Silber+925&hash=item3004960eb7:g:RwYAAOSwAyNfjxab",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "206235373239"
     },
     {
       "title": "Massiver Biker Ring/Siegelring-Eiserner Kreuz-Echt silber(22gramm)Gr.58/59",
@@ -1288,7 +1323,8 @@
       "bids": "",
       "url": "https://www.ebay.de/itm/398213686719?_skw=Siegelring+Silber+925&hash=item5cb762a5bf:g:61UAAeSwraVqZGqu",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "398213686719"
     },
     {
       "title": "18g super bague argent massif émail bague argent jonc chevalière silver ring T56",
@@ -1320,7 +1356,8 @@
       "bids": "",
       "url": "https://www.ebay.fr/itm/147465239002?_skw=chevali%C3%A8re+argent+massif&hash=item22559cf9da:g:O70AAeSwO0ZoPCdh",
       "first_seen": "2026-07-28T09:16:11.431401+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "147465239002"
     },
     {
       "title": "18grs ancienne bague argent massif chevalière zirconium silver ring T55",
@@ -1352,7 +1389,8 @@
       "bids": "",
       "url": "https://www.ebay.fr/itm/147431962017?_skw=chevali%C3%A8re+argent+massif&hash=item2253a135a1:g:YXAAAeSwstJoPCQA",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "147431962017"
     },
     {
       "title": "18g super bague argent massif émail bague argent jonc chevalière silver ring T55",
@@ -1384,7 +1422,8 @@
       "bids": "",
       "url": "https://www.ebay.fr/itm/147465233427?_skw=chevali%C3%A8re+argent+massif&hash=item22559ce413:g:gpUAAeSwoApoPCkk",
       "first_seen": "2026-07-28T09:16:11.431401+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "147465233427"
     },
     {
       "title": "bague chevalière en argent massif avec la lettre M quasi neuve T 62",
@@ -1416,7 +1455,8 @@
       "bids": "",
       "url": "https://www.ebay.fr/itm/397896390904?_skw=chevali%C3%A8re+argent+massif&hash=item5ca47918f8:g:YZkAAeSw6SNp80b9",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "397896390904"
     },
     {
       "title": "23G bague argent pierre de lune ring silver chevalière tank argent massif",
@@ -1448,7 +1488,8 @@
       "bids": "",
       "url": "https://www.ebay.fr/itm/117314749937?_skw=chevali%C3%A8re+argent+massif&hash=item1b508105f1:g:TuoAAOSwr2xjFDfz",
       "first_seen": "2026-07-29T09:17:03.414451+00:00",
-      "is_new": true
+      "is_new": true,
+      "item_id": "117314749937"
     },
     {
       "title": "Grosse bague chevalière ARGENT massif  et pierre verte signée  silver ring",
@@ -1480,7 +1521,8 @@
       "bids": "",
       "url": "https://www.ebay.fr/itm/206131880816?_skw=chevali%C3%A8re+argent+massif&hash=item2ffe6ae370:g:mSQAAeSwJwZpsvix",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "206131880816"
     },
     {
       "title": "Superbe Bague Chevalière En Argent Massif 925 Multi Pierres",
@@ -1512,7 +1554,8 @@
       "bids": "",
       "url": "https://www.ebay.fr/itm/188113382473?_skw=chevali%C3%A8re+argent+massif&hash=item2bcc6e6c49:g:35gAAeSweTdotHCj",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "188113382473"
     },
     {
       "title": "Bague chevalière Imposante Argent Massif Avec Onyx Taille 56 Ref D787",
@@ -1544,7 +1587,8 @@
       "bids": "",
       "url": "https://www.ebay.fr/itm/277699674041?_skw=chevali%C3%A8re+argent+massif&hash=item40a830bfb9:g:6FUAAOSwTwRfqXnj",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "277699674041"
     },
     {
       "title": "Thomas Sabo TR2227-340-7 bague chevalière perroquet en argent massif taille 60",
@@ -1576,7 +1620,8 @@
       "bids": "",
       "url": "https://www.ebay.fr/itm/396990700810?_skw=chevali%C3%A8re+argent+massif&hash=item5c6e7d5d0a:g:8oUAAOSwNdhnRiNd",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "396990700810"
     },
     {
       "title": "Bague chevalière homme argent massif",
@@ -1609,7 +1654,8 @@
       "bids": "",
       "url": "https://www.ebay.fr/itm/136445024089?_skw=chevali%C3%A8re+argent+massif&hash=item1fc4c1d759:g:i-EAAeSwOhNowdoJ",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "136445024089"
     },
     {
       "title": "Bague Chevalière Homme Femme 16g en Argent Massif 925 Serti zircon Scorpion",
@@ -1642,7 +1688,8 @@
       "bids": "",
       "url": "https://www.ebay.fr/itm/183761503569?_skw=chevali%C3%A8re+argent+massif&hash=item2ac90a0551:g:gpgAAOSwNkJaLUQg&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGag1UKpZ5hIazUaMb%2F1Ghtt8aX3bfN3pcCKPcrr7%2BtDK9YIh49Usdn9CcjSJfOQ9T9%2BzBv%2B2%2B2fykvdcJ3HMjqmF1ldX3EkSyIAVafPoPVcS2vBOVcoIcpKGQE1LLSvr1fTAL1AgTOUV6eVJWAan1GrDDmm8%2FN7KYD9axXSBUJC8IsKxeMb8u%2Bldcy72JTzTRvoOBa0Ucbg1QZlbrmqjRClzRZx58oiAjjkfw60da2z49zHsaMtwe4wVL78sYbiT%2B%2FaY%2F6kRe6MB%2FO72JmjefdrY%2F6c7U7odfxRXl5vtet0lZknQ%2F5%2FsJd%2BO4TCe0iJawI%3D",
       "first_seen": "2026-07-29T09:17:03.414451+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "183761503569"
     },
     {
       "title": "Bague Chevalière en 19g en Argent Massif 925 Pierre Turquoise Pierre Naturelle",
@@ -1674,7 +1721,8 @@
       "bids": "",
       "url": "https://www.ebay.fr/itm/183780119765?_skw=chevali%C3%A8re+argent+massif&hash=item2aca2614d5:g:Ur4AAOSwqtZfa8kI&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGaEr6Wf1eTceDJSXtU4wZ%2BYHDNdBdGJFLUQsS9bs695NqhbNwF0ic38TVSEExVgQzn0G5nyGw6TNtUI%2FAF3dBzoIfX%2BCSXn0l0U8akr8yV6Q9NiYyZOdrztvMuT%2FHj9PwsKR79pZEPEUQp6Yw0XnV%2BYV3FsyJjZOnN353lLsktD%2B2atOo%2FcFB6EvwtB5choByxLLym7pXswDiH82ZViX2rXl1s4SvndlbQZAbxkvK6LLUgXP1RM%2B3z1bD680IGYoDzSfu1G13kSX58GJ0DKyAaWQ9Vu8wtfzrBe%2FieIBeVbRGWcpariYGzBDVx0F%2FoA0rE%3D",
       "first_seen": "2026-07-29T09:17:03.414451+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "183780119765"
     },
     {
       "title": "ANELLO ARGENTO 925 UOMO SIGILLO inciso fede  unico",
@@ -1708,7 +1756,8 @@
       "bids": "",
       "url": "https://www.ebay.it/itm/164131425871?_skw=anello+sigillo+argento+925&hash=item2636fece4f:g:PFIAAOSwAe5jJuvw",
       "first_seen": "2026-07-27T09:28:54.537091+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "164131425871"
     },
     {
       "title": "A-9425427 Anillo De Sello De Hombre De Plata Libre Tamaño 69 Plata 925",
@@ -1742,7 +1791,8 @@
       "bids": "",
       "url": "https://www.ebay.es/itm/257435619476?_skw=anillo+sello+plata+925&hash=item3bf05bd094:g:jTwAAeSwLhRpXlU8",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "257435619476"
     },
     {
       "title": "Hochwertiger Siegelring Silberring Monogramm Initialen DR / RD 925 Silber Gr. 64",
@@ -1775,7 +1825,8 @@
       "bids": "",
       "url": "https://www.ebay.at/itm/136751254708?_skw=Siegelring+Silber+925&hash=item1fd7028cb4:g:xTgAAeSwDjVpGcOZ",
       "first_seen": "2026-07-26T10:28:41.221321+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "136751254708"
     }
   ]
 }

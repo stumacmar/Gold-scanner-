@@ -83,7 +83,7 @@
     "total_fetched": 665,
     "total_analysed": 3,
     "value_count": 0,
-    "new_count": 1,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 1,
@@ -125,7 +125,8 @@
       "bids": "",
       "url": "https://www.ebay.co.uk/itm/406868725856?_skw=22ct+gold+signet+ring&hash=item5ebb441060:g:6vsAAeSwwrlqXltb",
       "first_seen": "2026-07-26T10:25:53.358198+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "406868725856"
     },
     {
       "title": "Authentic K18PG Signet Diamond Ring 0.22CT #260-008-143-8013",
@@ -160,7 +161,8 @@
       "bids": "",
       "url": "https://www.ebay.com.au/itm/298240951024?_skw=22ct+gold+signet+ring&hash=item45708bc2f0:g:6vsAAeSwwrlqXltb",
       "first_seen": "2026-07-26T10:25:53.358198+00:00",
-      "is_new": false
+      "is_new": false,
+      "item_id": "298240951024"
     },
     {
       "title": "18kt gepunzt Weiß-, Gelb-, Roségold Siegelring 13mm x16mm oval oder Kissen",
@@ -194,7 +196,8 @@
       "bids": "",
       "url": "https://www.ebay.de/itm/254195547625?_skw=Siegelring+Gold+916&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fHBvekpbND0RdqjNbNqERbRR4KBTNJIdtwK2G%2Bws3AOFJOEAtQGZXr%2F6ifFyQoy6nZ%2FYKNkUGA4%2F6N2iIv%2Fc%2BSqBYE1w9%2FMwEsRoQTbQG3r8TSlvDG6YfCrDBY4o8Gmr7dJfTQPzwZWZIsiPfY1tTu32yYEaKNbVZJ2feKK%2FtLqBg%3D%3D",
       "first_seen": "2026-07-29T09:14:18.991582+00:00",
-      "is_new": true
+      "is_new": false,
+      "item_id": "254195547625"
     }
   ]
 }

@@ -254,6 +254,11 @@ function loadAll() {
     .then(idx => Promise.all(idx.searches.map(s =>
       fetch("./data/" + s.file + "?ts=" + Date.now()).then(r => r.ok ? r.json() : null))))
     .then(files => {
+      // Identity = eBay item id. URLs embed the search keyword that found
+      // the listing, so the same ring has different urls across scans/files.
+      const idOf = r => (String(r.item_id || "")
+        || (String(r.url || "").match(/\/itm\/(\d+)/) || [])[1]
+        || String(r.url || "").split("?")[0]);
       const seen = new Set();
       const merged = [];
       const newest = { gold: null, silver: null, yurman: null };
@@ -261,8 +266,9 @@ function loadAll() {
         const m = f.meta.metal === "silver" ? "silver" : f.meta.metal === "yurman" ? "yurman" : "gold";
         if (!newest[m] || f.meta.generated_at > newest[m].generated_at) newest[m] = f.meta;
         for (const r of f.results) {
-          if (r.url && seen.has(r.url)) continue;
-          if (r.url) seen.add(r.url);
+          const id = idOf(r);
+          if (id && seen.has(id)) continue;
+          if (id) seen.add(id);
           merged.push(r);
         }
       }
