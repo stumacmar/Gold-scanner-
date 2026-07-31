@@ -47,6 +47,23 @@ pip install -r requirements.txt
 cp .env.example .env      # then edit .env with your keys
 ```
 
+### Restoring local credentials
+
+`.env` is gitignored (correctly — keys must never be committed), so it does
+**not** survive a rebuilt dev container or a fresh clone. If a local run dies
+with `[fatal] EBAY_CLIENT_ID / EBAY_CLIENT_SECRET not set`, just recreate it:
+
+```bash
+pip install -r requirements.txt          # python-dotenv may be missing too
+cp .env.example .env                     # then paste your App ID / Cert ID
+rm -f .ebay_token_cache.json             # drop any stale cached token
+python -c "import gold_ring_scanner as g; g.get_ebay_token(); print('OAuth OK')"
+```
+
+Nothing else is affected: the **scheduled scans are unaffected** because CI
+reads `EBAY_CLIENT_ID` / `EBAY_CLIENT_SECRET` from repository secrets, not
+from `.env`.
+
 ## Run
 
 ```bash
