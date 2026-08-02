@@ -251,7 +251,11 @@ def price_is_meaningful(rec_buying, bids, time_left_str):
 # worth that. A listing priced far below its own melt value is therefore a
 # fake, a plated novelty or a misparse, never a bargain, so it is dropped
 # outright rather than shown. (Rings use SUSPECT_RATIO for the same reason.)
-INGOT_MIN_PLAUSIBLE_RATIO = 0.90
+# Fixed-price bullion below ~97% of its own melt value does not exist in the
+# real market: refiners and dealers buy scrap AT spot, so nobody lists metal
+# under it. Sub-spot "1oz Perth Mint" Buy-It-Nows are the single commonest
+# scam in this category. Live auctions are exempt (see below).
+INGOT_MIN_PLAUSIBLE_RATIO = 0.97
 
 # Bullion denominations: grams, troy ounces, kilos, and fractional ounces.
 _BULLION_G_RE = re.compile(
