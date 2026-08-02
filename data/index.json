@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T09:07:37.449609+00:00",
+  "generated_at": "2026-08-02T09:28:20.394588+00:00",
   "searches": [
     {
       "key": "9ct",
@@ -36,6 +36,24 @@
       "generated_at": "2026-08-02T09:03:26.902530+00:00",
       "value_count": 0,
       "total_analysed": 3
+    },
+    {
+      "key": "ingot_gold",
+      "label": "Gold ingots",
+      "file": "ingot_gold.json",
+      "query": "gold bullion bar 1oz",
+      "generated_at": "2026-08-02T09:28:20.394588+00:00",
+      "value_count": 9,
+      "total_analysed": 491
+    },
+    {
+      "key": "ingot_silver",
+      "label": "Silver ingots",
+      "file": "ingot_silver.json",
+      "query": "silver bullion bar 1kg",
+      "generated_at": "2026-08-02T09:26:05.782580+00:00",
+      "value_count": 0,
+      "total_analysed": 726
     },
     {
       "key": "silver",
