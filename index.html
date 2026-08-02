@@ -16,6 +16,20 @@
   h1 .coin { color: #d4af37; }
   .sub { margin: 4px 0 0; font-size: 12px; color: #8a93a6; line-height: 1.5; }
 
+  /* Refresh / Run-scan buttons */
+  .acts { display: flex; gap: 8px; padding: 10px 16px 0; }
+  .act { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 11px 0; border-radius: 12px; border: 1px solid #2a3550; background: #161c2c;
+    color: #cfd6e4; font-size: 13.5px; font-weight: 700; cursor: pointer;
+    font-family: inherit; }
+  .act:active { background: #1d2436; }
+  .act[disabled] { opacity: .55; cursor: default; }
+  .act.run { border-color: #3a2e10; background: #1a1407; color: #e0c675; }
+  .spin { display: inline-block; width: 13px; height: 13px; border-radius: 50%;
+    border: 2px solid currentColor; border-top-color: transparent;
+    animation: sp .7s linear infinite; }
+  @keyframes sp { to { transform: rotate(360deg); } }
+
   /* Gold / Silver screen switcher */
   .metals { display: flex; gap: 8px; padding: 10px 16px 0; }
   .mchip { flex: 1; text-align: center; padding: 10px 2px; font-size: 13px; border-radius: 12px;
@@ -70,6 +84,13 @@
     <h1><span class="coin">●</span> Signet Scanner</h1>
     <p class="sub" id="sub">Heavy signets &amp; intaglios · 15g+ · loading…</p>
   </header>
+
+  <div class="acts">
+    <button class="act" id="refreshBtn" type="button">↻ Refresh</button>
+    <a class="act run" id="runBtn"
+       href="https://github.com/stumacmar/Gold-scanner-/actions/workflows/update-gold.yml"
+       target="_blank" rel="noopener">⚡ Run new scan</a>
+  </div>
 
   <div class="metals" id="metals">
     <div class="mchip gold active" data-m="gold">● Gold</div>
@@ -249,7 +270,7 @@ document.getElementById("metals").onclick = (e) => {
 let lastLoad = 0;
 function loadAll() {
   lastLoad = Date.now();
-  fetch("./data/index.json?ts=" + Date.now())
+  return fetch("./data/index.json?ts=" + Date.now())
     .then(r => { if (!r.ok) throw new Error("no index"); return r.json(); })
     .then(idx => Promise.all(idx.searches.map(s =>
       fetch("./data/" + s.file + "?ts=" + Date.now()).then(r => r.ok ? r.json() : null))))
@@ -287,6 +308,20 @@ function loadAll() {
     });
 }
 loadAll();
+
+// "Refresh" re-fetches the committed scan data (instant, costs no eBay quota).
+// "Run new scan" can't run the scanner from here -- this is a static page with
+// no backend, and a token embedded in it would let anyone trigger the workflow
+// -- so it hands off to GitHub Actions, where your own login authorises the run.
+document.getElementById("refreshBtn").onclick = function () {
+  const b = this;
+  b.disabled = true;
+  b.innerHTML = '<span class="spin"></span> Refreshing…';
+  loadAll().then(() => {
+    b.innerHTML = "✓ Up to date";
+    setTimeout(() => { b.innerHTML = "↻ Refresh"; b.disabled = false; }, 1400);
+  });
+};
 
 // iOS Safari restores a suspended tab without reloading, so an open tab could
 // show days-old data forever. Whenever the page becomes visible again and the
