@@ -211,14 +211,23 @@ INGOT_EXCLUDE_MARKERS = [
     "gold tone", "silver tone", "brass", "copper core", "tungsten",
     "collectable bar", "collectible bar", "art bar", "foil", "leaf",
     "banknote", "bank note", "certificate only", "gift card",
+    # Accessories and tooling that merely MENTION a bar/denomination -- a
+    # bezel frame "for 1 oz PAMP" is a holder, not an ounce of gold.
+    "bezel", "frame for", "holder", "capsule", "display case", "display stand",
+    "mold", "mould", "casting", "crucible", "tweezers", "scale", "tester",
+    "storage box", "presentation box", "pouch", "sleeve for", "fits ",
 ]
 
 # Bullion denominations: grams, troy ounces, kilos, and fractional ounces.
 _BULLION_G_RE = re.compile(
     r"(\d{1,4}(?:[.,]\d{1,3})?)\s*(?:gram(?:me|s)?|grammes?|gr\b|g)\b", re.I)
 _BULLION_OZ_RE = re.compile(
-    r"(?:(\d)\s*/\s*(\d{1,2})|(\d{1,3}(?:[.,]\d{1,2})?))\s*"
-    r"(?:troy\s*)?(?:oz|ozt|ounces?)\b", re.I)
+    r"(\d{1,3}(?:[.,]\d{1,2})?)\s*(?:troy\s*)?(?:oz|ozt|ounces?)\b", re.I)
+# Fractional denominations (1/10 oz, 1/100, 1/200) -- these tiny bars are
+# routinely listed alongside the words "1 Troy Oz", so when a fraction is
+# present it OVERRIDES every other figure in the title.
+_BULLION_FRAC_RE = re.compile(
+    r"\b(\d{1,3})\s*/\s*(\d{1,3})\s*(?:(?:troy\s*)?(?:oz|ozt|ounces?)|th\b|\b)", re.I)
 _BULLION_KG_RE = re.compile(r"(\d{1,2}(?:[.,]\d{1,2})?)\s*(?:kg|kilo(?:gram)?s?)\b", re.I)
 
 
@@ -231,6 +240,16 @@ def parse_bullion_weight(text):
     """
     if not text:
         return None
+    # A fraction anywhere in the title defines the denomination outright.
+    fm = _BULLION_FRAC_RE.search(text)
+    if fm:
+        try:
+            num, den = float(fm.group(1)), float(fm.group(2))
+            if den and num / den <= 1.0:
+                gg = num / den * TROY_OZ_IN_GRAMS
+                return round(gg, 3) if gg >= 0.05 else None
+        except (ValueError, ZeroDivisionError):
+            pass
     grams = []
     for m in _BULLION_KG_RE.finditer(text):
         try:
@@ -239,11 +258,7 @@ def parse_bullion_weight(text):
             pass
     for m in _BULLION_OZ_RE.finditer(text):
         try:
-            if m.group(1):                       # fractional: 1/2, 1/10
-                oz = float(m.group(1)) / float(m.group(2))
-            else:
-                oz = float(m.group(3).replace(",", "."))
-            grams.append(oz * TROY_OZ_IN_GRAMS)
+            grams.append(float(m.group(1).replace(",", ".")) * TROY_OZ_IN_GRAMS)
         except (ValueError, ZeroDivisionError):
             pass
     for m in _BULLION_G_RE.finditer(text):
@@ -265,10 +280,14 @@ def is_ingot_excluded(text, metal):
     if any(m in low for m in INGOT_EXCLUDE_MARKERS):
         return True
     wanted, other = ("gold", "silver") if metal == "ingot_gold" else ("silver", "gold")
-    if wanted not in low:
+    # Word-boundary counts: "Golden State Mint" is not a claim of gold, and
+    # that listing ("Golden State Mint 1oz 999 Fine SILVER Bar") was landing
+    # on the gold screen valued as an ounce of gold.
+    n_want = len(re.findall(r"\b" + wanted + r"\b", low))
+    n_other = len(re.findall(r"\b" + other + r"\b", low))
+    if not n_want:
         return True                       # must actually claim the metal
-    # A bar of the OTHER metal that never mentions ours -> wrong screen.
-    return other in low and low.count(other) > low.count(wanted)
+    return n_other >= n_want              # the other metal dominates -> not ours
 
 
 # --- Yurman mode (--metal yurman) ------------------------------------------

@@ -204,6 +204,53 @@ class TestNewArrivals(unittest.TestCase):
         self.assertTrue(by["222"]["is_new"])
 
 
+class TestIngotMode(unittest.TestCase):
+    """Bullion: denominations, fakes, accessories and wrong-metal bars."""
+
+    def test_standard_denominations(self):
+        self.assertAlmostEqual(
+            g.parse_bullion_weight("1oz Gold Bullion Bar 999.9 PAMP"), 31.103, places=2)
+        self.assertEqual(g.parse_bullion_weight("100g Umicore Gold Bar 999.9"), 100.0)
+        self.assertEqual(g.parse_bullion_weight("Silver Bar 1kg 999 Umicore"), 1000.0)
+
+    def test_fineness_marks_are_not_weights(self):
+        # "999" / "9999" must never be read as a gram figure.
+        self.assertIsNone(g.parse_bullion_weight("Gold bar 999.9 fine bullion"))
+
+    def test_fraction_overrides_a_stray_ounce(self):
+        # REGRESSION: "Germania Mint 1/100 24k Gold Bar 1 Troy Oz" was read as
+        # a full ounce (31.1g) and flagged as 97% under melt.
+        self.assertAlmostEqual(
+            g.parse_bullion_weight("Germania Mint 1/100 24k Gold Bullion Bar 1 Troy Oz"),
+            0.311, places=2)
+
+    def test_golden_state_mint_is_not_gold(self):
+        # REGRESSION: substring matching put "Golden State Mint 1oz 999 Fine
+        # SILVER Bar" on the gold screen, melt-valued as an ounce of gold.
+        self.assertTrue(g.is_ingot_excluded(
+            "Golden State Mint 1oz 999 Fine Silver Bar Bullion", "ingot_gold"))
+        self.assertFalse(g.is_ingot_excluded(
+            "Golden State Mint 1oz 999 Fine Silver Bar Bullion", "ingot_silver"))
+
+    def test_accessories_excluded(self):
+        # A holder "for 1 oz PAMP" is not an ounce of gold; nor is a mould.
+        for t in ("Sterling Silver bezel frame for 1 oz PAMP Lunar Gold",
+                  "Graphite Ingot Mold For Casting 10 Gram Gold Bar",
+                  "Display case for 1oz gold bullion bars"):
+            self.assertTrue(g.is_ingot_excluded(t, "ingot_gold"), t)
+
+    def test_plated_and_replica_excluded(self):
+        for t in ("1oz gold plated bullion bar replica",
+                  "24k gold clad novelty bar", "gold foil bar souvenir"):
+            self.assertTrue(g.is_ingot_excluded(t, "ingot_gold"), t)
+
+    def test_genuine_bullion_kept(self):
+        self.assertFalse(g.is_ingot_excluded(
+            "1oz Gold Bullion Bar 999.9 PAMP Suisse", "ingot_gold"))
+        self.assertFalse(g.is_ingot_excluded(
+            "100g Silver Bullion Bar 999 Metalor", "ingot_silver"))
+
+
 class TestClassifySeller(unittest.TestCase):
     def test_private_individual(self):
         t, fb, priv = g.classify_seller(
