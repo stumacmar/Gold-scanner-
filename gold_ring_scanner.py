@@ -183,6 +183,94 @@ SILVER_PLATED_MARKERS = [
     "base metal", "stainless", "tungsten", "titanium", "brass",
 ]
 
+# --- Ingot / bullion mode (--metal ingot_gold | ingot_silver) --------------
+# Bullion is the opposite of the ring hunt: fineness is standardised (999.9
+# gold, 999 silver), weight is a stated denomination, and the whole game is
+# the PREMIUM over spot. So there is no style filter and no weight floor --
+# just melt, landed cost, and premium %. A bar at or under melt is a genuine
+# steal, so the value threshold is tight (bullion normally trades 3-15% over).
+INGOT_MELT_THRESHOLD = 1.02
+INGOT_FINENESS = {"ingot_gold": 0.9999, "ingot_silver": 0.999}
+INGOT_QUERY_TEMPLATES = {
+    "ingot_gold": [
+        "gold bullion bar 1oz", "gold ingot 10g", "gold bar 100g bullion",
+        "1oz gold bar 999.9", "gold bullion bar 5g", "PAMP gold bar",
+        "Umicore gold bar", "Metalor gold bar",
+    ],
+    "ingot_silver": [
+        "silver bullion bar 1kg", "silver bar 100g 999", "1oz silver bar bullion",
+        "silver ingot 500g", "silver bullion bar 250g", "Umicore silver bar",
+        "Metalor silver bar", "silver bar 999 bullion",
+    ],
+}
+# Bullion fakes and non-bullion tat are rife -- reject hard.
+INGOT_EXCLUDE_MARKERS = [
+    "plated", "clad", "layered", "filled", "replica", "reproduction", "copy",
+    "novelty", "fantasy", "tribute", "souvenir", "craft", "sample", "toy",
+    "not real", "not gold", "not silver", "gold colour", "gold color",
+    "gold tone", "silver tone", "brass", "copper core", "tungsten",
+    "collectable bar", "collectible bar", "art bar", "foil", "leaf",
+    "banknote", "bank note", "certificate only", "gift card",
+]
+
+# Bullion denominations: grams, troy ounces, kilos, and fractional ounces.
+_BULLION_G_RE = re.compile(
+    r"(\d{1,4}(?:[.,]\d{1,3})?)\s*(?:gram(?:me|s)?|grammes?|gr\b|g)\b", re.I)
+_BULLION_OZ_RE = re.compile(
+    r"(?:(\d)\s*/\s*(\d{1,2})|(\d{1,3}(?:[.,]\d{1,2})?))\s*"
+    r"(?:troy\s*)?(?:oz|ozt|ounces?)\b", re.I)
+_BULLION_KG_RE = re.compile(r"(\d{1,2}(?:[.,]\d{1,2})?)\s*(?:kg|kilo(?:gram)?s?)\b", re.I)
+
+
+def parse_bullion_weight(text):
+    """Weight in grams for a bullion bar/ingot, or None.
+
+    Handles the denominations bullion is actually sold in: grams (1g/10g/
+    100g), troy ounces including fractions (1oz, 1/2 oz, 1/10 oz) and kilos.
+    Picks the LARGEST plausible figure, since titles often quote several.
+    """
+    if not text:
+        return None
+    grams = []
+    for m in _BULLION_KG_RE.finditer(text):
+        try:
+            grams.append(float(m.group(1).replace(",", ".")) * 1000)
+        except ValueError:
+            pass
+    for m in _BULLION_OZ_RE.finditer(text):
+        try:
+            if m.group(1):                       # fractional: 1/2, 1/10
+                oz = float(m.group(1)) / float(m.group(2))
+            else:
+                oz = float(m.group(3).replace(",", "."))
+            grams.append(oz * TROY_OZ_IN_GRAMS)
+        except (ValueError, ZeroDivisionError):
+            pass
+    for m in _BULLION_G_RE.finditer(text):
+        raw = m.group(1).replace(",", ".")
+        # 999 / 9999 are FINENESS marks, not weights.
+        if raw in ("999", "9999", "999.9", "925", "916", "750", "585", "375"):
+            continue
+        try:
+            grams.append(float(raw))
+        except ValueError:
+            pass
+    plausible = [x for x in grams if 0.5 <= x <= 1000]
+    return round(max(plausible), 3) if plausible else None
+
+
+def is_ingot_excluded(text, metal):
+    """Reject plated/replica/novelty tat and wrong-metal bullion."""
+    low = (text or "").lower()
+    if any(m in low for m in INGOT_EXCLUDE_MARKERS):
+        return True
+    wanted, other = ("gold", "silver") if metal == "ingot_gold" else ("silver", "gold")
+    if wanted not in low:
+        return True                       # must actually claim the metal
+    # A bar of the OTHER metal that never mentions ours -> wrong screen.
+    return other in low and low.count(other) > low.count(wanted)
+
+
 # --- Yurman mode (--metal yurman) ------------------------------------------
 # Third screen: David Yurman signet rings worldwide. A BRAND hunt, not a melt
 # hunt: Yurman is mostly sterling or silver+18k two-tone (melt on the stated
@@ -207,6 +295,14 @@ YURMAN_FAKE_MARKERS = [             # "genuine brand claims only"
 def queries_for(market, carat, extra=(), metal="gold"):
     """Build the de-duplicated localised+English query list for a market/carat."""
     lang = MARKET_LANG.get(market, "en")
+    if metal in INGOT_FINENESS:
+        terms = list(INGOT_QUERY_TEMPLATES[metal]) + list(extra)
+        seen, out = set(), []
+        for q in terms:
+            q = q.strip()
+            if q and q.lower() not in seen:
+                seen.add(q.lower()); out.append(q)
+        return out[:MAX_QUERIES_PER_MARKET]
     if metal == "yurman":
         templates, lang = YURMAN_QUERY_TEMPLATES, "en"
     elif metal == "silver":
@@ -729,6 +825,13 @@ def assess_ring(text, carat, stated_weight):
     low = (text or "").lower()
     tags = style_tags(text)
 
+    if METAL in INGOT_FINENESS:
+        # Bullion: no style filter, no stone allowance, no weight window --
+        # a stated denomination is all that's required.
+        return {"keep": stated_weight is not None, "confidence": "confirmed",
+                "gross_g": stated_weight, "net_gold_g": stated_weight,
+                "stones": False, "tags": []}
+
     # Gold-light showcases: the gold is a minor fraction -> reject. Either an
     # explicit showcase word, or >= 2 different gem families named (the gold
     # is a mount for the stones, so weight-based melt is meaningless).
@@ -1157,7 +1260,10 @@ def analyse(items, token, spot_per_oz, fx=None):
         currency = item.get("_currency", "GBP")
 
         # 1. Reject wrong-metal / plated / lookalike and unwanted types.
-        if METAL == "yurman":
+        if METAL in INGOT_FINENESS:
+            if is_ingot_excluded(text, METAL):
+                continue
+        elif METAL == "yurman":
             if is_yurman_excluded(text) or is_excluded(text):
                 continue
         elif METAL == "silver":
@@ -1169,7 +1275,11 @@ def analyse(items, token, spot_per_oz, fx=None):
         # 2. Carat/fineness + weight from summary text. The TITLE weight wins
         #    over any description figure -- a live audit caught a desc number
         #    (20.1) overriding the seller's stated title weight (10,20g).
-        if METAL == "silver":
+        if METAL in INGOT_FINENESS:
+            fineness_frac = INGOT_FINENESS[METAL]
+            fineness_mark = "999.9" if METAL == "ingot_gold" else "999"
+            carat, carat_assumed = None, False
+        elif METAL == "silver":
             fineness_frac, fineness_mark, carat_assumed = detect_silver_fineness(text)
             carat = None
         elif METAL == "yurman":
@@ -1178,9 +1288,12 @@ def analyse(items, token, spot_per_oz, fx=None):
         else:
             fineness_frac, fineness_mark = None, None
             carat, carat_assumed = detect_carat(text)
-        weight = parse_weight_grams(title)
-        if weight is None:
-            weight = parse_weight_grams(short_desc)
+        if METAL in INGOT_FINENESS:
+            weight = parse_bullion_weight(title) or parse_bullion_weight(short_desc)
+        else:
+            weight = parse_weight_grams(title)
+            if weight is None:
+                weight = parse_weight_grams(short_desc)
 
         # Multi-variant listings: the API price is the CHEAPEST variant and any
         # stated weight is some variant's -- the melt comparison is meaningless.
@@ -1194,7 +1307,8 @@ def analyse(items, token, spot_per_oz, fx=None):
         #    a signet/intaglio word is dropped later regardless.
         on_target = not REQUIRED_TAGS or bool(set(style_tags(text)) & set(REQUIRED_TAGS))
         if (weight is None and not is_variant and on_target and FETCH_FULL_DETAILS
-                and METAL != "yurman"   # brand mode needs no weight -> save quota
+                and METAL != "yurman"       # brand mode needs no weight
+                and METAL not in INGOT_FINENESS  # bullion titles state the denomination
                 and (MAX_DETAIL_FETCHES == 0 or detail_fetches < MAX_DETAIL_FETCHES)):
             detail_fetches += 1
             full = fetch_item_description(token, item.get("itemId", ""), market)
@@ -1237,6 +1351,10 @@ def analyse(items, token, spot_per_oz, fx=None):
         if METAL == "yurman":
             # Brand hunt: melt on mixed-metal branded pieces is fiction.
             melt, ratio, is_value = None, None, False
+        elif METAL in INGOT_FINENESS:
+            melt = round(net_gold * spot_per_gram_fine * fineness_frac, 2) if net_gold else None
+            ratio = round(melt / landed, 2) if (melt and landed) else None
+            is_value = bool(melt and landed and landed < melt * MELT_THRESHOLD)
         else:
             if METAL == "silver":
                 fraction = fineness_frac
@@ -1465,10 +1583,12 @@ def parse_args():
                         "from the output")
     p.add_argument("--conditions", default="USED", choices=["USED", "ANY"],
                    help="USED only, or ANY condition (captures dealer 'New')")
-    p.add_argument("--metal", default="gold", choices=["gold", "silver", "yurman"],
+    p.add_argument("--metal", default="gold",
+                   choices=["gold", "silver", "yurman", "ingot_gold", "ingot_silver"],
                    help="gold (default), silver (sterling signet mode with live "
                         "silver spot), or yurman (David Yurman brand hunt: no "
-                        "weight floor, no melt -- genuine-brand claims only)")
+                        "weight floor, no melt -- genuine-brand claims only), or "
+                        "ingot_gold / ingot_silver (bullion bars: premium over spot)")
     return p.parse_args()
 
 
@@ -1477,6 +1597,8 @@ def main():
     args = parse_args()
     METAL = args.metal
     MELT_THRESHOLD = args.threshold
+    if METAL in INGOT_FINENESS and args.threshold == 1.3:
+        MELT_THRESHOLD = INGOT_MELT_THRESHOLD
     if METAL == "silver" and args.threshold == 1.3:
         # Silver trades further above melt; use the silver default unless the
         # user explicitly set a threshold.
@@ -1486,6 +1608,8 @@ def main():
         WEIGHT_FLOOR_CONFIRMED = args.min_weight
     elif METAL == "silver":
         WEIGHT_FLOOR_CONFIRMED = SILVER_WEIGHT_FLOOR
+    elif METAL in INGOT_FINENESS:
+        WEIGHT_FLOOR_CONFIRMED = 0.0
 
     extra = [q.strip() for q in args.query.split("||") if q.strip()] \
         if args.query.strip() != SEARCH_TERM else []
@@ -1504,6 +1628,12 @@ def main():
     if METAL == "yurman":
         spot, source = 0.0, "n/a (brand mode -- no melt)"
         print("  brand mode: David Yurman -- no melt valuation")
+    elif METAL == "ingot_silver":
+        spot, source = get_silver_spot_gbp_per_oz()
+        print(f"  silver spot: £{spot:,.2f}/oz  (source: {source})")
+    elif METAL == "ingot_gold":
+        spot, source = get_spot_price_gbp_per_oz()
+        print(f"  gold spot: £{spot:,.2f}/oz  (source: {source})")
     elif METAL == "silver":
         spot, source = get_silver_spot_gbp_per_oz()
         print(f"  silver spot: £{spot:,.2f}/oz  (source: {source})")

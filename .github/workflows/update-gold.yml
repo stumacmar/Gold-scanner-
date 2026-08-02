@@ -13,9 +13,19 @@ name: Update gold ring scan
 
 on:
   schedule:
-    - cron: "0 8 * * *"      # daily at 08:00 UTC (09:00 BST) — after eBay's
-                             # daily quota reset (~07:00 UTC / midnight US Pacific)
-  workflow_dispatch: {}
+    # Twice daily. eBay's Browse quota (~5,000 calls/day) resets ~07:00 UTC,
+    # and a full sweep costs ~2,000 calls, so two full runs fit comfortably.
+    - cron: "0 8 * * *"      # 08:00 UTC (09:00 BST) — morning stock
+    - cron: "0 17 * * *"     # 17:00 UTC (18:00 BST) — evening listings
+  workflow_dispatch:
+    inputs:
+      screen:
+        description: "Which page to update"
+        type: choice
+        default: all
+        options: [all, gold, silver, yurman, ingots]
+          
+
 
 permissions:
   contents: write
@@ -41,37 +51,54 @@ jobs:
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          # Scheduled runs have no inputs, so default to a full sweep.
+          SCREEN: ${{ github.event.inputs.screen || 'all' }}
         run: |
           MARKETS="EBAY_GB,EBAY_US,EBAY_IE,EBAY_AU,EBAY_CA,EBAY_DE,EBAY_FR,EBAY_IT,EBAY_ES,EBAY_NL,EBAY_AT,EBAY_CH,EBAY_BE,EBAY_PL,EBAY_HK,EBAY_SG"
-          # Heavy solid-gold rings only. The scanner now auto-builds a localised
-          # + English query matrix per market (signet/band/intaglio/vintage/gents
-          # × each marketplace's language and fineness mark), so no --query is
-          # passed here. A per-carat min-price floor (a weight proxy) skips tiny
-          # rings at the source. --conditions ANY keeps used/new AND for-parts
-          # (scrap) listings. Weight floors: CONFIRMED >=15g (strict), ESTIMATED
-          # kept if the conservative low-bound >=12g, UNKNOWN routed to the
-          # review lane (kept, never dropped). Only CONFIRMED weights can flag
-          # "value" -- a buy signal never rests on a guessed weight.
-          COMMON="--max-price 6000 --limit 250 --min-weight 15 --conditions ANY --markets $MARKETS"
-          python gold_ring_scanner.py --default-carat 9  $COMMON --min-price 350  --json data/9ct.json  --csv data/9ct.csv || echo '[warn] scan failed; continuing'
-          sleep 20
-          python gold_ring_scanner.py --default-carat 14 $COMMON --min-price 550  --json data/14ct.json --csv data/14ct.csv || echo '[warn] scan failed; continuing'
-          sleep 20
-          python gold_ring_scanner.py --default-carat 18 $COMMON --min-price 700  --json data/18ct.json --csv data/18ct.csv || echo '[warn] scan failed; continuing'
-          sleep 20
-          python gold_ring_scanner.py --default-carat 22 $COMMON --min-price 850  --json data/22ct.json --csv data/22ct.csv || echo '[warn] scan failed; continuing'
-          sleep 20
-          # Silver screen: heavy sterling signets/intaglios. Lower price band
-          # (silver melt is small; heavy sterling signets sell ~£30-300).
-          python gold_ring_scanner.py --metal silver --max-price 600 --min-price 15 \
-            --limit 250 --conditions ANY --markets $MARKETS \
-            --json data/silver.json --csv data/silver.csv || echo '[warn] silver scan failed'
-          sleep 20
-          # Yurman screen: brand hunt, no weight floor, no melt. Cheap on
-          # quota (no detail fetches -- ~130 search calls).
-          python gold_ring_scanner.py --metal yurman --max-price 3000 --min-price 40 \
-            --limit 200 --conditions ANY --markets $MARKETS \
-            --json data/yurman.json --csv data/yurman.csv || echo '[warn] yurman scan failed'
+          echo "Updating screen: $SCREEN"
+
+          # Gold: heavy solid-gold signets/intaglios, 15g+ seller-stated.
+          # Per-carat min-price floor is a coarse weight proxy at the source.
+          if [ "$SCREEN" = "all" ] || [ "$SCREEN" = "gold" ]; then
+            COMMON="--max-price 6000 --limit 250 --min-weight 15 --conditions ANY --markets $MARKETS"
+            python gold_ring_scanner.py --default-carat 9  $COMMON --min-price 350 --json data/9ct.json  --csv data/9ct.csv  || echo '[warn] 9ct failed'
+            sleep 20
+            python gold_ring_scanner.py --default-carat 14 $COMMON --min-price 550 --json data/14ct.json --csv data/14ct.csv || echo '[warn] 14ct failed'
+            sleep 20
+            python gold_ring_scanner.py --default-carat 18 $COMMON --min-price 700 --json data/18ct.json --csv data/18ct.csv || echo '[warn] 18ct failed'
+            sleep 20
+            python gold_ring_scanner.py --default-carat 22 $COMMON --min-price 850 --json data/22ct.json --csv data/22ct.csv || echo '[warn] 22ct failed'
+            sleep 20
+          fi
+
+          # Silver: heavy sterling signets/intaglios (silver melt is small, so
+          # a much lower price band).
+          if [ "$SCREEN" = "all" ] || [ "$SCREEN" = "silver" ]; then
+            python gold_ring_scanner.py --metal silver --max-price 600 --min-price 15 \
+              --limit 250 --conditions ANY --markets $MARKETS \
+              --json data/silver.json --csv data/silver.csv || echo '[warn] silver failed'
+            sleep 20
+          fi
+
+          # Yurman: brand hunt, no weight floor, no melt. Cheap (~50 calls).
+          if [ "$SCREEN" = "all" ] || [ "$SCREEN" = "yurman" ]; then
+            python gold_ring_scanner.py --metal yurman --max-price 3000 --min-price 40 \
+              --limit 200 --conditions ANY --markets $MARKETS \
+              --json data/yurman.json --csv data/yurman.csv || echo '[warn] yurman failed'
+            sleep 20
+          fi
+
+          # Ingots: bullion bars, premium over spot. Wide price band -- a 1g
+          # bar is ~£80 and a 1kg silver bar ~£900.
+          if [ "$SCREEN" = "all" ] || [ "$SCREEN" = "ingots" ]; then
+            python gold_ring_scanner.py --metal ingot_gold --max-price 8000 --min-price 40 \
+              --limit 200 --conditions ANY --markets $MARKETS \
+              --json data/ingot_gold.json --csv data/ingot_gold.csv || echo '[warn] gold ingots failed'
+            sleep 20
+            python gold_ring_scanner.py --metal ingot_silver --max-price 3000 --min-price 15 \
+              --limit 200 --conditions ANY --markets $MARKETS \
+              --json data/ingot_silver.json --csv data/ingot_silver.csv || echo '[warn] silver ingots failed'
+          fi
 
       - name: Build dashboard index
         if: always()
