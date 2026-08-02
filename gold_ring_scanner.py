@@ -220,7 +220,8 @@ INGOT_EXCLUDE_MARKERS = [
 
 # Bullion denominations: grams, troy ounces, kilos, and fractional ounces.
 _BULLION_G_RE = re.compile(
-    r"(\d{1,4}(?:[.,]\d{1,3})?)\s*(?:gram(?:me|s)?|grammes?|gr\b|g)\b", re.I)
+    r"(?<![\d.,])(\d{1,4}(?:[.,]\d{1,3})?)\s*"
+    r"(?:gramm(?:es?|i)?|gram(?:me|s)?|grammes?|gr\b|g)\b", re.I)
 _BULLION_OZ_RE = re.compile(
     r"(\d{1,3}(?:[.,]\d{1,2})?)\s*(?:troy\s*)?(?:oz|ozt|ounces?)\b", re.I)
 # Fractional denominations (1/10 oz, 1/100, 1/200) -- these tiny bars are
@@ -229,6 +230,27 @@ _BULLION_OZ_RE = re.compile(
 _BULLION_FRAC_RE = re.compile(
     r"\b(\d{1,3})\s*/\s*(\d{1,3})\s*(?:(?:troy\s*)?(?:oz|ozt|ounces?)|th\b|\b)", re.I)
 _BULLION_KG_RE = re.compile(r"(\d{1,2}(?:[.,]\d{1,2})?)\s*(?:kg|kilo(?:gram)?s?)\b", re.I)
+
+
+# Bullion is minted in standard denominations only. Snapping to this list
+# kills the misparses that survive everything else (a "0,0311g" fractional
+# read as 311g, a kilo copper bar read as a kilo of silver, and so on).
+BULLION_DENOMS_G = (
+    0.3110,   # 1/100 oz (Germania and similar; real, if heavily premiumed)
+    0.5, 1.0, 1.5552, 2.0, 2.5, 3.1103, 5.0, 7.7759, 10.0, 15.5517, 20.0,
+    25.0, 31.1035, 50.0, 62.207, 100.0, 155.517, 250.0, 311.035, 500.0, 1000.0,
+)
+DENOM_TOLERANCE = 0.03      # +/-3% covers rounding and "31.1g" style titles
+
+
+def snap_to_denomination(grams):
+    """Nearest standard bullion denomination, or None if it isn't one."""
+    if grams is None:
+        return None
+    for d in BULLION_DENOMS_G:
+        if abs(grams - d) <= d * DENOM_TOLERANCE:
+            return d
+    return None
 
 
 def parse_bullion_weight(text):
@@ -246,8 +268,7 @@ def parse_bullion_weight(text):
         try:
             num, den = float(fm.group(1)), float(fm.group(2))
             if den and num / den <= 1.0:
-                gg = num / den * TROY_OZ_IN_GRAMS
-                return round(gg, 3) if gg >= 0.05 else None
+                return snap_to_denomination(num / den * TROY_OZ_IN_GRAMS)
         except (ValueError, ZeroDivisionError):
             pass
     grams = []
@@ -270,8 +291,27 @@ def parse_bullion_weight(text):
             grams.append(float(raw))
         except ValueError:
             pass
-    plausible = [x for x in grams if 0.5 <= x <= 1000]
-    return round(max(plausible), 3) if plausible else None
+    # Prefer figures that ARE a standard denomination; a bar whose only
+    # number isn't one is almost certainly a misparse, so report nothing.
+    snapped = [d for d in (snap_to_denomination(x) for x in grams) if d]
+    if snapped:
+        return round(max(snapped), 4)
+    return None
+
+
+# Metal words per language -- German lists "Goldbarren"/"Silberbarren" as one
+# word, so a bare \bgold\b test would drop the entire DE/AT/CH market.
+INGOT_METAL_WORDS = {
+    "gold":   (r"gold", r"goldbarren", r"feingold", r"oro", r"goud",
+               r"lingot d.or", r"z\u0142ot\w*"),
+    "silver": (r"silver", r"silber", r"silberbarren", r"feinsilber",
+               r"argent\w*", r"plata", r"zilver", r"srebr\w*"),
+}
+
+
+def _metal_hits(low, metal_key):
+    return sum(len(re.findall(r"\b" + w + r"\b", low))
+               for w in INGOT_METAL_WORDS[metal_key])
 
 
 def is_ingot_excluded(text, metal):
@@ -280,14 +320,23 @@ def is_ingot_excluded(text, metal):
     if any(m in low for m in INGOT_EXCLUDE_MARKERS):
         return True
     wanted, other = ("gold", "silver") if metal == "ingot_gold" else ("silver", "gold")
-    # Word-boundary counts: "Golden State Mint" is not a claim of gold, and
-    # that listing ("Golden State Mint 1oz 999 Fine SILVER Bar") was landing
-    # on the gold screen valued as an ounce of gold.
-    n_want = len(re.findall(r"\b" + wanted + r"\b", low))
-    n_other = len(re.findall(r"\b" + other + r"\b", low))
+    # Word-boundary counts across languages: "Golden State Mint" is not a
+    # claim of gold (that listing -- "...1oz 999 Fine SILVER Bar" -- was
+    # landing on the gold screen valued as an ounce of gold), while German
+    # "Goldbarren" is.
+    n_want = _metal_hits(low, wanted)
+    n_other = _metal_hits(low, other)
     if not n_want:
         return True                       # must actually claim the metal
-    return n_other >= n_want              # the other metal dominates -> not ours
+    # Base-metal bars are everywhere in this category and often carry a
+    # precious-metal word in the seller/brand name ("Silver Coast Copper Bar").
+    if n_other >= n_want:
+        return True
+    for m in ("copper", "kupfer", "brass", "bronze", "nickel", "zinc", "tin",
+              "aluminium", "aluminum", "tungsten", "titanium", "steel"):
+        if len(re.findall(r"\b" + m + r"\b", low)) >= n_want:
+            return True
+    return False
 
 
 # --- Yurman mode (--metal yurman) ------------------------------------------
