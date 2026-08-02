@@ -28,6 +28,10 @@ def main():
         metal = meta.get("metal")
         label = ("Silver" if metal == "silver"
                  else "Yurman" if metal == "yurman"
+                 else "Gold ingots" if metal == "ingot_gold"
+                 else "Silver ingots" if metal == "ingot_silver"
+                 # Ingot scans leave default_carat at 9, so without the two
+                 # cases above every bullion file was labelled "9ct".
                  else f"{meta.get('default_carat', key)}ct")
         searches.append({
             "key": key,
