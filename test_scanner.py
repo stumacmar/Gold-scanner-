@@ -295,6 +295,46 @@ class TestIngotMode(unittest.TestCase):
             "100g Silver Bullion Bar 999 Metalor", "ingot_silver"))
 
 
+class TestScrapMode(unittest.TestCase):
+    def test_ewaste_and_ore_excluded(self):
+        for x in ("CPU pins gold recovery scrap e-waste",
+                  "gold ore refining ore sample", "motherboard gold scrap"):
+            self.assertTrue(g.is_scrap_excluded(x), x)
+
+    def test_gold_filled_and_plated_excluded(self):
+        # The commonest trap in scrap listings: filled/rolled is not solid.
+        for x in ("9ct GOLD FILLED scrap bundle", "gold plated scrap job lot",
+                  "rolled gold scrap lot"):
+            self.assertTrue(g.is_scrap_excluded(x), x)
+
+    def test_real_scrap_kept(self):
+        self.assertFalse(g.is_scrap_excluded("9ct gold scrap jewellery 22.4g broken chains"))
+        self.assertFalse(g.is_scrap_excluded("375 scrap gold 18.9 grams broken rings"))
+
+    def test_job_lots_allowed_in_scrap_only(self):
+        # A job lot of broken gold is the ideal scrap listing, but a job lot
+        # of RINGS breaks single-item melt maths.
+        old = g.METAL
+        try:
+            g.METAL = "scrap"
+            self.assertFalse(g.is_scrap_excluded("Job lot 9ct gold scrap broken jewellery 31g"))
+            g.METAL = "gold"
+            self.assertTrue(g.is_excluded("18k Gold Rings Bundle 40.9g"))
+        finally:
+            g.METAL = old
+
+    def test_scrap_weight_floor_and_stone_allowance(self):
+        old = g.METAL
+        try:
+            g.METAL = "scrap"
+            self.assertTrue(g.assess_ring("9ct scrap gold 22g", 9, 22.0)["keep"])
+            self.assertFalse(g.assess_ring("9ct scrap gold 3g", 9, 3.0)["keep"])
+            a = g.assess_ring("9ct scrap gold 20g with diamond", 9, 20.0)
+            self.assertAlmostEqual(a["net_gold_g"], 20.0 - g.STONE_ALLOWANCE_G, places=1)
+        finally:
+            g.METAL = old
+
+
 class TestClassifySeller(unittest.TestCase):
     def test_private_individual(self):
         t, fb, priv = g.classify_seller(

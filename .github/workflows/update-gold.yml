@@ -23,7 +23,7 @@ on:
         description: "Which page to update"
         type: choice
         default: all
-        options: [all, gold, silver, yurman, ingots]
+        options: [all, gold, silver, yurman, scrap, ingots]
           
 
 
@@ -85,6 +85,14 @@ jobs:
             python gold_ring_scanner.py --metal yurman --max-price 3000 --min-price 40 \
               --limit 200 --conditions ANY --markets $MARKETS \
               --json data/yurman.json --csv data/yurman.csv || echo '[warn] yurman failed'
+            sleep 20
+          fi
+
+          # Scrap: broken/scrap gold -- the one gold market priced on metal.
+          if [ "$SCREEN" = "all" ] || [ "$SCREEN" = "scrap" ]; then
+            python gold_ring_scanner.py --metal scrap --max-price 4000 --min-price 40 \
+              --limit 200 --conditions ANY --markets $MARKETS \
+              --json data/scrap.json --csv data/scrap.csv || echo '[warn] scrap failed'
             sleep 20
           fi
 

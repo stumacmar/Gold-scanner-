@@ -31,8 +31,10 @@
   @keyframes sp { to { transform: rotate(360deg); } }
 
   /* Gold / Silver screen switcher */
-  .metals { display: flex; gap: 8px; padding: 10px 16px 0; }
-  .mchip { flex: 1; text-align: center; padding: 10px 2px; font-size: 13px; border-radius: 12px;
+  .metals { display: flex; gap: 8px; padding: 10px 16px 0; overflow-x: auto;
+    scrollbar-width: none; }
+  .metals::-webkit-scrollbar { display: none; }
+  .mchip { flex: 0 0 auto; min-width: 78px; padding-left: 10px; padding-right: 10px; text-align: center; padding: 10px 2px; font-size: 13px; border-radius: 12px;
     border: 1px solid #232a3a; background: #131826; color: #cfd6e4;
     font-weight: 700; cursor: pointer; }
   .mchip.gold.active { background: #d4af37; border-color: #d4af37; color: #1a1400; }
@@ -40,6 +42,9 @@
   .mchip.yurman.active { background: #b08d57; border-color: #b08d57; color: #1a1206; }
   .mchip.meteorite.active { background: #7d8aa5; border-color: #7d8aa5; color: #10131c; }
   .mchip.ingot.active { background: #8fa88f; border-color: #8fa88f; color: #0e140e; }
+  .mchip.scrap.active { background: #c58a4a; border-color: #c58a4a; color: #1a0f04; }
+  .mchip.ending.active { background: #d1495b; border-color: #d1495b; color: #fff0f2; }
+  .soon { color: #ff8a95; font-weight: 700; }
 
   /* One row of controls: carat chips + value toggle + sort */
   .controls { display: flex; gap: 8px; overflow-x: auto; padding: 12px 16px 4px;
@@ -94,10 +99,12 @@
   </div>
 
   <div class="metals" id="metals">
+    <div class="mchip ending" data-m="ending">⏳ Ending</div>
     <div class="mchip gold active" data-m="gold">● Gold</div>
     <div class="mchip silver" data-m="silver">○ Silver</div>
     <div class="mchip yurman" data-m="yurman">◆ Yurman</div>
     <div class="mchip meteorite" data-m="meteorite">☄ Meteor</div>
+    <div class="mchip scrap" data-m="scrap">♻ Scrap</div>
     <div class="mchip ingot" data-m="ingot">▬ Ingots</div>
   </div>
 
@@ -113,7 +120,7 @@
 <script>
 const fmtGBP = n => (n == null ? "?" : "£" + Number(n).toLocaleString("en-GB", {maximumFractionDigits: 0}));
 let ALL = [];            // merged records across every data file (gold + silver)
-let METAS = { gold: null, silver: null, yurman: null, ingot: null };  // newest meta per screen
+let METAS = { gold: null, silver: null, yurman: null, ingot: null, scrap: null };  // newest meta per screen
 let metal = "gold";      // which screen: gold | silver
 let caratFilter = 0;     // 0 = all | 9 | 14 | 18 | 22 (gold screen only)
 let valueOnly = false;
@@ -122,13 +129,33 @@ let privateOnly = false; // 👤 only strict private sellers (individual, modest
 let sortBy = "best";
 const metalOf = r => r.metal === "silver" ? "silver"
   : r.metal === "yurman" ? "yurman"
+  : r.metal === "scrap" ? "scrap"
   : (r.metal === "ingot_gold" || r.metal === "ingot_silver") ? "ingot"
   : "gold";
 // Ingots screen: sub-filter by which bullion metal.
 let ingotMetal = "all";   // all | ingot_gold | ingot_silver
+// Minutes until an auction closes, computed LIVE from the stored end time --
+// the scan's own "time_left" string froze hours ago.
+function minsLeft(r) {
+  if (!r.ends_at) return Infinity;
+  const ms = new Date(r.ends_at).getTime() - Date.now();
+  return isFinite(ms) ? ms / 60000 : Infinity;
+}
+function liveLeft(r) {
+  const m = minsLeft(r);
+  if (!isFinite(m)) return r.time_left || "n/a";
+  if (m <= 0) return "ended";
+  const d = Math.floor(m / 1440), h = Math.floor((m % 1440) / 60), mi = Math.floor(m % 60);
+  return d ? `${d}d ${h}h` : h ? `${h}h ${mi}m` : `${mi}m`;
+}
+const ENDING_WINDOW_MIN = 24 * 60;
+const isEndingSoon = r => r.buying === "Auction"
+  && minsLeft(r) > 0 && minsLeft(r) <= ENDING_WINDOW_MIN;
 const isMeteorite = r => metalOf(r) === "yurman" && /meteorite/i.test(r.title || "")
   && (!r.condition || !/^new/i.test(r.condition));   // used only, when known
-const POOL = () => metal === "meteorite" ? ALL.filter(isMeteorite)
+const POOL = () => metal === "ending" ? ALL.filter(isEndingSoon)
+  : metal === "scrap" ? ALL.filter(r => metalOf(r) === "scrap")
+  : metal === "meteorite" ? ALL.filter(isMeteorite)
   : metal === "ingot" ? ALL.filter(r => metalOf(r) === "ingot"
       && (ingotMetal === "all" || r.metal === ingotMetal))
   : ALL.filter(r => metalOf(r) === metal);
@@ -145,7 +172,7 @@ const SORTS = {
   best:   (a, b) => (b.ratio ?? -1) - (a.ratio ?? -1),
   heavy:  (a, b) => (b.weight_g ?? -1) - (a.weight_g ?? -1),
   cheap:  (a, b) => (a.landed_cost ?? 1e12) - (b.landed_cost ?? 1e12),
-  ending: (a, b) => tlMinutes(a.time_left) - tlMinutes(b.time_left),
+  ending: (a, b) => minsLeft(a) - minsLeft(b),
 };
 const shown = () => POOL()
   .filter(r => (metal === "silver" || !caratFilter || r.carat === caratFilter)
@@ -212,7 +239,7 @@ function card(rec) {
       </div>
       <div class="foot">
         <span class="left">${rec.price_firm === false ? "◷ opening bid · " : ""}${rec.buying === "Buy now" ? "🏷 Buy now"
-          : "⏳ " + rec.time_left + " · " + bids + " bid" + (bids == 1 ? "" : "s")}</span>
+          : `<span class="${minsLeft(rec) <= 60 ? "soon" : ""}">⏳ ${liveLeft(rec)}</span> · ${bids} bid${bids == 1 ? "" : "s"}`}</span>
         <span>tap to open ↗</span>
       </div>
     </a>`;
@@ -233,7 +260,7 @@ function render() {
           `${c}ct ${pool.filter(r => r.carat === c).length}`)).join("")
     : "";
   document.getElementById("controls").innerHTML =
-    (metal === "ingot" ? "" : chip(metal === "silver" || !caratFilter, 0, `All ${pool.length}`)) +
+    (metal === "ingot" ? "" : chip(metal === "silver" || metal === "ending" || metal === "scrap" || !caratFilter, 0, `All ${pool.length}`)) +
     ingotChips + caratChips +
     (metal === "yurman" || metal === "meteorite" ? "" : chip(valueOnly, "value", `★ Value ${pool.filter(r => r.is_value).length}`, "val")) +
     chip(newOnly, "new", `🆕 New ${pool.filter(r => r.is_new).length}`, "val") +
@@ -248,16 +275,18 @@ function render() {
   document.querySelectorAll("#metals .mchip").forEach(el =>
     el.classList.toggle("active", el.dataset.m === metal));
 
-  const META = METAS[metal === "meteorite" ? "yurman" : metal];
+  const META = METAS[metal === "meteorite" ? "yurman" : metal === "ending" ? "gold" : metal];
   if (META) {
     const when = new Date(META.generated_at);
-    const what = metal === "ingot" ? "Gold &amp; silver bullion bars · premium over spot"
+    const what = metal === "ending" ? "Closing within 24h · every screen · soonest first"
+      : metal === "scrap" ? "Scrap &amp; broken gold · priced on metal, not craftsmanship"
+      : metal === "ingot" ? "Gold &amp; silver bullion bars · premium over spot"
       : metal === "meteorite" ? "David Yurman METEORITE signets · used · worldwide"
       : metal === "yurman" ? "David Yurman signets · worldwide · genuine-brand listings only"
       : (metal === "silver" ? "Heavy sterling-silver signets &amp; intaglios · <b>15g+</b>"
                             : "Heavy solid-gold signets &amp; intaglios · <b>15g+</b>");
     document.getElementById("sub").innerHTML =
-      what + (metal === "yurman" || metal === "meteorite" || metal === "ingot" ? "" : ` · ${metal} ${fmtGBP(META.spot_gbp_per_oz)}/oz`) +
+      what + (["yurman","meteorite","ingot","ending"].includes(metal) ? "" : ` · ${metal} ${fmtGBP(META.spot_gbp_per_oz)}/oz`) +
       `<br>${rows.length} shown of ${pool.length} · updated ${when.toLocaleDateString("en-GB")} ` +
       when.toLocaleTimeString("en-GB", {hour: "2-digit", minute: "2-digit"});
   } else if (metal !== "gold") {
@@ -288,7 +317,8 @@ document.getElementById("metals").onclick = (e) => {
   if (c && c.dataset.m !== metal) {
     metal = c.dataset.m; caratFilter = 0; valueOnly = false; newOnly = false; ingotMetal = "all";
     if ((metal === "yurman" || metal === "meteorite") && sortBy === "best") sortBy = "cheap";
-    if (metal === "ingot") sortBy = "best";   // lowest premium first
+    if (metal === "ingot") sortBy = "best";     // lowest premium first
+    if (metal === "ending") sortBy = "ending";  // closest to closing first
     render();
   }
 };
@@ -310,10 +340,11 @@ function loadAll() {
         || String(r.url || "").split("?")[0]);
       const seen = new Set();
       const merged = [];
-      const newest = { gold: null, silver: null, yurman: null, ingot: null };
+      const newest = { gold: null, silver: null, yurman: null, ingot: null, scrap: null };
       for (const f of files.filter(Boolean)) {
         const mm = f.meta.metal;
         const m = mm === "silver" ? "silver" : mm === "yurman" ? "yurman"
+          : mm === "scrap" ? "scrap"
           : (mm === "ingot_gold" || mm === "ingot_silver") ? "ingot" : "gold";
         if (!newest[m] || f.meta.generated_at > newest[m].generated_at) newest[m] = f.meta;
         for (const r of f.results) {

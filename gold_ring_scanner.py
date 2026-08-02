@@ -183,6 +183,48 @@ SILVER_PLATED_MARKERS = [
     "base metal", "stainless", "tungsten", "titanium", "brass",
 ]
 
+# --- Scrap mode (--metal scrap) -------------------------------------------
+# The one gold market that IS priced on metal rather than craftsmanship.
+# Finished signets sell at 2-3x melt, so the melt test almost never fires on
+# them; scrap and broken jewellery trade AT melt -- dealers pay 85-95% of it,
+# and private sellers clearing a drawer often list at or under. So: no style
+# filter, a modest weight floor (tiny lots aren't worth the postage risk),
+# and a tight threshold, because paying over melt for scrap is pointless.
+SCRAP_WEIGHT_FLOOR = 5.0
+SCRAP_MELT_THRESHOLD = 1.0        # at or under melt, landed
+SCRAP_QUERY_TEMPLATES = {
+    "en": ["scrap gold jewellery", "broken gold jewellery scrap",
+           "9ct gold scrap", "18ct gold scrap", "gold scrap 375 grams",
+           "gold scrap 585 grams", "scrap gold lot grams"],
+    "de": ["Zahngold Bruchgold", "Bruchgold 585 Gramm", "Altgold 750 Gramm"],
+    "fr": ["or a fondre grammes", "or casse debris grammes"],
+    "it": ["oro rottame grammi", "oro da fondere grammi"],
+    "es": ["oro para fundir gramos", "chatarra oro gramos"],
+    "nl": ["breukgoud grammen", "oud goud sloopgoud"],
+    "pl": ["zloto zlom gramy"],
+}
+# Scrap listings are where gold-FILLED and plated tat hides most often, and
+# where "gold" can mean the colour. is_plated covers filled/rolled/plated;
+# these are the extras specific to scrap lots.
+SCRAP_EXCLUDE_MARKERS = [
+    "plated scrap", "gold tone", "costume", "cz ", "simulated",
+    "recovery", "refining ore", "ore ", "circuit", "cpu", "pins", "connector",
+    "e-waste", "ewaste", "computer", "ram ", "motherboard",
+]
+
+
+def is_scrap_excluded(text):
+    """Reject e-waste/ore/plated 'scrap' -- only real karat jewellery scrap.
+
+    Note: BUNDLE_MARKERS are NOT applied here. A "job lot of broken 9ct" is
+    the ideal scrap listing, not something to filter out.
+    """
+    low = (text or "").lower()
+    if any(m in low for m in SCRAP_EXCLUDE_MARKERS):
+        return True
+    return is_plated(text) or is_excluded(text)
+
+
 # --- Ingot / bullion mode (--metal ingot_gold | ingot_silver) --------------
 # Bullion is the opposite of the ring hunt: fineness is standardised (999.9
 # gold, 999 silver), weight is a stated denomination, and the whole game is
@@ -410,7 +452,9 @@ def queries_for(market, carat, extra=(), metal="gold"):
             if q and q.lower() not in seen:
                 seen.add(q.lower()); out.append(q)
         return out[:MAX_QUERIES_PER_MARKET]
-    if metal == "yurman":
+    if metal == "scrap":
+        templates = SCRAP_QUERY_TEMPLATES
+    elif metal == "yurman":
         templates, lang = YURMAN_QUERY_TEMPLATES, "en"
     elif metal == "silver":
         templates = SILVER_QUERY_TEMPLATES
@@ -652,8 +696,13 @@ PLATED_MARKERS = [
 EXCLUDE_MARKERS = [
     "sovereign", "half sov", "full sov", " sov ", "krugerrand",
     "coin", "guinea", "ducat",
-    # Multi-ring bundles: the stated weight is the whole lot, not one signet.
-    # (Bare "lot" is too common in genuine titles to exclude.)
+]
+
+# Multi-ring bundles: for a SINGLE ring the stated weight is the whole lot, so
+# the melt comparison is meaningless. Scrap mode deliberately skips this list
+# -- a job lot of broken gold is exactly what we want there, and its stated
+# weight IS the thing being valued.
+BUNDLE_MARKERS = [
     "bundle", "job lot", "joblot", "lot of ", "x rings", "rings x",
 ]
 
@@ -663,7 +712,10 @@ def is_excluded(text):
     if not text:
         return False
     low = f" {text.lower()} "
-    return any(marker in low for marker in EXCLUDE_MARKERS)
+    if any(marker in low for marker in EXCLUDE_MARKERS):
+        return True
+    # Bundles are only a problem when valuing a SINGLE item.
+    return METAL != "scrap" and any(m in low for m in BUNDLE_MARKERS)
 
 # =============================================================================
 # OAuth2 (client-credentials application token) with on-disk caching
@@ -937,6 +989,16 @@ def assess_ring(text, carat, stated_weight):
     """
     low = (text or "").lower()
     tags = style_tags(text)
+
+    if METAL == "scrap":
+        # Scrap: no style filter. Subtract a stone allowance (lots include
+        # settings) and require a worthwhile lot size.
+        stones = has_stones(text)
+        net = (round(stated_weight - (STONE_ALLOWANCE_G if stones else 0.0), 1)
+               if stated_weight is not None else None)
+        return {"keep": net is not None and net >= SCRAP_WEIGHT_FLOOR,
+                "confidence": "confirmed", "gross_g": stated_weight,
+                "net_gold_g": net, "stones": stones, "tags": tags}
 
     if METAL in INGOT_FINENESS:
         # Bullion: no style filter, no stone allowance, no weight window --
@@ -1376,6 +1438,9 @@ def analyse(items, token, spot_per_oz, fx=None):
         if METAL in INGOT_FINENESS:
             if is_ingot_excluded(text, METAL):
                 continue
+        elif METAL == "scrap":
+            if is_scrap_excluded(text):
+                continue
         elif METAL == "yurman":
             if is_yurman_excluded(text) or is_excluded(text):
                 continue
@@ -1522,6 +1587,9 @@ def analyse(items, token, spot_per_oz, fx=None):
                 time_left(item.get("itemEndDate"))),
             "condition": item.get("condition"),   # "Pre-owned" / "New ..." etc
             "time_left": time_left(item.get("itemEndDate")),
+            # Raw end time: "time_left" is frozen at scan time, so the
+            # dashboard needs this to count down live hours later.
+            "ends_at": item.get("itemEndDate"),
             "bids": item.get("bidCount", ""),
             "item_id": ebay_item_id(item.get("itemWebUrl", "")) or item.get("itemId", ""),
             "url": item.get("itemWebUrl", ""),
@@ -1710,7 +1778,8 @@ def parse_args():
     p.add_argument("--conditions", default="USED", choices=["USED", "ANY"],
                    help="USED only, or ANY condition (captures dealer 'New')")
     p.add_argument("--metal", default="gold",
-                   choices=["gold", "silver", "yurman", "ingot_gold", "ingot_silver"],
+                   choices=["gold", "silver", "yurman", "scrap",
+                            "ingot_gold", "ingot_silver"],
                    help="gold (default), silver (sterling signet mode with live "
                         "silver spot), or yurman (David Yurman brand hunt: no "
                         "weight floor, no melt -- genuine-brand claims only), or "
@@ -1723,6 +1792,8 @@ def main():
     args = parse_args()
     METAL = args.metal
     MELT_THRESHOLD = args.threshold
+    if METAL == "scrap" and args.threshold == 1.3:
+        MELT_THRESHOLD = SCRAP_MELT_THRESHOLD
     if METAL in INGOT_FINENESS and args.threshold == 1.3:
         MELT_THRESHOLD = INGOT_MELT_THRESHOLD
     if METAL == "silver" and args.threshold == 1.3:
@@ -1736,6 +1807,8 @@ def main():
         WEIGHT_FLOOR_CONFIRMED = SILVER_WEIGHT_FLOOR
     elif METAL in INGOT_FINENESS:
         WEIGHT_FLOOR_CONFIRMED = 0.0
+    elif METAL == "scrap":
+        WEIGHT_FLOOR_CONFIRMED = SCRAP_WEIGHT_FLOOR
 
     extra = [q.strip() for q in args.query.split("||") if q.strip()] \
         if args.query.strip() != SEARCH_TERM else []
@@ -1757,7 +1830,7 @@ def main():
     elif METAL == "ingot_silver":
         spot, source = get_silver_spot_gbp_per_oz()
         print(f"  silver spot: £{spot:,.2f}/oz  (source: {source})")
-    elif METAL == "ingot_gold":
+    elif METAL in ("ingot_gold", "scrap"):
         spot, source = get_spot_price_gbp_per_oz()
         print(f"  gold spot: £{spot:,.2f}/oz  (source: {source})")
     elif METAL == "silver":
