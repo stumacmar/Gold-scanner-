@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-01T08:54:39.066676+00:00",
+    "generated_at": "2026-08-02T08:55:37.799539+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,52 +80,17 @@
       "SGD": 0.5799,
       "USD": 0.7451
     },
-    "total_fetched": 1564,
-    "total_analysed": 4,
+    "total_fetched": 1550,
+    "total_analysed": 3,
     "value_count": 0,
     "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "PL": 1,
-      "UK": 3
+      "UK": 2
     }
   },
   "results": [
-    {
-      "title": "Men's Gents 9Ct Gold 15.2g Signet Ring Size U",
-      "metal": "gold",
-      "carat": 9,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": "business",
-      "seller_feedback": 4914,
-      "seller_private": false,
-      "weight_g": 15.2,
-      "net_gold_g": 15.2,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "vintage",
-        "gents"
-      ],
-      "stones": false,
-      "current_bid": 1245.0,
-      "landed_cost": 1249.0,
-      "price_orig": null,
-      "country": "UK",
-      "flag": "🇬🇧",
-      "melt_value": 552.14,
-      "ratio": 0.44,
-      "is_value": false,
-      "buying": "Buy now",
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "bids": "",
-      "item_id": "307004107164",
-      "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW",
-      "first_seen": "2026-07-26T10:18:37.267480+00:00",
-      "is_new": false
-    },
     {
       "title": "9CT YELLOW GOLD HEAVY SIGNET RING, SIZE S. 19.67 GRAMS, LOT",
       "metal": "gold",
@@ -161,36 +126,38 @@
       "is_new": false
     },
     {
-      "title": "9ct Yellow Solid Gold Bulldog Signet Ring",
+      "title": "Men's Gents 9Ct Gold 15.2g Signet Ring Size U",
       "metal": "gold",
       "carat": 9,
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 3359,
+      "seller_feedback": 4914,
       "seller_private": false,
-      "weight_g": 19.6,
-      "net_gold_g": 18.1,
+      "weight_g": 15.2,
+      "net_gold_g": 15.2,
       "weight_confidence": "confirmed",
       "tags": [
-        "signet"
+        "signet",
+        "vintage",
+        "gents"
       ],
-      "stones": true,
-      "current_bid": 1460.0,
-      "landed_cost": 1464.0,
+      "stones": false,
+      "current_bid": 1245.0,
+      "landed_cost": 1249.0,
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 657.48,
-      "ratio": 0.45,
+      "melt_value": 552.14,
+      "ratio": 0.44,
       "is_value": false,
       "buying": "Buy now",
-      "condition": "New with packaging",
+      "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
-      "item_id": "147117810866",
-      "url": "https://www.ebay.co.uk/itm/147117810866?_skw=9ct+gold+signet+ring&hash=item2240e7a4b2:g:51QAAeSwiG9oc6xm",
-      "first_seen": "2026-07-29T18:23:58.746532+00:00",
+      "item_id": "307004107164",
+      "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW",
+      "first_seen": "2026-07-26T10:18:37.267480+00:00",
       "is_new": false
     },
     {
