@@ -180,6 +180,10 @@ function card(rec) {
   const bids = (rec.bids === "" || rec.bids == null) ? 0 : rec.bids;
   const intag = (rec.tags || []).includes("intaglio") ? ' <span class="muted">· intaglio</span>' : "";
   const m = metalOf(rec);
+  const isIngot = m === "ingot";
+  const premium = (isIngot && rec.melt_value && rec.landed_cost)
+    ? Math.round((rec.landed_cost / rec.melt_value - 1) * 100) : null;
+  const premCls = premium == null ? "r-low" : premium <= 5 ? "r-good" : premium <= 20 ? "r-mid" : "r-low";
   const firstCell = isIngot
     ? `<span class="kv">Bullion <b>${rec.metal === "ingot_gold" ? "Gold" : "Silver"} ${rec.fineness || ""}</b></span>`
     : m === "yurman"
@@ -187,10 +191,6 @@ function card(rec) {
     : m === "silver"
       ? `<span class="kv">Silver <b>${rec.fineness || "925"}</b>${intag}</span>`
       : `<span class="kv">Carat <b>${rec.carat}ct</b>${intag}</span>`;
-  const isIngot = m === "ingot";
-  const premium = (isIngot && rec.melt_value && rec.landed_cost)
-    ? Math.round((rec.landed_cost / rec.melt_value - 1) * 100) : null;
-  const premCls = premium == null ? "r-low" : premium <= 5 ? "r-good" : premium <= 20 ? "r-mid" : "r-low";
   const perGram = (metalOf(rec) === "silver" && rec.landed_cost && rec.weight_g)
     ? `<span class="kv">£/g <b>${(rec.landed_cost / rec.weight_g).toFixed(2)}</b></span>` : "";
   return `
