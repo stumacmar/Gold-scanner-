@@ -244,6 +244,31 @@ class TestIngotMode(unittest.TestCase):
                   "24k gold clad novelty bar", "gold foil bar souvenir"):
             self.assertTrue(g.is_ingot_excluded(t, "ingot_gold"), t)
 
+    def test_novelty_and_feedstock_excluded(self):
+        # "Finished in 24K GOLD" is plated; a decoy bar is a fake by name;
+        # nuggets/scrap are refining feedstock, not a bar. All were showing
+        # as 96-99% "under melt".
+        for t in ("The Ned Kelly Gang 1oz Ingot Finished in 24K GOLD",
+                  "1oz Gold Bar (Decoy) 10 Bars",
+                  "100g Scrap gold recovery nuggets for refining"):
+            self.assertTrue(g.is_ingot_excluded(t, "ingot_gold"), t)
+
+    def test_denomination_snapping(self):
+        self.assertEqual(g.snap_to_denomination(31.2), 31.1035)   # within 3%
+        self.assertEqual(g.snap_to_denomination(100.0), 100.0)
+        self.assertIsNone(g.snap_to_denomination(311.0))          # 0,0311g misparse
+        self.assertIsNone(g.snap_to_denomination(7.0))            # not a denomination
+
+    def test_multilingual_metal_words(self):
+        # German bullion is one word -- excluding it would drop DE/AT/CH.
+        self.assertFalse(g.is_ingot_excluded("1 Gramm Goldbarren PAMP Suisse", "ingot_gold"))
+        self.assertFalse(g.is_ingot_excluded("100g Silberbarren 999 Feinsilber", "ingot_silver"))
+
+    def test_base_metal_bars_excluded(self):
+        # "Silver Coast" is a brand; the bar is copper.
+        self.assertTrue(g.is_ingot_excluded("1 Kilo Silver Coast Copper Bar", "ingot_silver"))
+        self.assertTrue(g.is_ingot_excluded("2 x 1KG COPPER BULLION BAR 99%", "ingot_silver"))
+
     def test_genuine_bullion_kept(self):
         self.assertFalse(g.is_ingot_excluded(
             "1oz Gold Bullion Bar 999.9 PAMP Suisse", "ingot_gold"))

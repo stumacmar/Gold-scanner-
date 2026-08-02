@@ -216,7 +216,19 @@ INGOT_EXCLUDE_MARKERS = [
     "bezel", "frame for", "holder", "capsule", "display case", "display stand",
     "mold", "mould", "casting", "crucible", "tweezers", "scale", "tester",
     "storage box", "presentation box", "pouch", "sleeve for", "fits ",
+    # Plated novelty "ingots" -- these say so, in these exact words.
+    "finished in", "gold finish", "silver finish", "24k gold plated",
+    "decoy", "prop", "movie", "magic trick", "paperweight",
+    # Not a bar: refining feedstock, dust, nuggets, shot, wire, scrap.
+    "scrap", "nugget", "recovery", "refining", "refiner", "dust", "flake",
+    "shot ", "granule", "wire", "sheet", "casting grain",
 ]
+
+# Real bullion NEVER sells meaningfully under melt -- the metal alone is
+# worth that. A listing priced far below its own melt value is therefore a
+# fake, a plated novelty or a misparse, never a bargain, so it is dropped
+# outright rather than shown. (Rings use SUSPECT_RATIO for the same reason.)
+INGOT_MIN_PLAUSIBLE_RATIO = 0.90
 
 # Bullion denominations: grams, troy ounces, kilos, and fractional ounces.
 _BULLION_G_RE = re.compile(
@@ -1422,6 +1434,8 @@ def analyse(items, token, spot_per_oz, fx=None):
         elif METAL in INGOT_FINENESS:
             melt = round(net_gold * spot_per_gram_fine * fineness_frac, 2) if net_gold else None
             ratio = round(melt / landed, 2) if (melt and landed) else None
+            if melt and landed and landed < melt * INGOT_MIN_PLAUSIBLE_RATIO:
+                continue          # cannot be real bullion -- drop, don't rank
             is_value = bool(melt and landed and landed < melt * MELT_THRESHOLD)
         else:
             if METAL == "silver":
