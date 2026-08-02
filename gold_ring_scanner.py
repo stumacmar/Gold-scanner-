@@ -1892,11 +1892,13 @@ def main():
           f"estimated={conf['estimated']} unknown={conf['unknown']}")
     print(f"  eBay API calls: search={API_CALLS['search']} item={API_CALLS['item']}")
 
-    # Safety: if we fetched nothing at all (rate-limited / API error), keep the
-    # last good scan rather than overwriting it with an empty file.
-    if not items and os.path.exists(args.json):
-        print(f"[warn] fetched 0 listings (likely rate-limited) -- keeping "
-              f"existing {args.json}; not overwriting.", file=sys.stderr)
+    # Safety: fetching nothing means the API refused us (rate limit / outage),
+    # never that the market is empty. Writing that out is always wrong -- it
+    # either destroys a good file or, on a screen's FIRST run, creates an empty
+    # one that looks like a real "no stock" answer. So write nothing at all.
+    if not items:
+        print(f"[warn] fetched 0 listings (rate-limited or API error) -- "
+              f"leaving {args.json} untouched.", file=sys.stderr)
         return
 
     # Flag rings that weren't in the previous scan, so the dashboard can pin
