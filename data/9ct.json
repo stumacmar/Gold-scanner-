@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-02T08:55:37.799539+00:00",
+    "generated_at": "2026-08-02T11:35:40.409642+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.5799,
       "USD": 0.7451
     },
-    "total_fetched": 1550,
+    "total_fetched": 1579,
     "total_analysed": 3,
     "value_count": 0,
     "new_count": 0,
@@ -117,6 +117,7 @@
       "ratio": 0.62,
       "is_value": false,
       "buying": "Buy now",
+      "price_firm": true,
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
@@ -152,6 +153,7 @@
       "ratio": 0.44,
       "is_value": false,
       "buying": "Buy now",
+      "price_firm": true,
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "bids": "",
@@ -185,6 +187,7 @@
       "ratio": 0.33,
       "is_value": false,
       "buying": "Buy now",
+      "price_firm": true,
       "condition": "New without packaging",
       "time_left": "n/a",
       "bids": "",

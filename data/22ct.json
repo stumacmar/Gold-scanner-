@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-02T09:03:26.902530+00:00",
+    "generated_at": "2026-08-02T12:01:00.218421+00:00",
     "query": "22ct gold signet ring",
     "queries": [
       "22ct gold signet ring",
@@ -80,124 +80,12 @@
       "SGD": 0.5799,
       "USD": 0.7451
     },
-    "total_fetched": 670,
-    "total_analysed": 3,
+    "total_fetched": 485,
+    "total_analysed": 0,
     "value_count": 0,
     "new_count": 0,
     "weight_unknown_count": 0,
-    "country_counts": {
-      "AU": 1,
-      "DE": 1,
-      "UK": 1
-    }
+    "country_counts": {}
   },
-  "results": [
-    {
-      "title": "Authentic K18PG Signet Diamond Ring 0.22CT #260-008-143-8013",
-      "metal": "gold",
-      "carat": 22,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": "business",
-      "seller_feedback": 14530,
-      "seller_private": false,
-      "weight_g": 17.9,
-      "net_gold_g": 16.4,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "antique",
-        "band",
-        "gents"
-      ],
-      "stones": true,
-      "current_bid": 3050.61,
-      "landed_cost": 3054.61,
-      "price_orig": null,
-      "country": "UK",
-      "flag": "🇬🇧",
-      "melt_value": 1456.12,
-      "ratio": 0.48,
-      "is_value": false,
-      "buying": "Buy now",
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "bids": "",
-      "item_id": "406868725856",
-      "url": "https://www.ebay.co.uk/itm/406868725856?_skw=22ct+gold+signet+ring&hash=item5ebb441060:g:6vsAAeSwwrlqXltb",
-      "first_seen": "2026-07-26T10:25:53.358198+00:00",
-      "is_new": false
-    },
-    {
-      "title": "Authentic K18PG Signet Diamond Ring 0.22CT #260-008-143-8013",
-      "metal": "gold",
-      "carat": 22,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 14530,
-      "seller_private": false,
-      "weight_g": 17.9,
-      "net_gold_g": 16.4,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "antique",
-        "band",
-        "gents"
-      ],
-      "stones": true,
-      "current_bid": 3072.49,
-      "landed_cost": 3728.99,
-      "price_orig": "5,876",
-      "country": "AU",
-      "flag": "🇦🇺",
-      "melt_value": 1456.12,
-      "ratio": 0.39,
-      "is_value": false,
-      "buying": "Buy now",
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "bids": "",
-      "item_id": "298240951024",
-      "url": "https://www.ebay.com.au/itm/298240951024?_skw=22ct+gold+signet+ring&hash=item45708bc2f0:g:6vsAAeSwwrlqXltb",
-      "first_seen": "2026-07-26T10:25:53.358198+00:00",
-      "is_new": false
-    },
-    {
-      "title": "18kt gepunzt Weiß-, Gelb-, Roségold Siegelring 13mm x16mm oval oder Kissen",
-      "metal": "gold",
-      "carat": 18,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": "private",
-      "seller_feedback": 864,
-      "seller_private": true,
-      "weight_g": 18.5,
-      "net_gold_g": 17.0,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "band",
-        "gents"
-      ],
-      "stones": true,
-      "current_bid": 2882.68,
-      "landed_cost": 3485.62,
-      "price_orig": "€3,369",
-      "country": "DE",
-      "flag": "🇩🇪",
-      "melt_value": 1235.05,
-      "ratio": 0.35,
-      "is_value": false,
-      "buying": "Buy now",
-      "condition": "New without tags",
-      "time_left": "n/a",
-      "bids": "",
-      "item_id": "254195547625",
-      "url": "https://www.ebay.de/itm/254195547625?_skw=Siegelring+Gold+916&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fHP7CDz5bsGgNAkWqon8UjovUiA2Fbkhw1wOvqe9G%2FD%2FMpjb9H0xlKK5Nl4qlCAyUIhmm%2Bih3dSlvn7p%2BGVtX2GNmloa%2B0eMfy3cHyMrJBqgDlQIpvF2AvJSywYr5FP2%2BVidHn9gWWkOTZrflPdNNx%2FinWd%2BM26NkyDxD4XbH5yzg%3D%3D",
-      "first_seen": "2026-07-29T09:14:18.991582+00:00",
-      "is_new": false
-    }
-  ]
+  "results": []
 }
