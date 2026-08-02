@@ -421,14 +421,20 @@ POSTAGE_EST_GBP = {                   # est. international postage to the UK
 }
 
 
-def landed_cost(price_gbp, country):
-    """Estimate the true £ cost to a UK buyer (price + postage + import VAT)."""
+def landed_cost(price_gbp, country, vat_exempt=False):
+    """Estimate the true £ cost to a UK buyer (price + postage + import VAT).
+
+    vat_exempt: INVESTMENT GOLD (bars of 995+ fineness) is exempt from UK VAT
+    under VAT Notice 701.21, so charging 20% on a gold bar overstates its cost
+    by a fifth and makes every gold bar look worse than it is. Investment
+    SILVER gets no such relief -- 20% applies there as normal.
+    """
     if price_gbp is None:
         return None
     if country == "UK":
         return round(price_gbp + UK_POSTAGE_GBP, 2)
     postage = POSTAGE_EST_GBP.get(country, 18)
-    vat = IMPORT_VAT_RATE * (price_gbp + postage)
+    vat = 0.0 if vat_exempt else IMPORT_VAT_RATE * (price_gbp + postage)
     return round(price_gbp + postage + vat + IMPORT_HANDLING_FEE_GBP, 2)
 PAGE_SIZE         = 200                       # Browse API max page size is 200
 
@@ -1426,7 +1432,8 @@ def analyse(items, token, spot_per_oz, fx=None):
 
         country = item.get("_country", "UK")
         # True £ cost to a UK buyer (adds import VAT + postage for non-UK).
-        landed = landed_cost(bid, country)
+        # Investment gold (999.9 bars) carries no UK VAT; silver bullion does.
+        landed = landed_cost(bid, country, vat_exempt=(METAL == "ingot_gold"))
 
         if METAL == "yurman":
             # Brand hunt: melt on mixed-metal branded pieces is fiction.
@@ -1434,8 +1441,12 @@ def analyse(items, token, spot_per_oz, fx=None):
         elif METAL in INGOT_FINENESS:
             melt = round(net_gold * spot_per_gram_fine * fineness_frac, 2) if net_gold else None
             ratio = round(melt / landed, 2) if (melt and landed) else None
-            if melt and landed and landed < melt * INGOT_MIN_PLAUSIBLE_RATIO:
-                continue          # cannot be real bullion -- drop, don't rank
+            if (melt and landed and landed < melt * INGOT_MIN_PLAUSIBLE_RATIO
+                    and buying_type(item) != "Auction"):
+                # A FIXED-PRICE bar below melt cannot be genuine -- no dealer
+                # sells metal under its own spot value. A live auction sitting
+                # under melt is normal mid-flight, so those are kept.
+                continue
             is_value = bool(melt and landed and landed < melt * MELT_THRESHOLD)
         else:
             if METAL == "silver":

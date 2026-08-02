@@ -256,8 +256,9 @@ class TestIngotMode(unittest.TestCase):
     def test_denomination_snapping(self):
         self.assertEqual(g.snap_to_denomination(31.2), 31.1035)   # within 3%
         self.assertEqual(g.snap_to_denomination(100.0), 100.0)
-        self.assertIsNone(g.snap_to_denomination(311.0))          # 0,0311g misparse
+        self.assertEqual(g.snap_to_denomination(311.0), 311.035)  # 10 troy oz IS real
         self.assertIsNone(g.snap_to_denomination(7.0))            # not a denomination
+        self.assertIsNone(g.snap_to_denomination(0.0311))         # 1/1000oz novelty
 
     def test_multilingual_metal_words(self):
         # German bullion is one word -- excluding it would drop DE/AT/CH.
@@ -268,6 +269,16 @@ class TestIngotMode(unittest.TestCase):
         # "Silver Coast" is a brand; the bar is copper.
         self.assertTrue(g.is_ingot_excluded("1 Kilo Silver Coast Copper Bar", "ingot_silver"))
         self.assertTrue(g.is_ingot_excluded("2 x 1KG COPPER BULLION BAR 99%", "ingot_silver"))
+
+    def test_investment_gold_is_vat_exempt(self):
+        # UK VAT Notice 701.21: investment gold carries no VAT, so charging
+        # 20% overstated every imported gold bar by a fifth. Silver bullion
+        # gets no relief.
+        gold = g.landed_cost(2200, "US", vat_exempt=True)
+        silver = g.landed_cost(2200, "US", vat_exempt=False)
+        self.assertLess(gold, silver)
+        self.assertAlmostEqual(gold, 2200 + g.POSTAGE_EST_GBP["US"]
+                               + g.IMPORT_HANDLING_FEE_GBP, places=2)
 
     def test_genuine_bullion_kept(self):
         self.assertFalse(g.is_ingot_excluded(
