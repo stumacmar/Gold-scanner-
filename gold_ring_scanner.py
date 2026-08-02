@@ -1242,7 +1242,17 @@ def _get_with_retry(url, headers, params, label, retries=4):
     kind = "item" if "/item/" in url else "search"
     for attempt in range(retries):
         API_CALLS[kind] += 1
-        r = requests.get(url, headers=headers, params=params, timeout=30)
+        try:
+            r = requests.get(url, headers=headers, params=params, timeout=30)
+        except requests.RequestException as e:
+            # A dropped connection used to kill an entire scan mid-run; treat
+            # it like any other transient failure and back off.
+            wait = 2 ** attempt
+            print(f"[warn] {type(e).__name__} on {label}; retrying in {wait}s",
+                  file=sys.stderr)
+            time.sleep(wait)
+            r = None
+            continue
         if r.status_code == 200:
             return r
         retryable = r.status_code == 429 or r.status_code >= 500 \
