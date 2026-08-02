@@ -280,6 +280,14 @@ class TestIngotMode(unittest.TestCase):
         self.assertAlmostEqual(gold, 2200 + g.POSTAGE_EST_GBP["US"]
                                + g.IMPORT_HANDLING_FEE_GBP, places=2)
 
+    def test_early_auction_price_is_not_meaningful(self):
+        # A 1oz Perth Mint bar opening at £556 with 6 days to run says
+        # nothing about its sale price -- these topped the "best value" sort.
+        self.assertFalse(g.price_is_meaningful("Auction", 0, "6d 11h"))
+        self.assertFalse(g.price_is_meaningful("Auction", 22, "21h 49m"))
+        self.assertTrue(g.price_is_meaningful("Auction", 26, "9h 32m"))
+        self.assertTrue(g.price_is_meaningful("Buy now", "", "n/a"))
+
     def test_genuine_bullion_kept(self):
         self.assertFalse(g.is_ingot_excluded(
             "1oz Gold Bullion Bar 999.9 PAMP Suisse", "ingot_gold"))

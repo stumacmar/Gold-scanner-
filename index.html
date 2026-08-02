@@ -152,7 +152,11 @@ const shown = () => POOL()
             && (!valueOnly || r.is_value)
             && (!privateOnly || r.seller_private)
             && (!newOnly || r.is_new))
-  .sort((a, b) => (b.is_new ? 1 : 0) - (a.is_new ? 1 : 0) || SORTS[sortBy](a, b));
+  .sort((a, b) => (b.is_new ? 1 : 0) - (a.is_new ? 1 : 0)
+              // An early auction's price is not yet real, so it must not
+              // outrank firm prices on a value sort.
+              || ((a.price_firm === false ? 1 : 0) - (b.price_firm === false ? 1 : 0))
+              || SORTS[sortBy](a, b));
 
 const fbFmt = n => n == null ? "" : n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1) + "k" : String(n);
 function sellerCell(rec) {
@@ -207,7 +211,7 @@ function card(rec) {
         ${rec.stones ? '<span class="muted">💎</span>' : ""}
       </div>
       <div class="foot">
-        <span class="left">${rec.buying === "Buy now" ? "🏷 Buy now"
+        <span class="left">${rec.price_firm === false ? "◷ opening bid · " : ""}${rec.buying === "Buy now" ? "🏷 Buy now"
           : "⏳ " + rec.time_left + " · " + bids + " bid" + (bids == 1 ? "" : "s")}</span>
         <span>tap to open ↗</span>
       </div>

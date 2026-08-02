@@ -224,6 +224,29 @@ INGOT_EXCLUDE_MARKERS = [
     "shot ", "granule", "wire", "sheet", "casting grain",
 ]
 
+# An auction's CURRENT price only means something once bidding is real: an
+# opening bid of £556 on a 1oz gold bar with 6 days to run says nothing about
+# what it will sell for. Until then it must not be ranked as a bargain.
+AUCTION_MEANINGFUL_HOURS = 12
+
+
+def price_is_meaningful(rec_buying, bids, time_left_str):
+    """True when the listed price reflects what the item will actually cost."""
+    if rec_buying != "Auction":
+        return True                        # a Buy-It-Now price is the price
+    try:
+        n_bids = int(bids or 0)
+    except (TypeError, ValueError):
+        n_bids = 0
+    if n_bids <= 0:
+        return False                       # opening bid is arbitrary
+    m = re.match(r"(?:(\d+)d)?\s*(?:(\d+)h)?", (time_left_str or "").strip())
+    if not m or not (m.group(1) or m.group(2)):
+        return False
+    hours = int(m.group(1) or 0) * 24 + int(m.group(2) or 0)
+    return hours <= AUCTION_MEANINGFUL_HOURS
+
+
 # Real bullion NEVER sells meaningfully under melt -- the metal alone is
 # worth that. A listing priced far below its own melt value is therefore a
 # fake, a plated novelty or a misparse, never a bargain, so it is dropped
@@ -1447,7 +1470,10 @@ def analyse(items, token, spot_per_oz, fx=None):
                 # sells metal under its own spot value. A live auction sitting
                 # under melt is normal mid-flight, so those are kept.
                 continue
-            is_value = bool(melt and landed and landed < melt * MELT_THRESHOLD)
+            is_value = bool(
+                melt and landed and landed < melt * MELT_THRESHOLD
+                and price_is_meaningful(buying_type(item), item.get("bidCount"),
+                                        time_left(item.get("itemEndDate"))))
         else:
             if METAL == "silver":
                 fraction = fineness_frac
@@ -1487,6 +1513,9 @@ def analyse(items, token, spot_per_oz, fx=None):
             "ratio": ratio,                  # melt / landed cost
             "is_value": is_value,
             "buying": buying_type(item),
+            "price_firm": price_is_meaningful(
+                buying_type(item), item.get("bidCount"),
+                time_left(item.get("itemEndDate"))),
             "condition": item.get("condition"),   # "Pre-owned" / "New ..." etc
             "time_left": time_left(item.get("itemEndDate")),
             "bids": item.get("bidCount", ""),
