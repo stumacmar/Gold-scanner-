@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T17:54:46.278400+00:00",
+  "generated_at": "2026-08-03T17:51:00.390518+00:00",
   "searches": [
     {
       "key": "9ct",
@@ -9,15 +9,6 @@
       "generated_at": "2026-08-03T17:38:10.383986+00:00",
       "value_count": 0,
       "total_analysed": 2
-    },
-    {
-      "key": "scrap",
-      "label": "9ct",
-      "file": "scrap.json",
-      "query": "scrap gold jewellery",
-      "generated_at": "2026-08-03T17:52:15.971764+00:00",
-      "value_count": 11,
-      "total_analysed": 119
     },
     {
       "key": "14ct",
@@ -45,24 +36,6 @@
       "generated_at": "2026-08-03T17:46:33.468865+00:00",
       "value_count": 0,
       "total_analysed": 3
-    },
-    {
-      "key": "ingot_gold",
-      "label": "Gold ingots",
-      "file": "ingot_gold.json",
-      "query": "gold bullion bar 1oz",
-      "generated_at": "2026-08-03T17:53:33.499010+00:00",
-      "value_count": 8,
-      "total_analysed": 495
-    },
-    {
-      "key": "ingot_silver",
-      "label": "Silver ingots",
-      "file": "ingot_silver.json",
-      "query": "silver bullion bar 1kg",
-      "generated_at": "2026-08-03T17:54:46.278400+00:00",
-      "value_count": 0,
-      "total_analysed": 723
     },
     {
       "key": "silver",

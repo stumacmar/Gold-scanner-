@@ -23,7 +23,7 @@ on:
         description: "Which page to update"
         type: choice
         default: all
-        options: [all, gold, silver, yurman, scrap, ingots]
+        options: [all, gold, silver, yurman]
           
 
 
@@ -88,25 +88,7 @@ jobs:
             sleep 20
           fi
 
-          # Scrap: broken/scrap gold -- the one gold market priced on metal.
-          if [ "$SCREEN" = "all" ] || [ "$SCREEN" = "scrap" ]; then
-            python gold_ring_scanner.py --metal scrap --max-price 4000 --min-price 40 \
-              --limit 200 --conditions ANY --markets $MARKETS \
-              --json data/scrap.json --csv data/scrap.csv || echo '[warn] scrap failed'
-            sleep 20
-          fi
 
-          # Ingots: bullion bars, premium over spot. Wide price band -- a 1g
-          # bar is ~£80 and a 1kg silver bar ~£900.
-          if [ "$SCREEN" = "all" ] || [ "$SCREEN" = "ingots" ]; then
-            python gold_ring_scanner.py --metal ingot_gold --max-price 8000 --min-price 40 \
-              --limit 200 --conditions ANY --markets $MARKETS \
-              --json data/ingot_gold.json --csv data/ingot_gold.csv || echo '[warn] gold ingots failed'
-            sleep 20
-            python gold_ring_scanner.py --metal ingot_silver --max-price 3000 --min-price 15 \
-              --limit 200 --conditions ANY --markets $MARKETS \
-              --json data/ingot_silver.json --csv data/ingot_silver.csv || echo '[warn] silver ingots failed'
-          fi
 
       - name: Build dashboard index
         if: always()
