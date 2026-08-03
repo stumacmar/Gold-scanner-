@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T17:51:00.390518+00:00",
+  "generated_at": "2026-08-03T20:05:33.075503+00:00",
   "searches": [
     {
       "key": "9ct",
@@ -36,6 +36,15 @@
       "generated_at": "2026-08-03T17:46:33.468865+00:00",
       "value_count": 0,
       "total_analysed": 3
+    },
+    {
+      "key": "nordic",
+      "label": "Nordic",
+      "file": "nordic.json",
+      "query": "Georg Jensen silver",
+      "generated_at": "2026-08-03T20:05:33.075503+00:00",
+      "value_count": 0,
+      "total_analysed": 1752
     },
     {
       "key": "silver",
