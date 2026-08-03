@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T20:05:33.075503+00:00",
+  "generated_at": "2026-08-03T20:47:45.998479+00:00",
   "searches": [
     {
       "key": "9ct",
@@ -41,10 +41,10 @@
       "key": "nordic",
       "label": "Nordic",
       "file": "nordic.json",
-      "query": "Georg Jensen silver",
-      "generated_at": "2026-08-03T20:05:33.075503+00:00",
+      "query": "Georg Jensen silver ring",
+      "generated_at": "2026-08-03T20:47:45.998479+00:00",
       "value_count": 0,
-      "total_analysed": 1752
+      "total_analysed": 1314
     },
     {
       "key": "silver",
