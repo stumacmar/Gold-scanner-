@@ -250,13 +250,16 @@ NORDIC_DESIGNERS = ("henning koppel", "nanna ditzel", "vivianna torun",
                     "harald nielsen", "arno malinowski", "sigvard bernadotte",
                     "bjorn weckstrom", "björn weckström", "ibe dahlquist")
 NORDIC_QUERY_TEMPLATES = {
-    "en": ["Georg Jensen silver", "Georg Jensen brooch", "Georg Jensen ring",
-           "David Andersen silver Norway", "Hans Hansen silver",
-           "Lapponia silver", "Anton Michelsen silver"],
-    "de": ["Georg Jensen Silber", "David Andersen Silber", "Lapponia Silber"],
-    "fr": ["Georg Jensen argent", "Lapponia argent"],
-    "it": ["Georg Jensen argento"], "es": ["Georg Jensen plata"],
-    "nl": ["Georg Jensen zilver"], "pl": ["Georg Jensen srebro"],
+    "en": ["Georg Jensen silver ring", "Georg Jensen ring Denmark",
+           "David Andersen silver ring", "Lapponia silver ring",
+           "Hans Hansen silver ring", "Anton Michelsen ring",
+           "Kupittaan Kulta ring"],
+    "de": ["Georg Jensen Silber Ring", "Lapponia Ring", "David Andersen Ring"],
+    "fr": ["Georg Jensen bague argent", "Lapponia bague"],
+    "it": ["Georg Jensen anello argento"],
+    "es": ["Georg Jensen anillo plata"],
+    "nl": ["Georg Jensen zilveren ring"],
+    "pl": ["Georg Jensen pier\u015bcionek"],
 }
 # The usual lookalike language, plus the marks that mean "not actually signed".
 NORDIC_FAKE_MARKERS = [
@@ -266,6 +269,34 @@ NORDIC_FAKE_MARKERS = [
 ]
 _DESIGN_NO_RE = re.compile(
     r"(?:#|\bno\.?\s*|\bdesign\s*(?:no\.?)?\s*|\bmodel\s*)(\d{1,3}[A-Da-d]?)\b")
+
+
+# Ring words across the marketplace languages, and the far longer list of
+# things that are NOT rings. Jensen's output is mostly hollowware, flatware
+# and brooches, so without this the screen is 90% not-rings.
+_RING_WORDS = (r"ring", r"anello", r"anillo", r"bague", r"sygnet",
+               r"pier[sś]cionek", r"pier[sś]cie[nń]", r"fingerring", r"sortija")
+_NOT_RING_WORDS = (
+    "earring", "ear ring", "ohrring", "oorbel", "pendiente", "orecchin",
+    "boucle d", "cufflink", "cuff link", "manschett", "gemelos", "gemelli",
+    "tie pin", "tie tac", "tie bar", "tie clip", "corbata", "cravatta",
+    "brooch", "broche", "brosche", "spilla", "broszka", "pin badge",
+    "necklace", "collier", "halskette", "collana", "collar ", "halsketting",
+    "pendant", "anh\u00e4nger", "ciondolo", "colgante", "hanger",
+    "bracelet", "armband", "bracciale", "pulsera", "bangle",
+    "spoon", "fork", "knife", "flatware", "cutlery", "tray", "bowl", "dish",
+    "candle", "cup", "jug", "teapot", "salt ", "pepper", "napkin",
+    "watch", "clock", "cuff bracelet", "money clip", "key ring", "keyring",
+    "bookmark", "letter opener", "compact", "mirror",
+)
+
+
+def is_ring_item(text):
+    """True if the listing is a RING rather than a brooch/spoon/necklace."""
+    low = (text or "").lower()
+    if any(w in low for w in _NOT_RING_WORDS):
+        return False
+    return any(re.search(r"\b" + w + r"\b", low) for w in _RING_WORDS)
 
 
 def detect_nordic_maker(text):
@@ -293,9 +324,11 @@ def detect_nordic_designer(text):
 
 
 def is_nordic_excluded(text):
-    """Keep only listings claiming a genuine, signed piece by a known maker."""
+    """Keep only RINGS claiming a genuine, signed piece by a known maker."""
     low = (text or "").lower()
     if not detect_nordic_maker(text):
+        return True
+    if not is_ring_item(text):
         return True
     if any(m in low for m in NORDIC_FAKE_MARKERS):
         return True

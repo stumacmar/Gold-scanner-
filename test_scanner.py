@@ -364,10 +364,28 @@ class TestNordicMode(unittest.TestCase):
     def test_no_maker_claim_excluded(self):
         self.assertTrue(g.is_nordic_excluded("vintage danish modernist silver brooch"))
 
+    def test_only_rings(self):
+        # Jensen's output is mostly hollowware, flatware and brooches; the
+        # first scan came back 90% not-rings.
+        for x in ("Georg Jensen Cufflinks #72 Harald Nielsen",
+                  "Georg Jensen sterling silver brooch",
+                  "Georg Jensen earrings sterling",
+                  "Georg Jensen Acorn spoon", "Georg Jensen necklace pendant",
+                  "Georg Jensen bangle bracelet"):
+            self.assertTrue(g.is_nordic_excluded(x), x)
+
+    def test_rings_in_other_languages(self):
+        for x in ("Georg Jensen anillo plata 925", "Georg Jensen bague argent",
+                  "Georg Jensen anello argento", "Georg Jensen zilveren ring"):
+            self.assertTrue(g.is_ring_item(x), x)
+        # "earring"/"Ohrring" must not count as a ring.
+        self.assertFalse(g.is_ring_item("Georg Jensen Ohrringe silber"))
+        self.assertFalse(g.is_ring_item("Jensen ear ring pair"))
+
     def test_genuine_signed_pieces_kept(self):
-        for x in ("Georg Jensen Sterling Silver Brooch #90 Denmark",
+        for x in ("Georg Jensen Sterling Silver Ring #90 Denmark",
                   "Lapponia Bjorn Weckstrom silver ring Finland",
-                  "Hans Hansen sterling silver necklace"):
+                  "Hans Hansen sterling silver ring"):
             self.assertFalse(g.is_nordic_excluded(x), x)
 
 
