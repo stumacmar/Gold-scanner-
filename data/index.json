@@ -1,21 +1,30 @@
 {
-  "generated_at": "2026-08-02T12:01:00.218421+00:00",
+  "generated_at": "2026-08-03T09:34:42.091782+00:00",
   "searches": [
     {
       "key": "9ct",
       "label": "9ct",
       "file": "9ct.json",
       "query": "9ct gold signet ring",
-      "generated_at": "2026-08-02T11:35:40.409642+00:00",
+      "generated_at": "2026-08-03T09:18:12.539701+00:00",
       "value_count": 0,
       "total_analysed": 3
+    },
+    {
+      "key": "scrap",
+      "label": "9ct",
+      "file": "scrap.json",
+      "query": "scrap gold jewellery",
+      "generated_at": "2026-08-03T09:32:17.341017+00:00",
+      "value_count": 12,
+      "total_analysed": 99
     },
     {
       "key": "14ct",
       "label": "14ct",
       "file": "14ct.json",
       "query": "14ct gold signet ring",
-      "generated_at": "2026-08-02T11:38:20.786416+00:00",
+      "generated_at": "2026-08-03T09:21:11.386560+00:00",
       "value_count": 1,
       "total_analysed": 15
     },
@@ -24,7 +33,7 @@
       "label": "18ct",
       "file": "18ct.json",
       "query": "18ct gold signet ring",
-      "generated_at": "2026-08-02T11:40:59.389275+00:00",
+      "generated_at": "2026-08-03T09:24:13.330964+00:00",
       "value_count": 0,
       "total_analysed": 23
     },
@@ -33,45 +42,45 @@
       "label": "22ct",
       "file": "22ct.json",
       "query": "22ct gold signet ring",
-      "generated_at": "2026-08-02T12:01:00.218421+00:00",
+      "generated_at": "2026-08-03T09:26:04.716094+00:00",
       "value_count": 0,
-      "total_analysed": 0
+      "total_analysed": 3
     },
     {
       "key": "ingot_gold",
       "label": "Gold ingots",
       "file": "ingot_gold.json",
       "query": "gold bullion bar 1oz",
-      "generated_at": "2026-08-02T09:28:20.394588+00:00",
-      "value_count": 9,
-      "total_analysed": 491
+      "generated_at": "2026-08-03T09:33:32.274022+00:00",
+      "value_count": 8,
+      "total_analysed": 499
     },
     {
       "key": "ingot_silver",
       "label": "Silver ingots",
       "file": "ingot_silver.json",
       "query": "silver bullion bar 1kg",
-      "generated_at": "2026-08-02T09:26:05.782580+00:00",
+      "generated_at": "2026-08-03T09:34:42.091782+00:00",
       "value_count": 0,
-      "total_analysed": 726
+      "total_analysed": 727
     },
     {
       "key": "silver",
       "label": "Silver",
       "file": "silver.json",
       "query": "sterling silver signet ring heavy",
-      "generated_at": "2026-08-02T09:06:28.986574+00:00",
+      "generated_at": "2026-08-03T09:29:02.429169+00:00",
       "value_count": 0,
-      "total_analysed": 50
+      "total_analysed": 52
     },
     {
       "key": "yurman",
       "label": "Yurman",
       "file": "yurman.json",
       "query": "David Yurman signet ring",
-      "generated_at": "2026-08-02T09:07:37.449609+00:00",
+      "generated_at": "2026-08-03T09:30:11.639532+00:00",
       "value_count": 0,
-      "total_analysed": 175
+      "total_analysed": 178
     }
   ]
 }
