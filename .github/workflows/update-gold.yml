@@ -23,7 +23,7 @@ on:
         description: "Which page to update"
         type: choice
         default: all
-        options: [all, gold, silver, yurman]
+        options: [all, gold, silver, yurman, nordic]
           
 
 
@@ -89,6 +89,13 @@ jobs:
           fi
 
 
+
+          # Nordic: Scandinavian designer silver. Brand hunt, cheap on quota.
+          if [ "$SCREEN" = "all" ] || [ "$SCREEN" = "nordic" ]; then
+            python gold_ring_scanner.py --metal nordic --max-price 2000 --min-price 25 \
+              --limit 200 --conditions ANY --markets $MARKETS \
+              --json data/nordic.json --csv data/nordic.csv || echo '[warn] nordic failed'
+          fi
 
       - name: Build dashboard index
         if: always()

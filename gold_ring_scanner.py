@@ -225,6 +225,84 @@ def is_scrap_excluded(text):
     return is_plated(text) or is_excluded(text)
 
 
+# --- Nordic silver mode (--metal nordic) -----------------------------------
+# Scandinavian designer silver, where the mispricing mechanic is precise: the
+# maker's name is STAMPED on the piece, so sellers type it into the title --
+# but the design number is what carries the value, and general sellers don't
+# know it. A Georg Jensen #90 brooch is £400-1,500 and gets listed at £80 as
+# "vintage Danish silver". Like the Yurman screen: a brand hunt, no weight
+# floor and no melt (the silver content is trivial beside the design value).
+NORDIC_MAKERS = {
+    "Georg Jensen":     ("georg jensen", "g. jensen", "gj denmark"),
+    "David Andersen":   ("david andersen", "d-a norway", "david-andersen"),
+    "Hans Hansen":      ("hans hansen",),
+    "Anton Michelsen":  ("anton michelsen",),
+    "Lapponia":         ("lapponia", "bjorn weckstrom", "björn weckström"),
+    "Kupittaan Kulta":  ("kupittaan kulta", "kupittaan"),
+    "Niels Erik From":  ("niels erik from", "n.e. from", "ne from"),
+    "Bent Gabrielsen":  ("bent gabrielsen",),
+    "Just Andersen":    ("just andersen",),
+    "Sigurd Persson":   ("sigurd persson",),
+    "Torun":            ("vivianna torun", "torun bulow", "torun bülow"),
+}
+# Designers whose names on a Jensen piece multiply its value.
+NORDIC_DESIGNERS = ("henning koppel", "nanna ditzel", "vivianna torun",
+                    "harald nielsen", "arno malinowski", "sigvard bernadotte",
+                    "bjorn weckstrom", "björn weckström", "ibe dahlquist")
+NORDIC_QUERY_TEMPLATES = {
+    "en": ["Georg Jensen silver", "Georg Jensen brooch", "Georg Jensen ring",
+           "David Andersen silver Norway", "Hans Hansen silver",
+           "Lapponia silver", "Anton Michelsen silver"],
+    "de": ["Georg Jensen Silber", "David Andersen Silber", "Lapponia Silber"],
+    "fr": ["Georg Jensen argent", "Lapponia argent"],
+    "it": ["Georg Jensen argento"], "es": ["Georg Jensen plata"],
+    "nl": ["Georg Jensen zilver"], "pl": ["Georg Jensen srebro"],
+}
+# The usual lookalike language, plus the marks that mean "not actually signed".
+NORDIC_FAKE_MARKERS = [
+    "style of", "in the style", "inspired", "after georg", "manner of",
+    "attributed", "unsigned", "unmarked", "no marks", "not signed",
+    "replica", "copy of", "reproduction", "tribute", "homage", "lookalike",
+]
+_DESIGN_NO_RE = re.compile(
+    r"(?:#|\bno\.?\s*|\bdesign\s*(?:no\.?)?\s*|\bmodel\s*)(\d{1,3}[A-Da-d]?)\b")
+
+
+def detect_nordic_maker(text):
+    """Canonical maker name if the listing claims one, else None."""
+    low = (text or "").lower()
+    for maker, words in NORDIC_MAKERS.items():
+        if any(w in low for w in words):
+            return maker
+    return None
+
+
+def detect_design_no(text):
+    """Jensen-style design number ("#90", "no. 171") -- where the value hides."""
+    m = _DESIGN_NO_RE.search(text or "")
+    return m.group(1) if m else None
+
+
+def detect_nordic_designer(text):
+    """Named designer on the piece, which multiplies a Jensen's value."""
+    low = (text or "").lower()
+    for d in NORDIC_DESIGNERS:
+        if d in low:
+            return d.title()
+    return None
+
+
+def is_nordic_excluded(text):
+    """Keep only listings claiming a genuine, signed piece by a known maker."""
+    low = (text or "").lower()
+    if not detect_nordic_maker(text):
+        return True
+    if any(m in low for m in NORDIC_FAKE_MARKERS):
+        return True
+    # Plated/filled pieces exist under these names but aren't the collectable.
+    return any(w in low for w in ("plated", "plate ", "gilt metal", "costume"))
+
+
 # --- Ingot / bullion mode (--metal ingot_gold | ingot_silver) --------------
 # Bullion is the opposite of the ring hunt: fineness is standardised (999.9
 # gold, 999 silver), weight is a stated denomination, and the whole game is
@@ -452,7 +530,9 @@ def queries_for(market, carat, extra=(), metal="gold"):
             if q and q.lower() not in seen:
                 seen.add(q.lower()); out.append(q)
         return out[:MAX_QUERIES_PER_MARKET]
-    if metal == "scrap":
+    if metal == "nordic":
+        templates = NORDIC_QUERY_TEMPLATES
+    elif metal == "scrap":
         templates = SCRAP_QUERY_TEMPLATES
     elif metal == "yurman":
         templates, lang = YURMAN_QUERY_TEMPLATES, "en"
@@ -990,6 +1070,12 @@ def assess_ring(text, carat, stated_weight):
     low = (text or "").lower()
     tags = style_tags(text)
 
+    if METAL == "nordic":
+        # Brand hunt: no style filter, no weight requirement.
+        return {"keep": True, "confidence": "confirmed",
+                "gross_g": stated_weight, "net_gold_g": None,
+                "stones": False, "tags": tags}
+
     if METAL == "scrap":
         # Scrap: no style filter. Subtract a stone allowance (lots include
         # settings) and require a worthwhile lot size.
@@ -1448,6 +1534,9 @@ def analyse(items, token, spot_per_oz, fx=None):
         if METAL in INGOT_FINENESS:
             if is_ingot_excluded(text, METAL):
                 continue
+        elif METAL == "nordic":
+            if is_nordic_excluded(text):
+                continue
         elif METAL == "scrap":
             if is_scrap_excluded(text):
                 continue
@@ -1495,7 +1584,7 @@ def analyse(items, token, spot_per_oz, fx=None):
         #    a signet/intaglio word is dropped later regardless.
         on_target = not REQUIRED_TAGS or bool(set(style_tags(text)) & set(REQUIRED_TAGS))
         if (weight is None and not is_variant and on_target and FETCH_FULL_DETAILS
-                and METAL != "yurman"       # brand mode needs no weight
+                and METAL not in ("yurman", "nordic")   # brand modes: no weight
                 and METAL not in INGOT_FINENESS  # bullion titles state the denomination
                 and (MAX_DETAIL_FETCHES == 0 or detail_fetches < MAX_DETAIL_FETCHES)):
             detail_fetches += 1
@@ -1537,8 +1626,8 @@ def analyse(items, token, spot_per_oz, fx=None):
         # Investment gold (999.9 bars) carries no UK VAT; silver bullion does.
         landed = landed_cost(bid, country, vat_exempt=(METAL == "ingot_gold"))
 
-        if METAL == "yurman":
-            # Brand hunt: melt on mixed-metal branded pieces is fiction.
+        if METAL in ("yurman", "nordic"):
+            # Brand hunt: the silver content is trivial beside design value.
             melt, ratio, is_value = None, None, False
         elif METAL in INGOT_FINENESS:
             melt = round(net_gold * spot_per_gram_fine * fineness_frac, 2) if net_gold else None
@@ -1571,7 +1660,10 @@ def analyse(items, token, spot_per_oz, fx=None):
 
         records.append({
             "title": title,
-            "metal": METAL,                 # gold | silver
+            "metal": METAL,                 # gold | silver | nordic | ...
+            "maker": detect_nordic_maker(text) if METAL == "nordic" else None,
+            "design_no": detect_design_no(text) if METAL == "nordic" else None,
+            "designer": detect_nordic_designer(text) if METAL == "nordic" else None,
             "carat": carat,                 # gold only (None for silver)
             "fineness": fineness_mark,      # silver only ("925", "800", ...)
             "carat_assumed": carat_assumed,
@@ -1788,7 +1880,7 @@ def parse_args():
     p.add_argument("--conditions", default="USED", choices=["USED", "ANY"],
                    help="USED only, or ANY condition (captures dealer 'New')")
     p.add_argument("--metal", default="gold",
-                   choices=["gold", "silver", "yurman", "scrap",
+                   choices=["gold", "silver", "yurman", "nordic", "scrap",
                             "ingot_gold", "ingot_silver"],
                    help="gold (default), silver (sterling signet mode with live "
                         "silver spot), or yurman (David Yurman brand hunt: no "
@@ -1834,9 +1926,9 @@ def main():
           f"floors: confirmed>={WEIGHT_FLOOR_CONFIRMED}g estimated>={WEIGHT_FLOOR_ESTIMATED_LOWBOUND}g  "
           f"limit={args.limit}/mkt  markets={len(markets)}  threshold={MELT_THRESHOLD}")
 
-    if METAL == "yurman":
+    if METAL in ("yurman", "nordic"):
         spot, source = 0.0, "n/a (brand mode -- no melt)"
-        print("  brand mode: David Yurman -- no melt valuation")
+        print(f"  brand mode: {METAL} -- no melt valuation")
     elif METAL == "ingot_silver":
         spot, source = get_silver_spot_gbp_per_oz()
         print(f"  silver spot: £{spot:,.2f}/oz  (source: {source})")

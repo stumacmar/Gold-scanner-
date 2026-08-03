@@ -335,6 +335,42 @@ class TestScrapMode(unittest.TestCase):
             g.METAL = old
 
 
+class TestNordicMode(unittest.TestCase):
+    """Scandinavian designer silver: maker marks and design numbers."""
+
+    def test_makers_detected(self):
+        self.assertEqual(g.detect_nordic_maker("Georg Jensen Sterling Brooch"), "Georg Jensen")
+        self.assertEqual(g.detect_nordic_maker("David Andersen silver Norway"), "David Andersen")
+        self.assertEqual(g.detect_nordic_maker("Lapponia ring Finland"), "Lapponia")
+        self.assertIsNone(g.detect_nordic_maker("vintage danish silver brooch"))
+
+    def test_design_number_extracted(self):
+        # The design number is where the value hides -- #90 vs a plain brooch.
+        self.assertEqual(g.detect_design_no("Georg Jensen Brooch #90 Denmark"), "90")
+        self.assertEqual(g.detect_design_no("Georg Jensen no. 171 bangle"), "171")
+        self.assertEqual(g.detect_design_no("Jensen design no 283A"), "283A")
+        self.assertIsNone(g.detect_design_no("Georg Jensen sterling brooch"))
+
+    def test_designer_detected(self):
+        self.assertEqual(g.detect_nordic_designer("Jensen 171 Henning Koppel"), "Henning Koppel")
+        self.assertEqual(g.detect_nordic_designer("Lapponia Bjorn Weckstrom ring"), "Bjorn Weckstrom")
+
+    def test_lookalikes_and_unsigned_excluded(self):
+        for x in ("Danish silver brooch in the style of Georg Jensen",
+                  "brooch attributed to Georg Jensen", "unmarked Georg Jensen style",
+                  "Georg Jensen silver plated tray"):
+            self.assertTrue(g.is_nordic_excluded(x), x)
+
+    def test_no_maker_claim_excluded(self):
+        self.assertTrue(g.is_nordic_excluded("vintage danish modernist silver brooch"))
+
+    def test_genuine_signed_pieces_kept(self):
+        for x in ("Georg Jensen Sterling Silver Brooch #90 Denmark",
+                  "Lapponia Bjorn Weckstrom silver ring Finland",
+                  "Hans Hansen sterling silver necklace"):
+            self.assertFalse(g.is_nordic_excluded(x), x)
+
+
 class TestClassifySeller(unittest.TestCase):
     def test_private_individual(self):
         t, fb, priv = g.classify_seller(
