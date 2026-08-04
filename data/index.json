@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-08-04T09:18:06.166126+00:00",
+  "generated_at": "2026-08-04T17:51:05.908543+00:00",
   "searches": [
     {
       "key": "9ct",
       "label": "9ct",
       "file": "9ct.json",
       "query": "9ct gold signet ring",
-      "generated_at": "2026-08-04T09:05:31.502288+00:00",
+      "generated_at": "2026-08-04T17:37:16.780807+00:00",
       "value_count": 0,
-      "total_analysed": 4
+      "total_analysed": 3
     },
     {
       "key": "14ct",
       "label": "14ct",
       "file": "14ct.json",
       "query": "14ct gold signet ring",
-      "generated_at": "2026-08-04T09:08:15.155855+00:00",
+      "generated_at": "2026-08-04T17:40:11.804077+00:00",
       "value_count": 1,
       "total_analysed": 16
     },
@@ -24,7 +24,7 @@
       "label": "18ct",
       "file": "18ct.json",
       "query": "18ct gold signet ring",
-      "generated_at": "2026-08-04T09:11:08.380045+00:00",
+      "generated_at": "2026-08-04T17:43:11.129664+00:00",
       "value_count": 0,
       "total_analysed": 24
     },
@@ -33,7 +33,7 @@
       "label": "22ct",
       "file": "22ct.json",
       "query": "22ct gold signet ring",
-      "generated_at": "2026-08-04T09:13:11.085783+00:00",
+      "generated_at": "2026-08-04T17:45:56.466395+00:00",
       "value_count": 0,
       "total_analysed": 3
     },
@@ -42,27 +42,27 @@
       "label": "Nordic",
       "file": "nordic.json",
       "query": "Georg Jensen silver ring",
-      "generated_at": "2026-08-04T09:18:06.166126+00:00",
+      "generated_at": "2026-08-04T17:51:05.908543+00:00",
       "value_count": 0,
-      "total_analysed": 1285
+      "total_analysed": 1276
     },
     {
       "key": "silver",
       "label": "Silver",
       "file": "silver.json",
       "query": "sterling silver signet ring heavy",
-      "generated_at": "2026-08-04T09:16:03.015459+00:00",
+      "generated_at": "2026-08-04T17:49:00.614331+00:00",
       "value_count": 0,
-      "total_analysed": 50
+      "total_analysed": 51
     },
     {
       "key": "yurman",
       "label": "Yurman",
       "file": "yurman.json",
       "query": "David Yurman signet ring",
-      "generated_at": "2026-08-04T09:17:12.687019+00:00",
+      "generated_at": "2026-08-04T17:50:12.316454+00:00",
       "value_count": 0,
-      "total_analysed": 176
+      "total_analysed": 174
     }
   ]
 }
