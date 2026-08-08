@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-08T08:19:50.540312+00:00",
+    "generated_at": "2026-08-08T17:13:04.893357+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.5805,
       "USD": 0.7435
     },
-    "total_fetched": 1600,
+    "total_fetched": 1598,
     "total_analysed": 3,
     "value_count": 0,
     "new_count": 0,
@@ -102,7 +102,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 3365,
+      "seller_feedback": 3366,
       "seller_private": false,
       "weight_g": 19.6,
       "net_gold_g": 18.1,
