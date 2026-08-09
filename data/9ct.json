@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-08T17:13:04.893357+00:00",
+    "generated_at": "2026-08-09T08:20:28.742864+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,12 +80,13 @@
       "SGD": 0.5805,
       "USD": 0.7435
     },
-    "total_fetched": 1598,
-    "total_analysed": 3,
+    "total_fetched": 1585,
+    "total_analysed": 4,
     "value_count": 0,
-    "new_count": 0,
+    "new_count": 1,
     "weight_unknown_count": 0,
     "country_counts": {
+      "AU": 1,
       "IE": 1,
       "PL": 1,
       "UK": 1
@@ -168,6 +169,44 @@
       "url": "https://www.ebay.ie/itm/267701971282?_skw=9ct+gold+signet+ring&hash=item3e5447e952:g:VI0AAeSwI4tqMpL4",
       "first_seen": "2026-08-05T09:05:18.561375+00:00",
       "is_new": false
+    },
+    {
+      "title": "Gentleman's Handmade Diamond Signet Ring 9ct 375 Solid Gold 29.7 Grams",
+      "metal": "gold",
+      "maker": null,
+      "design_no": null,
+      "designer": null,
+      "carat": 9,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 1755,
+      "seller_private": false,
+      "weight_g": 29.7,
+      "net_gold_g": 28.2,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": true,
+      "current_bid": 2617.38,
+      "landed_cost": 3182.86,
+      "price_orig": "5,000",
+      "country": "AU",
+      "flag": "🇦🇺",
+      "melt_value": 1097.95,
+      "ratio": 0.34,
+      "is_value": false,
+      "buying": "Buy now",
+      "price_firm": true,
+      "condition": "Pre-owned - Good",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "167370662173",
+      "url": "https://www.ebay.com.au/itm/167370662173?_skw=9ct+gold+signet+ring&hash=item26f811a11d:g:7SMAAOSwsaZn0M6c",
+      "first_seen": "2026-08-09T08:20:28.742864+00:00",
+      "is_new": true
     },
     {
       "title": "Klasyczny sygnet w kształcie poduszki x/ duży \"dostępny w kolorze platyny, złota i srebra\"",
