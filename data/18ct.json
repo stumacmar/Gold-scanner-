@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-09T08:26:34.361054+00:00",
+    "generated_at": "2026-08-09T17:21:27.182469+00:00",
     "query": "18ct gold signet ring",
     "queries": [
       "18ct gold signet ring",
@@ -80,14 +80,13 @@
       "SGD": 0.5805,
       "USD": 0.7435
     },
-    "total_fetched": 1429,
-    "total_analysed": 24,
+    "total_fetched": 1442,
+    "total_analysed": 23,
     "value_count": 0,
-    "new_count": 1,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AT": 1,
-      "AU": 1,
       "DE": 1,
       "IE": 2,
       "IT": 3,
@@ -250,7 +249,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "254195547625",
-      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fHM8jT9AmoUjkblxVa%2BA7qCCbDzNm2ZFpA%2FhEhQxSc8fEdSHBLc0aj3DBm6D8%2FnV2rqk1pxfDa2H%2BqzljM2o9Qz%2FY1Dk8NPgBZo4lchpvUcAsoGy8HEn24MJs%2BFk4Ln%2FEdGPG%2FkRlaxYZfDtifj25P9YpnlIOW5U2ib6xs38UJ51w%3D%3D",
+      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fHQ9cmdA0QuVx9Yl2xWOHi3%2FlKI7incV4YCn3CPy42hdB9b1TPhnwnvMdA5hVuPHEN9HYAPQdt2qZRlnQsQzjQASgaMNIZo%2BX7IiKdFSwiHqGkYMBkj0%2B3Os3yTW%2BlTipQ%2F41VhXfKVYeXbpXnyAM9Qm0pIFl%2Bsq5cwu3XWuQliMA%3D%3D",
       "first_seen": "2026-07-29T09:12:35.584280+00:00",
       "is_new": false
     },
@@ -484,45 +483,6 @@
       "url": "https://www.ebay.ie/itm/278116067816?_skw=18ct+gold+signet+ring&hash=item40c10269e8:g:o0oAAeSwCVRqD7LY",
       "first_seen": "2026-07-26T10:24:10.301532+00:00",
       "is_new": false
-    },
-    {
-      "title": "$10,500 Men's David Yurman 18k Yellow Gold Pave Diamond Streamline Signet Ring",
-      "metal": "gold",
-      "maker": null,
-      "design_no": null,
-      "designer": null,
-      "carat": 18,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 7399,
-      "seller_private": false,
-      "weight_g": 20.3,
-      "net_gold_g": 18.8,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "gents"
-      ],
-      "stones": true,
-      "current_bid": 5148.11,
-      "landed_cost": 6219.73,
-      "price_orig": "9,834",
-      "country": "AU",
-      "flag": "🇦🇺",
-      "melt_value": 1463.94,
-      "ratio": 0.24,
-      "is_value": false,
-      "buying": "Buy now",
-      "price_firm": true,
-      "condition": "Pre-owned - Excellent",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "167592026086",
-      "url": "https://www.ebay.com.au/itm/167592026086?_skw=18ct+gold+signet+ring&hash=item2705435fe6:g:46gAAeSwaERqDJNo",
-      "first_seen": "2026-08-09T08:26:34.361054+00:00",
-      "is_new": true
     },
     {
       "title": "Schwerer massiver klassischer Herrenring - Siegelring - Ring Gold 750 - 26,26 Gr",
