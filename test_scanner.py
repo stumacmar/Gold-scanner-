@@ -389,6 +389,55 @@ class TestNordicMode(unittest.TestCase):
             self.assertFalse(g.is_nordic_excluded(x), x)
 
 
+class TestPriceHistory(unittest.TestCase):
+    """Achieved prices banked from our own repeated observations."""
+
+    def setUp(self):
+        import tempfile
+        self.path = os.path.join(tempfile.mkdtemp(), "hist.json")
+
+    def _rec(self, iid, price, **kw):
+        r = {"item_id": iid, "url": f"https://ebay.co.uk/itm/{iid}",
+             "title": f"ring {iid}", "metal": "gold", "current_bid": price,
+             "landed_cost": price + 4, "buying": "Buy now", "bids": ""}
+        r.update(kw)
+        return r
+
+    def test_tracks_live_items(self):
+        h = g.update_price_history([self._rec("1", 100)], "T0", self.path)
+        self.assertEqual(h["items"]["1"]["status"], "active")
+        self.assertEqual(h["items"]["1"]["first_price"], 100)
+
+    def test_price_movement_recorded(self):
+        g.update_price_history([self._rec("1", 100)], "T0", self.path)
+        h = g.update_price_history([self._rec("1", 80)], "T1", self.path)
+        e = h["items"]["1"]
+        self.assertEqual((e["first_price"], e["last_price"]), (100, 80))
+
+    def test_vanished_item_banks_an_achieved_price(self):
+        g.update_price_history([self._rec("1", 100), self._rec("2", 200)], "T0", self.path)
+        h = g.update_price_history([self._rec("1", 100)], "T1", self.path, metal="gold")
+        gone = h["items"]["2"]
+        self.assertEqual(gone["status"], "ended")
+        self.assertEqual(gone["achieved_price"], 200)
+        self.assertEqual(gone["outcome"], "gone (sold or withdrawn)")
+
+    def test_auction_outcome_depends_on_bids(self):
+        g.update_price_history(
+            [self._rec("1", 50, buying="Auction", bids=7),
+             self._rec("2", 50, buying="Auction", bids=0)], "T0", self.path)
+        h = g.update_price_history([], "T1", self.path, metal="gold")
+        self.assertEqual(h["items"]["1"]["outcome"], "sold (bid)")
+        self.assertEqual(h["items"]["2"]["outcome"], "ended, no bids")
+
+    def test_other_screens_are_not_closed_by_this_scan(self):
+        # A gold scan must not mark every silver item as ended.
+        g.update_price_history([self._rec("1", 100),
+                                self._rec("9", 90, metal="silver")], "T0", self.path)
+        h = g.update_price_history([self._rec("1", 100)], "T1", self.path, metal="gold")
+        self.assertEqual(h["items"]["9"]["status"], "active")
+
+
 class TestClassifySeller(unittest.TestCase):
     def test_private_individual(self):
         t, fb, priv = g.classify_seller(

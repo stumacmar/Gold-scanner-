@@ -1848,6 +1848,100 @@ def mark_new_arrivals(records, path, now_iso):
     return records
 
 
+PRICE_HISTORY_PATH = "data/price_history.json"
+
+
+def update_price_history(records, now_iso, path=PRICE_HISTORY_PATH, metal=None):
+    """Accumulate an ACHIEVED-price record from what successive scans observe.
+
+    eBay's sold data is not reachable: Marketplace Insights is a limited
+    release our keyset is refused (403) and the legacy Finding API is retired
+    (418). Scraping the sold pages breaches eBay's terms. So we build the
+    database honestly, from our own repeated observations of public listings:
+
+      * every scan updates each live item's last-seen price and bid count
+      * an item that was live and is now absent has ENDED; its last observed
+        price is recorded as the closing figure
+
+    Two caveats are stored with the data rather than hidden. `outcome` is a
+    best guess -- eBay does not tell us whether an absent listing sold or was
+    withdrawn -- and for auctions the final price may exceed our last sighting,
+    since bidding spikes in the closing minutes between scans. `price_firm`
+    at the time of the last sighting records whether that figure was already
+    meaningful.
+    """
+    try:
+        with open(path, encoding="utf-8") as fh:
+            hist = json.load(fh)
+    except (OSError, json.JSONDecodeError):
+        hist = {"items": {}}
+    items = hist.setdefault("items", {})
+
+    seen_now = set()
+    for r in records:
+        key = record_identity(r)
+        if not key:
+            continue
+        seen_now.add(key)
+        e = items.get(key)
+        if e is None:
+            e = items[key] = {
+                "title": r.get("title"), "metal": r.get("metal"),
+                "carat": r.get("carat"), "weight_g": r.get("weight_g"),
+                "maker": r.get("maker"), "design_no": r.get("design_no"),
+                "country": r.get("country"), "buying": r.get("buying"),
+                "first_seen": r.get("first_seen") or now_iso,
+                "first_price": r.get("current_bid"),
+                "url": r.get("url"),
+            }
+        e["last_seen"] = now_iso
+        e["last_price"] = r.get("current_bid")
+        e["last_landed"] = r.get("landed_cost")
+        e["bids"] = r.get("bids")
+        e["ends_at"] = r.get("ends_at")
+        e["price_firm"] = r.get("price_firm")
+        e["status"] = "active"
+
+    # Anything we were tracking on THIS screen that has now vanished has
+    # ended. The screen is passed explicitly rather than inferred from the
+    # records: a scan that filters everything out still knows which screen it
+    # was, and must not be mistaken for "every screen is empty". (A scan that
+    # fetched nothing at all never reaches here -- main() returns early.)
+    metals = {metal or METAL}
+    closed = 0
+    for key, e in items.items():
+        if (key not in seen_now and e.get("status") == "active"
+                and e.get("metal") in metals):
+            e["status"] = "ended"
+            e["ended_detected"] = now_iso
+            bids = e.get("bids") or 0
+            try:
+                bids = int(bids)
+            except (TypeError, ValueError):
+                bids = 0
+            # A Buy-It-Now that disappears was bought or withdrawn; an auction
+            # with bids almost certainly sold. Neither is certain, so say so.
+            if e.get("buying") == "Auction":
+                e["outcome"] = "sold (bid)" if bids > 0 else "ended, no bids"
+            else:
+                e["outcome"] = "gone (sold or withdrawn)"
+            e["achieved_price"] = e.get("last_price")
+            e["achieved_landed"] = e.get("last_landed")
+            closed += 1
+
+    hist["updated_at"] = now_iso
+    hist["tracked"] = len(items)
+    hist["ended"] = sum(1 for e in items.values() if e.get("status") == "ended")
+    directory = os.path.dirname(path)
+    if directory:
+        os.makedirs(directory, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(hist, fh, indent=1, ensure_ascii=False)
+    print(f"  price history: {len(seen_now)} live, {closed} newly ended, "
+          f"{hist['ended']} achieved prices banked")
+    return hist
+
+
 def write_json(records, path, meta):
     """Write records + run metadata to JSON for the web dashboard."""
     directory = os.path.dirname(path)
@@ -2030,6 +2124,7 @@ def main():
     # today's new arrivals to the top.
     now_iso = datetime.now(timezone.utc).isoformat()
     records = mark_new_arrivals(records, args.json, now_iso)
+    update_price_history(records, now_iso)
 
     write_csv(records, args.csv)
 
