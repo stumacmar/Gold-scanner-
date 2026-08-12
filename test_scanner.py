@@ -399,7 +399,8 @@ class TestPriceHistory(unittest.TestCase):
     def _rec(self, iid, price, **kw):
         r = {"item_id": iid, "url": f"https://ebay.co.uk/itm/{iid}",
              "title": f"ring {iid}", "metal": "gold", "current_bid": price,
-             "landed_cost": price + 4, "buying": "Buy now", "bids": ""}
+             "landed_cost": price + 4, "buying": "Buy now", "bids": "",
+             "best_offer": False, "price_firm": True}
         r.update(kw)
         return r
 
@@ -420,7 +421,37 @@ class TestPriceHistory(unittest.TestCase):
         gone = h["items"]["2"]
         self.assertEqual(gone["status"], "ended")
         self.assertEqual(gone["achieved_price"], 200)
-        self.assertEqual(gone["outcome"], "gone (sold or withdrawn)")
+        self.assertEqual(gone["outcome"], "gone (sold at asking, or withdrawn)")
+
+    def test_best_offer_price_is_a_ceiling_not_an_achieved_price(self):
+        # 45% of signet listings run Best Offer. The seller may accept far
+        # below asking and eBay never publishes the figure, so recording
+        # asking as "achieved" would bias the database upward.
+        g.update_price_history(
+            [self._rec("1", 1000, best_offer=True)], "T0", self.path)
+        h = g.update_price_history([], "T1", self.path, metal="gold")
+        e = h["items"]["1"]
+        self.assertEqual(e["price_grade"], "ceiling only")
+        self.assertIsNone(e["achieved_price"])      # never published as achieved
+        self.assertEqual(e["ceiling_price"], 1000)  # but kept as an upper bound
+
+    def test_plain_fixed_price_is_usable(self):
+        g.update_price_history([self._rec("1", 900)], "T0", self.path)
+        h = g.update_price_history([], "T1", self.path, metal="gold")
+        self.assertEqual(h["items"]["1"]["price_grade"], "asking")
+        self.assertEqual(h["items"]["1"]["achieved_price"], 900)
+
+    def test_auction_seen_late_beats_one_seen_early(self):
+        # An auction last seen days out kept bidding after we looked.
+        g.update_price_history(
+            [self._rec("1", 500, buying="Auction", bids=8, price_firm=True),
+             self._rec("2", 400, buying="Auction", bids=2, price_firm=False)],
+            "T0", self.path)
+        h = g.update_price_history([], "T1", self.path, metal="gold")
+        self.assertEqual(h["items"]["1"]["price_grade"], "settled")
+        self.assertEqual(h["items"]["1"]["achieved_price"], 500)
+        self.assertEqual(h["items"]["2"]["price_grade"], "under-observed")
+        self.assertIsNone(h["items"]["2"]["achieved_price"])
 
     def test_auction_outcome_depends_on_bids(self):
         g.update_price_history(

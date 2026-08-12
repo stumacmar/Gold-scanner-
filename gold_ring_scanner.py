@@ -1507,13 +1507,25 @@ def get_current_bid(item):
 
 
 def buying_type(item):
-    """Return 'Auction', 'Buy now', or 'Auction+Offer' style label."""
+    """Return 'Auction', 'Buy now', or '?'."""
     opts = item.get("buyingOptions") or []
     if "AUCTION" in opts:
         return "Auction"
     if "FIXED_PRICE" in opts or "BEST_OFFER" in opts:
         return "Buy now"
     return "?"
+
+
+def accepts_offers(item):
+    """True if the seller takes Best Offers.
+
+    Critical for the price ledger: on a Best Offer listing the asking price
+    is only a CEILING. When it disappears, the seller may have accepted far
+    less, and eBay never publishes the accepted figure. 45% of signet
+    listings run Best Offer, so treating asking as achieved would bias the
+    whole database upward.
+    """
+    return "BEST_OFFER" in (item.get("buyingOptions") or [])
 
 
 def time_left(end_iso):
@@ -1717,6 +1729,7 @@ def analyse(items, token, spot_per_oz, fx=None):
             "ratio": ratio,                  # melt / landed cost
             "is_value": is_value,
             "buying": buying_type(item),
+            "best_offer": accepts_offers(item),
             "price_firm": price_is_meaningful(
                 buying_type(item), item.get("bidCount"),
                 time_left(item.get("itemEndDate"))),
@@ -1890,6 +1903,7 @@ def update_price_history(records, now_iso, path=PRICE_HISTORY_PATH, metal=None):
                 "carat": r.get("carat"), "weight_g": r.get("weight_g"),
                 "maker": r.get("maker"), "design_no": r.get("design_no"),
                 "country": r.get("country"), "buying": r.get("buying"),
+                "best_offer": r.get("best_offer"),
                 "first_seen": r.get("first_seen") or now_iso,
                 "first_price": r.get("current_bid"),
                 "url": r.get("url"),
@@ -1900,6 +1914,7 @@ def update_price_history(records, now_iso, path=PRICE_HISTORY_PATH, metal=None):
         e["bids"] = r.get("bids")
         e["ends_at"] = r.get("ends_at")
         e["price_firm"] = r.get("price_firm")
+        e["best_offer"] = r.get("best_offer")
         e["status"] = "active"
 
     # Anything we were tracking on THIS screen that has now vanished has
@@ -1919,26 +1934,47 @@ def update_price_history(records, now_iso, path=PRICE_HISTORY_PATH, metal=None):
                 bids = int(bids)
             except (TypeError, ValueError):
                 bids = 0
-            # A Buy-It-Now that disappears was bought or withdrawn; an auction
-            # with bids almost certainly sold. Neither is certain, so say so.
+            # How much the recorded figure can actually be trusted differs
+            # enormously by listing type, so grade it rather than pretending
+            # one number means the same thing everywhere.
             if e.get("buying") == "Auction":
-                e["outcome"] = "sold (bid)" if bids > 0 else "ended, no bids"
+                if bids > 0:
+                    e["outcome"] = "sold (bid)"
+                    # Solid IF we saw it near the close; otherwise bidding
+                    # continued after our last sighting.
+                    e["price_grade"] = ("settled" if e.get("price_firm")
+                                        else "under-observed")
+                else:
+                    e["outcome"] = "ended, no bids"
+                    e["price_grade"] = "no sale"
+            elif e.get("best_offer"):
+                # The seller may have accepted any figure at or below asking
+                # and eBay never publishes it. Asking is a CEILING only.
+                e["outcome"] = "gone (offer accepted, or withdrawn)"
+                e["price_grade"] = "ceiling only"
             else:
-                e["outcome"] = "gone (sold or withdrawn)"
-            e["achieved_price"] = e.get("last_price")
-            e["achieved_landed"] = e.get("last_landed")
+                e["outcome"] = "gone (sold at asking, or withdrawn)"
+                e["price_grade"] = "asking"
+            # Only grades that mean something are published as achieved.
+            reliable = e["price_grade"] in ("settled", "asking")
+            e["achieved_price"] = e.get("last_price") if reliable else None
+            e["achieved_landed"] = e.get("last_landed") if reliable else None
+            e["ceiling_price"] = e.get("last_price")
             closed += 1
 
     hist["updated_at"] = now_iso
     hist["tracked"] = len(items)
     hist["ended"] = sum(1 for e in items.values() if e.get("status") == "ended")
+    hist["usable_prices"] = sum(1 for e in items.values()
+                                if e.get("achieved_price") is not None)
     directory = os.path.dirname(path)
     if directory:
         os.makedirs(directory, exist_ok=True)
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(hist, fh, indent=1, ensure_ascii=False)
     print(f"  price history: {len(seen_now)} live, {closed} newly ended, "
-          f"{hist['ended']} achieved prices banked")
+          f"{hist['ended']} closed of which {hist['usable_prices']} usable "
+          f"(rest are Best-Offer ceilings or unobserved closes)")
     return hist
 
 
