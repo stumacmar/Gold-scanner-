@@ -16,12 +16,17 @@ INDEX_PATH = os.path.join(DATA_DIR, "index.json")
 def main():
     searches = []
     for path in sorted(glob.glob(os.path.join(DATA_DIR, "*.json"))):
-        if os.path.basename(path) == "index.json":
+        # Only per-scan result files belong in the index. data/ also holds
+        # the price-history ledger, which has no meta/results shape and was
+        # being listed as a bogus "price_historyct" search with 0 rings.
+        if os.path.basename(path) in ("index.json", "price_history.json"):
             continue
         try:
             with open(path, encoding="utf-8") as fh:
                 payload = json.load(fh)
-            meta = payload.get("meta", {})
+            meta = payload.get("meta")
+            if not isinstance(meta, dict) or "results" not in payload:
+                continue          # not a scan file
         except (json.JSONDecodeError, OSError):
             continue
         key = os.path.splitext(os.path.basename(path))[0]

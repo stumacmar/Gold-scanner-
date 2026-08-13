@@ -348,7 +348,9 @@ function loadAll() {
       const seen = new Set();
       const merged = [];
       const newest = { gold: null, silver: null, yurman: null, nordic: null, ingot: null, scrap: null };
-      for (const f of files.filter(Boolean)) {
+      // Defensive: data/ can contain non-scan files (the price-history
+      // ledger). One of those used to throw here and kill the entire page.
+      for (const f of files.filter(f => f && f.meta && Array.isArray(f.results))) {
         const mm = f.meta.metal;
         const m = mm === "silver" ? "silver" : mm === "yurman" ? "yurman"
           : mm === "nordic" ? "nordic" : mm === "scrap" ? "scrap"
