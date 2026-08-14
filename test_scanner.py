@@ -335,58 +335,37 @@ class TestScrapMode(unittest.TestCase):
             g.METAL = old
 
 
-class TestNordicMode(unittest.TestCase):
-    """Scandinavian designer silver: maker marks and design numbers."""
+class TestDesignerMode(unittest.TestCase):
+    """Named signet houses: heavy gold, low volume, signed."""
 
     def test_makers_detected(self):
-        self.assertEqual(g.detect_nordic_maker("Georg Jensen Sterling Brooch"), "Georg Jensen")
-        self.assertEqual(g.detect_nordic_maker("David Andersen silver Norway"), "David Andersen")
-        self.assertEqual(g.detect_nordic_maker("Lapponia ring Finland"), "Lapponia")
-        self.assertIsNone(g.detect_nordic_maker("vintage danish silver brooch"))
-
-    def test_design_number_extracted(self):
-        # The design number is where the value hides -- #90 vs a plain brooch.
-        self.assertEqual(g.detect_design_no("Georg Jensen Brooch #90 Denmark"), "90")
-        self.assertEqual(g.detect_design_no("Georg Jensen no. 171 bangle"), "171")
-        self.assertEqual(g.detect_design_no("Jensen design no 283A"), "283A")
-        self.assertIsNone(g.detect_design_no("Georg Jensen sterling brooch"))
-
-    def test_designer_detected(self):
-        self.assertEqual(g.detect_nordic_designer("Jensen 171 Henning Koppel"), "Henning Koppel")
-        self.assertEqual(g.detect_nordic_designer("Lapponia Bjorn Weckstrom ring"), "Bjorn Weckstrom")
+        self.assertEqual(g.detect_designer_maker("Elizabeth Gage 18ct Templar ring"),
+                         "Elizabeth Gage")
+        self.assertEqual(g.detect_designer_maker("Ilias Lalaounis 18k Greek gold ring"),
+                         "Ilias Lalaounis")
+        self.assertEqual(g.detect_designer_maker("Deakin & Francis signet ring"),
+                         "Deakin & Francis")
+        self.assertIsNone(g.detect_designer_maker("heavy 18ct gold signet ring"))
 
     def test_lookalikes_and_unsigned_excluded(self):
-        for x in ("Danish silver brooch in the style of Georg Jensen",
-                  "brooch attributed to Georg Jensen", "unmarked Georg Jensen style",
-                  "Georg Jensen silver plated tray"):
-            self.assertTrue(g.is_nordic_excluded(x), x)
-
-    def test_no_maker_claim_excluded(self):
-        self.assertTrue(g.is_nordic_excluded("vintage danish modernist silver brooch"))
+        for x in ("gold ring in the style of David Webb",
+                  "ring attributed to Elizabeth Gage",
+                  "unsigned Buccellati style gold ring",
+                  "Lalaounis inspired gold plated ring"):
+            self.assertTrue(g.is_designer_excluded(x), x)
 
     def test_only_rings(self):
-        # Jensen's output is mostly hollowware, flatware and brooches; the
-        # first scan came back 90% not-rings.
-        for x in ("Georg Jensen Cufflinks #72 Harald Nielsen",
-                  "Georg Jensen sterling silver brooch",
-                  "Georg Jensen earrings sterling",
-                  "Georg Jensen Acorn spoon", "Georg Jensen necklace pendant",
-                  "Georg Jensen bangle bracelet"):
-            self.assertTrue(g.is_nordic_excluded(x), x)
+        # These houses make plenty of brooches and cufflinks.
+        for x in ("Elizabeth Gage brooch gold", "Buccellati gold cufflinks",
+                  "David Webb bracelet 18k", "Lalaounis necklace gold"):
+            self.assertTrue(g.is_designer_excluded(x), x)
 
-    def test_rings_in_other_languages(self):
-        for x in ("Georg Jensen anillo plata 925", "Georg Jensen bague argent",
-                  "Georg Jensen anello argento", "Georg Jensen zilveren ring"):
-            self.assertTrue(g.is_ring_item(x), x)
-        # "earring"/"Ohrring" must not count as a ring.
-        self.assertFalse(g.is_ring_item("Georg Jensen Ohrringe silber"))
-        self.assertFalse(g.is_ring_item("Jensen ear ring pair"))
-
-    def test_genuine_signed_pieces_kept(self):
-        for x in ("Georg Jensen Sterling Silver Ring #90 Denmark",
-                  "Lapponia Bjorn Weckstrom silver ring Finland",
-                  "Hans Hansen sterling silver ring"):
-            self.assertFalse(g.is_nordic_excluded(x), x)
+    def test_genuine_signed_rings_kept(self):
+        for x in ("Elizabeth Gage 18ct gold Templar ring",
+                  "Ilias Lalaounis 18k Greek gold ring",
+                  "Buccellati 18k gold ring Italy",
+                  "Deakin & Francis silver signet ring"):
+            self.assertFalse(g.is_designer_excluded(x), x)
 
 
 class TestPriceHistory(unittest.TestCase):

@@ -23,7 +23,7 @@ on:
         description: "Which page to update"
         type: choice
         default: all
-        options: [all, gold, silver, yurman, nordic]
+        options: [all, gold, silver, yurman, designer]
           
 
 
@@ -90,11 +90,12 @@ jobs:
 
 
 
-          # Nordic: Scandinavian designer silver. Brand hunt, cheap on quota.
-          if [ "$SCREEN" = "all" ] || [ "$SCREEN" = "nordic" ]; then
-            python gold_ring_scanner.py --metal nordic --max-price 2000 --min-price 25 \
+          # Designer: named signet houses. Small volumes of heavy gold, so a
+          # higher price floor keeps the cheap-ring flood out.
+          if [ "$SCREEN" = "all" ] || [ "$SCREEN" = "designer" ]; then
+            python gold_ring_scanner.py --metal designer --max-price 12000 --min-price 200 \
               --limit 200 --conditions ANY --markets $MARKETS \
-              --json data/nordic.json --csv data/nordic.csv || echo '[warn] nordic failed'
+              --json data/designer.json --csv data/designer.csv || echo '[warn] designer failed'
           fi
 
       - name: Build dashboard index

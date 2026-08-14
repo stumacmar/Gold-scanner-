@@ -225,55 +225,49 @@ def is_scrap_excluded(text):
     return is_plated(text) or is_excluded(text)
 
 
-# --- Nordic silver mode (--metal nordic) -----------------------------------
-# Scandinavian designer silver, where the mispricing mechanic is precise: the
-# maker's name is STAMPED on the piece, so sellers type it into the title --
-# but the design number is what carries the value, and general sellers don't
-# know it. A Georg Jensen #90 brooch is £400-1,500 and gets listed at £80 as
-# "vintage Danish silver". Like the Yurman screen: a brand hunt, no weight
-# floor and no melt (the silver content is trivial beside the design value).
-NORDIC_MAKERS = {
-    "Georg Jensen":     ("georg jensen", "g. jensen", "gj denmark"),
-    "David Andersen":   ("david andersen", "d-a norway", "david-andersen"),
-    "Hans Hansen":      ("hans hansen",),
-    "Anton Michelsen":  ("anton michelsen",),
-    "Lapponia":         ("lapponia", "bjorn weckstrom", "björn weckström"),
-    "Kupittaan Kulta":  ("kupittaan kulta", "kupittaan"),
-    "Niels Erik From":  ("niels erik from", "n.e. from", "ne from"),
-    "Bent Gabrielsen":  ("bent gabrielsen",),
-    "Just Andersen":    ("just andersen",),
-    "Sigurd Persson":   ("sigurd persson",),
-    "Torun":            ("vivianna torun", "torun bulow", "torun bülow"),
+# --- Designer signet mode (--metal designer) -------------------------------
+# Named makers whose SIGNET and intaglio rings carry real money, chosen to
+# avoid the Georg Jensen problem: Jensen floods the results with thousands of
+# cheap silver rings, whereas these houses make small numbers of heavy GOLD
+# pieces. The mispricing mechanic is the same as Yurman -- the maker is
+# signed, so sellers type the name, but an inherited ring often gets listed
+# as "heavy gold ring" by someone who doesn't know what the signature means.
+DESIGNER_MAKERS = {
+    # British. Heavy textured 18ct, famous for Templar and intaglio rings;
+    # signed EG. Auction results routinely run to four figures.
+    "Elizabeth Gage":  ("elizabeth gage", "e. gage", "gage london"),
+    # Greek. Chunky hallmarked 18/22ct -- often listed as just "Greek gold".
+    "Ilias Lalaounis": ("lalaounis", "ilias lalaounis"),
+    "Zolotas":         ("zolotas",),
+    # Birmingham, 1786. England's oldest family jeweller; signet specialists.
+    "Deakin & Francis": ("deakin & francis", "deakin and francis", "deakin francis"),
+    # Modern UK hand-engraved signet house with a strong secondary market.
+    "Rebus":           ("rebus signet", "rebus london"),
+    # American bold-gold houses.
+    "David Webb":      ("david webb",),
+    "Seaman Schepps":  ("seaman schepps",),
+    # Italian engraved gold.
+    "Buccellati":      ("buccellati",),
 }
-# Designers whose names on a Jensen piece multiply its value.
-NORDIC_DESIGNERS = ("henning koppel", "nanna ditzel", "vivianna torun",
-                    "harald nielsen", "arno malinowski", "sigvard bernadotte",
-                    "bjorn weckstrom", "björn weckström", "ibe dahlquist")
-NORDIC_QUERY_TEMPLATES = {
-    "en": ["Georg Jensen silver ring", "Georg Jensen ring Denmark",
-           "David Andersen silver ring", "Lapponia silver ring",
-           "Hans Hansen silver ring", "Anton Michelsen ring",
-           "Kupittaan Kulta ring"],
-    "de": ["Georg Jensen Silber Ring", "Lapponia Ring", "David Andersen Ring"],
-    "fr": ["Georg Jensen bague argent", "Lapponia bague"],
-    "it": ["Georg Jensen anello argento"],
-    "es": ["Georg Jensen anillo plata"],
-    "nl": ["Georg Jensen zilveren ring"],
-    "pl": ["Georg Jensen pier\u015bcionek"],
+DESIGNER_QUERY_TEMPLATES = {
+    "en": ["Elizabeth Gage ring", "Lalaounis gold ring", "Deakin Francis signet ring",
+           "David Webb gold ring", "Seaman Schepps ring", "Buccellati gold ring",
+           "Rebus signet ring"],
+    "de": ["Elizabeth Gage Ring", "Lalaounis Ring Gold"],
+    "fr": ["Elizabeth Gage bague", "Lalaounis bague or"],
+    "it": ["Buccellati anello oro", "Lalaounis anello"],
+    "es": ["Buccellati anillo oro"],
+    "nl": ["Buccellati gouden ring"], "pl": ["Buccellati zloty pierscionek"],
 }
-# The usual lookalike language, plus the marks that mean "not actually signed".
-NORDIC_FAKE_MARKERS = [
-    "style of", "in the style", "inspired", "after georg", "manner of",
+DESIGNER_FAKE_MARKERS = [
+    "style of", "in the style", "inspired", "after ", "manner of",
     "attributed", "unsigned", "unmarked", "no marks", "not signed",
     "replica", "copy of", "reproduction", "tribute", "homage", "lookalike",
+    "plated", "costume",
 ]
-_DESIGN_NO_RE = re.compile(
-    r"(?:#|\bno\.?\s*|\bdesign\s*(?:no\.?)?\s*|\bmodel\s*)(\d{1,3}[A-Da-d]?)\b")
-
 
 # Ring words across the marketplace languages, and the far longer list of
-# things that are NOT rings. Jensen's output is mostly hollowware, flatware
-# and brooches, so without this the screen is 90% not-rings.
+# things that are NOT rings.
 _RING_WORDS = (r"ring", r"anello", r"anillo", r"bague", r"sygnet",
                r"pier[sś]cionek", r"pier[sś]cie[nń]", r"fingerring", r"sortija")
 _NOT_RING_WORDS = (
@@ -292,48 +286,30 @@ _NOT_RING_WORDS = (
 
 
 def is_ring_item(text):
-    """True if the listing is a RING rather than a brooch/spoon/necklace."""
+    """True if the listing is a RING rather than a brooch/necklace/spoon."""
     low = (text or "").lower()
     if any(w in low for w in _NOT_RING_WORDS):
         return False
     return any(re.search(r"\b" + w + r"\b", low) for w in _RING_WORDS)
 
 
-def detect_nordic_maker(text):
+def detect_designer_maker(text):
     """Canonical maker name if the listing claims one, else None."""
     low = (text or "").lower()
-    for maker, words in NORDIC_MAKERS.items():
+    for maker, words in DESIGNER_MAKERS.items():
         if any(w in low for w in words):
             return maker
     return None
 
 
-def detect_design_no(text):
-    """Jensen-style design number ("#90", "no. 171") -- where the value hides."""
-    m = _DESIGN_NO_RE.search(text or "")
-    return m.group(1) if m else None
-
-
-def detect_nordic_designer(text):
-    """Named designer on the piece, which multiplies a Jensen's value."""
+def is_designer_excluded(text):
+    """Keep only RINGS claiming a genuine, signed piece by a known house."""
     low = (text or "").lower()
-    for d in NORDIC_DESIGNERS:
-        if d in low:
-            return d.title()
-    return None
-
-
-def is_nordic_excluded(text):
-    """Keep only RINGS claiming a genuine, signed piece by a known maker."""
-    low = (text or "").lower()
-    if not detect_nordic_maker(text):
+    if not detect_designer_maker(text):
         return True
     if not is_ring_item(text):
         return True
-    if any(m in low for m in NORDIC_FAKE_MARKERS):
-        return True
-    # Plated/filled pieces exist under these names but aren't the collectable.
-    return any(w in low for w in ("plated", "plate ", "gilt metal", "costume"))
+    return any(m in low for m in DESIGNER_FAKE_MARKERS)
 
 
 # --- Ingot / bullion mode (--metal ingot_gold | ingot_silver) --------------
@@ -563,8 +539,8 @@ def queries_for(market, carat, extra=(), metal="gold"):
             if q and q.lower() not in seen:
                 seen.add(q.lower()); out.append(q)
         return out[:MAX_QUERIES_PER_MARKET]
-    if metal == "nordic":
-        templates = NORDIC_QUERY_TEMPLATES
+    if metal == "designer":
+        templates = DESIGNER_QUERY_TEMPLATES
     elif metal == "scrap":
         templates = SCRAP_QUERY_TEMPLATES
     elif metal == "yurman":
@@ -1103,7 +1079,7 @@ def assess_ring(text, carat, stated_weight):
     low = (text or "").lower()
     tags = style_tags(text)
 
-    if METAL == "nordic":
+    if METAL == "designer":
         # Brand hunt: no style filter, no weight requirement.
         return {"keep": True, "confidence": "confirmed",
                 "gross_g": stated_weight, "net_gold_g": None,
@@ -1579,8 +1555,8 @@ def analyse(items, token, spot_per_oz, fx=None):
         if METAL in INGOT_FINENESS:
             if is_ingot_excluded(text, METAL):
                 continue
-        elif METAL == "nordic":
-            if is_nordic_excluded(text):
+        elif METAL == "designer":
+            if is_designer_excluded(text):
                 continue
         elif METAL == "scrap":
             if is_scrap_excluded(text):
@@ -1629,7 +1605,7 @@ def analyse(items, token, spot_per_oz, fx=None):
         #    a signet/intaglio word is dropped later regardless.
         on_target = not REQUIRED_TAGS or bool(set(style_tags(text)) & set(REQUIRED_TAGS))
         if (weight is None and not is_variant and on_target and FETCH_FULL_DETAILS
-                and METAL not in ("yurman", "nordic")   # brand modes: no weight
+                and METAL not in ("yurman", "designer")   # brand modes: no weight
                 and METAL not in INGOT_FINENESS  # bullion titles state the denomination
                 and (MAX_DETAIL_FETCHES == 0 or detail_fetches < MAX_DETAIL_FETCHES)):
             detail_fetches += 1
@@ -1671,7 +1647,7 @@ def analyse(items, token, spot_per_oz, fx=None):
         # Investment gold (999.9 bars) carries no UK VAT; silver bullion does.
         landed = landed_cost(bid, country, vat_exempt=(METAL == "ingot_gold"))
 
-        if METAL in ("yurman", "nordic"):
+        if METAL in ("yurman", "designer"):
             # Brand hunt: the silver content is trivial beside design value.
             melt, ratio, is_value = None, None, False
         elif METAL in INGOT_FINENESS:
@@ -1705,10 +1681,8 @@ def analyse(items, token, spot_per_oz, fx=None):
 
         records.append({
             "title": title,
-            "metal": METAL,                 # gold | silver | nordic | ...
-            "maker": detect_nordic_maker(text) if METAL == "nordic" else None,
-            "design_no": detect_design_no(text) if METAL == "nordic" else None,
-            "designer": detect_nordic_designer(text) if METAL == "nordic" else None,
+            "metal": METAL,                 # gold | silver | designer | ...
+            "maker": detect_designer_maker(text) if METAL == "designer" else None,
             "carat": carat,                 # gold only (None for silver)
             "fineness": fineness_mark,      # silver only ("925", "800", ...)
             "carat_assumed": carat_assumed,
@@ -2043,7 +2017,7 @@ def parse_args():
     p.add_argument("--conditions", default="USED", choices=["USED", "ANY"],
                    help="USED only, or ANY condition (captures dealer 'New')")
     p.add_argument("--metal", default="gold",
-                   choices=["gold", "silver", "yurman", "nordic", "scrap",
+                   choices=["gold", "silver", "yurman", "designer", "scrap",
                             "ingot_gold", "ingot_silver"],
                    help="gold (default), silver (sterling signet mode with live "
                         "silver spot), or yurman (David Yurman brand hunt: no "
@@ -2089,7 +2063,7 @@ def main():
           f"floors: confirmed>={WEIGHT_FLOOR_CONFIRMED}g estimated>={WEIGHT_FLOOR_ESTIMATED_LOWBOUND}g  "
           f"limit={args.limit}/mkt  markets={len(markets)}  threshold={MELT_THRESHOLD}")
 
-    if METAL in ("yurman", "nordic"):
+    if METAL in ("yurman", "designer"):
         spot, source = 0.0, "n/a (brand mode -- no melt)"
         print(f"  brand mode: {METAL} -- no melt valuation")
     elif METAL == "ingot_silver":
