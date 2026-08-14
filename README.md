@@ -228,6 +228,17 @@ which is refreshed automatically by a scheduled GitHub Action.
   fire from the **default branch** — merge this branch in to activate the schedule.
 - You can also run it any time from the **Actions** tab ("Run workflow").
 
+**Stale-shell guard.** The scan JSON is always fetched with a cache-buster, but
+the HTML shell is not — GitHub Pages serves it with `max-age=600`, and an
+iPhone home-screen web app holds it far longer. That produced a genuinely
+confusing failure: the phone kept drawing a tab that had been deleted (empty,
+because its JSON was gone) and never showed the tab that replaced it, while
+the site itself was completely up to date. `index.html` now carries an
+`APP_VERSION` constant, re-fetches its own source on load, and if the server's
+version differs it navigates once to `index.html?v=<new>` — a URL the cache has
+never seen. A `sessionStorage` marker makes a reload loop impossible.
+**Bump `APP_VERSION` whenever you change `index.html`.**
+
 ## Important caveats
 
 - **Weights are seller-claimed free text.** The regex is the part most likely to
