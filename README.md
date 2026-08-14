@@ -165,6 +165,39 @@ compare heavy silver. The workflow writes `data/silver.json` daily alongside
 the four gold carat files; the dashboard's **Gold/Silver** switcher selects
 the screen.
 
+### Designer signet screen (`--metal designer`)
+
+A screen for **signed signets and intaglios by named houses**, where the
+mispricing mechanic is the signature rather than the metal: an inherited ring
+gets listed as "old gold ring" by someone who doesn't recognise the maker's
+mark. Three filters define it, all in `is_designer_excluded`:
+
+1. the title must claim a maker in `DESIGNER_MAKERS` — signet specialists
+   (Deakin & Francis, Rebus, Longmire, Hancocks, Marlborough), houses whose
+   signets carry real money (Elizabeth Gage, Theo Fennell, Asprey, Garrard,
+   Lalaounis, Zolotas, Castellani, Carlo Giuliano, David Webb, Seaman Schepps,
+   Buccellati), and the grand houses that do make them (Cartier, Bulgari,
+   Tiffany & Co);
+2. it must be a **ring** (`is_ring_item` — these houses make far more brooches
+   and cufflinks than rings);
+3. it must be a **signet or intaglio** (`DESIGNER_REQUIRED_TAGS`).
+
+Rule 3 is the one that matters. Without it a live run returned 180 rings of
+which **3** were signets — the rest were David Webb and Buccellati cocktail
+rings at £4k–£14k from US dealers, the same "flooded with the wrong thing"
+failure that retired the previous Scandinavian-silver screen. With it the same
+run returns 49 rings, every one a designer signet.
+
+There is **no melt valuation** on this screen (as on Yurman): a signed Gage
+intaglio is worth several times its gold, so a melt ratio would be noise.
+Cards show maker, weight where stated, and landed cost. Counterfeits are
+handled by taking honest sellers at their word — `DESIGNER_FAKE_MARKERS`
+rejects `-style`, `inspired`, `vermeil`, `not authentic`, `aftermarket` and
+friends, `maker_is_uncertain` rejects `"LALAOUNIS?"`, and
+`is_designer_accessory` rejects the empty maker-branded ring boxes (while
+still keeping a genuine ring sold *with* its box). Designer mode gets a larger
+`MAX_QUERIES_BY_METAL` allowance because it spends one query per maker.
+
 Every scan prints a **per-market yield log** (`raw → kept → value`), a
 weight-confidence tally, and the eBay API call count, so coverage leaks and
 quota spend are visible.

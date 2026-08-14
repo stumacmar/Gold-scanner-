@@ -348,24 +348,68 @@ class TestDesignerMode(unittest.TestCase):
         self.assertIsNone(g.detect_designer_maker("heavy 18ct gold signet ring"))
 
     def test_lookalikes_and_unsigned_excluded(self):
-        for x in ("gold ring in the style of David Webb",
-                  "ring attributed to Elizabeth Gage",
-                  "unsigned Buccellati style gold ring",
-                  "Lalaounis inspired gold plated ring"):
+        for x in ("gold signet ring in the style of David Webb",
+                  "signet ring attributed to Elizabeth Gage",
+                  "unsigned Buccellati style gold signet ring",
+                  "Lalaounis inspired gold plated signet ring"):
             self.assertTrue(g.is_designer_excluded(x), x)
 
     def test_only_rings(self):
         # These houses make plenty of brooches and cufflinks.
-        for x in ("Elizabeth Gage brooch gold", "Buccellati gold cufflinks",
-                  "David Webb bracelet 18k", "Lalaounis necklace gold"):
+        for x in ("Elizabeth Gage signet brooch gold",
+                  "Buccellati gold signet cufflinks",
+                  "David Webb signet bracelet 18k",
+                  "Lalaounis intaglio necklace gold"):
             self.assertTrue(g.is_designer_excluded(x), x)
 
-    def test_genuine_signed_rings_kept(self):
-        for x in ("Elizabeth Gage 18ct gold Templar ring",
-                  "Ilias Lalaounis 18k Greek gold ring",
-                  "Buccellati 18k gold ring Italy",
-                  "Deakin & Francis silver signet ring"):
+    def test_genuine_signed_signets_kept(self):
+        for x in ("Elizabeth Gage 18ct gold intaglio ring",
+                  "Ilias Lalaounis 18k Greek gold signet ring",
+                  "Buccellati 18k gold signet ring Italy",
+                  "Deakin & Francis silver signet ring",
+                  "Longmire London 18ct gold armorial signet ring",
+                  "Cartier 18k gold signet ring",
+                  "Castellani Victorian carnelian intaglio ring gold"):
             self.assertFalse(g.is_designer_excluded(x), x)
+
+    def test_designer_but_not_a_signet_rejected(self):
+        """The screen is designer SIGNETS -- cocktail rings flooded it once."""
+        for x in ("David Webb 18k Yellow Gold Coiled Nail Ring Size 6",
+                  "Buccellati 18k White Gold Tulle Broccato Band Ring",
+                  "Cartier Love ring 18k rose gold",
+                  "Tiffany & Co 18k gold eternity band ring"):
+            self.assertTrue(g.is_designer_excluded(x), x)
+
+    def test_counterfeit_language_rejected(self):
+        for x in ("Cartier signet ring gold, not authentic aftermarket",
+                  "Bvlgari style signet ring gold designer inspired",
+                  "Tiffany & Co signet ring, faux gold"):
+            self.assertTrue(g.is_designer_excluded(x), x)
+
+    def test_first_live_run_leaks_closed(self):
+        """Four things the first real designer scan let through."""
+        for x in (# hyphenated style claim beat "style of"/"in the style"
+                  "18K Yellow Gold Ruby Ring, Buccellati-Style Brushed Finish",
+                  # the seller themselves is unsure of the attribution
+                  "Greek Designer LALAOUNIS? 18K Yellow Gold Bypass Ring",
+                  # vermeil is silver under a gold wash, not a solid piece
+                  "Anello Buccellati Fiori Argento Sterling 925 Vermeil US 7",
+                  # an empty box carrying the maker's name
+                  "Elizabet Gage Green leather and Velvet Ring Box"):
+            self.assertTrue(g.is_designer_excluded(x), x)
+
+    def test_ring_sold_with_its_box_still_kept(self):
+        """The accessory filter must not eat rings that include their box."""
+        for x in ("Ilias Lalaounis 18k gold signet ring in original box",
+                  "Zolotas 18k gold signet ring with presentation box",
+                  "David Webb 18K gold intaglio ring with case, vintage"):
+            self.assertFalse(g.is_designer_excluded(x), x)
+
+    def test_hard_accessories_rejected_even_with_metal_words(self):
+        for x in ("Buccellati sterling silver ring box, empty box",
+                  "Seaman Schepps gold rings catalogue 1998",
+                  "Elizabeth Gage 18ct display box only"):
+            self.assertTrue(g.is_designer_excluded(x), x)
 
 
 class TestPriceHistory(unittest.TestCase):

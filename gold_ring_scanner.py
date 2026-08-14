@@ -149,6 +149,10 @@ QUERY_TEMPLATES = {
     "pl": ["sygnet złoto {f}", "sygnet męski złoto {f}", "złoty sygnet {f}"],
 }
 MAX_QUERIES_PER_MARKET = 7    # cap the matrix so the API quota lasts a full run
+# Designer mode spends one query per MAKER, so a cap of 7 would silently drop
+# two thirds of the houses. It is also the cheapest scan (one narrow query per
+# name returns few listings), so it gets a bigger allowance.
+MAX_QUERIES_BY_METAL = {"designer": 12}
 
 # --- Silver mode (--metal silver) -----------------------------------------
 # Second screen: heavy STERLING SILVER signets/intaglios. Same strict rules
@@ -233,38 +237,108 @@ def is_scrap_excluded(text):
 # signed, so sellers type the name, but an inherited ring often gets listed
 # as "heavy gold ring" by someone who doesn't know what the signature means.
 DESIGNER_MAKERS = {
-    # British. Heavy textured 18ct, famous for Templar and intaglio rings;
-    # signed EG. Auction results routinely run to four figures.
-    "Elizabeth Gage":  ("elizabeth gage", "e. gage", "gage london"),
-    # Greek. Chunky hallmarked 18/22ct -- often listed as just "Greek gold".
-    "Ilias Lalaounis": ("lalaounis", "ilias lalaounis"),
-    "Zolotas":         ("zolotas",),
+    # --- Signet and seal specialists (the core of this screen) -------------
     # Birmingham, 1786. England's oldest family jeweller; signet specialists.
     "Deakin & Francis": ("deakin & francis", "deakin and francis", "deakin francis"),
     # Modern UK hand-engraved signet house with a strong secondary market.
     "Rebus":           ("rebus signet", "rebus london"),
+    # Mayfair seal engravers -- heavy gold armorial signets, rare on eBay but
+    # badly under-priced when an estate seller doesn't know the name.
+    "Longmire":        ("longmire",),
+    "Hancocks":        ("hancocks london", "hancocks & co"),
+    "Marlborough":     ("marlborough signet", "marlborough london"),
+    # --- Houses whose signets and intaglios carry real money ---------------
+    # British. Heavy textured 18ct, famous for Templar and intaglio rings.
+    "Elizabeth Gage":  ("elizabeth gage", "e. gage", "gage london"),
+    "Theo Fennell":    ("theo fennell",),
+    "Asprey":          ("asprey",),
+    "Garrard":         ("garrard",),
+    # Greek. Chunky hallmarked 18/22ct -- often listed as just "Greek gold".
+    "Ilias Lalaounis": ("lalaounis", "ilias lalaounis"),
+    "Zolotas":         ("zolotas",),
+    # Victorian archaeological-revival intaglio makers. A signed Castellani
+    # or Giuliano seal ring is a five-figure piece; sellers of inherited
+    # jewellery routinely list them as "antique carnelian ring".
+    "Castellani":      ("castellani",),
+    "Carlo Giuliano":  ("giuliano",),
+    # Grand houses that do make signets. Fakes are rife, so the fake-marker
+    # list below does the heavy lifting for these three.
+    "Cartier":         ("cartier",),
+    "Bulgari":         ("bulgari", "bvlgari"),
+    "Tiffany & Co":    ("tiffany & co", "tiffany and co", "tiffany co"),
     # American bold-gold houses.
     "David Webb":      ("david webb",),
     "Seaman Schepps":  ("seaman schepps",),
     # Italian engraved gold.
     "Buccellati":      ("buccellati",),
 }
+# Queries name the STYLE as well as the maker -- searching "Cartier ring"
+# returns ten thousand tank watches' worth of noise, "Cartier signet ring"
+# does not. MAX_QUERIES_PER_MARKET caps how many of these actually run.
 DESIGNER_QUERY_TEMPLATES = {
-    "en": ["Elizabeth Gage ring", "Lalaounis gold ring", "Deakin Francis signet ring",
-           "David Webb gold ring", "Seaman Schepps ring", "Buccellati gold ring",
-           "Rebus signet ring"],
-    "de": ["Elizabeth Gage Ring", "Lalaounis Ring Gold"],
-    "fr": ["Elizabeth Gage bague", "Lalaounis bague or"],
-    "it": ["Buccellati anello oro", "Lalaounis anello"],
-    "es": ["Buccellati anillo oro"],
-    "nl": ["Buccellati gouden ring"], "pl": ["Buccellati zloty pierscionek"],
+    "en": ["Deakin Francis signet ring", "Rebus signet ring",
+           "Longmire signet ring", "Elizabeth Gage ring gold",
+           "Cartier signet ring gold", "Bulgari signet ring gold",
+           "Tiffany signet ring gold", "Asprey signet ring",
+           "Garrard signet ring", "Theo Fennell signet ring",
+           "Castellani intaglio ring", "Giuliano intaglio ring",
+           "Lalaounis gold ring", "David Webb signet ring",
+           "Seaman Schepps signet ring", "Buccellati signet ring",
+           "Hancocks London signet ring", "antique signed intaglio seal ring gold"],
+    "de": ["Cartier Siegelring", "Bulgari Siegelring", "Elizabeth Gage Ring",
+           "Lalaounis Ring Gold", "signierter Siegelring Gold"],
+    "fr": ["Cartier chevalière or", "Bulgari chevalière", "Elizabeth Gage bague",
+           "chevalière or signée", "bague intaille or signée"],
+    "it": ["Buccellati anello sigillo", "Bulgari anello sigillo",
+           "Lalaounis anello", "anello sigillo oro firmato"],
+    "es": ["Cartier anillo sello oro", "Buccellati anillo oro",
+           "anillo sello oro firmado"],
+    "nl": ["Cartier zegelring goud", "Buccellati gouden ring"],
+    "pl": ["Cartier sygnet zloto", "sygnet zloto sygnowany"],
 }
+# The point of this screen is designer SIGNETS, not designer jewellery. A
+# first live run returned 180 rings of which 3 were signets -- the rest were
+# David Webb and Buccellati cocktail rings at £4k-£14k from US dealers, i.e.
+# exactly the "flooded with the wrong thing" failure the screen replaced.
+DESIGNER_REQUIRED_TAGS = ("signet", "intaglio")
 DESIGNER_FAKE_MARKERS = [
     "style of", "in the style", "inspired", "after ", "manner of",
     "attributed", "unsigned", "unmarked", "no marks", "not signed",
     "replica", "copy of", "reproduction", "tribute", "homage", "lookalike",
     "plated", "costume",
+    # A first run caught "Buccellati-Style Brushed Finish" -- the hyphenated
+    # form slipped past "style of"/"in the style".
+    "-style", "–style", "style ring", "style band",
+    # Not solid metal: a designer name on a vermeil/filled piece is either a
+    # fake or the house's costume line, and neither is the target.
+    "vermeil", "gold filled", "gold-filled", "gold fill ", "rolled gold",
+    "gold plate", "silver plate", "electroplate",
+    # Cartier / Bulgari / Tiffany attract counterfeits and "tribute" pieces
+    # that the honest sellers label plainly. Take them at their word.
+    "not authentic", "unauthenticated", "aftermarket", "faux", "fashion ring",
+    "designer inspired", "type ring", "sold as seen no guarantee",
 ]
+
+# Accessories that merely CARRY the maker's name: an empty Gage ring box is
+# not a Gage ring. Only reject when the title claims no metal at all, so a
+# genuine "18k ring with original box" still gets through.
+# Hard: the listing says outright there is no jewellery in it.
+DESIGNER_ACCESSORY_HARD = (
+    "box only", "empty box", "pouch only", "case only", "no ring",
+    "box no ring", "catalogue", "catalog", "brochure", "advertisement",
+    "magazine", "price list",
+)
+# Soft: could be an accessory, or could be a ring sold WITH its box. Only
+# rejected when the title claims no metal at all.
+DESIGNER_ACCESSORY_SOFT = (
+    "ring box", "jewellery box", "jewelry box", "display box",
+    "presentation box", "velvet box", "leather box",
+)
+_METAL_CLAIM_RE = re.compile(
+    r"\b(?:\d{1,2}\s?(?:ct|kt|k|carat|karat)|375|417|583|585|750|833|875|900|916|917|925|958|999|"
+    # No bare French "or" -- the English word "or" appears in half of all
+    # titles and would make every accessory look like a metal claim.
+    r"gold|silver|platinum|oro|goud|guld|zloto|złoto|argent|argento|plata|silber)\b")
 
 # Ring words across the marketplace languages, and the far longer list of
 # things that are NOT rings.
@@ -302,12 +376,37 @@ def detect_designer_maker(text):
     return None
 
 
+def is_designer_accessory(text):
+    """True for boxes/pouches/paperwork that merely carry the maker's name."""
+    low = (text or "").lower()
+    if any(w in low for w in DESIGNER_ACCESSORY_HARD):
+        return True
+    if not any(w in low for w in DESIGNER_ACCESSORY_SOFT):
+        return False
+    return not _METAL_CLAIM_RE.search(low)
+
+
+def maker_is_uncertain(text):
+    """True when the seller themselves questions the attribution ("Lalaounis?")."""
+    low = (text or "").lower()
+    for words in DESIGNER_MAKERS.values():
+        for w in words:
+            if re.search(re.escape(w) + r"\s*[?]", low):
+                return True
+    return False
+
+
 def is_designer_excluded(text):
     """Keep only RINGS claiming a genuine, signed piece by a known house."""
     low = (text or "").lower()
     if not detect_designer_maker(text):
         return True
     if not is_ring_item(text):
+        return True
+    if DESIGNER_REQUIRED_TAGS and not (
+            set(style_tags(text)) & set(DESIGNER_REQUIRED_TAGS)):
+        return True                       # designer, but not a signet
+    if is_designer_accessory(text) or maker_is_uncertain(text):
         return True
     return any(m in low for m in DESIGNER_FAKE_MARKERS)
 
@@ -560,7 +659,7 @@ def queries_for(market, carat, extra=(), metal="gold"):
         if q and q.lower() not in seen:
             seen.add(q.lower())
             out.append(q)
-    return out[:MAX_QUERIES_PER_MARKET]
+    return out[:MAX_QUERIES_BY_METAL.get(metal, MAX_QUERIES_PER_MARKET)]
 
 # FX fallback (units of foreign currency per £1) if the live lookup fails.
 FX_FALLBACK_PER_GBP = {"GBP": 1.0, "USD": 1.27, "EUR": 1.17, "AUD": 1.93,
