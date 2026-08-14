@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-14T09:05:57.131324+00:00",
+    "generated_at": "2026-08-14T17:37:54.513739+00:00",
     "query": "Deakin Francis signet ring",
     "queries": [
       "Deakin Francis signet ring",
@@ -43,18 +43,18 @@
     "markets": [
       "EBAY_GB",
       "EBAY_US",
+      "EBAY_IE",
+      "EBAY_AU",
+      "EBAY_CA",
       "EBAY_DE",
       "EBAY_FR",
       "EBAY_IT",
       "EBAY_ES",
       "EBAY_NL",
-      "EBAY_AU",
-      "EBAY_CA",
-      "EBAY_CH",
       "EBAY_AT",
-      "EBAY_IE",
-      "EBAY_PL",
+      "EBAY_CH",
       "EBAY_BE",
+      "EBAY_PL",
       "EBAY_HK",
       "EBAY_SG"
     ],
@@ -78,25 +78,27 @@
     },
     "fx_to_gbp": {
       "GBP": 1.0,
-      "AUD": 0.5227,
-      "CAD": 0.5313,
-      "CHF": 0.9121,
-      "EUR": 0.8549,
-      "HKD": 0.0945,
-      "PLN": 0.1986,
-      "SGD": 0.579,
-      "USD": 0.7412
+      "AUD": 0.5232,
+      "CAD": 0.5324,
+      "CHF": 0.91,
+      "EUR": 0.8545,
+      "HKD": 0.0941,
+      "PLN": 0.1984,
+      "SGD": 0.578,
+      "USD": 0.7387
     },
-    "total_fetched": 610,
-    "total_analysed": 49,
+    "total_fetched": 938,
+    "total_analysed": 51,
     "value_count": 0,
-    "new_count": 47,
-    "weight_unknown_count": 34,
+    "new_count": 2,
+    "weight_unknown_count": 36,
     "country_counts": {
       "DE": 1,
+      "ES": 1,
       "FR": 1,
       "HK": 1,
       "IT": 1,
+      "PL": 1,
       "UK": 21,
       "US": 24
     }
@@ -149,7 +151,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 2481,
+      "seller_feedback": 2484,
       "seller_private": false,
       "weight_g": null,
       "net_gold_g": null,
@@ -176,7 +178,7 @@
       "item_id": "206195324412",
       "url": "https://www.ebay.co.uk/itm/206195324412?_skw=Bulgari+signet+ring+gold&hash=item300232f5fc:g:mvMAAeSw5Stp1M2B",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Bvlgari Bulgari 18K Yellow Gold Black Onyx Signet Disc Cocktail Ring Band Size 7",
@@ -186,7 +188,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 7405,
+      "seller_feedback": 7408,
       "seller_private": false,
       "weight_g": 12.9,
       "net_gold_g": null,
@@ -214,7 +216,7 @@
       "item_id": "177804539251",
       "url": "https://www.ebay.co.uk/itm/177804539251?_skw=Bulgari+signet+ring+gold&hash=item2965f9f573:g:jS4AAOSwZLBjXDcg",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Tiffany & Co. Signet Ring Gold 18 RG 6",
@@ -252,7 +254,7 @@
       "item_id": "366586585245",
       "url": "https://www.ebay.co.uk/itm/366586585245?_skw=Tiffany+signet+ring+gold&hash=item555a43609d:g:ocQAAeSwQMdp-b7Q",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "TIFFANY & CO. Vintage 1960s 14k Yellow Gold Signet Ring w/Pouch Rare",
@@ -289,9 +291,9 @@
       "ends_at": null,
       "bids": "",
       "item_id": "326539243500",
-      "url": "https://www.ebay.co.uk/itm/326539243500?_skw=Tiffany+signet+ring+gold&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwXnUTPw0Tw2rTKtirZqPmdQIKwGdePeDolLyniOOojGUmQFCqWAfiktFZTVoLlVjwA9ssrjjhF%2BqCT0V36kFXhRGt2B3NOA8ZJmFawnatDuj%2BkbH0sFDMYGAKFi9pWu4Mlddpj1Oe0%2BZPsX5s6CQ1f4RODfqP5dHyPmcVJMR7qVIZ4%2FG2ahL75yYiyWod472bk%3D",
+      "url": "https://www.ebay.co.uk/itm/326539243500?_skw=Tiffany+signet+ring+gold&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwXfAXSOynZZbLTUeqf%2BXz26VC4Hx0av0rswJqU9Icb6tOyUJL206fMi2YGdPRtBIwp1%2FtKCne1ZBFxHpWm3bjjVnHEkWQMKmKj5aS8Y5zUgoCT1I6rSRiTO1OJsgvT4jHPhT%2Bfwdx2r3Bgm6hmflxhSr5moXdpl8GPLXZfm4vvCBVj9ckJqsCPAtr4S%2FoD7Q8o%3D",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Rare Tiffany & Co. Yellow Gold Onyx Signet Ring 750/18K  EX224",
@@ -328,44 +330,7 @@
       "item_id": "377385165509",
       "url": "https://www.ebay.co.uk/itm/377385165509?_skw=Tiffany+signet+ring+gold&hash=item57dde8a2c5:g:nSYAAeSwhZ9qbSci",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
-    },
-    {
-      "title": "Tiffany & Co. Signet Ring in 18k Rose Gold with Diamond Size.5",
-      "metal": "designer",
-      "maker": "Tiffany & Co",
-      "carat": 18,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 220,
-      "seller_private": false,
-      "weight_g": null,
-      "net_gold_g": null,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet"
-      ],
-      "stones": false,
-      "current_bid": 711.8,
-      "landed_cost": 715.8,
-      "price_orig": null,
-      "country": "UK",
-      "flag": "🇬🇧",
-      "melt_value": null,
-      "ratio": null,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": false,
-      "price_firm": true,
-      "condition": "New without packaging",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "358338972514",
-      "url": "https://www.ebay.co.uk/itm/358338972514?_skw=Tiffany+signet+ring+gold&hash=item536eaacb62:g:Z~4AAeSwFCdn8b~1",
-      "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Tiffany & Co. 18k Yellow Gold 1.57ctw Onyx and Inlay Signet Ring Size 7 (8.70g.)",
@@ -402,7 +367,44 @@
       "item_id": "117274574341",
       "url": "https://www.ebay.co.uk/itm/117274574341?_skw=Tiffany+signet+ring+gold&hash=item1b4e1bfe05:g:hzcAAeSwI4tqQhKl",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
+    },
+    {
+      "title": "Tiffany & Co. Signet Ring in 18k Rose Gold with Diamond Size.5",
+      "metal": "designer",
+      "maker": "Tiffany & Co",
+      "carat": 18,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 220,
+      "seller_private": false,
+      "weight_g": null,
+      "net_gold_g": null,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": false,
+      "current_bid": 711.8,
+      "landed_cost": 715.8,
+      "price_orig": null,
+      "country": "UK",
+      "flag": "🇬🇧",
+      "melt_value": null,
+      "ratio": null,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": false,
+      "price_firm": true,
+      "condition": "New without packaging",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "358338972514",
+      "url": "https://www.ebay.co.uk/itm/358338972514?_skw=Tiffany+signet+ring+gold&hash=item536eaacb62:g:Z~4AAeSwFCdn8b~1",
+      "first_seen": "2026-08-14T09:05:57.131324+00:00",
+      "is_new": false
     },
     {
       "title": "Tiffany & Co. Signet 18K Yellow Gold Ring Men's JP14 Rare TO635",
@@ -440,7 +442,7 @@
       "item_id": "377097374943",
       "url": "https://www.ebay.co.uk/itm/377097374943?_skw=Tiffany+signet+ring+gold&hash=item57ccc14cdf:g:B~wAAeSwANdp1kd~",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "TIFFANY & CO. Vintage 14k Yellow Gold & Onyx Signet Ring w/Center Diamond 1960s",
@@ -450,7 +452,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 3796,
+      "seller_feedback": 3798,
       "seller_private": false,
       "weight_g": null,
       "net_gold_g": null,
@@ -478,7 +480,7 @@
       "item_id": "156762954157",
       "url": "https://www.ebay.co.uk/itm/156762954157?_skw=Tiffany+signet+ring+gold&hash=item247fccd9ad:g:VSMAAeSwQ1Bnxjbo",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "70s Vintage Tiffany & Co Scorpio Ring Sz 3 18k Yellow Gold Zodiac Jewelry ",
@@ -516,7 +518,7 @@
       "item_id": "366345313956",
       "url": "https://www.ebay.co.uk/itm/366345313956?_skw=Tiffany+signet+ring+gold&hash=item554be1dea4:g:EpkAAeSwxYdp3UJ5",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Tiffany & Co Silver 18K Gold Lapis Signet Ring Band Size 7.5",
@@ -552,9 +554,9 @@
       "ends_at": null,
       "bids": "",
       "item_id": "196873978236",
-      "url": "https://www.ebay.co.uk/itm/196873978236?_skw=Tiffany+signet+ring+gold&hash=item2dd69a817c:g:c2QAAOSw3-FhrH~m&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGasJfbyuDDF0dCjkppBH6bzlPdXD%2FeIzaIkCeldELA8IzSUcuC2D6PME%2FEalHEyxCqvz20NUskEUK2qlxo2YtpxqEQFWa%2B9btjDPJj99qiTIvB0JRP1%2FdHofOHyv%2B7TZbcja1Bes1Okhs%2FvdfD%2Fn17XZFRYA0iqyR7Q%2FOM4y2hxEbj%2FFmA2kmjOtDE6VE2mN9gAW%2FqBZiHySSzNC2jP5p8fcXIa3Cm9JYJEHelh1Km%2B568CBWRPRmOKtvmU02tO52hyETtJwIRYBiMqe8klY0gBLKwbIFyfXkbiiQ6qJ2teRQ%3D%3D",
+      "url": "https://www.ebay.co.uk/itm/196873978236?_skw=Tiffany+signet+ring+gold&hash=item2dd69a817c:g:c2QAAOSw3-FhrH~m&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGasJfbyuDDF0dCjkppBH6bzlPdXD%2FeIzaIkCeldELA8IzSUcuC2D6PME%2FEalHEyxCqvz20NUskEUK2qlxo2YtpxqEQFWa%2B9btjDPJj99qiTIvB0JRP1%2FdHofOHyv%2B7TZbfyR2kfg5lVRm0XpHEQ5SkmJc6m9%2BKXWoFRXLdlpa62lSIogdLN0ykUlqWMmoXYE%2FdAzp7%2Bz2%2FnE%2BsaBKnAn3C2GhVFm5SbmbWJUHH8HyyNMKvjnnTJgJj4%2BB9SiXdUCX6MuUo1zQwdvH6TwZ5%2FJfGn38xhDzKbD01oXNzyVDaizA%3D%3D",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Sz 5.5 Tiffany & Co. Silver 18k Gold 750 Love Heart Signet  Ring w/ POUCH - Auth",
@@ -592,44 +594,7 @@
       "item_id": "227335961615",
       "url": "https://www.ebay.co.uk/itm/227335961615?_skw=Tiffany+signet+ring+gold&hash=item34ee477c0f:g:tMoAAeSwzRxp~lf0",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
-    },
-    {
-      "title": "Tiffany & Co. 18k Yellow Gold 2.22ctw Onyx Signet Ring Size 10 (13.20g.)",
-      "metal": "designer",
-      "maker": "Tiffany & Co",
-      "carat": 18,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 2560,
-      "seller_private": false,
-      "weight_g": 13.2,
-      "net_gold_g": null,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet"
-      ],
-      "stones": false,
-      "current_bid": 2024.17,
-      "landed_cost": 2028.17,
-      "price_orig": null,
-      "country": "UK",
-      "flag": "🇬🇧",
-      "melt_value": null,
-      "ratio": null,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": false,
-      "price_firm": true,
-      "condition": "Pre-owned",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "117346593978",
-      "url": "https://www.ebay.co.uk/itm/117346593978?_skw=Tiffany+signet+ring+gold&hash=item1b5266ecba:g:~lcAAeSwThVqdmuU",
-      "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Sz. 6 Tiffany & Co. Silver 18k Gold 750 Love Heart Signet  Ring w/ POUCH - Auth.",
@@ -667,7 +632,44 @@
       "item_id": "227341974909",
       "url": "https://www.ebay.co.uk/itm/227341974909?_skw=Tiffany+signet+ring+gold&hash=item34eea33d7d:g:lUYAAeSwyk1qA98J",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
+    },
+    {
+      "title": "Tiffany & Co. 18k Yellow Gold 2.22ctw Onyx Signet Ring Size 10 (13.20g.)",
+      "metal": "designer",
+      "maker": "Tiffany & Co",
+      "carat": 18,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 2560,
+      "seller_private": false,
+      "weight_g": 13.2,
+      "net_gold_g": null,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": false,
+      "current_bid": 2024.17,
+      "landed_cost": 2028.17,
+      "price_orig": null,
+      "country": "UK",
+      "flag": "🇬🇧",
+      "melt_value": null,
+      "ratio": null,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": false,
+      "price_firm": true,
+      "condition": "Pre-owned",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "117346593978",
+      "url": "https://www.ebay.co.uk/itm/117346593978?_skw=Tiffany+signet+ring+gold&hash=item1b5266ecba:g:~lcAAeSwThVqdmuU",
+      "first_seen": "2026-08-14T09:05:57.131324+00:00",
+      "is_new": false
     },
     {
       "title": "TIFFANY & CO. 18k Yellow Gold 1837 Makers Black Onyx Signet Men's Ring Size 13.5",
@@ -677,7 +679,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 112412,
+      "seller_feedback": 112414,
       "seller_private": false,
       "weight_g": null,
       "net_gold_g": null,
@@ -705,7 +707,7 @@
       "item_id": "398208561247",
       "url": "https://www.ebay.co.uk/itm/398208561247?_skw=Tiffany+signet+ring+gold&hash=item5cb714705f:g:9YMAAeSwDF1qYo0v",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Tiffany & Co. Elsa Peretti Heart Signet Ring 18k yellow gold size 6.5 w/bag",
@@ -742,7 +744,7 @@
       "item_id": "188230194618",
       "url": "https://www.ebay.co.uk/itm/188230194618?_skw=Tiffany+signet+ring+gold&hash=item2bd364d5ba:g:tIAAAeSwdylpzAiI",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Rare Vintage Tiffany & Co. Lapis Lazuli Signet Ring 14K JP9.5 HA530",
@@ -778,9 +780,9 @@
       "ends_at": null,
       "bids": "",
       "item_id": "377099908280",
-      "url": "https://www.ebay.co.uk/itm/377099908280?_skw=Tiffany+signet+ring+gold&hash=item57cce7f4b8:g:m44AAeSwvuZp15fH&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGbLmms4ZYDNZNywuV0evfgofEvp0FaIk6l8t3DhsbVm6VAg53dKSHvQD6WHNA6arOEV0%2BVB34uVdCp8FSLCZ1D82aeqcFBppCw1EN3LQPIWImsVkofJE1ZnN3M56z582fLv9mul7aRRG3o3bdPgF6EbFnmzJpsnEDtmWHaPaiCXOSzIAyVeRAXBGYy59yXN%2FOubSLmsDvyVGVOfwubu83S7Wwouq5SVfOa1%2BkhPbAe%2Fbx9xDTPDMEjomjHLwymsbfZUd0VtAVlpLGPjMLaMqAQ8Hio5UnyiOrJr23R5hv2bH6gdI3aZKCHgSn2thBNRRFk%3D",
+      "url": "https://www.ebay.co.uk/itm/377099908280?_skw=Tiffany+signet+ring+gold&hash=item57cce7f4b8:g:m44AAeSwvuZp15fH&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGbLmms4ZYDNZNywuV0evfgofEvp0FaIk6l8t3DhsbVm6VAg53dKSHvQD6WHNA6arOEV0%2BVB34uVdCp8FSLCZ1D82aeqcFBppCw1EN3LQPIWImsVkofJE1ZnN3M56z582fIcNMgLr4Krw2Pm4Kn%2FmKpPPUbSEZGj42VPc4CMvO4bu9Q5eTEuTAwXM04GmwcpHx862p3vtWKeumxj6Q9xsEA0oOa%2Fg0gUzCvbJT%2FuIcwnyRuCGfrTnL0KdpuEoszpGffJXFEjlg%2FZ8BeCtAHVLMfkDPmORGBpRm8fjnFQtEb9H6wLxMV2BEegaDqMG2GbqfI%3D",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Garrard Shield Signet Ring Silver 925 by Jagger size 60EU",
@@ -790,7 +792,7 @@
       "fineness": null,
       "carat_assumed": true,
       "seller_type": null,
-      "seller_feedback": 281,
+      "seller_feedback": 282,
       "seller_private": false,
       "weight_g": null,
       "net_gold_g": null,
@@ -817,7 +819,7 @@
       "item_id": "188719175108",
       "url": "https://www.ebay.co.uk/itm/188719175108?_skw=Garrard+signet+ring&hash=item2bf08a15c4:g:WsEAAeSwXP9oXx6m",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Theo Fennell Signet Ring",
@@ -854,7 +856,7 @@
       "item_id": "227435482493",
       "url": "https://www.ebay.co.uk/itm/227435482493?_skw=Theo+Fennell+signet+ring&hash=item34f4360d7d:g:-IkAAeSwYG9qWlc3",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "THEO FENNELL Heavy 18ct Gold Lawyer Barrister Skull Signet Ring inc Box",
@@ -892,7 +894,7 @@
       "item_id": "156571965395",
       "url": "https://www.ebay.co.uk/itm/156571965395?_skw=Theo+Fennell+signet+ring&hash=item24746a97d3:g:EIwAAOSw1MVnVxl3",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "14K Gold Lapis Lazuli Signet Statement Ring Mid Century Cartier or Jens Asby 7",
@@ -912,8 +914,8 @@
         "vintage"
       ],
       "stones": false,
-      "current_bid": 1222.95,
-      "landed_cost": 1501.14,
+      "current_bid": 1218.88,
+      "landed_cost": 1496.26,
       "price_orig": "$1,650",
       "country": "US",
       "flag": "🇺🇸",
@@ -930,7 +932,7 @@
       "item_id": "278241059858",
       "url": "https://www.ebay.com/itm/278241059858?_skw=Cartier+signet+ring+gold&hash=item40c875a412:g:RVYAAeSwtZFqPS9k",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Cartier Vintage1985 Lincoln Mercury Merkur Diamond and 18kt YG Signet Ring",
@@ -950,8 +952,8 @@
         "vintage"
       ],
       "stones": false,
-      "current_bid": 5184.55,
-      "landed_cost": 6255.06,
+      "current_bid": 5167.32,
+      "landed_cost": 6234.38,
       "price_orig": "$6,995",
       "country": "US",
       "flag": "🇺🇸",
@@ -968,7 +970,7 @@
       "item_id": "177833304841",
       "url": "https://www.ebay.com/itm/177833304841?_skw=Cartier+signet+ring+gold&hash=item2967b0e309:g:vLYAAOSwynBheHaL",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Cartier Tank Max Onyx Ring 18K White Gold #49 US 4.75 Signet Wide Heavy 20g",
@@ -987,8 +989,8 @@
         "signet"
       ],
       "stones": false,
-      "current_bid": 4224.73,
-      "landed_cost": 5103.28,
+      "current_bid": 4210.68,
+      "landed_cost": 5086.42,
       "price_orig": "$5,700",
       "country": "US",
       "flag": "🇺🇸",
@@ -1005,7 +1007,7 @@
       "item_id": "278080416672",
       "url": "https://www.ebay.com/itm/278080416672?_skw=Cartier+signet+ring+gold&hash=item40bee26ba0:g:CjIAAeSwsE5qK6uL",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Tiffany & Co. 1837 Makers 18K Yellow Gold Signet Ring Size 9 w/ Box",
@@ -1024,8 +1026,8 @@
         "signet"
       ],
       "stones": false,
-      "current_bid": 2075.3,
-      "landed_cost": 2523.96,
+      "current_bid": 2068.41,
+      "landed_cost": 2515.69,
       "price_orig": "$2,800",
       "country": "US",
       "flag": "🇺🇸",
@@ -1042,7 +1044,7 @@
       "item_id": "227473162626",
       "url": "https://www.ebay.com/itm/227473162626?_skw=Tiffany+signet+ring+gold&hash=item34f6750182:g:v4IAAeSwThVqfJbB",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ULTRA RARE Vintage Tiffany & Co 18k Gold Flip Signet Ring OOAK Reversible Design",
@@ -1063,8 +1065,8 @@
         "band"
       ],
       "stones": false,
-      "current_bid": 2927.66,
-      "landed_cost": 3546.79,
+      "current_bid": 2917.93,
+      "landed_cost": 3535.12,
       "price_orig": "$3,950",
       "country": "US",
       "flag": "🇺🇸",
@@ -1079,9 +1081,9 @@
       "ends_at": null,
       "bids": "",
       "item_id": "177204826809",
-      "url": "https://www.ebay.com/itm/177204826809?_skw=Tiffany+signet+ring+gold&hash=item29423b12b9:g:-NMAAeSwZFtoUnfr&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGY%2FdhUumQJpTk4Zvp7vPxkWDMsdtrJE7O1XoYNajx--vHOFLhxbj7Nmu9pd25PlgrLSCnazfazA8yMwjWj6%2Fpb3MIrMyCZDA6obQWXNJLK55VzMRKuWNG9zfNYjTwmC%2F3Jc%2BSC%2Bt1ArMLJ1GqDGSp56mhQii7xqonYE6QkjwEF7SdRliJ5Z6p%2B8m5pCXdCNqqA8PfbuT45TwmYZ%2B8g%2F5syFEvlOcqcvzEHq%2BVBOKNoWtRInMVbOpUnqzEhaawpGawuE2p1x3OLX%2FKXMOHgK7wZcKIn31Vs5Wt22byk4cvcczw%3D%3D",
+      "url": "https://www.ebay.com/itm/177204826809?_skw=Tiffany+signet+ring+gold&hash=item29423b12b9:g:-NMAAeSwZFtoUnfr&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGY%2FdhUumQJpTk4Zvp7vPxkWDMsdtrJE7O1XoYNajx--vHOFLhxbj7Nmu9pd25PlgrLSCnazfazA8yMwjWj6%2Fpb3MIrMyCZDA6obQWXNJLK55VzMRKuWNG9zfNYjTwmC%2F3IV8IkVKUjjIAvYSxFiXZiWVh7quqBTUp4uXpBlX9I0hIRMNTEG7UQCh0e2kvENEow26%2BFVQkcmsaKKWL7JdaJyg9netI9zw4lGXVBI9d01g5bcs5TNr2ZwTAUH7NgSTmkRGo7AifCaoHYIlrgVQtLjK57birYdAET6%2FHaue70aOA%3D%3D",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Tiffany & Co. 18K Yellow Gold Sterling Silver Mother of Pearl Signet Ring Sz 7 ",
@@ -1091,7 +1093,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 5466,
+      "seller_feedback": 5470,
       "seller_private": false,
       "weight_g": 10.2,
       "net_gold_g": null,
@@ -1100,8 +1102,8 @@
         "signet"
       ],
       "stones": false,
-      "current_bid": 460.27,
-      "landed_cost": 585.92,
+      "current_bid": 458.74,
+      "landed_cost": 584.09,
       "price_orig": "$621",
       "country": "US",
       "flag": "🇺🇸",
@@ -1116,9 +1118,9 @@
       "ends_at": null,
       "bids": "",
       "item_id": "278013417269",
-      "url": "https://www.ebay.com/itm/278013417269?_skw=Tiffany+signet+ring+gold&hash=item40bae41735:g:i3gAAeSwur5qESt9&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGZtvYFnL4RK3%2FKWk1Ll2dxAy9OWPT4nn5hfnw4XtdfbOpo16E8ghkTEixmLGhgBRwKe%2B6Xc5ReNOkeubXHp7iXwpB8bnofvSiQH8obUFEwFgkaZJAY1wj0PQHlf0LnhrBpuonieNGj6f2GUJQx0nEXkyLyaG0yHrROppu11O7jjNpEyGFiClKi1aByQCNSwEqPYcertLW97ivJqSctpQndDCASv2fOUK5G4YtW%2BG%2FprqqHgZY0%2Fg36ZkNAHlNw9xV97w5m96m6awnsqgxeNN7EY1%2BgbNZlncrNkcd6CngJ%2Fzw%3D%3D",
+      "url": "https://www.ebay.com/itm/278013417269?_skw=Tiffany+signet+ring+gold&hash=item40bae41735:g:i3gAAeSwur5qESt9&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGZtvYFnL4RK3%2FKWk1Ll2dxAy9OWPT4nn5hfnw4XtdfbOpo16E8ghkTEixmLGhgBRwKe%2B6Xc5ReNOkeubXHp7iXwpB8bnofvSiQH8obUFEwFgkaZJAY1wj0PQHlf0LnhrBpRWIQ%2BJlo54YQkQvIJG95owLJ9WjsbX29pzgrMpwGNpdTn4tT9xtTzXfCYFalcKR7NbsypQ%2B6Yzku9fArKdliNF8sB1ZEfK4zs%2FnO7oLTVUvqLOA5iWMJ%2Bx34rtKLTzlFBjBXuQ9utrvPBJjbXvIi0%2BZwHh1yzJgfgs5YypQM3lg%3D%3D",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "TIFFANY & CO. Vintage 1950s Era 14k Yellow Gold Signet Ring MAKE OFFER",
@@ -1138,8 +1140,8 @@
         "vintage"
       ],
       "stones": false,
-      "current_bid": 4076.48,
-      "landed_cost": 4925.38,
+      "current_bid": 4062.93,
+      "landed_cost": 4909.12,
       "price_orig": "$5,500",
       "country": "US",
       "flag": "🇺🇸",
@@ -1156,7 +1158,7 @@
       "item_id": "178401736336",
       "url": "https://www.ebay.com/itm/178401736336?_skw=Tiffany+signet+ring+gold&hash=item2989927690:g:~zwAAeSwd8VqfUTt",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Vintage Rare Tiffany & Co. 18K Yellow Gold Signet Ring Size 6",
@@ -1177,8 +1179,8 @@
         "band"
       ],
       "stones": false,
-      "current_bid": 5466.2,
-      "landed_cost": 6593.04,
+      "current_bid": 5448.03,
+      "landed_cost": 6571.24,
       "price_orig": "$7,375",
       "country": "US",
       "flag": "🇺🇸",
@@ -1195,7 +1197,7 @@
       "item_id": "125724614095",
       "url": "https://www.ebay.com/itm/125724614095?_skw=Tiffany+signet+ring+gold&hash=item1d45c55dcf:g:l5gAAOSwnQFjx0bX",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Tiffany & Co 14K Yellow Gold Square Signet Ring Solid Gold, 11.3 Grams Size 7.75",
@@ -1205,7 +1207,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 1437,
+      "seller_feedback": 1438,
       "seller_private": false,
       "weight_g": 11.3,
       "net_gold_g": null,
@@ -1214,8 +1216,8 @@
         "signet"
       ],
       "stones": false,
-      "current_bid": 4632.37,
-      "landed_cost": 5592.44,
+      "current_bid": 4616.98,
+      "landed_cost": 5573.98,
       "price_orig": "$6,250",
       "country": "US",
       "flag": "🇺🇸",
@@ -1232,7 +1234,7 @@
       "item_id": "188340959602",
       "url": "https://www.ebay.com/itm/188340959602?_skw=Tiffany+signet+ring+gold&hash=item2bd9fef972:g:rPAAAeSwIqVqG1NC",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "VINTAGE TIFFANY & CO. Lapis Lazuli 14K Signet Gold Ring Fessner Ludwig sz 7.0",
@@ -1252,8 +1254,8 @@
         "vintage"
       ],
       "stones": false,
-      "current_bid": 1852.95,
-      "landed_cost": 2257.14,
+      "current_bid": 1846.79,
+      "landed_cost": 2249.75,
       "price_orig": "$2,500",
       "country": "US",
       "flag": "🇺🇸",
@@ -1270,7 +1272,45 @@
       "item_id": "157970393519",
       "url": "https://www.ebay.com/itm/157970393519?_skw=Tiffany+signet+ring+gold&hash=item24c7c4e9af:g:QDQAAeSw8XNqIM3E",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
+    },
+    {
+      "title": "Tiffany & Co 18K Yellow Gold Oval Signet Bird Band Ring, Size 7.25, 10.1 Grams",
+      "metal": "designer",
+      "maker": "Tiffany & Co",
+      "carat": 18,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 1438,
+      "seller_private": false,
+      "weight_g": null,
+      "net_gold_g": null,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "band"
+      ],
+      "stones": false,
+      "current_bid": 4432.3,
+      "landed_cost": 5352.36,
+      "price_orig": "$6,000",
+      "country": "US",
+      "flag": "🇺🇸",
+      "melt_value": null,
+      "ratio": null,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": false,
+      "price_firm": true,
+      "condition": "Pre-owned - Good",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "188475274256",
+      "url": "https://www.ebay.com/itm/188475274256?_skw=Tiffany+signet+ring+gold&hash=item2be2007410:g:xk4AAeSwogtqJGY2",
+      "first_seen": "2026-08-14T09:05:57.131324+00:00",
+      "is_new": false
     },
     {
       "title": "12 Gram Solid 18 kt White Gold TIFFANY & Co. Oval Signet Ring Size 7.75 B9226",
@@ -1280,7 +1320,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 22629,
+      "seller_feedback": 22630,
       "seller_private": false,
       "weight_g": 12.0,
       "net_gold_g": null,
@@ -1289,8 +1329,8 @@
         "signet"
       ],
       "stones": false,
-      "current_bid": 2915.8,
-      "landed_cost": 3532.56,
+      "current_bid": 2906.11,
+      "landed_cost": 3520.93,
       "price_orig": "$3,934",
       "country": "US",
       "flag": "🇺🇸",
@@ -1307,7 +1347,7 @@
       "item_id": "358185994709",
       "url": "https://www.ebay.com/itm/358185994709?_skw=Tiffany+signet+ring+gold&hash=item53658c89d5:g:ohUAAeSwrEdpJNw1",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Tiffany & Co 1837 Makers Black Onyx Signet Men's Ring 18K Size 6. Mint",
@@ -1327,8 +1367,8 @@
         "gents"
       ],
       "stones": false,
-      "current_bid": 3424.25,
-      "landed_cost": 4142.7,
+      "current_bid": 3412.87,
+      "landed_cost": 4129.04,
       "price_orig": "$4,620",
       "country": "US",
       "flag": "🇺🇸",
@@ -1345,45 +1385,7 @@
       "item_id": "226506603215",
       "url": "https://www.ebay.com/itm/226506603215?_skw=Tiffany+signet+ring+gold&hash=item34bcd87acf:g:iNQAAOSw5zBnZlhb",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
-    },
-    {
-      "title": "Tiffany & Co 18K Yellow Gold Oval Signet Bird Band Ring, Size 7.25, 10.1 Grams",
-      "metal": "designer",
-      "maker": "Tiffany & Co",
-      "carat": 18,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 1437,
-      "seller_private": false,
-      "weight_g": null,
-      "net_gold_g": null,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "band"
-      ],
-      "stones": false,
-      "current_bid": 4447.08,
-      "landed_cost": 5370.1,
-      "price_orig": "$6,000",
-      "country": "US",
-      "flag": "🇺🇸",
-      "melt_value": null,
-      "ratio": null,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": false,
-      "price_firm": true,
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "188475274256",
-      "url": "https://www.ebay.com/itm/188475274256?_skw=Tiffany+signet+ring+gold&hash=item2be2007410:g:xk4AAeSwogtqJGY2",
-      "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Tiffany & Co 18K Yellow Gold Oval Signet Ring Solid Gold,  14.3 Grams",
@@ -1393,7 +1395,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 1437,
+      "seller_feedback": 1438,
       "seller_private": false,
       "weight_g": 14.3,
       "net_gold_g": null,
@@ -1402,8 +1404,8 @@
         "signet"
       ],
       "stones": false,
-      "current_bid": 4447.08,
-      "landed_cost": 5370.1,
+      "current_bid": 4432.3,
+      "landed_cost": 5352.36,
       "price_orig": "$6,000",
       "country": "US",
       "flag": "🇺🇸",
@@ -1420,7 +1422,7 @@
       "item_id": "187049061353",
       "url": "https://www.ebay.com/itm/187049061353?_skw=Tiffany+signet+ring+gold&hash=item2b8cfe2be9:g:ZgYAAeSwn71n1cxt",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Antique 18k Gold TIFFANY & CO Wax Seal, Signet Ring, Lapis Lazuli, Sz 10, 16.3g",
@@ -1441,8 +1443,8 @@
         "antique"
       ],
       "stones": false,
-      "current_bid": 2594.13,
-      "landed_cost": 3146.56,
+      "current_bid": 2585.51,
+      "landed_cost": 3136.21,
       "price_orig": "$3,500",
       "country": "US",
       "flag": "🇺🇸",
@@ -1459,45 +1461,7 @@
       "item_id": "157582282313",
       "url": "https://www.ebay.com/itm/157582282313?_skw=Tiffany+signet+ring+gold&hash=item24b0a2ce49:g:~zAAAeSwcKNpuIjn",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
-    },
-    {
-      "title": "Rare!  Vintage Tiffany & Co. Signet 14k Gold Ring Horse Etching 11.5 gram Size 5",
-      "metal": "designer",
-      "maker": "Tiffany & Co",
-      "carat": 14,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 1780,
-      "seller_private": false,
-      "weight_g": 11.5,
-      "net_gold_g": null,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "vintage"
-      ],
-      "stones": false,
-      "current_bid": 3705.89,
-      "landed_cost": 4480.67,
-      "price_orig": "$5,000",
-      "country": "US",
-      "flag": "🇺🇸",
-      "melt_value": null,
-      "ratio": null,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": false,
-      "price_firm": true,
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "204223462392",
-      "url": "https://www.ebay.com/itm/204223462392?_skw=Tiffany+signet+ring+gold&hash=item2f8caabbf8:g:2P0AAOSwzpZjzeYK",
-      "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Tiffany & Co. Diamond Signet/Pinky Ring Size 7 - 14K White Gold",
@@ -1507,7 +1471,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 6376,
+      "seller_feedback": 6377,
       "seller_private": false,
       "weight_g": null,
       "net_gold_g": null,
@@ -1516,8 +1480,8 @@
         "signet"
       ],
       "stones": false,
-      "current_bid": 4666.1,
-      "landed_cost": 5632.92,
+      "current_bid": 4650.59,
+      "landed_cost": 5614.31,
       "price_orig": "$6,296",
       "country": "US",
       "flag": "🇺🇸",
@@ -1534,19 +1498,19 @@
       "item_id": "366071392968",
       "url": "https://www.ebay.com/itm/366071392968?_skw=Tiffany+signet+ring+gold&hash=item553b8e2ac8:g:OkQAAOSwRM1m9MRp",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
-      "title": "Tiffany&Co. Oval Signet/Pinky Ring Size 9 Vintage14K Yellow Gold Monogrammed RKA",
+      "title": "Rare!  Vintage Tiffany & Co. Signet 14k Gold Ring Horse Etching 11.5 gram Size 5",
       "metal": "designer",
       "maker": "Tiffany & Co",
       "carat": 14,
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 6376,
+      "seller_feedback": 1781,
       "seller_private": false,
-      "weight_g": null,
+      "weight_g": 11.5,
       "net_gold_g": null,
       "weight_confidence": "confirmed",
       "tags": [
@@ -1554,25 +1518,25 @@
         "vintage"
       ],
       "stones": false,
-      "current_bid": 2664.91,
-      "landed_cost": 3231.49,
-      "price_orig": "$3,596",
+      "current_bid": 3693.57,
+      "landed_cost": 4465.88,
+      "price_orig": "$5,000",
       "country": "US",
       "flag": "🇺🇸",
       "melt_value": null,
       "ratio": null,
       "is_value": false,
       "buying": "Buy now",
-      "best_offer": true,
+      "best_offer": false,
       "price_firm": true,
       "condition": "Pre-owned - Good",
       "time_left": "n/a",
       "ends_at": null,
       "bids": "",
-      "item_id": "157715342733",
-      "url": "https://www.ebay.com/itm/157715342733?_skw=Tiffany+signet+ring+gold&hash=item24b891258d:g:3awAAOSwDk5nkGHL",
+      "item_id": "204223462392",
+      "url": "https://www.ebay.com/itm/204223462392?_skw=Tiffany+signet+ring+gold&hash=item2f8caabbf8:g:2P0AAOSwzpZjzeYK",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "TIFFANY & Co Solid 18K (750) Yellow Gold Oval Inlay Black Onyx SIGNET PINKY Ring",
@@ -1591,8 +1555,8 @@
         "signet"
       ],
       "stones": false,
-      "current_bid": 3533.2,
-      "landed_cost": 4273.44,
+      "current_bid": 3521.46,
+      "landed_cost": 4259.35,
       "price_orig": "$4,767",
       "country": "US",
       "flag": "🇺🇸",
@@ -1609,7 +1573,7 @@
       "item_id": "197717422251",
       "url": "https://www.ebay.com/itm/197717422251?_skw=Tiffany+signet+ring+gold&hash=item2e08e070ab:g:~YgAAeSwe4JozyfE",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Tiffany&Co. 14K Yellow Gold Black Onyx Quarter Century Club Signet Ring Size 9",
@@ -1619,7 +1583,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 6376,
+      "seller_feedback": 6377,
       "seller_private": false,
       "weight_g": null,
       "net_gold_g": null,
@@ -1628,8 +1592,8 @@
         "signet"
       ],
       "stones": false,
-      "current_bid": 2664.91,
-      "landed_cost": 3231.49,
+      "current_bid": 2656.05,
+      "landed_cost": 3220.86,
       "price_orig": "$3,596",
       "country": "US",
       "flag": "🇺🇸",
@@ -1646,7 +1610,45 @@
       "item_id": "157420870069",
       "url": "https://www.ebay.com/itm/157420870069?_skw=Tiffany+signet+ring+gold&hash=item24a703d9b5:g:MvIAAOSw2LhhnzIR",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
+    },
+    {
+      "title": "Tiffany&Co. Oval Signet/Pinky Ring Size 9 Vintage14K Yellow Gold Monogrammed RKA",
+      "metal": "designer",
+      "maker": "Tiffany & Co",
+      "carat": 14,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 6377,
+      "seller_private": false,
+      "weight_g": null,
+      "net_gold_g": null,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "vintage"
+      ],
+      "stones": false,
+      "current_bid": 2656.05,
+      "landed_cost": 3220.86,
+      "price_orig": "$3,596",
+      "country": "US",
+      "flag": "🇺🇸",
+      "melt_value": null,
+      "ratio": null,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": true,
+      "price_firm": true,
+      "condition": "Pre-owned - Good",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "157715342733",
+      "url": "https://www.ebay.com/itm/157715342733?_skw=Tiffany+signet+ring+gold&hash=item24b891258d:g:3awAAOSwDk5nkGHL",
+      "first_seen": "2026-08-14T09:05:57.131324+00:00",
+      "is_new": false
     },
     {
       "title": "Tiffany & Co. Gold Wide Signet Men's Ring",
@@ -1667,8 +1669,8 @@
         "gents"
       ],
       "stones": false,
-      "current_bid": 6300.03,
-      "landed_cost": 7593.64,
+      "current_bid": 6279.09,
+      "landed_cost": 7568.51,
       "price_orig": "$8,500",
       "country": "US",
       "flag": "🇺🇸",
@@ -1685,7 +1687,7 @@
       "item_id": "116218058121",
       "url": "https://www.ebay.com/itm/116218058121?_skw=Tiffany+signet+ring+gold&hash=item1b0f22d589:g:vDYAAOSw99FmIY3u",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "TIFFANY & Co Solid Unusual Design Yellow Gold Signet Ring 11.8gr. Size 5.75",
@@ -1704,8 +1706,8 @@
         "signet"
       ],
       "stones": false,
-      "current_bid": 3701.42,
-      "landed_cost": 4475.3,
+      "current_bid": 3689.11,
+      "landed_cost": 4460.53,
       "price_orig": "$4,994",
       "country": "US",
       "flag": "🇺🇸",
@@ -1722,7 +1724,7 @@
       "item_id": "196895897776",
       "url": "https://www.ebay.com/itm/196895897776?_skw=Tiffany+signet+ring+gold&hash=item2dd7e8f8b0:g:ungAAOSwYytnXwao",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "TIFFANY & CO. Vintage 1960s 14k Yellow Gold Signet Ring",
@@ -1742,8 +1744,8 @@
         "vintage"
       ],
       "stones": false,
-      "current_bid": 4817.67,
-      "landed_cost": 5814.8,
+      "current_bid": 4801.65,
+      "landed_cost": 5795.58,
       "price_orig": "$6,500",
       "country": "US",
       "flag": "🇺🇸",
@@ -1760,7 +1762,7 @@
       "item_id": "366375641517",
       "url": "https://www.ebay.com/itm/366375641517?_skw=Tiffany+signet+ring+gold&hash=item554db0a1ad:g:~YkAAeSw6z9p8S1j",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Authentic Tiffany & Co Silver 18K Gold Rope Signet Ring Band Size 7",
@@ -1780,8 +1782,8 @@
         "band"
       ],
       "stones": false,
-      "current_bid": 342.43,
-      "landed_cost": 444.52,
+      "current_bid": 341.29,
+      "landed_cost": 443.15,
       "price_orig": "$462",
       "country": "US",
       "flag": "🇺🇸",
@@ -1798,7 +1800,7 @@
       "item_id": "316812404178",
       "url": "https://www.ebay.com/itm/316812404178?_skw=Tiffany+signet+ring+gold&hash=item49c37da5d2:g:XHkAAOSwNgtoJkze",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "BVLGARI Ring mit Onyx Schwarz in Siegelring Massiv 750er Gelbgold Unisex Schmuck",
@@ -1817,8 +1819,8 @@
         "signet"
       ],
       "stones": false,
-      "current_bid": 2137.3,
-      "landed_cost": 2591.16,
+      "current_bid": 2136.2,
+      "landed_cost": 2589.84,
       "price_orig": "€2,500",
       "country": "DE",
       "flag": "🇩🇪",
@@ -1835,7 +1837,7 @@
       "item_id": "187652620069",
       "url": "https://www.ebay.de/itm/187652620069?_skw=signierter+Siegelring+Gold&hash=item2bb0f7bf25:g:HfcAAeSwHM1o7zrN",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "☆ AUTHENTIQUE BAGUE CARTIER TANK CHEVALIERE PIERRE DE LUNE OR 750 18K 18 CARAT",
@@ -1854,8 +1856,8 @@
         "signet"
       ],
       "stones": false,
-      "current_bid": 1264.43,
-      "landed_cost": 1543.72,
+      "current_bid": 1263.78,
+      "landed_cost": 1542.94,
       "price_orig": "€1,479",
       "country": "FR",
       "flag": "🇫🇷",
@@ -1872,7 +1874,7 @@
       "item_id": "394252522895",
       "url": "https://www.ebay.fr/itm/394252522895?_skw=Cartier+chevali%C3%A8re+or&hash=item5bcb48158f:g:TREAAOSwFKBjbNr4",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Anello NYJEWEL ilias LALAoUNIS in oro giallo 18 carati con sigillo martellato",
@@ -1891,8 +1893,8 @@
         "signet"
       ],
       "stones": false,
-      "current_bid": 3448.46,
-      "landed_cost": 4164.55,
+      "current_bid": 3446.69,
+      "landed_cost": 4162.43,
       "price_orig": "€4,034",
       "country": "IT",
       "flag": "🇮🇹",
@@ -1912,6 +1914,81 @@
       "is_new": false
     },
     {
+      "title": "Anillo de sello NYJEWEL David Webb grande de oro de 18 quilates y platino de 5 diamantes",
+      "metal": "designer",
+      "maker": "David Webb",
+      "carat": 9,
+      "fineness": null,
+      "carat_assumed": true,
+      "seller_type": null,
+      "seller_feedback": 10330,
+      "seller_private": false,
+      "weight_g": null,
+      "net_gold_g": null,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": false,
+      "current_bid": 5151.5,
+      "landed_cost": 6208.2,
+      "price_orig": "€6,029",
+      "country": "ES",
+      "flag": "🇪🇸",
+      "melt_value": null,
+      "ratio": null,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": true,
+      "price_firm": true,
+      "condition": "Pre-owned - Good",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "176706538119",
+      "url": "https://www.ebay.es/itm/176706538119?_skw=anillo+sello+oro+firmado&hash=item292487ca87:g:FKkAAOSwyMVnQ1-4",
+      "first_seen": "2026-08-14T17:37:54.513739+00:00",
+      "is_new": true
+    },
+    {
+      "title": "Certyfikat GIA 2,84 ct Zambijski szmaragd 18-karatowe żółte złoto East West Signet Ring",
+      "metal": "designer",
+      "maker": "Tiffany & Co",
+      "carat": 18,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": "business",
+      "seller_feedback": 2484,
+      "seller_private": false,
+      "weight_g": null,
+      "net_gold_g": null,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "band"
+      ],
+      "stones": false,
+      "current_bid": 3201.62,
+      "landed_cost": 3870.74,
+      "price_orig": "16,136",
+      "country": "PL",
+      "flag": "🇵🇱",
+      "melt_value": null,
+      "ratio": null,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": true,
+      "price_firm": true,
+      "condition": "New with packaging",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "389231759971",
+      "url": "https://www.ebay.pl/itm/389231759971?_skw=sygnet+zloto+sygnowany&hash=item5aa0055263:g:eEgAAeSw3e1pEykY",
+      "first_seen": "2026-08-14T17:37:54.513739+00:00",
+      "is_new": true
+    },
+    {
       "title": "Authentic Tiffany & Co. Signet-Ring 18K Gelbgold 6,1 g Ringgröße US6",
       "metal": "designer",
       "maker": "Tiffany & Co",
@@ -1928,8 +2005,8 @@
         "signet"
       ],
       "stones": false,
-      "current_bid": 1840.79,
-      "landed_cost": 2244.95,
+      "current_bid": 1834.57,
+      "landed_cost": 2237.48,
       "price_orig": "19,488",
       "country": "HK",
       "flag": "🇭🇰",
@@ -1946,7 +2023,7 @@
       "item_id": "278135077521",
       "url": "https://www.ebay.com.hk/itm/278135077521?_skw=Tiffany+signet+ring+gold&hash=item40c2247a91:g:e6oAAeSw9TFqQQuh",
       "first_seen": "2026-08-14T09:05:57.131324+00:00",
-      "is_new": true
+      "is_new": false
     }
   ]
 }
