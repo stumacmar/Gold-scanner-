@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-15T08:25:59.891718+00:00",
+  "generated_at": "2026-08-15T17:24:42.614616+00:00",
   "searches": [
     {
       "key": "9ct",
       "label": "9ct",
       "file": "9ct.json",
       "query": "9ct gold signet ring",
-      "generated_at": "2026-08-15T08:12:00.573455+00:00",
+      "generated_at": "2026-08-15T17:09:29.411000+00:00",
       "value_count": 0,
       "total_analysed": 4
     },
@@ -15,7 +15,7 @@
       "label": "14ct",
       "file": "14ct.json",
       "query": "14ct gold signet ring",
-      "generated_at": "2026-08-15T08:14:51.273775+00:00",
+      "generated_at": "2026-08-15T17:12:52.360860+00:00",
       "value_count": 1,
       "total_analysed": 16
     },
@@ -24,7 +24,7 @@
       "label": "18ct",
       "file": "18ct.json",
       "query": "18ct gold signet ring",
-      "generated_at": "2026-08-15T08:17:48.965682+00:00",
+      "generated_at": "2026-08-15T17:16:15.340196+00:00",
       "value_count": 1,
       "total_analysed": 22
     },
@@ -33,7 +33,7 @@
       "label": "22ct",
       "file": "22ct.json",
       "query": "22ct gold signet ring",
-      "generated_at": "2026-08-15T08:19:43.770464+00:00",
+      "generated_at": "2026-08-15T17:18:19.848557+00:00",
       "value_count": 0,
       "total_analysed": 3
     },
@@ -42,7 +42,7 @@
       "label": "Designer",
       "file": "designer.json",
       "query": "Deakin Francis signet ring",
-      "generated_at": "2026-08-15T08:25:59.891718+00:00",
+      "generated_at": "2026-08-15T17:24:42.614616+00:00",
       "value_count": 0,
       "total_analysed": 52
     },
@@ -51,7 +51,7 @@
       "label": "Silver",
       "file": "silver.json",
       "query": "sterling silver signet ring heavy",
-      "generated_at": "2026-08-15T08:23:14.757831+00:00",
+      "generated_at": "2026-08-15T17:21:38.646961+00:00",
       "value_count": 1,
       "total_analysed": 50
     },
@@ -60,7 +60,7 @@
       "label": "Yurman",
       "file": "yurman.json",
       "query": "David Yurman signet ring",
-      "generated_at": "2026-08-15T08:24:18.292413+00:00",
+      "generated_at": "2026-08-15T17:22:48.341815+00:00",
       "value_count": 0,
       "total_analysed": 186
     }

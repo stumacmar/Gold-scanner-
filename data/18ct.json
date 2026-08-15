@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-15T08:17:48.965682+00:00",
+    "generated_at": "2026-08-15T17:16:15.340196+00:00",
     "query": "18ct gold signet ring",
     "queries": [
       "18ct gold signet ring",
@@ -80,10 +80,10 @@
       "SGD": 0.578,
       "USD": 0.7387
     },
-    "total_fetched": 1425,
+    "total_fetched": 1447,
     "total_analysed": 22,
     "value_count": 1,
-    "new_count": 2,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AT": 1,
@@ -208,7 +208,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "254195547625",
-      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fHpV9AWc1W1Hu%2F9tu7ywEmw%2FS0mZhnXQnQDHJATwQpaoNax%2BLYCdl2MyRN6zsQ6w3BMpH5w0rvAxGrII3ITp%2FjS86Xw9CFqZiKksHXUyznG3iJX3w5BioTg8kI4uhipZ38hK8UK7JOZBAfeyj%2FPp8mwsRVAYnDa96GNwdiOILazbA%3D%3D",
+      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fFsUsMbcClg%2BSShDQdFcFVKfWpc4eEMqtA2MIRmfp06vABIOLic4eQleWCbU0XjXpvtxT4Uzky3uFzWMV6LqTTrYEhEDU1YCIJwdHEUkKEZizJd5XAC1PuH04NWRm%2B8a7WxKzanZHf0XJHyoBIncWJgB1oN1uhuefZ8oiYfB1ggOQ%3D%3D",
       "first_seen": "2026-07-29T09:12:35.584280+00:00",
       "is_new": false
     },
@@ -322,7 +322,7 @@
       "item_id": "176706532291",
       "url": "https://www.ebay.com/itm/176706532291?_skw=18ct+heavy+gold+signet+ring&hash=item292487b3c3:g:2TEAAOSw9SdnRKIA",
       "first_seen": "2026-08-15T08:17:48.965682+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Vintage 14K Gold Signet Ring Weighing 18 Grams",
@@ -360,7 +360,7 @@
       "item_id": "267699286672",
       "url": "https://www.ebay.com/itm/267699286672?_skw=vintage+18ct+gold+signet+ring&hash=item3e541ef290:g:jmgAAeSwQixqLxwk",
       "first_seen": "2026-08-15T08:17:48.965682+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "18ct Solid Gold Men's hallmarked signet ring 17.7 grams, size Q.",
@@ -476,6 +476,43 @@
       "is_new": false
     },
     {
+      "title": "Anello Gianni Versace Medusa Greca in oro bianco 18 kt con sigillo US7,75 EU56 16,2 g con scatola",
+      "metal": "gold",
+      "maker": null,
+      "carat": 18,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 3131,
+      "seller_private": false,
+      "weight_g": 16.2,
+      "net_gold_g": 16.2,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": false,
+      "current_bid": 4541.97,
+      "landed_cost": 5476.76,
+      "price_orig": "€5,315",
+      "country": "IT",
+      "flag": "🇮🇹",
+      "melt_value": 1263.27,
+      "ratio": 0.23,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": true,
+      "price_firm": true,
+      "condition": "Pre-owned - Good",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "396934272870",
+      "url": "https://www.ebay.it/itm/396934272870?_skw=anello+sigillo+oro+750&hash=item5c6b205766:g:-rUAAeSwJRZokrRz",
+      "first_seen": "2026-07-26T10:24:10.301532+00:00",
+      "is_new": false
+    },
+    {
       "title": "Anello uomo NYJEWEL oro giallo 18 kt intaglio lapislazzuli sigillo inciso 22,9 g",
       "metal": "gold",
       "maker": null,
@@ -511,43 +548,6 @@
       "bids": "",
       "item_id": "184498496494",
       "url": "https://www.ebay.it/itm/184498496494?_skw=anello+sigillo+oro+750&hash=item2af4f7a3ee:g:ZDsAAOSwCj9fhvda",
-      "first_seen": "2026-07-26T10:24:10.301532+00:00",
-      "is_new": false
-    },
-    {
-      "title": "Anello Gianni Versace Medusa Greca in oro bianco 18 kt con sigillo US7,75 EU56 16,2 g con scatola",
-      "metal": "gold",
-      "maker": null,
-      "carat": 18,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 3131,
-      "seller_private": false,
-      "weight_g": 16.2,
-      "net_gold_g": 16.2,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet"
-      ],
-      "stones": false,
-      "current_bid": 4541.97,
-      "landed_cost": 5476.76,
-      "price_orig": "€5,315",
-      "country": "IT",
-      "flag": "🇮🇹",
-      "melt_value": 1263.27,
-      "ratio": 0.23,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": true,
-      "price_firm": true,
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "396934272870",
-      "url": "https://www.ebay.it/itm/396934272870?_skw=anello+sigillo+oro+750&hash=item5c6b205766:g:-rUAAeSwJRZokrRz",
       "first_seen": "2026-07-26T10:24:10.301532+00:00",
       "is_new": false
     },
@@ -746,7 +746,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 15835,
+      "seller_feedback": 15836,
       "seller_private": false,
       "weight_g": 21.4,
       "net_gold_g": 17.9,
