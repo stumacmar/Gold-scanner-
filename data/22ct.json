@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-15T17:18:19.848557+00:00",
+    "generated_at": "2026-08-16T08:19:37.507496+00:00",
     "query": "22ct gold signet ring",
     "queries": [
       "22ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.578,
       "USD": 0.7387
     },
-    "total_fetched": 677,
+    "total_fetched": 671,
     "total_analysed": 3,
     "value_count": 0,
     "new_count": 0,
@@ -100,7 +100,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 14777,
+      "seller_feedback": 14781,
       "seller_private": false,
       "weight_g": 17.9,
       "net_gold_g": 16.4,
@@ -140,7 +140,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 14777,
+      "seller_feedback": 14781,
       "seller_private": false,
       "weight_g": 17.9,
       "net_gold_g": 16.4,
