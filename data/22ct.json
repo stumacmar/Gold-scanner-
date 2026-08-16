@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-16T08:19:37.507496+00:00",
+    "generated_at": "2026-08-16T17:17:25.103064+00:00",
     "query": "22ct gold signet ring",
     "queries": [
       "22ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.578,
       "USD": 0.7387
     },
-    "total_fetched": 671,
+    "total_fetched": 672,
     "total_analysed": 3,
     "value_count": 0,
     "new_count": 0,
@@ -96,6 +96,7 @@
       "title": "Authentic K18PG Signet Diamond Ring 0.22CT #260-008-143-8013",
       "metal": "gold",
       "maker": null,
+      "provenance": null,
       "carat": 22,
       "fineness": null,
       "carat_assumed": false,
@@ -136,6 +137,7 @@
       "title": "Authentic K18PG Signet Diamond Ring 0.22CT #260-008-143-8013",
       "metal": "gold",
       "maker": null,
+      "provenance": null,
       "carat": 22,
       "fineness": null,
       "carat_assumed": false,
@@ -176,6 +178,7 @@
       "title": "18kt gepunzt Weiß-, Gelb-, Roségold Siegelring 13mm x16mm oval oder Kissen",
       "metal": "gold",
       "maker": null,
+      "provenance": null,
       "carat": 18,
       "fineness": null,
       "carat_assumed": false,

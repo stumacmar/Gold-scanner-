@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-16T08:12:19.177178+00:00",
+    "generated_at": "2026-08-16T17:09:04.381279+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,10 +80,10 @@
       "SGD": 0.578,
       "USD": 0.7387
     },
-    "total_fetched": 1607,
+    "total_fetched": 1601,
     "total_analysed": 6,
     "value_count": 0,
-    "new_count": 2,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 1,
@@ -97,6 +97,7 @@
       "title": "9ct Yellow Gold Engraved Signet Ring, Custom Made, Not Scrap",
       "metal": "gold",
       "maker": null,
+      "provenance": null,
       "carat": 9,
       "fineness": null,
       "carat_assumed": false,
@@ -123,18 +124,19 @@
       "best_offer": true,
       "price_firm": false,
       "condition": "Used",
-      "time_left": "6d 9h",
+      "time_left": "6d 0h",
       "ends_at": "2026-08-22T17:11:14.000Z",
       "bids": 0,
       "item_id": "178410210049",
       "url": "https://www.ebay.co.uk/itm/178410210049?_skw=9ct+gold+signet+ring&hash=item298a13c301:g:hH4AAeSw8ChqgJnU",
       "first_seen": "2026-08-16T08:12:19.177178+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Men's Gents 9Ct Gold 15.2g Signet Ring Size U",
       "metal": "gold",
       "maker": null,
+      "provenance": null,
       "carat": 9,
       "fineness": null,
       "carat_assumed": false,
@@ -174,6 +176,7 @@
       "title": "9ct Yellow Solid Gold Bulldog Signet Ring",
       "metal": "gold",
       "maker": null,
+      "provenance": null,
       "carat": 9,
       "fineness": null,
       "carat_assumed": false,
@@ -211,6 +214,7 @@
       "title": "Gentleman's Handmade Diamond Signet Ring 9ct 375 Solid Gold 29.7 Grams",
       "metal": "gold",
       "maker": null,
+      "provenance": null,
       "carat": 9,
       "fineness": null,
       "carat_assumed": false,
@@ -242,12 +246,13 @@
       "item_id": "167370662173",
       "url": "https://www.ebay.com.au/itm/167370662173?_skw=9ct+gold+signet+ring&hash=item26f811a11d:g:7SMAAOSwsaZn0M6c",
       "first_seen": "2026-08-16T08:12:19.177178+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Anello Vintage Gentleman's Oro 9ct Sigillo | Grande Anello Ovale Oro Sigillo | Inglese",
       "metal": "gold",
       "maker": null,
+      "provenance": null,
       "carat": 9,
       "fineness": null,
       "carat_assumed": false,
@@ -286,6 +291,7 @@
       "title": "Klasyczny sygnet w kształcie poduszki x/ duży \"dostępny w kolorze platyny, złota i srebra\"",
       "metal": "gold",
       "maker": null,
+      "provenance": null,
       "carat": 9,
       "fineness": null,
       "carat_assumed": false,
