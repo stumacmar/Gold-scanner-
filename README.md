@@ -216,6 +216,59 @@ allowance because it spends one query per brand.
 A live 16-market run returns **117 rings, £59–£4,573, median £401** — the same
 price band as the Yurman screen, which is where the mispricing actually lives.
 
+### Scottish signet screen (`--metal scottish`)
+
+A **provenance** screen rather than a brand or a metal one. Scottish signets
+are mispriced in a way the other screens can't see: a Victorian Scottish agate
+seal, a cairngorm-set gold signet, an Alexander Ritchie Iona ring or an
+Edinburgh-hallmarked clan crest all sell for multiples of their metal, but a
+seller who doesn't recognise them lists them as "old agate ring". Nothing here
+is melt-valued.
+
+A listing qualifies only when **four** things hold at once — any one of them
+alone is a flood:
+
+1. it is a **ring** (`is_ring_item`);
+2. it is a **signet, intaglio, seal or crest ring** (`SCOTTISH_CREST_WORDS` —
+   widened beyond the usual signet/intaglio because a clan crest ring is a
+   signet by construction even when the seller never types the word);
+3. it carries a **Scottish signal** — a named maker, a Scottish assay mark, or
+   a Scotland-specific motif/stone (`scottish_signal` reports which, and the
+   card shows it);
+4. it claims a **precious metal** — which is what kills the pewter tat.
+
+Two live runs taught the screen most of what it knows:
+
+- **"Celtic" is not "Scottish."** With `celtic knot` in the motif list the
+  first run returned 88 rings of which **85** were mass-produced pagan/Viking
+  silver — bear paws, pentagrams, Fenrir wolves, poison rings at £47–£96.
+  Celtic is pan-Celtic (Irish, Welsh, Breton) and the term is owned on eBay by
+  that trade. It is now absent from `SCOTTISH_MOTIF_RE` entirely: Celtic work
+  qualifies only through a named Scottish maker. `SCOTTISH_TAT_MARKERS` sweeps
+  up the rest, and applies to motif-only listings (a maker or an assay mark
+  stands on its own).
+- **The "Scottish Rite" is Freemasonry, not Scotland.** It filled a third of
+  the second run, in six languages, from one seller. Hard-excluded along with
+  Freemason/Shriner/32nd-degree in English, German, Spanish, Italian and
+  Polish.
+
+Two smaller traps: `Edinburgh` and `Glasgow` alone are **seller locations** —
+half the Scottish listings on eBay ship from Glasgow — so `SCOTTISH_HALLMARK_RE`
+requires the hallmark or assay word alongside; and `iona` hides inside
+*Fiona* while `clan` hides inside *clanking*, so the motif patterns are
+word-bounded. Listings offering a **choice of carat** ("18 Kt, 22 Kt") are a
+workshop taking orders, not a ring someone owns and has under-priced.
+
+Makers tracked: Hamilton & Inches, Ortak, Ola Gorie, Sheila Fleet, Malcolm
+Gray, Alexander Ritchie (Iona), Shetland Silvercraft, Hjaltasteyn, Rennie
+Mackintosh, Robert Allison.
+
+A live 16-market run returns **36 rings**: modern UK-hallmarked thistle and
+rampant-lion sterling at the £50–£220 end, and at the top the genuine antique
+stock this screen exists for — a 9ct Scottish banded-carnelian agate signet, a
+private-seller antique 9ct Scottish-hallmarked shield signet, an 18ct Glasgow
+green-agate signet of c1920, and a Georgian carnelian intaglio seal.
+
 Every scan prints a **per-market yield log** (`raw → kept → value`), a
 weight-confidence tally, and the eBay API call count, so coverage leaks and
 quota spend are visible.

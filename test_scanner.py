@@ -428,6 +428,120 @@ class TestBrandMode(unittest.TestCase):
             self.assertTrue(g.is_brand_excluded(x), x)
 
 
+class TestScottishMode(unittest.TestCase):
+    """Provenance screen: clan crests, cairngorm, Scottish agate, Iona."""
+
+    def test_genuine_scottish_signets_kept(self):
+        for x in ("Victorian Scottish agate signet ring silver seal",
+                  "9ct gold clan crest signet ring Edinburgh hallmark",
+                  "Antique cairngorm set gold seal ring Scottish",
+                  "Alexander Ritchie Iona silver Celtic knot signet ring",
+                  "Ortak sterling silver signet ring Orkney",
+                  "Hamilton & Inches 18ct gold crest ring",
+                  "9ct gold signet ring hallmarked Edinburgh 1974",
+                  "Luckenbooth silver seal ring Scottish sterling"):
+            self.assertFalse(g.is_scottish_excluded(x), x)
+
+    def test_pewter_and_base_metal_tat_rejected(self):
+        """Clan-crest rings sell by the thousand in pewter at a tenner."""
+        for x in ("Clan crest ring pewter Scottish souvenir",
+                  "Stainless steel Scottish thistle signet ring",
+                  "Scottish clan crest ring gold plated"):
+            self.assertTrue(g.is_scottish_excluded(x), x)
+
+    def test_seller_location_is_not_an_assay_mark(self):
+        """Half the Scottish listings on eBay merely SHIP from Glasgow."""
+        self.assertTrue(g.is_scottish_excluded("Signet ring, ships from Glasgow"))
+        self.assertTrue(g.is_scottish_excluded("Gold seal ring, Edinburgh seller"))
+        self.assertFalse(
+            g.is_scottish_excluded("9ct gold signet ring, Edinburgh assay 1932"))
+
+    def test_iona_needs_a_word_boundary(self):
+        """"iona" hides inside "Fiona"; "clan" inside "clanking"."""
+        self.assertTrue(g.is_scottish_excluded("Fiona's silver signet ring"))
+        self.assertIsNone(g.scottish_signal("a fiona ring"))
+
+    def test_must_be_a_signet(self):
+        for x in ("Scottish silver thistle ring",
+                  "Ortak silver Celtic band ring"):
+            self.assertTrue(g.is_scottish_excluded(x), x)
+
+    def test_must_be_a_ring(self):
+        for x in ("Scottish thistle brooch silver",
+                  "Sheila Fleet silver pendant Orkney",
+                  "Scottish clan crest cufflinks silver"):
+            self.assertTrue(g.is_scottish_excluded(x), x)
+
+    def test_style_claims_rejected(self):
+        """On a provenance screen any style claim is a disqualifier."""
+        for x in ("Iona style silver signet ring",
+                  "Celtic style clan crest signet ring silver",
+                  "Scottish-style gold seal ring"):
+            self.assertTrue(g.is_scottish_excluded(x), x)
+
+    def test_signal_is_reported(self):
+        self.assertEqual(g.scottish_signal("Ortak sterling signet ring"), "maker")
+        self.assertEqual(g.scottish_signal("9ct signet hallmarked Edinburgh"),
+                         "hallmark")
+        self.assertEqual(g.scottish_signal("cairngorm gold seal ring"), "motif")
+        self.assertIsNone(g.scottish_signal("plain gold signet ring"))
+
+    def test_makers_detected(self):
+        self.assertEqual(g.detect_scottish_maker("Hamilton and Inches gold ring"),
+                         "Hamilton & Inches")
+        self.assertEqual(g.detect_scottish_maker("Ola M Gorie silver ring"),
+                         "Ola Gorie")
+        self.assertIsNone(g.detect_scottish_maker("plain 9ct signet ring"))
+
+    def test_celtic_flood_closed(self):
+        """A first live run returned 88 rings, 85 of them pagan-silver tat."""
+        for x in ("Bear Paw Celtic Knot 925 Real Silver Ring Signet",
+                  "Celtic Knot Triskelion Triquetra Sterling Silver 925 Signet",
+                  "Snake Dragon 925 Sterling Silver Signet Celtic Knot Ouroboros",
+                  "Pentagram with Runes 925 Silver Ring Celtic Knot Futhark Signet",
+                  "Nordic Viking Celtic Knot Fenrir Wolf Head Silver Signet",
+                  "Silver Celtic Knot Poison Signet Ring"):
+            self.assertTrue(g.is_scottish_excluded(x), x)
+
+    def test_celtic_alone_is_not_a_scottish_signal(self):
+        """Celtic is pan-Celtic; only a named Scottish maker redeems it."""
+        self.assertIsNone(g.scottish_signal("sterling silver celtic knot ring"))
+        self.assertEqual(
+            g.scottish_signal("Alexander Ritchie Iona celtic knot ring"), "maker")
+
+    def test_scottish_rite_is_freemasonry_not_scotland(self):
+        """A false friend that filled a third of the second live run."""
+        for x in ("Gold Freemason Shriners Scottish Rite Men's Signet Ring",
+                  "Gold Freimaurer Shriners Schottischer Ritus Herren Siegelring",
+                  "Anillo de oro con sello Shriners de rito escoces para hombre",
+                  "Anello uomo con sigillo rito scozzese massoni oro",
+                  "32 degree Scottish rite 10K Yellow Gold Signet Ring"):
+            self.assertTrue(g.is_scottish_excluded(x), x)
+
+    def test_made_to_order_bulk_gold_rejected(self):
+        """A choice of carat means a workshop taking orders, not a find."""
+        for x in ("18 Kt, 22 Kt Real Solid Yellow Gold Scottish Thistle Signet",
+                  "Scottish clan crest gold signet ring, made to order any size"):
+            self.assertTrue(g.is_scottish_excluded(x), x)
+
+    def test_real_finds_survive_every_filter(self):
+        """The four genuine antiques the live run actually surfaced."""
+        for x in ("Gents 9ct Gold & Scottish Banded Carnelian Agate Signet Ring",
+                  "Antique 9K 9ct Gold Signet Ring Scottish Hallmark Shield Shape",
+                  "Antique Scottish 18ct Gold Green Agate set Glasgow Signet Ring c1920",
+                  "925 Sterling Silver Rampant Lion Scottish Mens Signet Ring"):
+            self.assertFalse(g.is_scottish_excluded(x), x)
+
+    def test_no_weight_or_melt_in_provenance_mode(self):
+        old = g.METAL
+        g.METAL = "scottish"
+        try:
+            a = g.assess_ring("Ortak silver signet ring Orkney", None, None)
+            self.assertTrue(a["keep"])
+        finally:
+            g.METAL = old
+
+
 class TestPriceHistory(unittest.TestCase):
     """Achieved prices banked from our own repeated observations."""
 

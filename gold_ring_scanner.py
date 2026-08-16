@@ -152,7 +152,7 @@ MAX_QUERIES_PER_MARKET = 7    # cap the matrix so the API quota lasts a full run
 # Brand mode spends one query per BRAND, so a cap of 7 would silently drop
 # two thirds of the houses. It is also the cheapest scan (one narrow query per
 # name returns few listings), so it gets a bigger allowance.
-MAX_QUERIES_BY_METAL = {"brands": 18}
+MAX_QUERIES_BY_METAL = {"brands": 18, "scottish": 20}
 
 # --- Silver mode (--metal silver) -----------------------------------------
 # Second screen: heavy STERLING SILVER signets/intaglios. Same strict rules
@@ -429,6 +429,168 @@ def is_brand_excluded(text):
     return any(m in low for m in BRAND_FAKE_MARKERS)
 
 
+# --- Scottish signet mode (--metal scottish) -------------------------------
+# A provenance screen rather than a brand or a metal one. Scottish signets
+# are mispriced in a way the other screens can't see: a Victorian Scottish
+# agate seal, a cairngorm-set gold signet, an Alexander Ritchie Iona ring or
+# an Edinburgh-hallmarked clan crest all sell for multiples of their metal,
+# but a seller who doesn't recognise them lists them as "old agate ring" or
+# "vintage silver signet". Nothing here is melt-valued.
+#
+# A listing qualifies only when FOUR things hold at once (see
+# is_scottish_excluded), because any one of them alone is a flood:
+#   1. it is a ring;
+#   2. it is a signet, intaglio, seal or crest ring;
+#   3. it carries a Scottish signal -- maker, assay office, motif or stone;
+#   4. it claims a precious metal (which is what kills the pewter tat).
+SCOTTISH_MAKERS = {
+    # Edinburgh, 1866, royal warrant. The blue-chip Scottish name.
+    "Hamilton & Inches": ("hamilton & inches", "hamilton and inches"),
+    # Orkney. Ortak and Ola Gorie between them define modern Scottish silver.
+    "Ortak":            ("ortak",),
+    "Ola Gorie":        ("ola gorie", "ola m gorie", "ola m. gorie"),
+    "Sheila Fleet":     ("sheila fleet",),
+    "Malcolm Gray":     ("malcolm gray",),
+    # Iona. Ritchie's Celtic-revival silver is the strongest Scottish
+    # collectors' market there is, and it is routinely listed unattributed.
+    "Alexander Ritchie": ("alexander ritchie", "iona celtic art", "ritchie iona"),
+    # Shetland.
+    "Shetland Silvercraft": ("shetland silvercraft",),
+    "Hjaltasteyn":      ("hjaltasteyn",),
+    # Glasgow School / Celtic revival.
+    "Rennie Mackintosh": ("rennie mackintosh", "charles rennie mackintosh"),
+    "Robert Allison":   ("robert allison",),
+}
+# Assay offices. "Edinburgh" and "Glasgow" on their own are seller locations
+# -- half the Scottish listings on eBay ship from Glasgow -- so the hallmark
+# word has to be present too.
+SCOTTISH_HALLMARK_RE = re.compile(
+    r"\b(?:edinburgh|glasgow|scottish|scotland)\s+(?:hall\s?mark(?:ed|s)?|assay|"
+    r"silver\s?mark|gold\s?mark)\b"
+    r"|\b(?:hall\s?mark(?:ed|s)?|assay(?:ed)?)\s+(?:in\s+)?(?:edinburgh|glasgow)\b"
+    r"|\bedinburgh\s+castle\s+(?:mark|hall\s?mark)\b")
+# Motifs and stones -- SCOTLAND-specific only. "Celtic" is deliberately
+# absent: it is pan-Celtic (Irish, Welsh, Breton) and the term is owned on
+# eBay by mass-produced pagan/Viking/Wiccan silver. A first live run with
+# "celtic knot" in this list returned 88 rings of which 85 were exactly that
+# -- bear paws, pentagrams, Fenrir wolves and poison rings at GBP 47-96.
+# Celtic work now only qualifies through a named Scottish maker (Ritchie of
+# Iona, Ortak), which is the signal that actually means something.
+# Word-bounded because "iona" hides inside "Fiona" and "clan" in "clanking".
+SCOTTISH_MOTIF_RE = re.compile(
+    r"\bclan\s+crest\b|\bclan\s+ring\b|\bluckenbooth\b|\bsaltire\b"
+    r"|\blion\s+rampant\b|\bjacobite\b|\btartan\b"
+    r"|\bcairngorm\b|\bscotch\s+pebble\b|\bscottish\s+pebble\b"
+    r"|\bscottish\s+agate\b|\bmontrose\s+agate\b|\bskye\s+marble\b"
+    r"|\bthistle\b|\bhighland\b|\bscottish\b|\bscotland\b|\bscots\b")
+# The pagan / Norse / fantasy silver trade. These sellers list in bulk, the
+# rings are worth their (small) melt, and every one of them is a false
+# positive on a provenance screen.
+SCOTTISH_TAT_MARKERS = [
+    "wiccan", "wicca", "pagan", "occult", "witch", "talisman", "amulet",
+    "viking", "norse", "fenrir", "futhark", "rune", "runic", "valknut",
+    "pentagram", "pentacle", "triskelion", "triquetra", "ouroboros",
+    "dragon", "wolf head", "bear paw", "raven", "serpent",
+    "poison ring", "biker", "gothic", "goth ", "crusader", "templar",
+    "masonic", "promise ring", "wiccan pagan", "fantasy", "cosplay",
+]
+# A precious-metal claim is mandatory. Scottish clan-crest rings are sold by
+# the thousand in pewter and stainless steel at a tenner, and without this
+# they drown everything else.
+SCOTTISH_METAL_RE = re.compile(
+    r"\b(?:\d{1,2}\s?(?:ct|kt|k|carat|karat)|375|417|585|750|916|925|958)\b"
+    r"|\bsterling\b|\bsolid\s+(?:gold|silver)\b|\bgold\b|\bsilver\b")
+SCOTTISH_EXCLUDE_MARKERS = [
+    # Not precious metal, whatever the title also says.
+    "pewter", "stainless", "titanium", "tungsten", "brass", "bronze",
+    "resin", "enamelled steel", "base metal", "alloy ring",
+    # Souvenir and reproduction trade.
+    "souvenir", "tourist", "gift shop", "replica", "reproduction", "costume",
+    "made in china", "fashion ring", "novelty",
+    # Plated, as everywhere else.
+    "plated", "gold tone", "silver tone", "gold colour", "gold color",
+    "vermeil", "gold filled", "gold-filled", "rolled gold",
+    # Style claims -- an "Iona style" ring is not an Iona ring. The bare
+    # " style " catches the unhyphenated form the other screens miss; on a
+    # provenance screen any style claim is a disqualifier, so that is right.
+    "style of", "in the style", "-style", " style ", "inspired", "attributed",
+    "unmarked", "unsigned", "not hallmarked",
+    # FALSE FRIEND: the "Scottish Rite" is a Freemasonry degree system and
+    # has nothing to do with Scotland. It filled a third of the first clean
+    # run, in six languages, from one ring-a-day US seller.
+    "scottish rite", "rito escoces", "rito escocés", "schottischer ritus",
+    "rito scozzese", "rytual szkocki", "rytuał szkocki", "szkocki",
+    "freemason", "freimaurer", "shriner", "masonic", "masoni", "massoni",
+    "32 degree", "32nd degree", "33 degree", "33rd degree",
+    # Made-to-order bulk gold. A listing offering a choice of carat is a
+    # workshop taking orders, not a ring someone owns and has under-priced.
+    "18 kt, 22 kt", "14kt 18kt", "made to order", "custom made", "any size",
+    "all sizes available", "your choice of carat", "can be made in",
+]
+# Crest and seal rings are signets even when the seller never types the word,
+# which is exactly why they get under-priced. This widens the style test for
+# this screen only.
+SCOTTISH_CREST_WORDS = ("crest", "seal ring", "armorial", "coat of arms",
+                        "signet", "intaglio", "fob seal", "wax seal")
+
+
+def detect_scottish_maker(text):
+    """Canonical Scottish maker if the listing claims one, else None."""
+    low = (text or "").lower()
+    for maker, words in SCOTTISH_MAKERS.items():
+        if any(w in low for w in words):
+            return maker
+    return None
+
+
+def scottish_signal(text):
+    """What makes this listing Scottish: 'maker' | 'hallmark' | 'motif'."""
+    low = (text or "").lower()
+    if detect_scottish_maker(text):
+        return "maker"
+    if SCOTTISH_HALLMARK_RE.search(low):
+        return "hallmark"
+    if SCOTTISH_MOTIF_RE.search(low):
+        return "motif"
+    return None
+
+
+def is_scottish_excluded(text):
+    """Keep only Scottish signet/crest RINGS in a precious metal."""
+    low = (text or "").lower()
+    if not is_ring_item(text):
+        return True
+    if not any(w in low for w in SCOTTISH_CREST_WORDS):
+        return True                        # Scottish, but not a signet
+    signal = scottish_signal(text)
+    if not signal:
+        return True                        # a signet, but nothing Scottish
+    if not SCOTTISH_METAL_RE.search(low):
+        return True                        # no precious-metal claim
+    if any(m in low for m in SCOTTISH_EXCLUDE_MARKERS):
+        return True
+    # A named maker or a Scottish assay mark stands on its own. A motif does
+    # not: "thistle" and "Scottish" are freely used by the bulk pagan-silver
+    # trade, so a motif-only listing has to be clean of that vocabulary.
+    if signal == "motif" and any(m in low for m in SCOTTISH_TAT_MARKERS):
+        return True
+    return False
+
+
+SCOTTISH_QUERY_TEMPLATES = {
+    "en": ["Scottish signet ring", "antique Scottish signet ring gold",
+           "clan crest signet ring", "clan crest ring gold",
+           "cairngorm signet ring", "Scottish agate signet ring",
+           "scotch pebble ring silver", "Scottish thistle signet ring",
+           "rampant lion signet ring silver", "Edinburgh hallmark signet ring",
+           "Glasgow hallmark gold signet ring", "Scottish provincial silver signet",
+           "Ortak signet ring silver", "Ola Gorie ring silver",
+           "Alexander Ritchie Iona ring", "Hamilton and Inches ring gold",
+           "Sheila Fleet ring silver", "Shetland silver signet ring",
+           "Scottish seal ring antique gold", "armorial crest ring Scottish"],
+}
+
+
 # --- Ingot / bullion mode (--metal ingot_gold | ingot_silver) --------------
 # Bullion is the opposite of the ring hunt: fineness is standardised (999.9
 # gold, 999 silver), weight is a stated denomination, and the whole game is
@@ -656,7 +818,9 @@ def queries_for(market, carat, extra=(), metal="gold"):
             if q and q.lower() not in seen:
                 seen.add(q.lower()); out.append(q)
         return out[:MAX_QUERIES_PER_MARKET]
-    if metal == "brands":
+    if metal == "scottish":
+        templates, lang = SCOTTISH_QUERY_TEMPLATES, "en"
+    elif metal == "brands":
         templates = BRAND_QUERY_TEMPLATES
     elif metal == "scrap":
         templates = SCRAP_QUERY_TEMPLATES
@@ -1196,8 +1360,8 @@ def assess_ring(text, carat, stated_weight):
     low = (text or "").lower()
     tags = style_tags(text)
 
-    if METAL == "brands":
-        # Brand hunt: no style filter, no weight requirement.
+    if METAL in ("brands", "scottish"):
+        # Brand/provenance hunt: no style filter, no weight requirement.
         return {"keep": True, "confidence": "confirmed",
                 "gross_g": stated_weight, "net_gold_g": None,
                 "stones": False, "tags": tags}
@@ -1675,6 +1839,9 @@ def analyse(items, token, spot_per_oz, fx=None):
         elif METAL == "brands":
             if is_brand_excluded(text):
                 continue
+        elif METAL == "scottish":
+            if is_scottish_excluded(text):
+                continue
         elif METAL == "scrap":
             if is_scrap_excluded(text):
                 continue
@@ -1722,7 +1889,7 @@ def analyse(items, token, spot_per_oz, fx=None):
         #    a signet/intaglio word is dropped later regardless.
         on_target = not REQUIRED_TAGS or bool(set(style_tags(text)) & set(REQUIRED_TAGS))
         if (weight is None and not is_variant and on_target and FETCH_FULL_DETAILS
-                and METAL not in ("yurman", "brands")   # brand modes: no weight
+                and METAL not in ("yurman", "brands", "scottish")  # no weight needed
                 and METAL not in INGOT_FINENESS  # bullion titles state the denomination
                 and (MAX_DETAIL_FETCHES == 0 or detail_fetches < MAX_DETAIL_FETCHES)):
             detail_fetches += 1
@@ -1764,8 +1931,8 @@ def analyse(items, token, spot_per_oz, fx=None):
         # Investment gold (999.9 bars) carries no UK VAT; silver bullion does.
         landed = landed_cost(bid, country, vat_exempt=(METAL == "ingot_gold"))
 
-        if METAL in ("yurman", "brands"):
-            # Brand hunt: the silver content is trivial beside design value.
+        if METAL in ("yurman", "brands", "scottish"):
+            # Brand/provenance hunt: metal is trivial beside design value.
             melt, ratio, is_value = None, None, False
         elif METAL in INGOT_FINENESS:
             melt = round(net_gold * spot_per_gram_fine * fineness_frac, 2) if net_gold else None
@@ -1799,7 +1966,13 @@ def analyse(items, token, spot_per_oz, fx=None):
         records.append({
             "title": title,
             "metal": METAL,                 # gold | silver | brands | ...
-            "maker": detect_brand_maker(text) if METAL == "brands" else None,
+            "maker": (detect_brand_maker(text) if METAL == "brands"
+                      else detect_scottish_maker(text) if METAL == "scottish"
+                      else None),
+            # Why the Scottish screen kept this: a named maker, a Scottish
+            # assay mark, or a Scottish motif/stone. Most Scottish signets
+            # are unattributed, so "maker" alone would read "?" on the card.
+            "provenance": scottish_signal(text) if METAL == "scottish" else None,
             "carat": carat,                 # gold only (None for silver)
             "fineness": fineness_mark,      # silver only ("925", "800", ...)
             "carat_assumed": carat_assumed,
@@ -2134,7 +2307,7 @@ def parse_args():
     p.add_argument("--conditions", default="USED", choices=["USED", "ANY"],
                    help="USED only, or ANY condition (captures dealer 'New')")
     p.add_argument("--metal", default="gold",
-                   choices=["gold", "silver", "yurman", "brands", "scrap",
+                   choices=["gold", "silver", "yurman", "brands", "scottish", "scrap",
                             "ingot_gold", "ingot_silver"],
                    help="gold (default), silver (sterling signet mode with live "
                         "silver spot), or yurman (David Yurman brand hunt: no "
@@ -2180,7 +2353,7 @@ def main():
           f"floors: confirmed>={WEIGHT_FLOOR_CONFIRMED}g estimated>={WEIGHT_FLOOR_ESTIMATED_LOWBOUND}g  "
           f"limit={args.limit}/mkt  markets={len(markets)}  threshold={MELT_THRESHOLD}")
 
-    if METAL in ("yurman", "brands"):
+    if METAL in ("yurman", "brands", "scottish"):
         spot, source = 0.0, "n/a (brand mode -- no melt)"
         print(f"  brand mode: {METAL} -- no melt valuation")
     elif METAL == "ingot_silver":

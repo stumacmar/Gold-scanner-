@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T08:32:13.851332+00:00",
+  "generated_at": "2026-08-16T13:37:00.797385+00:00",
   "searches": [
     {
       "key": "9ct",
@@ -45,6 +45,15 @@
       "generated_at": "2026-08-16T08:32:13.851332+00:00",
       "value_count": 0,
       "total_analysed": 117
+    },
+    {
+      "key": "scottish",
+      "label": "Scottish",
+      "file": "scottish.json",
+      "query": "Scottish signet ring",
+      "generated_at": "2026-08-16T13:37:00.797385+00:00",
+      "value_count": 0,
+      "total_analysed": 36
     },
     {
       "key": "silver",

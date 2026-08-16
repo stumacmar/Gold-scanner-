@@ -31,7 +31,8 @@ def main():
             continue
         key = os.path.splitext(os.path.basename(path))[0]
         metal = meta.get("metal")
-        label = ("Brands" if metal == "brands"
+        label = ("Scottish" if metal == "scottish"
+                 else "Brands" if metal == "brands"
                  else "Silver" if metal == "silver"
                  else "Yurman" if metal == "yurman"
                  else "Gold ingots" if metal == "ingot_gold"

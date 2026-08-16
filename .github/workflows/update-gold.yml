@@ -24,7 +24,7 @@ on:
         description: "Which page to update"
         type: choice
         default: all
-        options: [all, gold, silver, yurman, brands]
+        options: [all, gold, silver, yurman, brands, scottish]
           
 
 
@@ -98,6 +98,16 @@ jobs:
             python gold_ring_scanner.py --metal brands --max-price 12000 --min-price 60 \
               --limit 200 --conditions ANY --markets $MARKETS \
               --json data/brands.json --csv data/brands.csv || echo '[warn] brands failed'
+            sleep 20
+          fi
+
+          # Scottish: clan crests, cairngorm, Scottish agate, Edinburgh assay
+          # marks and the Iona/Orkney makers. Provenance, not metal, so the
+          # band is wide and there is no melt valuation.
+          if [ "$SCREEN" = "all" ] || [ "$SCREEN" = "scottish" ]; then
+            python gold_ring_scanner.py --metal scottish --max-price 8000 --min-price 40 \
+              --limit 200 --conditions ANY --markets $MARKETS \
+              --json data/scottish.json --csv data/scottish.csv || echo '[warn] scottish failed'
           fi
 
       - name: Build dashboard index
