@@ -335,81 +335,97 @@ class TestScrapMode(unittest.TestCase):
             g.METAL = old
 
 
-class TestDesignerMode(unittest.TestCase):
-    """Named signet houses: heavy gold, low volume, signed."""
+class TestBrandMode(unittest.TestCase):
+    """Named-brand signets: Yurman's peers plus the signet houses."""
 
     def test_makers_detected(self):
-        self.assertEqual(g.detect_designer_maker("Elizabeth Gage 18ct Templar ring"),
+        self.assertEqual(g.detect_brand_maker("Elizabeth Gage 18ct Templar ring"),
                          "Elizabeth Gage")
-        self.assertEqual(g.detect_designer_maker("Ilias Lalaounis 18k Greek gold ring"),
-                         "Ilias Lalaounis")
-        self.assertEqual(g.detect_designer_maker("Deakin & Francis signet ring"),
+        self.assertEqual(g.detect_brand_maker("John Hardy sterling signet ring"),
+                         "John Hardy")
+        self.assertEqual(g.detect_brand_maker("Konstantino 18k signet ring"),
+                         "Konstantino")
+        self.assertEqual(g.detect_brand_maker("Deakin & Francis signet ring"),
                          "Deakin & Francis")
-        self.assertIsNone(g.detect_designer_maker("heavy 18ct gold signet ring"))
+        self.assertIsNone(g.detect_brand_maker("heavy 18ct gold signet ring"))
+
+    def test_city_name_is_not_the_brand_lagos(self):
+        """"Lagos" alone is a city -- every alias must carry a second word."""
+        self.assertIsNone(g.detect_brand_maker("gold signet ring from Lagos Nigeria"))
+        self.assertEqual(g.detect_brand_maker("Lagos Caviar sterling signet ring"),
+                         "Lagos")
 
     def test_lookalikes_and_unsigned_excluded(self):
-        for x in ("gold signet ring in the style of David Webb",
+        for x in ("sterling signet ring in the style of John Hardy",
                   "signet ring attributed to Elizabeth Gage",
-                  "unsigned Buccellati style gold signet ring",
-                  "Lalaounis inspired gold plated signet ring"):
-            self.assertTrue(g.is_designer_excluded(x), x)
+                  "unsigned Konstantino style gold signet ring",
+                  "Chrome Hearts inspired gold plated signet ring"):
+            self.assertTrue(g.is_brand_excluded(x), x)
 
     def test_only_rings(self):
-        # These houses make plenty of brooches and cufflinks.
+        # These brands make plenty of brooches, cuffs and cufflinks.
         for x in ("Elizabeth Gage signet brooch gold",
-                  "Buccellati gold signet cufflinks",
-                  "David Webb signet bracelet 18k",
-                  "Lalaounis intaglio necklace gold"):
-            self.assertTrue(g.is_designer_excluded(x), x)
+                  "John Hardy signet cufflinks sterling",
+                  "Konstantino signet bracelet sterling",
+                  "Shaun Leane intaglio necklace gold"):
+            self.assertTrue(g.is_brand_excluded(x), x)
 
     def test_genuine_signed_signets_kept(self):
         for x in ("Elizabeth Gage 18ct gold intaglio ring",
-                  "Ilias Lalaounis 18k Greek gold signet ring",
-                  "Buccellati 18k gold signet ring Italy",
+                  "John Hardy Classic Chain sterling silver signet ring",
+                  "Konstantino sterling and 18k gold signet ring",
                   "Deakin & Francis silver signet ring",
                   "Longmire London 18ct gold armorial signet ring",
-                  "Cartier 18k gold signet ring",
-                  "Castellani Victorian carnelian intaglio ring gold"):
-            self.assertFalse(g.is_designer_excluded(x), x)
+                  "Tom Wood signet ring 9k gold",
+                  "Chrome Hearts sterling silver signet ring"):
+            self.assertFalse(g.is_brand_excluded(x), x)
 
-    def test_designer_but_not_a_signet_rejected(self):
-        """The screen is designer SIGNETS -- cocktail rings flooded it once."""
-        for x in ("David Webb 18k Yellow Gold Coiled Nail Ring Size 6",
-                  "Buccellati 18k White Gold Tulle Broccato Band Ring",
-                  "Cartier Love ring 18k rose gold",
-                  "Tiffany & Co 18k gold eternity band ring"):
-            self.assertTrue(g.is_designer_excluded(x), x)
+    def test_brand_but_not_a_signet_rejected(self):
+        """The screen is branded SIGNETS -- cocktail rings flooded it once."""
+        for x in ("John Hardy Classic Chain sterling band ring",
+                  "Konstantino sterling silver cocktail ring",
+                  "Gurhan 24k gold stacking ring",
+                  "Stephen Webster 18k gold eternity band ring"):
+            self.assertTrue(g.is_brand_excluded(x), x)
 
     def test_counterfeit_language_rejected(self):
-        for x in ("Cartier signet ring gold, not authentic aftermarket",
-                  "Bvlgari style signet ring gold designer inspired",
-                  "Tiffany & Co signet ring, faux gold"):
-            self.assertTrue(g.is_designer_excluded(x), x)
+        """Yurman's peers are among the most faked marks on eBay."""
+        for x in ("Chrome Hearts signet ring, not authentic aftermarket",
+                  "John Hardy style signet ring designer inspired",
+                  "Konstantino signet ring, faux gold"):
+            self.assertTrue(g.is_brand_excluded(x), x)
+
+    def test_plated_lines_rejected(self):
+        """Tom Wood and Lagos both sell gold-plated silver -- not the target."""
+        for x in ("Tom Wood gold plated silver signet ring",
+                  "Lagos Caviar vermeil signet ring",
+                  "John Hardy gold-filled signet ring"):
+            self.assertTrue(g.is_brand_excluded(x), x)
 
     def test_first_live_run_leaks_closed(self):
-        """Four things the first real designer scan let through."""
+        """Four things the first real brand scan let through."""
         for x in (# hyphenated style claim beat "style of"/"in the style"
-                  "18K Yellow Gold Ruby Ring, Buccellati-Style Brushed Finish",
+                  "Sterling Signet Ring, John Hardy-Style Brushed Finish",
                   # the seller themselves is unsure of the attribution
-                  "Greek Designer LALAOUNIS? 18K Yellow Gold Bypass Ring",
+                  "Greek maker KONSTANTINO? 18K Yellow Gold Signet Ring",
                   # vermeil is silver under a gold wash, not a solid piece
-                  "Anello Buccellati Fiori Argento Sterling 925 Vermeil US 7",
+                  "Konstantino Argento Sterling 925 Vermeil signet US 7",
                   # an empty box carrying the maker's name
                   "Elizabet Gage Green leather and Velvet Ring Box"):
-            self.assertTrue(g.is_designer_excluded(x), x)
+            self.assertTrue(g.is_brand_excluded(x), x)
 
     def test_ring_sold_with_its_box_still_kept(self):
         """The accessory filter must not eat rings that include their box."""
-        for x in ("Ilias Lalaounis 18k gold signet ring in original box",
-                  "Zolotas 18k gold signet ring with presentation box",
-                  "David Webb 18K gold intaglio ring with case, vintage"):
-            self.assertFalse(g.is_designer_excluded(x), x)
+        for x in ("John Hardy sterling signet ring in original box",
+                  "Konstantino 18k gold signet ring with presentation box",
+                  "Tom Wood 9k gold signet ring with case, vintage"):
+            self.assertFalse(g.is_brand_excluded(x), x)
 
     def test_hard_accessories_rejected_even_with_metal_words(self):
-        for x in ("Buccellati sterling silver ring box, empty box",
-                  "Seaman Schepps gold rings catalogue 1998",
-                  "Elizabeth Gage 18ct display box only"):
-            self.assertTrue(g.is_designer_excluded(x), x)
+        for x in ("John Hardy sterling silver signet ring box, empty box",
+                  "Konstantino gold signet rings catalogue 1998",
+                  "Elizabeth Gage 18ct signet display box only"):
+            self.assertTrue(g.is_brand_excluded(x), x)
 
 
 class TestPriceHistory(unittest.TestCase):

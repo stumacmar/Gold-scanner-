@@ -149,10 +149,10 @@ QUERY_TEMPLATES = {
     "pl": ["sygnet złoto {f}", "sygnet męski złoto {f}", "złoty sygnet {f}"],
 }
 MAX_QUERIES_PER_MARKET = 7    # cap the matrix so the API quota lasts a full run
-# Designer mode spends one query per MAKER, so a cap of 7 would silently drop
+# Brand mode spends one query per BRAND, so a cap of 7 would silently drop
 # two thirds of the houses. It is also the cheapest scan (one narrow query per
 # name returns few listings), so it gets a bigger allowance.
-MAX_QUERIES_BY_METAL = {"designer": 12}
+MAX_QUERIES_BY_METAL = {"brands": 18}
 
 # --- Silver mode (--metal silver) -----------------------------------------
 # Second screen: heavy STERLING SILVER signets/intaglios. Same strict rules
@@ -229,15 +229,52 @@ def is_scrap_excluded(text):
     return is_plated(text) or is_excluded(text)
 
 
-# --- Designer signet mode (--metal designer) -------------------------------
-# Named makers whose SIGNET and intaglio rings carry real money, chosen to
-# avoid the Georg Jensen problem: Jensen floods the results with thousands of
-# cheap silver rings, whereas these houses make small numbers of heavy GOLD
-# pieces. The mispricing mechanic is the same as Yurman -- the maker is
-# signed, so sellers type the name, but an inherited ring often gets listed
-# as "heavy gold ring" by someone who doesn't know what the signature means.
-DESIGNER_MAKERS = {
-    # --- Signet and seal specialists (the core of this screen) -------------
+# --- Named-brand signet mode (--metal brands) ------------------------------
+# This is the Yurman screen widened to Yurman's PEERS, not a generic
+# "designer" bucket. Every name here fits the same commercial shape, which is
+# what makes the screen work:
+#   * a men's signet is a core product, not an occasional one-off;
+#   * the piece is signed, so the seller types the name into the title;
+#   * it trades on the mark rather than the metal, so a sterling ring can be
+#     worth many times its melt -- which is why this mode does no melt maths;
+#   * there is a deep secondary market, so a private seller clearing a
+#     relative's jewellery routinely under-prices one.
+# Grand jewellery houses (Tiffany, Cartier, Bulgari, Buccellati, David Webb,
+# Castellani ...) were tried here and deliberately dropped: they are not
+# Yurman's peers, they are dealer stock at GBP 3k-14k, and they crowded out
+# everything else 37 rows to 12.
+BRAND_MAKERS = {
+    # --- Yurman's direct peers: men's sterling-and-gold, deep resale --------
+    # Bali-made sterling with gold accents; the closest analogue to the cable
+    # collection and just as heavily traded second-hand.
+    "John Hardy":      ("john hardy",),
+    # Greek. Sterling + 18k, an almost entirely men's signet catalogue.
+    "Konstantino":     ("konstantino",),
+    # Philadelphia. Caviar beading in silver + 18k. "lagos" alone is a city,
+    # so every alias has to carry a second word.
+    "Lagos":           ("lagos caviar", "lagos sterling", "lagos 18k",
+                        "lagos maya", "lagos anthem"),
+    # American men's bridal/signet house; a straight Yurman competitor.
+    "Scott Kay":       ("scott kay",),
+    # Heavy sterling, cult following, prices that hold better than the metal.
+    "Chrome Hearts":   ("chrome hearts",),
+    "King Baby":       ("king baby",),
+    "Bill Wall Leather": ("bill wall leather", "bwl sterling", "bill wall sterling"),
+    # Norwegian. Signet rings ARE the brand -- silver and 9k.
+    "Tom Wood":        ("tom wood",),
+    # British men's statement silver/gold with a strong resale market.
+    "Stephen Webster": ("stephen webster",),
+    "Shaun Leane":     ("shaun leane",),
+    "Tateossian":      ("tateossian",),
+    # Contemporary American men's; signets are a staple line.
+    "Miansai":         ("miansai",),
+    # 24k over silver, unmistakable once you know it, invisible if you don't.
+    "Gurhan":          ("gurhan",),
+    # Italian and German men's silver, small runs, collector demand.
+    "Marco Dal Maso":  ("marco dal maso", "dal maso"),
+    "Werkstatt München": ("werkstatt münchen", "werkstatt munchen",
+                          "werkstatt:münchen"),
+    # --- Signet and seal specialists ---------------------------------------
     # Birmingham, 1786. England's oldest family jeweller; signet specialists.
     "Deakin & Francis": ("deakin & francis", "deakin and francis", "deakin francis"),
     # Modern UK hand-engraved signet house with a strong secondary market.
@@ -247,61 +284,41 @@ DESIGNER_MAKERS = {
     "Longmire":        ("longmire",),
     "Hancocks":        ("hancocks london", "hancocks & co"),
     "Marlborough":     ("marlborough signet", "marlborough london"),
-    # --- Houses whose signets and intaglios carry real money ---------------
     # British. Heavy textured 18ct, famous for Templar and intaglio rings.
     "Elizabeth Gage":  ("elizabeth gage", "e. gage", "gage london"),
     "Theo Fennell":    ("theo fennell",),
-    "Asprey":          ("asprey",),
-    "Garrard":         ("garrard",),
-    # Greek. Chunky hallmarked 18/22ct -- often listed as just "Greek gold".
-    "Ilias Lalaounis": ("lalaounis", "ilias lalaounis"),
-    "Zolotas":         ("zolotas",),
-    # Victorian archaeological-revival intaglio makers. A signed Castellani
-    # or Giuliano seal ring is a five-figure piece; sellers of inherited
-    # jewellery routinely list them as "antique carnelian ring".
-    "Castellani":      ("castellani",),
-    "Carlo Giuliano":  ("giuliano",),
-    # Grand houses that do make signets. Fakes are rife, so the fake-marker
-    # list below does the heavy lifting for these three.
-    "Cartier":         ("cartier",),
-    "Bulgari":         ("bulgari", "bvlgari"),
-    "Tiffany & Co":    ("tiffany & co", "tiffany and co", "tiffany co"),
-    # American bold-gold houses.
-    "David Webb":      ("david webb",),
-    "Seaman Schepps":  ("seaman schepps",),
-    # Italian engraved gold.
-    "Buccellati":      ("buccellati",),
 }
-# Queries name the STYLE as well as the maker -- searching "Cartier ring"
-# returns ten thousand tank watches' worth of noise, "Cartier signet ring"
-# does not. MAX_QUERIES_PER_MARKET caps how many of these actually run.
-DESIGNER_QUERY_TEMPLATES = {
-    "en": ["Deakin Francis signet ring", "Rebus signet ring",
+# Queries name the STYLE as well as the brand. "Cartier ring" returns ten
+# thousand watches; "Cartier signet ring" does not -- and the same is true of
+# "Lagos" (a city) and "Tom Wood" (a person). MAX_QUERIES_BY_METAL caps how
+# many of these actually run per market.
+BRAND_QUERY_TEMPLATES = {
+    "en": ["John Hardy signet ring", "Konstantino signet ring",
+           "Lagos Caviar signet ring", "Scott Kay signet ring",
+           "Chrome Hearts signet ring", "Tom Wood signet ring",
+           "Stephen Webster signet ring", "Gurhan signet ring",
+           "King Baby signet ring", "Miansai signet ring",
+           "Shaun Leane signet ring", "Tateossian signet ring",
+           "Deakin Francis signet ring", "Rebus signet ring",
            "Longmire signet ring", "Elizabeth Gage ring gold",
-           "Cartier signet ring gold", "Bulgari signet ring gold",
-           "Tiffany signet ring gold", "Asprey signet ring",
-           "Garrard signet ring", "Theo Fennell signet ring",
-           "Castellani intaglio ring", "Giuliano intaglio ring",
-           "Lalaounis gold ring", "David Webb signet ring",
-           "Seaman Schepps signet ring", "Buccellati signet ring",
-           "Hancocks London signet ring", "antique signed intaglio seal ring gold"],
-    "de": ["Cartier Siegelring", "Bulgari Siegelring", "Elizabeth Gage Ring",
-           "Lalaounis Ring Gold", "signierter Siegelring Gold"],
-    "fr": ["Cartier chevalière or", "Bulgari chevalière", "Elizabeth Gage bague",
-           "chevalière or signée", "bague intaille or signée"],
-    "it": ["Buccellati anello sigillo", "Bulgari anello sigillo",
-           "Lalaounis anello", "anello sigillo oro firmato"],
-    "es": ["Cartier anillo sello oro", "Buccellati anillo oro",
-           "anillo sello oro firmado"],
-    "nl": ["Cartier zegelring goud", "Buccellati gouden ring"],
-    "pl": ["Cartier sygnet zloto", "sygnet zloto sygnowany"],
+           "Theo Fennell signet ring", "Marco Dal Maso signet ring"],
+    "de": ["Konstantino Siegelring", "John Hardy Siegelring",
+           "Tom Wood Siegelring", "Werkstatt München Ring",
+           "Stephen Webster Siegelring"],
+    "fr": ["Konstantino chevalière", "John Hardy chevalière",
+           "Tom Wood chevalière", "Stephen Webster chevalière"],
+    "it": ["Konstantino anello sigillo", "Marco Dal Maso anello",
+           "John Hardy anello sigillo"],
+    "es": ["Konstantino anillo sello", "John Hardy anillo sello"],
+    "nl": ["Konstantino zegelring", "John Hardy zegelring"],
+    "pl": ["Konstantino sygnet", "John Hardy sygnet"],
 }
-# The point of this screen is designer SIGNETS, not designer jewellery. A
-# first live run returned 180 rings of which 3 were signets -- the rest were
-# David Webb and Buccellati cocktail rings at £4k-£14k from US dealers, i.e.
-# exactly the "flooded with the wrong thing" failure the screen replaced.
-DESIGNER_REQUIRED_TAGS = ("signet", "intaglio")
-DESIGNER_FAKE_MARKERS = [
+# The point of this screen is branded SIGNETS, not branded jewellery. A live
+# run without this filter returned 180 rings of which 3 were signets -- the
+# rest were cocktail rings, which is the "flooded with the wrong thing"
+# failure that retired the screen before it.
+BRAND_REQUIRED_TAGS = ("signet", "intaglio")
+BRAND_FAKE_MARKERS = [
     "style of", "in the style", "inspired", "after ", "manner of",
     "attributed", "unsigned", "unmarked", "no marks", "not signed",
     "replica", "copy of", "reproduction", "tribute", "homage", "lookalike",
@@ -309,28 +326,29 @@ DESIGNER_FAKE_MARKERS = [
     # A first run caught "Buccellati-Style Brushed Finish" -- the hyphenated
     # form slipped past "style of"/"in the style".
     "-style", "–style", "style ring", "style band",
-    # Not solid metal: a designer name on a vermeil/filled piece is either a
-    # fake or the house's costume line, and neither is the target.
+    # Not solid metal: a brand name on a vermeil/filled/plated piece is
+    # either a fake or the house's cheap line (Tom Wood and Lagos both sell
+    # gold-plated silver), and neither is the target.
     "vermeil", "gold filled", "gold-filled", "gold fill ", "rolled gold",
     "gold plate", "silver plate", "electroplate",
-    # Cartier / Bulgari / Tiffany attract counterfeits and "tribute" pieces
-    # that the honest sellers label plainly. Take them at their word.
+    # Yurman, Chrome Hearts and John Hardy are among the most counterfeited
+    # marks on eBay. Honest sellers label it; take them at their word.
     "not authentic", "unauthenticated", "aftermarket", "faux", "fashion ring",
     "designer inspired", "type ring", "sold as seen no guarantee",
 ]
 
-# Accessories that merely CARRY the maker's name: an empty Gage ring box is
+# Accessories that merely CARRY the brand name: an empty Gage ring box is
 # not a Gage ring. Only reject when the title claims no metal at all, so a
 # genuine "18k ring with original box" still gets through.
 # Hard: the listing says outright there is no jewellery in it.
-DESIGNER_ACCESSORY_HARD = (
+BRAND_ACCESSORY_HARD = (
     "box only", "empty box", "pouch only", "case only", "no ring",
     "box no ring", "catalogue", "catalog", "brochure", "advertisement",
     "magazine", "price list",
 )
 # Soft: could be an accessory, or could be a ring sold WITH its box. Only
 # rejected when the title claims no metal at all.
-DESIGNER_ACCESSORY_SOFT = (
+BRAND_ACCESSORY_SOFT = (
     "ring box", "jewellery box", "jewelry box", "display box",
     "presentation box", "velvet box", "leather box",
 )
@@ -367,21 +385,21 @@ def is_ring_item(text):
     return any(re.search(r"\b" + w + r"\b", low) for w in _RING_WORDS)
 
 
-def detect_designer_maker(text):
+def detect_brand_maker(text):
     """Canonical maker name if the listing claims one, else None."""
     low = (text or "").lower()
-    for maker, words in DESIGNER_MAKERS.items():
+    for maker, words in BRAND_MAKERS.items():
         if any(w in low for w in words):
             return maker
     return None
 
 
-def is_designer_accessory(text):
+def is_brand_accessory(text):
     """True for boxes/pouches/paperwork that merely carry the maker's name."""
     low = (text or "").lower()
-    if any(w in low for w in DESIGNER_ACCESSORY_HARD):
+    if any(w in low for w in BRAND_ACCESSORY_HARD):
         return True
-    if not any(w in low for w in DESIGNER_ACCESSORY_SOFT):
+    if not any(w in low for w in BRAND_ACCESSORY_SOFT):
         return False
     return not _METAL_CLAIM_RE.search(low)
 
@@ -389,26 +407,26 @@ def is_designer_accessory(text):
 def maker_is_uncertain(text):
     """True when the seller themselves questions the attribution ("Lalaounis?")."""
     low = (text or "").lower()
-    for words in DESIGNER_MAKERS.values():
+    for words in BRAND_MAKERS.values():
         for w in words:
             if re.search(re.escape(w) + r"\s*[?]", low):
                 return True
     return False
 
 
-def is_designer_excluded(text):
+def is_brand_excluded(text):
     """Keep only RINGS claiming a genuine, signed piece by a known house."""
     low = (text or "").lower()
-    if not detect_designer_maker(text):
+    if not detect_brand_maker(text):
         return True
     if not is_ring_item(text):
         return True
-    if DESIGNER_REQUIRED_TAGS and not (
-            set(style_tags(text)) & set(DESIGNER_REQUIRED_TAGS)):
-        return True                       # designer, but not a signet
-    if is_designer_accessory(text) or maker_is_uncertain(text):
+    if BRAND_REQUIRED_TAGS and not (
+            set(style_tags(text)) & set(BRAND_REQUIRED_TAGS)):
+        return True                       # right brand, wrong kind of ring
+    if is_brand_accessory(text) or maker_is_uncertain(text):
         return True
-    return any(m in low for m in DESIGNER_FAKE_MARKERS)
+    return any(m in low for m in BRAND_FAKE_MARKERS)
 
 
 # --- Ingot / bullion mode (--metal ingot_gold | ingot_silver) --------------
@@ -638,8 +656,8 @@ def queries_for(market, carat, extra=(), metal="gold"):
             if q and q.lower() not in seen:
                 seen.add(q.lower()); out.append(q)
         return out[:MAX_QUERIES_PER_MARKET]
-    if metal == "designer":
-        templates = DESIGNER_QUERY_TEMPLATES
+    if metal == "brands":
+        templates = BRAND_QUERY_TEMPLATES
     elif metal == "scrap":
         templates = SCRAP_QUERY_TEMPLATES
     elif metal == "yurman":
@@ -1178,7 +1196,7 @@ def assess_ring(text, carat, stated_weight):
     low = (text or "").lower()
     tags = style_tags(text)
 
-    if METAL == "designer":
+    if METAL == "brands":
         # Brand hunt: no style filter, no weight requirement.
         return {"keep": True, "confidence": "confirmed",
                 "gross_g": stated_weight, "net_gold_g": None,
@@ -1654,8 +1672,8 @@ def analyse(items, token, spot_per_oz, fx=None):
         if METAL in INGOT_FINENESS:
             if is_ingot_excluded(text, METAL):
                 continue
-        elif METAL == "designer":
-            if is_designer_excluded(text):
+        elif METAL == "brands":
+            if is_brand_excluded(text):
                 continue
         elif METAL == "scrap":
             if is_scrap_excluded(text):
@@ -1704,7 +1722,7 @@ def analyse(items, token, spot_per_oz, fx=None):
         #    a signet/intaglio word is dropped later regardless.
         on_target = not REQUIRED_TAGS or bool(set(style_tags(text)) & set(REQUIRED_TAGS))
         if (weight is None and not is_variant and on_target and FETCH_FULL_DETAILS
-                and METAL not in ("yurman", "designer")   # brand modes: no weight
+                and METAL not in ("yurman", "brands")   # brand modes: no weight
                 and METAL not in INGOT_FINENESS  # bullion titles state the denomination
                 and (MAX_DETAIL_FETCHES == 0 or detail_fetches < MAX_DETAIL_FETCHES)):
             detail_fetches += 1
@@ -1746,7 +1764,7 @@ def analyse(items, token, spot_per_oz, fx=None):
         # Investment gold (999.9 bars) carries no UK VAT; silver bullion does.
         landed = landed_cost(bid, country, vat_exempt=(METAL == "ingot_gold"))
 
-        if METAL in ("yurman", "designer"):
+        if METAL in ("yurman", "brands"):
             # Brand hunt: the silver content is trivial beside design value.
             melt, ratio, is_value = None, None, False
         elif METAL in INGOT_FINENESS:
@@ -1780,8 +1798,8 @@ def analyse(items, token, spot_per_oz, fx=None):
 
         records.append({
             "title": title,
-            "metal": METAL,                 # gold | silver | designer | ...
-            "maker": detect_designer_maker(text) if METAL == "designer" else None,
+            "metal": METAL,                 # gold | silver | brands | ...
+            "maker": detect_brand_maker(text) if METAL == "brands" else None,
             "carat": carat,                 # gold only (None for silver)
             "fineness": fineness_mark,      # silver only ("925", "800", ...)
             "carat_assumed": carat_assumed,
@@ -2116,7 +2134,7 @@ def parse_args():
     p.add_argument("--conditions", default="USED", choices=["USED", "ANY"],
                    help="USED only, or ANY condition (captures dealer 'New')")
     p.add_argument("--metal", default="gold",
-                   choices=["gold", "silver", "yurman", "designer", "scrap",
+                   choices=["gold", "silver", "yurman", "brands", "scrap",
                             "ingot_gold", "ingot_silver"],
                    help="gold (default), silver (sterling signet mode with live "
                         "silver spot), or yurman (David Yurman brand hunt: no "
@@ -2162,7 +2180,7 @@ def main():
           f"floors: confirmed>={WEIGHT_FLOOR_CONFIRMED}g estimated>={WEIGHT_FLOOR_ESTIMATED_LOWBOUND}g  "
           f"limit={args.limit}/mkt  markets={len(markets)}  threshold={MELT_THRESHOLD}")
 
-    if METAL in ("yurman", "designer"):
+    if METAL in ("yurman", "brands"):
         spot, source = 0.0, "n/a (brand mode -- no melt)"
         print(f"  brand mode: {METAL} -- no melt valuation")
     elif METAL == "ingot_silver":

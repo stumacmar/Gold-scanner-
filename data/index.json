@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T08:25:10.075877+00:00",
+  "generated_at": "2026-08-16T08:32:13.851332+00:00",
   "searches": [
     {
       "key": "9ct",
@@ -38,13 +38,13 @@
       "total_analysed": 3
     },
     {
-      "key": "designer",
-      "label": "Designer",
-      "file": "designer.json",
-      "query": "Deakin Francis signet ring",
-      "generated_at": "2026-08-16T08:25:10.075877+00:00",
+      "key": "brands",
+      "label": "Brands",
+      "file": "brands.json",
+      "query": "John Hardy signet ring",
+      "generated_at": "2026-08-16T08:32:13.851332+00:00",
       "value_count": 0,
-      "total_analysed": 52
+      "total_analysed": 117
     },
     {
       "key": "silver",

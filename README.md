@@ -165,38 +165,56 @@ compare heavy silver. The workflow writes `data/silver.json` daily alongside
 the four gold carat files; the dashboard's **Gold/Silver** switcher selects
 the screen.
 
-### Designer signet screen (`--metal designer`)
+### Named-brand signet screen (`--metal brands`)
 
-A screen for **signed signets and intaglios by named houses**, where the
-mispricing mechanic is the signature rather than the metal: an inherited ring
-gets listed as "old gold ring" by someone who doesn't recognise the maker's
-mark. Three filters define it, all in `is_designer_excluded`:
+The Yurman screen widened to **Yurman's peers**, not a generic "designer"
+bucket. Every brand in `BRAND_MAKERS` fits the same commercial shape, and that
+shape is what makes the screen work:
 
-1. the title must claim a maker in `DESIGNER_MAKERS` — signet specialists
-   (Deakin & Francis, Rebus, Longmire, Hancocks, Marlborough), houses whose
-   signets carry real money (Elizabeth Gage, Theo Fennell, Asprey, Garrard,
-   Lalaounis, Zolotas, Castellani, Carlo Giuliano, David Webb, Seaman Schepps,
-   Buccellati), and the grand houses that do make them (Cartier, Bulgari,
-   Tiffany & Co);
-2. it must be a **ring** (`is_ring_item` — these houses make far more brooches
-   and cufflinks than rings);
-3. it must be a **signet or intaglio** (`DESIGNER_REQUIRED_TAGS`).
+- a men's signet is a **core product**, not an occasional one-off;
+- the piece is **signed**, so the seller types the name into the title;
+- it trades on the **mark rather than the metal** — a sterling ring can be
+  worth many times its melt;
+- there is a **deep secondary market**, so a private seller clearing a
+  relative's jewellery routinely under-prices one.
+
+Yurman's direct peers: John Hardy, Konstantino, Lagos, Scott Kay, Chrome
+Hearts, King Baby, Bill Wall Leather, Tom Wood, Stephen Webster, Shaun Leane,
+Tateossian, Miansai, Gurhan, Marco Dal Maso, Werkstatt München. Alongside them
+sit the signet and seal specialists: Deakin & Francis, Rebus, Longmire,
+Hancocks, Marlborough, Elizabeth Gage, Theo Fennell.
+
+Grand jewellery houses (Tiffany, Cartier, Bulgari, Buccellati, David Webb,
+Castellani, Lalaounis …) were tried here and **deliberately dropped**. They are
+not Yurman's peers: they are dealer stock at £3k–£14k, and they crowded out
+everything else 37 rows to 12. Adding one back is a single line in
+`BRAND_MAKERS` plus a query.
+
+Three filters define the screen, all in `is_brand_excluded`:
+
+1. the title must claim a brand in `BRAND_MAKERS`;
+2. it must be a **ring** (`is_ring_item` — these brands make far more
+   bracelets and cufflinks than rings);
+3. it must be a **signet or intaglio** (`BRAND_REQUIRED_TAGS`).
 
 Rule 3 is the one that matters. Without it a live run returned 180 rings of
-which **3** were signets — the rest were David Webb and Buccellati cocktail
-rings at £4k–£14k from US dealers, the same "flooded with the wrong thing"
-failure that retired the previous Scandinavian-silver screen. With it the same
-run returns 49 rings, every one a designer signet.
+which **3** were signets — the rest were cocktail rings, the same "flooded
+with the wrong thing" failure that retired the Scandinavian-silver screen.
 
-There is **no melt valuation** on this screen (as on Yurman): a signed Gage
-intaglio is worth several times its gold, so a melt ratio would be noise.
-Cards show maker, weight where stated, and landed cost. Counterfeits are
-handled by taking honest sellers at their word — `DESIGNER_FAKE_MARKERS`
-rejects `-style`, `inspired`, `vermeil`, `not authentic`, `aftermarket` and
-friends, `maker_is_uncertain` rejects `"LALAOUNIS?"`, and
-`is_designer_accessory` rejects the empty maker-branded ring boxes (while
-still keeping a genuine ring sold *with* its box). Designer mode gets a larger
-`MAX_QUERIES_BY_METAL` allowance because it spends one query per maker.
+There is **no melt valuation** here (as on Yurman): the mark, not the gram, is
+the value. Cards show brand, weight where stated, and landed cost.
+Counterfeits are handled by taking honest sellers at their word —
+`BRAND_FAKE_MARKERS` rejects `-style`, `inspired`, `vermeil`, `gold plate`
+(Tom Wood and Lagos both sell plated silver), `not authentic`, `aftermarket`
+and friends; `maker_is_uncertain` rejects `"KONSTANTINO?"`; and
+`is_brand_accessory` rejects empty brand-stamped ring boxes while still
+keeping a genuine ring sold *with* its box. `Lagos` is a city as well as a
+jeweller, so each of its aliases carries a second word (`lagos caviar`,
+`lagos sterling`, …). Brand mode gets a larger `MAX_QUERIES_BY_METAL`
+allowance because it spends one query per brand.
+
+A live 16-market run returns **117 rings, £59–£4,573, median £401** — the same
+price band as the Yurman screen, which is where the mispricing actually lives.
 
 Every scan prints a **per-market yield log** (`raw → kept → value`), a
 weight-confidence tally, and the eBay API call count, so coverage leaks and

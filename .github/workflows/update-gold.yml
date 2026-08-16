@@ -8,7 +8,8 @@ name: Update gold ring scan
 #   EBAY_CLIENT_SECRET  your eBay Cert ID (Client Secret)
 # The gold price uses the keyless "free" provider, so no price-API secret needed.
 #
-# NOTE: scheduled runs only fire from the repository's DEFAULT branch (main).
+# NOTE: scheduled runs only fire from the repository's DEFAULT branch, which
+# for this repo is claude/ebay-gold-ring-scanner-m1r5e9 (also what Pages serves).
 # You can always trigger a run by hand from the Actions tab (workflow_dispatch).
 
 on:
@@ -23,7 +24,7 @@ on:
         description: "Which page to update"
         type: choice
         default: all
-        options: [all, gold, silver, yurman, designer]
+        options: [all, gold, silver, yurman, brands]
           
 
 
@@ -90,12 +91,13 @@ jobs:
 
 
 
-          # Designer: named signet houses. Small volumes of heavy gold, so a
-          # higher price floor keeps the cheap-ring flood out.
-          if [ "$SCREEN" = "all" ] || [ "$SCREEN" = "designer" ]; then
-            python gold_ring_scanner.py --metal designer --max-price 12000 --min-price 200 \
+          # Brands: named-brand signets -- Yurman's peers plus the signet
+          # houses. Mostly sterling with gold accents, so the floor matches
+          # the Yurman screen's rather than the heavy-gold screens'.
+          if [ "$SCREEN" = "all" ] || [ "$SCREEN" = "brands" ]; then
+            python gold_ring_scanner.py --metal brands --max-price 12000 --min-price 60 \
               --limit 200 --conditions ANY --markets $MARKETS \
-              --json data/designer.json --csv data/designer.csv || echo '[warn] designer failed'
+              --json data/brands.json --csv data/brands.csv || echo '[warn] brands failed'
           fi
 
       - name: Build dashboard index
