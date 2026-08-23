@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-23T08:42:05.734864+00:00",
+    "generated_at": "2026-08-23T17:25:55.872193+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.5774,
       "USD": 0.7323
     },
-    "total_fetched": 1810,
+    "total_fetched": 1814,
     "total_analysed": 16,
     "value_count": 1,
     "new_count": 0,
@@ -458,7 +458,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 29,
+      "seller_feedback": 32,
       "seller_private": false,
       "weight_g": 18.0,
       "net_gold_g": 16.5,
@@ -525,7 +525,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "326539243500",
-      "url": "https://www.ebay.com.au/itm/326539243500?_skw=14ct+gold+signet+ring&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwW63O8OzD8Lg0mRc%2F9UP%2BW6kBtvVToIme0Jh0GBJffMzmHt8D26Mmg4N%2B%2B%2FYqI41ujce2U8ozdhu9lgQUwokIPZevHdeXJIAKOlrUgfjusEdVK2QCujdaHw0L3wmNZs%2FUHi%2BOyENe7N2HBUd75nnCqo9IW8nS9g%2Bhp3mAmAtmL62g%3D%3D",
+      "url": "https://www.ebay.com.au/itm/326539243500?_skw=14ct+gold+signet+ring&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwUuSLBDx1IryGzJmN0P%2FA3lJHS9lf02atAApwHIhxhZCb42RgxqsqezlbJ3qosJxEyBTrM%2FhrXjJR0Gzgd5K9Ldwz%2F4Prdodxt%2FxKivcMxRIwneWhOTUQL%2FEBibDRjtETyYjRU9K9YVvQpR89Sojrja77GCKzhRiEGqtxBtbCgnKQ%3D%3D",
       "first_seen": "2026-08-18T17:32:02.069491+00:00",
       "is_new": false
     },
@@ -538,7 +538,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "private",
-      "seller_feedback": 23,
+      "seller_feedback": 24,
       "seller_private": true,
       "weight_g": 32.15,
       "net_gold_g": 32.1,
