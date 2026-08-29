@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-29T13:47:48.650014+00:00",
+    "generated_at": "2026-08-29T19:39:30.880183+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,14 +80,14 @@
       "SGD": 0.5791,
       "USD": 0.7362
     },
-    "total_fetched": 1574,
-    "total_analysed": 4,
+    "total_fetched": 1621,
+    "total_analysed": 5,
     "value_count": 0,
-    "new_count": 0,
+    "new_count": 1,
     "weight_unknown_count": 0,
     "country_counts": {
       "NL": 1,
-      "UK": 3
+      "UK": 4
     }
   },
   "results": [
@@ -132,6 +132,44 @@
       "is_new": false
     },
     {
+      "title": "**HEAVY SOLID 9ct YELLOW GOLD SADDLE SIGNET RING – 24g – SIZE T – HALLMARKED**",
+      "metal": "gold",
+      "maker": null,
+      "provenance": null,
+      "carat": 9,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": "business",
+      "seller_feedback": 5611,
+      "seller_private": false,
+      "weight_g": 24.0,
+      "net_gold_g": 24.0,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": false,
+      "current_bid": 1295.0,
+      "landed_cost": 1299.0,
+      "price_orig": null,
+      "country": "UK",
+      "flag": "🇬🇧",
+      "melt_value": 949.37,
+      "ratio": 0.73,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": false,
+      "price_firm": true,
+      "condition": "Pre-owned - Good",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "188826271321",
+      "url": "https://www.ebay.co.uk/itm/188826271321?_skw=9ct+gold+signet+ring&hash=item2bf6ec3e59:g:ebYAAeSwFJZqkseU",
+      "first_seen": "2026-08-21T17:31:14.644594+00:00",
+      "is_new": false
+    },
+    {
       "title": "9ct Gold Signet Ring 16 Grams 2.5ct Diamonds Size Q No Hallmark",
       "metal": "gold",
       "maker": null,
@@ -170,7 +208,7 @@
       "is_new": false
     },
     {
-      "title": "**HEAVY SOLID 9ct YELLOW GOLD SADDLE SIGNET RING – 24g – SIZE T – HALLMARKED**",
+      "title": "9ct Yellow Solid Gold Bulldog Signet Ring",
       "metal": "gold",
       "maker": null,
       "provenance": null,
@@ -178,34 +216,34 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 5611,
+      "seller_feedback": 3382,
       "seller_private": false,
-      "weight_g": 24.0,
-      "net_gold_g": 24.0,
+      "weight_g": 19.6,
+      "net_gold_g": 18.1,
       "weight_confidence": "confirmed",
       "tags": [
         "signet"
       ],
-      "stones": false,
-      "current_bid": 1295.0,
-      "landed_cost": 1299.0,
+      "stones": true,
+      "current_bid": 1460.0,
+      "landed_cost": 1464.0,
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 949.37,
-      "ratio": 0.73,
+      "melt_value": 715.99,
+      "ratio": 0.49,
       "is_value": false,
       "buying": "Buy now",
       "best_offer": false,
       "price_firm": true,
-      "condition": "Pre-owned - Good",
+      "condition": "New with packaging",
       "time_left": "n/a",
       "ends_at": null,
       "bids": "",
-      "item_id": "188826271321",
-      "url": "https://www.ebay.co.uk/itm/188826271321?_skw=9ct+gold+signet+ring&hash=item2bf6ec3e59:g:ebYAAeSwFJZqkseU",
-      "first_seen": "2026-08-21T17:31:14.644594+00:00",
-      "is_new": false
+      "item_id": "147117810866",
+      "url": "https://www.ebay.co.uk/itm/147117810866?_skw=9ct+gold+signet+ring&hash=item2240e7a4b2:g:51QAAeSwiG9oc6xm",
+      "first_seen": "2026-08-29T19:39:30.880183+00:00",
+      "is_new": true
     },
     {
       "title": "Vintage Gentleman's 9ct Gold Signet Ring | Large Oval Gold Signet Ring | English",
