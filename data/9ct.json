@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-08-29T00:54:43.645978+00:00",
+    "generated_at": "2026-08-29T13:47:48.650014+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,19 +80,19 @@
       "SGD": 0.5791,
       "USD": 0.7362
     },
-    "total_fetched": 1561,
-    "total_analysed": 5,
+    "total_fetched": 1574,
+    "total_analysed": 4,
     "value_count": 0,
     "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
-      "NL": 2,
+      "NL": 1,
       "UK": 3
     }
   },
   "results": [
     {
-      "title": "9ct Yellow Solid Gold Saddle Signet Ring. 24g Size T. No Offers",
+      "title": "Men's Gents 9Ct Gold 15.2g Signet Ring Size U",
       "metal": "gold",
       "maker": null,
       "provenance": null,
@@ -100,22 +100,24 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 5611,
+      "seller_feedback": 4919,
       "seller_private": false,
-      "weight_g": 24.0,
-      "net_gold_g": 24.0,
+      "weight_g": 15.2,
+      "net_gold_g": 15.2,
       "weight_confidence": "confirmed",
       "tags": [
-        "signet"
+        "signet",
+        "vintage",
+        "gents"
       ],
       "stones": false,
-      "current_bid": 1315.0,
-      "landed_cost": 1319.0,
+      "current_bid": 1245.0,
+      "landed_cost": 1249.0,
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 949.37,
-      "ratio": 0.72,
+      "melt_value": 601.27,
+      "ratio": 0.48,
       "is_value": false,
       "buying": "Buy now",
       "best_offer": false,
@@ -124,9 +126,9 @@
       "time_left": "n/a",
       "ends_at": null,
       "bids": "",
-      "item_id": "188826271321",
-      "url": "https://www.ebay.co.uk/itm/188826271321?_skw=9ct+gold+signet+ring&hash=item2bf6ec3e59:g:U9oAAeSw3EVqiBXH",
-      "first_seen": "2026-08-21T17:31:14.644594+00:00",
+      "item_id": "307004107164",
+      "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW",
+      "first_seen": "2026-08-12T08:37:43.081396+00:00",
       "is_new": false
     },
     {
@@ -168,7 +170,7 @@
       "is_new": false
     },
     {
-      "title": "Men's Gents 9Ct Gold 15.2g Signet Ring Size U",
+      "title": "**HEAVY SOLID 9ct YELLOW GOLD SADDLE SIGNET RING – 24g – SIZE T – HALLMARKED**",
       "metal": "gold",
       "maker": null,
       "provenance": null,
@@ -176,24 +178,22 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 4918,
+      "seller_feedback": 5611,
       "seller_private": false,
-      "weight_g": 15.2,
-      "net_gold_g": 15.2,
+      "weight_g": 24.0,
+      "net_gold_g": 24.0,
       "weight_confidence": "confirmed",
       "tags": [
-        "signet",
-        "vintage",
-        "gents"
+        "signet"
       ],
       "stones": false,
-      "current_bid": 1245.0,
-      "landed_cost": 1249.0,
+      "current_bid": 1295.0,
+      "landed_cost": 1299.0,
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 601.27,
-      "ratio": 0.48,
+      "melt_value": 949.37,
+      "ratio": 0.73,
       "is_value": false,
       "buying": "Buy now",
       "best_offer": false,
@@ -202,9 +202,9 @@
       "time_left": "n/a",
       "ends_at": null,
       "bids": "",
-      "item_id": "307004107164",
-      "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW",
-      "first_seen": "2026-08-12T08:37:43.081396+00:00",
+      "item_id": "188826271321",
+      "url": "https://www.ebay.co.uk/itm/188826271321?_skw=9ct+gold+signet+ring&hash=item2bf6ec3e59:g:ebYAAeSwFJZqkseU",
+      "first_seen": "2026-08-21T17:31:14.644594+00:00",
       "is_new": false
     },
     {
@@ -226,9 +226,9 @@
         "vintage"
       ],
       "stones": false,
-      "current_bid": 2309.76,
-      "landed_cost": 2798.11,
-      "price_orig": "€2,695",
+      "current_bid": 2313.92,
+      "landed_cost": 2803.1,
+      "price_orig": "€2,699",
       "country": "NL",
       "flag": "🇳🇱",
       "melt_value": 640.83,
@@ -244,45 +244,6 @@
       "item_id": "267701971282",
       "url": "https://www.ebay.nl/itm/267701971282?_skw=9ct+gold+signet+ring&hash=item3e5447e952:g:VI0AAeSwI4tqMpL4",
       "first_seen": "2026-08-28T01:19:41.197698+00:00",
-      "is_new": false
-    },
-    {
-      "title": "Men's Signet Ring with Onyx 9 Ct, 5.6 Grams 65 Gr, Yellow Gold",
-      "metal": "gold",
-      "maker": null,
-      "provenance": null,
-      "carat": 9,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": "business",
-      "seller_feedback": 6763,
-      "seller_private": false,
-      "weight_g": 65.0,
-      "net_gold_g": 61.5,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "gents"
-      ],
-      "stones": true,
-      "current_bid": 731.45,
-      "landed_cost": 904.14,
-      "price_orig": "€853",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "melt_value": 2432.77,
-      "ratio": 2.69,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": true,
-      "price_firm": true,
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "366315577091",
-      "url": "https://www.ebay.nl/itm/366315577091?_skw=9ct+gold+signet+ring&hash=item554a1c1f03:g:IQ0AAOSwGV1lql~f",
-      "first_seen": "2026-08-28T20:09:59.722355+00:00",
       "is_new": false
     }
   ]
