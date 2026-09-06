@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-06T12:12:28.552606+00:00",
+    "generated_at": "2026-09-06T19:00:13.076194+00:00",
     "query": "18ct gold signet ring",
     "queries": [
       "18ct gold signet ring",
@@ -80,14 +80,14 @@
       "SGD": 0.5834,
       "USD": 0.7391
     },
-    "total_fetched": 1458,
-    "total_analysed": 24,
+    "total_fetched": 1451,
+    "total_analysed": 25,
     "value_count": 0,
-    "new_count": 9,
+    "new_count": 1,
     "weight_unknown_count": 0,
     "country_counts": {
       "AT": 1,
-      "AU": 3,
+      "AU": 4,
       "DE": 1,
       "IE": 2,
       "IT": 3,
@@ -249,7 +249,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "254195547625",
-      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fHWScezysczKodLvlmRLTFEvPaXuem5Kxm3RbJRbGKVFAAZUiUw%2Fw190TJ6KZHMcjMoGSGKUtDJpm27oRYzRzBmURB9Vk2XWy166EgGbs%2BRfF7u31u2RyL5oG8Z6Rw6ALHsGq7U5OGFTM%2FQSjoBch1Ra%2FQDgJiIdeZjSm5WWcXYsw%3D%3D",
+      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fFQS%2BGM1WbAFVkZk71Dk%2FWoHA7RTM6QpAnNqhZvBlLwBtLHieLYCnb8mJnk6lbZb4%2BJBVKNd%2Fq3P0TxcRVdP2yohYhc%2Bwny3XPKG5uOyset05NUhFPPkzFtrMvGgz2ipchMpIn3ul9bxQhrQrOtAyfYqgba4r%2BVZRLiP1aCpnLYYA%3D%3D",
       "first_seen": "2026-07-29T09:12:35.584280+00:00",
       "is_new": false
     },
@@ -405,7 +405,7 @@
       "item_id": "278327592723",
       "url": "https://www.ebay.ie/itm/278327592723?_skw=18ct+gold+signet+ring&hash=item40cd9e0713:g:o0oAAeSwCVRqD7LY",
       "first_seen": "2026-09-06T12:12:28.552606+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "$10,500 Men's David Yurman 18k Yellow Gold Pave Diamond Streamline Signet Ring",
@@ -444,7 +444,7 @@
       "item_id": "167592026086",
       "url": "https://www.ebay.com.au/itm/167592026086?_skw=18ct+gold+signet+ring&hash=item2705435fe6:g:46gAAeSwaERqDJNo",
       "first_seen": "2026-09-06T12:12:28.552606+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Ring 18 K Yellow Gold 17.5g Caduceus Medical Symbol Doctor Oval Signet Heavy",
@@ -476,13 +476,13 @@
       "best_offer": false,
       "price_firm": false,
       "condition": "Pre-owned - Good",
-      "time_left": "8d 8h",
+      "time_left": "8d 1h",
       "ends_at": "2026-09-14T20:27:20.000Z",
       "bids": 0,
       "item_id": "128062257015",
       "url": "https://www.ebay.com.au/itm/128062257015?_skw=18ct+gold+signet+ring&hash=item1dd11af777:g:rgMAAOSww3hk95mn",
       "first_seen": "2026-09-06T12:12:28.552606+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "0.404ct Diamond Hexagon Signet Ring K18 YG Pt900 Two Tone Heavy 25.4g",
@@ -521,6 +521,44 @@
       "item_id": "278341401734",
       "url": "https://www.ebay.com.au/itm/278341401734?_skw=18ct+gold+signet+ring&hash=item40ce70bc86:g:o0oAAeSwCVRqD7LY",
       "first_seen": "2026-09-06T12:12:28.552606+00:00",
+      "is_new": false
+    },
+    {
+      "title": "18K Gold & Pt1000 Platinum Signet Ring 0.15ct Diamond Heavy 19.9g",
+      "metal": "gold",
+      "maker": null,
+      "provenance": null,
+      "carat": 18,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 654,
+      "seller_private": false,
+      "weight_g": 19.9,
+      "net_gold_g": 18.4,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": true,
+      "current_bid": 3818.03,
+      "landed_cost": 4623.64,
+      "price_orig": "7,171",
+      "country": "AU",
+      "flag": "🇦🇺",
+      "melt_value": 1453.06,
+      "ratio": 0.31,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": true,
+      "price_firm": true,
+      "condition": "Pre-owned - Good",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "278331349282",
+      "url": "https://www.ebay.com.au/itm/278331349282?_skw=18ct+gold+signet+ring&hash=item40cdd75922:g:X2sAAeSwZDpqN-Td",
+      "first_seen": "2026-09-06T19:00:13.076194+00:00",
       "is_new": true
     },
     {
@@ -715,7 +753,7 @@
       "item_id": "800608096283",
       "url": "https://www.ebay.nl/itm/800608096283?_skw=18ct+gold+signet+ring&hash=itemba67f6101b:g:4AYAAeSwrEdpLXV8",
       "first_seen": "2026-09-06T12:12:28.552606+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Antique 18ct Solid Gold Signet Ring Coat Of Arms Royal Arms Of Scotland 27.8 Gr",
@@ -754,45 +792,7 @@
       "item_id": "800602208458",
       "url": "https://www.ebay.nl/itm/800602208458?_skw=18ct+gold+signet+ring&hash=itemba679c38ca:g:sc8AAeSwS9dqmEU4",
       "first_seen": "2026-09-06T12:12:28.552606+00:00",
-      "is_new": true
-    },
-    {
-      "title": "0.596ct Natural Diamond Signet Ring K18YG Pt900 Combi Two-Tone",
-      "metal": "gold",
-      "maker": null,
-      "provenance": null,
-      "carat": 18,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 654,
-      "seller_private": false,
-      "weight_g": 20.7,
-      "net_gold_g": 19.2,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet"
-      ],
-      "stones": true,
-      "current_bid": 4695.89,
-      "landed_cost": 5661.47,
-      "price_orig": "€5,467",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "melt_value": 1516.24,
-      "ratio": 0.27,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": true,
-      "price_firm": true,
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "278331349104",
-      "url": "https://www.ebay.nl/itm/278331349104?_skw=18ct+gold+signet+ring&hash=item40cdd75870:g:BEQAAeSwFcFqN9hU",
-      "first_seen": "2026-09-06T12:12:28.552606+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "0.404ct Diamond Hexagon Signet Ring K18 YG Pt900 Two Tone Heavy 25.4g",
@@ -831,6 +831,44 @@
       "item_id": "278309632707",
       "url": "https://www.ebay.nl/itm/278309632707?_skw=18ct+gold+signet+ring&hash=item40cc8bfac3:g:o0oAAeSwCVRqD7LY",
       "first_seen": "2026-08-25T17:41:25.756676+00:00",
+      "is_new": false
+    },
+    {
+      "title": "0.596ct Natural Diamond Signet Ring K18YG Pt900 Combi Two-Tone",
+      "metal": "gold",
+      "maker": null,
+      "provenance": null,
+      "carat": 18,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 654,
+      "seller_private": false,
+      "weight_g": 20.7,
+      "net_gold_g": 19.2,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": true,
+      "current_bid": 4695.89,
+      "landed_cost": 5661.47,
+      "price_orig": "€5,467",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "melt_value": 1516.24,
+      "ratio": 0.27,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": true,
+      "price_firm": true,
+      "condition": "Pre-owned - Good",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "278331349104",
+      "url": "https://www.ebay.nl/itm/278331349104?_skw=18ct+gold+signet+ring&hash=item40cdd75870:g:BEQAAeSwFcFqN9hU",
+      "first_seen": "2026-09-06T12:12:28.552606+00:00",
       "is_new": false
     },
     {
@@ -947,7 +985,7 @@
       "item_id": "278337889049",
       "url": "https://www.ebay.com.sg/itm/278337889049?_skw=18ct+gold+signet+ring&hash=item40ce3b2319:g:XSEAAeSw10tqLAxK",
       "first_seen": "2026-09-06T12:12:28.552606+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "18K Gold & Pt1000 Platinum Signet Ring 0.15ct Diamond Heavy 19.9g",
@@ -985,7 +1023,7 @@
       "item_id": "278331727726",
       "url": "https://www.ebay.com.sg/itm/278331727726?_skw=18ct+gold+signet+ring&hash=item40cddd1f6e:g:X2sAAeSwZDpqN-Td",
       "first_seen": "2026-09-06T12:12:28.552606+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "0.404ct Diamond Hexagon Signet Ring K18 YG Pt900 Two Tone Heavy 25.4g",

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-06T12:05:55.551601+00:00",
+    "generated_at": "2026-09-06T18:54:29.818062+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,10 +80,10 @@
       "SGD": 0.5834,
       "USD": 0.7391
     },
-    "total_fetched": 1602,
+    "total_fetched": 1590,
     "total_analysed": 4,
     "value_count": 0,
-    "new_count": 1,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "NL": 1,
@@ -205,7 +205,7 @@
       "item_id": "128061170958",
       "url": "https://www.ebay.co.uk/itm/128061170958?_skw=9ct+gold+signet+ring&hash=item1dd10a650e:g:hyoAAeSw1VdqmoXQ",
       "first_seen": "2026-09-06T12:05:55.551601+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Vintage Gentleman's 9ct Gold Signet Ring | Large Oval Gold Signet Ring | English",
