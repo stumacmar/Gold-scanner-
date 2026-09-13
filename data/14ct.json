@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-12T17:15:32.609899+00:00",
+    "generated_at": "2026-09-13T08:26:40.703312+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.5839,
       "USD": 0.7403
     },
-    "total_fetched": 1577,
+    "total_fetched": 1574,
     "total_analysed": 14,
     "value_count": 0,
     "new_count": 0,
@@ -142,7 +142,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 16697,
+      "seller_feedback": 16698,
       "seller_private": false,
       "weight_g": 18.89,
       "net_gold_g": 17.4,
@@ -182,7 +182,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 4212,
+      "seller_feedback": 4215,
       "seller_private": false,
       "weight_g": 15.1,
       "net_gold_g": 15.1,
@@ -366,7 +366,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "326539243500",
-      "url": "https://www.ebay.com.au/itm/326539243500?_skw=14ct+gold+signet+ring&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwVCWhVD3Pft7lQVJHAMJfXdkygrCeG4%2B5H0qtL%2B76k5KwouQQVT9RPgCI8eUcSgvfbpuoc3rjufuDWvhqIcnTN5Z4zVaviZQzFVuwFpvYt0kA52rD%2B2YE5NYYcc8xEc9iie4IQPDliXwP1SwtD0AXrIyYhNMXWnCojMbRFsBq%2Foyw%3D%3D",
+      "url": "https://www.ebay.com.au/itm/326539243500?_skw=14ct+gold+signet+ring&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwX6qAX7pdxHkeF3oEjEkkuytou15QHEF%2BSU08THLzSyr71%2B--P1a3Wn1dKJht5w%2FMT1GV5kE67gtweo%2BssrkdjS%2FdKil1guhvJxr87psVZOuZL7X5Rxx9F2dDJmVHNRXu%2Bma5EP713b9MADRwc8%2BEoqixtTLZH0sn4rFlyZ1%2BMycw%3D%3D",
       "first_seen": "2026-09-09T08:28:40.995334+00:00",
       "is_new": false
     },
@@ -458,7 +458,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 9365,
+      "seller_feedback": 9367,
       "seller_private": false,
       "weight_g": 22.0,
       "net_gold_g": 22.0,
@@ -519,7 +519,7 @@
       "best_offer": true,
       "price_firm": false,
       "condition": "Gebraucht - Gut",
-      "time_left": "3d 5h",
+      "time_left": "2d 14h",
       "ends_at": "2026-09-15T22:45:17.000Z",
       "bids": 0,
       "item_id": "407208030186",
@@ -599,7 +599,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "227249712081",
-      "url": "https://www.ebay.it/itm/227249712081?_skw=anello+sigillo+oro+585&hash=item34e9236bd1:g:mkcAAeSw5WRowwdL&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGZbRsrVTptvFB%2BXpa%2FBvga%2BDb2b2S%2FgUMRMtW0rXmJuzGp94FGVAaQt9eHXV4WpHNef1kPx19nT4lkMzUXt9XxDL6xT6Hyvfm7qc2%2B0P47%2Bsy5gnqA7ot1sDVfY5od2GK5qqydgdLcdTAB%2B951Enqdvad2h1M5li1wmwF0sqw4wTVn3xlUhSoQ%2FicqGU6DnODH1dMlpXL72TnxWpQp3mGrJUr0vKI9qSgW5%2BNzjjmISmf293mYWSQH5Sjsqs2JEzqfRNJwIciMyWIsrSmtXuYgB8vZtsL1Mc05sBCOsmtw3a0TWi5NJD922%2BNFmmCG9PsM%3D",
+      "url": "https://www.ebay.it/itm/227249712081?_skw=anello+sigillo+oro+585&hash=item34e9236bd1:g:mkcAAeSw5WRowwdL",
       "first_seen": "2026-08-04T09:08:15.155855+00:00",
       "is_new": false
     },

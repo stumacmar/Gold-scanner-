@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-12T17:12:06.604437+00:00",
+    "generated_at": "2026-09-13T08:23:44.337107+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,10 +80,10 @@
       "SGD": 0.5839,
       "USD": 0.7403
     },
-    "total_fetched": 1693,
+    "total_fetched": 1662,
     "total_analysed": 4,
     "value_count": 0,
-    "new_count": 1,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 1,
@@ -243,7 +243,7 @@
       "item_id": "167370662173",
       "url": "https://www.ebay.com.au/itm/167370662173?_skw=9ct+gold+signet+ring&hash=item26f811a11d:g:7SMAAOSwsaZn0M6c",
       "first_seen": "2026-09-12T17:12:06.604437+00:00",
-      "is_new": true
+      "is_new": false
     }
   ]
 }
