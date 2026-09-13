@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-13T08:30:25.870576+00:00",
+    "generated_at": "2026-09-13T17:18:42.437610+00:00",
     "query": "18ct gold signet ring",
     "queries": [
       "18ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.5839,
       "USD": 0.7403
     },
-    "total_fetched": 1426,
+    "total_fetched": 1428,
     "total_analysed": 24,
     "value_count": 0,
     "new_count": 0,
@@ -146,7 +146,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "private",
-      "seller_feedback": 82,
+      "seller_feedback": 83,
       "seller_private": true,
       "weight_g": 21.8,
       "net_gold_g": 18.3,
@@ -171,7 +171,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "137639179751",
-      "url": "https://www.ebay.co.uk/itm/137639179751?_skw=18ct+gold+signet+ring&hash=item200bef35e7:g:8rEAAeSwvoBqpAsk&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGabq%2BB%2F6pt6xe7rcYITEfFzRMcqkd3i3kptUqoy5zSj1PIYKEQyztoM17Rs%2BFEmZPpVXQUdxy0wBSt%2FXgR4VZ3u5Ej3DHdPOmWfYN9gfKHgHfRazHNYf3CAftqsDkA8oGSIYxIQ6J3m79Adu24KykQ8P3YitHAjN0yh6VzxbTJDZ8Skuz40MgAnemZZep%2B1y6viBKlRppjhXdIBuLQsKVywAb6EeRVwJqn1qH6hcSq3wH5lV5K5gEEmj20CCDPaAQlL0RJnAxaQ020aoG6kJNG0AA80QfsH6c4w6KNqikGu5w%3D%3D",
+      "url": "https://www.ebay.co.uk/itm/137639179751?_skw=18ct+gold+signet+ring&hash=item200bef35e7:g:8rEAAeSwvoBqpAsk&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGabq%2BB%2F6pt6xe7rcYITEfFzRMcqkd3i3kptUqoy5zSj1PIYKEQyztoM17Rs%2BFEmZPpVXQUdxy0wBSt%2FXgR4VZ3u5Ej3DHdPOmWfYN9gfKHgHfRazHNYf3CAftqsDkA8oGSKiO4jeWvPQ8Qc6CFysrw40WSApCWBqiH9yto%2Fh3G8QbI0O0yY96TqcE2Ra7AeV4g4BqnDHvAWBIUApt%2BMlTzDKmATuqfTZDOJMWPi10bnne63AHB%2B%2Fe7DW%2BYRjDf5MdzmhVXU%2FbuzIUAXx1Mz04eVfckDAnNwGhcP7lNewRlIeQ%3D%3D",
       "first_seen": "2026-08-19T17:35:15.912281+00:00",
       "is_new": false
     },
@@ -249,7 +249,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "254195547625",
-      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fE8JJpe8WNoXijVQGVJBfn4xZkb2RJi2yeTAks9vp%2FA7%2FdrOCf3toJB%2FFY4jzc2iXZH3VwXomvUxtZPb6u5zLR5OxUSfMY759TuklUR2RSFMrpgx2%2FwXuEGHu0zuKWzX7IbJQhwOEq5lsDr49fsLKdf7fIchEJXN56WGOxEjvfCMA%3D%3D",
+      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbRDAkjNpjJHZWtSHoT%2Bl4CnRjADBsKhfnYu0ry%2Bb0FMpf9PNvu32CGckFjD2sUDV3EdyloYmDBRYBPXh7Gvns3Bu1JbI1jNjYHgnhn0ID5Z21dxOAjoeb4nAyiSERK8fGiDnNnlDTmP0qdkuQ4zpsUjz49x%2BstIinXLHIU%2F%2B%2FYwnch3Nw63KNsVZbj8mY2FRAFYVeLY8HbJGYhrtzLUFhxzQ93hO14luLuKWDiVRM8m5IifQneHo8x5qv3rcsQ8wZ1CcrZ6FWF8Zk64sF1rIlLLjriTOVxwdh4EWKE2sHlRA%3D%3D",
       "first_seen": "2026-07-29T09:12:35.584280+00:00",
       "is_new": false
     },
@@ -631,7 +631,7 @@
       "best_offer": false,
       "price_firm": false,
       "condition": "Pre-owned - Good",
-      "time_left": "1d 11h",
+      "time_left": "1d 3h",
       "ends_at": "2026-09-14T20:27:20.000Z",
       "bids": 0,
       "item_id": "128062257015",
