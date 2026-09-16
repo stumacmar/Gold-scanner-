@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-15T17:21:27.907898+00:00",
+    "generated_at": "2026-09-16T08:35:38.613961+00:00",
     "query": "22ct gold signet ring",
     "queries": [
       "22ct gold signet ring",
@@ -56,18 +56,18 @@
     "conditions": "ANY",
     "max_price": 6000.0,
     "threshold": 1.3,
-    "spot_gbp_per_oz": 3186.0228833763,
-    "spot_source": "gold-api.com x frankfurter (live, $4,295.80/oz)",
+    "spot_gbp_per_oz": 3212.12946,
+    "spot_source": "gold-api.com x frankfurter (live, $4,331.00/oz)",
     "carat_per_gram": {
-      "8": 34.11,
-      "9": 38.41,
-      "10": 42.71,
-      "14": 59.92,
-      "15": 64.02,
-      "18": 76.82,
-      "20": 85.33,
-      "22": 93.89,
-      "24": 102.33
+      "8": 34.39,
+      "9": 38.73,
+      "10": 43.06,
+      "14": 60.41,
+      "15": 64.55,
+      "18": 77.45,
+      "20": 86.03,
+      "22": 94.66,
+      "24": 103.17
     },
     "fx_to_gbp": {
       "GBP": 1.0,
@@ -80,7 +80,7 @@
       "SGD": 0.5829,
       "USD": 0.7417
     },
-    "total_fetched": 661,
+    "total_fetched": 617,
     "total_analysed": 1,
     "value_count": 0,
     "new_count": 0,
@@ -110,13 +110,13 @@
         "gents"
       ],
       "stones": true,
-      "current_bid": 2880.86,
-      "landed_cost": 3483.43,
-      "price_orig": "€3,366",
+      "current_bid": 2877.61,
+      "landed_cost": 3479.53,
+      "price_orig": "€3,362",
       "country": "DE",
       "flag": "🇩🇪",
-      "melt_value": 1306.02,
-      "ratio": 0.37,
+      "melt_value": 1316.72,
+      "ratio": 0.38,
       "is_value": false,
       "buying": "Buy now",
       "best_offer": true,
