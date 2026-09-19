@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-19T08:26:08.417622+00:00",
+    "generated_at": "2026-09-19T17:14:45.578821+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -80,14 +80,15 @@
       "SGD": 0.5862,
       "USD": 0.7494
     },
-    "total_fetched": 1562,
-    "total_analysed": 12,
+    "total_fetched": 1565,
+    "total_analysed": 13,
     "value_count": 0,
-    "new_count": 0,
+    "new_count": 1,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 2,
       "DE": 3,
+      "FR": 1,
       "IT": 1,
       "US": 6
     }
@@ -102,7 +103,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 16719,
+      "seller_feedback": 16720,
       "seller_private": false,
       "weight_g": 18.89,
       "net_gold_g": 17.4,
@@ -440,7 +441,7 @@
       "best_offer": true,
       "price_firm": false,
       "condition": "Gebraucht - Hervorragend",
-      "time_left": "4d 6h",
+      "time_left": "3d 21h",
       "ends_at": "2026-09-23T14:50:37.000Z",
       "bids": 0,
       "item_id": "147577436729",
@@ -523,6 +524,44 @@
       "url": "https://www.ebay.de/itm/287536129469?_skw=Siegelring+Gold+585&hash=item42f27d25bd:g:14gAAeSwR8Jqhuca",
       "first_seen": "2026-08-20T17:34:45.385164+00:00",
       "is_new": false
+    },
+    {
+      "title": "Imposante Bague Chevalière carrée Or Gold 14k 585 Poinçon Rubis 18,64g T66",
+      "metal": "gold",
+      "maker": null,
+      "provenance": null,
+      "carat": 14,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": "private",
+      "seller_feedback": 1638,
+      "seller_private": false,
+      "weight_g": 18.64,
+      "net_gold_g": 17.1,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": true,
+      "current_bid": 1302.22,
+      "landed_cost": 1589.06,
+      "price_orig": "€1,516",
+      "country": "FR",
+      "flag": "🇫🇷",
+      "melt_value": 1055.42,
+      "ratio": 0.66,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": false,
+      "price_firm": true,
+      "condition": "Occasion",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "267248687071",
+      "url": "https://www.ebay.fr/itm/267248687071?_skw=chevali%C3%A8re+or+585&hash=item3e394357df:g:zXsAAOSwHZhmhx38",
+      "first_seen": "2026-09-19T17:14:45.578821+00:00",
+      "is_new": true
     },
     {
       "title": "Anello sigillo in oro 585 con un lapislazzuli misura anello 69 peso 23,27g",
