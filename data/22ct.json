@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-19T17:20:12.410889+00:00",
+    "generated_at": "2026-09-20T08:33:13.925913+00:00",
     "query": "22ct gold signet ring",
     "queries": [
       "22ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.5862,
       "USD": 0.7494
     },
-    "total_fetched": 601,
+    "total_fetched": 608,
     "total_analysed": 4,
     "value_count": 0,
     "new_count": 0,
@@ -102,7 +102,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 15300,
+      "seller_feedback": 15302,
       "seller_private": false,
       "weight_g": 17.9,
       "net_gold_g": 16.4,
@@ -170,7 +170,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "128083333469",
-      "url": "https://www.ebay.com/itm/128083333469?_skw=mens+22ct+gold+signet+ring&hash=item1dd25c915d:g:n9oAAeSwkOJqqyJt&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGYga7gXcPmwZe8n48W3sutDfwCMTWmhVMW9CC%2Bt6nw8YYTn2fancRH5C%2F1%2BuUL%2FDOslRYAUZKJBpXuBo94IbIP3xDZVbRZocuO9hxQ5XaintX5DOZwIufERSdsCqml6B%2B8cumM2ppoLJ9ujhJxu2Md0mWnzrG4KS2pjCfsiRxJv5l1pRIsUwZ0NxgxnBsxmnxJNlCeewH4yH1ro4rEOAVLIfyao61lIalru2LoTMZQFOK%2Bivn0UEpnUBO8MIjaX2LnCMZNRVCRha%2FErWPKckfI%2BPAwAxXkbzPSGmcyUO7p49rwdr35ga79ZCi66cXpyiSA%3D",
+      "url": "https://www.ebay.com/itm/128083333469?_skw=mens+22ct+gold+signet+ring&hash=item1dd25c915d:g:n9oAAeSwkOJqqyJt&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGYga7gXcPmwZe8n48W3sutDfwCMTWmhVMW9CC%2Bt6nw8YYTn2fancRH5C%2F1%2BuUL%2FDOslRYAUZKJBpXuBo94IbIP3xDZVbRZocuO9hxQ5XaintX5DOZwIufERSdsCqml6B%2B8rEVdbvWEour7arPbuTIXmteoDv73iHZAhkRlhvKZmwwUwO8qKur2ydyFEBWwmuAjBjPck%2BQPIV0aFUByv2HUsdx1yKgsANlNqBQo6k%2FDr8Iq7vMwGHFrisGGJfwAGeWBHOmqsBfzqe3NPGybLZtb3VKwDayKUHYQFqE3oFzTn9IC963fBe%2BVuHlyWWcIHBf0%3D",
       "first_seen": "2026-09-17T08:36:15.635825+00:00",
       "is_new": false
     },
@@ -183,7 +183,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 15300,
+      "seller_feedback": 15302,
       "seller_private": false,
       "weight_g": 17.9,
       "net_gold_g": 16.4,

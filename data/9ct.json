@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-19T17:11:37.466974+00:00",
+    "generated_at": "2026-09-20T08:24:40.628783+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,14 +80,14 @@
       "SGD": 0.5862,
       "USD": 0.7494
     },
-    "total_fetched": 1485,
-    "total_analysed": 5,
+    "total_fetched": 1493,
+    "total_analysed": 4,
     "value_count": 0,
-    "new_count": 1,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 1,
-      "UK": 4
+      "UK": 3
     }
   },
   "results": [
@@ -206,45 +206,6 @@
       "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW",
       "first_seen": "2026-08-12T08:37:43.081396+00:00",
       "is_new": false
-    },
-    {
-      "title": "9ct Yellow Gold Engraved Signet Ring, Custom Made, Not Scrap",
-      "metal": "gold",
-      "maker": null,
-      "provenance": null,
-      "carat": 9,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": "private",
-      "seller_feedback": 545,
-      "seller_private": true,
-      "weight_g": 17.0,
-      "net_gold_g": 17.0,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "band"
-      ],
-      "stones": false,
-      "current_bid": 1740.7,
-      "landed_cost": 1744.7,
-      "price_orig": null,
-      "country": "UK",
-      "flag": "🇬🇧",
-      "melt_value": 672.6,
-      "ratio": 0.39,
-      "is_value": false,
-      "buying": "Auction",
-      "best_offer": true,
-      "price_firm": false,
-      "condition": "Used",
-      "time_left": "1m",
-      "ends_at": "2026-09-19T17:12:10.000Z",
-      "bids": 0,
-      "item_id": "178490511034",
-      "url": "https://www.ebay.co.uk/itm/178490511034?_skw=9ct+gold+signet+ring&hash=item298edd0eba:g:hH4AAeSw8ChqgJnU",
-      "first_seen": "2026-09-19T17:11:37.466974+00:00",
-      "is_new": true
     },
     {
       "title": "Gentleman's Handmade Diamond Signet Ring 9ct 375 Solid Gold 29.7 Grams",
