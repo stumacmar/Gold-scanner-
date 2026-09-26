@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-26T08:32:42.136600+00:00",
+    "generated_at": "2026-09-26T17:24:05.336770+00:00",
     "query": "22ct gold signet ring",
     "queries": [
       "22ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.5908,
       "USD": 0.7546
     },
-    "total_fetched": 610,
+    "total_fetched": 602,
     "total_analysed": 4,
     "value_count": 0,
     "new_count": 0,
@@ -102,7 +102,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 15397,
+      "seller_feedback": 15399,
       "seller_private": false,
       "weight_g": 17.9,
       "net_gold_g": 16.4,
@@ -170,7 +170,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "128083333469",
-      "url": "https://www.ebay.com/itm/128083333469?_skw=mens+22ct+gold+signet+ring&hash=item1dd25c915d:g:n9oAAeSwkOJqqyJt&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGYga7gXcPmwZe8n48W3sutDfwCMTWmhVMW9CC%2Bt6nw8YYTn2fancRH5C%2F1%2BuUL%2FDOslRYAUZKJBpXuBo94IbIP3xDZVbRZocuO9hxQ5XaintX5DOZwIufERSdsCqml6B%2B8Bk%2BszCKqQg%2Fc3uriv8xs4ZbzV202RlcemJizlJxT5SxCIsD%2B2ReNki%2FNRhsnZUKvJauttXONgOvoqL0wXZvdDMvZVwhbh14OF6zDzijhyEnwv3USu4nw1%2FoMeMN9tD2ksQ4TinyoWTioI9FBFHBHpUPDK4Tgr4ivgP2xULtxDZytjgAn5plJk6P955tM0PjM%3D",
+      "url": "https://www.ebay.com/itm/128083333469?_skw=mens+22ct+gold+signet+ring&hash=item1dd25c915d:g:n9oAAeSwkOJqqyJt&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGYga7gXcPmwZe8n48W3sutDfwCMTWmhVMW9CC%2Bt6nw8YYTn2fancRH5C%2F1%2BuUL%2FDOslRYAUZKJBpXuBo94IbIP3xDZVbRZocuO9hxQ5XaintX5DOZwIufERSdsCqml6B%2B%2FZAzNH7FWAi56xvj7wtKYbPb6hVEuEPUB080f6CJ7EBmg24SV9iivvptajpCg2ED65hLiTT6DU6JmFfOWHZUhg6wfhWbj6iI23TDZaFV0uI499z%2B23CGKAKlF5lk8h03uxWgtbKB5Qb5SjqG4Z8T8xy56MmK3sNRYA6N1L0w%2FVZZNnIWmxp4dH%2FeGK4s1SM4c%3D",
       "first_seen": "2026-09-17T08:36:15.635825+00:00",
       "is_new": false
     },
@@ -183,7 +183,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 15397,
+      "seller_feedback": 15399,
       "seller_private": false,
       "weight_g": 17.9,
       "net_gold_g": 16.4,

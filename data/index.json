@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-26T08:41:07.532535+00:00",
+  "generated_at": "2026-09-26T17:33:34.146409+00:00",
   "searches": [
     {
       "key": "9ct",
       "label": "9ct",
       "file": "9ct.json",
       "query": "9ct gold signet ring",
-      "generated_at": "2026-09-26T08:24:48.537540+00:00",
+      "generated_at": "2026-09-26T17:14:18.925533+00:00",
       "value_count": 1,
       "total_analysed": 5
     },
@@ -15,7 +15,7 @@
       "label": "14ct",
       "file": "14ct.json",
       "query": "14ct gold signet ring",
-      "generated_at": "2026-09-26T08:27:47.139452+00:00",
+      "generated_at": "2026-09-26T17:17:45.338962+00:00",
       "value_count": 1,
       "total_analysed": 13
     },
@@ -24,7 +24,7 @@
       "label": "18ct",
       "file": "18ct.json",
       "query": "18ct gold signet ring",
-      "generated_at": "2026-09-26T08:30:47.353924+00:00",
+      "generated_at": "2026-09-26T17:21:44.989840+00:00",
       "value_count": 0,
       "total_analysed": 24
     },
@@ -33,7 +33,7 @@
       "label": "22ct",
       "file": "22ct.json",
       "query": "22ct gold signet ring",
-      "generated_at": "2026-09-26T08:32:42.136600+00:00",
+      "generated_at": "2026-09-26T17:24:05.336770+00:00",
       "value_count": 0,
       "total_analysed": 4
     },
@@ -42,7 +42,7 @@
       "label": "Brands",
       "file": "brands.json",
       "query": "John Hardy signet ring",
-      "generated_at": "2026-09-26T08:38:59.242425+00:00",
+      "generated_at": "2026-09-26T17:31:24.338715+00:00",
       "value_count": 0,
       "total_analysed": 116
     },
@@ -51,16 +51,16 @@
       "label": "Scottish",
       "file": "scottish.json",
       "query": "Scottish signet ring",
-      "generated_at": "2026-09-26T08:41:07.532535+00:00",
+      "generated_at": "2026-09-26T17:33:34.146409+00:00",
       "value_count": 0,
-      "total_analysed": 25
+      "total_analysed": 24
     },
     {
       "key": "silver",
       "label": "Silver",
       "file": "silver.json",
       "query": "sterling silver signet ring heavy",
-      "generated_at": "2026-09-26T08:35:43.808299+00:00",
+      "generated_at": "2026-09-26T17:28:04.105505+00:00",
       "value_count": 1,
       "total_analysed": 58
     },
@@ -69,9 +69,9 @@
       "label": "Yurman",
       "file": "yurman.json",
       "query": "David Yurman signet ring",
-      "generated_at": "2026-09-26T08:36:54.107462+00:00",
+      "generated_at": "2026-09-26T17:29:09.619057+00:00",
       "value_count": 0,
-      "total_analysed": 188
+      "total_analysed": 187
     }
   ]
 }
