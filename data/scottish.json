@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-03T08:40:07.827678+00:00",
+    "generated_at": "2026-10-03T18:33:14.976475+00:00",
     "query": "Scottish signet ring",
     "queries": [
       "Scottish signet ring",
@@ -74,15 +74,15 @@
       "SGD": 0.5919,
       "USD": 0.7575
     },
-    "total_fetched": 695,
-    "total_analysed": 24,
+    "total_fetched": 688,
+    "total_analysed": 23,
     "value_count": 0,
     "new_count": 0,
-    "weight_unknown_count": 24,
+    "weight_unknown_count": 23,
     "country_counts": {
       "AU": 2,
       "UK": 17,
-      "US": 5
+      "US": 4
     }
   },
   "results": [
@@ -395,7 +395,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "227056789930",
-      "url": "https://www.ebay.co.uk/itm/227056789930?_skw=Scottish+signet+ring&hash=item34dda3a9aa:g:IWYAAeSwV8Jo85co&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYKTAS4Ba7yXkA6oNNryLEWH2TLSgtkw5a%2FX%2BVD6a%2BRV8fjO6SaPgGzid%2BYx1bDvzz3FPSKR8T%2FmiQs6xojfswFXAJikjmKWtOGoCZOma%2BHcRn78eh1g%2FqEdDXb0s1%2BXM%2FwafKU%2B6sBo1nRgIdP97jFMEXUyGL5NLz3zfHDDQuyYzR1gRCRP63xQ3SO54WRYsV1eddSRLu3nVz2%2BWzjrTXRKxoNUgxVFEZyKQT2rBzCSfmQj2AwTsCW%2Fehm791Tj%2BBlXuCGxfl5YJfWs8lDjmatDDx8lqCWa9t%2FYjr%2FI42W5g%3D%3D",
+      "url": "https://www.ebay.co.uk/itm/227056789930?_skw=Scottish+signet+ring&hash=item34dda3a9aa:g:IWYAAeSwV8Jo85co&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYKTAS4Ba7yXkA6oNNryLEWH2TLSgtkw5a%2FX%2BVD6a%2BRV8fjO6SaPgGzid%2BYx1bDvzz3FPSKR8T%2FmiQs6xojfswFXAJikjmKWtOGoCZOma%2BHcRn78eh1g%2FqEdDXb0s1%2BXM%2FRlvvDhbF%2B42lN%2BcKztOlf%2FAYKrBIfiTNmC0GC0i9EbZwRQKI2oAhZqWL9Hyhs3L4a5ErO%2FthTbbSTIbKHSKS96LKT35EF9SBnCQFCvQqrTFWt75a0EtZnaVJ696fXSH1Dj1bgGtuKM9mLlANYkwyDjLQ2DUio%2B0dMoDFct6ngDQ%3D%3D",
       "first_seen": "2026-08-16T13:37:00.797385+00:00",
       "is_new": false
     },
@@ -524,7 +524,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 2450,
+      "seller_feedback": 2451,
       "seller_private": false,
       "weight_g": null,
       "net_gold_g": null,
@@ -629,7 +629,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "400583997782",
-      "url": "https://www.ebay.co.uk/itm/400583997782?_skw=rampant+lion+signet+ring+silver&hash=item5d44aab956:g:d5AAAOSwJblnJiPi&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGbIJlRtwVZDbJ6BDGSncsqoZjWPUqGwYj998YK%2F8uw6%2F2lg9kMHcC0%2FKGwgvtUVqWXR%2FPRYjldWigB1g9hqTH%2BDvPNrOi7PJV%2Bb0lXHiwVFFbtY6iTAMkiobwrDE6HXbaTbAnwFOmJ9e1KIrov0ApRDOIi5XX8tBPGMx%2FRG3HS9KtL9sNkivWHWfXNuUJ69JwBhmPs5LjzRB86mcUzXjyUt7xvUC2WibNNUXUngjxObZG89wp3Qfg8o4Vbh0yd%2BLSzbmON9a%2BavC2Ikc3omSDCWvJOb8U22J6aqk90csDEO52Jx7KbJMcWthdWbCnpcA1w%3D",
+      "url": "https://www.ebay.co.uk/itm/400583997782?_skw=rampant+lion+signet+ring+silver&hash=item5d44aab956:g:d5AAAOSwJblnJiPi&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGbIJlRtwVZDbJ6BDGSncsqoZjWPUqGwYj998YK%2F8uw6%2F2lg9kMHcC0%2FKGwgvtUVqWXR%2FPRYjldWigB1g9hqTH%2BDvPNrOi7PJV%2Bb0lXHiwVFFbtY6iTAMkiobwrDE6HXbaTpdXo2sDYbEnQQbvPMrvqjS1EByYNBdlA2zvbfxxp%2Fr3LhsTeb1Asyu3EUMediWSc64coqKsNNOQGF91nwdsczCWmJpFV3N8IT0JH%2Bg%2BrO3SFGNRyxvte%2FvpmTI9ZDKGDf90AScLw1c1XMZZslt3Yj0aZORBZldVtcSDX%2Fw1KBwSnd1QLU%2FO8hexPMj8huIQ8%3D",
       "first_seen": "2026-08-16T13:37:00.797385+00:00",
       "is_new": false
     },
@@ -704,7 +704,7 @@
       "best_offer": true,
       "price_firm": false,
       "condition": "Pre-owned - Excellent",
-      "time_left": "6d 8h",
+      "time_left": "5d 22h",
       "ends_at": "2026-10-09T17:24:50.000Z",
       "bids": 0,
       "item_id": "168756313536",
@@ -785,7 +785,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "227125667336",
-      "url": "https://www.ebay.com/itm/227125667336?_skw=Scottish+signet+ring&hash=item34e1bea608:g:6GAAAeSwrxVpOYdx&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYUptGXhYtYhDG0woDJSfd1bDehMOveoHUywE3BNAzsDIoUMrBVC7J%2BDNDdNcPams%2BhwyaFUBTvZpF6oYknidhcdLlQav9Ck4o1m6tPyRKZd0OJt0gih5%2Bo9fS5QolsGbubcpSL3o6OQUnUX5zMsI797q6rtNJCPp%2B%2Fu97Y0hopiGP36ogKG5hmaJmYoU0E8Hqu63szBdvl7piih7%2FzPxbaEtneTknbN7UjYEREGYLQIKf3RlgKAFrIEfH%2FXBPf%2B0uRiy7mZ1WAc4RX1eOjSUg%2FfLhyhg1uR7tXTNciP1l%2Bkg%3D%3D",
+      "url": "https://www.ebay.com/itm/227125667336?_skw=Scottish+signet+ring&hash=item34e1bea608:g:6GAAAeSwrxVpOYdx&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGYUptGXhYtYhDG0woDJSfd1bDehMOveoHUywE3BNAzsDIoUMrBVC7J%2BDNDdNcPams%2BhwyaFUBTvZpF6oYknidhcdLlQav9Ck4o1m6tPyRKZd0OJt0gih5%2Bo9fS5QolsGbuUM1xHLW3oPw3MMBR%2B%2FPeslL63EF7EBVKnuTuRfUJXaLqNT6%2FMW2sokVk6a4gzRAHgHZtoX%2FgW7QFCFfB69LxxTdZDV5I8fOC%2BItsncHKXT9GogSX9eN%2Fcvsh%2BYWxTZ4ytyBZRqi6%2BNDQgiCoUGwRt00XvZUuyQMl%2B9TboORduWA%3D%3D",
       "first_seen": "2026-08-16T13:37:00.797385+00:00",
       "is_new": false
     },
@@ -823,7 +823,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "227031468088",
-      "url": "https://www.ebay.com/itm/227031468088?_skw=Scottish+signet+ring&hash=item34dc214838:g:IWYAAeSwV8Jo85co&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGZ7MB7J4T4UqaMAPSCLZRhUwudzYjlHmuRdBkKVsnw8dK%2BiT4U5QG3I3wmDZn0syrNr41Hi4lto0%2BKsby3YuqxcXqqxDkJxjjHq7c4NmsIFdGLSHaOQA0L6gz0oIiuDL7MjcqNFnYCcBqxiL57Xf%2FtNIAKrxJF%2BxnDctUSq0Qd3X5JX8%2FUYbU5ZBb6YHsvtNcTK%2BbOTsPLbh%2BKH8G8xiwqYa3LwQSWUF3m0ZB4Vsr%2FQnfii9KM5F1gY%2BTv01kJqL7nv8pBptbKvamF%2Bpdeihu6ARwfNdIw7LeXfI2zxLmAnKg%3D%3D",
+      "url": "https://www.ebay.com/itm/227031468088?_skw=Scottish+signet+ring&hash=item34dc214838:g:IWYAAeSwV8Jo85co&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGZ7MB7J4T4UqaMAPSCLZRhUwudzYjlHmuRdBkKVsnw8dK%2BiT4U5QG3I3wmDZn0syrNr41Hi4lto0%2BKsby3YuqxcXqqxDkJxjjHq7c4NmsIFdGLSHaOQA0L6gz0oIiuDL7NxtPdc%2FvqUCohvQTdLCLLF%2BM9U6I8SlQ%2B6ihcaqk4OR2mXbcWVT2cmO1wPZbN%2BQiJQB%2B%2FgUe0q6ggN7Y%2BS2T3DnxqLsaS2C2I0d%2FAs0Ls00afvwgpGBPMFUx9PMMDMRN6E%2BBJVCx0Xc9z88hNn4hfUqIBbJ6teQP0gxmiV6mxYjw%3D%3D",
       "first_seen": "2026-08-16T13:37:00.797385+00:00",
       "is_new": false
     },
@@ -862,45 +862,6 @@
       "bids": "",
       "item_id": "315679391263",
       "url": "https://www.ebay.com/itm/315679391263?_skw=Scottish+signet+ring&hash=item497ff53e1f:g:45sAAeSwgeNqv70r",
-      "first_seen": "2026-08-16T13:37:00.797385+00:00",
-      "is_new": false
-    },
-    {
-      "title": "Scottish Rampant Lion Signet Ring Solid Silver 14x12mm 925 UK HM Men's Women's",
-      "metal": "scottish",
-      "maker": null,
-      "provenance": "motif",
-      "carat": 9,
-      "fineness": null,
-      "carat_assumed": true,
-      "seller_type": null,
-      "seller_feedback": 6418,
-      "seller_private": false,
-      "weight_g": null,
-      "net_gold_g": null,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "gents"
-      ],
-      "stones": false,
-      "current_bid": 122.81,
-      "landed_cost": 180.97,
-      "price_orig": "$162",
-      "country": "US",
-      "flag": "🇺🇸",
-      "melt_value": null,
-      "ratio": null,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": false,
-      "price_firm": true,
-      "condition": "New with packaging",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "400583997782",
-      "url": "https://www.ebay.com/itm/400583997782?_skw=Scottish+signet+ring&hash=item5d44aab956:g:d5AAAOSwJblnJiPi",
       "first_seen": "2026-08-16T13:37:00.797385+00:00",
       "is_new": false
     },
@@ -978,7 +939,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "227058309836",
-      "url": "https://www.ebay.com.au/itm/227058309836?_skw=Scottish+signet+ring&hash=item34ddbadacc:g:IWYAAeSwV8Jo85co&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGa0ZHdy1%2Bdo2YeqTabsjrRgPaPcw6CHs83AfS1YtmloM1YQ0uKtIjz4wAN%2BJmCtjeayy5dw6qfNpDYseTTyNb6PSK%2FHEsrwLDrj58nQK9L1XeKPVY5Wa7WE1oebM4JAjpAlNbZzMjq%2Bad3wNDuOY9ZvL2s%2BhzgJc5YWJtT4l61hnO2mtmklgBDzzlICBVYg4Qp2Y3NEpxzbOY7ocrMk3Z8z6dsQoY77VsXho0SqrJlzHtLqT%2FGytZ6edKDGahVJqVxwTv8eHXbO4oB011is2VuG0e51RG4M25HU%2B9gZonKsew%3D%3D",
+      "url": "https://www.ebay.com.au/itm/227058309836?_skw=Scottish+signet+ring&hash=item34ddbadacc:g:IWYAAeSwV8Jo85co&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGa0ZHdy1%2Bdo2YeqTabsjrRgPaPcw6CHs83AfS1YtmloM1YQ0uKtIjz4wAN%2BJmCtjeayy5dw6qfNpDYseTTyNb6PSK%2FHEsrwLDrj58nQK9L1XeKPVY5Wa7WE1oebM4JAjpCuf8Q5AFWJz8WkVaCdH1L%2B9NDPFVpP7zF5Dt4Oyo57jlthnV2%2BUThTKOkhJdx7zm9EDJI9Y7ffI195Jg2w1CBH8T7rMyRnH9uCJhvlq%2B5%2FtWLfk0hdDX6g0I1hbY4m7OIzWAEm8v6Y%2FYjBhdBRUy72hwyN6W%2BK%2BnBAVg2aaISbqg%3D%3D",
       "first_seen": "2026-08-16T13:37:00.797385+00:00",
       "is_new": false
     },

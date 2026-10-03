@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-03T08:25:10.073402+00:00",
+    "generated_at": "2026-10-03T18:15:53.467743+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,14 +80,13 @@
       "SGD": 0.5919,
       "USD": 0.7575
     },
-    "total_fetched": 1504,
-    "total_analysed": 6,
+    "total_fetched": 1415,
+    "total_analysed": 5,
     "value_count": 0,
     "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 1,
-      "PL": 1,
       "UK": 4
     }
   },
@@ -217,7 +216,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 5335,
+      "seller_feedback": 5336,
       "seller_private": false,
       "weight_g": 18.86,
       "net_gold_g": 18.9,
@@ -282,44 +281,6 @@
       "item_id": "167370662173",
       "url": "https://www.ebay.com.au/itm/167370662173?_skw=9ct+gold+signet+ring&hash=item26f811a11d:g:7SMAAOSwsaZn0M6c",
       "first_seen": "2026-09-30T08:28:35.164691+00:00",
-      "is_new": false
-    },
-    {
-      "title": "Klasyczny sygnet w kształcie poduszki x/ duży \"dostępny w kolorze platyny, złota i srebra\"",
-      "metal": "gold",
-      "maker": null,
-      "provenance": null,
-      "carat": 9,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": "business",
-      "seller_feedback": 1655,
-      "seller_private": false,
-      "weight_g": 22.0,
-      "net_gold_g": 22.0,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet"
-      ],
-      "stones": false,
-      "current_bid": 1987.9,
-      "landed_cost": 2414.28,
-      "price_orig": "10,234",
-      "country": "PL",
-      "flag": "🇵🇱",
-      "melt_value": 832.21,
-      "ratio": 0.34,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": true,
-      "price_firm": true,
-      "condition": "New without packaging",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "227035892803",
-      "url": "https://www.ebay.pl/itm/227035892803?_skw=sygnet+m%C4%99ski+z%C5%82oto+375&hash=item34dc64cc43:g:xx8AAOSwKfVXEdCd",
-      "first_seen": "2026-10-02T17:14:21.272067+00:00",
       "is_new": false
     }
   ]

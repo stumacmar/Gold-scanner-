@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-03T08:27:56.863456+00:00",
+    "generated_at": "2026-10-03T18:19:08.882914+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -80,16 +80,17 @@
       "SGD": 0.5919,
       "USD": 0.7575
     },
-    "total_fetched": 1480,
-    "total_analysed": 13,
-    "value_count": 1,
-    "new_count": 2,
+    "total_fetched": 1556,
+    "total_analysed": 12,
+    "value_count": 0,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
-      "AT": 3,
+      "AT": 1,
       "AU": 3,
       "DE": 1,
-      "US": 6
+      "IT": 2,
+      "US": 5
     }
   },
   "results": [
@@ -293,45 +294,6 @@
       "is_new": false
     },
     {
-      "title": "Antique 9 Carat Yellow Gold Women’s Signet Ring 16 Grams Size 6.5",
-      "metal": "gold",
-      "maker": null,
-      "provenance": null,
-      "carat": 9,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 2028,
-      "seller_private": false,
-      "weight_g": 16.0,
-      "net_gold_g": 16.0,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "antique"
-      ],
-      "stones": false,
-      "current_bid": 568.14,
-      "landed_cost": 715.37,
-      "price_orig": "$750",
-      "country": "US",
-      "flag": "🇺🇸",
-      "melt_value": 605.25,
-      "ratio": 0.85,
-      "is_value": true,
-      "buying": "Buy now",
-      "best_offer": false,
-      "price_firm": true,
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "307211168864",
-      "url": "https://www.ebay.com/itm/307211168864?_skw=vintage+14ct+gold+signet+ring&hash=item4787366c60:g:~n4AAeSweqFqDQCQ",
-      "first_seen": "2026-10-03T08:27:56.863456+00:00",
-      "is_new": true
-    },
-    {
       "title": "TIFFANY & CO. Vintage 1960s 14k Yellow Gold Signet Ring w/Pouch Rare",
       "metal": "gold",
       "maker": null,
@@ -367,7 +329,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "326539243500",
-      "url": "https://www.ebay.com.au/itm/326539243500?_skw=14ct+gold+signet+ring&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwW5oifc7uGWeQrOHXEcKLbRDz6i16r%2BuVb3qbj%2BJr97AByX%2BzlQvbmj0lxhmK93%2FFmld4ApjPFsQ1xOwaTUfW7FeZvEiLbRFkYsT2BnoOVHIMC0Ce86cz%2B%2BWSsCHDoN3%2FACZNlCQcgXNoarQchV2Q%2Bb5fWW3diUONm5fnoIVI0Prg%3D%3D",
+      "url": "https://www.ebay.com.au/itm/326539243500?_skw=14ct+gold+signet+ring&hash=item4c07416fec:g:wAwAAOSwqW9oAq4b&amdata=enc%3AAQALAAAA8ACCtXRWQnOEpyOqnQQ8KGbgV3CBpNPZ5PtpFXLqOWni%2BawRaYPppY8Godow98mlABBeBtbIy6tapII4rOrJD8GmF%2FqugIorzsR3Wm%2FL3K1vLcVk0vAyUQuYi0VvRG0QDCjHXFZG8Qz1gB4U4sOdNwXg2PYKK%2BEvvMMZkcMQt5vSpUyKvsVqubqgCpORXtfjBSaxU2cNAo8JB2ZmPXT3uKWu4D9A4QBJ7LIg2TRmRUbacNNSKWe8pbYRl3W%2Bi8%2B60W71UJN7UJVAqtGzAA2zK%2BD87bIes%2BgI8G3L39JyEFLfpr6VhlO5ZbtBuAvgTqCgvg%3D%3D",
       "first_seen": "2026-09-29T08:31:46.629283+00:00",
       "is_new": false
     },
@@ -479,7 +441,7 @@
       "best_offer": true,
       "price_firm": false,
       "condition": "Gebraucht - Hervorragend",
-      "time_left": "4d 6h",
+      "time_left": "3d 20h",
       "ends_at": "2026-10-07T14:52:56.000Z",
       "bids": 0,
       "item_id": "147610223953",
@@ -488,7 +450,45 @@
       "is_new": false
     },
     {
-      "title": "Massiver Siegelring, Wappenring, 585er Gelbgold, 14 Karat",
+      "title": "Anello sigillo in oro 585 con un lapislazzuli misura anello 69 peso 23,27g",
+      "metal": "gold",
+      "maker": null,
+      "provenance": null,
+      "carat": 14,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": "business",
+      "seller_feedback": 72,
+      "seller_private": false,
+      "weight_g": 23.27,
+      "net_gold_g": 19.8,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": false,
+      "current_bid": 2975.34,
+      "landed_cost": 3596.81,
+      "price_orig": "€3,499",
+      "country": "IT",
+      "flag": "🇮🇹",
+      "melt_value": 1168.43,
+      "ratio": 0.32,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": true,
+      "price_firm": true,
+      "condition": "Gebraucht - Gut",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "227249712081",
+      "url": "https://www.ebay.it/itm/227249712081?_skw=anello+sigillo+oro+585&hash=item34e9236bd1:g:mkcAAeSw5WRowwdL",
+      "first_seen": "2026-08-04T09:08:15.155855+00:00",
+      "is_new": false
+    },
+    {
+      "title": "Anello con sigillo massiccio, anello con stemma, oro giallo 585, 14 carati",
       "metal": "gold",
       "maker": null,
       "provenance": null,
@@ -508,8 +508,8 @@
       "current_bid": 2967.69,
       "landed_cost": 3587.63,
       "price_orig": "€3,490",
-      "country": "AT",
-      "flag": "🇦🇹",
+      "country": "IT",
+      "flag": "🇮🇹",
       "melt_value": 1894.27,
       "ratio": 0.53,
       "is_value": false,
@@ -521,46 +521,8 @@
       "ends_at": null,
       "bids": "",
       "item_id": "287536129469",
-      "url": "https://www.ebay.at/itm/287536129469?_skw=Siegelring+Gold+585&hash=item42f27d25bd:g:14gAAeSwR8Jqhuca",
+      "url": "https://www.ebay.it/itm/287536129469?_skw=anello+sigillo+oro+585&hash=item42f27d25bd:g:14gAAeSwR8Jqhuca",
       "first_seen": "2026-08-20T17:34:45.385164+00:00",
-      "is_new": false
-    },
-    {
-      "title": "Siegelring aus 585er Gold mit einem Lapislazuli Ringgröße 69 Gewicht  23,27g",
-      "metal": "gold",
-      "maker": null,
-      "provenance": null,
-      "carat": 14,
-      "fineness": null,
-      "carat_assumed": true,
-      "seller_type": "business",
-      "seller_feedback": 72,
-      "seller_private": false,
-      "weight_g": 23.27,
-      "net_gold_g": 19.8,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet"
-      ],
-      "stones": false,
-      "current_bid": 2975.34,
-      "landed_cost": 3596.81,
-      "price_orig": "€3,499",
-      "country": "AT",
-      "flag": "🇦🇹",
-      "melt_value": 1168.43,
-      "ratio": 0.32,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": true,
-      "price_firm": true,
-      "condition": "Gebraucht - Gut",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "227249712081",
-      "url": "https://www.ebay.at/itm/227249712081?_skw=Siegelring+Gold+585&hash=item34e9236bd1:g:mkcAAeSw5WRowwdL",
-      "first_seen": "2026-08-04T09:08:15.155855+00:00",
       "is_new": false
     },
     {
@@ -599,7 +561,7 @@
       "item_id": "227380138309",
       "url": "https://www.ebay.at/itm/227380138309?_skw=Siegelring+Gold+585&hash=item34f0e99145:g:dwAAAeSw8WtqJ-2E",
       "first_seen": "2026-10-03T08:27:56.863456+00:00",
-      "is_new": true
+      "is_new": false
     }
   ]
 }
