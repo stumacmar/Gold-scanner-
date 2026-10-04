@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-04T10:14:48.859184+00:00",
+    "generated_at": "2026-10-04T18:06:34.904317+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,12 +80,13 @@
       "SGD": 0.5919,
       "USD": 0.7575
     },
-    "total_fetched": 1480,
-    "total_analysed": 5,
+    "total_fetched": 1478,
+    "total_analysed": 6,
     "value_count": 0,
     "new_count": 1,
     "weight_unknown_count": 0,
     "country_counts": {
+      "AU": 1,
       "PL": 1,
       "UK": 4
     }
@@ -216,7 +217,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 5336,
+      "seller_feedback": 5337,
       "seller_private": false,
       "weight_g": 18.86,
       "net_gold_g": 18.9,
@@ -244,6 +245,44 @@
       "url": "https://www.ebay.co.uk/itm/128061170958?_skw=9ct+gold+signet+ring&hash=item1dd10a650e:g:hyoAAeSw1VdqmoXQ",
       "first_seen": "2026-09-06T12:05:55.551601+00:00",
       "is_new": false
+    },
+    {
+      "title": "Gentleman's Handmade Diamond Signet Ring 9ct 375 Solid Gold 29.7 Grams",
+      "metal": "gold",
+      "maker": null,
+      "provenance": null,
+      "carat": 9,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": null,
+      "seller_feedback": 1783,
+      "seller_private": false,
+      "weight_g": 29.7,
+      "net_gold_g": 28.2,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet"
+      ],
+      "stones": true,
+      "current_bid": 2628.39,
+      "landed_cost": 3196.07,
+      "price_orig": "5,000",
+      "country": "AU",
+      "flag": "🇦🇺",
+      "melt_value": 1066.74,
+      "ratio": 0.33,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": false,
+      "price_firm": true,
+      "condition": "Pre-owned - Good",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "167370662173",
+      "url": "https://www.ebay.com.au/itm/167370662173?_skw=9ct+gold+signet+ring&hash=item26f811a11d:g:7SMAAOSwsaZn0M6c",
+      "first_seen": "2026-10-04T18:06:34.904317+00:00",
+      "is_new": true
     },
     {
       "title": "Klasyczny sygnet w kształcie poduszki x/ duży \"dostępny w kolorze platyny, złota i srebra\"",
@@ -281,7 +320,7 @@
       "item_id": "227035892803",
       "url": "https://www.ebay.pl/itm/227035892803?_skw=sygnet+m%C4%99ski+z%C5%82oto+375&hash=item34dc64cc43:g:xx8AAOSwKfVXEdCd",
       "first_seen": "2026-10-04T10:14:48.859184+00:00",
-      "is_new": true
+      "is_new": false
     }
   ]
 }

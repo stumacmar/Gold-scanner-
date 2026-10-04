@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-04T10:22:05.488552+00:00",
+    "generated_at": "2026-10-04T18:14:44.485679+00:00",
     "query": "22ct gold signet ring",
     "queries": [
       "22ct gold signet ring",
@@ -80,10 +80,10 @@
       "SGD": 0.5919,
       "USD": 0.7575
     },
-    "total_fetched": 574,
+    "total_fetched": 554,
     "total_analysed": 5,
     "value_count": 0,
-    "new_count": 1,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 1,
@@ -208,7 +208,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "128083333469",
-      "url": "https://www.ebay.com/itm/128083333469?_skw=mens+22ct+gold+signet+ring&hash=item1dd25c915d:g:n9oAAeSwkOJqqyJt&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGYga7gXcPmwZe8n48W3sutDfwCMTWmhVMW9CC%2Bt6nw8YYTn2fancRH5C%2F1%2BuUL%2FDOslRYAUZKJBpXuBo94IbIP3xDZVbRZocuO9hxQ5XaintX5DOZwIufERSdsCqml6B%2B%2BsvdKSAk4Swn3bZZ7%2BGGCaIW7dvem4b1UVXE2Ayh657NxguUL4FM0ZgGgfvGqsp9F6rsRamwwfkga0PMICkgDL8JluSifAAMymRZOEm9aJfsjWk8GXJnaoMp6j%2FhGk0bndtjPWmohXoXX%2BzDAksLMziz63UQ6hXfoXyXIr2RG4n%2B72mdlwUwe92yIHO1NU9f8%3D",
+      "url": "https://www.ebay.com/itm/128083333469?_skw=mens+22ct+gold+signet+ring&hash=item1dd25c915d:g:n9oAAeSwkOJqqyJt&amdata=enc%3AAQALAAABAACCtXRWQnOEpyOqnQQ8KGYga7gXcPmwZe8n48W3sutDfwCMTWmhVMW9CC%2Bt6nw8YYTn2fancRH5C%2F1%2BuUL%2FDOslRYAUZKJBpXuBo94IbIP3xDZVbRZocuO9hxQ5XaintX5DOZwIufERSdsCqml6B%2B8YJyYmqhY1%2FdhAts7GfV37pVq8mBRl9c0jlEeNU4OEoFbe6Sp2IeNrj7DibdS8pTgsLrnKT2Q1eu6T9HLMxUCrAv7eqBPnAEPEys8iHghb3rPjQIaP8ZS%2F3dhWD%2FaEFMPhQT8XuxkbdXYgCrv5pWGE2JuJ%2BBTgCbx4WUbr%2FEuMIVi7jPwgfJUrjDqH2zd2MCg%3D",
       "first_seen": "2026-09-17T08:36:15.635825+00:00",
       "is_new": false
     },
@@ -291,7 +291,7 @@
       "item_id": "254195547625",
       "url": "https://www.ebay.de/itm/254195547625?_skw=Siegelring+Gold+916&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3",
       "first_seen": "2026-10-04T10:22:05.488552+00:00",
-      "is_new": true
+      "is_new": false
     }
   ]
 }
