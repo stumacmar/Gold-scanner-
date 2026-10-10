@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-10T08:28:34.870380+00:00",
+    "generated_at": "2026-10-10T17:16:44.420697+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -80,10 +80,10 @@
       "SGD": 0.5908,
       "USD": 0.7564
     },
-    "total_fetched": 1553,
+    "total_fetched": 1560,
     "total_analysed": 9,
     "value_count": 1,
-    "new_count": 1,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 1,
@@ -102,7 +102,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 16787,
+      "seller_feedback": 16789,
       "seller_private": false,
       "weight_g": 18.89,
       "net_gold_g": 17.4,
@@ -362,7 +362,7 @@
       "best_offer": true,
       "price_firm": false,
       "condition": "Gebraucht - Hervorragend",
-      "time_left": "4d 6h",
+      "time_left": "3d 21h",
       "ends_at": "2026-10-14T14:53:11.000Z",
       "bids": 0,
       "item_id": "147623944308",
@@ -405,9 +405,9 @@
       "ends_at": null,
       "bids": "",
       "item_id": "188198646130",
-      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+585&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq%2FpGy%2FXBt2T2jmOriiD6OhJ1n111dEvvlntZ%2Frcj0f%2F7S6UB%2By2BqxEB8qptkvKp3V96Y3MOxBxwvHAbsjgIZezVOWDdFPtzRd6hC3rICv1%2BOVzQXqMbt2KBXTxPUIkKywUhDVSJbuOlrcflK6mzkILosjcdvs859cOsgDO%2FspfurDOPLNE%2BX1ubnyupV3F9%2FI%3D",
+      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+585&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq8dfgNmg6JBoRG%2BZdCv9EtzPsszq%2FAxRB6%2Fv7rpyJMXfJnzbxH5yaRazQ2tebmhCyz4Et6ucRikLI2eX%2FuJdqkJ6hsECIBXhVOGP10wZ0xN8UoLAUdflUS%2FKvdYTkwuwyuA7p%2B%2Bpx2hP8M6caaVhWCMyy83rPHD4xQk2RsrO2kVNqmH3nG42V%2F3C1DHQSWwyUw%3D",
       "first_seen": "2026-10-10T08:28:34.870380+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Anello con sigillo massiccio, anello con stemma, oro giallo 585, 14 carati",
