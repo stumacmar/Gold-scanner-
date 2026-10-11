@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-11T08:33:35.834694+00:00",
+    "generated_at": "2026-10-11T17:20:43.981506+00:00",
     "query": "22ct gold signet ring",
     "queries": [
       "22ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.5908,
       "USD": 0.7564
     },
-    "total_fetched": 600,
+    "total_fetched": 594,
     "total_analysed": 5,
     "value_count": 0,
     "new_count": 0,
@@ -102,7 +102,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "private",
-      "seller_feedback": 775,
+      "seller_feedback": 776,
       "seller_private": true,
       "weight_g": 60.0,
       "net_gold_g": 60.0,
@@ -152,13 +152,13 @@
         "gents"
       ],
       "stones": true,
-      "current_bid": 3403.63,
-      "landed_cost": 3407.63,
+      "current_bid": 2484.22,
+      "landed_cost": 2488.22,
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
       "melt_value": 1533.79,
-      "ratio": 0.45,
+      "ratio": 0.62,
       "is_value": false,
       "buying": "Buy now",
       "best_offer": false,
@@ -168,7 +168,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "178502000228",
-      "url": "https://www.ebay.co.uk/itm/178502000228?_skw=22ct+gold+signet+ring&hash=item298f8c5e64:g:-t0AAeSw04BqywDh",
+      "url": "https://www.ebay.co.uk/itm/178502000228?_skw=22ct+gold+signet+ring&hash=item298f8c5e64:g:eEwAAeSwq6Zqy6O5",
       "first_seen": "2026-09-16T17:22:02.318598+00:00",
       "is_new": false
     },
@@ -208,7 +208,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "128083333469",
-      "url": "https://www.ebay.com/itm/128083333469?_skw=mens+22ct+gold+signet+ring&hash=item1dd25c915d:g:n9oAAeSwkOJqqyJt&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lUcoTulmkwX0wauLYhG0ndQzKMiaNi9yGXOIH78V7vyk0%2Bc7Svf2jbFq57lKxUaalyVgorYsOJ9PO8I%2FtSZuNAqZOsVfA0wvb4DP78yk02%2BripJBkMRxmxuSbu1aDqRH4Qeb5E4N3gHZwK%2B6dRNu%2B97oSs8Rkb0wyj%2BeXZEnPjwT9mImXqdYQ6L2LJbcrWSL8Zcwd%2BtOqWCpicxR2m19tF3cvKp6frQyoyG4cMS1FFEz67MVi%2B6MG42WnA7tAclfYhruUdC6sBRRVHqrfEwwzQucf4OlFgMd0wUKCMsVF2M%2BaY2V7%2Fd47853z5oM2u%2Fzs%3D",
+      "url": "https://www.ebay.com/itm/128083333469?_skw=mens+22ct+gold+signet+ring&hash=item1dd25c915d:g:n9oAAeSwkOJqqyJt&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lUcoTulmkwX0wauLYhG0ndQzKMiaNi9yGXOIH78V7vyk0%2Bc7Svf2jbFq57lKxUaalyVgorYsOJ9PO8I%2FtSZuNAqZOsVfA0wvb4DP78yk02%2BripJBkMRxmxuSbu1aDqRH6W4KlA0r1SuLyzKea2vVKcKWMHPFc9XV3MUsgLvj%2FlQjP5UnIPgCCZVWDiWpPubm%2BbsNrk7k1OxDsso5b0WcIyCvuMCci4u8KVBZpsXOQvpmTt%2BzD9AEvHgTwG72b6EfFOPxttMFpXOBB9S%2FyNGizG5a0ZtjvHrZv9klG%2FjzUmHhOz6mcqMu5pxgSRzIAe%2BFc%3D",
       "first_seen": "2026-09-17T08:36:15.635825+00:00",
       "is_new": false
     },
@@ -233,13 +233,13 @@
         "gents"
       ],
       "stones": true,
-      "current_bid": 3374.96,
-      "landed_cost": 4091.95,
-      "price_orig": "6,391",
+      "current_bid": 2486.02,
+      "landed_cost": 3025.22,
+      "price_orig": "4,708",
       "country": "AU",
       "flag": "🇦🇺",
       "melt_value": 1533.79,
-      "ratio": 0.37,
+      "ratio": 0.51,
       "is_value": false,
       "buying": "Buy now",
       "best_offer": false,
@@ -249,7 +249,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "178502046079",
-      "url": "https://www.ebay.com.au/itm/178502046079?_skw=22ct+gold+signet+ring&hash=item298f8d117f:g:x0QAAeSwF3dqyxVF",
+      "url": "https://www.ebay.com.au/itm/178502046079?_skw=22ct+gold+signet+ring&hash=item298f8d117f:g:eEwAAeSwq6Zqy6O5",
       "first_seen": "2026-09-16T17:22:02.318598+00:00",
       "is_new": false
     },
