@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-11T17:12:45.574646+00:00",
+    "generated_at": "2026-10-12T08:42:12.479090+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -56,18 +56,18 @@
     "conditions": "ANY",
     "max_price": 6000.0,
     "threshold": 1.3,
-    "spot_gbp_per_oz": 3173.5938701281802,
-    "spot_source": "gold-api.com x frankfurter (live, $4,195.60/oz)",
+    "spot_gbp_per_oz": 3159.52457,
+    "spot_source": "gold-api.com x frankfurter (live, $4,177.00/oz)",
     "carat_per_gram": {
-      "8": 33.98,
-      "9": 38.26,
-      "10": 42.55,
-      "14": 59.69,
-      "15": 63.77,
-      "18": 76.53,
-      "20": 84.99,
-      "22": 93.52,
-      "24": 101.93
+      "8": 33.83,
+      "9": 38.09,
+      "10": 42.36,
+      "14": 59.42,
+      "15": 63.49,
+      "18": 76.19,
+      "20": 84.62,
+      "22": 93.11,
+      "24": 101.48
     },
     "fx_to_gbp": {
       "GBP": 1.0,
@@ -80,13 +80,14 @@
       "SGD": 0.5908,
       "USD": 0.7564
     },
-    "total_fetched": 1580,
+    "total_fetched": 1555,
     "total_analysed": 2,
-    "value_count": 0,
-    "new_count": 0,
+    "value_count": 1,
+    "new_count": 1,
     "weight_unknown_count": 0,
     "country_counts": {
-      "UK": 2
+      "DE": 1,
+      "UK": 1
     }
   },
   "results": [
@@ -113,8 +114,8 @@
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 723.16,
-      "ratio": 0.59,
+      "melt_value": 719.96,
+      "ratio": 0.58,
       "is_value": false,
       "buying": "Buy now",
       "best_offer": false,
@@ -129,42 +130,43 @@
       "is_new": false
     },
     {
-      "title": "9ct Yellow Solid Gold Bulldog Signet Ring",
+      "title": "Siegelring aus 333 Gold (8 Karat) – Herrenring Wappen Siegel, 65 Gr, 8,64 g",
       "metal": "gold",
       "maker": null,
       "provenance": null,
-      "carat": 9,
+      "carat": 8,
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 3406,
+      "seller_feedback": 173,
       "seller_private": false,
-      "weight_g": 19.6,
-      "net_gold_g": 18.1,
+      "weight_g": 65.0,
+      "net_gold_g": 65.0,
       "weight_confidence": "confirmed",
       "tags": [
-        "signet"
+        "signet",
+        "gents"
       ],
-      "stones": true,
-      "current_bid": 1460.0,
-      "landed_cost": 1464.0,
-      "price_orig": null,
-      "country": "UK",
-      "flag": "🇬🇧",
-      "melt_value": 692.55,
-      "ratio": 0.47,
-      "is_value": false,
+      "stones": false,
+      "current_bid": 846.75,
+      "landed_cost": 1042.5,
+      "price_orig": "€999",
+      "country": "DE",
+      "flag": "🇩🇪",
+      "melt_value": 2198.72,
+      "ratio": 2.11,
+      "is_value": true,
       "buying": "Buy now",
-      "best_offer": false,
+      "best_offer": true,
       "price_firm": true,
-      "condition": "New with packaging",
+      "condition": "Gebraucht - Hervorragend",
       "time_left": "n/a",
       "ends_at": null,
       "bids": "",
-      "item_id": "147117810866",
-      "url": "https://www.ebay.co.uk/itm/147117810866?_skw=9ct+gold+signet+ring&hash=item2240e7a4b2:g:51QAAeSwiG9oc6xm",
-      "first_seen": "2026-10-11T08:25:49.866801+00:00",
-      "is_new": false
+      "item_id": "188198646130",
+      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+375&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq%2Bygw3tnGJBKTtLZLV79URiPeAyI%2F0pdlyusednqSqcmOwd7alpGBhzpt8aocvY2x6LzDzGbr3RCN0fGcx1dU2u8d92q6YbpTQVNcqGBT0M5G%2BMtbmGfpewUnX8VWHDk4G9dcK4eDuBhpE5r7qq%2BSfp3RWFP1%2FgEOQfgUwiTKR4ayu0r6wB7Iiwarll%2FmyUQq8%3D",
+      "first_seen": "2026-10-12T08:42:12.479090+00:00",
+      "is_new": true
     }
   ]
 }
