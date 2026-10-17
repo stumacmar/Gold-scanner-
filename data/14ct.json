@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-17T08:24:36.559078+00:00",
+    "generated_at": "2026-10-17T17:15:53.439952+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.5862,
       "USD": 0.7499
     },
-    "total_fetched": 1526,
+    "total_fetched": 1525,
     "total_analysed": 11,
     "value_count": 2,
     "new_count": 0,
@@ -103,7 +103,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "private",
-      "seller_feedback": 124,
+      "seller_feedback": 125,
       "seller_private": true,
       "weight_g": 19.98,
       "net_gold_g": 20.0,
@@ -142,7 +142,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 16815,
+      "seller_feedback": 16816,
       "seller_private": false,
       "weight_g": 18.89,
       "net_gold_g": 17.4,
@@ -402,7 +402,7 @@
       "best_offer": true,
       "price_firm": false,
       "condition": "Gebraucht - Hervorragend",
-      "time_left": "4d 6h",
+      "time_left": "3d 21h",
       "ends_at": "2026-10-21T14:53:25.000Z",
       "bids": 0,
       "item_id": "147635701060",
@@ -419,7 +419,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 173,
+      "seller_feedback": 174,
       "seller_private": false,
       "weight_g": 65.0,
       "net_gold_g": 65.0,
@@ -445,7 +445,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "188198646130",
-      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+585&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq83TL7v87pc2JutoOYOMr91WOKZfzKRnnZE2t4POTkHOdBVmIjbMWxri8omkaFKEdi%2Fb1XNT3UG6i%2Bo2QAXvzCsPNutY7%2BVSL3wdC8k8gjPs15y8L0CS7HrHzHYB84BOTNpH%2B7q6nY2dsfv9Ig6DcP7T%2BkxWVuT7Iil7MRtf%2B7%2FLDrPM%2FDP7gJ%2FizpZVk2JgSU%3D",
+      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+585&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq9w4zR6ipeubrtUN33dH2eMIZ9TN6ZgJLU5H1p4n5DyFiaCYVNw9MmPKy%2FuWFk9jKs1jVPqKXsRLzc6B%2BtxOFB7N1vrfw10lMzAGw0yYEUQ7bOPMQ1Lh6ZHZjglVKzM45lRCkfvrfwGCbM36pqkR2cBJ1VHDaNy%2BKps65QeoOdGBmmmi5H9dJN3bl9JYnbs1C4%3D",
       "first_seen": "2026-10-10T08:28:34.870380+00:00",
       "is_new": false
     },
