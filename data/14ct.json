@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-18T08:25:01.531800+00:00",
+    "generated_at": "2026-10-18T17:15:08.741368+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.5862,
       "USD": 0.7499
     },
-    "total_fetched": 1562,
+    "total_fetched": 1551,
     "total_analysed": 11,
     "value_count": 2,
     "new_count": 0,
@@ -113,13 +113,13 @@
         "antique"
       ],
       "stones": false,
-      "current_bid": 1311.28,
-      "landed_cost": 1315.28,
+      "current_bid": 1230.7,
+      "landed_cost": 1234.7,
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
       "melt_value": 1175.18,
-      "ratio": 0.89,
+      "ratio": 0.95,
       "is_value": true,
       "buying": "Buy now",
       "best_offer": true,
@@ -402,7 +402,7 @@
       "best_offer": true,
       "price_firm": false,
       "condition": "Gebraucht - Hervorragend",
-      "time_left": "3d 6h",
+      "time_left": "2d 21h",
       "ends_at": "2026-10-21T14:53:25.000Z",
       "bids": 0,
       "item_id": "147635701060",
@@ -445,7 +445,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "188198646130",
-      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+585&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq8RuPjwSZUpK6xOWGuMMsvUUJwFg7V%2BFigRxh0pUkqjTDV04H%2F7ZAAZZkd2dBvdy1Dq4weDIiibZka6d09fHs3ty%2BkCSc3eQO5e28UTh8uNFnIyCrDTjRknjgE9ND9a6Wsjs8QbhJVizBhs%2B%2FzK3mc7kDZKpNF20RLzJCGNZ4yrfx%2Fe48UIAWXSS2AjKwDLvuc%3D",
+      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+585&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq%2BIBWTp9cBDNlVZoGG%2BzogezhqftYD1pLvJmN4xWZ80QdNGGwHwmHT--5kcFnqXN2%2FXQppd8oFczvmyg3qtuYQWWu9MmHW5qLcVbe7pTSEgKvetidrjMre%2F7X5W%2BLFNpoKG62OBOxEnGo%2F01sCP5BHh5rbWUFAfyFHc1TtltIGKAhRpqxIEiZIu7%2BFPyNOVAvA%3D",
       "first_seen": "2026-10-10T08:28:34.870380+00:00",
       "is_new": false
     },
