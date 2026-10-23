@@ -310,6 +310,36 @@ version differs it navigates once to `index.html?v=<new>` — a URL the cache ha
 never seen. A `sessionStorage` marker makes a reload loop impossible.
 **Bump `APP_VERSION` whenever you change `index.html`.**
 
+## Demo video
+
+`docs/demo.mp4` is a ~90-second screen capture of the dashboard: the gold
+screen and its cards, the `★ Value` shortlist, a carat filter, a re-sort, then
+each of the other screens (Silver, Yurman, Brands, Scottish, Ending).
+
+It is regenerated from the repo as it stands — whatever is in `data/*.json`
+is what the video shows — by:
+
+```bash
+npm i -D playwright && npx playwright install chromium   # once
+node scripts/record_demo.mjs                             # writes docs/demo.mp4
+```
+
+Useful flags: `--out <path>` (`.webm` to skip the MP4 encode), `--size
+1280x720`, `--slow 1.4` to stretch every pause, `--keep-webm` to keep the raw
+capture alongside the MP4.
+
+The script serves the repo on a throwaway localhost port (the dashboard
+fetches `data/*.json`, so `file://` will not work), drives `index.html` in
+headless Chromium, and injects the caption bar, the pointer and the centred
+column at record time — `index.html` itself is never modified, so the capture
+is the real page against real scan data. Screens with no listings yet are
+skipped automatically, and the carat it filters on is whichever one the
+current scan has most of.
+
+Encoding to MP4 needs an ffmpeg with H.264 — `$FFMPEG`, one on `PATH`, or
+`pip install imageio-ffmpeg`. Playwright's own bundled ffmpeg only writes
+WebM; without a full build the script keeps the WebM and says so.
+
 ## Important caveats
 
 - **Weights are seller-claimed free text.** The regex is the part most likely to
