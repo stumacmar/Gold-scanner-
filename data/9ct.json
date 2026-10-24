@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-24T08:23:24.219767+00:00",
+    "generated_at": "2026-10-24T17:12:56.935300+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,10 +80,10 @@
       "SGD": 0.5851,
       "USD": 0.7481
     },
-    "total_fetched": 1563,
+    "total_fetched": 1558,
     "total_analysed": 8,
     "value_count": 2,
-    "new_count": 1,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 1,
@@ -126,7 +126,7 @@
       "best_offer": false,
       "price_firm": false,
       "condition": "Used",
-      "time_left": "5d 11h",
+      "time_left": "5d 2h",
       "ends_at": "2026-10-29T20:05:05.000Z",
       "bids": 0,
       "item_id": "168810244041",
@@ -204,7 +204,7 @@
       "best_offer": true,
       "price_firm": false,
       "condition": "Pre-owned - Excellent",
-      "time_left": "4d 8h",
+      "time_left": "3d 23h",
       "ends_at": "2026-10-28T16:52:30.000Z",
       "bids": 0,
       "item_id": "900030266104",
@@ -325,7 +325,7 @@
       "item_id": "167370662173",
       "url": "https://www.ebay.com.au/itm/167370662173?_skw=9ct+gold+signet+ring&hash=item26f811a11d:g:7SMAAOSwsaZn0M6c",
       "first_seen": "2026-10-24T08:23:24.219767+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Siegelring aus 333 Gold (8 Karat) – Herrenring Wappen Siegel, 65 Gr, 8,64 g",
@@ -362,7 +362,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "188198646130",
-      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+375&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq%2FALQ2ZAXDIwqOhEl2bHt3P%2FAF%2FpRVATT4kYS8txs3P5%2F4D5DEuzPVsumJaOpPpDf5cXVy0oFV67Sz9g%2B7FpD05x%2B4BKck3NlySe8VE0zRhu2zyB%2BvEe3owBqFWSKdIzHlVs1BB%2FDDqVVz1saixEuY5qiJQHAMX1wq4S6XkrJiwD%2FCYuObOQvqrObQ4nJPyc28%3D",
+      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+375&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq9x5aAVSDrk3hTa5gGUsk7%2Fy9HnQudzH%2F89so45bgMdtuxcsc8fsTl5NCTx%2FpEAuaJLjZRicQ4mHB9DL6MD7t0EA2yE9QP1G%2BsNIDhwYmyuEZ5w%2BKNgkIP2kTfq7U0F5iGZSFC9QBpxZmoJjVzzCf0ttMoLygL%2FWASJb6Z1lJ%2BElE6JuCSfdz3EknKcAGMiyac%3D",
       "first_seen": "2026-10-21T17:13:03.276737+00:00",
       "is_new": false
     },
