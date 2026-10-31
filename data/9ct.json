@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-31T08:14:59.740016+00:00",
+    "generated_at": "2026-10-31T17:08:51.323319+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,8 +80,8 @@
       "SGD": 0.5838,
       "USD": 0.7463
     },
-    "total_fetched": 1584,
-    "total_analysed": 7,
+    "total_fetched": 1593,
+    "total_analysed": 6,
     "value_count": 3,
     "new_count": 0,
     "weight_unknown_count": 0,
@@ -89,7 +89,7 @@
       "DE": 1,
       "IE": 1,
       "PL": 1,
-      "UK": 3,
+      "UK": 2,
       "US": 1
     }
   },
@@ -126,7 +126,7 @@
       "best_offer": false,
       "price_firm": false,
       "condition": "Used",
-      "time_left": "5d 11h",
+      "time_left": "5d 2h",
       "ends_at": "2026-11-05T20:05:13.000Z",
       "bids": 0,
       "item_id": "168825155221",
@@ -172,44 +172,6 @@
       "item_id": "307004107164",
       "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW",
       "first_seen": "2026-10-28T08:20:26.383795+00:00",
-      "is_new": false
-    },
-    {
-      "title": "9ct Yellow Solid Gold Bulldog Signet Ring",
-      "metal": "gold",
-      "maker": null,
-      "provenance": null,
-      "carat": 9,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": "business",
-      "seller_feedback": 3421,
-      "seller_private": false,
-      "weight_g": 19.6,
-      "net_gold_g": 18.1,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet"
-      ],
-      "stones": true,
-      "current_bid": 1460.0,
-      "landed_cost": 1464.0,
-      "price_orig": null,
-      "country": "UK",
-      "flag": "🇬🇧",
-      "melt_value": 631.34,
-      "ratio": 0.43,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": false,
-      "price_firm": true,
-      "condition": "New with packaging",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "147117810866",
-      "url": "https://www.ebay.co.uk/itm/147117810866?_skw=9ct+gold+signet+ring&hash=item2240e7a4b2:g:51QAAeSwiG9oc6xm",
-      "first_seen": "2026-10-21T08:25:35.133473+00:00",
       "is_new": false
     },
     {
@@ -328,7 +290,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "188198646130",
-      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+375&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq%2BBJDAWI8moZnGMc3H2TqrE9--I8Db4QvJWZnge91%2Bkrby0uUPwlz9rRhslB5oRX%2BTL1PAG3dv8vxgvwcjDEThY8co2An76dEG4gWGJqs1O0I4raf3O4m9XTAne0FtMifl2FJzBtxMXlMhoYOotWVX72UceyihGTjcsGV%2FVydGKRqlg41TZOm8Ihj7Udkn0fBs%3D",
+      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+375&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq%2B2Y1aJ31WvUmx86N%2Bdx3QR21AmhIvjHtLUoE%2BGdpiZJNobr6omDm2nijB%2BE6JQ1YViLZzNmIfphvzR2bnsmVjngtlapaVBZlITGv3AKpGpgXwZcFCEC5uFTPH9rGwNaJoelFtQWFTmdrU2MbdTBudIlshF5jYI9jEEVhc7Oq8dvmG7QQCwZLwGAcAiAdNyIZk%3D",
       "first_seen": "2026-10-29T08:20:43.884945+00:00",
       "is_new": false
     },
