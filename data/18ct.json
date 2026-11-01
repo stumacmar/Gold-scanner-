@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-01T08:23:17.890638+00:00",
+    "generated_at": "2026-11-01T17:15:29.985431+00:00",
     "query": "18ct gold signet ring",
     "queries": [
       "18ct gold signet ring",
@@ -80,10 +80,10 @@
       "SGD": 0.5838,
       "USD": 0.7463
     },
-    "total_fetched": 1457,
-    "total_analysed": 26,
-    "value_count": 1,
-    "new_count": 2,
+    "total_fetched": 1455,
+    "total_analysed": 27,
+    "value_count": 2,
+    "new_count": 1,
     "weight_unknown_count": 0,
     "country_counts": {
       "AT": 1,
@@ -96,49 +96,48 @@
       "NL": 2,
       "PL": 1,
       "SG": 2,
-      "UK": 4,
+      "UK": 5,
       "US": 4
     }
   },
   "results": [
     {
-      "title": "HEAVY 18 ct Solid Gold Vintage  Ring (16 gms) Hallmarked (Size U 10)",
+      "title": "18 ct gold signet ring",
       "metal": "gold",
       "maker": null,
       "provenance": null,
       "carat": 18,
       "fineness": null,
       "carat_assumed": false,
-      "seller_type": "private",
-      "seller_feedback": 3146,
+      "seller_type": "business",
+      "seller_feedback": 256,
       "seller_private": false,
-      "weight_g": 16.0,
-      "net_gold_g": 16.0,
+      "weight_g": 15.0,
+      "net_gold_g": 15.0,
       "weight_confidence": "confirmed",
       "tags": [
-        "signet",
-        "vintage"
+        "signet"
       ],
       "stones": false,
-      "current_bid": 2555.68,
-      "landed_cost": 2559.68,
+      "current_bid": 930.0,
+      "landed_cost": 934.0,
       "price_orig": null,
       "country": "UK",
       "flag": "🇬🇧",
-      "melt_value": 1116.17,
-      "ratio": 0.44,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": true,
-      "price_firm": true,
+      "melt_value": 1046.41,
+      "ratio": 1.12,
+      "is_value": true,
+      "buying": "Auction",
+      "best_offer": false,
+      "price_firm": false,
       "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "236896318748",
-      "url": "https://www.ebay.co.uk/itm/236896318748?_skw=18ct+gold+signet+ring&hash=item37281ef51c:g:dIAAAeSw9SNqO~r7",
-      "first_seen": "2026-07-26T10:24:10.301532+00:00",
-      "is_new": false
+      "time_left": "4d 21h",
+      "ends_at": "2026-11-06T14:14:47.000Z",
+      "bids": 3,
+      "item_id": "900056515937",
+      "url": "https://www.ebay.co.uk/itm/900056515937?_skw=18ct+gold+signet+ring&hash=itemd18f8c8561:g:NTMAAeSw3JRq50cG",
+      "first_seen": "2026-11-01T17:15:29.985431+00:00",
+      "is_new": true
     },
     {
       "title": "18ct hallmarked white, yellow ,rose gold signet ring 13mm x16mm oval or cushion",
@@ -176,8 +175,47 @@
       "ends_at": null,
       "bids": "",
       "item_id": "254195547625",
-      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8Of5zIIojhOf%2BkQK%2Bxzjn7lOS2a9%2F8Y7mLvK0jO2r0Jl0hXRPcS1ZRrAJFk2YtUp3CS2G670xhz8PKxLIOO3%2FLZ%2F0VzU0Bwrx4F7fKMTE1DGagz4q3njM09Pg8TyqZJlXjlazeDwO7E0dwwdyKynIr2iXlKWs3CufYZNP%2BmbkWmeGPpbveD2SDK1vNGJ2u5UDZ4IOE7uH5sIqWzAPQtMfsafY53AJOzNs5aS51WV4nXNe572Wlb5uNTuvI6OEh9t6%2BIJzk%2B6GROzP3u36vIKD9MSH2VDeHcivaDeklNSecpZ7usvTTFXuwLv%2F%2BQ3fpuROw%3D%3D",
+      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8Of5zIIojhOf%2BkQK%2Bxzjn7lOS2a9%2F8Y7mLvK0jO2r0Jl0hXRPcS1ZRrAJFk2YtUp3CS2G670xhz8PKxLIOO3%2FLZ%2F0VzU0Bwrx4F7fKMTE1DGagz4q3njM09Pg8TyqZJlXjlazeDwO7E0dwwdyKynIr1KBOapKnZoGVcmQcxiCb%2BBS57RanEPVumQqNzPQqiBAWswcsN25kojK9lZacL03ZT59FcwmFBDd3lNJ5oS%2BphBqglR0dvTvAFl2oOJcEmfs2afUpHDCEFS%2FH4kVAXl1ZUBCjkSE%2BrbD2HCPHfq8Ccr0eY8M9i1e%2BRAWCEUEi%2Btpw%3D%3D",
       "first_seen": "2026-07-29T09:12:35.584280+00:00",
+      "is_new": false
+    },
+    {
+      "title": "HEAVY 18 ct Solid Gold Vintage  Ring (16 gms) Hallmarked (Size U 10)",
+      "metal": "gold",
+      "maker": null,
+      "provenance": null,
+      "carat": 18,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": "private",
+      "seller_feedback": 3146,
+      "seller_private": false,
+      "weight_g": 16.0,
+      "net_gold_g": 16.0,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "vintage"
+      ],
+      "stones": false,
+      "current_bid": 2555.68,
+      "landed_cost": 2559.68,
+      "price_orig": null,
+      "country": "UK",
+      "flag": "🇬🇧",
+      "melt_value": 1116.17,
+      "ratio": 0.44,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": true,
+      "price_firm": true,
+      "condition": "Pre-owned - Good",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "236896318748",
+      "url": "https://www.ebay.co.uk/itm/236896318748?_skw=18ct+gold+signet+ring&hash=item37281ef51c:g:dIAAAeSw9SNqO~r7",
+      "first_seen": "2026-07-26T10:24:10.301532+00:00",
       "is_new": false
     },
     {
@@ -561,7 +599,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "188198646130",
-      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+750&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq%2F0Qjf3FTuw9y4ky8wqgshqs%2BY4xv4W7Y0YLYFevDAsM8x%2FNpQbMZfyEOb6lPAFQkbt4gc1IGjspb0TpQFTfe%2FnAzJ%2BygzS8hHdJQQ2utoKAzfyBnr8BQoC8NwbiAwXBS2bWP01czLs702iTKi%2BW9AYswUpVcvUnoKApJbzP0rDSFBe1ibqpmxd2y1bRzA7rLU%3D",
+      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+750&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq%2BSEb99OOS0SYVyiVHwT1KddH1GhfTY4q2l1PJwgLf3LYYmStUjv9atxYYBwTY3CMPM3mKAkibA5bk%2ByUBRtqh1FhV2Gum7RqQBAGeM0ES%2Fe8Kd0SmKc93HRzIzbIHfzWO7YD0PUV1y9QpidGWEpKS%2ByRcMHlKGmpLyeaBjY7oaLpzkNBMvG2eUC0azP8f2U%2BA%3D",
       "first_seen": "2026-10-29T08:28:17.132580+00:00",
       "is_new": false
     },
@@ -872,7 +910,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "940048551177",
-      "url": "https://www.ebay.nl/itm/940048551177?_skw=18ct+gold+signet+ring&hash=itemdadf428d09:g:ToAAAeSwM99quld5&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7mz72paK3l59ZziNs4c4APcckCELxjOMQznb%2Bq%2FNNP2P%2FJvxq7OJ5pACNb4w5Ag6%2B9ST1JcZWjPGKePiH0Z81M%2B1s2I2wItMrRLl1qYcmgxYPtsXZeMKqu7I1Dl6%2FCODkseCp6o6iB6bKCH7BnNSGbrYovCQTumg0hA1yfkbj2S%2FPVVK7Qi%2Btooko1waBcuK0PPwHpj1pCwxPQqnik4TbwnyIE9F5nPKf0tJ4IKsPl6YT6AGOGmIoLpP8rFHHU2cIpZMR7V4Dw7PYIGbeqCwEAkQqoZIUhitFr4Szabh52mwFvzjtq9wTTQWNrt27xYxl8%3D",
+      "url": "https://www.ebay.nl/itm/940048551177?_skw=18ct+gold+signet+ring&hash=itemdadf428d09:g:ToAAAeSwM99quld5",
       "first_seen": "2026-10-29T08:28:17.132580+00:00",
       "is_new": false
     },
@@ -948,7 +986,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "278438235104",
-      "url": "https://www.benl.ebay.be/itm/278438235104?_skw=18ct+gold+signet+ring&hash=item40d4364be0:g:BEQAAeSwFcFqN9hU&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7nm4xSCVmG9w%2B4K%2F544eFrmqdOrV%2BwljU6ynhk72IJn1pTb1QB254gs2tfkA8HPHTDK0yrvN26BdOKSrZSGdVIf%2BA8R715lI%2BYts8C7m59FLGHQHa9XoS1jlmAbYaXfwwa89BTTtR54dZlfznX1%2FsFSGuwUycz%2B48hIPuusyAHpGBLLRKdK%2FGoGY2Lw5lXCaDl2K0IlZq%2FAyK0NLrCVOqlReOn9F2yoZ3cpvQEVuwVh2Gn8BXUHxsmUkc7C23k%2FFX980dxJAc6c2pTBWwITeKBAaDH1TqgC5eBkOfGPOTj%2FaeKyLwKo5qJbJ0ozLznknCY%3D",
+      "url": "https://www.benl.ebay.be/itm/278438235104?_skw=18ct+gold+signet+ring&hash=item40d4364be0:g:BEQAAeSwFcFqN9hU&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7nm4xSCVmG9w%2B4K%2F544eFrmqdOrV%2BwljU6ynhk72IJn1pTb1QB254gs2tfkA8HPHTDK0yrvN26BdOKSrZSGdVIf%2BA8R715lI%2BYts8C7m59FLGHQHa9XoS1jlmAbYaXfwwZNZFr0bhgI%2F0R6KygUE%2FwBZQx%2BUlEyACtDX3%2BvTHVQjAL9aDxVOBK5GEBSiPx5xTboGuBG0od62aHfPg3aEOsOWNOq5Ep90jnrAPDEU8rUOGcY25Z3hQjc9FQF9J7CbMGxB7ilYClY4JrpOEWCPErtX2tai2s7R56CdF%2BwlQh5tuAWUiAcLyF3%2BS7kmYCoknM%3D",
       "first_seen": "2026-10-29T17:18:44.493326+00:00",
       "is_new": false
     },
@@ -1024,9 +1062,9 @@
       "ends_at": null,
       "bids": "",
       "item_id": "940048548990",
-      "url": "https://www.ebay.com.hk/itm/940048548990?_skw=18ct+gold+signet+ring&hash=itemdadf42847e:g:BEQAAeSwFcFqN9hU&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7mS7zDOb%2Frbx4VDSSNWtscXJZu5XdCh5lFpoDrR62PKHPystfJpvj8agqcG70%2F21P%2FCwXS3M%2FtagySOAMpdzpu2ozBLLf9q4BTODaaGUnL8hIYDKwR3pger6H1d64aKV4ImHsXLmEUd9RvCgMveipVY7P6Gp3e4h2Fx2jCldOMSVzoD0UhpgW7KXwEvgsCUpYwXrbTmCe9oageAho2KLPdl74at2TmXLj%2BQ%2BMh6ewpf27Z%2BYZJ0wt4Q%2FjkhgaQg1MqxgJkrWB%2BexbD0Q59iTkRRI391ZfV2d%2Fk34BLnZL5Vu4DBIokvXyMe4Ow69BnlgQ4%3D",
+      "url": "https://www.ebay.com.hk/itm/940048548990?_skw=18ct+gold+signet+ring&hash=itemdadf42847e:g:BEQAAeSwFcFqN9hU",
       "first_seen": "2026-11-01T08:23:17.890638+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "18K Gold & Pt1000 Platinum Signet Ring 0.15ct Diamond Heavy 19.9g",
@@ -1064,7 +1102,7 @@
       "item_id": "278438228008",
       "url": "https://www.ebay.com.sg/itm/278438228008?_skw=18ct+gold+signet+ring&hash=item40d4363028:g:X2sAAeSwZDpqN-Td",
       "first_seen": "2026-11-01T08:23:17.890638+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Two-Tone Pt900 K18 Gold Diamond Signet Ring 0.31ct Mens Band 19g US Size 8.25",
