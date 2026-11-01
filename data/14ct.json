@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-31T17:11:51.533125+00:00",
+    "generated_at": "2026-11-01T08:20:00.392209+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -80,7 +80,7 @@
       "SGD": 0.5838,
       "USD": 0.7463
     },
-    "total_fetched": 1546,
+    "total_fetched": 1558,
     "total_analysed": 11,
     "value_count": 1,
     "new_count": 0,
@@ -102,7 +102,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 1608,
+      "seller_feedback": 1610,
       "seller_private": false,
       "weight_g": 28.0,
       "net_gold_g": 28.0,
@@ -141,7 +141,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 16868,
+      "seller_feedback": 16871,
       "seller_private": false,
       "weight_g": 18.89,
       "net_gold_g": 17.4,
@@ -400,7 +400,7 @@
       "best_offer": true,
       "price_firm": false,
       "condition": "Gebraucht - Hervorragend",
-      "time_left": "3d 22h",
+      "time_left": "3d 7h",
       "ends_at": "2026-11-04T15:53:43.000Z",
       "bids": 0,
       "item_id": "147655536520",
@@ -443,7 +443,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "188198646130",
-      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+585&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq8QvC8pcXcwYDVBChXUVaWEj4uPnsqCx9naOZyrlLa1%2BO441vZFUnDTneDT7xSpaiVToyTYA2OdhfLAMD9DiOVAscPheYT%2FCOy6Fg44IIAwj00KkgD8PqZ5seAtoK7P8V3AHChdz1utHliRWtI9AnO2TogT0I3iULjSVh57KeRon1wiQ0Oc0X0LYMYFZIkCyFA%3D",
+      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+585&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq%2BlTS1mqShPV1GOK1BLvZ4sWQfEZjmZLBQVM9WXLyRh74IOD3ErrJUHHqlNU1VQNWwIIkVDha%2BbvtUMZABUzxUy7ZhAyM25SWNyHPyUa9cMA6bIVyM7ovH4guKI%2BJpACzRNqP%2BVe3g999KgAoVfae6MzV5mE8H0Fz6%2B7Yp%2FNO4sNGonOh9VEFVFiITOksKn6Vo%3D",
       "first_seen": "2026-10-29T08:24:09.947005+00:00",
       "is_new": false
     },
