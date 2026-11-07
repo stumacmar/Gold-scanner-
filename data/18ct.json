@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-07T08:22:14.713846+00:00",
+    "generated_at": "2026-11-07T17:15:06.229889+00:00",
     "query": "18ct gold signet ring",
     "queries": [
       "18ct gold signet ring",
@@ -80,14 +80,14 @@
       "SGD": 0.583,
       "USD": 0.7471
     },
-    "total_fetched": 1464,
-    "total_analysed": 25,
+    "total_fetched": 1465,
+    "total_analysed": 26,
     "value_count": 0,
-    "new_count": 3,
+    "new_count": 1,
     "weight_unknown_count": 0,
     "country_counts": {
       "AT": 1,
-      "DE": 3,
+      "DE": 4,
       "FR": 1,
       "IE": 1,
       "IT": 4,
@@ -135,7 +135,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "254195547625",
-      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8Of5zIIojhOf%2BkQK%2Bxzjn7lOS2a9%2F8Y7mLvK0jO2r0Jl0hXRPcS1ZRrAJFk2YtUp3CS2G670xhz8PKxLIOO3%2FLZ%2F0VzU0Bwrx4F7fKMTE1DGagz4q3njM09Pg8TyqZJlXjlazeDwO7E0dwwdyKynIr2%2BxPPWv9E2ut7FDQmKvs4ZeUAlKM9uEbCc%2Bo3sQwZE%2FwBlsLZkcWqk8IdvcY4NhtUkB3H29VqYn9t%2FaJWt3tuzU%2Bp1r6YzfQnHymgtdwZM86tGB%2F6gXWqUXZ1Bt8bh92D7p46yVkd9NM8%2FjMj7xF7lO%2B7A1eG1sWBuVqq0u%2FRucQ%3D%3D",
+      "url": "https://www.ebay.co.uk/itm/254195547625?_skw=18ct+gold+signet+ring&hash=item3b2f3c3de9:g:zUsAAOSwNphb5qo3&amdata=enc%3AAQALAAAA8Of5zIIojhOf%2BkQK%2Bxzjn7lOS2a9%2F8Y7mLvK0jO2r0Jl0hXRPcS1ZRrAJFk2YtUp3CS2G670xhz8PKxLIOO3%2FLZ%2F0VzU0Bwrx4F7fKMTE1DGagz4q3njM09Pg8TyqZJlXjlazeDwO7E0dwwdyKynIr1eOA%2BHeT50yurkTePJ2m2oMK8doIizBOcDgvBx%2FjUiXPvP6VwMTkTSH9uMg21sCQ7vc%2B8s2ZHDToB6ZT2DZxCBEPW3xee92mIdoJffw6q13vYnerZo%2FEh6o7KZ7Na6wJt49B7p6kF2KoB7F2SunJpMa0G4ywpW3xH6P4ZQDb1QNw%3D%3D",
       "first_seen": "2026-07-29T09:12:35.584280+00:00",
       "is_new": false
     },
@@ -340,7 +340,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 7130,
+      "seller_feedback": 7131,
       "seller_private": false,
       "weight_g": 19.1,
       "net_gold_g": 19.1,
@@ -350,9 +350,9 @@
         "antique"
       ],
       "stones": false,
-      "current_bid": 3284.92,
-      "landed_cost": 3975.5,
-      "price_orig": "$4,397",
+      "current_bid": 3284.17,
+      "landed_cost": 3974.6,
+      "price_orig": "$4,396",
       "country": "US",
       "flag": "🇺🇸",
       "melt_value": 1401.16,
@@ -526,6 +526,45 @@
       "is_new": false
     },
     {
+      "title": "Ring 750er Gold (18 Karat) mit zahlreichen weißen Steinen – Vintage",
+      "metal": "gold",
+      "maker": null,
+      "provenance": null,
+      "carat": 18,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": "private",
+      "seller_feedback": 220,
+      "seller_private": true,
+      "weight_g": 26.68,
+      "net_gold_g": 26.7,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "vintage"
+      ],
+      "stones": false,
+      "current_bid": 3419.25,
+      "landed_cost": 4129.5,
+      "price_orig": "€4,099",
+      "country": "DE",
+      "flag": "🇩🇪",
+      "melt_value": 1958.69,
+      "ratio": 0.47,
+      "is_value": false,
+      "buying": "Auction",
+      "best_offer": false,
+      "price_firm": false,
+      "condition": "Gebraucht - Gut",
+      "time_left": "6d 18h",
+      "ends_at": "2026-11-14T12:13:07.000Z",
+      "bids": 0,
+      "item_id": "198779352765",
+      "url": "https://www.ebay.de/itm/198779352765?_skw=Siegelring+Gold+750&hash=item2e482c36bd:g:sBwAAeSwX~Nq7w-~",
+      "first_seen": "2026-11-07T17:15:06.229889+00:00",
+      "is_new": true
+    },
+    {
       "title": "Chevalière homme or jaune 750/1000 (18 carats)+diamants naturels",
       "metal": "gold",
       "maker": null,
@@ -562,7 +601,7 @@
       "item_id": "307185608090",
       "url": "https://www.ebay.fr/itm/307185608090?_skw=chevali%C3%A8re+or+750&hash=item4785b0659a:g:MIwAAeSwXUJqrSf4",
       "first_seen": "2026-11-07T08:22:14.713846+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Anello Gianni Versace Medusa Greca in oro bianco 18 kt con sigillo US7,75 EU56 16,2 g con scatola",
@@ -689,7 +728,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": null,
-      "seller_feedback": 7542,
+      "seller_feedback": 7543,
       "seller_private": false,
       "weight_g": 20.3,
       "net_gold_g": 18.8,
@@ -1026,7 +1065,7 @@
       "item_id": "940071739124",
       "url": "https://www.ebay.com.sg/itm/940071739124?_skw=18ct+gold+signet+ring&hash=itemdae0a45ef4:g:XSEAAeSw10tqLAxK",
       "first_seen": "2026-11-07T08:22:14.713846+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "18K Gold & Pt1000 Platinum Signet Ring 0.15ct Diamond Heavy 19.9g",
@@ -1064,7 +1103,7 @@
       "item_id": "940071739801",
       "url": "https://www.ebay.com.sg/itm/940071739801?_skw=18ct+gold+signet+ring&hash=itemdae0a46199:g:X2sAAeSwZDpqN-Td",
       "first_seen": "2026-11-07T08:22:14.713846+00:00",
-      "is_new": true
+      "is_new": false
     }
   ]
 }
