@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-08T08:16:22.833707+00:00",
+    "generated_at": "2026-11-08T17:08:46.807366+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,15 +80,16 @@
       "SGD": 0.583,
       "USD": 0.7471
     },
-    "total_fetched": 1601,
+    "total_fetched": 1578,
     "total_analysed": 9,
     "value_count": 3,
-    "new_count": 3,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 1,
       "DE": 1,
-      "IE": 2,
+      "ES": 1,
+      "IE": 1,
       "PL": 1,
       "UK": 3,
       "US": 1
@@ -133,7 +134,7 @@
       "item_id": "307004107164",
       "url": "https://www.ebay.co.uk/itm/307004107164?_skw=9ct+gold+signet+ring&hash=item477adee99c:g:tWoAAeSwX5NqLtWW",
       "first_seen": "2026-11-08T08:16:22.833707+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "9ct Yellow Solid Gold Bulldog Signet Ring",
@@ -203,13 +204,13 @@
       "best_offer": true,
       "price_firm": false,
       "condition": "Pre-owned - Excellent",
-      "time_left": "3d 8h",
+      "time_left": "2d 23h",
       "ends_at": "2026-11-11T16:52:48.000Z",
       "bids": 0,
       "item_id": "900065462397",
       "url": "https://www.ebay.co.uk/itm/900065462397?_skw=9ct+gold+signet+ring&hash=itemd19015087d:g:UVUAAeSwvmdqz52g",
       "first_seen": "2026-11-08T08:16:22.833707+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Solid 9ct gold Vintage Diamond Star Signet Ring - Gent's Gold Jewellery Size Y",
@@ -293,46 +294,6 @@
       "is_new": false
     },
     {
-      "title": "FOUR 9CT GOLD BANDS AND ONE 9CT SIGNET RING",
-      "metal": "gold",
-      "maker": null,
-      "provenance": null,
-      "carat": 9,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": "private",
-      "seller_feedback": 262,
-      "seller_private": true,
-      "weight_g": 16.1,
-      "net_gold_g": 16.1,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "vintage",
-        "band"
-      ],
-      "stones": false,
-      "current_bid": 579.73,
-      "landed_cost": 719.68,
-      "price_orig": "€695",
-      "country": "IE",
-      "flag": "🇮🇪",
-      "melt_value": 590.54,
-      "ratio": 0.82,
-      "is_value": true,
-      "buying": "Auction",
-      "best_offer": false,
-      "price_firm": false,
-      "condition": "Used",
-      "time_left": "4d 11h",
-      "ends_at": "2026-11-12T20:10:29.000Z",
-      "bids": 0,
-      "item_id": "168841680761",
-      "url": "https://www.ebay.ie/itm/168841680761?_skw=9ct+gold+signet+ring&hash=item274fbf9779:g:CAYAAeSw5RJq2ll6",
-      "first_seen": "2026-11-06T08:17:52.600077+00:00",
-      "is_new": false
-    },
-    {
       "title": "Gentleman's Handmade Diamond Signet Ring 9ct 375 Solid Gold 29.7 Grams",
       "metal": "gold",
       "maker": null,
@@ -368,7 +329,7 @@
       "item_id": "167370662173",
       "url": "https://www.ebay.com.au/itm/167370662173?_skw=9ct+gold+signet+ring&hash=item26f811a11d:g:7SMAAOSwsaZn0M6c",
       "first_seen": "2026-11-08T08:16:22.833707+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Siegelring aus 333 Gold (8 Karat) – Herrenring Wappen Siegel, 65 Gr, 8,64 g",
@@ -405,8 +366,48 @@
       "ends_at": null,
       "bids": "",
       "item_id": "188198646130",
-      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+375&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq80%2FomBrJvLWrR9iC4DpXeTEGlJtWC2h4lEQnG2n0eKPaXar11ntJjm74gKtwBh1CR3i9R7IdfbftzHhRiUSbYIfeZI0MnGerwPPIZrOlv86CugwuvDs0CB7%2BrpmL6t7oLVmRBUlXJZmAgt6owrgBJJMAuRunFIcd57wEnbX14PfzK1Hfgt8FRjyYVC64I2Gwg%3D",
+      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+375&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq%2FVRNfyU523Or1nM6ODXHouF2Mq7RKXpIIgBuxILrIf2KNeastRfFmfCweC7rSw78ZMYuOTwvaVyDknNltTt54AlQGRwi%2Bv0lhzwZD2NxOtMsYU3R3JsX%2BHzE%2BZMzKqxkIqH8qUGeL%2BMNNpUfstOcNbV9hPWfFfQvx3hBN7cOt5QTtkKd%2BBpyhsyxfVzp4k1qA%3D",
       "first_seen": "2026-10-29T08:20:43.884945+00:00",
+      "is_new": false
+    },
+    {
+      "title": "CUATRO BANDAS DE ORO DE 9 QUILATES Y UN ANILLO DE SELLO DE 9 QUILATES",
+      "metal": "gold",
+      "maker": null,
+      "provenance": null,
+      "carat": 9,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": "private",
+      "seller_feedback": 262,
+      "seller_private": true,
+      "weight_g": 16.1,
+      "net_gold_g": 16.1,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "vintage",
+        "band"
+      ],
+      "stones": false,
+      "current_bid": 579.73,
+      "landed_cost": 722.08,
+      "price_orig": "€695",
+      "country": "ES",
+      "flag": "🇪🇸",
+      "melt_value": 590.54,
+      "ratio": 0.82,
+      "is_value": true,
+      "buying": "Auction",
+      "best_offer": false,
+      "price_firm": false,
+      "condition": "Used",
+      "time_left": "4d 3h",
+      "ends_at": "2026-11-12T20:10:29.000Z",
+      "bids": 0,
+      "item_id": "168841680761",
+      "url": "https://www.ebay.es/itm/168841680761?_skw=9ct+gold+signet+ring&hash=item274fbf9779:g:CAYAAeSw5RJq2ll6",
+      "first_seen": "2026-11-06T08:17:52.600077+00:00",
       "is_new": false
     },
     {

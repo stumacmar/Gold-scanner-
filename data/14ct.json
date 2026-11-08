@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-08T08:19:28.144283+00:00",
+    "generated_at": "2026-11-08T17:12:00.554586+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -80,16 +80,16 @@
       "SGD": 0.583,
       "USD": 0.7471
     },
-    "total_fetched": 1568,
-    "total_analysed": 13,
+    "total_fetched": 1545,
+    "total_analysed": 12,
     "value_count": 3,
-    "new_count": 2,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AU": 3,
       "DE": 1,
       "IT": 2,
-      "US": 7
+      "US": 6
     }
   },
   "results": [
@@ -332,45 +332,6 @@
       "is_new": false
     },
     {
-      "title": "Antique Hand-Engraved Gold Heraldic Crest Signet Ring 28.3g 14K Top / 17K Base",
-      "metal": "gold",
-      "maker": null,
-      "provenance": null,
-      "carat": 14,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": null,
-      "seller_feedback": 5,
-      "seller_private": false,
-      "weight_g": 28.3,
-      "net_gold_g": 28.3,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "antique"
-      ],
-      "stones": false,
-      "current_bid": 3731.79,
-      "landed_cost": 4511.75,
-      "price_orig": "$4,995",
-      "country": "US",
-      "flag": "🇺🇸",
-      "melt_value": 1619.33,
-      "ratio": 0.36,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": true,
-      "price_firm": true,
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "800316065925",
-      "url": "https://www.ebay.com/itm/800316065925?_skw=vintage+14ct+gold+signet+ring&hash=itemba568e0885:g:hVIAAeSwMm1qUoNE",
-      "first_seen": "2026-11-07T17:11:31.606088+00:00",
-      "is_new": false
-    },
-    {
       "title": "Collectible Japanese Shakudo ORIENTAL MOTIF 14K GOLD Meiji Period RING SIGNET 7",
       "metal": "gold",
       "maker": null,
@@ -406,7 +367,7 @@
       "item_id": "303105360302",
       "url": "https://www.ebay.com.au/itm/303105360302?_skw=14ct+gold+signet+ring&hash=item46927cc1ae:g:YEUAAOSwwo1XeqZU",
       "first_seen": "2026-11-08T08:19:28.144283+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Caesar Roman Noble Deco Vintage Signet Ring 14Kt gold 22G *v",
@@ -485,7 +446,7 @@
       "item_id": "198502483632",
       "url": "https://www.ebay.com.au/itm/198502483632?_skw=14ct+gold+signet+ring&hash=item2e37ab86b0:g:~-oAAeSwwrlqWTL3",
       "first_seen": "2026-11-08T08:19:28.144283+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Siegelring aus 333 Gold (8 Karat) – Herrenring Wappen Siegel, 65 Gr, 8,64 g",
@@ -522,7 +483,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "188198646130",
-      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+585&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq9YVWDnU7GgPT5OBgsA%2BhV6R%2FzE4sXyiYW8Lsr7cqYYNNOZm%2BtCsPxfXwaJ3U7m7jPHZE9HYw73JydCqj%2BqwYrfqkNk%2BQZHNFtqXIkngD%2FE5AUdjwxRkATOCYIS%2FwBusHISS18Oxbt5OObCGlQdR6CqjvN%2BD5X2j242o86iD3rOfFBeh9rrj5SSyYE0KeICmSA%3D",
+      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+585&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq8CKISy7rRIVUBSozDnirDYFT7JIW3yfvZyiMgIj0if6PYgJCHHfgFUHmPNF9UNM4ZksHlWpbZQVS%2BmOz59S5h0CNg9%2BIPqtknUqrcG0YOESNwv0brNpN%2FFzOaJlHuqfz1OLlTNzAsv2T5%2FJB372NSxk50pslZAjyAs8r3gxmNrx4lcdOk7KvVIxc%2F6PwvmcR0%3D",
       "first_seen": "2026-10-29T08:24:09.947005+00:00",
       "is_new": false
     },
