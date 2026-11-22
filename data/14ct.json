@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-22T08:19:25.261020+00:00",
+    "generated_at": "2026-11-22T17:12:07.691163+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -83,7 +83,7 @@
     "total_fetched": 1620,
     "total_analysed": 16,
     "value_count": 1,
-    "new_count": 2,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "AT": 1,
@@ -408,7 +408,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "188198646130",
-      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+585&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq9BV2WxAz0Y5tfXwyAQCcuelW%2FExPxqMPAcU80xkh%2B%2FFISvfYp0hbGTI0ZMSFPLDsXobUG6e4sHlK65%2Fx9kRkkCgHnDHgZ4IRv4%2BBoMLFK5l25fpMYMFaTNKWCMggZFusotZGqSbqSgZbMrTu%2FiiPiRQ%2F4gJuwPbQFRUQJEAjpQ6G6x%2FIfI9fcpTSviWe0C%2B%2Fk%3D",
+      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+585&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq8FM6f2HcSrIzB4JC9hCpNY7H4ixljofZ9UahT0QmzNvG02V%2FOiM3hOHDYLboQIqshhW4t3EvNOqOHVqq3SIR2GFVHWNeq%2BhGT5IiyMYBjC4UAw%2BH3Wn5nI%2B1zIyT3HhkS3EBHWh09xCOOagn85GC8OMHkRhnOxDc3RiA0v9ksl29icOGWln3dO4DfPV21EjHg%3D",
       "first_seen": "2026-11-20T08:20:09.024497+00:00",
       "is_new": false
     },
@@ -678,7 +678,7 @@
       "item_id": "366828018148",
       "url": "https://www.ebay.pl/itm/366828018148?_skw=z%C5%82oty+sygnet+585&hash=item5568a759e4:g:nTkAAeSwaMxrAa~y",
       "first_seen": "2026-11-22T08:19:25.261020+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Siegelring Wappenring Ring Yellow Gold 585/14K –17,60g – Size 60 #3511",
@@ -716,7 +716,7 @@
       "item_id": "366828018141",
       "url": "https://www.ebay.com.sg/itm/366828018141?_skw=14ct+gold+signet+ring&hash=item5568a759dd:g:nTkAAeSwaMxrAa~y",
       "first_seen": "2026-11-22T08:19:25.261020+00:00",
-      "is_new": true
+      "is_new": false
     }
   ]
 }
