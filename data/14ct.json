@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-28T08:19:17.949281+00:00",
+    "generated_at": "2026-11-28T17:12:10.022755+00:00",
     "query": "14ct gold signet ring",
     "queries": [
       "14ct gold signet ring",
@@ -80,10 +80,10 @@
       "SGD": 0.5909,
       "USD": 0.7621
     },
-    "total_fetched": 1609,
+    "total_fetched": 1599,
     "total_analysed": 19,
     "value_count": 1,
-    "new_count": 2,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "CH": 1,
@@ -369,47 +369,8 @@
       "ends_at": null,
       "bids": "",
       "item_id": "188198646130",
-      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+585&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq%2F%2B5Tu05ItkzaDz6qa6rM3%2FnO7ckjJh8yX2dEWxAoJfPtPvLWRkxUOo9P5L9VI67dbkFri3nog99ittg6J0fm5WNxqwIYT1ZxP5eONjfflNjYGgZp%2Bk5BtP%2FEBB998eCvf2CqVWvxhbfUjkYfhFN7llmMtDjnMhlvg2GD5mFbCBMpvgzAs%2BhFLxWE90PwoB7PE%3D",
+      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+585&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq%2FhYUv6cCg%2FrtLZHC4eIdPsrzpF6qbFpfK9v1aVarXDVlBcNZUvLqzUitSz8Kz5rJ8zEW2knv6jQWiif043Y5umm7kG3SqyMjdXK5%2BxlfgAK1P7iL%2B3guOGpt5KGY%2FgD9L6kCBcra%2BaZcaYGnOvpjzTasKflQHzuydJAnmOYGJOX88aJqFWeRLr4yD2fQ4RzHA%3D",
       "first_seen": "2026-11-20T08:20:09.024497+00:00",
-      "is_new": false
-    },
-    {
-      "title": "Massives 585 Gold Herren-Set (29g): Siegelring & Manschettenknöpfe mit Lapislazu",
-      "metal": "gold",
-      "maker": null,
-      "provenance": null,
-      "carat": 14,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": "private",
-      "seller_feedback": 128,
-      "seller_private": true,
-      "weight_g": 29.0,
-      "net_gold_g": 25.5,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet",
-        "gents"
-      ],
-      "stones": false,
-      "current_bid": 1795.41,
-      "landed_cost": 2180.89,
-      "price_orig": "€2,150",
-      "country": "DE",
-      "flag": "🇩🇪",
-      "melt_value": 1334.13,
-      "ratio": 0.61,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": true,
-      "price_firm": true,
-      "condition": "Gebraucht - Gut",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "137967745294",
-      "url": "https://www.ebay.de/itm/137967745294?_skw=Siegelring+Gold+585&hash=item201f84b90e:g:nvsAAeSwys9rCZIz",
-      "first_seen": "2026-11-27T17:13:09.231382+00:00",
       "is_new": false
     },
     {
@@ -449,6 +410,45 @@
       "item_id": "287745813317",
       "url": "https://www.ebay.de/itm/287745813317?_skw=Siegelring+Gold+585&hash=item42fefcab45:g:ISAAAeSwau9rAVtV",
       "first_seen": "2026-11-21T17:11:58.704243+00:00",
+      "is_new": false
+    },
+    {
+      "title": "Massives 585 Gold Herren-Set (29g): Siegelring & Manschettenknöpfe mit Lapislazu",
+      "metal": "gold",
+      "maker": null,
+      "provenance": null,
+      "carat": 14,
+      "fineness": null,
+      "carat_assumed": false,
+      "seller_type": "private",
+      "seller_feedback": 128,
+      "seller_private": true,
+      "weight_g": 29.0,
+      "net_gold_g": 25.5,
+      "weight_confidence": "confirmed",
+      "tags": [
+        "signet",
+        "gents"
+      ],
+      "stones": false,
+      "current_bid": 1795.41,
+      "landed_cost": 2180.89,
+      "price_orig": "€2,150",
+      "country": "DE",
+      "flag": "🇩🇪",
+      "melt_value": 1334.13,
+      "ratio": 0.61,
+      "is_value": false,
+      "buying": "Buy now",
+      "best_offer": true,
+      "price_firm": true,
+      "condition": "Gebraucht - Gut",
+      "time_left": "n/a",
+      "ends_at": null,
+      "bids": "",
+      "item_id": "137967745294",
+      "url": "https://www.ebay.de/itm/137967745294?_skw=Siegelring+Gold+585&hash=item201f84b90e:g:nvsAAeSwys9rCZIz",
+      "first_seen": "2026-11-27T17:13:09.231382+00:00",
       "is_new": false
     },
     {
@@ -525,7 +525,7 @@
       "item_id": "227380138309",
       "url": "https://www.ebay.de/itm/227380138309?_skw=Siegelring+Gold+585&hash=item34f0e99145:g:dwAAAeSw8WtqJ-2E",
       "first_seen": "2026-11-28T08:19:17.949281+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Exklusiver Freimaurer-Siegelring, 585 Gelbgold, 15,3 g -Handgefertigtes Unikat-",
@@ -753,9 +753,9 @@
       "ends_at": null,
       "bids": "",
       "item_id": "366828004912",
-      "url": "https://www.ebay.ch/itm/366828004912?_skw=Siegelring+Gold+585&hash=item5568a72630:g:nTkAAeSwaMxrAa~y&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7l2KMXyDh3LEvcCq57sNfwzAFQsdTgB6SouUPG7UTstgtk3UhAqzwSsunOyjJS3LiBY8GhrRQHM2uskHMGcgaj38AP8CUyWVYG16PLFQ7qeSrlbD6tMYSSQSHoww0hK5XCK2ZlVD%2BVcWj7OXsxbWrpmVnNkdyEEIrhdl1pTddaxQQS59wnJNFjRyZ3Cn%2B1Et1zDcrb5pHWIAhsZTXMWmUfWPVzc00xjmhQO1G5l21PsjkX0yJm7abiPVklcxTtPUG7GDIH%2FTTml0oOMbvhc01tlozmWMUklX2udY3MO8g0CjshDJ6k2b%2B2Ku7W2iHAYpoc%3D",
+      "url": "https://www.ebay.ch/itm/366828004912?_skw=Siegelring+Gold+585&hash=item5568a72630:g:nTkAAeSwaMxrAa~y&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7l2KMXyDh3LEvcCq57sNfwzAFQsdTgB6SouUPG7UTstgtk3UhAqzwSsunOyjJS3LiBY8GhrRQHM2uskHMGcgaj38AP8CUyWVYG16PLFQ7qeSrlbD6tMYSSQSHoww0hK5XAm%2BmuZAgqCAtHFUpDNI31Fx8JH%2BNX8kgN2uqTsMs5C5mj1KqXCBpbMrqnpSa7SUZmDF0lR7CqUXOnz5cB8V19yUDptOGI1yD7eyvRur084%2FQF%2Bmw911t5Gzs8e7tPzy4hn%2F1XylpHyqXrgq5emnuOUNoDdb4kAA570vJOVMy%2BWJAdt%2BnrUfowE5bmGSi4lUbU%3D",
       "first_seen": "2026-11-28T08:19:17.949281+00:00",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Siegelring Wappenring Ring Yellow Gold 585/14K –17,60g – Size 60 #3511",

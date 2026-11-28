@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-28T08:16:14.151395+00:00",
+    "generated_at": "2026-11-28T17:08:50.931089+00:00",
     "query": "9ct gold signet ring",
     "queries": [
       "9ct gold signet ring",
@@ -80,16 +80,16 @@
       "SGD": 0.5909,
       "USD": 0.7621
     },
-    "total_fetched": 1605,
-    "total_analysed": 6,
+    "total_fetched": 1619,
+    "total_analysed": 5,
     "value_count": 1,
-    "new_count": 1,
+    "new_count": 0,
     "weight_unknown_count": 0,
     "country_counts": {
       "DE": 1,
       "NL": 1,
       "PL": 1,
-      "UK": 3
+      "UK": 2
     }
   },
   "results": [
@@ -102,7 +102,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "private",
-      "seller_feedback": 237,
+      "seller_feedback": 238,
       "seller_private": true,
       "weight_g": 18.4,
       "net_gold_g": 18.4,
@@ -141,7 +141,7 @@
       "fineness": null,
       "carat_assumed": false,
       "seller_type": "business",
-      "seller_feedback": 3446,
+      "seller_feedback": 3447,
       "seller_private": false,
       "weight_g": 19.6,
       "net_gold_g": 18.1,
@@ -169,44 +169,6 @@
       "url": "https://www.ebay.co.uk/itm/147117810866?_skw=9ct+gold+signet+ring&hash=item2240e7a4b2:g:51QAAeSwiG9oc6xm",
       "first_seen": "2026-11-23T08:19:51.320942+00:00",
       "is_new": false
-    },
-    {
-      "title": "9ct Gold Ring 18.86g Initial H Signet Plain Size Z - Fully Hallmarked",
-      "metal": "gold",
-      "maker": null,
-      "provenance": null,
-      "carat": 9,
-      "fineness": null,
-      "carat_assumed": false,
-      "seller_type": "business",
-      "seller_feedback": 5393,
-      "seller_private": false,
-      "weight_g": 18.86,
-      "net_gold_g": 18.9,
-      "weight_confidence": "confirmed",
-      "tags": [
-        "signet"
-      ],
-      "stones": false,
-      "current_bid": 1230.0,
-      "landed_cost": 1234.0,
-      "price_orig": null,
-      "country": "UK",
-      "flag": "🇬🇧",
-      "melt_value": 633.86,
-      "ratio": 0.51,
-      "is_value": false,
-      "buying": "Buy now",
-      "best_offer": false,
-      "price_firm": true,
-      "condition": "Pre-owned - Good",
-      "time_left": "n/a",
-      "ends_at": null,
-      "bids": "",
-      "item_id": "128061170958",
-      "url": "https://www.ebay.co.uk/itm/128061170958?_skw=9ct+gold+signet+ring&hash=item1dd10a650e:g:hyoAAeSw1VdqmoXQ",
-      "first_seen": "2026-11-28T08:16:14.151395+00:00",
-      "is_new": true
     },
     {
       "title": "Siegelring aus 333 Gold (8 Karat) – Herrenring Wappen Siegel, 65 Gr, 8,64 g",
@@ -243,7 +205,7 @@
       "ends_at": null,
       "bids": "",
       "item_id": "188198646130",
-      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+375&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq9BSs4o9i1usJe4EieIi6o1wBtjcnxafMSN3BDF7S6wlr5r2Xkqm1RIS9hA5C2IqxGfSHnq6vOIKA3bD6X%2FHtG%2B4I%2BtyTtVNDv69WE%2BhN2IT79lG9nEwdWs7oaOxqQTwLxGXgC93FgfjlkZihTtcxQIvXrciy4Rd000G2qossK4uxNvoYaI5JxKGMfI8WXDRxY%3D",
+      "url": "https://www.ebay.de/itm/188198646130?_skw=Siegelring+Gold+375&hash=item2bd1837172:g:KVQAAeSw6~tpu-yE&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7lKFj4MErE7b%2BYyBg41DgdQ81hxwL4FZ81aVjnka5meU2N1U4W1J%2BU446%2BqUwVT1BgiLxSeZGLjfxbp9IncHTMOHApSPePrplpYYFLkqgeeqG3%2Fx7k7Kqr2ebhdedkfGq%2BZofrUkokTZ%2BAW3oeFDB1iK7NGWu%2BHap9dH5yFdGODvdRun0OVQhhzTsCnuSI0bJoQCsazebgcFljUA5Ix1ZIGravFKzigUpCoYWA0WEIZ%2BZ2Fkvusodi7dmIrlS4oQvQfYuAtwGTlq6PGNPnEOT4vHpdVzJTU8%2FzTW%2BIfxBt5uD1wK9rTP7rAlReMNxr8B6c%3D",
       "first_seen": "2026-10-29T08:20:43.884945+00:00",
       "is_new": false
     },
